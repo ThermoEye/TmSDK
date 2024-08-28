@@ -33,8 +33,8 @@ namespace TmSDK
 		int width = 0, height = 0;
 		ColormapTypes colorMap = ColormapTypes::GrayScale;
 		bool noiseFiltering = false;
-		TempUnit tempUnit = TempUnit::CELSIUS;
-		std::string tempUnitSymbol = "กษ";
+		TempUnit tempUnit = TempUnit::RAW;
+		std::string tempUnitSymbol = "";
 	public:
 		TmControl* pTmControl = nullptr;
 
