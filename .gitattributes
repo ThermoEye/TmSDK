@@ -1,0 +1,4 @@
+sdk/Windows/TmWinQt/lib/opencv_world4100d.dll filter=lfs diff=lfs merge=lfs -text
+sdk/Windows/TmWinQtSimple/lib/opencv_world4100d.dll filter=lfs diff=lfs merge=lfs -text
+SDK/Windows/TmWinQt/lib/opencv_world4100d.dll filter=lfs diff=lfs merge=lfs -text
+SDK/Windows/TmWinQtSimple/lib/opencv_world4100d.dll filter=lfs diff=lfs merge=lfs -text

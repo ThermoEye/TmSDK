@@ -6,21 +6,21 @@ namespace TmSDK
     class Parameter
     {
     public:
-        uint8_t paramName;
+        uint16_t paramName;
         uint16_t paramValue;
 
         Parameter(uint8_t name, uint16_t value) : paramName(name), paramValue(value) {}
         std::vector<uint8_t> GetBytes()
         {
             std::vector<uint8_t> result;
-            result.push_back(paramName);
-            result.push_back(static_cast<uint8_t>((paramValue >> 8) & 0xFF)); // 상위 바이트
+            result.push_back(static_cast<uint8_t>(paramName & 0xFF));
+            result.push_back(static_cast<uint8_t>((paramName >> 8) & 0xFF));
             result.push_back(static_cast<uint8_t>(paramValue & 0xFF));        // 하위 바이트
+            result.push_back(static_cast<uint8_t>((paramValue >> 8) & 0xFF)); // 상위 바이트
             return result;
         }
     };
 
-    
     /// @cond DOXYGEN_SHOULD_SKIP_THIS
     class Packet
     {
@@ -52,8 +52,6 @@ namespace TmSDK
         }
     };
     /// @cond DOXYGEN_SHOULD_SKIP_THIS
-
-
 
     class TmProtocol
     {

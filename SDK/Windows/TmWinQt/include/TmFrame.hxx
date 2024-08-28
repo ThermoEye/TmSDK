@@ -1,7 +1,6 @@
 #pragma once
 
 #include "TmShared.hxx"
-//#include "TmROI.hxx"
 #include "TmRoiShapes.hxx"
 
 namespace TmSDK
@@ -61,9 +60,11 @@ namespace TmSDK
 		void* rawFrame = nullptr;
 		void* bmpFrame = nullptr;
 
+	public:
 		TmFrame();
 		TmFrame(ColormapTypes colorMap, bool noiseFilter = false);
 		virtual ~TmFrame();
+
 		/// <summary>
 		/// Checks if the pointer used for holding frame data is null.
 		/// </summary>

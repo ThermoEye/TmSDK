@@ -22,6 +22,7 @@ namespace TmSDK
         /// </summary>
         Point(int x = -1, int y = -1) : X(x), Y(y) {}
     };
+
     /// <summary>
     /// ROI location and temperature value
     /// </summary>
@@ -99,6 +100,7 @@ namespace TmSDK
         /// </summary>
         LocItem MaxLoc;
     };
+
     /// <summary>
     /// Inheritance class for Spot type ROI
     /// </summary>
@@ -159,6 +161,7 @@ namespace TmSDK
             Spot.Y = y;
         }
     };
+
     /// <summary>
     /// Inheritance class for Line type ROI
     /// </summary>
@@ -233,6 +236,7 @@ namespace TmSDK
             End.Y = endY;
         }
     };
+
     /// <summary>
     /// Inheritance class for Rectangle type ROI
     /// </summary>
@@ -243,6 +247,7 @@ namespace TmSDK
         /// Location and size of Rectangle
         /// </summary>
         Rectangle Rect;
+
         /// <summary>
         /// Constructor of RoiRect
         /// </summary>
@@ -250,6 +255,7 @@ namespace TmSDK
         {
             Type = RoiType::Rect;
         }
+        
         /// <summary>
         /// Constructor of RoiRect
         /// </summary>
@@ -259,6 +265,7 @@ namespace TmSDK
             Type = RoiType::Rect;
             Index = index;
         }
+        
         /// <summary>
         /// Constructor of RoiRect
         /// </summary>
@@ -268,6 +275,7 @@ namespace TmSDK
             Type = RoiType::Rect;
             Rect = rect;
         }
+        
         /// <summary>
         /// Constructor of RoiRect
         /// </summary>
@@ -283,6 +291,7 @@ namespace TmSDK
             Rect.Width = width;
             Rect.Height = height;
         }
+        
         /// <summary>
         /// Constructor of RoiRect
         /// </summary>
@@ -301,6 +310,7 @@ namespace TmSDK
             Rect.Height = height;
         }
     };
+
     /// <summary>
     /// Inheritance class for Ellipse type ROI
     /// </summary>
@@ -311,6 +321,7 @@ namespace TmSDK
         /// Location and size of Ellipse
         /// </summary>
         Rectangle Ellipse;
+    
         /// <summary>
         /// Constructor of RoiEllipse
         /// </summary>
@@ -318,6 +329,7 @@ namespace TmSDK
         {
             Type = RoiType::Ellipse;
         }
+        
         /// <summary>
         /// Constructor of RoiEllipse
         /// </summary>
@@ -327,6 +339,7 @@ namespace TmSDK
             Type = RoiType::Ellipse;
             Index = index;
         }
+        
         /// <summary>
         /// Constructor of RoiEllipse
         /// </summary>
@@ -336,6 +349,7 @@ namespace TmSDK
             Type = RoiType::Ellipse;
             Ellipse = rect;
         }
+        
         /// <summary>
         /// Constructor of RoiEllipse
         /// </summary>
@@ -351,6 +365,7 @@ namespace TmSDK
             Ellipse.Width = width;
             Ellipse.Height = height;
         }
+        
         /// <summary>
         /// Constructor of RoiEllipse
         /// </summary>

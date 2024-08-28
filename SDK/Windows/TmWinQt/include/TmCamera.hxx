@@ -65,6 +65,7 @@ namespace TmSDK
 		void SetTempUnit(TempUnit value);
 		void SetColorMap(ColormapTypes index);
 		void SetNoiseFiltering(bool filter);
+		TmControl* GetTmControl();
 	};
 }
 

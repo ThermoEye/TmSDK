@@ -79,7 +79,8 @@ namespace TmSDK
 		/// <returns>True if the clearing was successful.</returns>
 		bool Clear()
 		{
-			for (RoiObject* item : Items) {
+			for (RoiObject* item : Items) 
+			{
 				delete item;
 			}
 			Items.clear();
@@ -95,7 +96,10 @@ namespace TmSDK
 		/// <returns>True if the mouse down event was successfully handled.</returns>
 		bool MouseDown(Point pt)
 		{
-			if (pSelectedObj == nullptr) return false;
+			if (pSelectedObj == nullptr)
+			{
+				return false;
+			}
 
 			isMousePressed = true;
 
@@ -107,11 +111,14 @@ namespace TmSDK
 
 			case RoiType::Line:
 				((RoiLine*)pSelectedObj)->Start = pt;
+				((RoiLine*)pSelectedObj)->End = pt;
 				break;
 
 			case RoiType::Rect:
 				((RoiRect*)pSelectedObj)->Rect.X = pt.X;
 				((RoiRect*)pSelectedObj)->Rect.Y = pt.Y;
+				((RoiRect*)pSelectedObj)->Rect.Width = 0;
+				((RoiRect*)pSelectedObj)->Rect.Height = 0;
 				break;
 
 			case RoiType::Ellipse:
@@ -122,6 +129,7 @@ namespace TmSDK
 
 			return true;
 		}
+
 		/// <summary>
 		/// Handles mouse move events to update the current ROI being drawn.
 		/// </summary>
@@ -166,6 +174,7 @@ namespace TmSDK
 
 			return false;
 		}
+
 		/// <summary>
 		/// Handles mouse up events to finalize the drawing of an ROI.
 		/// </summary>
@@ -173,7 +182,10 @@ namespace TmSDK
 		/// <returns>True if the mouse up event was successfully handled.</returns>
 		bool MouseUp(Point pt)
 		{
-			if (pSelectedObj == nullptr) return false;
+			if (pSelectedObj == nullptr)
+			{
+				return false;
+			}
 
 			if (isMousePressed == true)
 			{
@@ -188,6 +200,7 @@ namespace TmSDK
 
 			return false;
 		}
+
 		/// <summary>
 		/// Adds a new ROI object of type `Spot` to the manager.
 		/// </summary>
@@ -206,6 +219,7 @@ namespace TmSDK
 			}
 			return true;
 		}
+
 		/// <summary>
 		/// Adds a new ROI object of types `Line`, `Rect`, or `Ellipse` to the manager.
 		/// </summary>
@@ -234,6 +248,7 @@ namespace TmSDK
 			}
 			return true;
 		}
+
 		/// <summary>
 		/// Removes an ROI object at the specified index.
 		/// </summary>

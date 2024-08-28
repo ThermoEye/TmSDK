@@ -44,7 +44,6 @@ namespace TmSDK
 		std::map<int, Device> getDevicesMap(const char* deviceClass);
 #endif
 		std::map<int, Device> getVideoDevicesMap();
-		std::map<int, Device> getAudioDevicesMap();
 
 	private:
 

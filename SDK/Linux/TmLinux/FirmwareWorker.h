@@ -1,28 +1,25 @@
-#ifndef FIRMWARE_WORKER_H
-#define FIRMWARE_WORKER_H
-
+#pragma once
 #include <QObject>
 #include <QThread>
-#include "mainwindow.h"
+#include "TmLinux.h"
 
 class FirmwareWorker : public QThread
 {
     Q_OBJECT
 
+private:
+    bool stopFlag;
+    TmCamera* pTmCamera;
+
 public:
-    FirmwareWorker(TmSDK::TmCamera* camera, QObject* parent = nullptr);
+    FirmwareWorker(TmCamera* camera, QObject* parent = nullptr);
     void run() override;
 
 signals:
-    void progressChanged(int progress);
-    void workCompleted(bool success, QString message);
+    void ProgressChanged(int progress);
+    void WorkCompleted(bool success, QString message);
 
 public slots:
     void cancel();
-
-private:
-    bool stopFlag;
-    TmSDK::TmCamera* pTmCamera;
 };
 
-#endif // FIRMWARE_WORKER_H

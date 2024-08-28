@@ -67,44 +67,29 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(solutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>VSCMD_DEBUG=3;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>$(Qt_RUNTIME_)</RuntimeLibrary>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <SupportJustMyCode>true</SupportJustMyCode>
-      <FunctionLevelLinking>
-      </FunctionLevelLinking>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(QT_LIBS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>libTmCored.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
     <PostBuildEvent>
-      <Command>xcopy $(SolutionDir)lib\libTmCored.dll $(OutDir) /y
-xcopy $(SolutionDir)lib\libTmRtspClientd.dll $(OutDir) /y
-xcopy $(SolutionDir)lib\opencv_world4100d.dll $(OutDir) /y</Command>
+      <Command>xcopy $(SolutionDir)lib\*.dll $(OutDir) /y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(solutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>$(Qt_RUNTIME_)</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)lib;$(QT_LIBS);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libTmCore.lib;%(AdditionalDependencies);$(Qt_LIBS_)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libTmCore.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <PostBuildEvent />
     <PostBuildEvent>
-      <Command>xcopy $(SolutionDir)lib\libTmCore.dll $(OutDir) /y
-xcopy $(SolutionDir)lib\libTmRtspClient.dll $(OutDir) /y
-xcopy $(SolutionDir)lib\opencv_world4100.dll $(OutDir) /y</Command>
+      <Command>xcopy $(SolutionDir)lib\*.dll $(OutDir) /y
+windeployqt $(OutDir)$(ProjectName).exe</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -136,16 +121,23 @@ xcopy $(SolutionDir)lib\opencv_world4100.dll $(OutDir) /y</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <QtRcc Include="TmWinQt.qrc" />
+    <QtUic Include="TmWinQt.ui" />
+    <QtMoc Include="TmWinQt.h" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraControl.cpp" />
     <ClCompile Include="FirmwareWorker.cpp" />
-    <QtMoc Include="FirmwareWorker.h" />
+    <ClCompile Include="SensorControl.cpp" />
+    <ClCompile Include="TmWinQt.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="mainwindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="mainwindow.h" />
+    <QtMoc Include="CameraControl.h" />
+    <QtMoc Include="Camera.h" />
+    <QtMoc Include="SensorControl.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="mainwindow.ui" />
+    <QtMoc Include="FirmwareWorker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

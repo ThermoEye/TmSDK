@@ -18,15 +18,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
+    TmLinux.cpp \
+    Camera.cpp \
+    CameraControl.cpp \
+    SensorControl.cpp \
     FirmwareWorker.cpp
 
 HEADERS += \
-    mainwindow.h \
+    TmLinux.h \
+    Camera.h \
+    CameraControl.h \
+    SensorControl.h \
     FirmwareWorker.h
 
 FORMS += \
-    mainwindow.ui
+    TmLinux.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

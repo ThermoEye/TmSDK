@@ -15,6 +15,7 @@ namespace TmSDK
 		TmCamInfo() {}
 		virtual ~TmCamInfo() = default;
 	};
+	
 	/// <summary>
 	/// Class representing local camera information.
 	/// </summary>
@@ -25,10 +26,11 @@ namespace TmSDK
 		std::string Name = "";
 		std::string ComPort = "";
 		TmLocalCamInfo(std::string name, std::string comPort, int index);
-		TmLocalCamInfo(std::string name, int index);
+		//TmLocalCamInfo(std::string name, int index);
 		TmLocalCamInfo();
 		virtual ~TmLocalCamInfo();
 	};
+	
 	/// <summary>
 	/// Class representing remote camera information.
 	/// </summary>

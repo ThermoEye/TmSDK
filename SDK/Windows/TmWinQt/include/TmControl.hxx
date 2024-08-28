@@ -24,6 +24,7 @@ namespace TmSDK
 		uint16_t reflWindow;          /* 3.13     0        [0, 8192-tauWindow] */
 		uint16_t TReflK;              /* 16.0     30000    [, ]        value in kelvin 100x*/
 	};
+
 #pragma pack(push, 1)
 	struct LEP_SYS_FFC_SHUTTER_MODE_OBJ_T
 	{
@@ -37,6 +38,7 @@ namespace TmSDK
 		uint16_t desiredFfcTempDelta;
 		uint16_t imminentDelay;
 	};
+
 	struct GET_NET_CFG_T
 	{
 		uint64_t mac;
@@ -47,6 +49,7 @@ namespace TmSDK
 		uint32_t dns;
 		uint32_t dns2;
 	};
+
 	struct SET_NET_CFG_T {
 		uint8_t ipAssign;
 		uint32_t ip;
@@ -90,25 +93,30 @@ namespace TmSDK
 		uint16_t sysGainModeFluxThresholdLow;                    /* calculated from desired temp */
 		uint16_t sysGainModeFluxThresholdHigh;                   /* calculated from desired temp */
 	};
+
 	struct GET_SEC_CFG_START_T {
 		std::vector<uint8_t> pw;
 	};
+
 	struct GET_SEC_CFG_ING_T {
 		std::vector<uint8_t> prodSN;
 		uint32_t hwVer;
 		uint64_t mac;
 	};
+
 	struct SET_SEC_CFG_START_T
 	{
 		std::vector<uint8_t> pw;
 		uint32_t size;
 	};
+
 	struct SET_SEC_CFG_ING_T
 	{
 		std::vector<uint8_t> prodSN;
 		uint32_t hwVer;
 		uint64_t mac;
 	};
+
 	struct CHANGE_PASSWORD_T
 	{
 		std::vector<uint8_t> curPW;

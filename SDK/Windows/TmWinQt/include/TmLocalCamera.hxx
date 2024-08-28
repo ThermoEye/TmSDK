@@ -12,7 +12,7 @@ namespace TmSDK
 	class DLL_EXPORTS TmLocalCamera : public TmCamera
 	{
 	private:
-		int fwMaxPacketLength = 48;
+		int fwMaxPacketLength = 512;
 		void* pVideoCapture = nullptr;
 		int defaultTimeout = 100;
 #if defined(_MSC_VER)

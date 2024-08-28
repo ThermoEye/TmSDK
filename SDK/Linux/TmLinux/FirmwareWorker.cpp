@@ -1,3 +1,16 @@
+/******************************************************************
+ * Company: Thermoeye, Inc
+ * Project: TmSDK
+ * File: FirmwareWorker.cpp
+ * Creation Date: 2024-08-19
+ * Version: 1.0.0
+ *
+ * Description: This file contains the following implementations:
+ * - Thread class for updating camera firmware.
+ *
+ * History: 2024-08-19: Initial version.
+ *
+ **************************************************************/
 #include <QThread>
 #include <QMetaType>
 #include <iostream>
@@ -21,22 +34,22 @@ void FirmwareWorker::run()
             percent = pTmCamera->pTmControl->UpdateFirmware();
             if (percent >= 0)
             {
-                emit progressChanged(percent);
+                emit ProgressChanged(percent);
             }
             else
             {
-                emit workCompleted(false, "Error during download firmware.");
+                emit WorkCompleted(false, "Error during download firmware.");
                 return;
             }
         }
 
         if (stopFlag)
         {
-            emit workCompleted(false, "Update cancelled.");
+            emit WorkCompleted(false, "Update cancelled.");
         }
         else
         {
-            emit workCompleted(true, "Update completed.");
+            emit WorkCompleted(true, "Update completed.");
         }
     }
 }

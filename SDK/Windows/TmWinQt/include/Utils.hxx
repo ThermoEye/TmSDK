@@ -76,10 +76,12 @@ namespace TmSDK
             return true;
         }
         
-        static uint32_t NetworkToHostOrder(const std::string& ip) {
+        static uint32_t NetworkToHostOrder(const std::string& ip) 
+        {
             struct in_addr addr;
 
-            if (inet_pton(AF_INET, ip.c_str(), &addr) != 1) {
+            if (inet_pton(AF_INET, ip.c_str(), &addr) != 1) 
+            {
                 throw std::runtime_error("Invalid IP address format");
             }
 
@@ -87,40 +89,47 @@ namespace TmSDK
             return ntohl(addr.s_addr);
         }
 
-        static std::string toHex(uint8_t num) {
+        static std::string toHex(uint8_t num) 
+        {
             std::stringstream ss;
             ss << std::hex << std::uppercase << std::setw(2) << std::setfill('0') << static_cast<int>(num);
             return ss.str();
         }
 
-        static std::string ToHexString(void* ptr, size_t size) {
+        static std::string ToHexString(void* ptr, size_t size) 
+        {
             unsigned char* bytePtr = static_cast<unsigned char*>(ptr);
             std::ostringstream oss;
             oss << std::hex << std::setfill('0');
 
-            for (size_t i = 0; i < size; ++i) {
+            for (size_t i = 0; i < size; ++i) 
+            {
                 oss << std::setw(2) << " " << static_cast<int>(bytePtr[i]);
             }
 
             return oss.str();
         }
 
-        static std::string toIpString(uint32_t ip) {
+        static std::string toIpString(uint32_t ip) 
+        {
             std::vector<uint8_t> bytes(4);
             memcpy(bytes.data(), &ip, sizeof(ip));
             std::reverse(bytes.begin(), bytes.end());
 
             std::stringstream ss;
-            for (size_t i = 0; i < bytes.size(); ++i) {
+            for (size_t i = 0; i < bytes.size(); ++i) 
+            {
                 ss << static_cast<int>(bytes[i]);
-                if (i < bytes.size() - 1) {
+                if (i < bytes.size() - 1) 
+                {
                     ss << ".";
                 }
             }
             return ss.str();
         }
 
-        static std::vector<uint8_t> IntToByteVector(int value) {
+        static std::vector<uint8_t> IntToByteVector(int value) 
+        {
             std::vector<uint8_t> vec(sizeof(int));
             memcpy(vec.data(), &value, sizeof(int));
             return vec;
@@ -144,6 +153,7 @@ namespace TmSDK
             if (value < min) value = min;
             if (value > max) value = max;
         }
+
         /// <summary>
         /// Adjusts the given value to be within the specified range.
         /// </summary>
