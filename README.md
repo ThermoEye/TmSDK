@@ -58,7 +58,7 @@ Download from [releases](https://github.com/ThermoEye/TmSDK/releases)
 
 ## Installing
 
-Please refer to [TmSDK Manual.pdf](https://github.com/ThermoEye/TmSDK/blob/main/Document/TmSDK%EC%82%AC%EC%9A%A9%EC%84%A4%EB%AA%85%EC%84%9C.pdf)
+Please refer to [TmSDK Manual.pdf](https://github.com/ThermoEye/TmSDK/blob/main/Document/TmSDK%20Manual.pdf)
 
 ## Support
 
