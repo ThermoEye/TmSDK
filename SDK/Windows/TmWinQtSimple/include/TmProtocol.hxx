@@ -15,8 +15,8 @@ namespace TmSDK
             std::vector<uint8_t> result;
             result.push_back(static_cast<uint8_t>(paramName & 0xFF));
             result.push_back(static_cast<uint8_t>((paramName >> 8) & 0xFF));
-            result.push_back(static_cast<uint8_t>(paramValue & 0xFF));        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
-            result.push_back(static_cast<uint8_t>((paramValue >> 8) & 0xFF)); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
+            result.push_back(static_cast<uint8_t>(paramValue & 0xFF));        // ÇÏÀ§ ¹ÙÀÌÆ®
+            result.push_back(static_cast<uint8_t>((paramValue >> 8) & 0xFF)); // »óÀ§ ¹ÙÀÌÆ®
             return result;
         }
     };

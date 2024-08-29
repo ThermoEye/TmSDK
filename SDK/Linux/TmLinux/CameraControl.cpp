@@ -1,9 +1,6 @@
 /******************************************************************
- * Company: Thermoeye, Inc
  * Project: TmSDK
  * File: CameraControl.cpp
- * Creation Date: 2024-08-19
- * Version: 1.0.0
  *
  * Description: This file contains the following implementations:
  * - Get camera product information
@@ -12,15 +9,28 @@
  * - Get network information
  * - Configure network settings
  *
- * History: 2024-08-19: Initial version.
+ * Version: 1.0.0
+ * Copyright 2024. Thermoeye Inc. All rights reserved.
  *
- **************************************************************/
+ * History:
+ *      2024-08-19: Initial version.
+ ****************************************************************/
 #include "CameraControl.h"
 #include "FirmwareWorker.h"
 
+ /*
+ * Constructor of CameraControl class
+ * parameter:
+ *   mUi: Pointer to the UI object of MainWindow
+ *   camera: Pointer to the Camera
+ *   parent: Pointer to the parent QObject
+ */
 CameraControl::CameraControl(Ui::MainWindow* mUi, Camera* camera, QObject* parent)
     : QObject(parent), ui(mUi), pCamera(camera) {}
 
+/*
+* distructor of CameraControl class
+*/
 CameraControl::~CameraControl()
 {}
 
@@ -36,25 +46,19 @@ void CameraControl::pushButton_GetProductInformation_Clicked()
     std::string bootloaderVersion;
     std::string firmwareVersion;
 
-    if (pTmCamera == nullptr)
-    {
-        pTmCamera = pCamera->GetTmCamera();
-    }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
 
-    modelName = pTmCamera->pTmControl->GetProductModelName();
-    serialNumber = pTmCamera->pTmControl->GetProductSerialNumber();
-    hardwareVersion = pTmCamera->pTmControl->GetHardwareVersion();
-    bootloaderVersion = pTmCamera->pTmControl->GetBootloaderVersion();
-    firmwareVersion = pTmCamera->pTmControl->GetFirmwareVersion();
+    modelName = pCamera->pTmCamera->pTmControl->GetProductModelName();
+    serialNumber = pCamera->pTmCamera->pTmControl->GetProductSerialNumber();
+    hardwareVersion = pCamera->pTmCamera->pTmControl->GetHardwareVersion();
+    bootloaderVersion = pCamera->pTmCamera->pTmControl->GetBootloaderVersion();
+    firmwareVersion = pCamera->pTmCamera->pTmControl->GetFirmwareVersion();
 
     ui->label_ProductModelName->setText(QString::fromStdString(modelName));
     ui->label_ProductSerialNumber->setText(QString::fromStdString(serialNumber));
     ui->label_HardwareVersion->setText(QString::fromStdString(hardwareVersion));
     ui->label_BootloaderVersion->setText(QString::fromStdString(bootloaderVersion));
     ui->label_FirmwareVersion->setText(QString::fromStdString(firmwareVersion));
-
-    pTmCamera->pTmControl->GetSystemStatus();
 }
 
 /*
@@ -62,14 +66,10 @@ void CameraControl::pushButton_GetProductInformation_Clicked()
 */
 void CameraControl::pushButton_GetSensorInformation_Clicked()
 {
-    if (pTmCamera == nullptr)
-    {
-        pTmCamera = pCamera->GetTmCamera();
-    }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
-    std::string modelName = pTmCamera->pTmControl->GetSensorModelName();
-    std::string serialNumber = pTmCamera->pTmControl->GetSensorSerialNumber();
-    std::string uptime = pTmCamera->pTmControl->GetSensorUptime();
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    std::string modelName = pCamera->pTmCamera->pTmControl->GetSensorModelName();
+    std::string serialNumber = pCamera->pTmCamera->pTmControl->GetSensorSerialNumber();
+    std::string uptime = pCamera->pTmCamera->pTmControl->GetSensorUptime();
 
     ui->label_SensorModelName->setText(QString::fromStdString(modelName));
     ui->label_SensorSerialNumber->setText(QString::fromStdString(serialNumber));
@@ -81,11 +81,7 @@ void CameraControl::pushButton_GetSensorInformation_Clicked()
 */
 void CameraControl::pushButton_SoftwareUpdateFileBrowse_Clicked()
 {
-    if (pTmCamera == nullptr)
-    {
-        pTmCamera = pCamera->GetTmCamera();
-    }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
     QString fileName = QFileDialog::getOpenFileName(ui->centralwidget, "Open File", "", "Binary Files (*.bin);;All Files (*)");
     if (!fileName.isEmpty())
     {
@@ -98,7 +94,7 @@ void CameraControl::pushButton_SoftwareUpdateFileBrowse_Clicked()
             std::string buildTime;
             int fileSize;
 
-            bool verify = pTmCamera->pTmControl->CheckFirmware(fileName.toStdString(), vendorName, productName, versionName, buildTime, fileSize);
+            bool verify = pCamera->pTmCamera->pTmControl->CheckFirmware(fileName.toStdString(), vendorName, productName, versionName, buildTime, fileSize);
             ui->label_VendorName->setText(QString::fromStdString(vendorName));
             ui->label_ProductName->setText(QString::fromStdString(productName));
             ui->label_SoftwareVersion->setText(QString::fromStdString(versionName));
@@ -124,19 +120,15 @@ void CameraControl::pushButton_SoftwareUpdateFileBrowse_Clicked()
 */
 void CameraControl::pushButton_StartSoftwareUpdate_Clicked()
 {
-    if (pTmCamera == nullptr)
-    {
-        pTmCamera = pCamera->GetTmCamera();
-    }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
     if (ui->pushButton_StartSoftwareUpdate->text() == "Start")
     {
         QString fileName = ui->lineEdit_SoftwareUpdateFilePath->text();
         QFile file(fileName);
         if (file.open(QIODevice::ReadOnly))
         {
-            QByteArray fileData = file.readAll();
-            if (pTmCamera->pTmControl->OpenFirmware(fileName.toStdString()) > 0)
+            //QByteArray fileData = file.readAll();
+            if (pCamera->pTmCamera->pTmControl->OpenFirmware(fileName.toStdString()) > 0)
             {
                 if (pCamera->runCapThread == true)
                 {
@@ -150,7 +142,7 @@ void CameraControl::pushButton_StartSoftwareUpdate_Clicked()
 
                 FirmwareWorker* worker = nullptr;
 
-                worker = new FirmwareWorker(pTmCamera, this);
+                worker = new FirmwareWorker(pCamera->pTmCamera, this);
                 connect(worker, &FirmwareWorker::ProgressChanged, this, &CameraControl::UpdateProgressChanged);
                 connect(worker, &FirmwareWorker::WorkCompleted, this, &CameraControl::UpdateRunWorkerCompleted);
                 worker->start();
@@ -176,12 +168,9 @@ void CameraControl::pushButton_GetNetworkConfiguration_Clicked()
     std::string gateway;
     std::string dns;
     std::string dns2;
-    if (pTmCamera == nullptr)
-    {
-        pTmCamera = pCamera->GetTmCamera();
-    }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
-    pTmCamera->pTmControl->GetNetworkConfiguration(mac, ipAssign, ip, netmask, gateway, dns, dns2);
+
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    pCamera->pTmCamera->pTmControl->GetNetworkConfiguration(mac, ipAssign, ip, netmask, gateway, dns, dns2);
 
     ui->lineEdit_MACAddress->setText(QString::fromStdString(mac));
     if (ipAssign == "DHCP")
@@ -205,12 +194,8 @@ void CameraControl::pushButton_GetNetworkConfiguration_Clicked()
 */
 void CameraControl::pushButton_SetNetworkConfiguration_Clicked()
 {
-    if (pTmCamera == nullptr)
-    {
-        pTmCamera = pCamera->GetTmCamera();
-    }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
-    if (pTmCamera->pTmControl->SetNetworkConfiguration(
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera->pTmControl->SetNetworkConfiguration(
         ui->comboBox_IPAssignment->currentText().toStdString(),
         ui->lineEdit_IPAddress->text().toStdString(),
         ui->lineEdit_Netmask->text().toStdString(),
@@ -237,12 +222,9 @@ void CameraControl::pushButton_SetDefaultNetworkConfiguration_Clicked()
     std::string gatewayDef;
     std::string dnsDef;
     std::string dns2Def;
-    if (pTmCamera == nullptr)
-    {
-        pTmCamera = pCamera->GetTmCamera();
-    }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
-    if (pTmCamera->pTmControl->SetDefaultNetworkConfiguration(ipAssignDef, ipDef, netmaskDef, gatewayDef, dnsDef, dns2Def))
+
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera->pTmControl->SetDefaultNetworkConfiguration(ipAssignDef, ipDef, netmaskDef, gatewayDef, dnsDef, dns2Def))
     {
         ui->comboBox_IPAssignment->setCurrentText(QString::fromStdString(ipAssignDef));
         ui->lineEdit_IPAddress->setText(QString::fromStdString(ipDef));
@@ -262,21 +244,16 @@ void CameraControl::pushButton_SetDefaultNetworkConfiguration_Clicked()
 */
 void CameraControl::pushButton_SystemReboot_Clicked()
 {
-    if (pTmCamera == nullptr)
-    {
-        pTmCamera = pCamera->GetTmCamera();
-    }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
     if (pCamera->runCapThread == true)
     {
         pCamera->runCapThread = false;
         pCamera->capThread.join();
     }
 
-    pTmCamera->pTmControl->RebootDevice();
+    pCamera->pTmCamera->pTmControl->RebootDevice();
     QThread::msleep(1000);
-    pTmCamera->Close();
-    pTmCamera = nullptr;
+    pCamera->DisconnectCamera();
 
     QThread::msleep(1000);
 
@@ -303,14 +280,14 @@ void CameraControl::UpdateProgressChanged(int progress)
 /*
 * Complete firmware update
 */
-void CameraControl::UpdateRunWorkerCompleted()
+void CameraControl::UpdateRunWorkerCompleted(bool ret, QString msg)
 {
-    if (pTmCamera == nullptr)
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    if (ret == false)
     {
-        pTmCamera = pCamera->GetTmCamera();
+        QMessageBox::about(ui->centralwidget, "Software Update", msg);
     }
-    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
-    bool result = pTmCamera->pTmControl->CloseFirmware();
+    bool result = pCamera->pTmCamera->pTmControl->CloseFirmware();
     if (result == false)
     {
         ui->label_SoftwareUpdateStatus->setText("Update failed.");
@@ -320,8 +297,7 @@ void CameraControl::UpdateRunWorkerCompleted()
         ui->label_SoftwareUpdateStatus->setText("Download complete. Reboot...");
     }
 
-    pTmCamera->Close();
-    pTmCamera = nullptr;
+    pCamera->DisconnectCamera();
 
     if (result == true)
     {

@@ -1,9 +1,6 @@
 /******************************************************************
- * Company: Thermoeye, Inc
  * Project: TmSDK
  * File: Camera.cpp
- * Creation date: 2024-08-19
- * Version: 1.0.0
  *
  * Description: This file contains the following implementations:
  * - Search and connect local/remote cameras
@@ -11,25 +8,47 @@
  * - ROI management
  * - Temperature measurement
  *
- * History: 2024-08-19: Initial version.
+ * Version: 1.0.0
+ * Copyright 2024. Thermoeye Inc. All rights reserved.
  *
+ * History:
+ *      2024-08-19: Initial version.
  ****************************************************************/
 #include "Camera.h"
 #include <QMouseEvent>
 
+/*
+* Constructor of Camera class
+* parameter:
+*   mUi: Pointer to the UI object of MainWindow
+*   parent: Pointer to the parent QObject
+*/
 Camera::Camera(Ui::MainWindow* mUi, QObject* parent)
     : QObject(parent), ui(mUi) {}
 
+/*
+* distructor of Camera class
+*/
 Camera::~Camera()
 {}
 
+/*
+* Returns a pointer to the TmCamera object
+* return:
+*   Pointer to the TmCamera instance
+*/
 TmCamera* Camera::GetTmCamera()
 {
     return pTmCamera;
 }
 
 /*
-* Convert std::string type to std::wstring type
+* Converts an ANSI string to a Unicode (wide) string
+* Parameter:
+*   unicode: A reference to a std::wstring that will store the converted Unicode string
+*   c_string: A constant reference to a std::string that contains the ANSI string to convert
+* Returns:
+*   A uint32_t error code; 0 for success, or an error code indicating the failure
 */
 uint32_t Camera::ConvertAnsiToUnicodeString(std::wstring& unicode, const std::string& c_string)
 {
@@ -69,7 +88,11 @@ uint32_t Camera::ConvertAnsiToUnicodeString(std::wstring& unicode, const std::st
 }
 
 /*
-* Get temperature value by unit
+* Get a formatted temperature string with the appropriate unit
+* parameter:
+*   raw: double representing the raw temperature value
+* return:
+*   std::string formatted with the temperature value and its unit
 */
 std::string Camera::GetTempStringUnit(double raw)
 {
@@ -99,10 +122,11 @@ std::string Camera::GetTempStringUnit(double raw)
 
 /*
 * Measures the minimum, maximum, and average temperature values ​​of the current frame.
+* Parameter:
+*   pFrame: TmFrame object, from pTmCamera->QueryFrame()
 */
 void Camera::processMeasurements(TmFrame* pFrame)
 {
-
     double minVal, avgVal, maxVal;
     Point minLoc, maxLoc;
     uint8_t* bitMap = pFrame->ToBitmap(ColorOrder::COLOR_RGB);
@@ -111,7 +135,7 @@ void Camera::processMeasurements(TmFrame* pFrame)
     UpdateDrawingLabel(image);
     QPixmap pixMap = QPixmap::fromImage(image);
     ui->label_Preview->setPixmap(pixMap);
-    ui->label_Preview->show();
+    //ui->label_Preview->show();
 
     pFrame->DoMeasure(roiManager.Items);
     pFrame->MinMaxLoc(minVal, avgVal, maxVal, minLoc, maxLoc);
@@ -137,7 +161,7 @@ void Camera::processMeasurements(TmFrame* pFrame)
 }
 
 /*
-* Thread for capture camera image
+* Thread for capturing camera images
 */
 void Camera::CaptureFrame()
 {
@@ -154,11 +178,19 @@ void Camera::CaptureFrame()
 
     while (runCapThread)
     {
+        try
+        {
         TmFrame* pFrame = pTmCamera->QueryFrame(previewWidth, previewHeight);
         if (pFrame != nullptr)
         {
             future = QtConcurrent::run(this, &Camera::processMeasurements, pFrame);
             futureWatcher.setFuture(future);
+        }
+    }
+        catch (exception& e)
+        {
+            std::cout << "CaptureFrame: Can not get video frame" << endl;
+            return;
         }
     }
 }
@@ -243,10 +275,53 @@ void Camera::DisconnectCamera()
         pTmCamera->Close();
         pTmCamera = nullptr;
     }
+    ui->tabWidget_Control->setVisible(false);
+    ui->stackedWidget_SensorControl->setVisible(false);
+    ui->groupBox->setEnabled(false);
+    ui->groupBox_SenserInformation->setEnabled(false);
+    ui->groupBox_SoftwareUpdate->setEnabled(false);
+    ui->groupBox_NetworkConfiguration->setEnabled(false);
+    ui->comboBox_ColorMap->setEnabled(false);
+    ui->comboBox_TemperatureUnit->setEnabled(false);
+
+    ui->radioButton_ShapeCursor->setEnabled(false);
+    ui->radioButton_ShapeSpot->setEnabled(false);
+    ui->radioButton_ShapeLine->setEnabled(false);
+    ui->radioButton_ShapeRectangle->setEnabled(false);
+    ui->radioButton_ShapeEllipse->setEnabled(false); 
+    ui->pushButton_RemoveAllRoi->setEnabled(false);
+    ui->comboBox_ColorMap->setEnabled(false);
+    ui->checkBox_NoiseFiltering->setEnabled(false);
+    ui->comboBox_TemperatureUnit->setEnabled(false);
+
+    ui->label_ProductModelName->setText("");
+    ui->label_ProductSerialNumber->setText("");
+    ui->label_HardwareVersion->setText("");
+    ui->label_BootloaderVersion->setText("");
+    ui->label_FirmwareVersion->setText("");
+    ui->label_SensorModelName->setText("");
+    ui->label_SensorSerialNumber->setText("");
+    ui->label_SensorUptime->setText("");
+    ui->label_VendorName->setText("");
+    ui->label_ProductName->setText("");
+    ui->label_SoftwareVersion->setText("");
+    ui->label_BuildTime->setText("");
+    ui->label_BinarySize->setText("");
+    ui->label_SoftwareUpdateStatus->setText("");
+    ui->lineEdit_SoftwareUpdateFilePath->setText("");
+    ui->lineEdit_MACAddress->setText("");
+    ui->comboBox_IPAssignment->setCurrentIndex(0);
+    ui->lineEdit_IPAddress->setText("");
+    ui->lineEdit_Netmask->setText("");
+    ui->lineEdit_Gateway->setText("");
+    ui->lineEdit_MainDNSServer->setText("");
+    ui->lineEdit_SubDNSServer->setText("");
 }
 
 /*
 * Draws a roi object on the screen.
+* Parameter:
+*   image: A reference to the QImage object on which the shapes and text will be drawn.
 */
 void Camera::DrawShapeObjects(QImage& image) {
     if (image.isNull()) return;
@@ -469,6 +544,8 @@ void Camera::UpdateRoiListItems()
 
 /*
 * Preview of the roi object you want to add
+* Parameter:
+*   image: A reference to the QImage object on which the ROI shape will be drawn.
 */
 void Camera::UpdateDrawingLabel(QImage& image)
 {
@@ -507,6 +584,11 @@ void Camera::UpdateDrawingLabel(QImage& image)
     }
 }
 
+/*
+ * Handles the mouse release event by updating ROI and UI elements.
+ * Parameters:
+ *  - point: The QPoint object representing the coordinates where the mouse button was released.
+ */
 void Camera::MouseUp(QPoint point)
 {
     Point pt;
@@ -524,6 +606,11 @@ void Camera::MouseUp(QPoint point)
     }
 }
 
+/*
+ * Handles the mouse press event by starting the drawing process.
+ * Parameters:
+ *   point: The QPoint object representing the coordinates where the mouse button was pressed.
+ */
 void Camera::MouseDown(QPoint point)
 {
     Point pt;
@@ -535,6 +622,11 @@ void Camera::MouseDown(QPoint point)
     drawing = true;
 }
 
+/**
+ * Handles the mouse movement event by updating the drawing preview.
+ * Parameters:
+ *  point: The QPoint object representing the current coordinates of the mouse during movement.
+ */
 void Camera::MouseMove(QPoint point)
 {
     Point pt;
@@ -547,18 +639,39 @@ void Camera::MouseMove(QPoint point)
 }
 
 #pragma region slot
+/*
+ * Slot function for handling the "pushButton_LocalCameraScan_Clicked" button click event.
+ */
 void Camera::pushButton_LocalCameraScan_Clicked()
 {
     ScanLocalCamera();
 }
 
+/*
+ * Slot function for handling the "pushButton_RemoteCameraScan_Clicked" button click event.
+ */
 void Camera::pushButton_RemoteCameraScan_Clicked()
 {
     ScanRemoteCamera();
 }
 
+/*
+ * Slot function for handling the "tabWidget_ConnectCamera_CurrentChanged" button click event.
+ * Parameter:
+ *  tabIndex: index of current selected tab
+ */
 void Camera::tabWidget_ConnectCamera_CurrentChanged(int tabIndex)
 {
+    if (ui->pushButton_LocalCameraConnect->text() == "Disconnect")
+    {
+        ui->tabWidget_ConnectCamera->setCurrentIndex(0);
+        return;
+    }
+    else if (ui->pushButton_RemoteCameraConnect->text() == "Disconnect")
+    {
+        ui->tabWidget_ConnectCamera->setCurrentIndex(1);
+        return;
+    }
     if (tabIndex == 0) {
         ScanLocalCamera();
     }
@@ -569,8 +682,11 @@ void Camera::tabWidget_ConnectCamera_CurrentChanged(int tabIndex)
 }
 
 /*
-* Connect local camera
-*/
+ * Slot function for handling the "pushButton_LocalCameraConnect_Clicked" button click event.
+ * Try to connect to the local camera.
+ * Once connected, the button will change to disconnet 
+ * and if you click again, the connection will be disconnected.
+ */
 void Camera::pushButton_LocalCameraConnect_Clicked()
 {
     if (ui->pushButton_LocalCameraConnect->text() == "Connect")
@@ -603,6 +719,29 @@ void Camera::pushButton_LocalCameraConnect_Clicked()
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(1);
             }
+
+            ui->tabWidget_Control->setVisible(true);
+            ui->stackedWidget_SensorControl->setVisible(true);
+            ui->groupBox->setEnabled(true);
+            ui->groupBox_SenserInformation->setEnabled(true);
+            ui->groupBox_SoftwareUpdate->setEnabled(true);
+            ui->comboBox_ColorMap->setEnabled(true);
+            ui->comboBox_TemperatureUnit->setEnabled(true);
+
+            ui->radioButton_ShapeCursor->setChecked(true);
+            ui->radioButton_ShapeCursor->setEnabled(true);
+            ui->radioButton_ShapeSpot->setEnabled(true);
+            ui->radioButton_ShapeLine->setEnabled(true);
+            ui->radioButton_ShapeRectangle->setEnabled(true);
+            ui->radioButton_ShapeEllipse->setEnabled(true);
+            ui->pushButton_RemoveAllRoi->setEnabled(true);
+            ui->comboBox_ColorMap->setEnabled(true);
+            ui->checkBox_NoiseFiltering->setEnabled(true);
+            ui->comboBox_TemperatureUnit->setEnabled(true);
+        }
+        else
+        {
+            QMessageBox::warning(ui->centralwidget, "Warning", "Fail to connect camera");
         }
     }
     else
@@ -613,15 +752,18 @@ void Camera::pushButton_LocalCameraConnect_Clicked()
 }
 
 /*
-* Connect remote camera
-*/
+ * Slot function for handling the "pushButton_RemoteCameraConnect_Clicked" button click event.
+ * Try to connect to the remote camera.
+ * Once connected, the button will change to disconnet
+ * and if you click again, the connection will be disconnected.
+ */
 void Camera::pushButton_RemoteCameraConnect_Clicked()
 {
     if (ui->pushButton_RemoteCameraConnect->text() == "Connect")
     {
         if (ui->lineEdit_RemoteCameraIp == nullptr || ui->lineEdit_RemoteCameraIp->text() == "")
         {
-            QMessageBox::warning(nullptr, "Warning", "Invalid IP Address..");
+            QMessageBox::warning(ui->centralwidget, "Warning", "Invalid IP Address..");
             return;
         }
         if (pTmCamera == nullptr)
@@ -652,13 +794,36 @@ void Camera::pushButton_RemoteCameraConnect_Clicked()
                 ui->stackedWidget_SensorControl->setCurrentIndex(1);
             }
 
+            ui->tabWidget_Control->setVisible(true);
+            ui->stackedWidget_SensorControl->setVisible(true);
+            ui->groupBox->setEnabled(true);
+            ui->groupBox_SenserInformation->setEnabled(true);
+            ui->groupBox_SoftwareUpdate->setEnabled(true);
+            ui->groupBox_NetworkConfiguration->setEnabled(true);
+            ui->comboBox_ColorMap->setEnabled(true);
+            ui->comboBox_TemperatureUnit->setEnabled(true);
+
             ui->pushButton_GetNetworkConfiguration->setEnabled(true);
             ui->comboBox_IPAssignment->setEnabled(true);
             ui->lineEdit_IPAddress->setEnabled(true);
             ui->lineEdit_Netmask->setEnabled(true);
             ui->lineEdit_Gateway->setEnabled(true);
-        }
 
+            ui->radioButton_ShapeCursor->setChecked(true);
+            ui->radioButton_ShapeCursor->setEnabled(true);
+            ui->radioButton_ShapeSpot->setEnabled(true);
+            ui->radioButton_ShapeLine->setEnabled(true);
+            ui->radioButton_ShapeRectangle->setEnabled(true);
+            ui->radioButton_ShapeEllipse->setEnabled(true);
+            ui->pushButton_RemoveAllRoi->setEnabled(true);
+            ui->comboBox_ColorMap->setEnabled(true);
+            ui->checkBox_NoiseFiltering->setEnabled(true);
+            ui->comboBox_TemperatureUnit->setEnabled(true);
+        }
+        else
+        {
+            QMessageBox::warning(ui->centralwidget, "Warning", "Fail to connect camera");
+        }
     }
     else
     {
@@ -691,48 +856,85 @@ void Camera::listWidget_RemoteCameraList_CurrentRowChanged(int row)
     ui->lineEdit_RemoteCameraIp->setText(QString::fromStdString(camInfo->AddrIP));
 }
 
+/**
+ * Slot function for handling changes in the color map selection from a combo box.
+ * Parameter:
+ *   index: The index of the selected color map in the combo box.
+ *          This index is used to select the corresponding color map type in the `ColormapTypes` enumeration.
+ */
 void Camera::comboBox_ColorMap_Changed(int index)
 {
     if (pTmCamera == nullptr) return;
     pTmCamera->SetColorMap((ColormapTypes)index);
 }
 
+/**
+ * Slot function for handling changes in the noise filtering setting from a checkbox.
+ * Parameter:
+ *   toggle: A boolean value indicating the state of the checkbox. 
+ *           If `true`, noise filtering is enabled; if `false`, noise filtering is disabled.
+ */
 void Camera::checkBox_NoiseFiltering_toggled(bool toggle)
 {
     if (pTmCamera == nullptr) return;
     pTmCamera->SetNoiseFiltering(toggle);
 }
 
+/**
+ * Slot function for handling changes in the temperature unit selection from a combo box.
+ * Parameter:
+ *   index: An integer representing the selected index of the temperature unit in the combo box. 
+ *          The value is used to set the temperature unit in the camera.
+ */
 void Camera::comboBox_TemperatureUnit_Changed(int index)
 {
     if (pTmCamera == nullptr) return;
     pTmCamera->SetTempUnit((TempUnit)index);
 }
 
+/**
+ * Slot function for handling the click event on the shape cursor radio button.
+ */
 void Camera::radioButton_ShapeCursor_clicked()
 {
     roiManager.SetSelectedRoiType(RoiType::Hand);
 }
 
+/**
+ * Slot function for handling the click event on the shape spot radio button.
+ */
 void Camera::radioButton_ShapeSpot_Clicked()
 {
     roiManager.SetSelectedRoiType(RoiType::Spot);
 }
 
+/**
+ * Slot function for handling the click event on the shape line radio button.
+ */
 void Camera::radioButton_ShapeLine_Clicked()
 {
     roiManager.SetSelectedRoiType(RoiType::Line);
 }
 
+/**
+ * Slot function for handling the click event on the shape rectangle radio button.
+ */
 void Camera::radioButton_ShapeRectangle_Clicked()
 {
     roiManager.SetSelectedRoiType(RoiType::Rect);
 }
+
+/**
+ * Slot function for handling the click event on the shape ellipse radio button.
+ */
 void Camera::radioButton_ShapeEllipse_Clicked()
 {
     roiManager.SetSelectedRoiType(RoiType::Ellipse);
 }
 
+/**
+ * pushButton_RemoveAllRoi_Clicked - Slot function for handling the click event on the "Remove All" button.
+ */
 void Camera::pushButton_RemoveAllRoi_Clicked()
 {
     roiManager.Clear();

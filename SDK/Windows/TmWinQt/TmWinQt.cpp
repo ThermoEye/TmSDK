@@ -73,10 +73,27 @@ TmWinQt::TmWinQt(QWidget *parent)
     connect(ui->pushButton_SetGainModeState, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetGainModeState_Clicked()));
     
 
-    ui->comboBox_IPAssignment->addItem(QString::fromStdString("DHCP"));
-    ui->comboBox_IPAssignment->addItem(QString::fromStdString("Static"));
+    //ui->comboBox_IPAssignment->addItem(QString::fromStdString("DHCP"));
+    //ui->comboBox_IPAssignment->addItem(QString::fromStdString("Static"));
 
-    ui->radioButton_ShapeCursor->setChecked(true);
+    ui->tabWidget_Control->setVisible(false);
+    ui->stackedWidget_SensorControl->setVisible(false);
+    ui->groupBox->setEnabled(false);
+    ui->groupBox_SenserInformation->setEnabled(false);
+    ui->groupBox_SoftwareUpdate->setEnabled(false);
+    ui->groupBox_NetworkConfiguration->setEnabled(false);
+    ui->comboBox_ColorMap->setEnabled(false);
+    ui->comboBox_TemperatureUnit->setEnabled(false);
+
+    ui->radioButton_ShapeCursor->setEnabled(false);
+    ui->radioButton_ShapeSpot->setEnabled(false);
+    ui->radioButton_ShapeLine->setEnabled(false);
+    ui->radioButton_ShapeRectangle->setEnabled(false);
+    ui->radioButton_ShapeEllipse->setEnabled(false);
+    ui->pushButton_RemoveAllRoi->setEnabled(false);
+    ui->comboBox_ColorMap->setEnabled(false);
+    ui->checkBox_NoiseFiltering->setEnabled(false);
+    ui->comboBox_TemperatureUnit->setEnabled(false);
 
     // install event for label_Preivew
     ui->label_Preview->installEventFilter(this);

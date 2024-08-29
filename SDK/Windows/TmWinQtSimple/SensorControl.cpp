@@ -1,6 +1,6 @@
 /******************************************************************
  * Project: TmSDK
- * File: FirmwareWorker.cpp
+ * File: SensorControl.cpp
  *
  * Description: This file contains the following implementations:
  * - Get Flat Field Correction mode
@@ -227,8 +227,8 @@ void SensorControl::pushButton_RestoreDefaultSensorConfig_Clicked()
     }
 
     pCamera->pTmCamera->pTmControl->RestoreDefaultSensorConfig();
-    QThread::msleep(1000);
-    pCamera->pTmCamera->Close();
+
+    pCamera->DisconnectCamera();
 
     QThread::msleep(1000);
 
@@ -495,14 +495,6 @@ void SensorControl::pushButton_RestoreDefaultFluxParameters_160E_Clicked()
         ui->doubleSpinBox_FluxParam160E_AtmosphericTemperature->setEnabled(true);
         ui->doubleSpinBox_FluxParam160E_WindowReflection->setEnabled(true);
         ui->doubleSpinBox_FluxParam160E_WindowReflectedTemperature->setEnabled(true);
-        ui->lineEdit_FluxParam160E_SceneEmissivityRange->setEnabled(true);
-        ui->lineEdit_FluxParam160E_BackgroundTemperatureRange->setEnabled(true);
-        ui->lineEdit_FluxParam160E_WindowTransmissionRange->setEnabled(true);
-        ui->lineEdit_FluxParam160E_WindowTemperatureRange->setEnabled(true);
-        ui->lineEdit_FluxParam160E_AtmosphericTransmissionRange->setEnabled(true);
-        ui->lineEdit_FluxParam160E_AtmosphericTemperatureRange->setEnabled(true);
-        ui->lineEdit_FluxParam160E_WindowReflectionRange->setEnabled(true);
-        ui->lineEdit_FluxParam160E_WindowReflectedTemperatureRange->setEnabled(true);
         ui->pushButton_SetFluxParameters_160E->setEnabled(true);
 
         QMessageBox::about(ui->centralwidget, "Flux Parameters", "Succes to restore Factory Default Flux Parameters.");

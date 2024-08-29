@@ -253,8 +253,7 @@ void CameraControl::pushButton_SystemReboot_Clicked()
 
     pCamera->pTmCamera->pTmControl->RebootDevice();
     QThread::msleep(1000);
-    pCamera->pTmCamera->Close();
-    pCamera->pTmCamera = nullptr;
+    pCamera->DisconnectCamera();
 
     QThread::msleep(1000);
 
@@ -298,7 +297,7 @@ void CameraControl::UpdateRunWorkerCompleted(bool ret, QString msg)
         ui->label_SoftwareUpdateStatus->setText("Download complete. Reboot...");
     }
 
-    pCamera->pTmCamera->Close();
+    pCamera->DisconnectCamera();
 
     if (result == true)
     {

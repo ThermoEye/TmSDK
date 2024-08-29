@@ -1,16 +1,16 @@
 /******************************************************************
- * Company: Thermoeye, Inc
  * Project: TmSDK
  * File: FirmwareWorker.cpp
- * Creation Date: 2024-08-19
- * Version: 1.0.0
  *
  * Description: This file contains the following implementations:
  * - Thread class for updating camera firmware.
  *
- * History: 2024-08-19: Initial version.
+ * Version: 1.0.0
+ * Copyright 2024. Thermoeye Inc. All rights reserved.
  *
- **************************************************************/
+ * History:
+ *      2024-08-19: Initial version.
+ ****************************************************************/
 #include <QThread>
 #include <QMetaType>
 #include <iostream>
@@ -18,12 +18,21 @@
 
 Q_DECLARE_METATYPE(QString)
 
+/*
+* Constructor of FirmwareWorker class
+* parameter:
+*   camera: Pointer to the TmCamera
+*   parent: Pointer to the parent QObject
+*/
 FirmwareWorker::FirmwareWorker(TmSDK::TmCamera* camera, QObject* parent)
     : QThread(parent), stopFlag(false), pTmCamera(camera)
 {
     qRegisterMetaType<QString>("QString");
 }
 
+/**
+ * Executes the firmware update thread.
+ */
 void FirmwareWorker::run()
 {
     int percent = 0;
@@ -54,6 +63,9 @@ void FirmwareWorker::run()
     }
 }
 
+/**
+ * Stop the firmware update thread.
+ */
 void FirmwareWorker::cancel()
 {
     stopFlag = true;

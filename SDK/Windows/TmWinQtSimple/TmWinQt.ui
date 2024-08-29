@@ -368,7 +368,7 @@
          </layout>
         </widget>
        </widget>
-       <widget class="QGroupBox" name="groupBox_2">
+       <widget class="QGroupBox" name="groupBox_SenserInformation">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -463,7 +463,7 @@
          </layout>
         </widget>
        </widget>
-       <widget class="QGroupBox" name="groupBox_3">
+       <widget class="QGroupBox" name="groupBox_SoftwareUpdate">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -671,7 +671,7 @@
        <attribute name="title">
         <string>Network</string>
        </attribute>
-       <widget class="QGroupBox" name="groupBox_10">
+       <widget class="QGroupBox" name="groupBox_NetworkConfiguration">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -860,6 +860,16 @@
             <property name="enabled">
              <bool>false</bool>
             </property>
+            <item>
+             <property name="text">
+              <string>DHCP</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Static</string>
+             </property>
+            </item>
            </widget>
           </item>
           <item row="0" column="0">

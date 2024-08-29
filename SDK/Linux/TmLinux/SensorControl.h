@@ -12,7 +12,6 @@ class SensorControl : public QObject {
 private:
     Ui::MainWindow* ui;
     Camera* pCamera = nullptr;
-    TmCamera* pTmCamera = nullptr;
 
 public:
     explicit SensorControl(Ui::MainWindow* mUi, Camera* camera, QObject* parent = nullptr);

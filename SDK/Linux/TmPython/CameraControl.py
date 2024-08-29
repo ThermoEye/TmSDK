@@ -150,8 +150,7 @@ class CameraControl:
             self.camera.worker.wait()
 
         self.camera.tmCamera.tmControl.reboot_device()
-        self.camera.tmCamera.close()
-        self.camera.tmCamera = None
+        self.camera.disconnect_camera()
 
         QThread.msleep(1000)
         QMessageBox.about(self.main_window, "TmSDK", "Reboot... Reconnect camera device.")
@@ -175,7 +174,7 @@ class CameraControl:
         else:
             self.main_window.label_SoftwareUpdateStatus.setText("Download complete. Reboot...")
 
-        self.camera.tmCamera.close()
+        self.camera.disconnect_camera();
 
         if result:
             QMessageBox.about(self.main_window, "Software Update", "Reconnect camera device.")

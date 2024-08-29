@@ -112,6 +112,8 @@ class Camera:
         except Exception as e:
             print(f'Error while closing camera: {str(e)}')
         
+        self.main_window.comboBox_ColorMap.setCurrentIndex(0)
+        self.main_window.comboBox_TemperatureUnit.setCurrentIndex(0)
         self.main_window.tabWidget_Control.setVisible(False)
         self.main_window.stackedWidget_SensorControl.setVisible(False)
         self.main_window.groupBox.setEnabled(False)
@@ -120,6 +122,39 @@ class Camera:
         self.main_window.groupBox_NetworkConfiguration.setEnabled(False)
         self.main_window.comboBox_ColorMap.setEnabled(False)
         self.main_window.comboBox_TemperatureUnit.setEnabled(False)
+        
+        self.main_window.radioButton_ShapeCursor.setEnabled(False);
+        self.main_window.radioButton_ShapeSpot.setEnabled(False);
+        self.main_window.radioButton_ShapeLine.setEnabled(False);
+        self.main_window.radioButton_ShapeRectangle.setEnabled(False);
+        self.main_window.radioButton_ShapeEllipse.setEnabled(False); 
+        self.main_window.pushButton_RemoveAllRoi.setEnabled(False);
+        self.main_window.comboBox_ColorMap.setEnabled(False);
+        self.main_window.checkBox_NoiseFiltering.setEnabled(False);
+        self.main_window.comboBox_TemperatureUnit.setEnabled(False);
+
+        self.main_window.label_ProductModelName.setText("");
+        self.main_window.label_ProductSerialNumber.setText("");
+        self.main_window.label_HardwareVersion.setText("");
+        self.main_window.label_BootloaderVersion.setText("");
+        self.main_window.label_FirmwareVersion.setText("");
+        self.main_window.label_SensorModelName.setText("");
+        self.main_window.label_SensorSerialNumber.setText("");
+        self.main_window.label_SensorUptime.setText("");
+        self.main_window.label_VendorName.setText("");
+        self.main_window.label_ProductName.setText("");
+        self.main_window.label_SoftwareVersion.setText("");
+        self.main_window.label_BuildTime.setText("");
+        self.main_window.label_BinarySize.setText("");
+        self.main_window.label_SoftwareUpdateStatus.setText("");
+        self.main_window.lineEdit_SoftwareUpdateFilePath.setText("");
+        self.main_window.lineEdit_MACAddress.setText("");
+        self.main_window.comboBox_IPAssignment.setCurrentIndex(0);
+        self.main_window.lineEdit_IPAddress.setText("");
+        self.main_window.lineEdit_Netmask.setText("");
+        self.main_window.lineEdit_Gateway.setText("");
+        self.main_window.lineEdit_MainDNSServer.setText("");
+        self.main_window.lineEdit_SubDNSServer.setText("");
     
     # Handles the mouse release event by updating ROI and UI elements.
     # Parameters:
@@ -202,6 +237,16 @@ class Camera:
                     self.main_window.comboBox_ColorMap.setCurrentIndex(ColormapTypes.Inferno + 1)
                     self.main_window.comboBox_TemperatureUnit.setCurrentIndex(TempUnit.CELSIUS)
                     
+                    self.main_window.radioButton_ShapeCursor.setChecked(True);
+                    self.main_window.radioButton_ShapeCursor.setEnabled(True);
+                    self.main_window.radioButton_ShapeSpot.setEnabled(True);
+                    self.main_window.radioButton_ShapeLine.setEnabled(True);
+                    self.main_window.radioButton_ShapeRectangle.setEnabled(True);
+                    self.main_window.radioButton_ShapeEllipse.setEnabled(True);
+                    self.main_window.pushButton_RemoveAllRoi.setEnabled(True);
+                    self.main_window.comboBox_ColorMap.setEnabled(True);
+                    self.main_window.checkBox_NoiseFiltering.setEnabled(True);
+                    self.main_window.comboBox_TemperatureUnit.setEnabled(True);
         
             except Exception as e:
                 print(f'Error while opening camera: {str(e)}')
@@ -248,6 +293,17 @@ class Camera:
                     self.main_window.lineEdit_Gateway.setEnabled(True)
                     self.main_window.comboBox_ColorMap.setCurrentIndex(ColormapTypes.Inferno + 1)
                     self.main_window.comboBox_TemperatureUnit.setCurrentIndex(TempUnit.CELSIUS)
+
+                    self.main_window.radioButton_ShapeCursor.setChecked(True);
+                    self.main_window.radioButton_ShapeCursor.setEnabled(True);
+                    self.main_window.radioButton_ShapeSpot.setEnabled(True);
+                    self.main_window.radioButton_ShapeLine.setEnabled(True);
+                    self.main_window.radioButton_ShapeRectangle.setEnabled(True);
+                    self.main_window.radioButton_ShapeEllipse.setEnabled(True);
+                    self.main_window.pushButton_RemoveAllRoi.setEnabled(True);
+                    self.main_window.comboBox_ColorMap.setEnabled(True);
+                    self.main_window.checkBox_NoiseFiltering.setEnabled(True);
+                    self.main_window.comboBox_TemperatureUnit.setEnabled(True);
             except Exception as e:
                 print(f'Error while opening camera: {str(e)}')  
         else:       
@@ -255,6 +311,12 @@ class Camera:
                 self.main_window.pushButton_RemoteCameraConnect.setText("Connect")
 
     def tabWidget_ConnectCamera_CurrentChanged(self, tab_index):
+        if self.main_window.pushButton_LocalCameraConnect.text() == "Disconnect":
+            self.main_window.tabWidget_ConnectCamera.setCurrentIndex(0)
+            return
+        elif self.main_window.pushButton_RemoteCameraConnect.text() == "Disconnect":
+            self.main_window.tabWidget_ConnectCamera.setCurrentIndex(1)
+            return
         if tab_index == 0:
             self.scan_local_camera_list()
         elif tab_index == 1:

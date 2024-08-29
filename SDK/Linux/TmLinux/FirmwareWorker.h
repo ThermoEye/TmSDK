@@ -9,7 +9,7 @@ class FirmwareWorker : public QThread
 
 private:
     bool stopFlag;
-    TmCamera* pTmCamera;
+    TmCamera* pTmCamera = nullptr;
 
 public:
     FirmwareWorker(TmCamera* camera, QObject* parent = nullptr);

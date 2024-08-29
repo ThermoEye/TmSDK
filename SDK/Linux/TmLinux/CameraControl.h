@@ -19,8 +19,6 @@ private:
     Camera* pCamera = nullptr;
     QThread* updateFirmwareThread;
 
-    TmCamera* pTmCamera = nullptr;
-
 public:
     explicit CameraControl(Ui::MainWindow* mUi, Camera* camera, QObject* parent = nullptr);
     ~CameraControl();
@@ -36,5 +34,5 @@ public slots:
     void pushButton_SystemReboot_Clicked();
 
     void UpdateProgressChanged(int progress);
-    void UpdateRunWorkerCompleted();
+    void UpdateRunWorkerCompleted(bool ret, QString msg);
 };

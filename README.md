@@ -8,7 +8,7 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
 ├─Document                  ; API Documentation and User Manual
 │  └─API
 │      ├─Cpp                ; C++ API
-│      ├─CSharp             ; C# API
+│      ├─CSharp (TBD)       ; C# API
 │      └─Python             ; Python API
 ├─Firmware                  ; TMCxxx firmware files
 └─SDK                       ; TmSDK library and sample code

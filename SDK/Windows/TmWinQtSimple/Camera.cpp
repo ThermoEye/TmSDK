@@ -14,7 +14,6 @@
  * History:
  *      2024-08-19: Initial version.
  ****************************************************************/
-
 #include "Camera.h"
 #include <QMouseEvent>
 
@@ -179,11 +178,19 @@ void Camera::CaptureFrame()
 
     while (runCapThread)
     {
-        TmFrame* pFrame = pTmCamera->QueryFrame(previewWidth, previewHeight);
-        if (pFrame != nullptr)
+        try
         {
-            future = QtConcurrent::run(this, &Camera::processMeasurements, pFrame);
-            futureWatcher.setFuture(future);
+            TmFrame* pFrame = pTmCamera->QueryFrame(previewWidth, previewHeight);
+            if (pFrame != nullptr)
+            {
+                future = QtConcurrent::run(this, &Camera::processMeasurements, pFrame);
+                futureWatcher.setFuture(future);
+            }
+        }
+        catch (exception& e)
+        {
+            std::cout << "CaptureFrame: Can not get video frame" << endl;
+            return;
         }
     }
 }
@@ -268,6 +275,47 @@ void Camera::DisconnectCamera()
         pTmCamera->Close();
         pTmCamera = nullptr;
     }
+    ui->tabWidget_Control->setVisible(false);
+    ui->stackedWidget_SensorControl->setVisible(false);
+    ui->groupBox->setEnabled(false);
+    ui->groupBox_SenserInformation->setEnabled(false);
+    ui->groupBox_SoftwareUpdate->setEnabled(false);
+    ui->groupBox_NetworkConfiguration->setEnabled(false);
+    ui->comboBox_ColorMap->setEnabled(false);
+    ui->comboBox_TemperatureUnit->setEnabled(false);
+
+    ui->radioButton_ShapeCursor->setEnabled(false);
+    ui->radioButton_ShapeSpot->setEnabled(false);
+    ui->radioButton_ShapeLine->setEnabled(false);
+    ui->radioButton_ShapeRectangle->setEnabled(false);
+    ui->radioButton_ShapeEllipse->setEnabled(false); 
+    ui->pushButton_RemoveAllRoi->setEnabled(false);
+    ui->comboBox_ColorMap->setEnabled(false);
+    ui->checkBox_NoiseFiltering->setEnabled(false);
+    ui->comboBox_TemperatureUnit->setEnabled(false);
+
+    ui->label_ProductModelName->setText("");
+    ui->label_ProductSerialNumber->setText("");
+    ui->label_HardwareVersion->setText("");
+    ui->label_BootloaderVersion->setText("");
+    ui->label_FirmwareVersion->setText("");
+    ui->label_SensorModelName->setText("");
+    ui->label_SensorSerialNumber->setText("");
+    ui->label_SensorUptime->setText("");
+    ui->label_VendorName->setText("");
+    ui->label_ProductName->setText("");
+    ui->label_SoftwareVersion->setText("");
+    ui->label_BuildTime->setText("");
+    ui->label_BinarySize->setText("");
+    ui->label_SoftwareUpdateStatus->setText("");
+    ui->lineEdit_SoftwareUpdateFilePath->setText("");
+    ui->lineEdit_MACAddress->setText("");
+    ui->comboBox_IPAssignment->setCurrentIndex(0);
+    ui->lineEdit_IPAddress->setText("");
+    ui->lineEdit_Netmask->setText("");
+    ui->lineEdit_Gateway->setText("");
+    ui->lineEdit_MainDNSServer->setText("");
+    ui->lineEdit_SubDNSServer->setText("");
 }
 
 /*
@@ -614,6 +662,16 @@ void Camera::pushButton_RemoteCameraScan_Clicked()
  */
 void Camera::tabWidget_ConnectCamera_CurrentChanged(int tabIndex)
 {
+    if (ui->pushButton_LocalCameraConnect->text() == "Disconnect")
+    {
+        ui->tabWidget_ConnectCamera->setCurrentIndex(0);
+        return;
+    }
+    else if (ui->pushButton_RemoteCameraConnect->text() == "Disconnect")
+    {
+        ui->tabWidget_ConnectCamera->setCurrentIndex(1);
+        return;
+    }
     if (tabIndex == 0) {
         ScanLocalCamera();
     }
@@ -661,6 +719,29 @@ void Camera::pushButton_LocalCameraConnect_Clicked()
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(1);
             }
+
+            ui->tabWidget_Control->setVisible(true);
+            ui->stackedWidget_SensorControl->setVisible(true);
+            ui->groupBox->setEnabled(true);
+            ui->groupBox_SenserInformation->setEnabled(true);
+            ui->groupBox_SoftwareUpdate->setEnabled(true);
+            ui->comboBox_ColorMap->setEnabled(true);
+            ui->comboBox_TemperatureUnit->setEnabled(true);
+
+            ui->radioButton_ShapeCursor->setChecked(true);
+            ui->radioButton_ShapeCursor->setEnabled(true);
+            ui->radioButton_ShapeSpot->setEnabled(true);
+            ui->radioButton_ShapeLine->setEnabled(true);
+            ui->radioButton_ShapeRectangle->setEnabled(true);
+            ui->radioButton_ShapeEllipse->setEnabled(true);
+            ui->pushButton_RemoveAllRoi->setEnabled(true);
+            ui->comboBox_ColorMap->setEnabled(true);
+            ui->checkBox_NoiseFiltering->setEnabled(true);
+            ui->comboBox_TemperatureUnit->setEnabled(true);
+        }
+        else
+        {
+            QMessageBox::warning(ui->centralwidget, "Warning", "Fail to connect camera");
         }
     }
     else
@@ -682,7 +763,7 @@ void Camera::pushButton_RemoteCameraConnect_Clicked()
     {
         if (ui->lineEdit_RemoteCameraIp == nullptr || ui->lineEdit_RemoteCameraIp->text() == "")
         {
-            QMessageBox::warning(nullptr, "Warning", "Invalid IP Address..");
+            QMessageBox::warning(ui->centralwidget, "Warning", "Invalid IP Address..");
             return;
         }
         if (pTmCamera == nullptr)
@@ -713,13 +794,36 @@ void Camera::pushButton_RemoteCameraConnect_Clicked()
                 ui->stackedWidget_SensorControl->setCurrentIndex(1);
             }
 
+            ui->tabWidget_Control->setVisible(true);
+            ui->stackedWidget_SensorControl->setVisible(true);
+            ui->groupBox->setEnabled(true);
+            ui->groupBox_SenserInformation->setEnabled(true);
+            ui->groupBox_SoftwareUpdate->setEnabled(true);
+            ui->groupBox_NetworkConfiguration->setEnabled(true);
+            ui->comboBox_ColorMap->setEnabled(true);
+            ui->comboBox_TemperatureUnit->setEnabled(true);
+
             ui->pushButton_GetNetworkConfiguration->setEnabled(true);
             ui->comboBox_IPAssignment->setEnabled(true);
             ui->lineEdit_IPAddress->setEnabled(true);
             ui->lineEdit_Netmask->setEnabled(true);
             ui->lineEdit_Gateway->setEnabled(true);
-        }
 
+            ui->radioButton_ShapeCursor->setChecked(true);
+            ui->radioButton_ShapeCursor->setEnabled(true);
+            ui->radioButton_ShapeSpot->setEnabled(true);
+            ui->radioButton_ShapeLine->setEnabled(true);
+            ui->radioButton_ShapeRectangle->setEnabled(true);
+            ui->radioButton_ShapeEllipse->setEnabled(true);
+            ui->pushButton_RemoveAllRoi->setEnabled(true);
+            ui->comboBox_ColorMap->setEnabled(true);
+            ui->checkBox_NoiseFiltering->setEnabled(true);
+            ui->comboBox_TemperatureUnit->setEnabled(true);
+        }
+        else
+        {
+            QMessageBox::warning(ui->centralwidget, "Warning", "Fail to connect camera");
+        }
     }
     else
     {

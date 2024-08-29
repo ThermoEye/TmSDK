@@ -24,12 +24,12 @@ private:
     TmRoiManager roiManager;
 
     std::vector<TmSDK::TmCamInfo*> CamList;
-    TmCamera* pTmCamera = nullptr;
     QPoint previewStart;
     QPoint previewEnd;
     bool drawing = false;
 
 public:
+    TmCamera* pTmCamera = nullptr;
     bool runCapThread = false;
     std::thread capThread;
     int previewWidth;
