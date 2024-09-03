@@ -1,4 +1,8 @@
 #pragma once
+#if defined(_MSC_VER)
+#elif defined(__GNUC__)
+#include <sys/epoll.h>
+#endif
 
 #include "TmShared.hxx"
 #include "TmCamera.hxx"
@@ -16,8 +20,12 @@ namespace TmSDK
 		void* pVideoCapture = nullptr;
 #if defined(_MSC_VER)
 		HANDLE hComm = NULL;
+		OVERLAPPED readOverlapped = { 0 };
+		OVERLAPPED writeOverlapped = { 0 };
 #elif defined(__GNUC__)
 		int comfd = -1;
+		int epollfd = -1;
+		struct epoll_event ev, events[1];
 #endif
 	private:
 #if defined(_MSC_VER)

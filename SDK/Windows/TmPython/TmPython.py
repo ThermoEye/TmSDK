@@ -83,29 +83,29 @@ class MainWindow(QMainWindow):
         self.LocalCamList=[]
         self.RemoteCamList=[]
         
-        self.tabWidget_Control.setVisible(False);
-        self.stackedWidget_SensorControl.setVisible(False);
-        self.groupBox.setEnabled(False);
-        self.groupBox_SenserInformation.setEnabled(False);
-        self.groupBox_SoftwareUpdate.setEnabled(False);
-        self.groupBox_NetworkConfiguration.setEnabled(False);
-        self.comboBox_ColorMap.setEnabled(False);
-        self.comboBox_TemperatureUnit.setEnabled(False);
+        self.tabWidget_Control.setVisible(False)
+        self.stackedWidget_SensorControl.setVisible(False)
+        self.groupBox.setEnabled(False)
+        self.groupBox_SenserInformation.setEnabled(False)
+        self.groupBox_SoftwareUpdate.setEnabled(False)
+        self.groupBox_NetworkConfiguration.setEnabled(False)
+        self.comboBox_ColorMap.setEnabled(False)
+        self.comboBox_TemperatureUnit.setEnabled(False)
     
-        self.radioButton_ShapeCursor.setEnabled(False);
-        self.radioButton_ShapeSpot.setEnabled(False);
-        self.radioButton_ShapeLine.setEnabled(False);
-        self.radioButton_ShapeRectangle.setEnabled(False);
-        self.radioButton_ShapeEllipse.setEnabled(False);
-        self.pushButton_RemoveAllRoi.setEnabled(False);
-        self.comboBox_ColorMap.setEnabled(False);
-        self.checkBox_NoiseFiltering.setEnabled(False);
-        self.comboBox_TemperatureUnit.setEnabled(False);
+        self.radioButton_ShapeCursor.setEnabled(False)
+        self.radioButton_ShapeSpot.setEnabled(False)
+        self.radioButton_ShapeLine.setEnabled(False)
+        self.radioButton_ShapeRectangle.setEnabled(False)
+        self.radioButton_ShapeEllipse.setEnabled(False)
+        self.pushButton_RemoveAllRoi.setEnabled(False)
+        self.comboBox_ColorMap.setEnabled(False)
+        self.checkBox_NoiseFiltering.setEnabled(False)
+        self.comboBox_TemperatureUnit.setEnabled(False)
         
-        self.label_Preview.installEventFilter(self);
-        self.label_Preview.setAlignment(Qt.AlignCenter);
+        self.label_Preview.installEventFilter(self)
+        self.label_Preview.setAlignment(Qt.AlignCenter)
 
-        self.stackedWidget_SensorControl.setCurrentIndex(0);
+        self.stackedWidget_SensorControl.setCurrentIndex(0)
 
         if self.tabWidget_ConnectCamera.currentIndex() == 0:
             self.camera.scan_local_camera_list()

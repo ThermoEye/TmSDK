@@ -116,6 +116,8 @@ class Camera:
         self.main_window.comboBox_TemperatureUnit.setCurrentIndex(0)
         self.main_window.tabWidget_Control.setVisible(False)
         self.main_window.stackedWidget_SensorControl.setVisible(False)
+        self.main_window.tabWidget_Control.setVisible(False)
+        self.main_window.stackedWidget_SensorControl.setVisible(False)
         self.main_window.groupBox.setEnabled(False)
         self.main_window.groupBox_SenserInformation.setEnabled(False)
         self.main_window.groupBox_SoftwareUpdate.setEnabled(False)
@@ -123,38 +125,38 @@ class Camera:
         self.main_window.comboBox_ColorMap.setEnabled(False)
         self.main_window.comboBox_TemperatureUnit.setEnabled(False)
         
-        self.main_window.radioButton_ShapeCursor.setEnabled(False);
-        self.main_window.radioButton_ShapeSpot.setEnabled(False);
-        self.main_window.radioButton_ShapeLine.setEnabled(False);
-        self.main_window.radioButton_ShapeRectangle.setEnabled(False);
-        self.main_window.radioButton_ShapeEllipse.setEnabled(False); 
-        self.main_window.pushButton_RemoveAllRoi.setEnabled(False);
-        self.main_window.comboBox_ColorMap.setEnabled(False);
-        self.main_window.checkBox_NoiseFiltering.setEnabled(False);
-        self.main_window.comboBox_TemperatureUnit.setEnabled(False);
+        self.main_window.radioButton_ShapeCursor.setEnabled(False)
+        self.main_window.radioButton_ShapeSpot.setEnabled(False)
+        self.main_window.radioButton_ShapeLine.setEnabled(False)
+        self.main_window.radioButton_ShapeRectangle.setEnabled(False)
+        self.main_window.radioButton_ShapeEllipse.setEnabled(False)
+        self.main_window.pushButton_RemoveAllRoi.setEnabled(False)
+        self.main_window.comboBox_ColorMap.setEnabled(False)
+        self.main_window.checkBox_NoiseFiltering.setEnabled(False)
+        self.main_window.comboBox_TemperatureUnit.setEnabled(False)
 
-        self.main_window.label_ProductModelName.setText("");
-        self.main_window.label_ProductSerialNumber.setText("");
-        self.main_window.label_HardwareVersion.setText("");
-        self.main_window.label_BootloaderVersion.setText("");
-        self.main_window.label_FirmwareVersion.setText("");
-        self.main_window.label_SensorModelName.setText("");
-        self.main_window.label_SensorSerialNumber.setText("");
-        self.main_window.label_SensorUptime.setText("");
-        self.main_window.label_VendorName.setText("");
-        self.main_window.label_ProductName.setText("");
-        self.main_window.label_SoftwareVersion.setText("");
-        self.main_window.label_BuildTime.setText("");
-        self.main_window.label_BinarySize.setText("");
-        self.main_window.label_SoftwareUpdateStatus.setText("");
-        self.main_window.lineEdit_SoftwareUpdateFilePath.setText("");
-        self.main_window.lineEdit_MACAddress.setText("");
-        self.main_window.comboBox_IPAssignment.setCurrentIndex(0);
-        self.main_window.lineEdit_IPAddress.setText("");
-        self.main_window.lineEdit_Netmask.setText("");
-        self.main_window.lineEdit_Gateway.setText("");
-        self.main_window.lineEdit_MainDNSServer.setText("");
-        self.main_window.lineEdit_SubDNSServer.setText("");
+        self.main_window.label_ProductModelName.setText("")
+        self.main_window.label_ProductSerialNumber.setText("")
+        self.main_window.label_HardwareVersion.setText("")
+        self.main_window.label_BootloaderVersion.setText("")
+        self.main_window.label_FirmwareVersion.setText("")
+        self.main_window.label_SensorModelName.setText("")
+        self.main_window.label_SensorSerialNumber.setText("")
+        self.main_window.label_SensorUptime.setText("")
+        self.main_window.label_VendorName.setText("")
+        self.main_window.label_ProductName.setText("")
+        self.main_window.label_SoftwareVersion.setText("")
+        self.main_window.label_BuildTime.setText("")
+        self.main_window.label_BinarySize.setText("")
+        self.main_window.label_SoftwareUpdateStatus.setText("")
+        self.main_window.lineEdit_SoftwareUpdateFilePath.setText("")
+        self.main_window.lineEdit_MACAddress.setText("")
+        self.main_window.comboBox_IPAssignment.setCurrentIndex(0)
+        self.main_window.lineEdit_IPAddress.setText("")
+        self.main_window.lineEdit_Netmask.setText("")
+        self.main_window.lineEdit_Gateway.setText("")
+        self.main_window.lineEdit_MainDNSServer.setText("")
+        self.main_window.lineEdit_SubDNSServer.setText("")
     
     # Handles the mouse release event by updating ROI and UI elements.
     # Parameters:
@@ -237,16 +239,16 @@ class Camera:
                     self.main_window.comboBox_ColorMap.setCurrentIndex(ColormapTypes.Inferno + 1)
                     self.main_window.comboBox_TemperatureUnit.setCurrentIndex(TempUnit.CELSIUS)
                     
-                    self.main_window.radioButton_ShapeCursor.setChecked(True);
-                    self.main_window.radioButton_ShapeCursor.setEnabled(True);
-                    self.main_window.radioButton_ShapeSpot.setEnabled(True);
-                    self.main_window.radioButton_ShapeLine.setEnabled(True);
-                    self.main_window.radioButton_ShapeRectangle.setEnabled(True);
-                    self.main_window.radioButton_ShapeEllipse.setEnabled(True);
-                    self.main_window.pushButton_RemoveAllRoi.setEnabled(True);
-                    self.main_window.comboBox_ColorMap.setEnabled(True);
-                    self.main_window.checkBox_NoiseFiltering.setEnabled(True);
-                    self.main_window.comboBox_TemperatureUnit.setEnabled(True);
+                    self.main_window.radioButton_ShapeCursor.setChecked(True)
+                    self.main_window.radioButton_ShapeCursor.setEnabled(True)
+                    self.main_window.radioButton_ShapeSpot.setEnabled(True)
+                    self.main_window.radioButton_ShapeLine.setEnabled(True)
+                    self.main_window.radioButton_ShapeRectangle.setEnabled(True)
+                    self.main_window.radioButton_ShapeEllipse.setEnabled(True)
+                    self.main_window.pushButton_RemoveAllRoi.setEnabled(True)
+                    self.main_window.comboBox_ColorMap.setEnabled(True)
+                    self.main_window.checkBox_NoiseFiltering.setEnabled(True)
+                    self.main_window.comboBox_TemperatureUnit.setEnabled(True)
         
             except Exception as e:
                 print(f'Error while opening camera: {str(e)}')
@@ -510,7 +512,7 @@ class FrameWorker(QThread):
                 str_draw = f"ROI{index}"
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(Qt.cyan)
-                painter.drawText(spot.x - size_draw.width() / 2, spot.y - 4, str_draw)
+                painter.drawText(int(spot.x - size_draw.width() / 2), spot.y - 4, str_draw)
 
                 # Draw temp
                 loc = item.get_roi_maxloc()
@@ -518,7 +520,7 @@ class FrameWorker(QThread):
                 str_draw = temp_unit
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(Qt.green)
-                painter.drawText(spot.x - size_draw.width() / 2, spot.y + 14, str_draw)
+                painter.drawText(int(spot.x - size_draw.width() / 2), spot.y + 14, str_draw)
         
             elif roi_type == RoiType.Line:
                 item = self.parent.roi_manager.get_roi_line_item(index)
@@ -547,7 +549,7 @@ class FrameWorker(QThread):
                 str_draw = temp_unit
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(crimson)
-                painter.drawText(loc.location.x - size_draw.width() / 2, loc.location.y - 9, str_draw)
+                painter.drawText(int(loc.location.x - size_draw.width() / 2), loc.location.y - 9, str_draw)
 
                 # Draw min temp
                 loc = item.get_roi_minloc()
@@ -562,7 +564,7 @@ class FrameWorker(QThread):
                 str_draw = temp_unit
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(cornflowerblue)
-                painter.drawText(loc.location.x - size_draw.width() / 2, loc.location.y + 15, str_draw)
+                painter.drawText(int(loc.location.x - size_draw.width() / 2), loc.location.y + 15, str_draw)
 
                 # Draw average temp
                 loc = item.get_roi_avgloc()
@@ -571,8 +573,8 @@ class FrameWorker(QThread):
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(Qt.green)
                 painter.drawText(
-                    start.x + (end.x - start.x) / 2 - size_draw.width() / 2,
-                    start.y + (end.y - start.y) / 2 + 2,
+                    int(start.x + (end.x - start.x) / 2 - size_draw.width() / 2),
+                    int(start.y + (end.y - start.y) / 2 + 2),
                     str_draw
                 )
         
@@ -603,7 +605,7 @@ class FrameWorker(QThread):
                 str_draw = temp_unit
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(crimson)
-                painter.drawText(loc.location.x - size_draw.width() / 2, loc.location.y - 9, str_draw)
+                painter.drawText(int(loc.location.x - size_draw.width() / 2), loc.location.y - 9, str_draw)
 
                 # Draw min temp
                 loc = item.get_roi_minloc()
@@ -618,7 +620,7 @@ class FrameWorker(QThread):
                 str_draw = temp_unit
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(cornflowerblue)
-                painter.drawText(loc.location.x - size_draw.width() / 2, loc.location.y + 15, str_draw)
+                painter.drawText(int(loc.location.x - size_draw.width() / 2), loc.location.y + 15, str_draw)
 
                 # Draw average temp
                 loc = item.get_roi_avgloc()
@@ -627,7 +629,7 @@ class FrameWorker(QThread):
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(Qt.green)
                 painter.drawText(
-                    rect.x + rect.w / 2 - size_draw.width() / 2,
+                    int(rect.x + rect.w / 2 - size_draw.width() / 2),
                     rect.y + rect.h + 2,
                     str_draw
                 )
@@ -645,7 +647,7 @@ class FrameWorker(QThread):
                 str_draw = f"ROI{index}"
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(Qt.cyan)
-                painter.drawText(rect.x + rect.w / 2 - size_draw.width() / 2, rect.y - 4, str_draw)
+                painter.drawText(int(rect.x + rect.w / 2 - size_draw.width() / 2), rect.y - 4, str_draw)
 
                 # Draw max temp
                 loc = item.get_roi_maxloc()
@@ -660,7 +662,7 @@ class FrameWorker(QThread):
                 str_draw = temp_unit
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(crimson)
-                painter.drawText(loc.location.x - size_draw.width() / 2, loc.location.y - 9, str_draw)
+                painter.drawText(int(loc.location.x - size_draw.width() / 2), loc.location.y - 9, str_draw)
 
                 # Draw min temp
                 loc = item.get_roi_minloc()
@@ -675,7 +677,7 @@ class FrameWorker(QThread):
                 str_draw = temp_unit
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(cornflowerblue)
-                painter.drawText(loc.location.x - size_draw.width() / 2, loc.location.y + 15, str_draw)
+                painter.drawText(int(loc.location.x - size_draw.width() / 2), loc.location.y + 15, str_draw)
 
                 # Draw average temp
                 loc = item.get_roi_avgloc()
@@ -684,14 +686,12 @@ class FrameWorker(QThread):
                 size_draw = painter.fontMetrics().size(Qt.TextSingleLine, str_draw)
                 painter.setPen(Qt.green)
                 painter.drawText(
-                    rect.x + rect.w / 2 - size_draw.width() / 2,
+                    int(rect.x + rect.w / 2 - size_draw.width() / 2),
                     rect.y + rect.h + 2,
                     str_draw
                 )
 
         painter.end()
-        pixmap = QPixmap.fromImage(image)
-        # self.parent.main_window.label_camera.setPixmap(pixmap)
 
     # Measures the minimum, maximum, and average temperature values ​​of the current frame.
     # Parameter:

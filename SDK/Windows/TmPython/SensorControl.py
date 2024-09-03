@@ -146,17 +146,13 @@ class SensorControl:
     def pushButton_RestoreDefaultSensorConfig_Clicked(self):
         self.main_window.pushButton_RestoreDefaultSensorConfig.setText('Wait...')
         self.main_window.pushButton_RestoreDefaultSensorConfig.setEnabled(False)
-        if self.worker.isRunning():
-            self.worker.stop()
-            self.worker.wait()
+        if self.camera.worker.isRunning():
+            self.camera.worker.stop()
+            self.camera.worker.wait()
         self.camera.tmCamera.tmControl.restore_default_sensor_config()
-        self.camera.tmCamera.close()
+        self.camera.disconnect_camera()
         QThread.msleep(1000)
         QMessageBox.information(self.main_window,"TmSDK","Reboot... Reconnect camera device")
-        self.main_window.groupBox_4.setEnabled(False)
-        self.main_window.groupBox_5.setEnabled(False)
-        self.main_window.groupBox_6.setEnabled(False)
-        self.main_window.groupBox_7.setEnabled(False)
         self.main_window.pushButton_LocalCameraConnect.setText('Connect')
         self.main_window.pushButton_RemoteCameraConnect.setText('Connect')
         self.main_window.pushButton_LocalCameraConnect.setEnabled(True)
