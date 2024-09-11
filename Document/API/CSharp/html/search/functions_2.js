@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['disconnect_0',['Disconnect',['../class_tm_s_d_k_1_1_tm_camera.html#ab6e3798394d0508d73447d1dfbd79d7b',1,'TmSDK::TmCamera']]],
-  ['dispose_1',['dispose',['../class_tm_s_d_k_1_1_self_ptr.html#a4b5d18df16725b81c12d9923547ab3d1',1,'TmSDK.SelfPtr.Dispose()'],['../class_tm_s_d_k_1_1_tm_camera.html#a382ae22acc2c0a639eea6a11512a1e17',1,'TmSDK.TmCamera.Dispose()'],['../class_tm_s_d_k_1_1_tm_frame.html#aceb99069cff81e77fe12d1fa1c761155',1,'TmSDK.TmFrame.Dispose()']]],
-  ['disposing_2',['Disposing',['../class_tm_s_d_k_1_1_self_ptr.html#ac771f87521b1207341daa82466d238a3',1,'TmSDK::SelfPtr']]]
+  ['dispose_0',['dispose',['../class_tm_s_d_k_1_1_tm_camera.html#a382ae22acc2c0a639eea6a11512a1e17',1,'TmSDK.TmCamera.Dispose()'],['../class_tm_s_d_k_1_1_tm_frame.html#aceb99069cff81e77fe12d1fa1c761155',1,'TmSDK.TmFrame.Dispose()'],['../class_tm_s_d_k_1_1_tm_roi_object.html#a72f2b7b032cb2532f73f5297e17378b5',1,'TmSDK.TmRoiObject.Dispose()'],['../class_tm_s_d_k_1_1_tm_roi_spot.html#aa50c0caf7a667e795475b5f2e41d4fb2',1,'TmSDK.TmRoiSpot.Dispose()'],['../class_tm_s_d_k_1_1_tm_roi_line.html#a7339c6817486f9dc026115a00af49f17',1,'TmSDK.TmRoiLine.Dispose()'],['../class_tm_s_d_k_1_1_tm_roi_rect.html#a6f7a80bc86dbca317ac74694f190a60c',1,'TmSDK.TmRoiRect.Dispose()'],['../class_tm_s_d_k_1_1_tm_roi_ellipse.html#a51cab5b77c7b8774e9d583ff94d5d9c2',1,'TmSDK.TmRoiEllipse.Dispose()'],['../class_tm_s_d_k_1_1_tm_roi_manager.html#a4c8c63d33f32ed52b370d59541415e5f',1,'TmSDK.TmRoiManager.Dispose()']]],
+  ['domeasure_1',['DoMeasure',['../class_tm_s_d_k_1_1_tm_frame.html#a299c6e7efb15d39c1f33a0af37197f09',1,'TmSDK::TmFrame']]]
 ];

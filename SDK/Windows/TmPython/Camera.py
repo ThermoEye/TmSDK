@@ -60,7 +60,6 @@ class Camera:
                 item = name[i] + '-' + port[i]
                 self.main_window.listWidget_LocalCameraList.addItem(item)
                 self.local_camera_list.append([name[i],port[i],index[i]])
-                print(f'Local Camera List = {item}-{index[i]}')
         if self.local_camera_list:
             self.main_window.listWidget_LocalCameraList.setCurrentRow(0)
             camInfo=self.local_camera_list[0]
@@ -76,12 +75,11 @@ class Camera:
         for cam in self.remote_camera_list:
             del cam
         self.remote_camera_list.clear()    
-        name, serial, mac, ip, count = self.tmCamera.get_remote_camera_list(20)
+        name, serial, mac, ip, count = self.tmCamera.get_remote_camera_list()
         for i in range(0, count):
             item = name[i] + '-' + ip[i]
             self.main_window.listWidget_RemoteCameraList.addItem(item)
             self.remote_camera_list.append([name[i],serial[i],mac[i],ip[i]])
-            print(f'Remote Camera List = {item}')
             
         if self.remote_camera_list:
             camInfo = self.remote_camera_list[0]    

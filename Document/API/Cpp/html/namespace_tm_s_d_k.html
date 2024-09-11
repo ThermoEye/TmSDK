@@ -238,18 +238,33 @@ Functions</h2></td></tr>
 <tr class="memitem:a057e871320bbbc8a0b7a77a1d0b2e095" id="r_a057e871320bbbc8a0b7a77a1d0b2e095"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_tm_control.html">TmControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a057e871320bbbc8a0b7a77a1d0b2e095">TmCamera_GetTmControl</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *self)</td></tr>
 <tr class="memdesc:a057e871320bbbc8a0b7a77a1d0b2e095"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="class_tm_s_d_k_1_1_tm_control.html" title="Class providing control functionalities for the camera.">TmControl</a> object associated with a <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a> instance.  <br /></td></tr>
 <tr class="separator:a057e871320bbbc8a0b7a77a1d0b2e095"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ba321493ae10b7f71019530c0bfec60" id="r_a3ba321493ae10b7f71019530c0bfec60"><td class="memItemLeft" align="right" valign="top">TMAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a3ba321493ae10b7f71019530c0bfec60">TmCamera_GetLocalCameraList</a> (char **name, char **port, int *index)</td></tr>
-<tr class="memdesc:a3ba321493ae10b7f71019530c0bfec60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of local cameras and populates the provided arrays with their names, ports, and indices.  <br /></td></tr>
-<tr class="separator:a3ba321493ae10b7f71019530c0bfec60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87e9b80a9235ca809ae0f5091539b17d" id="r_a87e9b80a9235ca809ae0f5091539b17d"><td class="memItemLeft" align="right" valign="top">TMAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a87e9b80a9235ca809ae0f5091539b17d">TmCamera_GetLocalCameraListArray</a> (char name[][100], char port[][100], int index[])</td></tr>
-<tr class="memdesc:a87e9b80a9235ca809ae0f5091539b17d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of local cameras and populates the provided 2D arrays with their names, ports, and indices.  <br /></td></tr>
-<tr class="separator:a87e9b80a9235ca809ae0f5091539b17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0649b551010fd4960e9657a1acbdf036" id="r_a0649b551010fd4960e9657a1acbdf036"><td class="memItemLeft" align="right" valign="top">TMAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a0649b551010fd4960e9657a1acbdf036">TmCamera_GetRemoteCameraList</a> (char **name, char **serial, char **mac, char **ip)</td></tr>
-<tr class="memdesc:a0649b551010fd4960e9657a1acbdf036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a list of remote cameras.  <br /></td></tr>
-<tr class="separator:a0649b551010fd4960e9657a1acbdf036"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47efa9339616a55024b9792c98f2668c" id="r_a47efa9339616a55024b9792c98f2668c"><td class="memItemLeft" align="right" valign="top">TMAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a47efa9339616a55024b9792c98f2668c">TmCamera_GetRemoteCameraListArray</a> (char name[][100], char serial[][100], char mac[][100], char ip[][100])</td></tr>
-<tr class="memdesc:a47efa9339616a55024b9792c98f2668c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a list of remote cameras and fills the provided arrays with camera details.  <br /></td></tr>
-<tr class="separator:a47efa9339616a55024b9792c98f2668c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae848598e155ca8e23e28450e3b2c3f0c" id="r_ae848598e155ca8e23e28450e3b2c3f0c"><td class="memItemLeft" align="right" valign="top">TMAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ae848598e155ca8e23e28450e3b2c3f0c">TmCamera_GetLocalCameraList</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html">TmLocalCamInfo</a> ***pInfo)</td></tr>
+<tr class="memdesc:ae848598e155ca8e23e28450e3b2c3f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of local cameras and returns the list through a pointer to a pointer.  <br /></td></tr>
+<tr class="separator:ae848598e155ca8e23e28450e3b2c3f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad2fc1a1dfdaf662516b2e39477da19" id="r_a4ad2fc1a1dfdaf662516b2e39477da19"><td class="memItemLeft" align="right" valign="top">TMAPI char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a4ad2fc1a1dfdaf662516b2e39477da19">TmCamera_GetLocalCameraName</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html">TmLocalCamInfo</a> *self)</td></tr>
+<tr class="memdesc:a4ad2fc1a1dfdaf662516b2e39477da19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the name of the specified local camera.  <br /></td></tr>
+<tr class="separator:a4ad2fc1a1dfdaf662516b2e39477da19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ef10f7c62b2faf361da2d093af13b83" id="r_a4ef10f7c62b2faf361da2d093af13b83"><td class="memItemLeft" align="right" valign="top">TMAPI char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a4ef10f7c62b2faf361da2d093af13b83">TmCamera_GetLocalCameraComPort</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html">TmLocalCamInfo</a> *self)</td></tr>
+<tr class="memdesc:a4ef10f7c62b2faf361da2d093af13b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the COM port of the specified local camera.  <br /></td></tr>
+<tr class="separator:a4ef10f7c62b2faf361da2d093af13b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479f573856dce3c2fbe0a2a19e37e465" id="r_a479f573856dce3c2fbe0a2a19e37e465"><td class="memItemLeft" align="right" valign="top">TMAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a479f573856dce3c2fbe0a2a19e37e465">TmCamera_GetLocalCameraIndex</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html">TmLocalCamInfo</a> *self)</td></tr>
+<tr class="memdesc:a479f573856dce3c2fbe0a2a19e37e465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the index of the specified local camera.  <br /></td></tr>
+<tr class="separator:a479f573856dce3c2fbe0a2a19e37e465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d72f1b4e1733c6a969c5c269fc66846" id="r_a2d72f1b4e1733c6a969c5c269fc66846"><td class="memItemLeft" align="right" valign="top">TMAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a2d72f1b4e1733c6a969c5c269fc66846">TmCamera_GetRemoteCameraList</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> ***pInfo)</td></tr>
+<tr class="memdesc:a2d72f1b4e1733c6a969c5c269fc66846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of remote cameras and returns the pointer to the list and its size.  <br /></td></tr>
+<tr class="separator:a2d72f1b4e1733c6a969c5c269fc66846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3dbac5c3bcbf6d97712c03f3ddf887" id="r_a4a3dbac5c3bcbf6d97712c03f3ddf887"><td class="memItemLeft" align="right" valign="top">TMAPI char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a4a3dbac5c3bcbf6d97712c03f3ddf887">TmCamera_GetRemoteCameraName</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> *self)</td></tr>
+<tr class="memdesc:a4a3dbac5c3bcbf6d97712c03f3ddf887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the specified remote camera.  <br /></td></tr>
+<tr class="separator:a4a3dbac5c3bcbf6d97712c03f3ddf887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c15450b24662d90b6aad1b34dc6fb61" id="r_a7c15450b24662d90b6aad1b34dc6fb61"><td class="memItemLeft" align="right" valign="top">TMAPI char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a7c15450b24662d90b6aad1b34dc6fb61">TmCamera_GetRemoteCameraSerialNumber</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> *self)</td></tr>
+<tr class="memdesc:a7c15450b24662d90b6aad1b34dc6fb61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the serial number of the specified remote camera.  <br /></td></tr>
+<tr class="separator:a7c15450b24662d90b6aad1b34dc6fb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d6425427d7eb313ad78b1950955215" id="r_ac9d6425427d7eb313ad78b1950955215"><td class="memItemLeft" align="right" valign="top">TMAPI char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ac9d6425427d7eb313ad78b1950955215">TmCamera_GetRemoteCameraMac</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> *self)</td></tr>
+<tr class="memdesc:ac9d6425427d7eb313ad78b1950955215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the MAC address of the specified remote camera.  <br /></td></tr>
+<tr class="separator:ac9d6425427d7eb313ad78b1950955215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40c999c48e6a290ba31ac0aab250809e" id="r_a40c999c48e6a290ba31ac0aab250809e"><td class="memItemLeft" align="right" valign="top">TMAPI char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a40c999c48e6a290ba31ac0aab250809e">TmCamera_GetRemoteCameraIp</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> *self)</td></tr>
+<tr class="memdesc:a40c999c48e6a290ba31ac0aab250809e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the IP address of the specified remote camera.  <br /></td></tr>
+<tr class="separator:a40c999c48e6a290ba31ac0aab250809e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbe47971aa5cf9da761d2d309c26e4ff" id="r_adbe47971aa5cf9da761d2d309c26e4ff"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#adbe47971aa5cf9da761d2d309c26e4ff">TmCamera_LocalOpen</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *self, bool *ret, const char *name, const char *comPort, int index)</td></tr>
 <tr class="memdesc:adbe47971aa5cf9da761d2d309c26e4ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a local camera using the provided information and initializes the camera object.  <br /></td></tr>
 <tr class="separator:adbe47971aa5cf9da761d2d309c26e4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,6 +469,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8eb0d93c147d4a93001997d7c4cde7b9" id="r_a8eb0d93c147d4a93001997d7c4cde7b9"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_roi_object.html">RoiObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a8eb0d93c147d4a93001997d7c4cde7b9">TmRoi_GetItem</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_roi_manager.html">TmRoiManager</a> *self, bool *ret, int index)</td></tr>
 <tr class="memdesc:a8eb0d93c147d4a93001997d7c4cde7b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the ROI item at the specified index from the ROI manager.  <br /></td></tr>
 <tr class="separator:a8eb0d93c147d4a93001997d7c4cde7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad509de45ccb179090ddd5db2834475e4" id="r_ad509de45ccb179090ddd5db2834475e4"><td class="memItemLeft" align="right" valign="top">TMAPI int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ad509de45ccb179090ddd5db2834475e4">TmRoi_GetItems</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_roi_manager.html">TmRoiManager</a> *self, <a class="el" href="class_tm_s_d_k_1_1_roi_object.html">RoiObject</a> ***obj)</td></tr>
+<tr class="memdesc:ad509de45ccb179090ddd5db2834475e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an array of ROI (Region of Interest) objects from the ROI manager.  <br /></td></tr>
+<tr class="separator:ad509de45ccb179090ddd5db2834475e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfc6c31e42ee9c4ae8cec2cde473849b" id="r_acfc6c31e42ee9c4ae8cec2cde473849b"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#acfc6c31e42ee9c4ae8cec2cde473849b">TmRoi_GetItemCount</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_roi_manager.html">TmRoiManager</a> *self, bool *ret, int *arg)</td></tr>
 <tr class="memdesc:acfc6c31e42ee9c4ae8cec2cde473849b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the count of ROI items currently managed by the ROI manager.  <br /></td></tr>
 <tr class="separator:acfc6c31e42ee9c4ae8cec2cde473849b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -469,6 +487,9 @@ Functions</h2></td></tr>
 <tr class="memitem:afabf81c99161aea5f80d9b8d78d6ca7d" id="r_afabf81c99161aea5f80d9b8d78d6ca7d"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#afabf81c99161aea5f80d9b8d78d6ca7d">TmRoiObject_GetRoiType</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_object.html">RoiObject</a> *self, bool *ret, <a class="el" href="namespace_tm_s_d_k.html#ae11af328a0612e7527bc5810b6505e7b">RoiType</a> *arg)</td></tr>
 <tr class="memdesc:afabf81c99161aea5f80d9b8d78d6ca7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the type of the specified ROI object.  <br /></td></tr>
 <tr class="separator:afabf81c99161aea5f80d9b8d78d6ca7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a718d2467f7b2a8f2a094052c4f6e9e67" id="r_a718d2467f7b2a8f2a094052c4f6e9e67"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a718d2467f7b2a8f2a094052c4f6e9e67">TmRoiObject_GetRoiIndex</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_object.html">RoiObject</a> *self, bool *ret, int *arg)</td></tr>
+<tr class="memdesc:a718d2467f7b2a8f2a094052c4f6e9e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the ROI (Region of Interest) index of a given <a class="el" href="class_tm_s_d_k_1_1_roi_object.html" title="Abstract class for ROI object.">RoiObject</a>.  <br /></td></tr>
+<tr class="separator:a718d2467f7b2a8f2a094052c4f6e9e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbbc25a39192f5b059de44305df68d63" id="r_afbbc25a39192f5b059de44305df68d63"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#afbbc25a39192f5b059de44305df68d63">TmRoiObject_GetMinLoc</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_object.html">RoiObject</a> *self, bool *ret, <a class="el" href="struct_tm_s_d_k_1_1_loc_item.html">LocItem</a> *arg)</td></tr>
 <tr class="memdesc:afbbc25a39192f5b059de44305df68d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the minimum value and location of the specified <code><a class="el" href="class_tm_s_d_k_1_1_roi_object.html" title="Abstract class for ROI object.">RoiObject</a></code> instance.  <br /></td></tr>
 <tr class="separator:afbbc25a39192f5b059de44305df68d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -493,9 +514,12 @@ Functions</h2></td></tr>
 <tr class="memitem:af6017a1bfa7b78868c9def48a318d388" id="r_af6017a1bfa7b78868c9def48a318d388"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_roi_spot.html">RoiSpot</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#af6017a1bfa7b78868c9def48a318d388">TmRoiSpot_Ctor_IndexXY</a> (int index, int x, int y)</td></tr>
 <tr class="memdesc:af6017a1bfa7b78868c9def48a318d388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> class using a specified index, x-coordinate, and y-coordinate.  <br /></td></tr>
 <tr class="separator:af6017a1bfa7b78868c9def48a318d388"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d8dec0fb4b6655b90f97d9cb872f196" id="r_a1d8dec0fb4b6655b90f97d9cb872f196"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a1d8dec0fb4b6655b90f97d9cb872f196">TmRoiRect_GetSpot</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_spot.html">RoiSpot</a> *self, bool *ret, <a class="el" href="struct_tm_s_d_k_1_1_point.html">Point</a> *arg)</td></tr>
-<tr class="memdesc:a1d8dec0fb4b6655b90f97d9cb872f196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the spot (position) of the specified <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance.  <br /></td></tr>
-<tr class="separator:a1d8dec0fb4b6655b90f97d9cb872f196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428fea2b77c2ad9eb0ac0faa5d3a22c1" id="r_a428fea2b77c2ad9eb0ac0faa5d3a22c1"><td class="memItemLeft" align="right" valign="top">TMAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a428fea2b77c2ad9eb0ac0faa5d3a22c1">TmRoiSpot_Dtor</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_spot.html">RoiSpot</a> *self)</td></tr>
+<tr class="memdesc:a428fea2b77c2ad9eb0ac0faa5d3a22c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> class by deleting the object if it is not <code>nullptr</code>.  <br /></td></tr>
+<tr class="separator:a428fea2b77c2ad9eb0ac0faa5d3a22c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cbdb4b929d82152da4b75f7c6240dbc" id="r_a2cbdb4b929d82152da4b75f7c6240dbc"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a2cbdb4b929d82152da4b75f7c6240dbc">TmRoiSpot_GetSpot</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_spot.html">RoiSpot</a> *self, bool *ret, <a class="el" href="struct_tm_s_d_k_1_1_point.html">Point</a> *arg)</td></tr>
+<tr class="memdesc:a2cbdb4b929d82152da4b75f7c6240dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the spot (position) of the specified <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance.  <br /></td></tr>
+<tr class="separator:a2cbdb4b929d82152da4b75f7c6240dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4ec370c58ae0491080530437aad30bd" id="r_ac4ec370c58ae0491080530437aad30bd"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_roi_rect.html">RoiRect</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ac4ec370c58ae0491080530437aad30bd">TmRoiLine_Ctor</a> ()</td></tr>
 <tr class="memdesc:ac4ec370c58ae0491080530437aad30bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_line.html" title="Inheritance class for Line type ROI.">RoiLine</a></code> class.  <br /></td></tr>
 <tr class="separator:ac4ec370c58ae0491080530437aad30bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -511,6 +535,9 @@ Functions</h2></td></tr>
 <tr class="memitem:abe554024636e3acf29b4839cd701d5a3" id="r_abe554024636e3acf29b4839cd701d5a3"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_roi_rect.html">RoiRect</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#abe554024636e3acf29b4839cd701d5a3">TmRoiLine_Ctor_IndexXY</a> (int index, int startX, int startY, int endX, int endY)</td></tr>
 <tr class="memdesc:abe554024636e3acf29b4839cd701d5a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_line.html" title="Inheritance class for Line type ROI.">RoiLine</a></code> class with the specified index, start, and end coordinates.  <br /></td></tr>
 <tr class="separator:abe554024636e3acf29b4839cd701d5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41b2d1463eb2cfb3721f7dab93329e9e" id="r_a41b2d1463eb2cfb3721f7dab93329e9e"><td class="memItemLeft" align="right" valign="top">TMAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a41b2d1463eb2cfb3721f7dab93329e9e">TmRoiLine_Dtor</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_line.html">RoiLine</a> *self)</td></tr>
+<tr class="memdesc:a41b2d1463eb2cfb3721f7dab93329e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_line.html" title="Inheritance class for Line type ROI.">RoiLine</a></code> class by deleting the object if it is not <code>nullptr</code>.  <br /></td></tr>
+<tr class="separator:a41b2d1463eb2cfb3721f7dab93329e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a328746bb9851684f32b6872c3ea2284e" id="r_a328746bb9851684f32b6872c3ea2284e"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a328746bb9851684f32b6872c3ea2284e">TmRoiLine_GetLine</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_line.html">RoiLine</a> *self, bool *ret, <a class="el" href="struct_tm_s_d_k_1_1_point.html">Point</a> *arg1, <a class="el" href="struct_tm_s_d_k_1_1_point.html">Point</a> *arg2)</td></tr>
 <tr class="memdesc:a328746bb9851684f32b6872c3ea2284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the start and end points of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_line.html" title="Inheritance class for Line type ROI.">RoiLine</a></code> object.  <br /></td></tr>
 <tr class="separator:a328746bb9851684f32b6872c3ea2284e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -529,6 +556,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8f119c1677269baf1db5b52a1725e27a" id="r_a8f119c1677269baf1db5b52a1725e27a"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_roi_rect.html">RoiRect</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a8f119c1677269baf1db5b52a1725e27a">TmRoiRect_Ctor_IndexXYWH</a> (int index, int x, int y, int width, int height)</td></tr>
 <tr class="memdesc:a8f119c1677269baf1db5b52a1725e27a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_rect.html" title="Inheritance class for Rectangle type ROI.">RoiRect</a></code> class with the specified index, coordinates, and dimensions.  <br /></td></tr>
 <tr class="separator:a8f119c1677269baf1db5b52a1725e27a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e3211669c78e2b914103660ea97bd8" id="r_ac5e3211669c78e2b914103660ea97bd8"><td class="memItemLeft" align="right" valign="top">TMAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ac5e3211669c78e2b914103660ea97bd8">TmRoiRect_Dtor</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_rect.html">RoiRect</a> *self)</td></tr>
+<tr class="memdesc:ac5e3211669c78e2b914103660ea97bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_rect.html" title="Inheritance class for Rectangle type ROI.">RoiRect</a></code> class by deleting the object if it is not <code>nullptr</code>.  <br /></td></tr>
+<tr class="separator:ac5e3211669c78e2b914103660ea97bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e51c6399eb9d28f5007aaae12ed59a5" id="r_a5e51c6399eb9d28f5007aaae12ed59a5"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a5e51c6399eb9d28f5007aaae12ed59a5">TmRoiRect_GetRectangle</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_rect.html">RoiRect</a> *self, bool *ret, <a class="el" href="struct_tm_s_d_k_1_1_rectangle.html">Rectangle</a> *arg)</td></tr>
 <tr class="memdesc:a5e51c6399eb9d28f5007aaae12ed59a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the rectangle from the <code><a class="el" href="class_tm_s_d_k_1_1_roi_rect.html" title="Inheritance class for Rectangle type ROI.">RoiRect</a></code> object.  <br /></td></tr>
 <tr class="separator:a5e51c6399eb9d28f5007aaae12ed59a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -547,9 +577,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a1ed244b8a6a9e0761c334fb46220b27d" id="r_a1ed244b8a6a9e0761c334fb46220b27d"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html">RoiEllipse</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a1ed244b8a6a9e0761c334fb46220b27d">TmRoiEllipse_Ctor_IndexXYWH</a> (int index, int x, int y, int width, int height)</td></tr>
 <tr class="memdesc:a1ed244b8a6a9e0761c334fb46220b27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html" title="Inheritance class for Ellipse type ROI.">RoiEllipse</a></code> class with the specified index, coordinates, and dimensions.  <br /></td></tr>
 <tr class="separator:a1ed244b8a6a9e0761c334fb46220b27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50eca4fbb8116983bed84fdf9d3b7d3a" id="r_a50eca4fbb8116983bed84fdf9d3b7d3a"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a50eca4fbb8116983bed84fdf9d3b7d3a">TmRoiEllipse_GetRectangle</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html">RoiEllipse</a> *self, bool *ret, <a class="el" href="struct_tm_s_d_k_1_1_rectangle.html">Rectangle</a> *arg)</td></tr>
-<tr class="memdesc:a50eca4fbb8116983bed84fdf9d3b7d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the ellipse from the <code><a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html" title="Inheritance class for Ellipse type ROI.">RoiEllipse</a></code> object.  <br /></td></tr>
-<tr class="separator:a50eca4fbb8116983bed84fdf9d3b7d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b52e2ea495a265e03023e2f6c13d325" id="r_a0b52e2ea495a265e03023e2f6c13d325"><td class="memItemLeft" align="right" valign="top">TMAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a0b52e2ea495a265e03023e2f6c13d325">TmRoiEllipse_Dtor</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html">RoiEllipse</a> *self)</td></tr>
+<tr class="memdesc:a0b52e2ea495a265e03023e2f6c13d325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html" title="Inheritance class for Ellipse type ROI.">RoiEllipse</a></code> class by deleting the object if it is not <code>nullptr</code>.  <br /></td></tr>
+<tr class="separator:a0b52e2ea495a265e03023e2f6c13d325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b90f014d8dc17c8d083cab56c1ee7c6" id="r_a0b90f014d8dc17c8d083cab56c1ee7c6"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a0b90f014d8dc17c8d083cab56c1ee7c6">TmRoiEllipse_GetEllipse</a> (<a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html">RoiEllipse</a> *self, bool *ret, <a class="el" href="struct_tm_s_d_k_1_1_rectangle.html">Rectangle</a> *arg)</td></tr>
+<tr class="memdesc:a0b90f014d8dc17c8d083cab56c1ee7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the ellipse from the <code><a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html" title="Inheritance class for Ellipse type ROI.">RoiEllipse</a></code> object.  <br /></td></tr>
+<tr class="separator:a0b90f014d8dc17c8d083cab56c1ee7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ab2a545b60de3934d1dcfc8bdf224c9be" name="ab2a545b60de3934d1dcfc8bdf224c9be"></a>
@@ -813,8 +846,62 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3ba321493ae10b7f71019530c0bfec60" name="a3ba321493ae10b7f71019530c0bfec60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ba321493ae10b7f71019530c0bfec60">&#9670;&#160;</a></span>TmCamera_GetLocalCameraList()</h2>
+<a id="a4ef10f7c62b2faf361da2d093af13b83" name="a4ef10f7c62b2faf361da2d093af13b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ef10f7c62b2faf361da2d093af13b83">&#9670;&#160;</a></span>TmCamera_GetLocalCameraComPort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI char * TmSDK::TmCamera_GetLocalCameraComPort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html">TmLocalCamInfo</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the COM port of the specified local camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html" title="Class representing local camera information.">TmLocalCamInfo</a> object representing the local camera whose COM port is to be retrieved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a newly allocated string containing the COM port of the camera. The caller is responsible for freeing this memory. </dd></dl>
+
+</div>
+</div>
+<a id="a479f573856dce3c2fbe0a2a19e37e465" name="a479f573856dce3c2fbe0a2a19e37e465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a479f573856dce3c2fbe0a2a19e37e465">&#9670;&#160;</a></span>TmCamera_GetLocalCameraIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI int TmSDK::TmCamera_GetLocalCameraIndex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html">TmLocalCamInfo</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the index of the specified local camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html" title="Class representing local camera information.">TmLocalCamInfo</a> object representing the local camera whose index is to be retrieved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the specified camera. </dd></dl>
+
+</div>
+</div>
+<a id="ae848598e155ca8e23e28450e3b2c3f0c" name="ae848598e155ca8e23e28450e3b2c3f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae848598e155ca8e23e28450e3b2c3f0c">&#9670;&#160;</a></span>TmCamera_GetLocalCameraList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -822,89 +909,80 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">TMAPI int TmSDK::TmCamera_GetLocalCameraList </td>
           <td>(</td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html">TmLocalCamInfo</a> ***&#160;</td>
+          <td class="paramname"><em>pInfo</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>port</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>index</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the list of local cameras and populates the provided arrays with their names, ports, and indices. </p>
+<p>Retrieves the list of local cameras and returns the list through a pointer to a pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>An array of character pointers where the camera names will be copied. Each pointer should be pre-allocated to hold the name. </td></tr>
-    <tr><td class="paramname">port</td><td>An array of character pointers where the camera ports will be copied. Each pointer should be pre-allocated to hold the port information. </td></tr>
-    <tr><td class="paramname">index</td><td>An array of integers where the camera indices will be stored. </td></tr>
+    <tr><td class="paramname">pInfo</td><td>A pointer to a pointer where the address of the local camera list will be stored. The caller can use this to access the list of local cameras retrieved by this function. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of local cameras retrieved. This indicates how many entries have been populated in the provided arrays. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of local cameras retrieved. </dd></dl>
 
 </div>
 </div>
-<a id="a87e9b80a9235ca809ae0f5091539b17d" name="a87e9b80a9235ca809ae0f5091539b17d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87e9b80a9235ca809ae0f5091539b17d">&#9670;&#160;</a></span>TmCamera_GetLocalCameraListArray()</h2>
+<a id="a4ad2fc1a1dfdaf662516b2e39477da19" name="a4ad2fc1a1dfdaf662516b2e39477da19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad2fc1a1dfdaf662516b2e39477da19">&#9670;&#160;</a></span>TmCamera_GetLocalCameraName()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TMAPI int TmSDK::TmCamera_GetLocalCameraListArray </td>
+          <td class="memname">TMAPI char * TmSDK::TmCamera_GetLocalCameraName </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>name</em>[][100], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html">TmLocalCamInfo</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>port</em>[][100], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>index</em>[]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the list of local cameras and populates the provided 2D arrays with their names, ports, and indices. </p>
+<p>Retrieves the name of the specified local camera. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>A 2D array of characters where the camera names will be copied. Each row should be pre-allocated to hold the name. </td></tr>
-    <tr><td class="paramname">port</td><td>A 2D array of characters where the camera ports will be copied. Each row should be pre-allocated to hold the port information. </td></tr>
-    <tr><td class="paramname">index</td><td>An array of integers where the camera indices will be stored. </td></tr>
+    <tr><td class="paramname">self</td><td>A pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_local_cam_info.html" title="Class representing local camera information.">TmLocalCamInfo</a> object representing the local camera whose name is to be retrieved. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of local cameras retrieved. This indicates how many entries have been populated in the provided arrays. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to a newly allocated string containing the name of the camera. The caller is responsible for freeing this memory. </dd></dl>
 
 </div>
 </div>
-<a id="a0649b551010fd4960e9657a1acbdf036" name="a0649b551010fd4960e9657a1acbdf036"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0649b551010fd4960e9657a1acbdf036">&#9670;&#160;</a></span>TmCamera_GetRemoteCameraList()</h2>
+<a id="a40c999c48e6a290ba31ac0aab250809e" name="a40c999c48e6a290ba31ac0aab250809e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40c999c48e6a290ba31ac0aab250809e">&#9670;&#160;</a></span>TmCamera_GetRemoteCameraIp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI char * TmSDK::TmCamera_GetRemoteCameraIp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the IP address of the specified remote camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html" title="Class representing remote camera information.">TmRemoteCamInfo</a> object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The IP address of the remote camera as a dynamically allocated C string.</dd></dl>
+
+</div>
+</div>
+<a id="a2d72f1b4e1733c6a969c5c269fc66846" name="a2d72f1b4e1733c6a969c5c269fc66846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d72f1b4e1733c6a969c5c269fc66846">&#9670;&#160;</a></span>TmCamera_GetRemoteCameraList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -912,99 +990,102 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">TMAPI int TmSDK::TmCamera_GetRemoteCameraList </td>
           <td>(</td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> ***&#160;</td>
+          <td class="paramname"><em>pInfo</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>serial</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>mac</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>ip</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves a list of remote cameras. </p>
+<p>Retrieves the list of remote cameras and returns the pointer to the list and its size. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Array of pointers to character arrays where the camera names will be copied.</td></tr>
-    <tr><td class="paramname">serial</td><td>Array of pointers to character arrays where the camera serial numbers will be copied.</td></tr>
-    <tr><td class="paramname">mac</td><td>Array of pointers to character arrays where the camera MAC addresses will be copied.</td></tr>
-    <tr><td class="paramname">ip</td><td>Array of pointers to character arrays where the camera IP addresses will be copied.</td></tr>
-    <tr><td class="paramname">maxCameras</td><td>The maximum number of cameras to retrieve. The function will not exceed this number.</td></tr>
+    <tr><td class="paramname">pInfo</td><td>Pointer to the array of <a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html" title="Class representing remote camera information.">TmRemoteCamInfo</a> pointers.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of cameras actually retrieved and copied to the arrays.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of remote cameras in the list.</dd></dl>
 
 </div>
 </div>
-<a id="a47efa9339616a55024b9792c98f2668c" name="a47efa9339616a55024b9792c98f2668c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47efa9339616a55024b9792c98f2668c">&#9670;&#160;</a></span>TmCamera_GetRemoteCameraListArray()</h2>
+<a id="ac9d6425427d7eb313ad78b1950955215" name="ac9d6425427d7eb313ad78b1950955215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d6425427d7eb313ad78b1950955215">&#9670;&#160;</a></span>TmCamera_GetRemoteCameraMac()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TMAPI int TmSDK::TmCamera_GetRemoteCameraListArray </td>
+          <td class="memname">TMAPI char * TmSDK::TmCamera_GetRemoteCameraMac </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>name</em>[][100], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>serial</em>[][100], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>mac</em>[][100], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>ip</em>[][100]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves a list of remote cameras and fills the provided arrays with camera details. </p>
+<p>Gets the MAC address of the specified remote camera. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>A 2D array of character arrays where each row will store the name of a remote camera.</td></tr>
-    <tr><td class="paramname">serial</td><td>A 2D array of character arrays where each row will store the serial number of a remote camera.</td></tr>
-    <tr><td class="paramname">mac</td><td>A 2D array of character arrays where each row will store the MAC address of a remote camera.</td></tr>
-    <tr><td class="paramname">ip</td><td>A 2D array of character arrays where each row will store the IP address of a remote camera.</td></tr>
+    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html" title="Class representing remote camera information.">TmRemoteCamInfo</a> object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The number of remote cameras actually retrieved and copied to the arrays.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The MAC address of the remote camera as a dynamically allocated C string.</dd></dl>
+
+</div>
+</div>
+<a id="a4a3dbac5c3bcbf6d97712c03f3ddf887" name="a4a3dbac5c3bcbf6d97712c03f3ddf887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3dbac5c3bcbf6d97712c03f3ddf887">&#9670;&#160;</a></span>TmCamera_GetRemoteCameraName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI char * TmSDK::TmCamera_GetRemoteCameraName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the name of the specified remote camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html" title="Class representing remote camera information.">TmRemoteCamInfo</a> object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The name of the remote camera as a dynamically allocated C string.</dd></dl>
+
+</div>
+</div>
+<a id="a7c15450b24662d90b6aad1b34dc6fb61" name="a7c15450b24662d90b6aad1b34dc6fb61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c15450b24662d90b6aad1b34dc6fb61">&#9670;&#160;</a></span>TmCamera_GetRemoteCameraSerialNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI char * TmSDK::TmCamera_GetRemoteCameraSerialNumber </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html">TmRemoteCamInfo</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the serial number of the specified remote camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_remote_cam_info.html" title="Class representing remote camera information.">TmRemoteCamInfo</a> object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The serial number of the remote camera as a dynamically allocated C string.</dd></dl>
 
 </div>
 </div>
@@ -4080,6 +4161,44 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad509de45ccb179090ddd5db2834475e4" name="ad509de45ccb179090ddd5db2834475e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad509de45ccb179090ddd5db2834475e4">&#9670;&#160;</a></span>TmRoi_GetItems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI int TmSDK::TmRoi_GetItems </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_roi_manager.html">TmRoiManager</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_object.html">RoiObject</a> ***&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves an array of ROI (Region of Interest) objects from the ROI manager. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <code><a class="el" href="class_tm_s_d_k_1_1_tm_roi_manager.html" title="Manages a collection of ROI (Region of Interest) objects and handles user interactions for creating a...">TmRoiManager</a></code> instance from which the ROI items will be retrieved. This pointer must not be <code>nullptr</code>. </td></tr>
+    <tr><td class="paramname">obj</td><td>A pointer to a pointer to <code>RoiObject*</code> where the address of the array of ROI objects will be stored. This should point to valid memory and be ready to receive the address of the ROI objects array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of ROI items retrieved. If the <code>self</code> pointer is <code>nullptr</code>, the function returns <code>-1</code>. </dd></dl>
+
+</div>
+</div>
 <a id="ad929a4a7beb99482e1a7c4b0bed405d5" name="ad929a4a7beb99482e1a7c4b0bed405d5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad929a4a7beb99482e1a7c4b0bed405d5">&#9670;&#160;</a></span>TmRoi_GetRoiType()</h2>
 
@@ -4627,14 +4746,40 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a50eca4fbb8116983bed84fdf9d3b7d3a" name="a50eca4fbb8116983bed84fdf9d3b7d3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50eca4fbb8116983bed84fdf9d3b7d3a">&#9670;&#160;</a></span>TmRoiEllipse_GetRectangle()</h2>
+<a id="a0b52e2ea495a265e03023e2f6c13d325" name="a0b52e2ea495a265e03023e2f6c13d325"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b52e2ea495a265e03023e2f6c13d325">&#9670;&#160;</a></span>TmRoiEllipse_Dtor()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TMAPI const char * TmSDK::TmRoiEllipse_GetRectangle </td>
+          <td class="memname">TMAPI void TmSDK::TmRoiEllipse_Dtor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html">RoiEllipse</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroys an instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html" title="Inheritance class for Ellipse type ROI.">RoiEllipse</a></code> class by deleting the object if it is not <code>nullptr</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance to be deleted. If <code>self</code> is <code>nullptr</code>, no action is taken. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0b90f014d8dc17c8d083cab56c1ee7c6" name="a0b90f014d8dc17c8d083cab56c1ee7c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b90f014d8dc17c8d083cab56c1ee7c6">&#9670;&#160;</a></span>TmRoiEllipse_GetEllipse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI const char * TmSDK::TmRoiEllipse_GetEllipse </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_ellipse.html">RoiEllipse</a> *&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -4854,6 +4999,32 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the newly created <code><a class="el" href="class_tm_s_d_k_1_1_roi_line.html" title="Inheritance class for Line type ROI.">RoiLine</a></code> instance. If memory allocation fails, returns <code>nullptr</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a41b2d1463eb2cfb3721f7dab93329e9e" name="a41b2d1463eb2cfb3721f7dab93329e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b2d1463eb2cfb3721f7dab93329e9e">&#9670;&#160;</a></span>TmRoiLine_Dtor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI void TmSDK::TmRoiLine_Dtor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_line.html">RoiLine</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroys an instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_line.html" title="Inheritance class for Line type ROI.">RoiLine</a></code> class by deleting the object if it is not <code>nullptr</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance to be deleted. If <code>self</code> is <code>nullptr</code>, no action is taken. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5090,6 +5261,51 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a718d2467f7b2a8f2a094052c4f6e9e67" name="a718d2467f7b2a8f2a094052c4f6e9e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a718d2467f7b2a8f2a094052c4f6e9e67">&#9670;&#160;</a></span>TmRoiObject_GetRoiIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI const char * TmSDK::TmRoiObject_GetRoiIndex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_object.html">RoiObject</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>arg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the ROI (Region of Interest) index of a given <a class="el" href="class_tm_s_d_k_1_1_roi_object.html" title="Abstract class for ROI object.">RoiObject</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <a class="el" href="class_tm_s_d_k_1_1_roi_object.html" title="Abstract class for ROI object.">RoiObject</a> from which the ROI index is retrieved. </td></tr>
+    <tr><td class="paramname">ret</td><td>A pointer to a boolean that will be set to true if the index is successfully retrieved, false otherwise. </td></tr>
+    <tr><td class="paramname">arg</td><td>A pointer to an integer that will hold the retrieved ROI index value if successful. </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt;return&gt; A constant character pointer, which contains an error message if an exception occurs, otherwise returns nullptr. &lt;/return&gt; </p>
+
+</div>
+</div>
 <a id="afabf81c99161aea5f80d9b8d78d6ca7d" name="afabf81c99161aea5f80d9b8d78d6ca7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afabf81c99161aea5f80d9b8d78d6ca7d">&#9670;&#160;</a></span>TmRoiObject_GetRoiType()</h2>
 
@@ -5320,6 +5536,32 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ac5e3211669c78e2b914103660ea97bd8" name="ac5e3211669c78e2b914103660ea97bd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e3211669c78e2b914103660ea97bd8">&#9670;&#160;</a></span>TmRoiRect_Dtor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI void TmSDK::TmRoiRect_Dtor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_rect.html">RoiRect</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroys an instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_rect.html" title="Inheritance class for Rectangle type ROI.">RoiRect</a></code> class by deleting the object if it is not <code>nullptr</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance to be deleted. If <code>self</code> is <code>nullptr</code>, no action is taken. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5e51c6399eb9d28f5007aaae12ed59a5" name="a5e51c6399eb9d28f5007aaae12ed59a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e51c6399eb9d28f5007aaae12ed59a5">&#9670;&#160;</a></span>TmRoiRect_GetRectangle()</h2>
 
@@ -5358,51 +5600,6 @@ Functions</h2></td></tr>
     <tr><td class="paramname">self</td><td>A pointer to the <code><a class="el" href="class_tm_s_d_k_1_1_roi_rect.html" title="Inheritance class for Rectangle type ROI.">RoiRect</a></code> object.</td></tr>
     <tr><td class="paramname">ret</td><td>A boolean pointer that will be set to <code>true</code> if the operation is successful, or <code>false</code> otherwise.</td></tr>
     <tr><td class="paramname">arg</td><td>A pointer to a <code><a class="el" href="struct_tm_s_d_k_1_1_rectangle.html" title="A structure to represent a rectangle in 2D space.">Rectangle</a></code> structure where the rectangle will be stored.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A const char pointer to the error message if an exception is raised, otherwise nullptr. </dd></dl>
-
-</div>
-</div>
-<a id="a1d8dec0fb4b6655b90f97d9cb872f196" name="a1d8dec0fb4b6655b90f97d9cb872f196"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d8dec0fb4b6655b90f97d9cb872f196">&#9670;&#160;</a></span>TmRoiRect_GetSpot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">TMAPI const char * TmSDK::TmRoiRect_GetSpot </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html">RoiSpot</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool *&#160;</td>
-          <td class="paramname"><em>ret</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_tm_s_d_k_1_1_point.html">Point</a> *&#160;</td>
-          <td class="paramname"><em>arg</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retrieves the spot (position) of the specified <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">self</td><td>A pointer to the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance from which the spot is to be retrieved. This parameter must be a valid pointer to an existing <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> object. </td></tr>
-    <tr><td class="paramname">ret</td><td>A pointer to a boolean value that indicates whether the operation was successful. If the function completes successfully, this value is set to <code>true</code>. If an error occurs, it is set to <code>false</code>. </td></tr>
-    <tr><td class="paramname">arg</td><td>A pointer to a <code><a class="el" href="struct_tm_s_d_k_1_1_point.html" title="A structure to represent a point in 2D space.">Point</a></code> structure where the coordinates of the spot will be stored. The function fills this structure with the spot's x and y coordinates. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5564,6 +5761,77 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the newly created <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance, initialized with the specified x and y coordinates. This pointer is never <code>nullptr</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a428fea2b77c2ad9eb0ac0faa5d3a22c1" name="a428fea2b77c2ad9eb0ac0faa5d3a22c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428fea2b77c2ad9eb0ac0faa5d3a22c1">&#9670;&#160;</a></span>TmRoiSpot_Dtor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI void TmSDK::TmRoiSpot_Dtor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html">RoiSpot</a> *&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroys an instance of the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> class by deleting the object if it is not <code>nullptr</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance to be deleted. If <code>self</code> is <code>nullptr</code>, no action is taken. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2cbdb4b929d82152da4b75f7c6240dbc" name="a2cbdb4b929d82152da4b75f7c6240dbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cbdb4b929d82152da4b75f7c6240dbc">&#9670;&#160;</a></span>TmRoiSpot_GetSpot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI const char * TmSDK::TmRoiSpot_GetSpot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html">RoiSpot</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_tm_s_d_k_1_1_point.html">Point</a> *&#160;</td>
+          <td class="paramname"><em>arg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the spot (position) of the specified <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>A pointer to the <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> instance from which the spot is to be retrieved. This parameter must be a valid pointer to an existing <code><a class="el" href="class_tm_s_d_k_1_1_roi_spot.html" title="Inheritance class for Spot type ROI.">RoiSpot</a></code> object. </td></tr>
+    <tr><td class="paramname">ret</td><td>A pointer to a boolean value that indicates whether the operation was successful. If the function completes successfully, this value is set to <code>true</code>. If an error occurs, it is set to <code>false</code>. </td></tr>
+    <tr><td class="paramname">arg</td><td>A pointer to a <code><a class="el" href="struct_tm_s_d_k_1_1_point.html" title="A structure to represent a point in 2D space.">Point</a></code> structure where the coordinates of the spot will be stored. The function fills this structure with the spot's x and y coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A const char pointer to the error message if an exception is raised, otherwise nullptr. </dd></dl>
 
 </div>
 </div>

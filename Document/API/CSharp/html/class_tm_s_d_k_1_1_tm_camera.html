@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TmSDK: TmSDK.TmCamera Class Reference</title>
+<title>TmSDK (C#): TmSDK.TmCamera Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('class_tm_s_d_k_1_1_tm_camera.html','')
 </div><!--header-->
 <div class="contents">
 
-<p>TmCamera.  
+<p>Represents a thermal camera and provides methods to control and interact with the camera.  
  <a href="class_tm_s_d_k_1_1_tm_camera.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for TmSDK.TmCamera:</div>
@@ -108,9 +108,8 @@ Inheritance diagram for TmSDK.TmCamera:</div>
  <div class="center">
   <img src="class_tm_s_d_k_1_1_tm_camera.png" usemap="#TmSDK.TmCamera_map" alt=""/>
   <map id="TmSDK.TmCamera_map" name="TmSDK.TmCamera_map">
-<area href="class_tm_s_d_k_1_1_self_ptr.html" alt="TmSDK.SelfPtr" shape="rect" coords="0,0,158,24"/>
-<area href="class_tm_s_d_k_1_1_tm_local_camera.html" alt="TmSDK.TmLocalCamera" shape="rect" coords="0,112,158,136"/>
-<area href="class_tm_s_d_k_1_1_tm_remote_camera.html" alt="TmSDK.TmRemoteCamera" shape="rect" coords="168,112,326,136"/>
+<area href="class_tm_s_d_k_1_1_tm_local_camera.html" title="Represents a local thermal camera that can be controlled and queried for information...." alt="TmSDK.TmLocalCamera" shape="rect" coords="0,112,158,136"/>
+<area href="class_tm_s_d_k_1_1_tm_remote_camera.html" title="Represents a remote thermal camera that can be controlled and queried for information...." alt="TmSDK.TmRemoteCamera" shape="rect" coords="168,112,326,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -119,11 +118,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5660836cab56152a5540f20bb14c6624" id="r_a5660836cab56152a5540f20bb14c6624"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a5660836cab56152a5540f20bb14c6624">TmCamera</a> ()</td></tr>
 <tr class="memdesc:a5660836cab56152a5540f20bb14c6624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor of TmCamera.  <br /></td></tr>
 <tr class="separator:a5660836cab56152a5540f20bb14c6624"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6e3798394d0508d73447d1dfbd79d7b" id="r_ab6e3798394d0508d73447d1dfbd79d7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#ab6e3798394d0508d73447d1dfbd79d7b">Disconnect</a> ()</td></tr>
-<tr class="separator:ab6e3798394d0508d73447d1dfbd79d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a284d43d4840f102b29c5c08d2fdc591f" id="r_a284d43d4840f102b29c5c08d2fdc591f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a284d43d4840f102b29c5c08d2fdc591f">Open</a> (string name, string serialNum, string mac, string ip)</td></tr>
-<tr class="memdesc:a284d43d4840f102b29c5c08d2fdc591f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open camera control interface for a remote TmCamera.  <br /></td></tr>
-<tr class="separator:a284d43d4840f102b29c5c08d2fdc591f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae32da07d8800deb93528267d882fd6cc" id="r_ae32da07d8800deb93528267d882fd6cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#ae32da07d8800deb93528267d882fd6cc">Open</a> (<a class="el" href="class_tm_s_d_k_1_1_remote_cam_info.html">RemoteCamInfo</a> remoteCameraInfo)</td></tr>
 <tr class="memdesc:ae32da07d8800deb93528267d882fd6cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open camera control interface for a remote TmCamera.  <br /></td></tr>
 <tr class="separator:ae32da07d8800deb93528267d882fd6cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,24 +131,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a382ae22acc2c0a639eea6a11512a1e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispose of TmCamera.  <br /></td></tr>
 <tr class="separator:a382ae22acc2c0a639eea6a11512a1e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6297e3be786d64e82c425ce2654ac381" id="r_a6297e3be786d64e82c425ce2654ac381"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a6297e3be786d64e82c425ce2654ac381">QueryFrame</a> (int width, int height)</td></tr>
+<tr class="memdesc:a6297e3be786d64e82c425ce2654ac381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries and retrieves a frame from the camera with the specified dimensions.  <br /></td></tr>
 <tr class="separator:a6297e3be786d64e82c425ce2654ac381"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e1cd627be79813430344c9c59165241" id="r_a7e1cd627be79813430344c9c59165241"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a7e1cd627be79813430344c9c59165241">GetTemperature</a> (double raw)</td></tr>
-<tr class="memdesc:a7e1cd627be79813430344c9c59165241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert raw value to celsius temeperature.  <br /></td></tr>
+<tr class="memdesc:a7e1cd627be79813430344c9c59165241"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the temperature value from the camera based on a raw input value.  <br /></td></tr>
 <tr class="separator:a7e1cd627be79813430344c9c59165241"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0b146ce153f24e6d877e5828a01e9b" id="r_aae0b146ce153f24e6d877e5828a01e9b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#aae0b146ce153f24e6d877e5828a01e9b">SetColorMap</a> (int selectedIndex)</td></tr>
+<tr class="memdesc:aae0b146ce153f24e6d877e5828a01e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the color map for the camera.  <br /></td></tr>
 <tr class="separator:aae0b146ce153f24e6d877e5828a01e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4283f6b9d44fe2d439f4787d164a98f0" id="r_a4283f6b9d44fe2d439f4787d164a98f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a4283f6b9d44fe2d439f4787d164a98f0">SetTempUnit</a> (int selectedIndex)</td></tr>
+<tr class="memdesc:a4283f6b9d44fe2d439f4787d164a98f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the temperature unit for the camera.  <br /></td></tr>
 <tr class="separator:a4283f6b9d44fe2d439f4787d164a98f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0943d59ccbb6baa83655aa08dd183d3f" id="r_a0943d59ccbb6baa83655aa08dd183d3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a0943d59ccbb6baa83655aa08dd183d3f">SetNoiseFiltering</a> (bool chdsecked)</td></tr>
+<tr class="memdesc:a0943d59ccbb6baa83655aa08dd183d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the noise filtering option for the camera.  <br /></td></tr>
+<tr class="separator:a0943d59ccbb6baa83655aa08dd183d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a2a6837cac7980a1a51ab99790bb2c84b" id="r_a2a6837cac7980a1a51ab99790bb2c84b"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a2a6837cac7980a1a51ab99790bb2c84b">TmVideoPort</a> = 10603</td></tr>
-<tr class="separator:a2a6837cac7980a1a51ab99790bb2c84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3b118320fe3227e7a9807a2e1540631" id="r_ad3b118320fe3227e7a9807a2e1540631"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#ad3b118320fe3227e7a9807a2e1540631">TmControlPort</a> = 10604</td></tr>
-<tr class="separator:ad3b118320fe3227e7a9807a2e1540631"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f975d1fecb68b0fa2d66bc8de5fa279" id="r_a7f975d1fecb68b0fa2d66bc8de5fa279"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html">TmControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a7f975d1fecb68b0fa2d66bc8de5fa279">TmControl</a> = null</td></tr>
-<tr class="separator:a7f975d1fecb68b0fa2d66bc8de5fa279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fcfeaaf31fcf4e0a61e40f64ff1574e" id="r_a1fcfeaaf31fcf4e0a61e40f64ff1574e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html">TmControl</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a1fcfeaaf31fcf4e0a61e40f64ff1574e">tmControl</a> = null</td></tr>
+<tr class="memdesc:a1fcfeaaf31fcf4e0a61e40f64ff1574e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance for camera control.  <br /></td></tr>
+<tr class="separator:a1fcfeaaf31fcf4e0a61e40f64ff1574e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc0a256044e0a8940ec6bc4663bd39f6" id="r_acc0a256044e0a8940ec6bc4663bd39f6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#acc0a256044e0a8940ec6bc4663bd39f6">Name</a></td></tr>
+<tr class="memdesc:acc0a256044e0a8940ec6bc4663bd39f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera device name.  <br /></td></tr>
 <tr class="separator:acc0a256044e0a8940ec6bc4663bd39f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
@@ -171,29 +169,9 @@ Properties</h2></td></tr>
 <tr class="memitem:a5e6466b33d2fc05e4285a8b982582763" id="r_a5e6466b33d2fc05e4285a8b982582763"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a5e6466b33d2fc05e4285a8b982582763">IsOpen</a><code> [get]</code></td></tr>
 <tr class="memdesc:a5e6466b33d2fc05e4285a8b982582763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property of camera control interface.  <br /></td></tr>
 <tr class="separator:a5e6466b33d2fc05e4285a8b982582763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header properties_class_tm_s_d_k_1_1_self_ptr"><td colspan="2" onclick="javascript:toggleInherit('properties_class_tm_s_d_k_1_1_self_ptr')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_tm_s_d_k_1_1_self_ptr.html">TmSDK.SelfPtr</a></td></tr>
-<tr class="memitem:ab2e00d04eab6e9a42ecfebbc92158f29 inherit properties_class_tm_s_d_k_1_1_self_ptr" id="r_ab2e00d04eab6e9a42ecfebbc92158f29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_self_ptr.html#ab2e00d04eab6e9a42ecfebbc92158f29">IsDisposed</a> = false<code> [get, protected set]</code></td></tr>
-<tr class="separator:ab2e00d04eab6e9a42ecfebbc92158f29 inherit properties_class_tm_s_d_k_1_1_self_ptr"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a405594a6320a4f39292532c44fe94189 inherit properties_class_tm_s_d_k_1_1_self_ptr" id="r_a405594a6320a4f39292532c44fe94189"><td class="memItemLeft" align="right" valign="top">IntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_self_ptr.html#a405594a6320a4f39292532c44fe94189">SelfPointer</a><code> [get]</code></td></tr>
-<tr class="separator:a405594a6320a4f39292532c44fe94189 inherit properties_class_tm_s_d_k_1_1_self_ptr"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_class_tm_s_d_k_1_1_self_ptr"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_tm_s_d_k_1_1_self_ptr')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_tm_s_d_k_1_1_self_ptr.html">TmSDK.SelfPtr</a></td></tr>
-<tr class="memitem:a0d6207dee4c810c2d79c6a16a72c53f3 inherit pro_methods_class_tm_s_d_k_1_1_self_ptr" id="r_a0d6207dee4c810c2d79c6a16a72c53f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_self_ptr.html#a0d6207dee4c810c2d79c6a16a72c53f3">SelfPtr</a> ()</td></tr>
-<tr class="separator:a0d6207dee4c810c2d79c6a16a72c53f3 inherit pro_methods_class_tm_s_d_k_1_1_self_ptr"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa94140425ae12dc0658f7c792c59d04a inherit pro_methods_class_tm_s_d_k_1_1_self_ptr" id="r_aa94140425ae12dc0658f7c792c59d04a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_self_ptr.html#aa94140425ae12dc0658f7c792c59d04a">SelfPtr</a> (IntPtr ptr)</td></tr>
-<tr class="separator:aa94140425ae12dc0658f7c792c59d04a inherit pro_methods_class_tm_s_d_k_1_1_self_ptr"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b5d18df16725b81c12d9923547ab3d1 inherit pro_methods_class_tm_s_d_k_1_1_self_ptr" id="r_a4b5d18df16725b81c12d9923547ab3d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_self_ptr.html#a4b5d18df16725b81c12d9923547ab3d1">Dispose</a> (bool disposing)</td></tr>
-<tr class="separator:a4b5d18df16725b81c12d9923547ab3d1 inherit pro_methods_class_tm_s_d_k_1_1_self_ptr"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac771f87521b1207341daa82466d238a3 inherit pro_methods_class_tm_s_d_k_1_1_self_ptr" id="r_ac771f87521b1207341daa82466d238a3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_self_ptr.html#ac771f87521b1207341daa82466d238a3">Disposing</a> ()</td></tr>
-<tr class="separator:ac771f87521b1207341daa82466d238a3 inherit pro_methods_class_tm_s_d_k_1_1_self_ptr"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_class_tm_s_d_k_1_1_self_ptr"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_tm_s_d_k_1_1_self_ptr')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_tm_s_d_k_1_1_self_ptr.html">TmSDK.SelfPtr</a></td></tr>
-<tr class="memitem:a9878ecb33c646b69ad74114ad119752f inherit pro_attribs_class_tm_s_d_k_1_1_self_ptr" id="r_a9878ecb33c646b69ad74114ad119752f"><td class="memItemLeft" align="right" valign="top">IntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_self_ptr.html#a9878ecb33c646b69ad74114ad119752f">self</a> = IntPtr.Zero</td></tr>
-<tr class="separator:a9878ecb33c646b69ad74114ad119752f inherit pro_attribs_class_tm_s_d_k_1_1_self_ptr"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>TmCamera. </p>
+<div class="textblock"><p>Represents a thermal camera and provides methods to control and interact with the camera. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5660836cab56152a5540f20bb14c6624" name="a5660836cab56152a5540f20bb14c6624"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5660836cab56152a5540f20bb14c6624">&#9670;&#160;</a></span>TmCamera()</h2>
@@ -235,23 +213,6 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab6e3798394d0508d73447d1dfbd79d7b" name="ab6e3798394d0508d73447d1dfbd79d7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6e3798394d0508d73447d1dfbd79d7b">&#9670;&#160;</a></span>Disconnect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TmSDK.TmCamera.Disconnect </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a382ae22acc2c0a639eea6a11512a1e17" name="a382ae22acc2c0a639eea6a11512a1e17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a382ae22acc2c0a639eea6a11512a1e17">&#9670;&#160;</a></span>Dispose()</h2>
 
@@ -287,19 +248,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Convert raw value to celsius temeperature. </p>
+<p>Retrieves the temperature value from the camera based on a raw input value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">raw</td><td></td></tr>
+    <tr><td class="paramname">raw</td><td>The raw input value used to calculate the temperature.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The temperature value calculated from the raw input if successful; otherwise, returns double.MinValue if an error occurs. </dd></dl>
 
 </div>
 </div>
 <a id="a40ffefa079783a6d562e981a396d8863" name="a40ffefa079783a6d562e981a396d8863"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ffefa079783a6d562e981a396d8863">&#9670;&#160;</a></span>Open() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ffefa079783a6d562e981a396d8863">&#9670;&#160;</a></span>Open() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,7 +287,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="ae32da07d8800deb93528267d882fd6cc" name="ae32da07d8800deb93528267d882fd6cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae32da07d8800deb93528267d882fd6cc">&#9670;&#160;</a></span>Open() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae32da07d8800deb93528267d882fd6cc">&#9670;&#160;</a></span>Open() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,56 +306,6 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">remoteCameraInfo</td><td>camera information class</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a284d43d4840f102b29c5c08d2fdc591f" name="a284d43d4840f102b29c5c08d2fdc591f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a284d43d4840f102b29c5c08d2fdc591f">&#9670;&#160;</a></span>Open() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool TmSDK.TmCamera.Open </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>serialNum</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>mac</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>ip</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Open camera control interface for a remote TmCamera. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">addr</td><td>IP address</td></tr>
-    <tr><td class="paramname">port</td><td>port : 10604</td></tr>
   </table>
   </dd>
 </dl>
@@ -427,7 +338,16 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Queries and retrieves a frame from the camera with the specified dimensions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>The width of the frame to be retrieved.</td></tr>
+    <tr><td class="paramname">height</td><td>The height of the frame to be retrieved.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A TmFrame object representing the retrieved frame if successful; otherwise, null if the camera is not open or an error occurs. </dd></dl>
 
 </div>
 </div>
@@ -447,6 +367,42 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the color map for the camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">selectedIndex</td><td>The index of the color map to be set.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the color map was successfully set; otherwise, <code>false</code> if an error occurred. </dd></dl>
+
+</div>
+</div>
+<a id="a0943d59ccbb6baa83655aa08dd183d3f" name="a0943d59ccbb6baa83655aa08dd183d3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0943d59ccbb6baa83655aa08dd183d3f">&#9670;&#160;</a></span>SetNoiseFiltering()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmCamera.SetNoiseFiltering </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>chdsecked</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the noise filtering option for the camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chdsecked</td><td>A boolean value indicating whether noise filtering should be enabled (<code>true</code>) or disabled (<code>false</code>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the noise filtering option was successfully set; otherwise, <code>false</code> if an error occurred. </dd></dl>
+
 </div>
 </div>
 <a id="a4283f6b9d44fe2d439f4787d164a98f0" name="a4283f6b9d44fe2d439f4787d164a98f0"></a>
@@ -465,6 +421,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the temperature unit for the camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">selectedIndex</td><td>The index representing the temperature unit to be set. This should correspond to the available temperature units.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>TempUnit.Raw = 0, TempUnit.Celsius = 0, TempUnit.Fahrenheit = 0, TempUnit.Kelvin = 3 </p><dl class="section return"><dt>Returns</dt><dd><code>true</code> if the temperature unit was successfully set; otherwise, <code>false</code> if an error occurred. </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -480,47 +445,23 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Camera device name. </p>
+
 </div>
 </div>
-<a id="a7f975d1fecb68b0fa2d66bc8de5fa279" name="a7f975d1fecb68b0fa2d66bc8de5fa279"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f975d1fecb68b0fa2d66bc8de5fa279">&#9670;&#160;</a></span>TmControl</h2>
+<a id="a1fcfeaaf31fcf4e0a61e40f64ff1574e" name="a1fcfeaaf31fcf4e0a61e40f64ff1574e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fcfeaaf31fcf4e0a61e40f64ff1574e">&#9670;&#160;</a></span>tmControl</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html">TmControl</a> TmSDK.TmCamera.TmControl = null</td>
+          <td class="memname"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html">TmControl</a> TmSDK.TmCamera.tmControl = null</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ad3b118320fe3227e7a9807a2e1540631" name="ad3b118320fe3227e7a9807a2e1540631"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3b118320fe3227e7a9807a2e1540631">&#9670;&#160;</a></span>TmControlPort</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">readonly int TmSDK.TmCamera.TmControlPort = 10604</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2a6837cac7980a1a51ab99790bb2c84b" name="a2a6837cac7980a1a51ab99790bb2c84b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a6837cac7980a1a51ab99790bb2c84b">&#9670;&#160;</a></span>TmVideoPort</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">readonly int TmSDK.TmCamera.TmVideoPort = 10603</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Instance for camera control. </p>
 
 </div>
 </div>

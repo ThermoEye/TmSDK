@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['addrip_0',['AddrIP',['../class_tm_s_d_k_1_1_remote_cam_info.html#a230a253901f0781570c420c8f4b24431',1,'TmSDK::RemoteCamInfo']]],
-  ['addrmac_1',['AddrMAC',['../class_tm_s_d_k_1_1_remote_cam_info.html#ad9ae799247549a2df08e1b9e843d0b7c',1,'TmSDK::RemoteCamInfo']]],
-  ['alarmnuc_2',['AlarmNUC',['../class_tm_s_d_k_1_1_tm_control.html#a4b497042d0cb74e02613baf4f8d734f2',1,'TmSDK::TmControl']]],
-  ['assertexception_3',['AssertException',['../class_tm_s_d_k_1_1_tm_frame.html#af3787f09dc5e729d0c4f6be9f7c643f7',1,'TmSDK::TmFrame']]],
-  ['autoshutter_4',['AutoShutter',['../class_tm_s_d_k_1_1_tm_control.html#af675a3a75d8caeff4fe59a818796588f',1,'TmSDK::TmControl']]]
+  ['additem_0',['additem',['../class_tm_s_d_k_1_1_tm_roi_manager.html#a8496e733147dab240e4b39ef4a5a2d17',1,'TmSDK.TmRoiManager.AddItem(TmRoiType type, int x, int y)'],['../class_tm_s_d_k_1_1_tm_roi_manager.html#a6a12a1cec2378846aa53015b24b35a30',1,'TmSDK.TmRoiManager.AddItem(TmRoiType type, int x, int y, int w, int h)']]],
+  ['addrip_1',['AddrIP',['../class_tm_s_d_k_1_1_remote_cam_info.html#a230a253901f0781570c420c8f4b24431',1,'TmSDK::RemoteCamInfo']]],
+  ['addrmac_2',['AddrMAC',['../class_tm_s_d_k_1_1_remote_cam_info.html#ad9ae799247549a2df08e1b9e843d0b7c',1,'TmSDK::RemoteCamInfo']]],
+  ['autumn_3',['Autumn',['../namespace_tm_s_d_k.html#ab2a545b60de3934d1dcfc8bdf224c9bea1e3576c804bb2b1cbf66a87b70b53ba8',1,'TmSDK']]]
 ];

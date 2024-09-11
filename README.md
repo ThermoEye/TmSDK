@@ -8,7 +8,7 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
 ├─Document                  ; API Documentation and User Manual
 │  └─API
 │      ├─Cpp                ; C++ API
-│      ├─CSharp (TBD)       ; C# API
+│      ├─CSharp             ; C# API
 │      └─Python             ; Python API
 ├─Firmware                  ; TMCxxx firmware files
 └─SDK                       ; TmSDK library and sample code
@@ -23,13 +23,17 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
 ## Requirement
 
 Windows C++
-- Windows 11
+- Windows 10 or 11
 - Visual Studio 2022
 - Qt5.14.2
 - qtcreator
 
+Windows C#
+- Windows 10 or 11
+- Visual Studio 2022
+
 Windows Python
-- Windows 11
+- Windows 10 or 11
 - Visual Studio 2022 (optional)
 - Python 3.9 or higher
 - PyQt5

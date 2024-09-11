@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TmSDK: TmSDK.LocalCamInfo Class Reference</title>
+<title>TmSDK (C#): TmSDK.LocalCamInfo Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -114,11 +114,16 @@ Inheritance diagram for TmSDK.LocalCamInfo:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aed95bdf3fd3963eb6b9781fad8dec9d0" id="r_aed95bdf3fd3963eb6b9781fad8dec9d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_local_cam_info.html#aed95bdf3fd3963eb6b9781fad8dec9d0">LocalCamInfo</a> (string name, string comPort, int index)</td></tr>
-<tr class="memdesc:aed95bdf3fd3963eb6b9781fad8dec9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the LocalCamInfo class.  <br /></td></tr>
+<tr class="memdesc:aed95bdf3fd3963eb6b9781fad8dec9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of LocalCamInfo.  <br /></td></tr>
 <tr class="separator:aed95bdf3fd3963eb6b9781fad8dec9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3d98f46dc0870de5b81d339386875c" id="r_ade3d98f46dc0870de5b81d339386875c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_local_cam_info.html#ade3d98f46dc0870de5b81d339386875c">LocalCamInfo</a> (IntPtr camInfoObj)</td></tr>
+<tr class="memdesc:ade3d98f46dc0870de5b81d339386875c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of LocalCamInfo using native object pointer.  <br /></td></tr>
+<tr class="separator:ade3d98f46dc0870de5b81d339386875c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a05cffdc7483bc1e9d65420c8e4124532" id="r_a05cffdc7483bc1e9d65420c8e4124532"><td class="memItemLeft" align="right" valign="top">IntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_local_cam_info.html#a05cffdc7483bc1e9d65420c8e4124532">self</a> = IntPtr.Zero</td></tr>
+<tr class="separator:a05cffdc7483bc1e9d65420c8e4124532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6aa3ef22205c9b628de7f6825ce12fc" id="r_ac6aa3ef22205c9b628de7f6825ce12fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_local_cam_info.html#ac6aa3ef22205c9b628de7f6825ce12fc">Index</a></td></tr>
 <tr class="memdesc:ac6aa3ef22205c9b628de7f6825ce12fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera index.  <br /></td></tr>
 <tr class="separator:ac6aa3ef22205c9b628de7f6825ce12fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,7 +138,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>Inheritance class for local camera information store. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aed95bdf3fd3963eb6b9781fad8dec9d0" name="aed95bdf3fd3963eb6b9781fad8dec9d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed95bdf3fd3963eb6b9781fad8dec9d0">&#9670;&#160;</a></span>LocalCamInfo()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aed95bdf3fd3963eb6b9781fad8dec9d0">&#9670;&#160;</a></span>LocalCamInfo() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,7 +169,41 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initializes a new instance of the LocalCamInfo class. </p>
+<p>Constructor of LocalCamInfo. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the camera</td></tr>
+    <tr><td class="paramname">comPort</td><td>COM port of the camera</td></tr>
+    <tr><td class="paramname">index</td><td>Index of the camera</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ade3d98f46dc0870de5b81d339386875c" name="ade3d98f46dc0870de5b81d339386875c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3d98f46dc0870de5b81d339386875c">&#9670;&#160;</a></span>LocalCamInfo() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TmSDK.LocalCamInfo.LocalCamInfo </td>
+          <td>(</td>
+          <td class="paramtype">IntPtr&#160;</td>
+          <td class="paramname"><em>camInfoObj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor of LocalCamInfo using native object pointer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camInfoObj</td><td>Pointer to the native camera information object</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -217,8 +256,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a05cffdc7483bc1e9d65420c8e4124532" name="a05cffdc7483bc1e9d65420c8e4124532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05cffdc7483bc1e9d65420c8e4124532">&#9670;&#160;</a></span>self</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IntPtr TmSDK.LocalCamInfo.self = IntPtr.Zero</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><b>TmCamera.cs</b></li>
+<li><b>TmCamera.Externs.cs</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

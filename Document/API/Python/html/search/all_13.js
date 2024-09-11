@@ -14,11 +14,15 @@ var searchData=
   ['tmcoredir_11',['TMCOREDIR',['../namespace_tm_core.html#ae959cd8e5e57de6ef354756269d626e7',1,'TmCore']]],
   ['tmexception_12',['TmException',['../class_tm_core_1_1_tm_exception_1_1_tm_exception.html',1,'TmCore::TmException']]],
   ['tmframe_13',['TmFrame',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html',1,'TmCore::TmFrame']]],
-  ['tmroimanager_14',['TmRoiManager',['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html',1,'TmCore::TmRoi']]],
-  ['tmsdk_15',['TmSDK',['../index.html',1,'']]],
-  ['to_5fbitmap_16',['to_bitmap',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#ab0d076fec7d794494953c39d2d020753',1,'TmCore::TmFrame::TmFrame']]],
-  ['turbo_17',['Turbo',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a17fa7907cef5a9abec1f2ac864fbd23d',1,'TmCore::TmTypes::ColormapTypes']]],
-  ['twilight_18',['Twilight',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a1b002c0cf15b7c83c5a89eb2041e0996',1,'TmCore::TmTypes::ColormapTypes']]],
-  ['twilightshifted_19',['TwilightShifted',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a4b3ce37450e4db050c314cb6c4a6695d',1,'TmCore::TmTypes::ColormapTypes']]],
-  ['type_20',['type',['../class_tm_core_1_1_tm_roi_1_1_roi_object.html#a77c3af0f8e6d00b83ad52cc1352d1a59',1,'TmCore::TmRoi::RoiObject']]]
+  ['tmlocalcaminfo_14',['TmLocalCamInfo',['../class_tm_core_1_1_tm_camera_1_1_tm_local_cam_info.html',1,'TmCore::TmCamera']]],
+  ['tmlocalcaminfostructure_15',['TmLocalCamInfoStructure',['../class_tm_core_1_1_tm_camera_1_1_tm_local_cam_info_structure.html',1,'TmCore::TmCamera']]],
+  ['tmremotecaminfo_16',['TmRemoteCamInfo',['../class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info.html',1,'TmCore::TmCamera']]],
+  ['tmremotecaminfostructure_17',['TmRemoteCamInfoStructure',['../class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info_structure.html',1,'TmCore::TmCamera']]],
+  ['tmroimanager_18',['TmRoiManager',['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html',1,'TmCore::TmRoi']]],
+  ['tmsdk_19',['TmSDK',['../index.html',1,'']]],
+  ['to_5fbitmap_20',['to_bitmap',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#ab0d076fec7d794494953c39d2d020753',1,'TmCore::TmFrame::TmFrame']]],
+  ['turbo_21',['Turbo',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a17fa7907cef5a9abec1f2ac864fbd23d',1,'TmCore::TmTypes::ColormapTypes']]],
+  ['twilight_22',['Twilight',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a1b002c0cf15b7c83c5a89eb2041e0996',1,'TmCore::TmTypes::ColormapTypes']]],
+  ['twilightshifted_23',['TwilightShifted',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a4b3ce37450e4db050c314cb6c4a6695d',1,'TmCore::TmTypes::ColormapTypes']]],
+  ['type_24',['type',['../class_tm_core_1_1_tm_roi_1_1_roi_object.html#a77c3af0f8e6d00b83ad52cc1352d1a59',1,'TmCore::TmRoi::RoiObject']]]
 ];

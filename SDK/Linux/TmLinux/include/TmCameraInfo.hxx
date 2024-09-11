@@ -25,10 +25,14 @@ namespace TmSDK
 		int Index = -1;
 		std::string Name = "";
 		std::string ComPort = "";
+
+	public:
 		TmLocalCamInfo(std::string name, std::string comPort, int index);
-		//TmLocalCamInfo(std::string name, int index);
 		TmLocalCamInfo();
 		virtual ~TmLocalCamInfo();
+		std::string GetName();
+		std::string GetComPort();
+		int GetIndex();
 	};
 	
 	/// <summary>
@@ -41,8 +45,13 @@ namespace TmSDK
 		std::string SerialNumber;
 		std::string AddrMAC;
 		std::string AddrIP;
+	public:
 		TmRemoteCamInfo(std::string name, std::string serialnumber, std::string mac, std::string ip);
 		TmRemoteCamInfo();
 		virtual ~TmRemoteCamInfo();
+		std::string GetName();
+		std::string GetSerialNumber();
+		std::string GetMac();
+		std::string GetIp();
 	};
 }

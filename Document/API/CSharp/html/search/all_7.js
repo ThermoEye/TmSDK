@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['height_0',['Height',['../class_tm_s_d_k_1_1_tm_frame.html#a6b1f7c317937bcc2467d6edc76b1487f',1,'TmSDK::TmFrame']]],
-  ['high_1',['High',['../class_tm_s_d_k_1_1_tm_control.html#afaae2e62fc6ef6a3500d8e83761d10a2a655d20c1ca69519ca647684edbb2db35',1,'TmSDK::TmControl']]],
-  ['histogrambins_2',['HistogramBins',['../class_tm_s_d_k_1_1_tm_frame.html#ad699d7cb7995297321c25ca953d5916e',1,'TmSDK::TmFrame']]],
-  ['hotmode_3',['HotMode',['../class_tm_s_d_k_1_1_tm_control.html#a7e5d2ea2ca7663e2a1cad7b4d5e77b7a',1,'TmSDK::TmControl']]]
+  ['hand_0',['Hand',['../namespace_tm_s_d_k.html#a8d863d22e6de103e3007c1e28e589651aa78b1ac16c0cd02168097fc9a9bd7604',1,'TmSDK']]],
+  ['height_1',['Height',['../class_tm_s_d_k_1_1_tm_frame.html#a6b1f7c317937bcc2467d6edc76b1487f',1,'TmSDK::TmFrame']]],
+  ['history_2',['Revision History',['../index.html#HISTORY',1,'']]],
+  ['hot_3',['Hot',['../namespace_tm_s_d_k.html#ab2a545b60de3934d1dcfc8bdf224c9bea4194726ee334e1085d93e002837b73f0',1,'TmSDK']]],
+  ['hsv_4',['Hsv',['../namespace_tm_s_d_k.html#ab2a545b60de3934d1dcfc8bdf224c9bea9800007af5491f32bc878735c0a20e09',1,'TmSDK']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tmcontrol_0',['TmControl',['../class_tm_s_d_k_1_1_tm_camera.html#a7f975d1fecb68b0fa2d66bc8de5fa279',1,'TmSDK::TmCamera']]],
-  ['tmcontrolport_1',['TmControlPort',['../class_tm_s_d_k_1_1_tm_camera.html#ad3b118320fe3227e7a9807a2e1540631',1,'TmSDK::TmCamera']]],
-  ['tmvideoport_2',['TmVideoPort',['../class_tm_s_d_k_1_1_tm_camera.html#a2a6837cac7980a1a51ab99790bb2c84b',1,'TmSDK::TmCamera']]]
+  ['self_0',['self',['../class_tm_s_d_k_1_1_local_cam_info.html#a05cffdc7483bc1e9d65420c8e4124532',1,'TmSDK.LocalCamInfo.self'],['../class_tm_s_d_k_1_1_remote_cam_info.html#a06e62ae5a47f415dbefe6007690c7f33',1,'TmSDK.RemoteCamInfo.self'],['../class_tm_s_d_k_1_1_tm_control.html#a2e93bfe6e2e9743f8c2004be0e8c3365',1,'TmSDK.TmControl.self']]],
+  ['serialnumber_1',['SerialNumber',['../class_tm_s_d_k_1_1_remote_cam_info.html#a7afa791978ab4e115efd6172e20f2c43',1,'TmSDK::RemoteCamInfo']]],
+  ['start_2',['start',['../struct_tm_s_d_k_1_1_tm_line.html#a16f6730f8a5d4919639a6538bccd6eec',1,'TmSDK::TmLine']]]
 ];

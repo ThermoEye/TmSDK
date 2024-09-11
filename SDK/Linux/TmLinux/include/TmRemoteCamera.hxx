@@ -20,6 +20,9 @@ namespace TmSDK
         int RTSP_PORT = 554;
         void* pRtspClient;
         int fwMaxPacketLength = 512;
+
+    public:
+        static std::vector<TmRemoteCamInfo*> pRemoteCamList;
         
     private:
         static std::vector<std::string> GetNetworkAdapterIPList();

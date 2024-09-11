@@ -47,7 +47,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_tm_s_d_k_1_1_tm_remote_camera.html#af0483a301245bf3117a21c68291b9b05"
+"class_tm_s_d_k_1_1_tm_remote_cam_info.html#af859f7b00d2cda22b79f5ddca70e21f2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

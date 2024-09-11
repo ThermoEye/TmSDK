@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TmSDK: TmSDK.TmControl Class Reference</title>
+<title>TmSDK (C#): TmSDK.TmControl Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -92,7 +92,6 @@ $(document).ready(function(){initNavTree('class_tm_s_d_k_1_1_tm_control.html',''
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_tm_s_d_k_1_1_tm_control-members.html">List of all members</a>  </div>
@@ -100,96 +99,110 @@ $(document).ready(function(){initNavTree('class_tm_s_d_k_1_1_tm_control.html',''
 </div><!--header-->
 <div class="contents">
 
-<p>TmControl.  
+<p>Represents a control interface for managing and querying the device associated with a thermal camera. This class provides methods to access and modify various device settings and retrieve device-specific information. It interacts with the native code through the provided native pointer.  
  <a href="class_tm_s_d_k_1_1_tm_control.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a0f80f5e04d03d6ba1911ca7dd232ded2" id="r_a0f80f5e04d03d6ba1911ca7dd232ded2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a0f80f5e04d03d6ba1911ca7dd232ded2">CtrlProtocol</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a0f80f5e04d03d6ba1911ca7dd232ded2a960b44c579bc2f6818d2daaf9e4c16f0">Normal</a> = 0x01
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a0f80f5e04d03d6ba1911ca7dd232ded2ac33e404a441c6ba9648f88af3c68a1ca">Statistics</a> = 0x02
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a0f80f5e04d03d6ba1911ca7dd232ded2af39181116a0042e3b50710c2a1e70f74">Packet</a> = 0x03
- }</td></tr>
-<tr class="separator:a0f80f5e04d03d6ba1911ca7dd232ded2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaae2e62fc6ef6a3500d8e83761d10a2" id="r_afaae2e62fc6ef6a3500d8e83761d10a2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#afaae2e62fc6ef6a3500d8e83761d10a2">Gain</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#afaae2e62fc6ef6a3500d8e83761d10a2a655d20c1ca69519ca647684edbb2db35">High</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#afaae2e62fc6ef6a3500d8e83761d10a2a28d0edd045e05cf5af64e35ae0c4c6ef">Low</a> = 0x01
- }</td></tr>
-<tr class="separator:afaae2e62fc6ef6a3500d8e83761d10a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af675a3a75d8caeff4fe59a818796588f" id="r_af675a3a75d8caeff4fe59a818796588f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af675a3a75d8caeff4fe59a818796588f">AutoShutter</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af675a3a75d8caeff4fe59a818796588fad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af675a3a75d8caeff4fe59a818796588fa521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x01
- }</td></tr>
-<tr class="separator:af675a3a75d8caeff4fe59a818796588f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af67106a5f08309bd4173fe1d30f28ecb" id="r_af67106a5f08309bd4173fe1d30f28ecb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af67106a5f08309bd4173fe1d30f28ecb">CtrlShutter</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af67106a5f08309bd4173fe1d30f28ecbac3bf447eabe632720a3aa1a7ce401274">Open</a> = 0x01
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af67106a5f08309bd4173fe1d30f28ecbad3d2e617335f08df83599665eef8a418">Close</a> = 0x02
- }</td></tr>
-<tr class="separator:af67106a5f08309bd4173fe1d30f28ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a390c12cec66163284a2f75a69d7fc0f9" id="r_a390c12cec66163284a2f75a69d7fc0f9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a390c12cec66163284a2f75a69d7fc0f9">ShutterComp</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a390c12cec66163284a2f75a69d7fc0f9ad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a390c12cec66163284a2f75a69d7fc0f9a521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x01
- }</td></tr>
-<tr class="separator:a390c12cec66163284a2f75a69d7fc0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b497042d0cb74e02613baf4f8d734f2" id="r_a4b497042d0cb74e02613baf4f8d734f2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a4b497042d0cb74e02613baf4f8d734f2">AlarmNUC</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a4b497042d0cb74e02613baf4f8d734f2ad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0xA1
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a4b497042d0cb74e02613baf4f8d734f2a521c36a31c2762741cf0f8890cbe05e3">On</a> = 0xA0
- }</td></tr>
-<tr class="separator:a4b497042d0cb74e02613baf4f8d734f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2e02d4edd3fb917ffbb4f78ac2ea50b" id="r_ac2e02d4edd3fb917ffbb4f78ac2ea50b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ac2e02d4edd3fb917ffbb4f78ac2ea50b">TempConvert</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ac2e02d4edd3fb917ffbb4f78ac2ea50ba521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ac2e02d4edd3fb917ffbb4f78ac2ea50bad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x01
- }</td></tr>
-<tr class="separator:ac2e02d4edd3fb917ffbb4f78ac2ea50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8cf0a008d3913e1a7257c7fceaf111e" id="r_aa8cf0a008d3913e1a7257c7fceaf111e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aa8cf0a008d3913e1a7257c7fceaf111e">TrsmComp</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aa8cf0a008d3913e1a7257c7fceaf111ea521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x04
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aa8cf0a008d3913e1a7257c7fceaf111ead15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x05
- }</td></tr>
-<tr class="separator:aa8cf0a008d3913e1a7257c7fceaf111e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea864809419fa446e0e3c7c753bde3a" id="r_a3ea864809419fa446e0e3c7c753bde3a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a3ea864809419fa446e0e3c7c753bde3a">TrsmGuide</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a3ea864809419fa446e0e3c7c753bde3aa521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x01
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a3ea864809419fa446e0e3c7c753bde3aad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x00
- }</td></tr>
-<tr class="separator:a3ea864809419fa446e0e3c7c753bde3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a701b32cfa842b097b0a427837b3fca66" id="r_a701b32cfa842b097b0a427837b3fca66"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a701b32cfa842b097b0a427837b3fca66">TrsmGuideTo</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a701b32cfa842b097b0a427837b3fca66a945d5e233cf7d6240f6b783b36a374ff">Left</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a701b32cfa842b097b0a427837b3fca66a92b09c7c48c520c3c55e497875da437c">Right</a> = 0x01
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a701b32cfa842b097b0a427837b3fca66a258f49887ef8d14ac268c92b02503aaa">Up</a> = 0x02
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a701b32cfa842b097b0a427837b3fca66a08a38277b0309070706f6652eeae9a53">Down</a> = 0x03
- }</td></tr>
-<tr class="separator:a701b32cfa842b097b0a427837b3fca66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50bfc7945d45c7f9035b89314252664b" id="r_a50bfc7945d45c7f9035b89314252664b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a50bfc7945d45c7f9035b89314252664b">TempPrint</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a50bfc7945d45c7f9035b89314252664ba521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x05
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a50bfc7945d45c7f9035b89314252664bad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x06
- }</td></tr>
-<tr class="separator:a50bfc7945d45c7f9035b89314252664b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8a9820b89ec3aa55504bd67dcb16725" id="r_af8a9820b89ec3aa55504bd67dcb16725"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af8a9820b89ec3aa55504bd67dcb16725">IpAssign</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af8a9820b89ec3aa55504bd67dcb16725a84a8921b25f505d0d2077aeb5db4bc16">Static</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af8a9820b89ec3aa55504bd67dcb16725a54201c55d2bdc7a9e19d9e032d8c0ede">DHCP</a> = 0x01
- }</td></tr>
-<tr class="separator:af8a9820b89ec3aa55504bd67dcb16725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e5d2ea2ca7663e2a1cad7b4d5e77b7a" id="r_a7e5d2ea2ca7663e2a1cad7b4d5e77b7a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a7e5d2ea2ca7663e2a1cad7b4d5e77b7a">HotMode</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a7e5d2ea2ca7663e2a1cad7b4d5e77b7aa25a81701fbfa4a1efdf660a950c1d006">White</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a7e5d2ea2ca7663e2a1cad7b4d5e77b7aae90dfb84e30edf611e326eeb04d680de">Black</a> = 0x01
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a7e5d2ea2ca7663e2a1cad7b4d5e77b7aa6adf97f83acf6453d4a6a4b1070f3754">None</a> = 0xFF
- }</td></tr>
-<tr class="separator:a7e5d2ea2ca7663e2a1cad7b4d5e77b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18ba8d3f6183dda4d0f05294dea6ea27" id="r_a18ba8d3f6183dda4d0f05294dea6ea27"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a18ba8d3f6183dda4d0f05294dea6ea27">ImageOut</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a18ba8d3f6183dda4d0f05294dea6ea27a7fb55ed0b7a30342ba6da306428cae04">First</a> = 0x20
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a18ba8d3f6183dda4d0f05294dea6ea27ad55b30607c2a9a2616347d6edb789f6b">Last</a> = 0x21
- }</td></tr>
-<tr class="separator:a18ba8d3f6183dda4d0f05294dea6ea27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58affecd019d5040a73b62c6e65b3d0f" id="r_a58affecd019d5040a73b62c6e65b3d0f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a58affecd019d5040a73b62c6e65b3d0f">CtrlComp</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a58affecd019d5040a73b62c6e65b3d0fa521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x03
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a58affecd019d5040a73b62c6e65b3d0fad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x04
- }</td></tr>
-<tr class="separator:a58affecd019d5040a73b62c6e65b3d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34d383b1df24b9d39acf9c3ba0ffc1f9" id="r_a34d383b1df24b9d39acf9c3ba0ffc1f9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a34d383b1df24b9d39acf9c3ba0ffc1f9">CtrlDPC</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a34d383b1df24b9d39acf9c3ba0ffc1f9a521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a34d383b1df24b9d39acf9c3ba0ffc1f9ad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x01
- }</td></tr>
-<tr class="separator:a34d383b1df24b9d39acf9c3ba0ffc1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66681216224adb32c4943c2e4ad00921" id="r_a66681216224adb32c4943c2e4ad00921"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a66681216224adb32c4943c2e4ad00921">CtrlTEC</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a66681216224adb32c4943c2e4ad00921a521c36a31c2762741cf0f8890cbe05e3">On</a> = 0x00
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a66681216224adb32c4943c2e4ad00921ad15305d7a4e34e02489c74a5ef542f36">Off</a> = 0x01
- }</td></tr>
-<tr class="separator:a66681216224adb32c4943c2e4ad00921"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e351f9373deb4808cfbf0e93c4ddc96" id="r_a9e351f9373deb4808cfbf0e93c4ddc96"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a9e351f9373deb4808cfbf0e93c4ddc96">ViewMode</a> : byte { <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a9e351f9373deb4808cfbf0e93c4ddc96a31b4ba995116c9e160f0ff306cc69082">NUC</a> = 0x02
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a9e351f9373deb4808cfbf0e93c4ddc96a65e65c8ab0d8609ce12fc68a03cb8e00">Raw</a> = 0x03
-, <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a9e351f9373deb4808cfbf0e93c4ddc96a57391192dfa1f247ad015a0fe2eca48e">Pattern</a> = 0x04
- }</td></tr>
-<tr class="separator:a9e351f9373deb4808cfbf0e93c4ddc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac3a820a5020a31d3794692d493eae81f" id="r_ac3a820a5020a31d3794692d493eae81f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ac3a820a5020a31d3794692d493eae81f">TmControl</a> (IntPtr <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a2e93bfe6e2e9743f8c2004be0e8c3365">self</a>)</td></tr>
-<tr class="memdesc:ac3a820a5020a31d3794692d493eae81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <br /></td></tr>
+<tr class="memdesc:ac3a820a5020a31d3794692d493eae81f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <code>TmControl</code> class with the specified native pointer.  <br /></td></tr>
 <tr class="separator:ac3a820a5020a31d3794692d493eae81f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fad002533d3ab8abf7affa2e65a7a84" id="r_a9fad002533d3ab8abf7affa2e65a7a84"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a9fad002533d3ab8abf7affa2e65a7a84">GetProductModelName</a> ()</td></tr>
+<tr class="memdesc:a9fad002533d3ab8abf7affa2e65a7a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the product model name of the device.  <br /></td></tr>
 <tr class="separator:a9fad002533d3ab8abf7affa2e65a7a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a1f3541c62be2e02b34f1465d029517" id="r_a7a1f3541c62be2e02b34f1465d029517"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a7a1f3541c62be2e02b34f1465d029517">GetProductSerialNumber</a> ()</td></tr>
+<tr class="memdesc:a7a1f3541c62be2e02b34f1465d029517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the product serial number of the device.  <br /></td></tr>
+<tr class="separator:a7a1f3541c62be2e02b34f1465d029517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75888b3954698c37f190d9843688f00" id="r_ad75888b3954698c37f190d9843688f00"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ad75888b3954698c37f190d9843688f00">GetHardwareVersion</a> ()</td></tr>
+<tr class="memdesc:ad75888b3954698c37f190d9843688f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the hardware version of the device.  <br /></td></tr>
+<tr class="separator:ad75888b3954698c37f190d9843688f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add731b62c2883bdc352101c25cedd5a5" id="r_add731b62c2883bdc352101c25cedd5a5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#add731b62c2883bdc352101c25cedd5a5">GetBootloaderVersion</a> ()</td></tr>
+<tr class="memdesc:add731b62c2883bdc352101c25cedd5a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bootloader version of the device.  <br /></td></tr>
+<tr class="separator:add731b62c2883bdc352101c25cedd5a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d7caf74e09e74088bcec5349695cd65" id="r_a2d7caf74e09e74088bcec5349695cd65"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a2d7caf74e09e74088bcec5349695cd65">GetFirmwareVersion</a> ()</td></tr>
+<tr class="memdesc:a2d7caf74e09e74088bcec5349695cd65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the firmware version of the device.  <br /></td></tr>
+<tr class="separator:a2d7caf74e09e74088bcec5349695cd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35a353d6dd3547d3465335ef5717d854" id="r_a35a353d6dd3547d3465335ef5717d854"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a35a353d6dd3547d3465335ef5717d854">GetSensorModelName</a> ()</td></tr>
+<tr class="memdesc:a35a353d6dd3547d3465335ef5717d854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the sensor model name of the device.  <br /></td></tr>
+<tr class="separator:a35a353d6dd3547d3465335ef5717d854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedf07bb18f12950cd6eb5563b42cf635" id="r_aedf07bb18f12950cd6eb5563b42cf635"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aedf07bb18f12950cd6eb5563b42cf635">GetSensorSerialNumber</a> ()</td></tr>
+<tr class="memdesc:aedf07bb18f12950cd6eb5563b42cf635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the sensor serial number of the device.  <br /></td></tr>
+<tr class="separator:aedf07bb18f12950cd6eb5563b42cf635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c1a1711884f5b75cc7e969c1efd8dd4" id="r_a4c1a1711884f5b75cc7e969c1efd8dd4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a4c1a1711884f5b75cc7e969c1efd8dd4">GetSensorUptime</a> ()</td></tr>
+<tr class="memdesc:a4c1a1711884f5b75cc7e969c1efd8dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the sensor's uptime.  <br /></td></tr>
+<tr class="separator:a4c1a1711884f5b75cc7e969c1efd8dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53bee8ae167da3d5a969202780942d65" id="r_a53bee8ae167da3d5a969202780942d65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a53bee8ae167da3d5a969202780942d65">GetFluxParameters160</a> (out double sceneEmissivity, out double atmosphericTransmission, out double atmosphericTemperature, out double windowReflectedTemperature, out double windowReflection, out double backgroundTemperature, out double windowTransmission, out double windowTemperature)</td></tr>
+<tr class="memdesc:a53bee8ae167da3d5a969202780942d65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the flux parameters for a 160x120 resolution thermal camera.  <br /></td></tr>
+<tr class="separator:a53bee8ae167da3d5a969202780942d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8583ce40e1eddcbebc4893d3c20b7780" id="r_a8583ce40e1eddcbebc4893d3c20b7780"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a8583ce40e1eddcbebc4893d3c20b7780">SetFluxParameters</a> (double sceneEmissivity, double atmosphericTransmission, double atmosphericTemperature, double windowReflectedTemperature, double windowReflection, double backgroundTemperature, double windowTransmission, double windowTemperature)</td></tr>
+<tr class="memdesc:a8583ce40e1eddcbebc4893d3c20b7780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the flux parameters for a thermal camera.  <br /></td></tr>
+<tr class="separator:a8583ce40e1eddcbebc4893d3c20b7780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cb0c4dfa54d07434cea6ee117dfd68b" id="r_a4cb0c4dfa54d07434cea6ee117dfd68b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a4cb0c4dfa54d07434cea6ee117dfd68b">GetFluxParameters256</a> (out double sceneEmissivity, out double atmosphericTransmission, out double atmosphericTemperature, out double windowReflectedTemperature, out double distance, out double void0, out double void1, out double void2)</td></tr>
+<tr class="memdesc:a4cb0c4dfa54d07434cea6ee117dfd68b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the flux parameters.  <br /></td></tr>
+<tr class="separator:a4cb0c4dfa54d07434cea6ee117dfd68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5f6768b4c62a9c97110100e5e84e354" id="r_aa5f6768b4c62a9c97110100e5e84e354"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aa5f6768b4c62a9c97110100e5e84e354">SetFluxParameters</a> (double sceneEmissivity, double atmosphericTransmission, double atmosphericTemperature, double windowReflectedTemperature, double distance)</td></tr>
+<tr class="memdesc:aa5f6768b4c62a9c97110100e5e84e354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the flux parameters.  <br /></td></tr>
+<tr class="separator:aa5f6768b4c62a9c97110100e5e84e354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e99b507d78d0e3722f3dcedfd7e6a2" id="r_a48e99b507d78d0e3722f3dcedfd7e6a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a48e99b507d78d0e3722f3dcedfd7e6a2">SetDefaultFluxParameters</a> (out double sceneEmissivity, out double atmosphericTransmission, out double atmosphericTemperature, out double windowReflectedTemperature, out double windowReflection, out double backgroundTemperature, out double windowTransmission, out double windowTemperature)</td></tr>
+<tr class="memdesc:a48e99b507d78d0e3722f3dcedfd7e6a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default flux parameters.  <br /></td></tr>
+<tr class="separator:a48e99b507d78d0e3722f3dcedfd7e6a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a291f7affddec65d1cee14f94ea83fa43" id="r_a291f7affddec65d1cee14f94ea83fa43"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a291f7affddec65d1cee14f94ea83fa43">GetGainModeState</a> ()</td></tr>
+<tr class="memdesc:a291f7affddec65d1cee14f94ea83fa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the gain mode state.  <br /></td></tr>
+<tr class="separator:a291f7affddec65d1cee14f94ea83fa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8bc47e429de4cf9d8452bd8c96347b0" id="r_af8bc47e429de4cf9d8452bd8c96347b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af8bc47e429de4cf9d8452bd8c96347b0">SetGainModeState</a> (int state)</td></tr>
+<tr class="memdesc:af8bc47e429de4cf9d8452bd8c96347b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the gain mode state.  <br /></td></tr>
+<tr class="separator:af8bc47e429de4cf9d8452bd8c96347b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3223c8aed5692c410a30f139aefa63c3" id="r_a3223c8aed5692c410a30f139aefa63c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a3223c8aed5692c410a30f139aefa63c3">GetFlatFieldCorrectionParameters</a> (out double maxInterval, out double autoTriggerThreshold)</td></tr>
+<tr class="memdesc:a3223c8aed5692c410a30f139aefa63c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the flat field correction parameters.  <br /></td></tr>
+<tr class="separator:a3223c8aed5692c410a30f139aefa63c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a770032f1ee079e6b7c65f1d8522198" id="r_a1a770032f1ee079e6b7c65f1d8522198"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a1a770032f1ee079e6b7c65f1d8522198">SetFlatFieldCorrectionParameters</a> (double maxInterval, double autoTriggerThreshold)</td></tr>
+<tr class="memdesc:a1a770032f1ee079e6b7c65f1d8522198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the flat field correction parameters.  <br /></td></tr>
+<tr class="separator:a1a770032f1ee079e6b7c65f1d8522198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aba6cdb860c54e0abf08c579e10f935" id="r_a8aba6cdb860c54e0abf08c579e10f935"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a8aba6cdb860c54e0abf08c579e10f935">GetFlatFieldCorrectionMode</a> ()</td></tr>
+<tr class="memdesc:a8aba6cdb860c54e0abf08c579e10f935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the flat field correction mode.  <br /></td></tr>
+<tr class="separator:a8aba6cdb860c54e0abf08c579e10f935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab799d9ca3ea8014c0d1da7dd1a4c7c0a" id="r_ab799d9ca3ea8014c0d1da7dd1a4c7c0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ab799d9ca3ea8014c0d1da7dd1a4c7c0a">SetFlatFieldCorrectionMode</a> (int arg)</td></tr>
+<tr class="memdesc:ab799d9ca3ea8014c0d1da7dd1a4c7c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the flat field correction mode.  <br /></td></tr>
+<tr class="separator:ab799d9ca3ea8014c0d1da7dd1a4c7c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65e0a235b0316d2cc75f5143c2c24fed" id="r_a65e0a235b0316d2cc75f5143c2c24fed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a65e0a235b0316d2cc75f5143c2c24fed">RunFlatFieldCorrection</a> ()</td></tr>
+<tr class="memdesc:a65e0a235b0316d2cc75f5143c2c24fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the flat field correction.  <br /></td></tr>
+<tr class="separator:a65e0a235b0316d2cc75f5143c2c24fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afedad1bc1869a57f614dad3f53b663e1" id="r_afedad1bc1869a57f614dad3f53b663e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#afedad1bc1869a57f614dad3f53b663e1">StoreUserSensorConfig</a> ()</td></tr>
+<tr class="memdesc:afedad1bc1869a57f614dad3f53b663e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the user sensor configuration.  <br /></td></tr>
+<tr class="separator:afedad1bc1869a57f614dad3f53b663e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad87d2e7eba5c343a294b2c3979a216a0" id="r_ad87d2e7eba5c343a294b2c3979a216a0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ad87d2e7eba5c343a294b2c3979a216a0">RestoreDefaultSensorConfig</a> ()</td></tr>
+<tr class="memdesc:ad87d2e7eba5c343a294b2c3979a216a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores the default sensor configuration.  <br /></td></tr>
+<tr class="separator:ad87d2e7eba5c343a294b2c3979a216a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986233c9e44d3022f827231d4f52d131" id="r_a986233c9e44d3022f827231d4f52d131"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a986233c9e44d3022f827231d4f52d131">GetNetworkConfiguration</a> (out string mac, out string ipAssign, out string ip, out string netmask, out string gateway, out string dns, out string dns2)</td></tr>
+<tr class="memdesc:a986233c9e44d3022f827231d4f52d131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the network configuration.  <br /></td></tr>
+<tr class="separator:a986233c9e44d3022f827231d4f52d131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca05ea59346b02dea8c6a72fd7752a11" id="r_aca05ea59346b02dea8c6a72fd7752a11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aca05ea59346b02dea8c6a72fd7752a11">SetNetworkConfiguration</a> (string ipAssign, string ip, string netmask, string gateway, string dns, string dns2)</td></tr>
+<tr class="memdesc:aca05ea59346b02dea8c6a72fd7752a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the network configuration for the device.  <br /></td></tr>
+<tr class="separator:aca05ea59346b02dea8c6a72fd7752a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae321fa5b73d8386d2225ff1ce2564a20" id="r_ae321fa5b73d8386d2225ff1ce2564a20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ae321fa5b73d8386d2225ff1ce2564a20">SetDefaultNetworkConfiguration</a> (out string ipAssign, out string ip, out string netmask, out string gateway, out string dns, out string dns2)</td></tr>
+<tr class="memdesc:ae321fa5b73d8386d2225ff1ce2564a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the default network configuration for the device.  <br /></td></tr>
+<tr class="separator:ae321fa5b73d8386d2225ff1ce2564a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb70ed15d015dc99141441fa88196d0b" id="r_aeb70ed15d015dc99141441fa88196d0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aeb70ed15d015dc99141441fa88196d0b">RebootDevice</a> ()</td></tr>
+<tr class="memdesc:aeb70ed15d015dc99141441fa88196d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reboots the device.  <br /></td></tr>
+<tr class="separator:aeb70ed15d015dc99141441fa88196d0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87772a40bcc71be1604948ba913c0305" id="r_a87772a40bcc71be1604948ba913c0305"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a87772a40bcc71be1604948ba913c0305">CheckFirmware</a> (string fwFilePath, out string vendorName, out string productName, out string versionName, out string buildTime, out int fileSize)</td></tr>
+<tr class="memdesc:a87772a40bcc71be1604948ba913c0305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the firmware information from the given firmware file.  <br /></td></tr>
+<tr class="separator:a87772a40bcc71be1604948ba913c0305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339649b7d9b3bd07923e76796ed25667" id="r_a339649b7d9b3bd07923e76796ed25667"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a339649b7d9b3bd07923e76796ed25667">OpenFirmware</a> (string fwFilePath)</td></tr>
+<tr class="memdesc:a339649b7d9b3bd07923e76796ed25667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the firmware file and prepares it for updating.  <br /></td></tr>
+<tr class="separator:a339649b7d9b3bd07923e76796ed25667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea6ff2765d09cda24add618af01896f" id="r_afea6ff2765d09cda24add618af01896f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#afea6ff2765d09cda24add618af01896f">UpdateFirmware</a> ()</td></tr>
+<tr class="memdesc:afea6ff2765d09cda24add618af01896f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the firmware of the device.  <br /></td></tr>
+<tr class="separator:afea6ff2765d09cda24add618af01896f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0e74a72eb3667a4e813225bc66d047" id="r_aeb0e74a72eb3667a4e813225bc66d047"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aeb0e74a72eb3667a4e813225bc66d047">CloseFirmware</a> ()</td></tr>
+<tr class="memdesc:aeb0e74a72eb3667a4e813225bc66d047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the firmware file after the update is complete.  <br /></td></tr>
+<tr class="separator:aeb0e74a72eb3667a4e813225bc66d047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8179dc9a47e12a16e099f45271b8ff52" id="r_a8179dc9a47e12a16e099f45271b8ff52"><td class="memItemLeft" align="right" valign="top">Tuple&lt; ushort, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a8179dc9a47e12a16e099f45271b8ff52">GetSystemStatus</a> ()</td></tr>
+<tr class="memdesc:a8179dc9a47e12a16e099f45271b8ff52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the system status of the camera.  <br /></td></tr>
+<tr class="separator:a8179dc9a47e12a16e099f45271b8ff52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3a16c0dca2e2dd20cc93f9e0d5d621" id="r_a7c3a16c0dca2e2dd20cc93f9e0d5d621"><td class="memItemLeft" align="right" valign="top">Tuple&lt; ushort, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a7c3a16c0dca2e2dd20cc93f9e0d5d621">GetSystemError</a> ()</td></tr>
+<tr class="memdesc:a7c3a16c0dca2e2dd20cc93f9e0d5d621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the system error of the camera.  <br /></td></tr>
+<tr class="separator:a7c3a16c0dca2e2dd20cc93f9e0d5d621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -197,397 +210,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a2e93bfe6e2e9743f8c2004be0e8c3365"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>TmControl. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a4b497042d0cb74e02613baf4f8d734f2" name="a4b497042d0cb74e02613baf4f8d734f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b497042d0cb74e02613baf4f8d734f2">&#9670;&#160;</a></span>AlarmNUC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a4b497042d0cb74e02613baf4f8d734f2">TmSDK.TmControl.AlarmNUC</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>NUC alarm feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4b497042d0cb74e02613baf4f8d734f2ad15305d7a4e34e02489c74a5ef542f36" name="a4b497042d0cb74e02613baf4f8d734f2ad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>NUC alarm on </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a4b497042d0cb74e02613baf4f8d734f2a521c36a31c2762741cf0f8890cbe05e3" name="a4b497042d0cb74e02613baf4f8d734f2a521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>NUC alarm off </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="af675a3a75d8caeff4fe59a818796588f" name="af675a3a75d8caeff4fe59a818796588f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af675a3a75d8caeff4fe59a818796588f">&#9670;&#160;</a></span>AutoShutter</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af675a3a75d8caeff4fe59a818796588f">TmSDK.TmControl.AutoShutter</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Auto shutter feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af675a3a75d8caeff4fe59a818796588fad15305d7a4e34e02489c74a5ef542f36" name="af675a3a75d8caeff4fe59a818796588fad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>autoshutter off </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af675a3a75d8caeff4fe59a818796588fa521c36a31c2762741cf0f8890cbe05e3" name="af675a3a75d8caeff4fe59a818796588fa521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>autoshutter on </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a58affecd019d5040a73b62c6e65b3d0f" name="a58affecd019d5040a73b62c6e65b3d0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58affecd019d5040a73b62c6e65b3d0f">&#9670;&#160;</a></span>CtrlComp</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a58affecd019d5040a73b62c6e65b3d0f">TmSDK.TmControl.CtrlComp</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>2nd Compensation </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a58affecd019d5040a73b62c6e65b3d0fa521c36a31c2762741cf0f8890cbe05e3" name="a58affecd019d5040a73b62c6e65b3d0fa521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>2nd compensation on </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a58affecd019d5040a73b62c6e65b3d0fad15305d7a4e34e02489c74a5ef542f36" name="a58affecd019d5040a73b62c6e65b3d0fad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>2nd compensation off </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a34d383b1df24b9d39acf9c3ba0ffc1f9" name="a34d383b1df24b9d39acf9c3ba0ffc1f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34d383b1df24b9d39acf9c3ba0ffc1f9">&#9670;&#160;</a></span>CtrlDPC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a34d383b1df24b9d39acf9c3ba0ffc1f9">TmSDK.TmControl.CtrlDPC</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Dead Pixel Compensation </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a34d383b1df24b9d39acf9c3ba0ffc1f9a521c36a31c2762741cf0f8890cbe05e3" name="a34d383b1df24b9d39acf9c3ba0ffc1f9a521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>dead pixel compensation on </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a34d383b1df24b9d39acf9c3ba0ffc1f9ad15305d7a4e34e02489c74a5ef542f36" name="a34d383b1df24b9d39acf9c3ba0ffc1f9ad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>dead pixel compensation off </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a0f80f5e04d03d6ba1911ca7dd232ded2" name="a0f80f5e04d03d6ba1911ca7dd232ded2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f80f5e04d03d6ba1911ca7dd232ded2">&#9670;&#160;</a></span>CtrlProtocol</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a0f80f5e04d03d6ba1911ca7dd232ded2">TmSDK.TmControl.CtrlProtocol</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Camera control interface type </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0f80f5e04d03d6ba1911ca7dd232ded2a960b44c579bc2f6818d2daaf9e4c16f0" name="a0f80f5e04d03d6ba1911ca7dd232ded2a960b44c579bc2f6818d2daaf9e4c16f0"></a>Normal&#160;</td><td class="fielddoc"><p>Normal protocol mode </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a0f80f5e04d03d6ba1911ca7dd232ded2ac33e404a441c6ba9648f88af3c68a1ca" name="a0f80f5e04d03d6ba1911ca7dd232ded2ac33e404a441c6ba9648f88af3c68a1ca"></a>Statistics&#160;</td><td class="fielddoc"><p>Statistics command </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a0f80f5e04d03d6ba1911ca7dd232ded2af39181116a0042e3b50710c2a1e70f74" name="a0f80f5e04d03d6ba1911ca7dd232ded2af39181116a0042e3b50710c2a1e70f74"></a>Packet&#160;</td><td class="fielddoc"><p>packet protocol mode </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="af67106a5f08309bd4173fe1d30f28ecb" name="af67106a5f08309bd4173fe1d30f28ecb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af67106a5f08309bd4173fe1d30f28ecb">&#9670;&#160;</a></span>CtrlShutter</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af67106a5f08309bd4173fe1d30f28ecb">TmSDK.TmControl.CtrlShutter</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>shutter control feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af67106a5f08309bd4173fe1d30f28ecbac3bf447eabe632720a3aa1a7ce401274" name="af67106a5f08309bd4173fe1d30f28ecbac3bf447eabe632720a3aa1a7ce401274"></a>Open&#160;</td><td class="fielddoc"><p>open shutter </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af67106a5f08309bd4173fe1d30f28ecbad3d2e617335f08df83599665eef8a418" name="af67106a5f08309bd4173fe1d30f28ecbad3d2e617335f08df83599665eef8a418"></a>Close&#160;</td><td class="fielddoc"><p>close shutter </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a66681216224adb32c4943c2e4ad00921" name="a66681216224adb32c4943c2e4ad00921"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66681216224adb32c4943c2e4ad00921">&#9670;&#160;</a></span>CtrlTEC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a66681216224adb32c4943c2e4ad00921">TmSDK.TmControl.CtrlTEC</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TEC Compensation </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a66681216224adb32c4943c2e4ad00921a521c36a31c2762741cf0f8890cbe05e3" name="a66681216224adb32c4943c2e4ad00921a521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>TECLess Processing Operate </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a66681216224adb32c4943c2e4ad00921ad15305d7a4e34e02489c74a5ef542f36" name="a66681216224adb32c4943c2e4ad00921ad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>TECLess Processing Stop </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="afaae2e62fc6ef6a3500d8e83761d10a2" name="afaae2e62fc6ef6a3500d8e83761d10a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaae2e62fc6ef6a3500d8e83761d10a2">&#9670;&#160;</a></span>Gain</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#afaae2e62fc6ef6a3500d8e83761d10a2">TmSDK.TmControl.Gain</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Camera gain mode </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afaae2e62fc6ef6a3500d8e83761d10a2a655d20c1ca69519ca647684edbb2db35" name="afaae2e62fc6ef6a3500d8e83761d10a2a655d20c1ca69519ca647684edbb2db35"></a>High&#160;</td><td class="fielddoc"><p>High gain </p>
-</td></tr>
-<tr><td class="fieldname"><a id="afaae2e62fc6ef6a3500d8e83761d10a2a28d0edd045e05cf5af64e35ae0c4c6ef" name="afaae2e62fc6ef6a3500d8e83761d10a2a28d0edd045e05cf5af64e35ae0c4c6ef"></a>Low&#160;</td><td class="fielddoc"><p>Low gain </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a7e5d2ea2ca7663e2a1cad7b4d5e77b7a" name="a7e5d2ea2ca7663e2a1cad7b4d5e77b7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e5d2ea2ca7663e2a1cad7b4d5e77b7a">&#9670;&#160;</a></span>HotMode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a7e5d2ea2ca7663e2a1cad7b4d5e77b7a">TmSDK.TmControl.HotMode</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Hot Mode </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7e5d2ea2ca7663e2a1cad7b4d5e77b7aa25a81701fbfa4a1efdf660a950c1d006" name="a7e5d2ea2ca7663e2a1cad7b4d5e77b7aa25a81701fbfa4a1efdf660a950c1d006"></a>White&#160;</td><td class="fielddoc"><p>WhiteHot mode </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7e5d2ea2ca7663e2a1cad7b4d5e77b7aae90dfb84e30edf611e326eeb04d680de" name="a7e5d2ea2ca7663e2a1cad7b4d5e77b7aae90dfb84e30edf611e326eeb04d680de"></a>Black&#160;</td><td class="fielddoc"><p>BlackHot mode </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a7e5d2ea2ca7663e2a1cad7b4d5e77b7aa6adf97f83acf6453d4a6a4b1070f3754" name="a7e5d2ea2ca7663e2a1cad7b4d5e77b7aa6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"><p>Invalid </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a18ba8d3f6183dda4d0f05294dea6ea27" name="a18ba8d3f6183dda4d0f05294dea6ea27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18ba8d3f6183dda4d0f05294dea6ea27">&#9670;&#160;</a></span>ImageOut</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a18ba8d3f6183dda4d0f05294dea6ea27">TmSDK.TmControl.ImageOut</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Image Out </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a18ba8d3f6183dda4d0f05294dea6ea27a7fb55ed0b7a30342ba6da306428cae04" name="a18ba8d3f6183dda4d0f05294dea6ea27a7fb55ed0b7a30342ba6da306428cae04"></a>First&#160;</td><td class="fielddoc"><p>Dual out with image showing first </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a18ba8d3f6183dda4d0f05294dea6ea27ad55b30607c2a9a2616347d6edb789f6b" name="a18ba8d3f6183dda4d0f05294dea6ea27ad55b30607c2a9a2616347d6edb789f6b"></a>Last&#160;</td><td class="fielddoc"><p>Dual out with image showing last </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="af8a9820b89ec3aa55504bd67dcb16725" name="af8a9820b89ec3aa55504bd67dcb16725"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8a9820b89ec3aa55504bd67dcb16725">&#9670;&#160;</a></span>IpAssign</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af8a9820b89ec3aa55504bd67dcb16725">TmSDK.TmControl.IpAssign</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>IP configuration mode </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af8a9820b89ec3aa55504bd67dcb16725a84a8921b25f505d0d2077aeb5db4bc16" name="af8a9820b89ec3aa55504bd67dcb16725a84a8921b25f505d0d2077aeb5db4bc16"></a>Static&#160;</td><td class="fielddoc"><p>Static Ip mode </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af8a9820b89ec3aa55504bd67dcb16725a54201c55d2bdc7a9e19d9e032d8c0ede" name="af8a9820b89ec3aa55504bd67dcb16725a54201c55d2bdc7a9e19d9e032d8c0ede"></a>DHCP&#160;</td><td class="fielddoc"><p>DHCP Ip mode </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a390c12cec66163284a2f75a69d7fc0f9" name="a390c12cec66163284a2f75a69d7fc0f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a390c12cec66163284a2f75a69d7fc0f9">&#9670;&#160;</a></span>ShutterComp</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a390c12cec66163284a2f75a69d7fc0f9">TmSDK.TmControl.ShutterComp</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>shutter compensation feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a390c12cec66163284a2f75a69d7fc0f9ad15305d7a4e34e02489c74a5ef542f36" name="a390c12cec66163284a2f75a69d7fc0f9ad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>shutter compensation on </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a390c12cec66163284a2f75a69d7fc0f9a521c36a31c2762741cf0f8890cbe05e3" name="a390c12cec66163284a2f75a69d7fc0f9a521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>shutter compensation off </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="ac2e02d4edd3fb917ffbb4f78ac2ea50b" name="ac2e02d4edd3fb917ffbb4f78ac2ea50b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2e02d4edd3fb917ffbb4f78ac2ea50b">&#9670;&#160;</a></span>TempConvert</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ac2e02d4edd3fb917ffbb4f78ac2ea50b">TmSDK.TmControl.TempConvert</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Temperature converter feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2e02d4edd3fb917ffbb4f78ac2ea50ba521c36a31c2762741cf0f8890cbe05e3" name="ac2e02d4edd3fb917ffbb4f78ac2ea50ba521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>temperature converter on </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ac2e02d4edd3fb917ffbb4f78ac2ea50bad15305d7a4e34e02489c74a5ef542f36" name="ac2e02d4edd3fb917ffbb4f78ac2ea50bad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>temperature converter off </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a50bfc7945d45c7f9035b89314252664b" name="a50bfc7945d45c7f9035b89314252664b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50bfc7945d45c7f9035b89314252664b">&#9670;&#160;</a></span>TempPrint</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a50bfc7945d45c7f9035b89314252664b">TmSDK.TmControl.TempPrint</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Printable temperature feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a50bfc7945d45c7f9035b89314252664ba521c36a31c2762741cf0f8890cbe05e3" name="a50bfc7945d45c7f9035b89314252664ba521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>Print temperature on </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50bfc7945d45c7f9035b89314252664bad15305d7a4e34e02489c74a5ef542f36" name="a50bfc7945d45c7f9035b89314252664bad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>Print temperature off </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="aa8cf0a008d3913e1a7257c7fceaf111e" name="aa8cf0a008d3913e1a7257c7fceaf111e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8cf0a008d3913e1a7257c7fceaf111e">&#9670;&#160;</a></span>TrsmComp</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#aa8cf0a008d3913e1a7257c7fceaf111e">TmSDK.TmControl.TrsmComp</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TRSM compensation feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa8cf0a008d3913e1a7257c7fceaf111ea521c36a31c2762741cf0f8890cbe05e3" name="aa8cf0a008d3913e1a7257c7fceaf111ea521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>TRSM compensation on </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aa8cf0a008d3913e1a7257c7fceaf111ead15305d7a4e34e02489c74a5ef542f36" name="aa8cf0a008d3913e1a7257c7fceaf111ead15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>TRSM compensation off </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a3ea864809419fa446e0e3c7c753bde3a" name="a3ea864809419fa446e0e3c7c753bde3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ea864809419fa446e0e3c7c753bde3a">&#9670;&#160;</a></span>TrsmGuide</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a3ea864809419fa446e0e3c7c753bde3a">TmSDK.TmControl.TrsmGuide</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TRSM guide feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3ea864809419fa446e0e3c7c753bde3aa521c36a31c2762741cf0f8890cbe05e3" name="a3ea864809419fa446e0e3c7c753bde3aa521c36a31c2762741cf0f8890cbe05e3"></a>On&#160;</td><td class="fielddoc"><p>TRSM guide on </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3ea864809419fa446e0e3c7c753bde3aad15305d7a4e34e02489c74a5ef542f36" name="a3ea864809419fa446e0e3c7c753bde3aad15305d7a4e34e02489c74a5ef542f36"></a>Off&#160;</td><td class="fielddoc"><p>TRSM guide off </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a701b32cfa842b097b0a427837b3fca66" name="a701b32cfa842b097b0a427837b3fca66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a701b32cfa842b097b0a427837b3fca66">&#9670;&#160;</a></span>TrsmGuideTo</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a701b32cfa842b097b0a427837b3fca66">TmSDK.TmControl.TrsmGuideTo</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>TRSM guide direction feature </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a701b32cfa842b097b0a427837b3fca66a945d5e233cf7d6240f6b783b36a374ff" name="a701b32cfa842b097b0a427837b3fca66a945d5e233cf7d6240f6b783b36a374ff"></a>Left&#160;</td><td class="fielddoc"><p>TRSM guide direction : left </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a701b32cfa842b097b0a427837b3fca66a92b09c7c48c520c3c55e497875da437c" name="a701b32cfa842b097b0a427837b3fca66a92b09c7c48c520c3c55e497875da437c"></a>Right&#160;</td><td class="fielddoc"><p>TRSM guide direction : right </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a701b32cfa842b097b0a427837b3fca66a258f49887ef8d14ac268c92b02503aaa" name="a701b32cfa842b097b0a427837b3fca66a258f49887ef8d14ac268c92b02503aaa"></a>Up&#160;</td><td class="fielddoc"><p>TRSM guide direction : up </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a701b32cfa842b097b0a427837b3fca66a08a38277b0309070706f6652eeae9a53" name="a701b32cfa842b097b0a427837b3fca66a08a38277b0309070706f6652eeae9a53"></a>Down&#160;</td><td class="fielddoc"><p>TRSM guide direction : down </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a9e351f9373deb4808cfbf0e93c4ddc96" name="a9e351f9373deb4808cfbf0e93c4ddc96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e351f9373deb4808cfbf0e93c4ddc96">&#9670;&#160;</a></span>ViewMode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a9e351f9373deb4808cfbf0e93c4ddc96">TmSDK.TmControl.ViewMode</a> : byte</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>View Mode </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9e351f9373deb4808cfbf0e93c4ddc96a31b4ba995116c9e160f0ff306cc69082" name="a9e351f9373deb4808cfbf0e93c4ddc96a31b4ba995116c9e160f0ff306cc69082"></a>NUC&#160;</td><td class="fielddoc"><p>NUC Processing Operate </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9e351f9373deb4808cfbf0e93c4ddc96a65e65c8ab0d8609ce12fc68a03cb8e00" name="a9e351f9373deb4808cfbf0e93c4ddc96a65e65c8ab0d8609ce12fc68a03cb8e00"></a>Raw&#160;</td><td class="fielddoc"><p>NUC Processing Stop </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9e351f9373deb4808cfbf0e93c4ddc96a57391192dfa1f247ad015a0fe2eca48e" name="a9e351f9373deb4808cfbf0e93c4ddc96a57391192dfa1f247ad015a0fe2eca48e"></a>Pattern&#160;</td><td class="fielddoc"><p>Test Pattern Show </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>Represents a control interface for managing and querying the device associated with a thermal camera. This class provides methods to access and modify various device settings and retrieve device-specific information. It interacts with the native code through the provided native pointer. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac3a820a5020a31d3794692d493eae81f" name="ac3a820a5020a31d3794692d493eae81f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac3a820a5020a31d3794692d493eae81f">&#9670;&#160;</a></span>TmControl()</h2>
 
@@ -604,10 +228,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Ctor. </p>
+<p>Initializes a new instance of the <code>TmControl</code> class with the specified native pointer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">self</td><td></td></tr>
+    <tr><td class="paramname">self</td><td>A native pointer to an existing TmControl object.</td></tr>
   </table>
   </dd>
 </dl>
@@ -615,6 +239,469 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a87772a40bcc71be1604948ba913c0305" name="a87772a40bcc71be1604948ba913c0305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87772a40bcc71be1604948ba913c0305">&#9670;&#160;</a></span>CheckFirmware()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.CheckFirmware </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fwFilePath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>vendorName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>productName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>versionName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>buildTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out int&#160;</td>
+          <td class="paramname"><em>fileSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the firmware information from the given firmware file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fwFilePath</td><td>Path to the firmware file.</td></tr>
+    <tr><td class="paramname">vendorName</td><td>Outputs the vendor name.</td></tr>
+    <tr><td class="paramname">productName</td><td>Outputs the product name.</td></tr>
+    <tr><td class="paramname">versionName</td><td>Outputs the firmware version name.</td></tr>
+    <tr><td class="paramname">buildTime</td><td>Outputs the build time of the firmware.</td></tr>
+    <tr><td class="paramname">fileSize</td><td>Outputs the size of the firmware file.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the firmware check was successful; otherwise, false.</dd></dl>
+
+</div>
+</div>
+<a id="aeb0e74a72eb3667a4e813225bc66d047" name="aeb0e74a72eb3667a4e813225bc66d047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0e74a72eb3667a4e813225bc66d047">&#9670;&#160;</a></span>CloseFirmware()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.CloseFirmware </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Closes the firmware file after the update is complete. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the firmware file was closed successfully; otherwise, false.</dd></dl>
+
+</div>
+</div>
+<a id="add731b62c2883bdc352101c25cedd5a5" name="add731b62c2883bdc352101c25cedd5a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add731b62c2883bdc352101c25cedd5a5">&#9670;&#160;</a></span>GetBootloaderVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TmSDK.TmControl.GetBootloaderVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the bootloader version of the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The bootloader version as a string.</dd></dl>
+
+</div>
+</div>
+<a id="a2d7caf74e09e74088bcec5349695cd65" name="a2d7caf74e09e74088bcec5349695cd65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d7caf74e09e74088bcec5349695cd65">&#9670;&#160;</a></span>GetFirmwareVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TmSDK.TmControl.GetFirmwareVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the firmware version of the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The firmware version as a string.</dd></dl>
+
+</div>
+</div>
+<a id="a8aba6cdb860c54e0abf08c579e10f935" name="a8aba6cdb860c54e0abf08c579e10f935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aba6cdb860c54e0abf08c579e10f935">&#9670;&#160;</a></span>GetFlatFieldCorrectionMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TmSDK.TmControl.GetFlatFieldCorrectionMode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the flat field correction mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the flat field correction mode as an integer, or -1 if the operation fails.</dd></dl>
+
+</div>
+</div>
+<a id="a3223c8aed5692c410a30f139aefa63c3" name="a3223c8aed5692c410a30f139aefa63c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3223c8aed5692c410a30f139aefa63c3">&#9670;&#160;</a></span>GetFlatFieldCorrectionParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.GetFlatFieldCorrectionParameters </td>
+          <td>(</td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>maxInterval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>autoTriggerThreshold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the flat field correction parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxInterval</td><td>The maximum interval for flat field correction.</td></tr>
+    <tr><td class="paramname">autoTriggerThreshold</td><td>The auto-trigger threshold for flat field correction.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="a53bee8ae167da3d5a969202780942d65" name="a53bee8ae167da3d5a969202780942d65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53bee8ae167da3d5a969202780942d65">&#9670;&#160;</a></span>GetFluxParameters160()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.GetFluxParameters160 </td>
+          <td>(</td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>sceneEmissivity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>atmosphericTransmission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>atmosphericTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowReflectedTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowReflection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>backgroundTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowTransmission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowTemperature</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the flux parameters for a 160x120 resolution thermal camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneEmissivity</td><td>The emissivity of the scene.</td></tr>
+    <tr><td class="paramname">atmosphericTransmission</td><td>The transmission of the atmosphere.</td></tr>
+    <tr><td class="paramname">atmosphericTemperature</td><td>The temperature of the atmosphere.</td></tr>
+    <tr><td class="paramname">windowReflectedTemperature</td><td>The reflected temperature of the window.</td></tr>
+    <tr><td class="paramname">windowReflection</td><td>The reflection of the window.</td></tr>
+    <tr><td class="paramname">backgroundTemperature</td><td>The background temperature behind the window.</td></tr>
+    <tr><td class="paramname">windowTransmission</td><td>The transmission of the window.</td></tr>
+    <tr><td class="paramname">windowTemperature</td><td>The temperature of the window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the parameters were successfully retrieved; otherwise, false.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidOperationException</td><td>Thrown when the internal pointer 'self' is not initialized.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4cb0c4dfa54d07434cea6ee117dfd68b" name="a4cb0c4dfa54d07434cea6ee117dfd68b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cb0c4dfa54d07434cea6ee117dfd68b">&#9670;&#160;</a></span>GetFluxParameters256()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.GetFluxParameters256 </td>
+          <td>(</td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>sceneEmissivity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>atmosphericTransmission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>atmosphericTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowReflectedTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>distance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>void0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>void1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>void2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the flux parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneEmissivity</td><td>Emissivity of the scene.</td></tr>
+    <tr><td class="paramname">atmosphericTransmission</td><td>Transmission of the atmosphere.</td></tr>
+    <tr><td class="paramname">atmosphericTemperature</td><td>Temperature of the atmosphere.</td></tr>
+    <tr><td class="paramname">windowReflectedTemperature</td><td>Reflected temperature from the window.</td></tr>
+    <tr><td class="paramname">distance</td><td>Distance to the scene.</td></tr>
+    <tr><td class="paramname">void0</td><td>Unused parameter.</td></tr>
+    <tr><td class="paramname">void1</td><td>Unused parameter.</td></tr>
+    <tr><td class="paramname">void2</td><td>Unused parameter.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="a291f7affddec65d1cee14f94ea83fa43" name="a291f7affddec65d1cee14f94ea83fa43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a291f7affddec65d1cee14f94ea83fa43">&#9670;&#160;</a></span>GetGainModeState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TmSDK.TmControl.GetGainModeState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the gain mode state. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the gain mode state as an integer, or -1 if the operation fails.</dd></dl>
+
+</div>
+</div>
+<a id="ad75888b3954698c37f190d9843688f00" name="ad75888b3954698c37f190d9843688f00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75888b3954698c37f190d9843688f00">&#9670;&#160;</a></span>GetHardwareVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TmSDK.TmControl.GetHardwareVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the hardware version of the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The hardware version as a string.</dd></dl>
+
+</div>
+</div>
+<a id="a986233c9e44d3022f827231d4f52d131" name="a986233c9e44d3022f827231d4f52d131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986233c9e44d3022f827231d4f52d131">&#9670;&#160;</a></span>GetNetworkConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.GetNetworkConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>mac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>ipAssign</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>netmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>gateway</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>dns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>dns2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the network configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mac</td><td>MAC address of the device.</td></tr>
+    <tr><td class="paramname">ipAssign</td><td>IP assignment method.</td></tr>
+    <tr><td class="paramname">ip</td><td>IP address of the device.</td></tr>
+    <tr><td class="paramname">netmask</td><td>Netmask of the network.</td></tr>
+    <tr><td class="paramname">gateway</td><td>Gateway address of the network.</td></tr>
+    <tr><td class="paramname">dns</td><td>Primary DNS server.</td></tr>
+    <tr><td class="paramname">dns2</td><td>Secondary DNS server.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
 <a id="a9fad002533d3ab8abf7affa2e65a7a84" name="a9fad002533d3ab8abf7affa2e65a7a84"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9fad002533d3ab8abf7affa2e65a7a84">&#9670;&#160;</a></span>GetProductModelName()</h2>
 
@@ -629,6 +716,705 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Retrieves the product model name of the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The product model name as a string.</dd></dl>
+
+</div>
+</div>
+<a id="a7a1f3541c62be2e02b34f1465d029517" name="a7a1f3541c62be2e02b34f1465d029517"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a1f3541c62be2e02b34f1465d029517">&#9670;&#160;</a></span>GetProductSerialNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TmSDK.TmControl.GetProductSerialNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the product serial number of the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The product serial number as a string.</dd></dl>
+
+</div>
+</div>
+<a id="a35a353d6dd3547d3465335ef5717d854" name="a35a353d6dd3547d3465335ef5717d854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35a353d6dd3547d3465335ef5717d854">&#9670;&#160;</a></span>GetSensorModelName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TmSDK.TmControl.GetSensorModelName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the sensor model name of the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The sensor model name as a string.</dd></dl>
+
+</div>
+</div>
+<a id="aedf07bb18f12950cd6eb5563b42cf635" name="aedf07bb18f12950cd6eb5563b42cf635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedf07bb18f12950cd6eb5563b42cf635">&#9670;&#160;</a></span>GetSensorSerialNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TmSDK.TmControl.GetSensorSerialNumber </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the sensor serial number of the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>The sensor serial number as a string.</dd></dl>
+
+</div>
+</div>
+<a id="a4c1a1711884f5b75cc7e969c1efd8dd4" name="a4c1a1711884f5b75cc7e969c1efd8dd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c1a1711884f5b75cc7e969c1efd8dd4">&#9670;&#160;</a></span>GetSensorUptime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TmSDK.TmControl.GetSensorUptime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the sensor's uptime. </p>
+<dl class="section return"><dt>Returns</dt><dd>The sensor's uptime as a string.</dd></dl>
+
+</div>
+</div>
+<a id="a7c3a16c0dca2e2dd20cc93f9e0d5d621" name="a7c3a16c0dca2e2dd20cc93f9e0d5d621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3a16c0dca2e2dd20cc93f9e0d5d621">&#9670;&#160;</a></span>GetSystemError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tuple&lt; ushort, string &gt; TmSDK.TmControl.GetSystemError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the system error of the camera. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <code>Tuple</code> containing the error code and a descriptive string. The first item is a <code>ushort</code> representing the error code, and the second item is a <code>string</code> containing a description of the error. </dd></dl>
+
+</div>
+</div>
+<a id="a8179dc9a47e12a16e099f45271b8ff52" name="a8179dc9a47e12a16e099f45271b8ff52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8179dc9a47e12a16e099f45271b8ff52">&#9670;&#160;</a></span>GetSystemStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Tuple&lt; ushort, string &gt; TmSDK.TmControl.GetSystemStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the system status of the camera. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <code>Tuple</code> containing the status code and a descriptive string. The first item is a <code>ushort</code> representing the status code, and the second item is a <code>string</code> containing a description of the status. </dd></dl>
+
+</div>
+</div>
+<a id="a339649b7d9b3bd07923e76796ed25667" name="a339649b7d9b3bd07923e76796ed25667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339649b7d9b3bd07923e76796ed25667">&#9670;&#160;</a></span>OpenFirmware()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TmSDK.TmControl.OpenFirmware </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fwFilePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens the firmware file and prepares it for updating. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fwFilePath</td><td>Path to the firmware file.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the size of the firmware file.</dd></dl>
+
+</div>
+</div>
+<a id="aeb70ed15d015dc99141441fa88196d0b" name="aeb70ed15d015dc99141441fa88196d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb70ed15d015dc99141441fa88196d0b">&#9670;&#160;</a></span>RebootDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.RebootDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reboots the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the device was rebooted successfully; otherwise, false.</dd></dl>
+
+</div>
+</div>
+<a id="ad87d2e7eba5c343a294b2c3979a216a0" name="ad87d2e7eba5c343a294b2c3979a216a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87d2e7eba5c343a294b2c3979a216a0">&#9670;&#160;</a></span>RestoreDefaultSensorConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.RestoreDefaultSensorConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Restores the default sensor configuration. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="a65e0a235b0316d2cc75f5143c2c24fed" name="a65e0a235b0316d2cc75f5143c2c24fed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65e0a235b0316d2cc75f5143c2c24fed">&#9670;&#160;</a></span>RunFlatFieldCorrection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.RunFlatFieldCorrection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Runs the flat field correction. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="a48e99b507d78d0e3722f3dcedfd7e6a2" name="a48e99b507d78d0e3722f3dcedfd7e6a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e99b507d78d0e3722f3dcedfd7e6a2">&#9670;&#160;</a></span>SetDefaultFluxParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.SetDefaultFluxParameters </td>
+          <td>(</td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>sceneEmissivity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>atmosphericTransmission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>atmosphericTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowReflectedTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowReflection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>backgroundTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowTransmission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out double&#160;</td>
+          <td class="paramname"><em>windowTemperature</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the default flux parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneEmissivity</td><td>Emissivity of the scene.</td></tr>
+    <tr><td class="paramname">atmosphericTransmission</td><td>Transmission of the atmosphere.</td></tr>
+    <tr><td class="paramname">atmosphericTemperature</td><td>Temperature of the atmosphere.</td></tr>
+    <tr><td class="paramname">windowReflectedTemperature</td><td>Reflected temperature from the window.</td></tr>
+    <tr><td class="paramname">windowReflection</td><td>Reflection of the window.</td></tr>
+    <tr><td class="paramname">backgroundTemperature</td><td>Background temperature.</td></tr>
+    <tr><td class="paramname">windowTransmission</td><td>Transmission of the window.</td></tr>
+    <tr><td class="paramname">windowTemperature</td><td>Temperature of the window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="ae321fa5b73d8386d2225ff1ce2564a20" name="ae321fa5b73d8386d2225ff1ce2564a20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae321fa5b73d8386d2225ff1ce2564a20">&#9670;&#160;</a></span>SetDefaultNetworkConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.SetDefaultNetworkConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>ipAssign</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>netmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>gateway</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>dns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>dns2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the default network configuration for the device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ipAssign</td><td>Outputs the IP assignment type (e.g., DHCP or static).</td></tr>
+    <tr><td class="paramname">ip</td><td>Outputs the IP address of the device.</td></tr>
+    <tr><td class="paramname">netmask</td><td>Outputs the subnet mask of the device.</td></tr>
+    <tr><td class="paramname">gateway</td><td>Outputs the gateway address of the device.</td></tr>
+    <tr><td class="paramname">dns</td><td>Outputs the primary DNS server address.</td></tr>
+    <tr><td class="paramname">dns2</td><td>Outputs the secondary DNS server address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the default network configuration was set successfully; otherwise, false.</dd></dl>
+
+</div>
+</div>
+<a id="ab799d9ca3ea8014c0d1da7dd1a4c7c0a" name="ab799d9ca3ea8014c0d1da7dd1a4c7c0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab799d9ca3ea8014c0d1da7dd1a4c7c0a">&#9670;&#160;</a></span>SetFlatFieldCorrectionMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.SetFlatFieldCorrectionMode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the flat field correction mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>The mode to set for flat field correction.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="a1a770032f1ee079e6b7c65f1d8522198" name="a1a770032f1ee079e6b7c65f1d8522198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a770032f1ee079e6b7c65f1d8522198">&#9670;&#160;</a></span>SetFlatFieldCorrectionParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.SetFlatFieldCorrectionParameters </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxInterval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>autoTriggerThreshold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the flat field correction parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">maxInterval</td><td>The maximum interval for flat field correction.</td></tr>
+    <tr><td class="paramname">autoTriggerThreshold</td><td>The auto-trigger threshold for flat field correction.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="aa5f6768b4c62a9c97110100e5e84e354" name="aa5f6768b4c62a9c97110100e5e84e354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5f6768b4c62a9c97110100e5e84e354">&#9670;&#160;</a></span>SetFluxParameters() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.SetFluxParameters </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sceneEmissivity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>atmosphericTransmission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>atmosphericTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>windowReflectedTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>distance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the flux parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneEmissivity</td><td>Emissivity of the scene.</td></tr>
+    <tr><td class="paramname">atmosphericTransmission</td><td>Transmission of the atmosphere.</td></tr>
+    <tr><td class="paramname">atmosphericTemperature</td><td>Temperature of the atmosphere.</td></tr>
+    <tr><td class="paramname">windowReflectedTemperature</td><td>Reflected temperature from the window.</td></tr>
+    <tr><td class="paramname">distance</td><td>Distance to the scene.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="a8583ce40e1eddcbebc4893d3c20b7780" name="a8583ce40e1eddcbebc4893d3c20b7780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8583ce40e1eddcbebc4893d3c20b7780">&#9670;&#160;</a></span>SetFluxParameters() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.SetFluxParameters </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sceneEmissivity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>atmosphericTransmission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>atmosphericTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>windowReflectedTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>windowReflection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>backgroundTemperature</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>windowTransmission</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>windowTemperature</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the flux parameters for a thermal camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneEmissivity</td><td>The emissivity of the scene.</td></tr>
+    <tr><td class="paramname">atmosphericTransmission</td><td>The transmission of the atmosphere.</td></tr>
+    <tr><td class="paramname">atmosphericTemperature</td><td>The temperature of the atmosphere.</td></tr>
+    <tr><td class="paramname">windowReflectedTemperature</td><td>The reflected temperature of the window.</td></tr>
+    <tr><td class="paramname">windowReflection</td><td>The reflection of the window.</td></tr>
+    <tr><td class="paramname">backgroundTemperature</td><td>The background temperature behind the window.</td></tr>
+    <tr><td class="paramname">windowTransmission</td><td>The transmission of the window.</td></tr>
+    <tr><td class="paramname">windowTemperature</td><td>The temperature of the window.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the parameters were successfully set; otherwise, false.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">InvalidOperationException</td><td>Thrown when the internal pointer 'self' is not initialized.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af8bc47e429de4cf9d8452bd8c96347b0" name="af8bc47e429de4cf9d8452bd8c96347b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8bc47e429de4cf9d8452bd8c96347b0">&#9670;&#160;</a></span>SetGainModeState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.SetGainModeState </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the gain mode state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The state to set the gain mode to.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="aca05ea59346b02dea8c6a72fd7752a11" name="aca05ea59346b02dea8c6a72fd7752a11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca05ea59346b02dea8c6a72fd7752a11">&#9670;&#160;</a></span>SetNetworkConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.SetNetworkConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ipAssign</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>netmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>gateway</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dns2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the network configuration for the device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ipAssign</td><td>IP assignment type (e.g., DHCP or static).</td></tr>
+    <tr><td class="paramname">ip</td><td>IP address of the device.</td></tr>
+    <tr><td class="paramname">netmask</td><td>Subnet mask of the device.</td></tr>
+    <tr><td class="paramname">gateway</td><td>Gateway address of the device.</td></tr>
+    <tr><td class="paramname">dns</td><td>Primary DNS server address.</td></tr>
+    <tr><td class="paramname">dns2</td><td>Secondary DNS server address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the network configuration was set successfully; otherwise, false.</dd></dl>
+
+</div>
+</div>
+<a id="afedad1bc1869a57f614dad3f53b663e1" name="afedad1bc1869a57f614dad3f53b663e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afedad1bc1869a57f614dad3f53b663e1">&#9670;&#160;</a></span>StoreUserSensorConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK.TmControl.StoreUserSensorConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stores the user sensor configuration. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the operation was successful, false otherwise.</dd></dl>
+
+</div>
+</div>
+<a id="afea6ff2765d09cda24add618af01896f" name="afea6ff2765d09cda24add618af01896f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea6ff2765d09cda24add618af01896f">&#9670;&#160;</a></span>UpdateFirmware()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TmSDK.TmControl.UpdateFirmware </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the firmware of the device. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the percentage of the firmware update process completed.</dd></dl>
 
 </div>
 </div>

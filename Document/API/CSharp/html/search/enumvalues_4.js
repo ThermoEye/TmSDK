@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['high_0',['High',['../class_tm_s_d_k_1_1_tm_control.html#afaae2e62fc6ef6a3500d8e83761d10a2a655d20c1ca69519ca647684edbb2db35',1,'TmSDK::TmControl']]]
+  ['ellipse_0',['Ellipse',['../namespace_tm_s_d_k.html#a8d863d22e6de103e3007c1e28e589651a119518c2134c46108179369f0ce81fa2',1,'TmSDK']]]
 ];

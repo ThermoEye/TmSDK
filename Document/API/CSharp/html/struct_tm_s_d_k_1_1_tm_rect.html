@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TmSDK: TmSDK.TmRect Struct Reference</title>
+<title>TmSDK (C#): TmSDK.TmRect Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -99,23 +99,26 @@ $(document).ready(function(){initNavTree('struct_tm_s_d_k_1_1_tm_rect.html','');
 </div><!--header-->
 <div class="contents">
 
-<p>rectangle  
+<p>Represents a rectangle in a 2D space.  
  <a href="struct_tm_s_d_k_1_1_tm_rect.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0117146fd085d1c636ed1b678bb2d68" id="r_ad0117146fd085d1c636ed1b678bb2d68"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_tm_s_d_k_1_1_tm_rect.html#ad0117146fd085d1c636ed1b678bb2d68">TmRect</a> (int <a class="el" href="struct_tm_s_d_k_1_1_tm_rect.html#a14397e979beccafcc05cfe30e6690cea">x</a>, int <a class="el" href="struct_tm_s_d_k_1_1_tm_rect.html#a9e6267d15bff8780099b107e53d8d6c6">y</a>, int width, int height)</td></tr>
+<tr class="memdesc:ad0117146fd085d1c636ed1b678bb2d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the TmRect struct with the specified position and size.  <br /></td></tr>
 <tr class="separator:ad0117146fd085d1c636ed1b678bb2d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a14397e979beccafcc05cfe30e6690cea" id="r_a14397e979beccafcc05cfe30e6690cea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_tm_s_d_k_1_1_tm_rect.html#a14397e979beccafcc05cfe30e6690cea">x</a></td></tr>
+<tr class="memdesc:a14397e979beccafcc05cfe30e6690cea"><td class="mdescLeft">&#160;</td><td class="mdescRight">The X-coordinate of the top-left corner of the rectangle.  <br /></td></tr>
 <tr class="separator:a14397e979beccafcc05cfe30e6690cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e6267d15bff8780099b107e53d8d6c6" id="r_a9e6267d15bff8780099b107e53d8d6c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_tm_s_d_k_1_1_tm_rect.html#a9e6267d15bff8780099b107e53d8d6c6">y</a></td></tr>
+<tr class="memdesc:a9e6267d15bff8780099b107e53d8d6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Y-coordinate of the top-left corner of the rectangle.  <br /></td></tr>
 <tr class="separator:a9e6267d15bff8780099b107e53d8d6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>rectangle </p>
+<div class="textblock"><p>Represents a rectangle in a 2D space. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad0117146fd085d1c636ed1b678bb2d68" name="ad0117146fd085d1c636ed1b678bb2d68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0117146fd085d1c636ed1b678bb2d68">&#9670;&#160;</a></span>TmRect()</h2>
@@ -155,6 +158,17 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initializes a new instance of the TmRect struct with the specified position and size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The X-coordinate of the top-left corner of the rectangle.</td></tr>
+    <tr><td class="paramname">y</td><td>The Y-coordinate of the top-left corner of the rectangle.</td></tr>
+    <tr><td class="paramname">width</td><td>The width of the rectangle.</td></tr>
+    <tr><td class="paramname">height</td><td>The height of the rectangle.</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -169,7 +183,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>x point of rectangle </p>
+
+<p>The X-coordinate of the top-left corner of the rectangle. </p>
 
 </div>
 </div>
@@ -184,7 +199,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>y point of rectangle </p>
+
+<p>The Y-coordinate of the top-left corner of the rectangle. </p>
 
 </div>
 </div>

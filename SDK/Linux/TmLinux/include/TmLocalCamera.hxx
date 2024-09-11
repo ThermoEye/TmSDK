@@ -27,13 +27,16 @@ namespace TmSDK
 		int epollfd = -1;
 		struct epoll_event ev, events[1];
 #endif
-	private:
+
 #if defined(_MSC_VER)
 #elif defined(__GNUC__)
 		static std::vector<struct localDevice> GetDeviceInfo(std::string subsystem);
 #endif
 		bool ConnectPort(std::string port);
 		bool Receive(uint32_t timeout);
+
+	public:
+		static std::vector<TmLocalCamInfo*> pLocalCamList;
 
 	public:
 		TmLocalCamera();

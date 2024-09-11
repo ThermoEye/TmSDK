@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['white_0',['White',['../class_tm_s_d_k_1_1_tm_control.html#a7e5d2ea2ca7663e2a1cad7b4d5e77b7aa25a81701fbfa4a1efdf660a950c1d006',1,'TmSDK::TmControl']]],
-  ['width_1',['Width',['../class_tm_s_d_k_1_1_tm_frame.html#ad3de86df3ed2e97db15142d99279706c',1,'TmSDK::TmFrame']]]
+  ['value_0',['value',['../struct_tm_s_d_k_1_1_tm_loc_item.html#ae77713906883e8d71d67e5aef2b35197',1,'TmSDK::TmLocItem']]],
+  ['viridis_1',['Viridis',['../namespace_tm_s_d_k.html#ab2a545b60de3934d1dcfc8bdf224c9bea951ee92ee5e947e1e7e1cb6376523c1a',1,'TmSDK']]]
 ];

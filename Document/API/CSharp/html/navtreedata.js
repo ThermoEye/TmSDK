@@ -24,7 +24,8 @@
 */
 var NAVTREE =
 [
-  [ "TmSDK", "index.html", [
+  [ "TmSDK (C#)", "index.html", [
+    [ "TmSDK", "index.html", "index" ],
     [ "Package Members", "namespacemembers.html", [
       [ "All", "namespacemembers.html", null ],
       [ "Enumerations", "namespacemembers_enum.html", null ]
@@ -37,7 +38,6 @@ var NAVTREE =
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ]

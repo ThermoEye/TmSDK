@@ -75,9 +75,6 @@ class CameraControl:
     def pushButton_StartSoftwareUpdate_Clicked(self):
         if self.main_window.pushButton_StartSoftwareUpdate.text() == "Start":
             file_name = self.main_window.lineEdit_SoftwareUpdateFilePath.text()
-            # file = QFile(file_name)
-            # if file.open(QIODevice.ReadOnly):
-            #     file.close()
             if self.camera.tmCamera.tmControl.open_firmware(file_name) > 0:
                 if self.camera.worker.isRunning():
                     self.camera.worker.isRun = False

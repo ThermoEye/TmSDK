@@ -12,11 +12,11 @@ namespace TmSDK
         /// <summary>
         /// X coordinate of the point.
         /// </summary>
-        int X;
+        int X = -1;
         /// <summary>
         /// Y coordinate of the point.
         /// </summary>
-        int Y;
+        int Y = -1;
         /// <summary>
         /// Constructor of Point.
         /// </summary>
@@ -31,7 +31,7 @@ namespace TmSDK
         /// <summary>
         /// Temperature value
         /// </summary>
-        double Value;
+        double Value = 0.0;
         /// <summary>
         /// Location coordinates
         /// </summary>
@@ -46,19 +46,19 @@ namespace TmSDK
         /// <summary>
         /// X coordinate of the top-left corner of the rectangle.
         /// </summary>
-        int X;
+        int X = -1;
         /// <summary>
         /// Y coordinate of the top-left corner of the rectangle.
         /// </summary>
-        int Y;
+        int Y = -1;
         /// <summary>
         /// Width of the rectangle.
         /// </summary>
-        int Width;
+        int Width = 0;
         /// <summary>
         /// Height of the rectangle.
         /// </summary>
-        int Height;
+        int Height = 0;
     };
 
     /// <summary>
