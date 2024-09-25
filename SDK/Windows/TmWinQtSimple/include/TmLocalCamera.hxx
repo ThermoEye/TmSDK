@@ -18,6 +18,7 @@ namespace TmSDK
 	private:
 		int fwMaxPacketLength = 48;
 		void* pVideoCapture = nullptr;
+		uint32_t sendPktCmd;
 #if defined(_MSC_VER)
 		HANDLE hComm = NULL;
 		OVERLAPPED readOverlapped = { 0 };

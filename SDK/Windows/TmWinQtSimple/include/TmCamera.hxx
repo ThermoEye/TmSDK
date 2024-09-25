@@ -53,8 +53,8 @@ namespace TmSDK
 		virtual TmFrame* QueryFrame(int width, int height) { return nullptr;  }
 		virtual int GetMaxPacketSize() { return 0; }
 		/// @cond DOXYGEN_SHOULD_SKIP_THIS
-		virtual PKT_INTERFACE SendPacket(Packet packet, uint32_t timeout = 500) { return PKT_INTERFACE::ERR; }
-		virtual bool Receive(uint32_t timeout = 500) { return false; }
+		virtual PKT_INTERFACE SendPacket(Packet packet, uint32_t timeout = 1000) { return PKT_INTERFACE::ERR; }
+		virtual bool Receive(uint32_t timeout = 1000) { return false; }
 		virtual Packet GetRxPacket();
 		/// @endcond
 
