@@ -11,15 +11,11 @@ namespace TmSDK
     class DLL_EXPORTS TmRemoteCamera : public TmCamera
     {
     private:
-#if defined(_MSC_VER)
-        SOCKET videoSocket = INVALID_SOCKET;
-#elif defined(__GNUC__)
-        unsigned int videoSocket = -1;
-#endif
         static const int BROADCAST_PORT = 15000;
         int RTSP_PORT = 554;
         void* pRtspClient;
         int fwMaxPacketLength = 512;
+        uint16_t* buffer = nullptr;
 
     public:
         static std::vector<TmRemoteCamInfo*> pRemoteCamList;
@@ -43,7 +39,7 @@ namespace TmSDK
         void Close() override;
         PKT_INTERFACE SendPacket(Packet packet, uint32_t timeout) override;
         int GetMaxPacketSize() override;
-        TmFrame* QueryFrame(int width = -1, int height = -1) override;
+        bool QueryFrame(TmFrame* pTmFrame, int width = -1, int height = -1) override;
     };
 }
 

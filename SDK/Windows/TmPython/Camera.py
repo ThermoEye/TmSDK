@@ -25,9 +25,10 @@ from PyQt5.QtCore import QThreadPool
 from concurrent.futures import ThreadPoolExecutor
 
 if sys.platform.startswith("linux"):
-	sys.path.append("../../Shared/Python/")
+	sys.path.append("../../Modules/Shared/Managed/Python/TmCore")
 elif os.name == "nt":
     sys.path.append(sys.path[0] + "\\..\\..\\" + "Modules\\Shared\\Managed\\Python")
+    sys.path.append(sys.path[0] + "\\..\\..\\" + "Modules\\Shared\\Managed\\Python\\TmCore")
 
 from TmCore import *
 from TmCore.TmTypes import *
@@ -259,7 +260,7 @@ class Camera:
             try:
                 if self.tmCamera is None:
                     self.tmCamera = TmCamera()
-
+                
                 if (self.main_window.lineEdit_RemoteCameraName.text() == ""):
                     print('No camera selected')
                     return
@@ -270,6 +271,7 @@ class Camera:
                                                         , self.main_window.lineEdit_RemoteCameraIp.text())
                 if ret:
                     print('Camera connected')
+                    
                     self.main_window.pushButton_RemoteCameraConnect.setText("Disconnect")
                     self.worker.start()
                     if self.main_window.lineEdit_RemoteCameraName.text() == "TMC256E":

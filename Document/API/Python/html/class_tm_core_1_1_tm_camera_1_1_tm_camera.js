@@ -3,6 +3,7 @@ var class_tm_core_1_1_tm_camera_1_1_tm_camera =
     [ "__init__", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html#ad6b57f00f4f96a1ba131f2a9527aaed2", null ],
     [ "__del__", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a721dbfee320dfa60054c69eae4ef42c0", null ],
     [ "close", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html#ac8f7241bf952efb8ab13a777b2e6f7f7", null ],
+    [ "get_api_version", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a9060d992beb3a157d695ca04692178a2", null ],
     [ "get_temp_unit", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html#ae4d9d3ea65b60cf87ea9e9f04a0f4b84", null ],
     [ "get_temp_unit_symbol", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a4aa1a843351c80fe8f4c10c2c93ac3a8", null ],
     [ "get_temperature", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html#ab23575520a637765fb5410beac4e3e8a", null ],

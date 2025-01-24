@@ -47,7 +47,7 @@ namespace TmSDK
 		void Close() override;
 		PKT_INTERFACE SendPacket(Packet packet, uint32_t timeout) override;
 		static std::vector<TmLocalCamInfo> GetCameraList();
-		TmFrame* QueryFrame(int width, int height);
+		bool QueryFrame(TmFrame* pFrame, int width, int height);
 		int GetMaxPacketSize() override;
 	};
 }

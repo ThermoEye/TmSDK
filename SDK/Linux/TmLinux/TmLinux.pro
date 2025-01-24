@@ -45,7 +45,34 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../build/x64/debu
 
 INCLUDEPATH += ./include
 
-LIBS += -lTmCore
-LIBS += -lTmRtspClient
+LIBS += -lTmCore.1.1.0
+LIBS += -lTmRtspClient.1.1.0
 LIBS += -lopencv_world
 LIBS += -L./lib
+
+win32 {
+    message("Windows detected")
+} else:unix {
+    QMAKE_HOST_ARCH = $$system(uname -m)
+    QMAKE_HOST_OS = $$system(lsb_release -is)
+    QMAKE_HOST_VERSION = $$system(lsb_release -rs)
+
+    message("OS: $$QMAKE_HOST_OS $$QMAKE_HOST_VERSION, Arch: $$QMAKE_HOST_ARCH")
+
+    contains(QMAKE_HOST_OS, Ubuntu) {
+        contains(QMAKE_HOST_VERSION, 24.04):contains(QMAKE_HOST_ARCH, x86_64) {
+            LIBS += -L./lib/ubuntu_24.04/x86_64
+            QMAKE_PRE_LINK += ln -sf libopencv_world.so.410 lib/ubuntu_24.04/x86_64/libopencv_world.so
+        } else:contains(QMAKE_HOST_VERSION, 20.04|22.04):contains(QMAKE_HOST_ARCH, aarch64) {
+            LIBS += -L./lib/ubuntu_20.04/aarch64
+            QMAKE_PRE_LINK += ln -sf libopencv_world.so.407 lib/ubuntu_20.04/aarch64/libopencv_world.so
+        } else:contains(QMAKE_HOST_VERSION, 20.04|22.04):contains(QMAKE_HOST_ARCH, x86_64) {
+            LIBS += -L./lib/ubuntu_20.04/x86_64
+            QMAKE_PRE_LINK += ln -sf libopencv_world.so.407 lib/ubuntu_20.04/x86_64/libopencv_world.so
+        } else {
+            message("Unsupported combination of OS and architecture")
+        }
+    } else {
+        message("Unsupported OS: $$QMAKE_HOST_OS $$QMAKE_HOST_VERSION")
+    }
+}

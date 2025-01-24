@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -277,9 +277,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aeb8848b20677298474543d4e7fda165c" id="r_aeb8848b20677298474543d4e7fda165c"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#aeb8848b20677298474543d4e7fda165c">TmCamera_Close</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *self, bool *ret)</td></tr>
 <tr class="memdesc:aeb8848b20677298474543d4e7fda165c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the currently opened camera and releases any resources associated with it.  <br /></td></tr>
 <tr class="separator:aeb8848b20677298474543d4e7fda165c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48ddc772a863e33a2dbb4815f5055a7b" id="r_a48ddc772a863e33a2dbb4815f5055a7b"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a48ddc772a863e33a2dbb4815f5055a7b">TmCamera_QueryFrame</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *self, bool *ret, int width, int height)</td></tr>
-<tr class="memdesc:a48ddc772a863e33a2dbb4815f5055a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a frame from the <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a> object.  <br /></td></tr>
-<tr class="separator:a48ddc772a863e33a2dbb4815f5055a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f13015c4ececafa9eb069971910285" id="r_a34f13015c4ececafa9eb069971910285"><td class="memItemLeft" align="right" valign="top">TMAPI void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a34f13015c4ececafa9eb069971910285">TmCamera_QueryFrame</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *self, bool *ret, <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *pTmFrame, int width, int height)</td></tr>
+<tr class="memdesc:a34f13015c4ececafa9eb069971910285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a frame from the <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a> object and stores it in the provided <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a> object.  <br /></td></tr>
+<tr class="separator:a34f13015c4ececafa9eb069971910285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8719918521cb3ace3868e42f8c9624c" id="r_af8719918521cb3ace3868e42f8c9624c"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#af8719918521cb3ace3868e42f8c9624c">TmCamera_GetTemperature</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *self, bool *ret, double raw, double *arg)</td></tr>
 <tr class="memdesc:af8719918521cb3ace3868e42f8c9624c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the temperature from the camera.  <br /></td></tr>
 <tr class="separator:af8719918521cb3ace3868e42f8c9624c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -298,6 +298,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a3da939eb2366a97701bf72bc8d46c5f9" id="r_a3da939eb2366a97701bf72bc8d46c5f9"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a3da939eb2366a97701bf72bc8d46c5f9">TmCamera_SetNoiseFiltering</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *self, bool *ret, bool arg)</td></tr>
 <tr class="memdesc:a3da939eb2366a97701bf72bc8d46c5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the noise filtering option for the camera.  <br /></td></tr>
 <tr class="separator:a3da939eb2366a97701bf72bc8d46c5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd8a1eab9a587676c92f5ad08330fb40" id="r_afd8a1eab9a587676c92f5ad08330fb40"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#afd8a1eab9a587676c92f5ad08330fb40">TmCamera_GetAPIVersion</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *self, bool *ret, char *arg)</td></tr>
+<tr class="memdesc:afd8a1eab9a587676c92f5ad08330fb40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the API version of the <a class="el" href="namespace_tm_s_d_k.html">TmSDK</a>.  <br /></td></tr>
+<tr class="separator:afd8a1eab9a587676c92f5ad08330fb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a004f6d29b1ab39f91153e523296d5ff5" id="r_a004f6d29b1ab39f91153e523296d5ff5"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a004f6d29b1ab39f91153e523296d5ff5">TmCtrl_GetProductModelName</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_control.html">TmControl</a> *self, bool *ret, char *arg)</td></tr>
 <tr class="memdesc:a004f6d29b1ab39f91153e523296d5ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the product model name of the camera.  <br /></td></tr>
 <tr class="separator:a004f6d29b1ab39f91153e523296d5ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -846,6 +849,51 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="afd8a1eab9a587676c92f5ad08330fb40" name="afd8a1eab9a587676c92f5ad08330fb40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8a1eab9a587676c92f5ad08330fb40">&#9670;&#160;</a></span>TmCamera_GetAPIVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI const char * TmSDK::TmCamera_GetAPIVersion </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>arg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the API version of the <a class="el" href="namespace_tm_s_d_k.html">TmSDK</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a> instance. </td></tr>
+    <tr><td class="paramname">ret</td><td>Pointer to a boolean value that will be set to true if the API version was successfully retrieved, otherwise false. </td></tr>
+    <tr><td class="paramname">arg</td><td>Pointer to a character buffer where the API version string will be stored. The buffer should be large enough to hold the version string and the null terminator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A const char pointer to the error message if an exception is raised, otherwise nullptr. </dd></dl>
+
+</div>
+</div>
 <a id="a4ef10f7c62b2faf361da2d093af13b83" name="a4ef10f7c62b2faf361da2d093af13b83"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ef10f7c62b2faf361da2d093af13b83">&#9670;&#160;</a></span>TmCamera_GetLocalCameraComPort()</h2>
 
@@ -1355,14 +1403,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a48ddc772a863e33a2dbb4815f5055a7b" name="a48ddc772a863e33a2dbb4815f5055a7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48ddc772a863e33a2dbb4815f5055a7b">&#9670;&#160;</a></span>TmCamera_QueryFrame()</h2>
+<a id="a34f13015c4ececafa9eb069971910285" name="a34f13015c4ececafa9eb069971910285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f13015c4ececafa9eb069971910285">&#9670;&#160;</a></span>TmCamera_QueryFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">TMAPI <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> * TmSDK::TmCamera_QueryFrame </td>
+          <td class="memname">TMAPI void TmSDK::TmCamera_QueryFrame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -1372,6 +1420,12 @@ Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">bool *&#160;</td>
           <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *&#160;</td>
+          <td class="paramname"><em>pTmFrame</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1393,17 +1447,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Queries a frame from the <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a> object. </p>
+<p>Queries a frame from the <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a> object and stores it in the provided <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a> object.</td></tr>
     <tr><td class="paramname">ret</td><td>Pointer to a boolean flag that will be set to true if the frame is successfully queried, false otherwise.</td></tr>
+    <tr><td class="paramname">pTmFrame</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a> object where the queried frame will be stored.</td></tr>
     <tr><td class="paramname">width</td><td>The width of the frame to query.</td></tr>
     <tr><td class="paramname">height</td><td>The height of the frame to query.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pointer to the queried <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a> object if successful, nullptr otherwise. </dd></dl>
+<ul>
+<li>This function does not create a new <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a> object; instead, it reuses the provided <code>pTmFrame</code> object to store the frame data.</li>
+<li>Ensure that <code>pTmFrame</code> is properly initialized before calling this function. </li>
+</ul>
 
 </div>
 </div>

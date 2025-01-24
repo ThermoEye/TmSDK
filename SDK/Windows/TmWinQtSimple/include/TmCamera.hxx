@@ -8,6 +8,7 @@
 #include <unistd.h>
 #endif
 
+#include "TmCore.hxx"
 #include "TmFrame.hxx"
 #include "TmCameraInfo.hxx"
 #include "TmCameraEx.hxx"
@@ -24,7 +25,6 @@ namespace TmSDK
 	{
 	protected:
 		TmCamInfo* pCamInfo = nullptr;
-		TmFrame* pTmFrame = nullptr;
 		Packet cmdRxPacket;
 		int resultCode = 0;
 		int currentGainMode = -1; // -1 = Unknown, 0 = High, 1 = Low, 2 = Auto
@@ -50,7 +50,7 @@ namespace TmSDK
 		virtual void Close() { }
 		virtual void SetCurrentGainMode(int);
 		virtual std::string GetTempUnitSymbol();
-		virtual TmFrame* QueryFrame(int width, int height) { return nullptr;  }
+		virtual bool QueryFrame(TmFrame* pTmFrame, int width, int height) { return false;  }
 		virtual int GetMaxPacketSize() { return 0; }
 		/// @cond DOXYGEN_SHOULD_SKIP_THIS
 		virtual PKT_INTERFACE SendPacket(Packet packet, uint32_t timeout = 1000) { return PKT_INTERFACE::ERR; }
@@ -66,6 +66,7 @@ namespace TmSDK
 		void SetColorMap(ColormapTypes index);
 		void SetNoiseFiltering(bool filter);
 		TmControl* GetTmControl();
+		std::string GetAPIVersion();
 	};
 }
 

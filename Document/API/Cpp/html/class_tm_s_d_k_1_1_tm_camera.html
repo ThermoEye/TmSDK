@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -129,8 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a04ab3941263087efad3094218f935d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31a9a47450631dfb288fd07f11f24138" id="r_a31a9a47450631dfb288fd07f11f24138"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a31a9a47450631dfb288fd07f11f24138">GetTempUnitSymbol</a> ()</td></tr>
 <tr class="separator:a31a9a47450631dfb288fd07f11f24138"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af927eaed2fea247e3ea8b5ac76b5da08" id="r_af927eaed2fea247e3ea8b5ac76b5da08"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#af927eaed2fea247e3ea8b5ac76b5da08">QueryFrame</a> (int width, int height)</td></tr>
-<tr class="separator:af927eaed2fea247e3ea8b5ac76b5da08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da69916a1d00aca58d61163962def3f" id="r_a6da69916a1d00aca58d61163962def3f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a6da69916a1d00aca58d61163962def3f">QueryFrame</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *pTmFrame, int width, int height)</td></tr>
+<tr class="separator:a6da69916a1d00aca58d61163962def3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a113273074ccf3d0dd6d1ed88b3559e8a" id="r_a113273074ccf3d0dd6d1ed88b3559e8a"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a113273074ccf3d0dd6d1ed88b3559e8a">GetMaxPacketSize</a> ()</td></tr>
 <tr class="separator:a113273074ccf3d0dd6d1ed88b3559e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3861a4ecf95568ad8f25f036462513fd" id="r_a3861a4ecf95568ad8f25f036462513fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a3861a4ecf95568ad8f25f036462513fd">IsOpen</a> ()</td></tr>
@@ -149,6 +149,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8a9bb0271afe912713cd8daefa4be280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1a10b01af6925c4523859092b242e3b" id="r_aa1a10b01af6925c4523859092b242e3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html">TmControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#aa1a10b01af6925c4523859092b242e3b">GetTmControl</a> ()</td></tr>
 <tr class="separator:aa1a10b01af6925c4523859092b242e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f2bbbff13c9dd2967e78a9a8a19f97" id="r_a65f2bbbff13c9dd2967e78a9a8a19f97"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a65f2bbbff13c9dd2967e78a9a8a19f97">GetAPIVersion</a> ()</td></tr>
+<tr class="separator:a65f2bbbff13c9dd2967e78a9a8a19f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class representing a thermal camera with various functionalities. </p>
@@ -220,6 +222,23 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reimplemented in <a class="el" href="class_tm_s_d_k_1_1_tm_local_camera.html#ae3ca44fc9d79f9de0a50fbbed6ee7817">TmSDK::TmLocalCamera</a>, and <a class="el" href="class_tm_s_d_k_1_1_tm_remote_camera.html#a2f9982cf4405bc6c75a48a3d3552c100">TmSDK::TmRemoteCamera</a>.</p>
+
+</div>
+</div>
+<a id="a65f2bbbff13c9dd2967e78a9a8a19f97" name="a65f2bbbff13c9dd2967e78a9a8a19f97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65f2bbbff13c9dd2967e78a9a8a19f97">&#9670;&#160;</a></span>GetAPIVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TmSDK::TmCamera::GetAPIVersion </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -417,8 +436,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af927eaed2fea247e3ea8b5ac76b5da08" name="af927eaed2fea247e3ea8b5ac76b5da08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af927eaed2fea247e3ea8b5ac76b5da08">&#9670;&#160;</a></span>QueryFrame()</h2>
+<a id="a6da69916a1d00aca58d61163962def3f" name="a6da69916a1d00aca58d61163962def3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6da69916a1d00aca58d61163962def3f">&#9670;&#160;</a></span>QueryFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -427,8 +446,14 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> * TmSDK::TmCamera::QueryFrame </td>
+          <td class="memname">virtual bool TmSDK::TmCamera::QueryFrame </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *&#160;</td>
+          <td class="paramname"><em>pTmFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>width</em>, </td>
         </tr>
@@ -451,7 +476,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_tm_s_d_k_1_1_tm_local_camera.html#a5d73c0ec477993b21d8de2bcd66129e1">TmSDK::TmLocalCamera</a>, and <a class="el" href="class_tm_s_d_k_1_1_tm_remote_camera.html#afba05f0dcbbee3908cf40d887ac5be02">TmSDK::TmRemoteCamera</a>.</p>
+<p>Reimplemented in <a class="el" href="class_tm_s_d_k_1_1_tm_local_camera.html#aae0f22712463fdf510289fd066699234">TmSDK::TmLocalCamera</a>, and <a class="el" href="class_tm_s_d_k_1_1_tm_remote_camera.html#a6c8239f410a70f1e20c0818873bc108a">TmSDK::TmRemoteCamera</a>.</p>
 
 </div>
 </div>

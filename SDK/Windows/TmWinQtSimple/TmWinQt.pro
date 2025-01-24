@@ -36,5 +36,5 @@ FORMS += \
 
 
 INCLUDEPATH += ./include
-LIBS += -L./lib -llibTmCore
+LIBS += -L./lib -llibTmCore.1.1.0
 LIBS += -L./lib -lshell32

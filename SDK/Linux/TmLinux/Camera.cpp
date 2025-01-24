@@ -125,39 +125,148 @@ std::string Camera::GetTempStringUnit(double raw)
 * Parameter:
 *   pFrame: TmFrame object, from pTmCamera->QueryFrame()
 */
-void Camera::processMeasurements(TmFrame* pFrame)
-{
+//void Camera::processMeasurements(TmFrame* pFrame)
+//{
+//    if (pFrame == nullptr || pTmCamera == nullptr) {
+//        qDebug() << "Error: Null pointer detected for pFrame or pTmCamera.";
+//        return;
+//    }
+//    int width = pFrame->Width();
+//    int height = pFrame->Height();
+//    if (width <= 0 || height <= 0) {
+//        qDebug() << "Error: Invalid frame dimensions. Width:" << width << ", Height:" << height;
+//        delete pFrame;
+//        pFrame = nullptr;
+//        return;
+//    }
+//    double minVal, avgVal, maxVal;
+//    Point minLoc, maxLoc;
+//    uint8_t* bitMap = pFrame->ToBitmap(ColorOrder::COLOR_RGB);
+//    if (bitMap == nullptr) {
+//        qDebug() << "Error: Failed to convert frame to bitmap.";
+//        delete pFrame;
+//        pFrame = nullptr;
+//        return;
+//    }
+//
+//    //QImage image(bitMap, pFrame->Width(), pFrame->Height(), QImage::Format_RGB888);
+//    QImage image;
+//    try {
+//        image = QImage(bitMap, width, height, QImage::Format_RGB888);
+//        if (image.isNull()) 
+//        {
+//            throw std::runtime_error("QImage creation failed.");
+//        }
+//
+//        DrawShapeObjects(image);
+//        UpdateDrawingLabel(image);
+//
+//        QPixmap pixMap = QPixmap::fromImage(image);
+//        if (pixMap.isNull()) 
+//        {
+//            throw std::runtime_error("QPixmap creation failed.");
+//        }
+//        ui->label_Preview->setPixmap(pixMap);
+//
+//        pFrame->DoMeasure(roiManager.Items);
+//        pFrame->MinMaxLoc(minVal, avgVal, maxVal, minLoc, maxLoc);
+//
+//        std::wstring wideStr;
+//        ConvertAnsiToUnicodeString(wideStr, pTmCamera->GetTempUnitSymbol());
+//        QString text = QString::fromStdWString(wideStr);
+//
+//        std::stringstream oss;
+//        oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(minVal) << " ";
+//        ui->label_MinimumTemperature->setText(QString::fromStdString(oss.str()) + text);
+//
+//        oss.str("");
+//        oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(avgVal) << " ";
+//        ui->label_AverageTemperature->setText(QString::fromStdString(oss.str()) + text);
+//
+//        oss.str("");
+//        oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(maxVal) << " ";
+//        ui->label_MaximumTemperature->setText(QString::fromStdString(oss.str()) + text);
+//    }
+//    catch (std::exception& e) 
+//    {
+//        qDebug() << "Error during measurement processing:" << e.what();
+//    }
+//
+//    delete pFrame;
+//    pFrame = nullptr;
+//}
+void Camera::processMeasurements(TmFrame* pFrame) {
+    if (pFrame == nullptr || pTmCamera == nullptr) {
+        qDebug() << "Error: Null pointer detected for pFrame or pTmCamera.";
+        return;
+    }
+
+    int width = pFrame->Width();
+    int height = pFrame->Height();
+    if (width <= 0 || height <= 0) {
+        qDebug() << "Error: Invalid frame dimensions. Width:" << width << ", Height:" << height;
+        delete pFrame;
+        pFrame = nullptr;
+        return;
+    }
+
     double minVal, avgVal, maxVal;
     Point minLoc, maxLoc;
     uint8_t* bitMap = pFrame->ToBitmap(ColorOrder::COLOR_RGB);
-    QImage image(bitMap, pFrame->Width(), pFrame->Height(), QImage::Format_RGB888);
-    DrawShapeObjects(image);
-    UpdateDrawingLabel(image);
-    QPixmap pixMap = QPixmap::fromImage(image);
-    ui->label_Preview->setPixmap(pixMap);
-    //ui->label_Preview->show();
+    if (bitMap == nullptr) {
+        qDebug() << "Error: Failed to convert frame to bitmap.";
+        delete pFrame;
+        pFrame = nullptr;
+        return;
+    }
 
-    pFrame->DoMeasure(roiManager.Items);
-    pFrame->MinMaxLoc(minVal, avgVal, maxVal, minLoc, maxLoc);
+    QImage image;
+    try {
+        image = QImage(bitMap, width, height, QImage::Format_RGB888);
+        if (image.isNull()) {
+            throw std::runtime_error("QImage creation failed.");
+        }
 
-    if (pTmCamera == nullptr)    return;
+        // Perform shape drawing in the worker thread
+        DrawShapeObjects(image);
+        UpdateDrawingLabel(image);
 
-    std::wstring wideStr;
-    ConvertAnsiToUnicodeString(wideStr, pTmCamera->GetTempUnitSymbol());
-    QString text = QString::fromStdWString(wideStr);
+        // Use invokeMethod to update the UI safely from the main thread
+        QMetaObject::invokeMethod(ui->label_Preview, "setPixmap", Qt::QueuedConnection, Q_ARG(QPixmap, QPixmap::fromImage(image)));
 
-    std::stringstream oss;
-    oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(minVal) << " ";
-    ui->label_MinimumTemperature->setText(QString::fromStdString(oss.str()) + text);
+        // Perform measurements in the worker thread
+        pFrame->DoMeasure(roiManager.Items);
+        pFrame->MinMaxLoc(minVal, avgVal, maxVal, minLoc, maxLoc);
 
-    oss.str("");
-    oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(avgVal) << " ";
-    ui->label_AverageTemperature->setText(QString::fromStdString(oss.str()) + text);
+        std::wstring wideStr;
+        ConvertAnsiToUnicodeString(wideStr, pTmCamera->GetTempUnitSymbol());
+        QString text = QString::fromStdWString(wideStr);
 
-    oss.str("");
-    oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(maxVal) << " ";
-    ui->label_MaximumTemperature->setText(QString::fromStdString(oss.str()) + text);
-    pFrame->Release();
+        // Prepare temperature strings
+        std::stringstream oss;
+        oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(minVal) << " ";
+        QString minTempText = QString::fromStdString(oss.str()) + text;
+
+        oss.str("");
+        oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(avgVal) << " ";
+        QString avgTempText = QString::fromStdString(oss.str()) + text;
+
+        oss.str("");
+        oss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(maxVal) << " ";
+        QString maxTempText = QString::fromStdString(oss.str()) + text;
+
+        // Update the labels using invokeMethod
+        QMetaObject::invokeMethod(ui->label_MinimumTemperature, "setText", Qt::QueuedConnection, Q_ARG(QString, minTempText));
+        QMetaObject::invokeMethod(ui->label_AverageTemperature, "setText", Qt::QueuedConnection, Q_ARG(QString, avgTempText));
+        QMetaObject::invokeMethod(ui->label_MaximumTemperature, "setText", Qt::QueuedConnection, Q_ARG(QString, maxTempText));
+
+    }
+    catch (std::exception& e) {
+        qDebug() << "Error during measurement processing:" << e.what();
+    }
+
+    delete pFrame;
+    pFrame = nullptr;
 }
 
 /*
@@ -171,8 +280,10 @@ void Camera::CaptureFrame()
     }
     int colorMapIndex = (int)ColormapTypes::Inferno + 1;
     int tempUnitIndex = (int)TempUnit::CELSIUS;
-    ui->comboBox_ColorMap->setCurrentIndex(colorMapIndex);
-    ui->comboBox_TemperatureUnit->setCurrentIndex(tempUnitIndex);
+    QMetaObject::invokeMethod(this, [this, colorMapIndex, tempUnitIndex]() {
+        ui->comboBox_ColorMap->setCurrentIndex(colorMapIndex);
+        ui->comboBox_TemperatureUnit->setCurrentIndex(tempUnitIndex);
+        }, Qt::QueuedConnection);
     pTmCamera->SetColorMap((ColormapTypes)colorMapIndex);
     pTmCamera->SetTempUnit((TempUnit)tempUnitIndex);
 
@@ -180,13 +291,22 @@ void Camera::CaptureFrame()
     {
         try
         {
-        TmFrame* pFrame = pTmCamera->QueryFrame(previewWidth, previewHeight);
-        if (pFrame != nullptr)
-        {
-            future = QtConcurrent::run(this, &Camera::processMeasurements, pFrame);
-            futureWatcher.setFuture(future);
+            TmFrame* pFrame = new TmFrame((ColormapTypes)colorMapIndex);
+            int ret = pTmCamera->QueryFrame(pFrame, previewWidth, previewHeight);
+            if (ret == true && pFrame != nullptr)
+            {
+                future = QtConcurrent::run(this, &Camera::processMeasurements, pFrame);
+                futureWatcher.setFuture(future);
+
+                // 현재 활성 작업(thread)의 수를 확인
+                //int activeThreads = QThreadPool::globalInstance()->activeThreadCount();
+                //qDebug() << "Active threads:" << activeThreads;
+            }
+            else
+            {
+                delete pFrame;
+            }
         }
-    }
         catch (exception& e)
         {
             std::cout << "CaptureFrame: Can not get video frame" << endl;
@@ -325,6 +445,15 @@ void Camera::DisconnectCamera()
 */
 void Camera::DrawShapeObjects(QImage& image) {
     if (image.isNull()) return;
+
+    // 현재 스레드가 UI 스레드인지 확인
+    if (QThread::currentThread() != QApplication::instance()->thread()) {
+        // UI 스레드에서 이 함수를 호출하도록 invokeMethod 사용
+        QMetaObject::invokeMethod(this, [this, &image]() {
+            DrawShapeObjects(image);
+            }, Qt::BlockingQueuedConnection);
+        return;
+    }
 
     QPainter painter(&image);
     if (!painter.isActive()) return;
@@ -519,6 +648,7 @@ void Camera::DrawShapeObjects(QImage& image) {
 
         }
     }
+    painter.end();
 }
 
 /*
@@ -549,6 +679,15 @@ void Camera::UpdateRoiListItems()
 */
 void Camera::UpdateDrawingLabel(QImage& image)
 {
+    // 현재 스레드가 UI 스레드인지 확인
+    if (QThread::currentThread() != QApplication::instance()->thread()) {
+        // UI 스레드에서 이 함수를 호출하도록 invokeMethod 사용
+        QMetaObject::invokeMethod(this, [this, &image]() {
+            UpdateDrawingLabel(image);
+            }, Qt::BlockingQueuedConnection);
+        return;
+    }
+
     QPainter painter(&image);
 
     if (drawing && roiManager.SelectedItem() != nullptr) {
@@ -582,6 +721,7 @@ void Camera::UpdateDrawingLabel(QImage& image)
             break;
         }
     }
+    painter.end();
 }
 
 /*

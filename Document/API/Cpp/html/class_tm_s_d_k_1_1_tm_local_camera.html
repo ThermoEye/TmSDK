@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -131,9 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad09e2a00f6dfad9912425d450b2c8d78" id="r_ad09e2a00f6dfad9912425d450b2c8d78"><td class="memItemLeft" align="right" valign="top">PKT_INTERFACE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_local_camera.html#ad09e2a00f6dfad9912425d450b2c8d78">SendPacket</a> (Packet packet, uint32_t timeout) override</td></tr>
 <tr class="memdesc:ad09e2a00f6dfad9912425d450b2c8d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends packet data to camera device to control camera functions.  <br /></td></tr>
 <tr class="separator:ad09e2a00f6dfad9912425d450b2c8d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d73c0ec477993b21d8de2bcd66129e1" id="r_a5d73c0ec477993b21d8de2bcd66129e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_local_camera.html#a5d73c0ec477993b21d8de2bcd66129e1">QueryFrame</a> (int width, int height)</td></tr>
-<tr class="memdesc:a5d73c0ec477993b21d8de2bcd66129e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a resized frame.  <br /></td></tr>
-<tr class="separator:a5d73c0ec477993b21d8de2bcd66129e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae0f22712463fdf510289fd066699234" id="r_aae0f22712463fdf510289fd066699234"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_local_camera.html#aae0f22712463fdf510289fd066699234">QueryFrame</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *pFrame, int width, int height)</td></tr>
+<tr class="memdesc:aae0f22712463fdf510289fd066699234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries a resized frame.  <br /></td></tr>
+<tr class="separator:aae0f22712463fdf510289fd066699234"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60506f9a98d68e994e4dbbfa5ea190f8" id="r_a60506f9a98d68e994e4dbbfa5ea190f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_local_camera.html#a60506f9a98d68e994e4dbbfa5ea190f8">GetMaxPacketSize</a> () override</td></tr>
 <tr class="memdesc:a60506f9a98d68e994e4dbbfa5ea190f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets maximum packet size of to be able to transfer in one data packet.  <br /></td></tr>
 <tr class="separator:a60506f9a98d68e994e4dbbfa5ea190f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,6 +164,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8a9bb0271afe912713cd8daefa4be280 inherit pub_methods_class_tm_s_d_k_1_1_tm_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1a10b01af6925c4523859092b242e3b inherit pub_methods_class_tm_s_d_k_1_1_tm_camera" id="r_aa1a10b01af6925c4523859092b242e3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tm_s_d_k_1_1_tm_control.html">TmControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#aa1a10b01af6925c4523859092b242e3b">GetTmControl</a> ()</td></tr>
 <tr class="separator:aa1a10b01af6925c4523859092b242e3b inherit pub_methods_class_tm_s_d_k_1_1_tm_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f2bbbff13c9dd2967e78a9a8a19f97 inherit pub_methods_class_tm_s_d_k_1_1_tm_camera" id="r_a65f2bbbff13c9dd2967e78a9a8a19f97"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a65f2bbbff13c9dd2967e78a9a8a19f97">GetAPIVersion</a> ()</td></tr>
+<tr class="separator:a65f2bbbff13c9dd2967e78a9a8a19f97 inherit pub_methods_class_tm_s_d_k_1_1_tm_camera"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -350,8 +352,8 @@ Static Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a5d73c0ec477993b21d8de2bcd66129e1" name="a5d73c0ec477993b21d8de2bcd66129e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d73c0ec477993b21d8de2bcd66129e1">&#9670;&#160;</a></span>QueryFrame()</h2>
+<a id="aae0f22712463fdf510289fd066699234" name="aae0f22712463fdf510289fd066699234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae0f22712463fdf510289fd066699234">&#9670;&#160;</a></span>QueryFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,8 +362,14 @@ Static Public Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> * TmSDK::TmLocalCamera::QueryFrame </td>
+          <td class="memname">bool TmSDK::TmLocalCamera::QueryFrame </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *&#160;</td>
+          <td class="paramname"><em>pTmFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>width</em>, </td>
         </tr>
@@ -396,7 +404,7 @@ Static Public Attributes</h2></td></tr>
 <p>If you want to get the original frame object, just call method without parameters as below: </p><div class="fragment"><div class="line"><a class="code hl_class" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a>* frame = pTmCamera-&gt;QueryFrame();</div>
 <div class="ttc" id="aclass_tm_s_d_k_1_1_tm_frame_html"><div class="ttname"><a href="class_tm_s_d_k_1_1_tm_frame.html">TmSDK::TmFrame</a></div><div class="ttdoc">Class representing a frame of image data.</div><div class="ttdef"><b>Definition</b> TmFrame.hxx:53</div></div>
 </div><!-- fragment --> 
-<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#af927eaed2fea247e3ea8b5ac76b5da08">TmSDK::TmCamera</a>.</p>
+<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a6da69916a1d00aca58d61163962def3f">TmSDK::TmCamera</a>.</p>
 
 </div>
 </div>

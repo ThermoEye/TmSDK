@@ -185,10 +185,10 @@
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libTmCore.dll">
+    <Content Include="libTmCore.1.1.0.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="libTmRtspClient.dll">
+    <Content Include="libTmRtspClient.1.1.0.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="opencv_world4100.dll">
