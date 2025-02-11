@@ -20,7 +20,7 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
     │  └─TmPython           ; Python application for Linux
     └─Windows
         ├─TmPython          ; Python application for Windows
-		├─TmWinDotNet       ; C# application for Windows
+        ├─TmWinDotNet       ; C# application for Windows
         ├─TmWinQt           ; Qt5-based C++ application for Windows
         └─TmWinQtSimple     ; C++ application without installing Qt5
 ```
