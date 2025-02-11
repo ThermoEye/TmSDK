@@ -516,15 +516,15 @@ void SensorControl::pushButton_GetGainModeState_Clicked()
 
     if (gainMode == 0)
     {
-        // Low Gain
-        ui->radioButton_GainModeHigh->setChecked(false);
-        ui->radioButton_GainModeLow->setChecked(true);
-    }
-    else if (gainMode == 1)
-    {
         // High Gain
         ui->radioButton_GainModeHigh->setChecked(true);
         ui->radioButton_GainModeLow->setChecked(false);
+    }
+    else if (gainMode == 1)
+    {
+        // Low Gain
+        ui->radioButton_GainModeHigh->setChecked(false);
+        ui->radioButton_GainModeLow->setChecked(true);
     }
 }
 
@@ -537,11 +537,11 @@ void SensorControl::pushButton_SetGainModeState_Clicked()
 
     if (ui->radioButton_GainModeHigh->isChecked() == true && ui->radioButton_GainModeLow->isChecked() == false)
     {
-        pCamera->pTmCamera->pTmControl->SetGainModeState(1);
+        pCamera->pTmCamera->pTmControl->SetGainModeState(0);
     }
     else if (ui->radioButton_GainModeHigh->isChecked() == false && ui->radioButton_GainModeLow->isChecked() == true)
     {
-        pCamera->pTmCamera->pTmControl->SetGainModeState(0);
+        pCamera->pTmCamera->pTmControl->SetGainModeState(1);
     }
 }
 #pragma region

@@ -337,18 +337,18 @@ class SensorControl:
         ret, gainMode = self.camera.tmCamera.tmControl.get_gain_mode_state()
         if ret:
             if gainMode==0:
-                self.main_window.radioButton_GainModeHigh.setChecked(False)
-                self.main_window.radioButton_GainModeLow.setChecked(True)
-            else:
                 self.main_window.radioButton_GainModeHigh.setChecked(True)
                 self.main_window.radioButton_GainModeLow.setChecked(False)
+            else:
+                self.main_window.radioButton_GainModeHigh.setChecked(False)
+                self.main_window.radioButton_GainModeLow.setChecked(True)
                 
     def pushButton_SetGainModeState_Clicked(self):
         if (self.main_window.radioButton_GainModeHigh.isChecked() == True 
             and self.main_window.radioButton_GainModeLow.isChecked() == False):
-            self.camera.tmCamera.tmControl.set_gain_mode_state(1)
+            self.camera.tmCamera.tmControl.set_gain_mode_state(0)
         elif (self.main_window.radioButton_GainModeHigh.isChecked() == False 
               and self.main_window.radioButton_GainModeLow.isChecked() == True):
-            self.camera.tmCamera.tmControl.set_gain_mode_state(0)
+            self.camera.tmCamera.tmControl.set_gain_mode_state(1)
             
         

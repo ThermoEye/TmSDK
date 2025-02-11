@@ -185,7 +185,7 @@
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libTmCore.1.1.0.dll">
+    <Content Include="libTmCore.1.1.1.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="libTmRtspClient.1.1.0.dll">

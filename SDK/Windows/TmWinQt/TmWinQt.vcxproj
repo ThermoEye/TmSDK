@@ -72,7 +72,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\lib;$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libTmCore.1.1.0d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libTmCore.1.1.1d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)lib\*.dll $(OutDir) /y</Command>
@@ -85,7 +85,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libTmCore.1.1.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libTmCore.1.1.1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy $(SolutionDir)lib\*.dll $(OutDir) /y

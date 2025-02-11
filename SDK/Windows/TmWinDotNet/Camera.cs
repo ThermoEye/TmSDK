@@ -135,7 +135,10 @@ namespace TmWinDotNet
         private void ScanLocalCameraList()
         {
             listBox_LocalCameraScanList.Tag = TmLocalCamera.GetCameraList();
-
+            if (listBox_LocalCameraScanList.Tag == null)
+            {
+                return;
+            }
             listBox_LocalCameraScanList.Items.Clear();
             foreach (var item in listBox_LocalCameraScanList.Tag as LocalCamInfo[])
             {
@@ -160,7 +163,10 @@ namespace TmWinDotNet
         private void ScanRemoteCameraList()
         {
             listBox_RemoteCameraScanList.Tag = TmRemoteCamera.GetCameraList();
-
+            if (listBox_RemoteCameraScanList.Tag == null)
+            {
+                return;
+            }
             listBox_RemoteCameraScanList.Items.Clear();
             foreach (var item in listBox_RemoteCameraScanList.Tag as RemoteCamInfo[])
             {
