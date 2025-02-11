@@ -12,12 +12,16 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
 │      └─Python             ; Python API
 ├─Firmware                  ; TMCxxx firmware files
 └─SDK                       ; TmSDK library and sample code
+    ├─App                   ; 
+	│  ├─Cpp                ; C++ program executable on Windows OS
+	│  └─CSharp             ; C# program executable on Windows OS
     ├─Linux
     │  ├─TmLinux            ; Qt5-based C++ application for Linux
     │  └─TmPython           ; Python application for Linux
     └─Windows
         ├─TmPython          ; Python application for Windows
-        ├─TmWinQt           ; Qt5-based C++ application for Window
+		├─TmWinDotNet       ; C# application for Windows
+        ├─TmWinQt           ; Qt5-based C++ application for Windows
         └─TmWinQtSimple     ; C++ application without installing Qt5
 ```
 ## Requirement
@@ -35,19 +39,19 @@ Windows C#
 Windows Python
 - Windows 10 or 11
 - Visual Studio 2022 (optional)
-- Python 3.9 or higher
+- Python 3.9 or later versions
 - PyQt5
 - qtcreator
 
 Linux C++
-- Ubuntu 24.04
+- Ubuntu 20.04 or later versions 
 - Gcc-11
 - Qt5.14.2
 - qtcreator
 
 Linux Python
-- Ubuntu 24.04
-- Python 3.9 or higher
+- Ubuntu 20.04 or later versions
+- Python 3.9 or later versions
 - PyQt5
 - qtcreator
 
