@@ -13,8 +13,8 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
 ├─Firmware                  ; TMCxxx firmware files
 └─SDK                       ; TmSDK library and sample code
     ├─App                   ; 
-	│  ├─Cpp                ; C++ program executable on Windows OS
-	│  └─CSharp             ; C# program executable on Windows OS
+    │  ├─Cpp                ; C++ program executable on Windows OS
+    │  └─CSharp             ; C# program executable on Windows OS
     ├─Linux
     │  ├─TmLinux            ; Qt5-based C++ application for Linux
     │  └─TmPython           ; Python application for Linux
