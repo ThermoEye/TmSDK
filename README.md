@@ -7,22 +7,26 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
 ```
 ├─Document                  ; API Documentation and User Manual
 │  └─API
+│      ├─Android            ; Android API
 │      ├─Cpp                ; C++ API
 │      ├─CSharp             ; C# API
 │      └─Python             ; Python API
 ├─Firmware                  ; TMCxxx firmware files
 └─SDK                       ; TmSDK library and sample code
-    ├─App                   ; 
-    │  ├─Cpp                ; C++ program executable on Windows OS
-    │  └─CSharp             ; C# program executable on Windows OS
+    ├─Android               
+    │  ├─examples           ; Java application for android 
+    │  └─libs               ; JNI and android libraries
     ├─Linux
-    │  ├─TmLinux            ; Qt5-based C++ application for Linux
-    │  └─TmPython           ; Python application for Linux
+    │  ├─examples
+    │  │  ├─TmLinux         ; Qt5-based C++ application for Linux
+    │  │  └─TmPython        ; Python application for Linux
+    │  └─installer          ; deb/whl install files
     └─Windows
-        ├─TmPython          ; Python application for Windows
-        ├─TmWinDotNet       ; C# application for Windows
-        ├─TmWinQt           ; Qt5-based C++ application for Windows
-        └─TmWinQtSimple     ; C++ application without installing Qt5
+       ├─examples
+       │  ├─TmPython        ; Python application for Windows
+       │  ├─TmWinQt         ; Qt5-based C++ application for Window
+       │  └─TmWinQtSimple   ; C++ application without installing Qt5
+       └─installer          ; msi/whl install files
 ```
 ## Requirement
 
@@ -39,21 +43,24 @@ Windows C#
 Windows Python
 - Windows 10 or 11
 - Visual Studio 2022 (optional)
-- Python 3.9 or later versions
+- Python 3.9 or higher
 - PyQt5
 - qtcreator
 
 Linux C++
-- Ubuntu 20.04 or later versions 
+- Ubuntu 24.04
 - Gcc-11
 - Qt5.14.2
 - qtcreator
 
 Linux Python
-- Ubuntu 20.04 or later versions
-- Python 3.9 or later versions
+- Ubuntu 24.04
+- Python 3.9 or higher
 - PyQt5
 - qtcreator
+
+Android
+- android-24 or later
 
 ## Downloads
 
