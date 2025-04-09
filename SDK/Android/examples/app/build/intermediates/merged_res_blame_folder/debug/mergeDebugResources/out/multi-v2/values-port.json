@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "kr.co.thermoeye.android.app-mergeDebugResources-29:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\leo70\\.gradle\\caches\\8.10.2\\transforms\\e8fdd60979a1f2aa517ab541aed0c7ef\\transformed\\appcompat-1.7.0\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/fragment_setting.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/fragment_setting.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/setting_product_information.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/setting_product_information.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/fragment_single_view.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/fragment_single_view.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/setting_colormap.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/setting_colormap.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/fragment_camera_list.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/fragment_camera_list.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/camera_list_item.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/camera_list_item.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/setting_list_group.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/setting_list_group.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/setting_temperature.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/setting_temperature.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/fragment_multi_view.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/fragment_multi_view.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/setting_network_config.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/setting_network_config.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/setting_alarm.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/setting_alarm.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/setting_roi.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/setting_roi.xml"
+    },
+    {
+        "merged": "kr.co.thermoeye.android.app-mergeDebugResources-30:/layout/setting_camera_config.xml",
+        "source": "kr.co.thermoeye.android.app-main-33:/layout/setting_camera_config.xml"
+    }
+]

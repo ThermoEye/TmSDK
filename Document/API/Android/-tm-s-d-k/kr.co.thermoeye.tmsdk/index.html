@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>kr.co.thermoeye.tmsdk</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../index.html">
+                    TmSDK
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":TmSDK:dokkaHtml/release">androidJvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":TmSDK:dokkaHtml/release"
+                                       data-filter=":TmSDK:dokkaHtml/release"/>
+                                <span class="checkbox--icon"></span>
+                                androidJvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    TmSDK
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="TmSDK::kr.co.thermoeye.tmsdk////PointingToDeclaration//-273064447">
+  <div class="breadcrumbs"><a href="../../index.html">TmSDK</a><span class="delimiter">/</span><span class="current">kr.co.thermoeye.tmsdk</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-809647078%2FClasslikes%2F-273064447" anchor-label="ColorMapTypes" id="-809647078%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-map-types/index.html"><span>Color</span><wbr></wbr><span>Map</span><wbr></wbr><span><span>Types</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-809647078%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-color-map-types/index.html">ColorMapTypes</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-color-map-types/index.html">ColorMapTypes</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Enum class representing different color map types used for temperature display. Each enum represents a different color scheme.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-909642595%2FClasslikes%2F-273064447" anchor-label="ColorOrder" id="-909642595%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-color-order/index.html"><span>Color</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-909642595%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-color-order/index.html">ColorOrder</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-color-order/index.html">ColorOrder</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Enum class representing the color order used in image processing.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-641181146%2FClasslikes%2F-273064447" anchor-label="GainMode" id="-641181146%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gain-mode/index.html"><span>Gain</span><wbr></wbr><span><span>Mode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-641181146%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-gain-mode/index.html">GainMode</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-gain-mode/index.html">GainMode</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Enum class representing the gain mode of a device.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-962782284%2FClasslikes%2F-273064447" anchor-label="Line" id="-962782284%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-line/index.html"><span><span>Line</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-962782284%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-line/index.html">Line</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>startX<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>-1<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>startY<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>-1<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>endX<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>-1<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>endY<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>-1</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents a line segment in 2D space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-666326841%2FClasslikes%2F-273064447" anchor-label="LocItem" id="-666326841%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-loc-item/index.html"><span>Loc</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-666326841%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-loc-item/index.html">LocItem</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>value<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token operator"> = </span><span class="token constant">0.0</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>location<span class="token operator">: </span><a href="-point/index.html">Point</a><span class="token operator"> = </span>Point(0, 0)</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents a location item with a value and its corresponding coordinates.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1977711936%2FClasslikes%2F-273064447" anchor-label="NetworkConfiguration" id="-1977711936%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-network-configuration/index.html"><span>Network</span><wbr></wbr><span><span>Configuration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1977711936%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-network-configuration/index.html">NetworkConfiguration</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>mac<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>ipAssign<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>ip<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>netmask<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>gateway<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>dns<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>dns2<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator"> = </span><span class="token string">&quot;&quot;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents the network configuration of a device.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1415603850%2FClasslikes%2F-273064447" anchor-label="Point" id="1415603850%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-point/index.html"><span><span>Point</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1415603850%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-point/index.html">Point</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>-1<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>-1</span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents a point in 2D space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1819425547%2FClasslikes%2F-273064447" anchor-label="Rectangle" id="1819425547%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-rectangle/index.html"><span><span>Rectangle</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1819425547%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-rectangle/index.html">Rectangle</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">var </span>x<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>-1<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>y<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>-1<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>width<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">var </span>height<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Represents a rectangular region in 2D space.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1971798966%2FClasslikes%2F-273064447" anchor-label="RoiEllipse" id="1971798966%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-roi-ellipse/index.html"><span>Roi</span><wbr></wbr><span><span>Ellipse</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1971798966%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-roi-ellipse/index.html">RoiEllipse</a> : <a href="-roi-object/index.html">RoiObject</a></div><div class="brief "><p class="paragraph">ROI class representing an elliptical measurement.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="628721658%2FClasslikes%2F-273064447" anchor-label="RoiLine" id="628721658%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-roi-line/index.html"><span>Roi</span><wbr></wbr><span><span>Line</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="628721658%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-roi-line/index.html">RoiLine</a> : <a href="-roi-object/index.html">RoiObject</a></div><div class="brief "><p class="paragraph">ROI class representing a line measurement.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="336163791%2FClasslikes%2F-273064447" anchor-label="RoiObject" id="336163791%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-roi-object/index.html"><span>Roi</span><wbr></wbr><span><span>Object</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="336163791%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="-roi-object/index.html">RoiObject</a></div><div class="brief "><p class="paragraph">Base class for ROI (Region of Interest) objects.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-11211766%2FClasslikes%2F-273064447" anchor-label="RoiRect" id="-11211766%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-roi-rect/index.html"><span>Roi</span><wbr></wbr><span><span>Rect</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-11211766%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-roi-rect/index.html">RoiRect</a> : <a href="-roi-object/index.html">RoiObject</a></div><div class="brief "><p class="paragraph">ROI class representing a rectangular measurement.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="829221548%2FClasslikes%2F-273064447" anchor-label="RoiSpot" id="829221548%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-roi-spot/index.html"><span>Roi</span><wbr></wbr><span><span>Spot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="829221548%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-roi-spot/index.html">RoiSpot</a> : <a href="-roi-object/index.html">RoiObject</a></div><div class="brief "><p class="paragraph">ROI class representing a spot measurement.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-273988748%2FClasslikes%2F-273064447" anchor-label="RoiType" id="-273988748%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-roi-type/index.html"><span>Roi</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-273988748%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-roi-type/index.html">RoiType</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-roi-type/index.html">RoiType</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Enum class representing different types of Regions of Interest (ROI). HAND(0), SPOT(1), LINE(2), RECT(3), ELLIPSE(4)</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1199156528%2FClasslikes%2F-273064447" anchor-label="TempUnit" id="1199156528%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-temp-unit/index.html"><span>Temp</span><wbr></wbr><span><span>Unit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1199156528%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-temp-unit/index.html">TempUnit</a> : <a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><a href="-temp-unit/index.html">TempUnit</a><span class="token operator">&gt; </span></div><div class="brief "><p class="paragraph">Enum class representing different temperature units. Each enum represents a different unit of temperature measurement.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-528984187%2FClasslikes%2F-273064447" anchor-label="TempValueLoc" id="-528984187%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-temp-value-loc/index.html"><span>Temp</span><wbr></wbr><span>Value</span><wbr></wbr><span><span>Loc</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-528984187%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-temp-value-loc/index.html">TempValueLoc</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>minVal<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>avgVal<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>maxVal<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>minLoc<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/graphics/Point.html">Point</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>maxLoc<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/graphics/Point.html">Point</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Data class representing temperature values and their corresponding locations.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1502173290%2FClasslikes%2F-273064447" anchor-label="TmCamera" id="1502173290%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tm-camera/index.html"><span>Tm</span><wbr></wbr><span><span>Camera</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1502173290%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-tm-camera/index.html">TmCamera</a></div><div class="brief "><p class="paragraph">Class to manage remote camera operations such as opening, closing, and querying frames. This class interacts with the native C++ code through JNI to perform operations on the camera.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2036308342%2FClasslikes%2F-273064447" anchor-label="TmControl" id="2036308342%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tm-control/index.html"><span>Tm</span><wbr></wbr><span><span>Control</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2036308342%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-tm-control/index.html">TmControl</a></div><div class="brief "><p class="paragraph">Class for controlling a device through native functions.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1450156006%2FClasslikes%2F-273064447" anchor-label="TmFrame" id="1450156006%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tm-frame/index.html"><span>Tm</span><wbr></wbr><span><span>Frame</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1450156006%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-tm-frame/index.html">TmFrame</a></div><div class="brief "><p class="paragraph">Class representing a frame of thermal image data. Provides functionalities for processing, measuring, and converting frames to bitmaps.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="619657372%2FClasslikes%2F-273064447" anchor-label="TmRemoteCamInfo" id="619657372%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tm-remote-cam-info/index.html"><span>Tm</span><wbr></wbr><span>Remote</span><wbr></wbr><span>Cam</span><wbr></wbr><span><span>Info</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="619657372%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-tm-remote-cam-info/index.html">TmRemoteCamInfo</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>Name<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>SerialNumber<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>AddrMAC<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>AddrIP<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Data class representing remote camera information. This holds the camera's name, serial number, MAC address, and IP address.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-732417074%2FClasslikes%2F-273064447" anchor-label="TmRoiManager" id="-732417074%2FClasslikes%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tm-roi-manager/index.html"><span>Tm</span><wbr></wbr><span>Roi</span><wbr></wbr><span><span>Manager</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-732417074%2FClasslikes%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="-tm-roi-manager/index.html">TmRoiManager</a></div><div class="brief "><p class="paragraph">Class responsible for managing Region of Interest (ROI) objects in a device. This class provides methods to create, modify, and interact with ROI objects.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>RoiEllipse</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../index.html">
+                    TmSDK
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":TmSDK:dokkaHtml/release">androidJvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":TmSDK:dokkaHtml/release"
+                                       data-filter=":TmSDK:dokkaHtml/release"/>
+                                <span class="checkbox--icon"></span>
+                                androidJvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    TmSDK
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="TmSDK::kr.co.thermoeye.tmsdk/RoiEllipse///PointingToDeclaration//-273064447">
+  <div class="breadcrumbs"><a href="../../../index.html">TmSDK</a><span class="delimiter">/</span><a href="../index.html">kr.co.thermoeye.tmsdk</a><span class="delimiter">/</span><span class="current">RoiEllipse</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Roi</span><wbr></wbr><span><span>Ellipse</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">RoiEllipse</a> : <a href="../-roi-object/index.html">RoiObject</a></div><p class="paragraph">ROI class representing an elliptical measurement.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="2001521501%2FConstructors%2F-273064447" anchor-label="RoiEllipse" id="2001521501%2FConstructors%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-roi-ellipse.html"><span>Roi</span><wbr></wbr><span><span>Ellipse</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2001521501%2FConstructors%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">ptr<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">obj<span class="token operator">: </span><a href="../-roi-object/index.html">RoiObject</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-1859043713%2FProperties%2F-273064447" anchor-label="roiObject" id="-1859043713%2FProperties%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-roi-object/roi-object.html"><span>roi</span><wbr></wbr><span><span>Object</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1859043713%2FProperties%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">var </span><a href="../-roi-object/roi-object.html">roiObject</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-long/index.html">Long</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1777819251%2FFunctions%2F-273064447" anchor-label="getAvgLocItem" id="1777819251%2FFunctions%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-roi-object/get-avg-loc-item.html"><span>get</span><wbr></wbr><span>Avg</span><wbr></wbr><span>Loc</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1777819251%2FFunctions%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-roi-object/get-avg-loc-item.html"><span class="token function">getAvgLocItem</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-loc-item/index.html">LocItem</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the location and value of the average measurement within the ROI.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-307761183%2FFunctions%2F-273064447" anchor-label="getEllipse" id="-307761183%2FFunctions%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-ellipse.html"><span>get</span><wbr></wbr><span><span>Ellipse</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-307761183%2FFunctions%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="get-ellipse.html"><span class="token function">getEllipse</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-rectangle/index.html">Rectangle</a></div><div class="brief "><p class="paragraph">Retrieves the dimensions of the ellipse measurement.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="385163764%2FFunctions%2F-273064447" anchor-label="getIndex" id="385163764%2FFunctions%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-roi-object/get-index.html"><span>get</span><wbr></wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="385163764%2FFunctions%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-roi-object/get-index.html"><span class="token function">getIndex</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Retrieves the index of the ROI object.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1814511355%2FFunctions%2F-273064447" anchor-label="getMaxLocItem" id="-1814511355%2FFunctions%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-roi-object/get-max-loc-item.html"><span>get</span><wbr></wbr><span>Max</span><wbr></wbr><span>Loc</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1814511355%2FFunctions%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-roi-object/get-max-loc-item.html"><span class="token function">getMaxLocItem</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-loc-item/index.html">LocItem</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the location and value of the maximum measurement within the ROI.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1838577165%2FFunctions%2F-273064447" anchor-label="getMinLocItem" id="-1838577165%2FFunctions%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-roi-object/get-min-loc-item.html"><span>get</span><wbr></wbr><span>Min</span><wbr></wbr><span>Loc</span><wbr></wbr><span><span>Item</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1838577165%2FFunctions%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-roi-object/get-min-loc-item.html"><span class="token function">getMinLocItem</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-loc-item/index.html">LocItem</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the location and value of the minimum measurement within the ROI.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1692871206%2FFunctions%2F-273064447" anchor-label="getType" id="-1692871206%2FFunctions%2F-273064447" data-filterable-set=":TmSDK:dokkaHtml/release"></a>
+          <div class="table-row" data-filterable-current=":TmSDK:dokkaHtml/release" data-filterable-set=":TmSDK:dokkaHtml/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-roi-object/get-type.html"><span>get</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1692871206%2FFunctions%2F-273064447"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":TmSDK:dokkaHtml/release"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-roi-object/get-type.html"><span class="token function">getType</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-roi-type/index.html">RoiType</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the type of the ROI.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

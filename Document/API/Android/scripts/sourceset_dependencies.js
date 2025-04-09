@@ -1,0 +1,1 @@
+sourceset_dependencies='{":TmSDK:dokkaHtml/debug":[],":TmSDK:dokkaHtml/main":[],":TmSDK:dokkaHtml/release":[]}'
