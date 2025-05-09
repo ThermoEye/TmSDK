@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['open_0',['open',['../class_tm_s_d_k_1_1_tm_camera.html#a83b8875dd63b5841e064e40ed37a2a3c',1,'TmSDK::TmCamera::Open(TmLocalCamInfo *camInfo)'],['../class_tm_s_d_k_1_1_tm_camera.html#a5d0ca1ba7461a2744ee726c3a3112949',1,'TmSDK::TmCamera::Open(TmRemoteCamInfo *camInfo)'],['../class_tm_s_d_k_1_1_tm_local_camera.html#a86f38694d6a376f4a55d2f709897efb2',1,'TmSDK::TmLocalCamera::Open()'],['../class_tm_s_d_k_1_1_tm_remote_camera.html#af0483a301245bf3117a21c68291b9b05',1,'TmSDK::TmRemoteCamera::Open()']]],
-  ['openfirmware_1',['openfirmware',['../class_tm_s_d_k_1_1_tm_control.html#aed9b2927ee15e7b7ac89854b0022049d',1,'TmSDK::TmControl::OpenFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl160.html#a30318e4eb7bf267ee8e98477f8c2495a',1,'TmSDK::TmCtrl160::OpenFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl256.html#a6461703d3a9110e8b24c48751ab17448',1,'TmSDK::TmCtrl256::OpenFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl80.html#a5891c3ef6273a3b3ecc746a8bee16fd9',1,'TmSDK::TmCtrl80::OpenFirmware()']]]
+  ['minmaxloc_0',['MinMaxLoc',['../class_tm_s_d_k_1_1_tm_frame.html#a57a141785d3f1899fd3c03ef98325ca8',1,'TmSDK::TmFrame']]],
+  ['mousedown_1',['MouseDown',['../class_tm_s_d_k_1_1_tm_roi_manager.html#afe68994f70121ed5c41dc3b6617c3308',1,'TmSDK::TmRoiManager']]],
+  ['mousemove_2',['MouseMove',['../class_tm_s_d_k_1_1_tm_roi_manager.html#a06882f9a9d68db8286e14de919031b1d',1,'TmSDK::TmRoiManager']]],
+  ['mouseup_3',['MouseUp',['../class_tm_s_d_k_1_1_tm_roi_manager.html#a1e1fb100d7b362f5a154477bd608c4ac',1,'TmSDK::TmRoiManager']]]
 ];

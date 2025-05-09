@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.1</span>
+   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.2</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -115,6 +115,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abfee6a89596925af4fcdf1737dc7c736" id="r_abfee6a89596925af4fcdf1737dc7c736"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#abfee6a89596925af4fcdf1737dc7c736">~TmFrame</a> ()</td></tr>
 <tr class="memdesc:abfee6a89596925af4fcdf1737dc7c736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a>.  <br /></td></tr>
 <tr class="separator:abfee6a89596925af4fcdf1737dc7c736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11ab0b5b803285f9ab9c3d6d196b3778" id="r_a11ab0b5b803285f9ab9c3d6d196b3778"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#a11ab0b5b803285f9ab9c3d6d196b3778">GetPixel</a> (int x, int y)</td></tr>
+<tr class="memdesc:a11ab0b5b803285f9ab9c3d6d196b3778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a single pixel value at the specified (x, y) coordinates from the raw frame.  <br /></td></tr>
+<tr class="separator:a11ab0b5b803285f9ab9c3d6d196b3778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a325092f92c15e3baea88c7eae53122bf" id="r_a325092f92c15e3baea88c7eae53122bf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#a325092f92c15e3baea88c7eae53122bf">GetPixel</a> (int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:a325092f92c15e3baea88c7eae53122bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a rectangular region of pixel data from the raw frame and returns it as a 2D array of doubles.  <br /></td></tr>
+<tr class="separator:a325092f92c15e3baea88c7eae53122bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac01b3ac7f1464fcd2144955e90ebbfd2" id="r_ac01b3ac7f1464fcd2144955e90ebbfd2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#ac01b3ac7f1464fcd2144955e90ebbfd2">IsEmpty</a> ()</td></tr>
 <tr class="memdesc:ac01b3ac7f1464fcd2144955e90ebbfd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the pointer used for holding frame data is null.  <br /></td></tr>
 <tr class="separator:ac01b3ac7f1464fcd2144955e90ebbfd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,6 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe0b1d7945daa5e39d306d1e9070ea45" id="r_afe0b1d7945daa5e39d306d1e9070ea45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#afe0b1d7945daa5e39d306d1e9070ea45">Height</a> ()</td></tr>
 <tr class="memdesc:afe0b1d7945daa5e39d306d1e9070ea45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets height of frame.  <br /></td></tr>
 <tr class="separator:afe0b1d7945daa5e39d306d1e9070ea45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4765aa62cfea06888802e26c05fac61a" id="r_a4765aa62cfea06888802e26c05fac61a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#a4765aa62cfea06888802e26c05fac61a">GetBitmapSize</a> ()</td></tr>
+<tr class="separator:a4765aa62cfea06888802e26c05fac61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -289,6 +297,125 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a4765aa62cfea06888802e26c05fac61a" name="a4765aa62cfea06888802e26c05fac61a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4765aa62cfea06888802e26c05fac61a">&#9670;&#160;</a></span>GetBitmapSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t TmSDK::TmFrame::GetBitmapSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11ab0b5b803285f9ab9c3d6d196b3778" name="a11ab0b5b803285f9ab9c3d6d196b3778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11ab0b5b803285f9ab9c3d6d196b3778">&#9670;&#160;</a></span>GetPixel() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TmSDK::TmFrame::GetPixel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves a single pixel value at the specified (x, y) coordinates from the raw frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-coordinate (column index) of the pixel.</td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate (row index) of the pixel.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><p class="startdd">Returns the pixel value as a double. If the coordinates are out of bounds or the frame is null, returns 0.</p>
+<p class="enddd">Example usage: </p><div class="fragment"><div class="line"><span class="keywordtype">double</span> value = pFrame-&gt;GetPixel(10, 20);</div>
+<div class="line">printf(<span class="stringliteral">&quot;Pixel value: %f\n&quot;</span>, value);</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a325092f92c15e3baea88c7eae53122bf" name="a325092f92c15e3baea88c7eae53122bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a325092f92c15e3baea88c7eae53122bf">&#9670;&#160;</a></span>GetPixel() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; double &gt; &gt; TmSDK::TmFrame::GetPixel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves a rectangular region of pixel data from the raw frame and returns it as a 2D array of doubles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The starting x-coordinate (left) of the region.</td></tr>
+    <tr><td class="paramname">y</td><td>The starting y-coordinate (top) of the region.</td></tr>
+    <tr><td class="paramname">width</td><td>The width of the region to extract.</td></tr>
+    <tr><td class="paramname">height</td><td>The height of the region to extract.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><p class="startdd">Returns a 2D vector of doubles containing the pixel values within the specified region. If the frame is null, empty, or the region is out of bounds, an empty vector is returned.</p>
+<p class="enddd">Example usage: </p><div class="fragment"><div class="line">std::vector&lt;std::vector&lt;double&gt;&gt; frame = pFrame-&gt;GetPixel(0, 0, width, height);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> h = 0; h &lt; height; ++h) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> w = 0; w &lt; width; ++w) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;%f &quot;</span>, frame[w][h]);</div>
+<div class="line">    }</div>
+<div class="line">    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>

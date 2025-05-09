@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.1</span>
+   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.2</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -223,6 +223,114 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae37df863f4720f9c9a14250e3d356bca" id="r_ae37df863f4720f9c9a14250e3d356bca"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ae37df863f4720f9c9a14250e3d356bca">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetRemoteCameraList</a> (JNIEnv *env, jobject obj, jobject cameraList)</td></tr>
+<tr class="separator:ae37df863f4720f9c9a14250e3d356bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb54e695dc8869c11a28625bff3915e3" id="r_adb54e695dc8869c11a28625bff3915e3"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jlong JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#adb54e695dc8869c11a28625bff3915e3">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCreateTmCamera</a> (JNIEnv *env, jobject obj)</td></tr>
+<tr class="separator:adb54e695dc8869c11a28625bff3915e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2ccba93f425fac0fd19f8747617360" id="r_a6b2ccba93f425fac0fd19f8747617360"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a6b2ccba93f425fac0fd19f8747617360">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeReleaseTmCamera</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a6b2ccba93f425fac0fd19f8747617360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a576972209d3a2c1404a62342c387a13e" id="r_a576972209d3a2c1404a62342c387a13e"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jlong JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a576972209d3a2c1404a62342c387a13e">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCreateRemoteCamera</a> (JNIEnv *env, jobject obj)</td></tr>
+<tr class="separator:a576972209d3a2c1404a62342c387a13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54515231ab0928cab0369899453a20b9" id="r_a54515231ab0928cab0369899453a20b9"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a54515231ab0928cab0369899453a20b9">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeOpenRemoteCamera</a> (JNIEnv *env, jobject obj, jlong ptr, jstring name, jstring serialnumber, jstring mac, jstring ip)</td></tr>
+<tr class="separator:a54515231ab0928cab0369899453a20b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56fd895892879859312cae642b8d77be" id="r_a56fd895892879859312cae642b8d77be"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a56fd895892879859312cae642b8d77be">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeQueryFrame</a> (JNIEnv *env, jobject obj, jlong camera, jlong frame, jint width, jint height)</td></tr>
+<tr class="separator:a56fd895892879859312cae642b8d77be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a424956a9348ab967ae47b0c2cdfebc48" id="r_a424956a9348ab967ae47b0c2cdfebc48"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a424956a9348ab967ae47b0c2cdfebc48">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCloseRemoteCamera</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a424956a9348ab967ae47b0c2cdfebc48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c72738f8405fa5f9be05b10a58c5e2c" id="r_a9c72738f8405fa5f9be05b10a58c5e2c"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jlong JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a9c72738f8405fa5f9be05b10a58c5e2c">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTmControl</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a9c72738f8405fa5f9be05b10a58c5e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b18a9ac8402e0f3d57bf2d2ff5dd5c7" id="r_a8b18a9ac8402e0f3d57bf2d2ff5dd5c7"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a8b18a9ac8402e0f3d57bf2d2ff5dd5c7">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeSetColorMap</a> (JNIEnv *env, jobject obj, jlong ptr, jint colormap)</td></tr>
+<tr class="separator:a8b18a9ac8402e0f3d57bf2d2ff5dd5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af16772a05057dbb93d39c66c6f80d549" id="r_af16772a05057dbb93d39c66c6f80d549"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jdouble JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#af16772a05057dbb93d39c66c6f80d549">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTemperature</a> (JNIEnv *env, jobject obj, jlong ptr, jdouble raw)</td></tr>
+<tr class="separator:af16772a05057dbb93d39c66c6f80d549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31e3241d48b8909ad7896aa2cb7c90ea" id="r_a31e3241d48b8909ad7896aa2cb7c90ea"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a31e3241d48b8909ad7896aa2cb7c90ea">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTempUnitSymbol</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a31e3241d48b8909ad7896aa2cb7c90ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a1358982d46f97c5c0bed7ba30bb52" id="r_a25a1358982d46f97c5c0bed7ba30bb52"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a25a1358982d46f97c5c0bed7ba30bb52">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTempUnit</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a25a1358982d46f97c5c0bed7ba30bb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2adcbd7e12b487a1a868bcb2f44aafe1" id="r_a2adcbd7e12b487a1a868bcb2f44aafe1"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a2adcbd7e12b487a1a868bcb2f44aafe1">Java_kr_co_thermoeye_tmsdk_TmCamera_nativeSetTempUnit</a> (JNIEnv *env, jobject obj, jlong ptr, jint tempUnit)</td></tr>
+<tr class="separator:a2adcbd7e12b487a1a868bcb2f44aafe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4a751f2daad28727b501062c79bcfe" id="r_a4d4a751f2daad28727b501062c79bcfe"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a4d4a751f2daad28727b501062c79bcfe">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetProductModelName</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a4d4a751f2daad28727b501062c79bcfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8890afbed42b0adf03fde5e859062312" id="r_a8890afbed42b0adf03fde5e859062312"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a8890afbed42b0adf03fde5e859062312">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetProductSerialNumber</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a8890afbed42b0adf03fde5e859062312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e15abacb096e6fe68eceaae07d907c" id="r_ae5e15abacb096e6fe68eceaae07d907c"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ae5e15abacb096e6fe68eceaae07d907c">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetHardwareVersion</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:ae5e15abacb096e6fe68eceaae07d907c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa27da24ea9c34aac57675f624841bfbd" id="r_aa27da24ea9c34aac57675f624841bfbd"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#aa27da24ea9c34aac57675f624841bfbd">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetBootloaderVersion</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:aa27da24ea9c34aac57675f624841bfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4685ebe0ed718392b50f0bc9e5f337aa" id="r_a4685ebe0ed718392b50f0bc9e5f337aa"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a4685ebe0ed718392b50f0bc9e5f337aa">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetFirmwareVersion</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a4685ebe0ed718392b50f0bc9e5f337aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a279e01f7ce1e82f10f829e5305ac20c0" id="r_a279e01f7ce1e82f10f829e5305ac20c0"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a279e01f7ce1e82f10f829e5305ac20c0">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorModelName</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a279e01f7ce1e82f10f829e5305ac20c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9e3ad0227fa4f829c44a50bd62fbc7" id="r_a7b9e3ad0227fa4f829c44a50bd62fbc7"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a7b9e3ad0227fa4f829c44a50bd62fbc7">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorSerialNumber</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a7b9e3ad0227fa4f829c44a50bd62fbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee08e806b0ddd77ae1c03275cbcfcb28" id="r_aee08e806b0ddd77ae1c03275cbcfcb28"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jstring JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#aee08e806b0ddd77ae1c03275cbcfcb28">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorUptime</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:aee08e806b0ddd77ae1c03275cbcfcb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e802684e4e6b4a1a43580f26bd0697" id="r_ad1e802684e4e6b4a1a43580f26bd0697"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ad1e802684e4e6b4a1a43580f26bd0697">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetNetworkConfiguration</a> (JNIEnv *env, jobject obj, jlong ptr, jobjectArray netConfig)</td></tr>
+<tr class="separator:ad1e802684e4e6b4a1a43580f26bd0697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707a136424a6ad7072e6c257747791d6" id="r_a707a136424a6ad7072e6c257747791d6"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a707a136424a6ad7072e6c257747791d6">Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetNetworkConfiguration</a> (JNIEnv *env, jobject obj, jlong ptr, jstring jipAssign, jstring jip, jstring jnetmask, jstring jgateway, jstring jdns, jstring jdns2)</td></tr>
+<tr class="separator:a707a136424a6ad7072e6c257747791d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23ac469d2057bb75f3a9ac7948364747" id="r_a23ac469d2057bb75f3a9ac7948364747"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a23ac469d2057bb75f3a9ac7948364747">Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetDefaultNetworkConfiguration</a> (JNIEnv *env, jobject obj, jlong ptr, jobjectArray netConfig)</td></tr>
+<tr class="separator:a23ac469d2057bb75f3a9ac7948364747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0fcf9d5a233a082b2551bd81095b584" id="r_af0fcf9d5a233a082b2551bd81095b584"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#af0fcf9d5a233a082b2551bd81095b584">Java_kr_co_thermoeye_tmsdk_TmControl_nativeRebootDevice</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:af0fcf9d5a233a082b2551bd81095b584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85283b37ccb10eed3d240fa902f32b2d" id="r_a85283b37ccb10eed3d240fa902f32b2d"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a85283b37ccb10eed3d240fa902f32b2d">Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetGainMode</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a85283b37ccb10eed3d240fa902f32b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d08fd2b05a0a93c4a3cce5b6a018f5e" id="r_a3d08fd2b05a0a93c4a3cce5b6a018f5e"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a3d08fd2b05a0a93c4a3cce5b6a018f5e">Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetGainMode</a> (JNIEnv *env, jobject obj, jlong ptr, jint mode)</td></tr>
+<tr class="separator:a3d08fd2b05a0a93c4a3cce5b6a018f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a897ed151697f443695c3b17bff7f4288" id="r_a897ed151697f443695c3b17bff7f4288"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jlong JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a897ed151697f443695c3b17bff7f4288">Java_kr_co_thermoeye_tmsdk_TmFrame_nativeCreateTmFrame</a> (JNIEnv *env, jobject obj)</td></tr>
+<tr class="separator:a897ed151697f443695c3b17bff7f4288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2dd4bc7859aec6dfb099b43e368bd9" id="r_ace2dd4bc7859aec6dfb099b43e368bd9"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ace2dd4bc7859aec6dfb099b43e368bd9">Java_kr_co_thermoeye_tmsdk_TmFrame_nativeReleaseTmFrame</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:ace2dd4bc7859aec6dfb099b43e368bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad490144c5344a65c0e1816e8e2bf3a60" id="r_ad490144c5344a65c0e1816e8e2bf3a60"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jbyteArray JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ad490144c5344a65c0e1816e8e2bf3a60">Java_kr_co_thermoeye_tmsdk_TmFrame_nativeToBitMap</a> (JNIEnv *env, jobject obj, jlong ptr, jint color)</td></tr>
+<tr class="separator:ad490144c5344a65c0e1816e8e2bf3a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f851b6f8907e93d609f21e7bc263ba" id="r_a52f851b6f8907e93d609f21e7bc263ba"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a52f851b6f8907e93d609f21e7bc263ba">Java_kr_co_thermoeye_tmsdk_TmFrame_nativeGetWidth</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a52f851b6f8907e93d609f21e7bc263ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad1c9951ea2b192d451268dc74eb9367" id="r_aad1c9951ea2b192d451268dc74eb9367"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#aad1c9951ea2b192d451268dc74eb9367">Java_kr_co_thermoeye_tmsdk_TmFrame_nativeGetHeight</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:aad1c9951ea2b192d451268dc74eb9367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d2f3d43e53d8cbfe8bd25f89b568920" id="r_a5d2f3d43e53d8cbfe8bd25f89b568920"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a5d2f3d43e53d8cbfe8bd25f89b568920">Java_kr_co_thermoeye_tmsdk_TmFrame_nativeMinMaxLoc</a> (JNIEnv *env, jobject obj, jlong ptr, jdoubleArray tempVal, jintArray minPoint, jintArray maxPoint)</td></tr>
+<tr class="separator:a5d2f3d43e53d8cbfe8bd25f89b568920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6492a5d4b3e6464d5a203c990585d787" id="r_a6492a5d4b3e6464d5a203c990585d787"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a6492a5d4b3e6464d5a203c990585d787">Java_kr_co_thermoeye_tmsdk_TmFrame_nativeSetColorMap</a> (JNIEnv *env, jobject obj, jlong ptr, jint colorMap)</td></tr>
+<tr class="separator:a6492a5d4b3e6464d5a203c990585d787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a752f513b3f7910c33de7bec7606b399f" id="r_a752f513b3f7910c33de7bec7606b399f"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a752f513b3f7910c33de7bec7606b399f">Java_kr_co_thermoeye_tmsdk_TmFrame_nativeDoMeasure</a> (JNIEnv *env, jobject obj, jlong ptr, jlongArray items)</td></tr>
+<tr class="separator:a752f513b3f7910c33de7bec7606b399f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82cd8c852d31f5ed37520eda3ada3efb" id="r_a82cd8c852d31f5ed37520eda3ada3efb"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jlong JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a82cd8c852d31f5ed37520eda3ada3efb">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeCreateTmRoiManager</a> (JNIEnv *env, jobject obj)</td></tr>
+<tr class="separator:a82cd8c852d31f5ed37520eda3ada3efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590aacf7d61f352952c02a150aead329" id="r_a590aacf7d61f352952c02a150aead329"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a590aacf7d61f352952c02a150aead329">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeReleaseTmRoiManager</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a590aacf7d61f352952c02a150aead329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb78e538b26780c7dc4bee8fb4244ae" id="r_a3cb78e538b26780c7dc4bee8fb4244ae"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a3cb78e538b26780c7dc4bee8fb4244ae">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeSetSelectedRoiType</a> (JNIEnv *env, jobject obj, jlong ptr, jint type)</td></tr>
+<tr class="separator:a3cb78e538b26780c7dc4bee8fb4244ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75b9adca5f13c1e36a943f93688d25e3" id="r_a75b9adca5f13c1e36a943f93688d25e3"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a75b9adca5f13c1e36a943f93688d25e3">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeGetSelectedRoiType</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a75b9adca5f13c1e36a943f93688d25e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad663b73f9f8cad1914e13388cb07661" id="r_aad663b73f9f8cad1914e13388cb07661"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jlong JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#aad663b73f9f8cad1914e13388cb07661">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeSelectedItem</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:aad663b73f9f8cad1914e13388cb07661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94a84f5f8a807dafc38d4b58743dcf6" id="r_ae94a84f5f8a807dafc38d4b58743dcf6"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ae94a84f5f8a807dafc38d4b58743dcf6">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeClear</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:ae94a84f5f8a807dafc38d4b58743dcf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af919dfe55499c2bb2bab6dac36e2f8ed" id="r_af919dfe55499c2bb2bab6dac36e2f8ed"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#af919dfe55499c2bb2bab6dac36e2f8ed">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseDown</a> (JNIEnv *env, jobject obj, jlong ptr, jint x, jint y)</td></tr>
+<tr class="separator:af919dfe55499c2bb2bab6dac36e2f8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a8a8935f1b45bc43a8776b57d8ec80a" id="r_a9a8a8935f1b45bc43a8776b57d8ec80a"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a9a8a8935f1b45bc43a8776b57d8ec80a">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseMove</a> (JNIEnv *env, jobject obj, jlong ptr, jint x, jint y)</td></tr>
+<tr class="separator:a9a8a8935f1b45bc43a8776b57d8ec80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abedab61de94cc0c8946f2c94d116fa8c" id="r_abedab61de94cc0c8946f2c94d116fa8c"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jboolean JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#abedab61de94cc0c8946f2c94d116fa8c">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseUp</a> (JNIEnv *env, jobject obj, jlong ptr, jint x, jint y)</td></tr>
+<tr class="separator:abedab61de94cc0c8946f2c94d116fa8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f7719d8efd5722855f5c4052be3e454" id="r_a6f7719d8efd5722855f5c4052be3e454"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jlongArray JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a6f7719d8efd5722855f5c4052be3e454">Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeGetItems</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a6f7719d8efd5722855f5c4052be3e454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a320e6a55eeaddcef52f69d29ca99725d" id="r_a320e6a55eeaddcef52f69d29ca99725d"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a320e6a55eeaddcef52f69d29ca99725d">Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetType</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a320e6a55eeaddcef52f69d29ca99725d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a220c1d829f98cbd3cffb51542399d4c7" id="r_a220c1d829f98cbd3cffb51542399d4c7"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jint JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a220c1d829f98cbd3cffb51542399d4c7">Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetIndex</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a220c1d829f98cbd3cffb51542399d4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a845508487396f9a0260a8fa5ef2f2e60" id="r_a845508487396f9a0260a8fa5ef2f2e60"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a845508487396f9a0260a8fa5ef2f2e60">Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetMinLocItem</a> (JNIEnv *env, jobject obj, jlong ptr, jdoubleArray value, jintArray point)</td></tr>
+<tr class="separator:a845508487396f9a0260a8fa5ef2f2e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b43d09439edfd096085ae7d8f245b4a" id="r_a5b43d09439edfd096085ae7d8f245b4a"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a5b43d09439edfd096085ae7d8f245b4a">Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetAvgLocItem</a> (JNIEnv *env, jobject obj, jlong ptr, jdoubleArray value, jintArray point)</td></tr>
+<tr class="separator:a5b43d09439edfd096085ae7d8f245b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc56e7e3cdb85435e2d0064936080040" id="r_afc56e7e3cdb85435e2d0064936080040"><td class="memItemLeft" align="right" valign="top">JNIEXPORT void JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#afc56e7e3cdb85435e2d0064936080040">Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetMaxLocItem</a> (JNIEnv *env, jobject obj, jlong ptr, jdoubleArray value, jintArray point)</td></tr>
+<tr class="separator:afc56e7e3cdb85435e2d0064936080040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed97eace96a6fa65ac2b71e9a90c401e" id="r_aed97eace96a6fa65ac2b71e9a90c401e"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jintArray JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#aed97eace96a6fa65ac2b71e9a90c401e">Java_kr_co_thermoeye_tmsdk_RoiSpot_nativeGetSpot</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:aed97eace96a6fa65ac2b71e9a90c401e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d22baddd673cb4ca8346900f7ba92a" id="r_a41d22baddd673cb4ca8346900f7ba92a"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jintArray JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a41d22baddd673cb4ca8346900f7ba92a">Java_kr_co_thermoeye_tmsdk_RoiLine_nativeGetLine</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a41d22baddd673cb4ca8346900f7ba92a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a568c8d2679e64b1419d4e37493f40685" id="r_a568c8d2679e64b1419d4e37493f40685"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jintArray JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a568c8d2679e64b1419d4e37493f40685">Java_kr_co_thermoeye_tmsdk_RoiRect_nativeGetRect</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a568c8d2679e64b1419d4e37493f40685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f4829cc407b475b2febb84315780b5b" id="r_a8f4829cc407b475b2febb84315780b5b"><td class="memItemLeft" align="right" valign="top">JNIEXPORT jintArray JNICALL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a8f4829cc407b475b2febb84315780b5b">Java_kr_co_thermoeye_tmsdk_RoiEllipse_nativeGetEllipse</a> (JNIEnv *env, jobject obj, jlong ptr)</td></tr>
+<tr class="separator:a8f4829cc407b475b2febb84315780b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dddf015507abb60f7ce23114518ca96" id="r_a4dddf015507abb60f7ce23114518ca96"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html">TmCamera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a4dddf015507abb60f7ce23114518ca96">TmCamera_Ctor</a> ()</td></tr>
 <tr class="memdesc:a4dddf015507abb60f7ce23114518ca96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <code><a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a></code> class.  <br /></td></tr>
 <tr class="separator:a4dddf015507abb60f7ce23114518ca96"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -721,6 +829,2046 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a8f4829cc407b475b2febb84315780b5b" name="a8f4829cc407b475b2febb84315780b5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4829cc407b475b2febb84315780b5b">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiEllipse_nativeGetEllipse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jintArray JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiEllipse_nativeGetEllipse </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41d22baddd673cb4ca8346900f7ba92a" name="a41d22baddd673cb4ca8346900f7ba92a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d22baddd673cb4ca8346900f7ba92a">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiLine_nativeGetLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jintArray JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiLine_nativeGetLine </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b43d09439edfd096085ae7d8f245b4a" name="a5b43d09439edfd096085ae7d8f245b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b43d09439edfd096085ae7d8f245b4a">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetAvgLocItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetAvgLocItem </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jdoubleArray&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jintArray&#160;</td>
+          <td class="paramname"><em>point</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a220c1d829f98cbd3cffb51542399d4c7" name="a220c1d829f98cbd3cffb51542399d4c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a220c1d829f98cbd3cffb51542399d4c7">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jint JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetIndex </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc56e7e3cdb85435e2d0064936080040" name="afc56e7e3cdb85435e2d0064936080040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc56e7e3cdb85435e2d0064936080040">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetMaxLocItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetMaxLocItem </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jdoubleArray&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jintArray&#160;</td>
+          <td class="paramname"><em>point</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a845508487396f9a0260a8fa5ef2f2e60" name="a845508487396f9a0260a8fa5ef2f2e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a845508487396f9a0260a8fa5ef2f2e60">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetMinLocItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetMinLocItem </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jdoubleArray&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jintArray&#160;</td>
+          <td class="paramname"><em>point</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a320e6a55eeaddcef52f69d29ca99725d" name="a320e6a55eeaddcef52f69d29ca99725d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a320e6a55eeaddcef52f69d29ca99725d">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jint JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiObject_nativeGetType </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a568c8d2679e64b1419d4e37493f40685" name="a568c8d2679e64b1419d4e37493f40685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a568c8d2679e64b1419d4e37493f40685">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiRect_nativeGetRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jintArray JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiRect_nativeGetRect </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed97eace96a6fa65ac2b71e9a90c401e" name="aed97eace96a6fa65ac2b71e9a90c401e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed97eace96a6fa65ac2b71e9a90c401e">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_RoiSpot_nativeGetSpot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jintArray JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_RoiSpot_nativeGetSpot </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a424956a9348ab967ae47b0c2cdfebc48" name="a424956a9348ab967ae47b0c2cdfebc48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a424956a9348ab967ae47b0c2cdfebc48">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCloseRemoteCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCloseRemoteCamera </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a576972209d3a2c1404a62342c387a13e" name="a576972209d3a2c1404a62342c387a13e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a576972209d3a2c1404a62342c387a13e">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCreateRemoteCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jlong JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCreateRemoteCamera </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb54e695dc8869c11a28625bff3915e3" name="adb54e695dc8869c11a28625bff3915e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb54e695dc8869c11a28625bff3915e3">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCreateTmCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jlong JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeCreateTmCamera </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae37df863f4720f9c9a14250e3d356bca" name="ae37df863f4720f9c9a14250e3d356bca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37df863f4720f9c9a14250e3d356bca">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetRemoteCameraList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jint JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetRemoteCameraList </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>cameraList</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af16772a05057dbb93d39c66c6f80d549" name="af16772a05057dbb93d39c66c6f80d549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af16772a05057dbb93d39c66c6f80d549">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jdouble JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTemperature </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jdouble&#160;</td>
+          <td class="paramname"><em>raw</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a25a1358982d46f97c5c0bed7ba30bb52" name="a25a1358982d46f97c5c0bed7ba30bb52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25a1358982d46f97c5c0bed7ba30bb52">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTempUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jint JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTempUnit </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31e3241d48b8909ad7896aa2cb7c90ea" name="a31e3241d48b8909ad7896aa2cb7c90ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e3241d48b8909ad7896aa2cb7c90ea">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTempUnitSymbol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTempUnitSymbol </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c72738f8405fa5f9be05b10a58c5e2c" name="a9c72738f8405fa5f9be05b10a58c5e2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c72738f8405fa5f9be05b10a58c5e2c">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTmControl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jlong JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeGetTmControl </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54515231ab0928cab0369899453a20b9" name="a54515231ab0928cab0369899453a20b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54515231ab0928cab0369899453a20b9">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeOpenRemoteCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeOpenRemoteCamera </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>serialnumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>mac</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>ip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a56fd895892879859312cae642b8d77be" name="a56fd895892879859312cae642b8d77be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56fd895892879859312cae642b8d77be">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeQueryFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeQueryFrame </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>camera</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b2ccba93f425fac0fd19f8747617360" name="a6b2ccba93f425fac0fd19f8747617360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2ccba93f425fac0fd19f8747617360">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeReleaseTmCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeReleaseTmCamera </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b18a9ac8402e0f3d57bf2d2ff5dd5c7" name="a8b18a9ac8402e0f3d57bf2d2ff5dd5c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b18a9ac8402e0f3d57bf2d2ff5dd5c7">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeSetColorMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeSetColorMap </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>colormap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2adcbd7e12b487a1a868bcb2f44aafe1" name="a2adcbd7e12b487a1a868bcb2f44aafe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2adcbd7e12b487a1a868bcb2f44aafe1">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmCamera_nativeSetTempUnit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmCamera_nativeSetTempUnit </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>tempUnit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa27da24ea9c34aac57675f624841bfbd" name="aa27da24ea9c34aac57675f624841bfbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa27da24ea9c34aac57675f624841bfbd">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetBootloaderVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetBootloaderVersion </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4685ebe0ed718392b50f0bc9e5f337aa" name="a4685ebe0ed718392b50f0bc9e5f337aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4685ebe0ed718392b50f0bc9e5f337aa">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetFirmwareVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetFirmwareVersion </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85283b37ccb10eed3d240fa902f32b2d" name="a85283b37ccb10eed3d240fa902f32b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85283b37ccb10eed3d240fa902f32b2d">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetGainMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jint JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetGainMode </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5e15abacb096e6fe68eceaae07d907c" name="ae5e15abacb096e6fe68eceaae07d907c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e15abacb096e6fe68eceaae07d907c">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetHardwareVersion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetHardwareVersion </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1e802684e4e6b4a1a43580f26bd0697" name="ad1e802684e4e6b4a1a43580f26bd0697"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e802684e4e6b4a1a43580f26bd0697">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetNetworkConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetNetworkConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobjectArray&#160;</td>
+          <td class="paramname"><em>netConfig</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d4a751f2daad28727b501062c79bcfe" name="a4d4a751f2daad28727b501062c79bcfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4a751f2daad28727b501062c79bcfe">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetProductModelName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetProductModelName </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8890afbed42b0adf03fde5e859062312" name="a8890afbed42b0adf03fde5e859062312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8890afbed42b0adf03fde5e859062312">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetProductSerialNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetProductSerialNumber </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a279e01f7ce1e82f10f829e5305ac20c0" name="a279e01f7ce1e82f10f829e5305ac20c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279e01f7ce1e82f10f829e5305ac20c0">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorModelName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorModelName </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b9e3ad0227fa4f829c44a50bd62fbc7" name="a7b9e3ad0227fa4f829c44a50bd62fbc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9e3ad0227fa4f829c44a50bd62fbc7">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorSerialNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorSerialNumber </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aee08e806b0ddd77ae1c03275cbcfcb28" name="aee08e806b0ddd77ae1c03275cbcfcb28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee08e806b0ddd77ae1c03275cbcfcb28">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorUptime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jstring JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeGetSensorUptime </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0fcf9d5a233a082b2551bd81095b584" name="af0fcf9d5a233a082b2551bd81095b584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0fcf9d5a233a082b2551bd81095b584">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeRebootDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeRebootDevice </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a23ac469d2057bb75f3a9ac7948364747" name="a23ac469d2057bb75f3a9ac7948364747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23ac469d2057bb75f3a9ac7948364747">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetDefaultNetworkConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetDefaultNetworkConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobjectArray&#160;</td>
+          <td class="paramname"><em>netConfig</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d08fd2b05a0a93c4a3cce5b6a018f5e" name="a3d08fd2b05a0a93c4a3cce5b6a018f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d08fd2b05a0a93c4a3cce5b6a018f5e">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetGainMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetGainMode </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a707a136424a6ad7072e6c257747791d6" name="a707a136424a6ad7072e6c257747791d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a707a136424a6ad7072e6c257747791d6">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetNetworkConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmControl_nativeSetNetworkConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>jipAssign</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>jip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>jnetmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>jgateway</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>jdns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jstring&#160;</td>
+          <td class="paramname"><em>jdns2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a897ed151697f443695c3b17bff7f4288" name="a897ed151697f443695c3b17bff7f4288"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a897ed151697f443695c3b17bff7f4288">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmFrame_nativeCreateTmFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jlong JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmFrame_nativeCreateTmFrame </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a752f513b3f7910c33de7bec7606b399f" name="a752f513b3f7910c33de7bec7606b399f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a752f513b3f7910c33de7bec7606b399f">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmFrame_nativeDoMeasure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmFrame_nativeDoMeasure </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlongArray&#160;</td>
+          <td class="paramname"><em>items</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad1c9951ea2b192d451268dc74eb9367" name="aad1c9951ea2b192d451268dc74eb9367"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad1c9951ea2b192d451268dc74eb9367">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmFrame_nativeGetHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jint JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmFrame_nativeGetHeight </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52f851b6f8907e93d609f21e7bc263ba" name="a52f851b6f8907e93d609f21e7bc263ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f851b6f8907e93d609f21e7bc263ba">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmFrame_nativeGetWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jint JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmFrame_nativeGetWidth </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d2f3d43e53d8cbfe8bd25f89b568920" name="a5d2f3d43e53d8cbfe8bd25f89b568920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d2f3d43e53d8cbfe8bd25f89b568920">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmFrame_nativeMinMaxLoc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmFrame_nativeMinMaxLoc </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jdoubleArray&#160;</td>
+          <td class="paramname"><em>tempVal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jintArray&#160;</td>
+          <td class="paramname"><em>minPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jintArray&#160;</td>
+          <td class="paramname"><em>maxPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace2dd4bc7859aec6dfb099b43e368bd9" name="ace2dd4bc7859aec6dfb099b43e368bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace2dd4bc7859aec6dfb099b43e368bd9">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmFrame_nativeReleaseTmFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmFrame_nativeReleaseTmFrame </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6492a5d4b3e6464d5a203c990585d787" name="a6492a5d4b3e6464d5a203c990585d787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6492a5d4b3e6464d5a203c990585d787">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmFrame_nativeSetColorMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmFrame_nativeSetColorMap </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>colorMap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad490144c5344a65c0e1816e8e2bf3a60" name="ad490144c5344a65c0e1816e8e2bf3a60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad490144c5344a65c0e1816e8e2bf3a60">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmFrame_nativeToBitMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jbyteArray JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmFrame_nativeToBitMap </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae94a84f5f8a807dafc38d4b58743dcf6" name="ae94a84f5f8a807dafc38d4b58743dcf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae94a84f5f8a807dafc38d4b58743dcf6">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeClear </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82cd8c852d31f5ed37520eda3ada3efb" name="a82cd8c852d31f5ed37520eda3ada3efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82cd8c852d31f5ed37520eda3ada3efb">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeCreateTmRoiManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jlong JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeCreateTmRoiManager </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f7719d8efd5722855f5c4052be3e454" name="a6f7719d8efd5722855f5c4052be3e454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f7719d8efd5722855f5c4052be3e454">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeGetItems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jlongArray JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeGetItems </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75b9adca5f13c1e36a943f93688d25e3" name="a75b9adca5f13c1e36a943f93688d25e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b9adca5f13c1e36a943f93688d25e3">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeGetSelectedRoiType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jint JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeGetSelectedRoiType </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af919dfe55499c2bb2bab6dac36e2f8ed" name="af919dfe55499c2bb2bab6dac36e2f8ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af919dfe55499c2bb2bab6dac36e2f8ed">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseDown </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a8a8935f1b45bc43a8776b57d8ec80a" name="a9a8a8935f1b45bc43a8776b57d8ec80a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a8a8935f1b45bc43a8776b57d8ec80a">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseMove </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abedab61de94cc0c8946f2c94d116fa8c" name="abedab61de94cc0c8946f2c94d116fa8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abedab61de94cc0c8946f2c94d116fa8c">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeMouseUp </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a590aacf7d61f352952c02a150aead329" name="a590aacf7d61f352952c02a150aead329"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590aacf7d61f352952c02a150aead329">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeReleaseTmRoiManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT void JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeReleaseTmRoiManager </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad663b73f9f8cad1914e13388cb07661" name="aad663b73f9f8cad1914e13388cb07661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad663b73f9f8cad1914e13388cb07661">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeSelectedItem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jlong JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeSelectedItem </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cb78e538b26780c7dc4bee8fb4244ae" name="a3cb78e538b26780c7dc4bee8fb4244ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cb78e538b26780c7dc4bee8fb4244ae">&#9670;&#160;</a></span>Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeSetSelectedRoiType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JNIEXPORT jboolean JNICALL TmSDK::Java_kr_co_thermoeye_tmsdk_TmRoiManager_nativeSetSelectedRoiType </td>
+          <td>(</td>
+          <td class="paramtype">JNIEnv *&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jobject&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jlong&#160;</td>
+          <td class="paramname"><em>ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">jint&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aeb8848b20677298474543d4e7fda165c" name="aeb8848b20677298474543d4e7fda165c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb8848b20677298474543d4e7fda165c">&#9670;&#160;</a></span>TmCamera_Close()</h2>
 
