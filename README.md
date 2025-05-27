@@ -17,16 +17,15 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
     │  ├─examples           ; Java application for android 
     │  └─libs               ; JNI and android libraries
     ├─Linux
-    │  ├─examples
-    │  │  ├─TmLinux         ; Qt5-based C++ application for Linux
-    │  │  └─TmPython        ; Python application for Linux
-    │  └─installer          ; deb/whl install files
+    │  └─examples
+    │     ├─TmLinux         ; Qt5-based C++ application for Linux
+    │     └─TmPython        ; Python application for Linux
     └─Windows
-       ├─examples
-       │  ├─TmPython        ; Python application for Windows
-       │  ├─TmWinQt         ; Qt5-based C++ application for Window
-       │  └─TmWinQtSimple   ; C++ application without installing Qt5
-       └─installer          ; msi/whl install files
+       └─examples
+          ├─TmPython        ; Python application for Windows
+          ├─TmWinQt         ; Qt5-based C++ application for Window
+          └─TmWinQtSimple   ; C++ application without installing Qt5
+       
 ```
 ## Requirement
 
