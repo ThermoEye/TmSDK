@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.2</span>
+   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.1.3</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -541,6 +541,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ae962e7bcafc88a68e9c9265294f2e0e8" id="r_ae962e7bcafc88a68e9c9265294f2e0e8"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#ae962e7bcafc88a68e9c9265294f2e0e8">TmFrame_Release</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *self, bool *ret)</td></tr>
 <tr class="memdesc:ae962e7bcafc88a68e9c9265294f2e0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the resources associated with the <code><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a></code> object.  <br /></td></tr>
 <tr class="separator:ae962e7bcafc88a68e9c9265294f2e0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe7fe388d2d420a73e936cf858a4237" id="r_aabe7fe388d2d420a73e936cf858a4237"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#aabe7fe388d2d420a73e936cf858a4237">TmFrame_GetPixelAt</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *self, bool *ret, double *val, int x, int y)</td></tr>
+<tr class="memdesc:aabe7fe388d2d420a73e936cf858a4237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the pixel value at the specified (x, y) coordinate from the frame.  <br /></td></tr>
+<tr class="separator:aabe7fe388d2d420a73e936cf858a4237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739a84e8c864016443318b834e62d337" id="r_a739a84e8c864016443318b834e62d337"><td class="memItemLeft" align="right" valign="top">TMAPI const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#a739a84e8c864016443318b834e62d337">TmFrame_GetPixel</a> (<a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *self, bool *ret, double *val, int x, int y, int w, int h)</td></tr>
+<tr class="memdesc:a739a84e8c864016443318b834e62d337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a rectangular block of pixel values from the frame, starting at (x, y) with width w and height h.  <br /></td></tr>
+<tr class="separator:a739a84e8c864016443318b834e62d337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0fdf4ceb04b3f584fb3aa1b3d99701c" id="r_af0fdf4ceb04b3f584fb3aa1b3d99701c"><td class="memItemLeft" align="right" valign="top">TMAPI <a class="el" href="class_tm_s_d_k_1_1_tm_roi_manager.html">TmRoiManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_tm_s_d_k.html#af0fdf4ceb04b3f584fb3aa1b3d99701c">TmRoi_Ctor</a> ()</td></tr>
 <tr class="memdesc:af0fdf4ceb04b3f584fb3aa1b3d99701c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance of the <code><a class="el" href="class_tm_s_d_k_1_1_tm_roi_manager.html" title="Manages a collection of ROI (Region of Interest) objects and handles user interactions for creating a...">TmRoiManager</a></code> class.  <br /></td></tr>
 <tr class="separator:af0fdf4ceb04b3f584fb3aa1b3d99701c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5683,6 +5689,146 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a739a84e8c864016443318b834e62d337" name="a739a84e8c864016443318b834e62d337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a739a84e8c864016443318b834e62d337">&#9670;&#160;</a></span>TmFrame_GetPixel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI const char * TmSDK::TmFrame_GetPixel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves a rectangular block of pixel values from the frame, starting at (x, y) with width w and height h. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a> instance. </td></tr>
+    <tr><td class="paramname">ret</td><td>Pointer to a boolean variable that receives the result status:<ul>
+<li>true: Successfully retrieved the pixel block.</li>
+<li>false: Failed to retrieve (e.g., self is nullptr). </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">val</td><td>Pointer to a std::vector&lt;std::vector&lt;double&gt;&gt; that receives the h��w block of pixel values. </td></tr>
+    <tr><td class="paramname">x</td><td>The zero-based column (horizontal) coordinate of the top-left corner of the block. </td></tr>
+    <tr><td class="paramname">y</td><td>The zero-based row (vertical) coordinate of the top-left corner of the block. </td></tr>
+    <tr><td class="paramname">w</td><td>The width (number of columns) of the block to retrieve. </td></tr>
+    <tr><td class="paramname">h</td><td>The height (number of rows) of the block to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nullptr on success; otherwise, a pointer to a null-terminated error message. </dd></dl>
+
+</div>
+</div>
+<a id="aabe7fe388d2d420a73e936cf858a4237" name="aabe7fe388d2d420a73e936cf858a4237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe7fe388d2d420a73e936cf858a4237">&#9670;&#160;</a></span>TmFrame_GetPixelAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TMAPI const char * TmSDK::TmFrame_GetPixelAt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html">TmFrame</a> *&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>ret</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the pixel value at the specified (x, y) coordinate from the frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="class_tm_s_d_k_1_1_tm_frame.html" title="Class representing a frame of image data.">TmFrame</a> instance. </td></tr>
+    <tr><td class="paramname">ret</td><td>Pointer to a boolean variable that receives the result status:<ul>
+<li>true: Successfully retrieved the pixel value.</li>
+<li>false: Failed to retrieve (e.g., self is nullptr). </li>
+</ul>
+</td></tr>
+    <tr><td class="paramname">val</td><td>Pointer to a double that receives the pixel value at (x, y). </td></tr>
+    <tr><td class="paramname">x</td><td>The zero-based column (horizontal) coordinate of the pixel. </td></tr>
+    <tr><td class="paramname">y</td><td>The zero-based row (vertical) coordinate of the pixel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nullptr on success; otherwise, a pointer to a null-terminated error message. </dd></dl>
 
 </div>
 </div>

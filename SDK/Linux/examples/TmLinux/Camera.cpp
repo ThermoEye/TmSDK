@@ -317,9 +317,14 @@ void Camera::DisconnectCamera()
     }
     if (pTmCamera != nullptr)
     {
-        if (future.isRunning())
+        //if (future.isRunning())
+        //{
+        //    futureWatcher.waitForFinished();
+        //}
+        while (future.isRunning())
         {
-            futureWatcher.waitForFinished();
+            QCoreApplication::processEvents();
+            QThread::sleep(1);
         }
         roiManager.Clear();
         pTmCamera->Close();

@@ -26,7 +26,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;1.1.1</span>
+   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;1.1.3</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -138,6 +138,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a299c6e7efb15d39c1f33a0af37197f09" id="r_a299c6e7efb15d39c1f33a0af37197f09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#a299c6e7efb15d39c1f33a0af37197f09">DoMeasure</a> (IntPtr[] itemsPtr)</td></tr>
 <tr class="memdesc:a299c6e7efb15d39c1f33a0af37197f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measures the specified regions of interest (ROIs) in the frame.  <br /></td></tr>
 <tr class="separator:a299c6e7efb15d39c1f33a0af37197f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a62a31b8f465738e45c55fda29840b" id="r_a21a62a31b8f465738e45c55fda29840b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#a21a62a31b8f465738e45c55fda29840b">GetPixelAt</a> (int x, int y)</td></tr>
+<tr class="memdesc:a21a62a31b8f465738e45c55fda29840b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the raw value at the specified coordinates.  <br /></td></tr>
+<tr class="separator:a21a62a31b8f465738e45c55fda29840b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef44d8bfa15d996f410924edd169861f" id="r_aef44d8bfa15d996f410924edd169861f"><td class="memItemLeft" align="right" valign="top">double[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tm_s_d_k_1_1_tm_frame.html#aef44d8bfa15d996f410924edd169861f">GetPixel</a> (int x, int y, int width, int height)</td></tr>
+<tr class="memdesc:aef44d8bfa15d996f410924edd169861f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a 2D array of raw values for the specified region.  <br /></td></tr>
+<tr class="separator:aef44d8bfa15d996f410924edd169861f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -249,6 +255,113 @@ Properties</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the measurement was successful; otherwise, <code>false</code>.</dd></dl>
 
+</div>
+</div>
+<a id="aef44d8bfa15d996f410924edd169861f" name="aef44d8bfa15d996f410924edd169861f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef44d8bfa15d996f410924edd169861f">&#9670;&#160;</a></span>GetPixel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double[][] TmSDK.TmFrame.GetPixel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets a 2D array of raw values for the specified region. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The starting x-coordinate of the region</td></tr>
+    <tr><td class="paramname">y</td><td>The starting y-coordinate of the region</td></tr>
+    <tr><td class="paramname">width</td><td>The width of the region to retrieve</td></tr>
+    <tr><td class="paramname">height</td><td>The height of the region to retrieve</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 2D array of raw values with size [width][height]. Returns null if the operation fails. </dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// Get a 10x10 region of pixel values starting at (10, 10)</span></div>
+<div class="line"><span class="keywordtype">double</span>[][] region = frame.GetPixel(10, 10, 10, 10);</div>
+<div class="line"><span class="keywordflow">if</span> (region != <span class="keyword">null</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Print the region values</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; region.Length; i++)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; region[i].Length; j++)</div>
+<div class="line">        {</div>
+<div class="line">            Console.Write($<span class="stringliteral">&quot;{region[i][j]}\t&quot;</span>);</div>
+<div class="line">        }</div>
+<div class="line">        Console.WriteLine();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a21a62a31b8f465738e45c55fda29840b" name="a21a62a31b8f465738e45c55fda29840b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21a62a31b8f465738e45c55fda29840b">&#9670;&#160;</a></span>GetPixelAt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double TmSDK.TmFrame.GetPixelAt </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the raw value at the specified coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x-coordinate of the frame</td></tr>
+    <tr><td class="paramname">y</td><td>The y-coordinate of the frame</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The raw value at the specified coordinates. Returns double.MinValue if the operation fails. </dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// Get pixel value at coordinates (10, 10)</span></div>
+<div class="line"><span class="keywordtype">double</span> pixelValue = frame.GetPixelAt(10, 10);</div>
+<div class="line">Console.WriteLine($<span class="stringliteral">&quot;Pixel value at (10, 10): {pixelValue}&quot;</span>);</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ac614619a6314212bea4caaf899c6da9a" name="ac614619a6314212bea4caaf899c6da9a"></a>
