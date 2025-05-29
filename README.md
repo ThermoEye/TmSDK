@@ -11,7 +11,6 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
 │      ├─Cpp                ; C++ API
 │      ├─CSharp             ; C# API
 │      └─Python             ; Python API
-├─Firmware                  ; TMCxxx firmware files
 └─SDK                       ; TmSDK library and sample code
     ├─Android               
     │  ├─examples           ; Java application for android 
@@ -23,9 +22,9 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
     └─Windows
        └─examples
           ├─TmPython        ; Python application for Windows
+          ├─TmWinDotnet     ; C# application for Windows
           ├─TmWinQt         ; Qt5-based C++ application for Window
           └─TmWinQtSimple   ; C++ application without installing Qt5
-       
 ```
 ## Requirement
 
