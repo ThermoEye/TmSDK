@@ -7,24 +7,19 @@ After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** 
 ```
 ├─Document                  ; API Documentation and User Manual
 │  └─API
-│      ├─Android            ; Android API
-│      ├─Cpp                ; C++ API
-│      ├─CSharp             ; C# API
-│      └─Python             ; Python API
-└─SDK                       ; TmSDK library and sample code
-    ├─Android               
-    │  ├─examples           ; Java application for android 
+│   ├─Android               ; Android API
+│   ├─Cpp                   ; C++ API
+│   ├─CSharp                ; C# API
+│   └─Python                ; Python API
+└─examples                  ; TmSDK sample code
+    ├─Android               ; Java application for android 
     │  └─libs               ; JNI and android libraries
-    ├─Linux
-    │  └─examples
-    │     ├─TmLinux         ; Qt5-based C++ application for Linux
-    │     └─TmPython        ; Python application for Linux
+    ├─Linux                 ; Qt5-based C++ application for Linux
+    ├─Python                ; Python application
     └─Windows
-       └─examples
-          ├─TmPython        ; Python application for Windows
-          ├─TmWinDotnet     ; C# application for Windows
-          ├─TmWinQt         ; Qt5-based C++ application for Window
-          └─TmWinQtSimple   ; C++ application without installing Qt5
+       ├─TmWinDotnet        ; C# application for Windows
+       ├─TmWinQt            ; Qt5-based C++ application for Window
+       └─TmWinQtSimple      ; C++ application without installing Qt5
 ```
 ## Requirement
 
@@ -46,13 +41,13 @@ Windows Python
 - qtcreator
 
 Linux C++
-- Ubuntu 24.04
+- Ubuntu 20.04 or higher
 - Gcc-11
 - Qt5.14.2
 - qtcreator
 
 Linux Python
-- Ubuntu 24.04
+- Ubuntu 20.04 or higher
 - Python 3.9 or higher
 - PyQt5
 - qtcreator
