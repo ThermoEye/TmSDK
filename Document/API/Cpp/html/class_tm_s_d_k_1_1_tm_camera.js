@@ -5,11 +5,15 @@ var class_tm_s_d_k_1_1_tm_camera =
     [ "Close", "class_tm_s_d_k_1_1_tm_camera.html#a44271d961401c14c5f8ba8b629ba11e2", null ],
     [ "GetAPIVersion", "class_tm_s_d_k_1_1_tm_camera.html#a65f2bbbff13c9dd2967e78a9a8a19f97", null ],
     [ "GetDevName", "class_tm_s_d_k_1_1_tm_camera.html#a8eca820b12a1c0a331b43370ae6b507e", null ],
+    [ "GetFormat", "class_tm_s_d_k_1_1_tm_camera.html#ac9a76254157fc21ab0df7d954db130b2", null ],
+    [ "GetFPS", "class_tm_s_d_k_1_1_tm_camera.html#a2806eb825c11d09dca582e89b1e5928b", null ],
+    [ "GetHeight", "class_tm_s_d_k_1_1_tm_camera.html#af60df90432cd97897a88dd7b393b31c8", null ],
     [ "GetMaxPacketSize", "class_tm_s_d_k_1_1_tm_camera.html#a113273074ccf3d0dd6d1ed88b3559e8a", null ],
     [ "GetTemperature", "class_tm_s_d_k_1_1_tm_camera.html#a12a94a983f7ea9c63aa0a9174f6a9ab6", null ],
     [ "GetTempUnit", "class_tm_s_d_k_1_1_tm_camera.html#a1ba83da6c79f5bf9e61306889a7942c1", null ],
     [ "GetTempUnitSymbol", "class_tm_s_d_k_1_1_tm_camera.html#a31a9a47450631dfb288fd07f11f24138", null ],
     [ "GetTmControl", "class_tm_s_d_k_1_1_tm_camera.html#aa1a10b01af6925c4523859092b242e3b", null ],
+    [ "GetWidth", "class_tm_s_d_k_1_1_tm_camera.html#a7aea03b1988965c969a75945bcbabbc1", null ],
     [ "IsOpen", "class_tm_s_d_k_1_1_tm_camera.html#a3861a4ecf95568ad8f25f036462513fd", null ],
     [ "Open", "class_tm_s_d_k_1_1_tm_camera.html#a83b8875dd63b5841e064e40ed37a2a3c", null ],
     [ "Open", "class_tm_s_d_k_1_1_tm_camera.html#a5d0ca1ba7461a2744ee726c3a3112949", null ],
@@ -17,5 +21,7 @@ var class_tm_s_d_k_1_1_tm_camera =
     [ "SetColorMap", "class_tm_s_d_k_1_1_tm_camera.html#a976c325d923731a15b6c1472ef588af6", null ],
     [ "SetCurrentGainMode", "class_tm_s_d_k_1_1_tm_camera.html#a04ab3941263087efad3094218f935d6f", null ],
     [ "SetNoiseFiltering", "class_tm_s_d_k_1_1_tm_camera.html#a8a9bb0271afe912713cd8daefa4be280", null ],
-    [ "SetTempUnit", "class_tm_s_d_k_1_1_tm_camera.html#a4d4aa1fc342fc4f282b0b8b58d1e75ba", null ]
+    [ "SetTempUnit", "class_tm_s_d_k_1_1_tm_camera.html#a4d4aa1fc342fc4f282b0b8b58d1e75ba", null ],
+    [ "format", "class_tm_s_d_k_1_1_tm_camera.html#ad2841497cdf8212142af76823e7c91b1", null ],
+    [ "fps", "class_tm_s_d_k_1_1_tm_camera.html#a8dbcfc12ed07ac46ef920a5c115262d9", null ]
 ];

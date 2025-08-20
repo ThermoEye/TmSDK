@@ -52,42 +52,64 @@ class Camera:
         self.main_window.lineEdit_LocalCameraName.setText("")
         self.main_window.lineEdit_LocalCameraPort.setText("")
         self.main_window.listWidget_LocalCameraList.clear()
+        self.main_window.comboBox_LocalCameraVideoFormat.clear()
         for cam in self.local_camera_list:
             del cam
-        self.local_camera_list.clear()    
-        name, port, index, count = self.tmCamera.get_local_camera_list()
-        for i in range(0, count):
-            if name[i].startswith("TMC"):
-                item = name[i] + '-' + port[i]
+        self.local_camera_list.clear()
+        local_cameras = self.tmCamera.get_local_camera_list()
+        for local_camera in local_cameras:
+            if local_camera.name.startswith("TMC"):
+                item = local_camera.name + '-' + local_camera.com_port
                 self.main_window.listWidget_LocalCameraList.addItem(item)
-                self.local_camera_list.append([name[i],port[i],index[i]])
+                self.local_camera_list.append(local_camera)
+
         if self.local_camera_list:
             self.main_window.listWidget_LocalCameraList.setCurrentRow(0)
             camInfo=self.local_camera_list[0]
-            self.main_window.lineEdit_LocalCameraName.setText(camInfo[0])
-            self.main_window.lineEdit_LocalCameraPort.setText(camInfo[1])    
+            self.main_window.lineEdit_LocalCameraName.setText(camInfo.name)
+            self.main_window.lineEdit_LocalCameraPort.setText(camInfo.com_port)
+            for j in range(len(camInfo.media_info_list)):
+                self.main_window.comboBox_RemoteCameraVideoFormat.addItem(
+                    camInfo.media_info_list[j].format 
+                    + " : " + str(camInfo.media_info_list[j].width) 
+                    + "x" + str(camInfo.media_info_list[j].height) 
+                    + "@" + str(camInfo.media_info_list[j].frame_rate) 
+                    + "-" + str(camInfo.media_info_list[j].bit_per_pixel) + "bpp")
 
     def scan_remote_camera_list(self):
         self.main_window.lineEdit_RemoteCameraName.setText("")
         self.main_window.lineEdit_RemoteCameraSerial.setText("")
         self.main_window.lineEdit_RemoteCameraMac.setText("")
         self.main_window.lineEdit_RemoteCameraIp.setText("")
+        self.main_window.lineEdit_RemoteCameraAdapterIp.setText("")
         self.main_window.listWidget_RemoteCameraList.clear()
+        self.main_window.comboBox_RemoteCameraVideoFormat.clear()
         for cam in self.remote_camera_list:
             del cam
         self.remote_camera_list.clear()    
-        name, serial, mac, ip, count = self.tmCamera.get_remote_camera_list()
-        for i in range(0, count):
-            item = name[i] + '-' + ip[i]
-            self.main_window.listWidget_RemoteCameraList.addItem(item)
-            self.remote_camera_list.append([name[i],serial[i],mac[i],ip[i]])
+        
+        remote_cameras = self.tmCamera.get_remote_camera_list()
+        for remote_camera in remote_cameras:
+            if remote_camera.name.startswith("TMC"):
+                item = remote_camera.name + '-' + remote_camera.ip
+                self.main_window.listWidget_RemoteCameraList.addItem(item)
+                self.remote_camera_list.append(remote_camera)
+
             
         if self.remote_camera_list:
             camInfo = self.remote_camera_list[0]    
-            self.main_window.lineEdit_RemoteCameraName.setText(camInfo[0])
-            self.main_window.lineEdit_RemoteCameraSerial.setText(camInfo[1])
-            self.main_window.lineEdit_RemoteCameraMac.setText(camInfo[2])
-            self.main_window.lineEdit_RemoteCameraIp.setText(camInfo[3])
+            self.main_window.lineEdit_RemoteCameraName.setText(camInfo.name)
+            self.main_window.lineEdit_RemoteCameraSerial.setText(camInfo.serial_number)
+            self.main_window.lineEdit_RemoteCameraMac.setText(camInfo.mac)
+            self.main_window.lineEdit_RemoteCameraIp.setText(camInfo.ip)
+            self.main_window.lineEdit_RemoteCameraAdapterIp.setText(camInfo.adapter_ip)
+            for j in range(len(camInfo.media_info_list)):
+                self.main_window.comboBox_RemoteCameraVideoFormat.addItem(
+                    camInfo.media_info_list[j].format 
+                    + " : " + str(camInfo.media_info_list[j].width) 
+                    + "x" + str(camInfo.media_info_list[j].height) 
+                    + "@" + str(camInfo.media_info_list[j].frame_rate) 
+                    + "-" + str(camInfo.media_info_list[j].bit_per_pixel) + "bpp")
             
     # Add the created roi object to the ui
     def update_roi_list_items(self):
@@ -210,7 +232,8 @@ class Camera:
                     return
                 ret = self.tmCamera.open_local_camera((self.local_camera_list[row])[0]
                                                       , (self.local_camera_list[row])[1]
-                                                      , (self.local_camera_list[row])[2]);
+                                                      , (self.local_camera_list[row])[2]
+                                                      , self.local_camera_list[row].media_info_list[self.local_camera_list[row].media_info_index].format)
                 
                 if ret:
                     self.main_window.pushButton_LocalCameraConnect.setText("Disconnect")
@@ -223,6 +246,10 @@ class Camera:
                     elif (self.local_camera_list[row][0] == "TMC160B" or self.local_camera_list[row][0] == "TMC80B"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(1)
+                    elif self.local_camera_list[row][0] == "TMC256GB":
+                        self.main_window.tabWidget_Control.setCurrentIndex(0)
+                        self.main_window.stackedWidget_SensorControl.setCurrentIndex(2)
+
                     self.tmCamera.set_temp_unit(TempUnit.CELSIUS)
                     val = self.tmCamera.get_temp_unit
 
@@ -265,13 +292,14 @@ class Camera:
                     print('No camera selected')
                     return
                 
+                row = self.main_window.listWidget_RemoteCameraList.currentRow()
+                
                 ret = self.tmCamera.open_remote_camera(self.main_window.lineEdit_RemoteCameraName.text()
                                                         , self.main_window.lineEdit_RemoteCameraSerial.text()
                                                         , self.main_window.lineEdit_RemoteCameraMac.text()
-                                                        , self.main_window.lineEdit_RemoteCameraIp.text())
+                                                        , self.main_window.lineEdit_RemoteCameraIp.text()
+                                                        , self.remote_camera_list[row].media_info_list[self.remote_camera_list[row].media_info_index].format)
                 if ret:
-                    print('Camera connected')
-                    
                     self.main_window.pushButton_RemoteCameraConnect.setText("Disconnect")
                     self.worker.start()
                     if self.main_window.lineEdit_RemoteCameraName.text() == "TMC256E":
@@ -280,6 +308,10 @@ class Camera:
                     elif (self.main_window.lineEdit_RemoteCameraName.text() == "TMC160E" or self.main_window.lineEdit_RemoteCameraName.text() == "TMC80E"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(1)
+                    elif self.main_window.lineEdit_RemoteCameraName.text() == "TMC256GE":
+                        self.main_window.tabWidget_Control.setCurrentIndex(0)
+                        self.main_window.stackedWidget_SensorControl.setCurrentIndex(2)
+
                     self.main_window.tabWidget_Control.setVisible(True)
                     self.main_window.stackedWidget_SensorControl.setVisible(True)
                     self.main_window.groupBox.setEnabled(True)
@@ -296,16 +328,16 @@ class Camera:
                     self.main_window.comboBox_ColorMap.setCurrentIndex(ColormapTypes.Inferno + 1)
                     self.main_window.comboBox_TemperatureUnit.setCurrentIndex(TempUnit.CELSIUS)
 
-                    self.main_window.radioButton_ShapeCursor.setChecked(True);
-                    self.main_window.radioButton_ShapeCursor.setEnabled(True);
-                    self.main_window.radioButton_ShapeSpot.setEnabled(True);
-                    self.main_window.radioButton_ShapeLine.setEnabled(True);
-                    self.main_window.radioButton_ShapeRectangle.setEnabled(True);
-                    self.main_window.radioButton_ShapeEllipse.setEnabled(True);
-                    self.main_window.pushButton_RemoveAllRoi.setEnabled(True);
-                    self.main_window.comboBox_ColorMap.setEnabled(True);
-                    self.main_window.checkBox_NoiseFiltering.setEnabled(True);
-                    self.main_window.comboBox_TemperatureUnit.setEnabled(True);
+                    self.main_window.radioButton_ShapeCursor.setChecked(True)
+                    self.main_window.radioButton_ShapeCursor.setEnabled(True)
+                    self.main_window.radioButton_ShapeSpot.setEnabled(True)
+                    self.main_window.radioButton_ShapeLine.setEnabled(True)
+                    self.main_window.radioButton_ShapeRectangle.setEnabled(True)
+                    self.main_window.radioButton_ShapeEllipse.setEnabled(True)
+                    self.main_window.pushButton_RemoveAllRoi.setEnabled(True)
+                    self.main_window.comboBox_ColorMap.setEnabled(True)
+                    self.main_window.checkBox_NoiseFiltering.setEnabled(True)
+                    self.main_window.comboBox_TemperatureUnit.setEnabled(True)
             except Exception as e:
                 print(f'Error while opening camera: {str(e)}')  
         else:       
@@ -327,18 +359,35 @@ class Camera:
     def listWidget_LocalCameraList_CurrentRowChanged(self, row):
         if row < 0:
             return
-        cam_info = self.local_camera_list[row];
-        self.main_window.lineEdit_LocalCameraName.setText((cam_info[0]));
-        self.main_window.lineEdit_LocalCameraPort.setText((cam_info[1]))
+        cam_info = self.local_camera_list[row]
+        self.main_window.lineEdit_LocalCameraName.setText(cam_info.name)
+        self.main_window.lineEdit_LocalCameraPort.setText(cam_info.com_port)
+        self.main_window.comboBox_LocalCameraVideoFormat.clear()
+        for j in range(len(cam_info.media_info_list)):
+            self.main_window.comboBox_LocalCameraVideoFormat.addItem(
+                cam_info.media_info_list[j].format 
+                + " : " + str(cam_info.media_info_list[j].width) 
+                + "x" + str(cam_info.media_info_list[j].height) 
+                + "@" + str(cam_info.media_info_list[j].frame_rate) 
+                + "-" + str(cam_info.media_info_list[j].bit_per_pixel) + "bpp")
     
     def listWidget_RemoteCameraList_CurrentRowChanged(self, row):
         if row < 0:
             return
-        cam_info = self.remote_camera_list[row];
-        self.main_window.lineEdit_RemoteCameraName.setText(cam_info[0]);
-        self.main_window.lineEdit_RemoteCameraSerial.setText(cam_info[1]);
-        self.main_window.lineEdit_RemoteCameraMac.setText(cam_info[2]);
-        self.main_window.lineEdit_RemoteCameraIp.setText(cam_info[3]);
+        cam_info = self.remote_camera_list[row]
+        self.main_window.lineEdit_RemoteCameraName.setText(cam_info.name)
+        self.main_window.lineEdit_RemoteCameraSerial.setText(cam_info.serial_number)
+        self.main_window.lineEdit_RemoteCameraMac.setText(cam_info.mac)
+        self.main_window.lineEdit_RemoteCameraIp.setText(cam_info.ip)
+        self.main_window.lineEdit_RemoteCameraAdapterIp.setText(cam_info.adapter_ip)
+        self.main_window.comboBox_RemoteCameraVideoFormat.clear()
+        for j in range(len(cam_info.media_info_list)):
+            self.main_window.comboBox_RemoteCameraVideoFormat.addItem(
+                cam_info.media_info_list[j].format 
+                + " : " + str(cam_info.media_info_list[j].width) 
+                + "x" + str(cam_info.media_info_list[j].height) 
+                + "@" + str(cam_info.media_info_list[j].frame_rate) 
+                + "-" + str(cam_info.media_info_list[j].bit_per_pixel) + "bpp")
  
     def comboBox_ColorMap_Changed(self, index):
         self.tmCamera.set_color_map(index)
@@ -415,17 +464,33 @@ class Camera:
             self.update_roi_list_items()
         
     def pushButton_RemoveRoiItem_Clicked(self):
-        roi_index = self.main_window.comboBox_ListRoi.currentIndex();
+        roi_index = self.main_window.comboBox_ListRoi.currentIndex()
         if roi_index >= 0:
             if self.roi_manager.get_roi_item_count() == 0:
                 return
-            self.roi_manager.remove_at(roi_index);
-            self.update_roi_list_items();
+            self.roi_manager.remove_at(roi_index)
+            self.update_roi_list_items()
+
+    def comboBox_comboBox_LocalCameraVideoFormat_Changed(self, index):
+        if len(self.local_camera_list) > 0:
+            row = self.main_window.listWidget_LocalCameraList.currentRow()
+            if row < 0:
+                row = 0
+            self.local_camera_list[row].media_info_index = index
+        pass
+
+    def comboBox_comboBox_RemoteCameraVideoFormat_Changed(self, index):
+        if len(self.remote_camera_list) > 0:
+            row = self.main_window.listWidget_RemoteCameraList.currentRow()
+            if row < 0:
+                row = 0
+            self.remote_camera_list[row].media_info_index = index
+        pass
 
 # Thread for capturing camera images
 class FrameWorker(QThread):
     def __init__(self, parent):
-        super().__init__();
+        super().__init__()
         self.parent = parent
 
     def stop(self): 
@@ -711,15 +776,16 @@ class FrameWorker(QThread):
         self.parent.main_window.label_Preview.setPixmap(pix_map)
         # self.parent.main_window.label_Preview.show()
         
-        for index in range(self.parent.roi_manager.get_roi_item_count()):
-            item = self.parent.roi_manager.get_roi_item(index)
-            pFrame.do_measure(item)
-            
-        min_val, avg_val, max_val, min_loc, max_loc = pFrame.min_max_loc()
-        
         if self.parent.tmCamera is None:
             return
 
+        if self.parent.tmCamera.get_camera_format() == "Y16":
+            for index in range(self.parent.roi_manager.get_roi_item_count()):
+                item = self.parent.roi_manager.get_roi_item(index)
+                pFrame.do_measure(item)
+            
+            min_val, avg_val, max_val, min_loc, max_loc = pFrame.min_max_loc()
+        
         temp_unit_symbol = self.parent.tmCamera.get_temp_unit_symbol()
 
         min_temp = f"{self.parent.tmCamera.get_temperature(min_val):.2f} {temp_unit_symbol}"

@@ -103,7 +103,7 @@ void SensorControl::pushButton_RunFlatFieldCorrection_Clicked()
 /*
  * Get flux parameters
  */
-void SensorControl::pushButton_GetFluexParams_Clicked()
+void SensorControl::pushButton_GetFluxParams_Clicked()
 {
     double emissivity = 0;
     double atmosphericTransmittance = 0;
@@ -114,18 +114,18 @@ void SensorControl::pushButton_GetFluexParams_Clicked()
     if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
     if (pCamera->pTmCamera->pTmControl->GetFluxParameters(emissivity, atmosphericTransmittance, atmosphericTemperature, ambientReflectionTemperature, distance))
     {
-        ui->doubleSpinBox_FluexParamEmissivity->setValue(emissivity);
-        ui->doubleSpinBox_FluexParamAtmosphericTransmittance->setValue(atmosphericTransmittance);
-        ui->doubleSpinBox_FluexParamAtmosphericTemperature->setValue(atmosphericTemperature);
-        ui->doubleSpinBox_FluexParamAmbientReflectionTemp->setValue(ambientReflectionTemperature);
-        ui->doubleSpinBox_FluexParamDistance->setValue(distance);
+        ui->doubleSpinBox_FluxParamEmissivity->setValue(emissivity);
+        ui->doubleSpinBox_FluxParamAtmosphericTransmittance->setValue(atmosphericTransmittance);
+        ui->doubleSpinBox_FluxParamAtmosphericTemperature->setValue(atmosphericTemperature);
+        ui->doubleSpinBox_FluxParamAmbientReflectionTemp->setValue(ambientReflectionTemperature);
+        ui->doubleSpinBox_FluxParamDistance->setValue(distance);
 
-        ui->doubleSpinBox_FluexParamEmissivity->setEnabled(true);
-        ui->doubleSpinBox_FluexParamAtmosphericTransmittance->setEnabled(true);
-        ui->doubleSpinBox_FluexParamAtmosphericTemperature->setEnabled(true);
-        ui->doubleSpinBox_FluexParamAmbientReflectionTemp->setEnabled(true);
-        ui->doubleSpinBox_FluexParamDistance->setEnabled(true);
-        ui->pushButton_SetFluexParams->setEnabled(true);
+        ui->doubleSpinBox_FluxParamEmissivity->setEnabled(true);
+        ui->doubleSpinBox_FluxParamAtmosphericTransmittance->setEnabled(true);
+        ui->doubleSpinBox_FluxParamAtmosphericTemperature->setEnabled(true);
+        ui->doubleSpinBox_FluxParamAmbientReflectionTemp->setEnabled(true);
+        ui->doubleSpinBox_FluxParamDistance->setEnabled(true);
+        ui->pushButton_SetFluxParams->setEnabled(true);
     }
     else
     {
@@ -136,13 +136,13 @@ void SensorControl::pushButton_GetFluexParams_Clicked()
 /*
  * Set flux parameters
  */
-void SensorControl::pushButton_SetFluexParams_Clicked()
+void SensorControl::pushButton_SetFluxParams_Clicked()
 {
-    double emissivity = ui->doubleSpinBox_FluexParamEmissivity->value();
-    double atmosphericTransmittance = ui->doubleSpinBox_FluexParamAtmosphericTransmittance->value();
-    double atmosphericTemperature = ui->doubleSpinBox_FluexParamAtmosphericTemperature->value();
-    double ambientReflectionTemperature = ui->doubleSpinBox_FluexParamAmbientReflectionTemp->value();
-    double distance = ui->doubleSpinBox_FluexParamDistance->value();
+    double emissivity = ui->doubleSpinBox_FluxParamEmissivity->value();
+    double atmosphericTransmittance = ui->doubleSpinBox_FluxParamAtmosphericTransmittance->value();
+    double atmosphericTemperature = ui->doubleSpinBox_FluxParamAtmosphericTemperature->value();
+    double ambientReflectionTemperature = ui->doubleSpinBox_FluxParamAmbientReflectionTemp->value();
+    double distance = ui->doubleSpinBox_FluxParamDistance->value();
 
     if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
     if (pCamera->pTmCamera->pTmControl->SetFluxParameters(emissivity, atmosphericTransmittance, atmosphericTemperature, ambientReflectionTemperature, distance))
@@ -542,6 +542,193 @@ void SensorControl::pushButton_SetGainModeState_Clicked()
     else if (ui->radioButton_GainModeHigh->isChecked() == false && ui->radioButton_GainModeLow->isChecked() == true)
     {
         pCamera->pTmCamera->pTmControl->SetGainModeState(1);
+    }
+}
+
+/*
+ * Get current flat field correction mode. (TMC256G)
+ */
+void SensorControl::pushButton_GetFlatFieldCorrection_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    int ffcMode = pCamera->pTmCamera->pTmControl->GetFlatFieldCorrectionMode();
+    if (ffcMode == 0)   // Manual
+    {
+        ui->radioButton_FlatFieldCorrectionManual_256G->setChecked(true);
+        ui->radioButton_FlatFieldCorrectionAutomatic_256G->setChecked(false);
+    }
+    else
+    {
+        ui->radioButton_FlatFieldCorrectionManual_256G->setChecked(false);
+        ui->radioButton_FlatFieldCorrectionAutomatic_256G->setChecked(true);
+    }
+}
+
+/*
+ * Set current flat field correction mode. (TMC256G)
+ */
+void SensorControl::pushButton_SetFlatFieldCorrection_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    int ffcMode = 0;
+    if (ui->radioButton_FlatFieldCorrectionManual_256G->isChecked() == true)
+    {
+        ffcMode = 0;
+    }
+    else if (ui->radioButton_FlatFieldCorrectionAutomatic_256G->isChecked() == true)
+    {
+        ffcMode = 1;
+    }
+    pCamera->pTmCamera->pTmControl->SetFlatFieldCorrectionMode(ffcMode);
+}
+
+/*
+ * Run flat field correction. (TMC256G)
+ */
+void SensorControl::pushButton_RunFlatFieldCorrection_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera->pTmControl->RunFlatFieldCorrection())
+    {
+        QMessageBox::StandardButton resBtn = QMessageBox::information(
+            ui->centralwidget, "Flat Field Correction", "Success to run Flat Field Correction",
+            QMessageBox::Ok
+        );
+    }
+    else
+    {
+        QMessageBox::StandardButton resBtn = QMessageBox::information(
+            ui->centralwidget, "Flat Field Correction", "Fail to run Flat Field Correction",
+            QMessageBox::Ok
+        );
+    }
+}
+
+/*
+ * Get FFC parameters (TMC256G)
+ */
+void SensorControl::pushButton_GetFFCParams_256G_Clicked()
+{
+    double maxInterval;
+    double autoTriggerThreshold;
+
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera->pTmControl->GetFlatFieldCorrectionParameters(maxInterval, autoTriggerThreshold))
+    {
+        ui->doubleSpinBox_FFCParam_MaxInterval_256G->setValue(maxInterval);
+        
+        ui->doubleSpinBox_FFCParam_MaxInterval_256G->setEnabled(true);
+        ui->pushButton_SetFFCParams_256G->setEnabled(true);
+    }
+}
+
+/*
+ * Set FFC parameters (TMC256G)
+ */
+void SensorControl::pushButton_SetFFCParams_256G_Clicked()
+{
+    double maxInterval = ui->doubleSpinBox_FFCParam_MaxInterval_256G->value();
+    double autoTriggerThreshold = 0;
+
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera->pTmControl->SetFlatFieldCorrectionParameters(maxInterval, autoTriggerThreshold))
+    {
+        QMessageBox::about(ui->centralwidget, "FFC Parameters", "Success to set FFC Parameters");
+    }
+    else
+    {
+        QMessageBox::about(ui->centralwidget, "FFC Parameters", "Fail to set FFC Parameters");
+    }
+}
+
+/*
+ * Store sensor configuration (TMC256G)
+ */
+void SensorControl::pushButton_StoreUserSensorConfig_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera->pTmControl->StoreUserSensorConfig())
+    {
+        QMessageBox::about(ui->centralwidget, "Sensor Control", "Success to store user sensor configurations");
+    }
+    else
+    {
+        QMessageBox::about(ui->centralwidget, "Sensor Control", "Fail to store user sensor configurations");
+    }
+}
+
+/*
+ * Restore default sensor configuration (TMC256G)
+ */
+void SensorControl::pushButton_RestoreDefaultSensorConfig_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+    if (pCamera->pTmCamera->pTmControl->RestoreDefaultSensorConfig())
+    {
+        QMessageBox::about(ui->centralwidget, "Sensor Control", "Success to restore user sensor configurations");
+    }
+    else
+    {
+        QMessageBox::about(ui->centralwidget, "Sensor Control", "Fail to restore user sensor configurations");
+    }
+}
+
+/*
+ * Get gain mode
+ */
+void SensorControl::pushButton_GetGainModeState_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+
+    int gainMode = pCamera->pTmCamera->pTmControl->GetGainModeState();
+
+    if (gainMode == 0)
+    {
+        // High Gain
+        ui->radioButton_GainModeHigh_256G->setChecked(true);
+        ui->radioButton_GainModeLow_256G->setChecked(false);
+        ui->radioButton_GainModeAuto_256G->setChecked(false);
+    }
+    else if (gainMode == 1)
+    {
+        // Low Gain
+        ui->radioButton_GainModeHigh_256G->setChecked(false);
+        ui->radioButton_GainModeLow_256G->setChecked(true);
+        ui->radioButton_GainModeAuto_256G->setChecked(false);
+    }
+    else if (gainMode == 2)
+    {
+        // Auto Gain
+        ui->radioButton_GainModeHigh_256G->setChecked(false);
+        ui->radioButton_GainModeLow_256G->setChecked(false);
+        ui->radioButton_GainModeAuto_256G->setChecked(true);
+    }
+}
+
+/*
+ * Set gain mode
+ */
+void SensorControl::pushButton_SetGainModeState_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+
+    if (ui->radioButton_GainModeHigh_256G->isChecked() == true
+     && ui->radioButton_GainModeLow_256G->isChecked() == false
+     && ui->radioButton_GainModeAuto_256G->isChecked() == false)
+    {
+        pCamera->pTmCamera->pTmControl->SetGainModeState(0);
+    }
+    else if (ui->radioButton_GainModeHigh_256G->isChecked() == false
+          && ui->radioButton_GainModeLow_256G->isChecked() == true
+          && ui->radioButton_GainModeAuto_256G->isChecked() == false)
+    {
+        pCamera->pTmCamera->pTmControl->SetGainModeState(1);
+    }
+    else if (ui->radioButton_GainModeHigh_256G->isChecked() == false
+        && ui->radioButton_GainModeLow_256G->isChecked() == false
+        && ui->radioButton_GainModeAuto_256G->isChecked() == true)
+    {
+        pCamera->pTmCamera->pTmControl->SetGainModeState(2);
     }
 }
 #pragma region

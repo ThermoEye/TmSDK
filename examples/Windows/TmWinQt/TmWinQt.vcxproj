@@ -72,7 +72,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(TMSDK_LIB);$(SolutionDir)\lib;$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libTmCore.1.1.4d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libTmCore.1.2.0d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -86,7 +86,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(TMSDK_LIB);$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libTmCore.1.1.4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libTmCore.1.2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>windeployqt $(OutDir)$(ProjectName).exe</Command>

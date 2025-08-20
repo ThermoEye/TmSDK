@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['comport_0',['ComPort',['../class_tm_s_d_k_1_1_local_cam_info.html#a596a899fc02084286d8babaa2b9ded66',1,'TmSDK::LocalCamInfo']]]
+  ['bitperpixel_0',['BitPerPixel',['../class_tm_s_d_k_1_1_media_info.html#a06b4100c0a1e5caeed8aff42f0110725',1,'TmSDK::MediaInfo']]]
 ];

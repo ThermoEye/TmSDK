@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['index_0',['index',['../class_tm_s_d_k_1_1_tm_local_cam_info.html#a6ffa1f6c61fce93d8b7912ab7488c311',1,'TmSDK::TmLocalCamInfo::Index'],['../class_tm_s_d_k_1_1_roi_object.html#aa2645cfdf5a8219454d5c9713a795749',1,'TmSDK::RoiObject::Index']]],
-  ['items_1',['Items',['../class_tm_s_d_k_1_1_tm_roi_manager.html#aaefdac87153f2836a7a9a2e64c6bf6b2',1,'TmSDK::TmRoiManager']]]
+  ['height_0',['Height',['../class_tm_s_d_k_1_1_media_info.html#ac3bbb6788ed3422cfd3fca65927d7319',1,'TmSDK::MediaInfo::Height'],['../struct_tm_s_d_k_1_1_rectangle.html#a283309cb07f297f4fa98876bea4f1e10',1,'TmSDK::Rectangle::Height']]]
 ];

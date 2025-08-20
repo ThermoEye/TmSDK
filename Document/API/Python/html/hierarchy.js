@@ -10,6 +10,9 @@ var hierarchy =
       [ "TmCore.TmException.TmException", "class_tm_core_1_1_tm_exception_1_1_tm_exception.html", null ]
     ] ],
     [ "object", null, [
+      [ "TmCore.TmCamera.LocalCameraList", "class_tm_core_1_1_tm_camera_1_1_local_camera_list.html", null ],
+      [ "TmCore.TmCamera.MediaInfo", "class_tm_core_1_1_tm_camera_1_1_media_info.html", null ],
+      [ "TmCore.TmCamera.RemoteCameraList", "class_tm_core_1_1_tm_camera_1_1_remote_camera_list.html", null ],
       [ "TmCore.TmCamera.TmCamera", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html", null ],
       [ "TmCore.TmCamera.TmLocalCamInfo", "class_tm_core_1_1_tm_camera_1_1_tm_local_cam_info.html", null ],
       [ "TmCore.TmCamera.TmRemoteCamInfo", "class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info.html", null ],
@@ -24,8 +27,6 @@ var hierarchy =
       [ "TmCore.TmRoi.TmRoiManager", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html", null ]
     ] ],
     [ "Structure", null, [
-      [ "TmCore.TmCamera.TmLocalCamInfoStructure", "class_tm_core_1_1_tm_camera_1_1_tm_local_cam_info_structure.html", null ],
-      [ "TmCore.TmCamera.TmRemoteCamInfoStructure", "class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info_structure.html", null ],
       [ "TmCore.TmTypes.Line", "class_tm_core_1_1_tm_types_1_1_line.html", null ],
       [ "TmCore.TmTypes.LocItem", "class_tm_core_1_1_tm_types_1_1_loc_item.html", null ],
       [ "TmCore.TmTypes.Point", "class_tm_core_1_1_tm_types_1_1_point.html", null ],

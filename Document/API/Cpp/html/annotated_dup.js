@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "TmSDK", "namespace_tm_s_d_k.html", [
       [ "LocItem", "struct_tm_s_d_k_1_1_loc_item.html", "struct_tm_s_d_k_1_1_loc_item" ],
+      [ "MediaInfo", "class_tm_s_d_k_1_1_media_info.html", "class_tm_s_d_k_1_1_media_info" ],
       [ "Point", "struct_tm_s_d_k_1_1_point.html", "struct_tm_s_d_k_1_1_point" ],
       [ "Rectangle", "struct_tm_s_d_k_1_1_rectangle.html", "struct_tm_s_d_k_1_1_rectangle" ],
       [ "RoiEllipse", "class_tm_s_d_k_1_1_roi_ellipse.html", "class_tm_s_d_k_1_1_roi_ellipse" ],
@@ -14,6 +15,7 @@ var annotated_dup =
       [ "TmControl", "class_tm_s_d_k_1_1_tm_control.html", "class_tm_s_d_k_1_1_tm_control" ],
       [ "TmCtrl160", "class_tm_s_d_k_1_1_tm_ctrl160.html", "class_tm_s_d_k_1_1_tm_ctrl160" ],
       [ "TmCtrl256", "class_tm_s_d_k_1_1_tm_ctrl256.html", "class_tm_s_d_k_1_1_tm_ctrl256" ],
+      [ "TmCtrl256G", "class_tm_s_d_k_1_1_tm_ctrl256_g.html", "class_tm_s_d_k_1_1_tm_ctrl256_g" ],
       [ "TmCtrl80", "class_tm_s_d_k_1_1_tm_ctrl80.html", "class_tm_s_d_k_1_1_tm_ctrl80" ],
       [ "TmException", "class_tm_s_d_k_1_1_tm_exception.html", "class_tm_s_d_k_1_1_tm_exception" ],
       [ "TmFrame", "class_tm_s_d_k_1_1_tm_frame.html", "class_tm_s_d_k_1_1_tm_frame" ],

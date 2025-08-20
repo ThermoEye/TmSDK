@@ -36,31 +36,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGridLayout *gridLayout_14;
-    QTabWidget *tabWidget_ConnectCamera;
-    QWidget *tab_LocalCamera;
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout;
-    QLabel *label;
-    QLabel *label_2;
-    QLineEdit *lineEdit_LocalCameraName;
-    QLineEdit *lineEdit_LocalCameraPort;
-    QPushButton *pushButton_LocalCameraConnect;
-    QPushButton *pushButton_LocalCameraScan;
-    QListWidget *listWidget_LocalCameraList;
-    QWidget *tab_RemoteCamera;
-    QPushButton *pushButton_RemoteCameraScan;
-    QPushButton *pushButton_RemoteCameraConnect;
-    QWidget *gridLayoutWidget_2;
-    QGridLayout *gridLayout_2;
-    QLabel *label_3;
-    QLabel *label_6;
-    QLabel *label_4;
-    QLabel *label_5;
-    QLineEdit *lineEdit_RemoteCameraName;
-    QLineEdit *lineEdit_RemoteCameraSerial;
-    QLineEdit *lineEdit_RemoteCameraMac;
-    QLineEdit *lineEdit_RemoteCameraIp;
-    QListWidget *listWidget_RemoteCameraList;
+    QLabel *label_space;
     QTabWidget *tabWidget_Product;
     QWidget *tab_3;
     QGroupBox *groupBox;
@@ -129,6 +105,22 @@ public:
     QComboBox *comboBox_IPAssignment;
     QLabel *label_19;
     QPushButton *pushButton_SystemReboot;
+    QGridLayout *gridLayout_preview;
+    QPushButton *pushButton_RemoveAllRoi;
+    QLabel *label_10;
+    QLabel *label_MaximumTemperature;
+    QComboBox *comboBox_TemperatureUnit;
+    QRadioButton *radioButton_ShapeRectangle;
+    QLabel *label_11;
+    QLabel *label_AverageTemperature;
+    QComboBox *comboBox_ColorMap;
+    QLabel *label_MinimumTemperature;
+    QLabel *label_Preview;
+    QRadioButton *radioButton_ShapeEllipse;
+    QCheckBox *checkBox_NoiseFiltering;
+    QRadioButton *radioButton_ShapeLine;
+    QRadioButton *radioButton_ShapeSpot;
+    QRadioButton *radioButton_ShapeCursor;
     QTabWidget *tabWidget_Control;
     QWidget *tabSensorControl;
     QStackedWidget *stackedWidget_SensorControl;
@@ -146,30 +138,30 @@ public:
     QLabel *label_39;
     QDoubleSpinBox *doubleSpinBox_FFCParamAutoTriggerThreshold;
     QLineEdit *lineEdit_FFCParam_AutoTriggerThreshold;
-    QGroupBox *groupBox_4;
+    QGroupBox *groupBox_FluxParameters;
     QWidget *gridLayoutWidget_8;
     QGridLayout *gridLayout_8;
-    QPushButton *pushButton_GetFluexParams;
+    QPushButton *pushButton_GetFluxParams;
     QLabel *label_30;
     QLabel *label_35;
     QLabel *label_32;
-    QDoubleSpinBox *doubleSpinBox_FluexParamEmissivity;
+    QDoubleSpinBox *doubleSpinBox_FluxParamEmissivity;
     QLabel *label_34;
     QLabel *label_31;
-    QDoubleSpinBox *doubleSpinBox_FluexParamAtmosphericTransmittance;
-    QLineEdit *lineEdit_FluexParam_EmissivityRange;
-    QDoubleSpinBox *doubleSpinBox_FluexParamAtmosphericTemperature;
+    QDoubleSpinBox *doubleSpinBox_FluxParamAtmosphericTransmittance;
+    QLineEdit *lineEdit_FluxParam_EmissivityRange;
+    QDoubleSpinBox *doubleSpinBox_FluxParamAtmosphericTemperature;
     QLabel *label_36;
     QLabel *label_37;
     QLabel *label_33;
-    QDoubleSpinBox *doubleSpinBox_FluexParamAmbientReflectionTemp;
-    QDoubleSpinBox *doubleSpinBox_FluexParamDistance;
+    QDoubleSpinBox *doubleSpinBox_FluxParamAmbientReflectionTemp;
+    QDoubleSpinBox *doubleSpinBox_FluxParamDistance;
     QLabel *label_38;
-    QPushButton *pushButton_SetFluexParams;
-    QLineEdit *lineEdit_FluexParam_AtmosphericTransmittanceRange;
-    QLineEdit *lineEdit_FluexParamAtmosphericTempRange;
-    QLineEdit *lineEdit_FluexParam_AmbientReflectionTempRange;
-    QLineEdit *lineEdit_FluexParamDistanceRange;
+    QPushButton *pushButton_SetFluxParams;
+    QLineEdit *lineEdit_FluxParam_AtmosphericTransmittanceRange;
+    QLineEdit *lineEdit_FluxParamAtmosphericTempRange;
+    QLineEdit *lineEdit_FluxParam_AmbientReflectionTempRange;
+    QLineEdit *lineEdit_FluxParamDistanceRange;
     QGroupBox *groupBox_6;
     QWidget *gridLayoutWidget_10;
     QGridLayout *gridLayout_10;
@@ -237,6 +229,34 @@ public:
     QPushButton *pushButton_SetFlatFieldCorrectionMode_160E;
     QPushButton *pushButton_RunFlatFieldCorrection_160E;
     QPushButton *pushButton_RestoreDefaultFluxParameters_160E;
+    QWidget *page_3;
+    QPushButton *pushButton_StoreUserSensorConfig_256G;
+    QGroupBox *groupBox_8;
+    QWidget *gridLayoutWidget_14;
+    QGridLayout *gridLayout_15;
+    QRadioButton *radioButton_FlatFieldCorrectionAutomatic_256G;
+    QRadioButton *radioButton_FlatFieldCorrectionManual_256G;
+    QPushButton *pushButton_GetFlatFieldCorrection_256G;
+    QPushButton *pushButton_SetFlatFieldCorrection_256G;
+    QPushButton *pushButton_RunFlatFieldCorrection_256G;
+    QGroupBox *groupBox_9;
+    QWidget *gridLayoutWidget_15;
+    QGridLayout *gridLayout_19;
+    QLabel *label_59;
+    QDoubleSpinBox *doubleSpinBox_FFCParam_MaxInterval_256G;
+    QPushButton *pushButton_GetFFCParams_256G;
+    QLineEdit *lineEdit_FFCParam_MaxIntervalRange_256G;
+    QLabel *label_61;
+    QPushButton *pushButton_SetFFCParams_256G;
+    QGroupBox *groupBox_10;
+    QWidget *gridLayoutWidget_19;
+    QGridLayout *gridLayout_20;
+    QRadioButton *radioButton_GainModeHigh_256G;
+    QPushButton *pushButton_GetGainModeState_256G;
+    QRadioButton *radioButton_GainModeLow_256G;
+    QRadioButton *radioButton_GainModeAuto_256G;
+    QPushButton *pushButton_SetGainModeState_256G;
+    QPushButton *pushButton_RestoreDefaultSensorConfig_256G;
     QWidget *tabRegionOfInterests;
     QWidget *gridLayoutWidget_12;
     QGridLayout *gridLayout_12;
@@ -278,23 +298,37 @@ public:
     QLineEdit *lineEdit_EllipseW;
     QLineEdit *lineEdit_RectangleH;
     QLineEdit *lineEdit_EllipseH;
-    QLabel *label_space;
-    QGridLayout *gridLayout_preview;
-    QPushButton *pushButton_RemoveAllRoi;
-    QLabel *label_10;
-    QLabel *label_MaximumTemperature;
-    QComboBox *comboBox_TemperatureUnit;
-    QRadioButton *radioButton_ShapeRectangle;
-    QLabel *label_11;
-    QLabel *label_AverageTemperature;
-    QComboBox *comboBox_ColorMap;
-    QLabel *label_MinimumTemperature;
-    QLabel *label_Preview;
-    QRadioButton *radioButton_ShapeEllipse;
-    QCheckBox *checkBox_NoiseFiltering;
-    QRadioButton *radioButton_ShapeLine;
-    QRadioButton *radioButton_ShapeSpot;
-    QRadioButton *radioButton_ShapeCursor;
+    QTabWidget *tabWidget_ConnectCamera;
+    QWidget *tab_LocalCamera;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QLabel *label;
+    QLabel *label_2;
+    QLineEdit *lineEdit_LocalCameraName;
+    QLineEdit *lineEdit_LocalCameraPort;
+    QPushButton *pushButton_LocalCameraConnect;
+    QPushButton *pushButton_LocalCameraScan;
+    QListWidget *listWidget_LocalCameraList;
+    QLabel *label_29;
+    QComboBox *comboBox_LocalCameraVideoFormat;
+    QWidget *tab_RemoteCamera;
+    QPushButton *pushButton_RemoteCameraScan;
+    QPushButton *pushButton_RemoteCameraConnect;
+    QWidget *gridLayoutWidget_2;
+    QGridLayout *gridLayout_2;
+    QLineEdit *lineEdit_RemoteCameraSerial;
+    QLabel *label_5;
+    QLineEdit *lineEdit_RemoteCameraIp;
+    QLineEdit *lineEdit_RemoteCameraName;
+    QLabel *label_3;
+    QLineEdit *lineEdit_RemoteCameraMac;
+    QLabel *label_4;
+    QLabel *label_6;
+    QLabel *label_58;
+    QLineEdit *lineEdit_RemoteCameraAdapterIp;
+    QListWidget *listWidget_RemoteCameraList;
+    QLabel *label_57;
+    QComboBox *comboBox_RemoteCameraVideoFormat;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -306,114 +340,12 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout_14 = new QGridLayout(centralwidget);
         gridLayout_14->setObjectName(QString::fromUtf8("gridLayout_14"));
-        tabWidget_ConnectCamera = new QTabWidget(centralwidget);
-        tabWidget_ConnectCamera->setObjectName(QString::fromUtf8("tabWidget_ConnectCamera"));
-        tabWidget_ConnectCamera->setMinimumSize(QSize(250, 0));
-        tabWidget_ConnectCamera->setMaximumSize(QSize(250, 16777215));
-        tab_LocalCamera = new QWidget();
-        tab_LocalCamera->setObjectName(QString::fromUtf8("tab_LocalCamera"));
-        gridLayoutWidget = new QWidget(tab_LocalCamera);
-        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 10, 241, 52));
-        gridLayout = new QGridLayout(gridLayoutWidget);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(gridLayoutWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label_space = new QLabel(centralwidget);
+        label_space->setObjectName(QString::fromUtf8("label_space"));
+        label_space->setMinimumSize(QSize(0, 1));
+        label_space->setMaximumSize(QSize(16777215, 1));
 
-        gridLayout->addWidget(label, 0, 0, 1, 1);
-
-        label_2 = new QLabel(gridLayoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout->addWidget(label_2, 1, 0, 1, 1);
-
-        lineEdit_LocalCameraName = new QLineEdit(gridLayoutWidget);
-        lineEdit_LocalCameraName->setObjectName(QString::fromUtf8("lineEdit_LocalCameraName"));
-
-        gridLayout->addWidget(lineEdit_LocalCameraName, 0, 1, 1, 1);
-
-        lineEdit_LocalCameraPort = new QLineEdit(gridLayoutWidget);
-        lineEdit_LocalCameraPort->setObjectName(QString::fromUtf8("lineEdit_LocalCameraPort"));
-
-        gridLayout->addWidget(lineEdit_LocalCameraPort, 1, 1, 1, 1);
-
-        pushButton_LocalCameraConnect = new QPushButton(tab_LocalCamera);
-        pushButton_LocalCameraConnect->setObjectName(QString::fromUtf8("pushButton_LocalCameraConnect"));
-        pushButton_LocalCameraConnect->setGeometry(QRect(0, 70, 241, 23));
-        pushButton_LocalCameraScan = new QPushButton(tab_LocalCamera);
-        pushButton_LocalCameraScan->setObjectName(QString::fromUtf8("pushButton_LocalCameraScan"));
-        pushButton_LocalCameraScan->setGeometry(QRect(0, 200, 241, 23));
-        listWidget_LocalCameraList = new QListWidget(tab_LocalCamera);
-        listWidget_LocalCameraList->setObjectName(QString::fromUtf8("listWidget_LocalCameraList"));
-        listWidget_LocalCameraList->setGeometry(QRect(0, 230, 241, 181));
-        tabWidget_ConnectCamera->addTab(tab_LocalCamera, QString());
-        tab_RemoteCamera = new QWidget();
-        tab_RemoteCamera->setObjectName(QString::fromUtf8("tab_RemoteCamera"));
-        pushButton_RemoteCameraScan = new QPushButton(tab_RemoteCamera);
-        pushButton_RemoteCameraScan->setObjectName(QString::fromUtf8("pushButton_RemoteCameraScan"));
-        pushButton_RemoteCameraScan->setGeometry(QRect(0, 192, 241, 31));
-        pushButton_RemoteCameraConnect = new QPushButton(tab_RemoteCamera);
-        pushButton_RemoteCameraConnect->setObjectName(QString::fromUtf8("pushButton_RemoteCameraConnect"));
-        pushButton_RemoteCameraConnect->setGeometry(QRect(0, 140, 241, 31));
-        gridLayoutWidget_2 = new QWidget(tab_RemoteCamera);
-        gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(0, 10, 241, 121));
-        gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_3 = new QLabel(gridLayoutWidget_2);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
-
-        label_6 = new QLabel(gridLayoutWidget_2);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_2->addWidget(label_6, 3, 0, 1, 1);
-
-        label_4 = new QLabel(gridLayoutWidget_2);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_2->addWidget(label_4, 1, 0, 1, 1);
-
-        label_5 = new QLabel(gridLayoutWidget_2);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout_2->addWidget(label_5, 2, 0, 1, 1);
-
-        lineEdit_RemoteCameraName = new QLineEdit(gridLayoutWidget_2);
-        lineEdit_RemoteCameraName->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraName"));
-
-        gridLayout_2->addWidget(lineEdit_RemoteCameraName, 0, 1, 1, 1);
-
-        lineEdit_RemoteCameraSerial = new QLineEdit(gridLayoutWidget_2);
-        lineEdit_RemoteCameraSerial->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraSerial"));
-
-        gridLayout_2->addWidget(lineEdit_RemoteCameraSerial, 1, 1, 1, 1);
-
-        lineEdit_RemoteCameraMac = new QLineEdit(gridLayoutWidget_2);
-        lineEdit_RemoteCameraMac->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraMac"));
-
-        gridLayout_2->addWidget(lineEdit_RemoteCameraMac, 2, 1, 1, 1);
-
-        lineEdit_RemoteCameraIp = new QLineEdit(gridLayoutWidget_2);
-        lineEdit_RemoteCameraIp->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraIp"));
-
-        gridLayout_2->addWidget(lineEdit_RemoteCameraIp, 3, 1, 1, 1);
-
-        listWidget_RemoteCameraList = new QListWidget(tab_RemoteCamera);
-        listWidget_RemoteCameraList->setObjectName(QString::fromUtf8("listWidget_RemoteCameraList"));
-        listWidget_RemoteCameraList->setGeometry(QRect(0, 230, 241, 181));
-        tabWidget_ConnectCamera->addTab(tab_RemoteCamera, QString());
-
-        gridLayout_14->addWidget(tabWidget_ConnectCamera, 0, 0, 2, 1);
+        gridLayout_14->addWidget(label_space, 2, 0, 1, 3);
 
         tabWidget_Product = new QTabWidget(centralwidget);
         tabWidget_Product->setObjectName(QString::fromUtf8("tabWidget_Product"));
@@ -782,6 +714,215 @@ public:
 
         gridLayout_14->addWidget(tabWidget_Product, 0, 3, 4, 1);
 
+        gridLayout_preview = new QGridLayout();
+        gridLayout_preview->setObjectName(QString::fromUtf8("gridLayout_preview"));
+        gridLayout_preview->setSizeConstraint(QLayout::SetMaximumSize);
+        pushButton_RemoveAllRoi = new QPushButton(centralwidget);
+        pushButton_RemoveAllRoi->setObjectName(QString::fromUtf8("pushButton_RemoveAllRoi"));
+        pushButton_RemoveAllRoi->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(pushButton_RemoveAllRoi, 2, 5, 1, 1);
+
+        label_10 = new QLabel(centralwidget);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setMinimumSize(QSize(0, 23));
+        label_10->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(label_10, 3, 0, 1, 1);
+
+        label_MaximumTemperature = new QLabel(centralwidget);
+        label_MaximumTemperature->setObjectName(QString::fromUtf8("label_MaximumTemperature"));
+        label_MaximumTemperature->setMinimumSize(QSize(0, 16));
+        label_MaximumTemperature->setMaximumSize(QSize(16777215, 16));
+        label_MaximumTemperature->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_preview->addWidget(label_MaximumTemperature, 1, 4, 1, 2);
+
+        comboBox_TemperatureUnit = new QComboBox(centralwidget);
+        comboBox_TemperatureUnit->addItem(QString());
+        comboBox_TemperatureUnit->addItem(QString());
+        comboBox_TemperatureUnit->addItem(QString());
+        comboBox_TemperatureUnit->addItem(QString());
+        comboBox_TemperatureUnit->setObjectName(QString::fromUtf8("comboBox_TemperatureUnit"));
+        comboBox_TemperatureUnit->setMinimumSize(QSize(0, 23));
+        comboBox_TemperatureUnit->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(comboBox_TemperatureUnit, 3, 5, 1, 1);
+
+        radioButton_ShapeRectangle = new QRadioButton(centralwidget);
+        radioButton_ShapeRectangle->setObjectName(QString::fromUtf8("radioButton_ShapeRectangle"));
+        radioButton_ShapeRectangle->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(radioButton_ShapeRectangle, 2, 3, 1, 1);
+
+        label_11 = new QLabel(centralwidget);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setMinimumSize(QSize(0, 23));
+        label_11->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(label_11, 3, 4, 1, 1);
+
+        label_AverageTemperature = new QLabel(centralwidget);
+        label_AverageTemperature->setObjectName(QString::fromUtf8("label_AverageTemperature"));
+        label_AverageTemperature->setMinimumSize(QSize(0, 16));
+        label_AverageTemperature->setMaximumSize(QSize(16777215, 16));
+        label_AverageTemperature->setAlignment(Qt::AlignCenter);
+
+        gridLayout_preview->addWidget(label_AverageTemperature, 1, 3, 1, 1);
+
+        comboBox_ColorMap = new QComboBox(centralwidget);
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->addItem(QString());
+        comboBox_ColorMap->setObjectName(QString::fromUtf8("comboBox_ColorMap"));
+        comboBox_ColorMap->setMinimumSize(QSize(0, 23));
+        comboBox_ColorMap->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(comboBox_ColorMap, 3, 1, 1, 2);
+
+        label_MinimumTemperature = new QLabel(centralwidget);
+        label_MinimumTemperature->setObjectName(QString::fromUtf8("label_MinimumTemperature"));
+        label_MinimumTemperature->setMinimumSize(QSize(0, 16));
+        label_MinimumTemperature->setMaximumSize(QSize(16777215, 16));
+
+        gridLayout_preview->addWidget(label_MinimumTemperature, 1, 0, 1, 3);
+
+        label_Preview = new QLabel(centralwidget);
+        label_Preview->setObjectName(QString::fromUtf8("label_Preview"));
+        label_Preview->setMinimumSize(QSize(10, 10));
+        label_Preview->setMaximumSize(QSize(99999, 99999));
+        label_Preview->setBaseSize(QSize(480, 360));
+        QPalette palette;
+        QBrush brush(QColor(0, 0, 0, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        QBrush brush1(QColor(202, 202, 202, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush1);
+        QBrush brush2(QColor(255, 255, 255, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Light, brush2);
+        QBrush brush3(QColor(228, 228, 228, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Midlight, brush3);
+        QBrush brush4(QColor(101, 101, 101, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Dark, brush4);
+        QBrush brush5(QColor(135, 135, 135, 255));
+        brush5.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette.setBrush(QPalette::Active, QPalette::BrightText, brush2);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush2);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Active, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush3);
+        QBrush brush6(QColor(255, 255, 220, 255));
+        brush6.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush6);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush);
+        QBrush brush7(QColor(0, 0, 0, 128));
+        brush7.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush7);
+#endif
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Light, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush4);
+        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush6);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush7);
+#endif
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Light, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush3);
+        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush5);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush6);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush7);
+#endif
+        label_Preview->setPalette(palette);
+        label_Preview->setLayoutDirection(Qt::LeftToRight);
+        label_Preview->setAlignment(Qt::AlignCenter);
+
+        gridLayout_preview->addWidget(label_Preview, 0, 0, 1, 6);
+
+        radioButton_ShapeEllipse = new QRadioButton(centralwidget);
+        radioButton_ShapeEllipse->setObjectName(QString::fromUtf8("radioButton_ShapeEllipse"));
+        radioButton_ShapeEllipse->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(radioButton_ShapeEllipse, 2, 4, 1, 1);
+
+        checkBox_NoiseFiltering = new QCheckBox(centralwidget);
+        checkBox_NoiseFiltering->setObjectName(QString::fromUtf8("checkBox_NoiseFiltering"));
+        checkBox_NoiseFiltering->setMinimumSize(QSize(0, 23));
+        checkBox_NoiseFiltering->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(checkBox_NoiseFiltering, 3, 3, 1, 1);
+
+        radioButton_ShapeLine = new QRadioButton(centralwidget);
+        radioButton_ShapeLine->setObjectName(QString::fromUtf8("radioButton_ShapeLine"));
+        radioButton_ShapeLine->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(radioButton_ShapeLine, 2, 2, 1, 1);
+
+        radioButton_ShapeSpot = new QRadioButton(centralwidget);
+        radioButton_ShapeSpot->setObjectName(QString::fromUtf8("radioButton_ShapeSpot"));
+        radioButton_ShapeSpot->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(radioButton_ShapeSpot, 2, 1, 1, 1);
+
+        radioButton_ShapeCursor = new QRadioButton(centralwidget);
+        radioButton_ShapeCursor->setObjectName(QString::fromUtf8("radioButton_ShapeCursor"));
+        radioButton_ShapeCursor->setMaximumSize(QSize(16777215, 23));
+
+        gridLayout_preview->addWidget(radioButton_ShapeCursor, 2, 0, 1, 1);
+
+
+        gridLayout_14->addLayout(gridLayout_preview, 0, 1, 2, 2);
+
         tabWidget_Control = new QTabWidget(centralwidget);
         tabWidget_Control->setObjectName(QString::fromUtf8("tabWidget_Control"));
         tabWidget_Control->setEnabled(true);
@@ -877,21 +1018,21 @@ public:
 
         gridLayout_9->addWidget(lineEdit_FFCParam_AutoTriggerThreshold, 1, 4, 1, 1);
 
-        groupBox_4 = new QGroupBox(page);
-        groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        groupBox_4->setGeometry(QRect(10, 10, 471, 151));
-        gridLayoutWidget_8 = new QWidget(groupBox_4);
+        groupBox_FluxParameters = new QGroupBox(page);
+        groupBox_FluxParameters->setObjectName(QString::fromUtf8("groupBox_FluxParameters"));
+        groupBox_FluxParameters->setGeometry(QRect(10, 10, 471, 151));
+        gridLayoutWidget_8 = new QWidget(groupBox_FluxParameters);
         gridLayoutWidget_8->setObjectName(QString::fromUtf8("gridLayoutWidget_8"));
         gridLayoutWidget_8->setGeometry(QRect(10, 20, 451, 136));
         gridLayout_8 = new QGridLayout(gridLayoutWidget_8);
         gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
         gridLayout_8->setContentsMargins(0, 0, 0, 0);
-        pushButton_GetFluexParams = new QPushButton(gridLayoutWidget_8);
-        pushButton_GetFluexParams->setObjectName(QString::fromUtf8("pushButton_GetFluexParams"));
-        pushButton_GetFluexParams->setMinimumSize(QSize(0, 120));
-        pushButton_GetFluexParams->setMaximumSize(QSize(30, 16777215));
+        pushButton_GetFluxParams = new QPushButton(gridLayoutWidget_8);
+        pushButton_GetFluxParams->setObjectName(QString::fromUtf8("pushButton_GetFluxParams"));
+        pushButton_GetFluxParams->setMinimumSize(QSize(0, 120));
+        pushButton_GetFluxParams->setMaximumSize(QSize(30, 16777215));
 
-        gridLayout_8->addWidget(pushButton_GetFluexParams, 0, 1, 5, 1);
+        gridLayout_8->addWidget(pushButton_GetFluxParams, 0, 1, 5, 1);
 
         label_30 = new QLabel(gridLayoutWidget_8);
         label_30->setObjectName(QString::fromUtf8("label_30"));
@@ -911,15 +1052,15 @@ public:
 
         gridLayout_8->addWidget(label_32, 1, 0, 1, 1);
 
-        doubleSpinBox_FluexParamEmissivity = new QDoubleSpinBox(gridLayoutWidget_8);
-        doubleSpinBox_FluexParamEmissivity->setObjectName(QString::fromUtf8("doubleSpinBox_FluexParamEmissivity"));
-        doubleSpinBox_FluexParamEmissivity->setEnabled(false);
-        doubleSpinBox_FluexParamEmissivity->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        doubleSpinBox_FluexParamEmissivity->setMinimum(0.010000000000000);
-        doubleSpinBox_FluexParamEmissivity->setMaximum(1.000000000000000);
-        doubleSpinBox_FluexParamEmissivity->setSingleStep(0.010000000000000);
+        doubleSpinBox_FluxParamEmissivity = new QDoubleSpinBox(gridLayoutWidget_8);
+        doubleSpinBox_FluxParamEmissivity->setObjectName(QString::fromUtf8("doubleSpinBox_FluxParamEmissivity"));
+        doubleSpinBox_FluxParamEmissivity->setEnabled(false);
+        doubleSpinBox_FluxParamEmissivity->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_FluxParamEmissivity->setMinimum(0.010000000000000);
+        doubleSpinBox_FluxParamEmissivity->setMaximum(1.000000000000000);
+        doubleSpinBox_FluxParamEmissivity->setSingleStep(0.010000000000000);
 
-        gridLayout_8->addWidget(doubleSpinBox_FluexParamEmissivity, 0, 2, 1, 1);
+        gridLayout_8->addWidget(doubleSpinBox_FluxParamEmissivity, 0, 2, 1, 1);
 
         label_34 = new QLabel(gridLayoutWidget_8);
         label_34->setObjectName(QString::fromUtf8("label_34"));
@@ -932,33 +1073,33 @@ public:
 
         gridLayout_8->addWidget(label_31, 0, 3, 1, 1);
 
-        doubleSpinBox_FluexParamAtmosphericTransmittance = new QDoubleSpinBox(gridLayoutWidget_8);
-        doubleSpinBox_FluexParamAtmosphericTransmittance->setObjectName(QString::fromUtf8("doubleSpinBox_FluexParamAtmosphericTransmittance"));
-        doubleSpinBox_FluexParamAtmosphericTransmittance->setEnabled(false);
-        doubleSpinBox_FluexParamAtmosphericTransmittance->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        doubleSpinBox_FluexParamAtmosphericTransmittance->setMinimum(0.010000000000000);
-        doubleSpinBox_FluexParamAtmosphericTransmittance->setMaximum(1.000000000000000);
-        doubleSpinBox_FluexParamAtmosphericTransmittance->setSingleStep(0.010000000000000);
+        doubleSpinBox_FluxParamAtmosphericTransmittance = new QDoubleSpinBox(gridLayoutWidget_8);
+        doubleSpinBox_FluxParamAtmosphericTransmittance->setObjectName(QString::fromUtf8("doubleSpinBox_FluxParamAtmosphericTransmittance"));
+        doubleSpinBox_FluxParamAtmosphericTransmittance->setEnabled(false);
+        doubleSpinBox_FluxParamAtmosphericTransmittance->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_FluxParamAtmosphericTransmittance->setMinimum(0.010000000000000);
+        doubleSpinBox_FluxParamAtmosphericTransmittance->setMaximum(1.000000000000000);
+        doubleSpinBox_FluxParamAtmosphericTransmittance->setSingleStep(0.010000000000000);
 
-        gridLayout_8->addWidget(doubleSpinBox_FluexParamAtmosphericTransmittance, 1, 2, 1, 1);
+        gridLayout_8->addWidget(doubleSpinBox_FluxParamAtmosphericTransmittance, 1, 2, 1, 1);
 
-        lineEdit_FluexParam_EmissivityRange = new QLineEdit(gridLayoutWidget_8);
-        lineEdit_FluexParam_EmissivityRange->setObjectName(QString::fromUtf8("lineEdit_FluexParam_EmissivityRange"));
-        lineEdit_FluexParam_EmissivityRange->setEnabled(false);
-        lineEdit_FluexParam_EmissivityRange->setAlignment(Qt::AlignCenter);
-        lineEdit_FluexParam_EmissivityRange->setReadOnly(true);
+        lineEdit_FluxParam_EmissivityRange = new QLineEdit(gridLayoutWidget_8);
+        lineEdit_FluxParam_EmissivityRange->setObjectName(QString::fromUtf8("lineEdit_FluxParam_EmissivityRange"));
+        lineEdit_FluxParam_EmissivityRange->setEnabled(false);
+        lineEdit_FluxParam_EmissivityRange->setAlignment(Qt::AlignCenter);
+        lineEdit_FluxParam_EmissivityRange->setReadOnly(true);
 
-        gridLayout_8->addWidget(lineEdit_FluexParam_EmissivityRange, 0, 4, 1, 1);
+        gridLayout_8->addWidget(lineEdit_FluxParam_EmissivityRange, 0, 4, 1, 1);
 
-        doubleSpinBox_FluexParamAtmosphericTemperature = new QDoubleSpinBox(gridLayoutWidget_8);
-        doubleSpinBox_FluexParamAtmosphericTemperature->setObjectName(QString::fromUtf8("doubleSpinBox_FluexParamAtmosphericTemperature"));
-        doubleSpinBox_FluexParamAtmosphericTemperature->setEnabled(false);
-        doubleSpinBox_FluexParamAtmosphericTemperature->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        doubleSpinBox_FluexParamAtmosphericTemperature->setMinimum(-43.149999999999999);
-        doubleSpinBox_FluexParamAtmosphericTemperature->setMaximum(625.850000000000023);
-        doubleSpinBox_FluexParamAtmosphericTemperature->setSingleStep(0.010000000000000);
+        doubleSpinBox_FluxParamAtmosphericTemperature = new QDoubleSpinBox(gridLayoutWidget_8);
+        doubleSpinBox_FluxParamAtmosphericTemperature->setObjectName(QString::fromUtf8("doubleSpinBox_FluxParamAtmosphericTemperature"));
+        doubleSpinBox_FluxParamAtmosphericTemperature->setEnabled(false);
+        doubleSpinBox_FluxParamAtmosphericTemperature->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_FluxParamAtmosphericTemperature->setMinimum(-43.149999999999999);
+        doubleSpinBox_FluxParamAtmosphericTemperature->setMaximum(625.850000000000023);
+        doubleSpinBox_FluxParamAtmosphericTemperature->setSingleStep(0.010000000000000);
 
-        gridLayout_8->addWidget(doubleSpinBox_FluexParamAtmosphericTemperature, 2, 2, 1, 1);
+        gridLayout_8->addWidget(doubleSpinBox_FluxParamAtmosphericTemperature, 2, 2, 1, 1);
 
         label_36 = new QLabel(gridLayoutWidget_8);
         label_36->setObjectName(QString::fromUtf8("label_36"));
@@ -978,24 +1119,24 @@ public:
 
         gridLayout_8->addWidget(label_33, 2, 0, 1, 1);
 
-        doubleSpinBox_FluexParamAmbientReflectionTemp = new QDoubleSpinBox(gridLayoutWidget_8);
-        doubleSpinBox_FluexParamAmbientReflectionTemp->setObjectName(QString::fromUtf8("doubleSpinBox_FluexParamAmbientReflectionTemp"));
-        doubleSpinBox_FluexParamAmbientReflectionTemp->setEnabled(false);
-        doubleSpinBox_FluexParamAmbientReflectionTemp->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        doubleSpinBox_FluexParamAmbientReflectionTemp->setMinimum(-43.149999999999999);
-        doubleSpinBox_FluexParamAmbientReflectionTemp->setMaximum(626.850000000000023);
-        doubleSpinBox_FluexParamAmbientReflectionTemp->setSingleStep(0.010000000000000);
+        doubleSpinBox_FluxParamAmbientReflectionTemp = new QDoubleSpinBox(gridLayoutWidget_8);
+        doubleSpinBox_FluxParamAmbientReflectionTemp->setObjectName(QString::fromUtf8("doubleSpinBox_FluxParamAmbientReflectionTemp"));
+        doubleSpinBox_FluxParamAmbientReflectionTemp->setEnabled(false);
+        doubleSpinBox_FluxParamAmbientReflectionTemp->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_FluxParamAmbientReflectionTemp->setMinimum(-43.149999999999999);
+        doubleSpinBox_FluxParamAmbientReflectionTemp->setMaximum(626.850000000000023);
+        doubleSpinBox_FluxParamAmbientReflectionTemp->setSingleStep(0.010000000000000);
 
-        gridLayout_8->addWidget(doubleSpinBox_FluexParamAmbientReflectionTemp, 3, 2, 1, 1);
+        gridLayout_8->addWidget(doubleSpinBox_FluxParamAmbientReflectionTemp, 3, 2, 1, 1);
 
-        doubleSpinBox_FluexParamDistance = new QDoubleSpinBox(gridLayoutWidget_8);
-        doubleSpinBox_FluexParamDistance->setObjectName(QString::fromUtf8("doubleSpinBox_FluexParamDistance"));
-        doubleSpinBox_FluexParamDistance->setEnabled(false);
-        doubleSpinBox_FluexParamDistance->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        doubleSpinBox_FluexParamDistance->setMaximum(200.000000000000000);
-        doubleSpinBox_FluexParamDistance->setSingleStep(0.010000000000000);
+        doubleSpinBox_FluxParamDistance = new QDoubleSpinBox(gridLayoutWidget_8);
+        doubleSpinBox_FluxParamDistance->setObjectName(QString::fromUtf8("doubleSpinBox_FluxParamDistance"));
+        doubleSpinBox_FluxParamDistance->setEnabled(false);
+        doubleSpinBox_FluxParamDistance->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_FluxParamDistance->setMaximum(200.000000000000000);
+        doubleSpinBox_FluxParamDistance->setSingleStep(0.010000000000000);
 
-        gridLayout_8->addWidget(doubleSpinBox_FluexParamDistance, 4, 2, 1, 1);
+        gridLayout_8->addWidget(doubleSpinBox_FluxParamDistance, 4, 2, 1, 1);
 
         label_38 = new QLabel(gridLayoutWidget_8);
         label_38->setObjectName(QString::fromUtf8("label_38"));
@@ -1003,45 +1144,45 @@ public:
 
         gridLayout_8->addWidget(label_38, 4, 3, 1, 1);
 
-        pushButton_SetFluexParams = new QPushButton(gridLayoutWidget_8);
-        pushButton_SetFluexParams->setObjectName(QString::fromUtf8("pushButton_SetFluexParams"));
-        pushButton_SetFluexParams->setEnabled(false);
-        pushButton_SetFluexParams->setMinimumSize(QSize(0, 120));
-        pushButton_SetFluexParams->setMaximumSize(QSize(30, 16777215));
+        pushButton_SetFluxParams = new QPushButton(gridLayoutWidget_8);
+        pushButton_SetFluxParams->setObjectName(QString::fromUtf8("pushButton_SetFluxParams"));
+        pushButton_SetFluxParams->setEnabled(false);
+        pushButton_SetFluxParams->setMinimumSize(QSize(0, 120));
+        pushButton_SetFluxParams->setMaximumSize(QSize(30, 16777215));
 
-        gridLayout_8->addWidget(pushButton_SetFluexParams, 0, 5, 5, 1);
+        gridLayout_8->addWidget(pushButton_SetFluxParams, 0, 5, 5, 1);
 
-        lineEdit_FluexParam_AtmosphericTransmittanceRange = new QLineEdit(gridLayoutWidget_8);
-        lineEdit_FluexParam_AtmosphericTransmittanceRange->setObjectName(QString::fromUtf8("lineEdit_FluexParam_AtmosphericTransmittanceRange"));
-        lineEdit_FluexParam_AtmosphericTransmittanceRange->setEnabled(false);
-        lineEdit_FluexParam_AtmosphericTransmittanceRange->setAlignment(Qt::AlignCenter);
-        lineEdit_FluexParam_AtmosphericTransmittanceRange->setReadOnly(true);
+        lineEdit_FluxParam_AtmosphericTransmittanceRange = new QLineEdit(gridLayoutWidget_8);
+        lineEdit_FluxParam_AtmosphericTransmittanceRange->setObjectName(QString::fromUtf8("lineEdit_FluxParam_AtmosphericTransmittanceRange"));
+        lineEdit_FluxParam_AtmosphericTransmittanceRange->setEnabled(false);
+        lineEdit_FluxParam_AtmosphericTransmittanceRange->setAlignment(Qt::AlignCenter);
+        lineEdit_FluxParam_AtmosphericTransmittanceRange->setReadOnly(true);
 
-        gridLayout_8->addWidget(lineEdit_FluexParam_AtmosphericTransmittanceRange, 1, 4, 1, 1);
+        gridLayout_8->addWidget(lineEdit_FluxParam_AtmosphericTransmittanceRange, 1, 4, 1, 1);
 
-        lineEdit_FluexParamAtmosphericTempRange = new QLineEdit(gridLayoutWidget_8);
-        lineEdit_FluexParamAtmosphericTempRange->setObjectName(QString::fromUtf8("lineEdit_FluexParamAtmosphericTempRange"));
-        lineEdit_FluexParamAtmosphericTempRange->setEnabled(false);
-        lineEdit_FluexParamAtmosphericTempRange->setAlignment(Qt::AlignCenter);
-        lineEdit_FluexParamAtmosphericTempRange->setReadOnly(true);
+        lineEdit_FluxParamAtmosphericTempRange = new QLineEdit(gridLayoutWidget_8);
+        lineEdit_FluxParamAtmosphericTempRange->setObjectName(QString::fromUtf8("lineEdit_FluxParamAtmosphericTempRange"));
+        lineEdit_FluxParamAtmosphericTempRange->setEnabled(false);
+        lineEdit_FluxParamAtmosphericTempRange->setAlignment(Qt::AlignCenter);
+        lineEdit_FluxParamAtmosphericTempRange->setReadOnly(true);
 
-        gridLayout_8->addWidget(lineEdit_FluexParamAtmosphericTempRange, 2, 4, 1, 1);
+        gridLayout_8->addWidget(lineEdit_FluxParamAtmosphericTempRange, 2, 4, 1, 1);
 
-        lineEdit_FluexParam_AmbientReflectionTempRange = new QLineEdit(gridLayoutWidget_8);
-        lineEdit_FluexParam_AmbientReflectionTempRange->setObjectName(QString::fromUtf8("lineEdit_FluexParam_AmbientReflectionTempRange"));
-        lineEdit_FluexParam_AmbientReflectionTempRange->setEnabled(false);
-        lineEdit_FluexParam_AmbientReflectionTempRange->setAlignment(Qt::AlignCenter);
-        lineEdit_FluexParam_AmbientReflectionTempRange->setReadOnly(true);
+        lineEdit_FluxParam_AmbientReflectionTempRange = new QLineEdit(gridLayoutWidget_8);
+        lineEdit_FluxParam_AmbientReflectionTempRange->setObjectName(QString::fromUtf8("lineEdit_FluxParam_AmbientReflectionTempRange"));
+        lineEdit_FluxParam_AmbientReflectionTempRange->setEnabled(false);
+        lineEdit_FluxParam_AmbientReflectionTempRange->setAlignment(Qt::AlignCenter);
+        lineEdit_FluxParam_AmbientReflectionTempRange->setReadOnly(true);
 
-        gridLayout_8->addWidget(lineEdit_FluexParam_AmbientReflectionTempRange, 3, 4, 1, 1);
+        gridLayout_8->addWidget(lineEdit_FluxParam_AmbientReflectionTempRange, 3, 4, 1, 1);
 
-        lineEdit_FluexParamDistanceRange = new QLineEdit(gridLayoutWidget_8);
-        lineEdit_FluexParamDistanceRange->setObjectName(QString::fromUtf8("lineEdit_FluexParamDistanceRange"));
-        lineEdit_FluexParamDistanceRange->setEnabled(false);
-        lineEdit_FluexParamDistanceRange->setAlignment(Qt::AlignCenter);
-        lineEdit_FluexParamDistanceRange->setReadOnly(true);
+        lineEdit_FluxParamDistanceRange = new QLineEdit(gridLayoutWidget_8);
+        lineEdit_FluxParamDistanceRange->setObjectName(QString::fromUtf8("lineEdit_FluxParamDistanceRange"));
+        lineEdit_FluxParamDistanceRange->setEnabled(false);
+        lineEdit_FluxParamDistanceRange->setAlignment(Qt::AlignCenter);
+        lineEdit_FluxParamDistanceRange->setReadOnly(true);
 
-        gridLayout_8->addWidget(lineEdit_FluexParamDistanceRange, 4, 4, 1, 1);
+        gridLayout_8->addWidget(lineEdit_FluxParamDistanceRange, 4, 4, 1, 1);
 
         groupBox_6 = new QGroupBox(page);
         groupBox_6->setObjectName(QString::fromUtf8("groupBox_6"));
@@ -1438,6 +1579,160 @@ public:
         pushButton_RestoreDefaultFluxParameters_160E->setObjectName(QString::fromUtf8("pushButton_RestoreDefaultFluxParameters_160E"));
         pushButton_RestoreDefaultFluxParameters_160E->setGeometry(QRect(460, 220, 261, 31));
         stackedWidget_SensorControl->addWidget(page_2);
+        page_3 = new QWidget();
+        page_3->setObjectName(QString::fromUtf8("page_3"));
+        pushButton_StoreUserSensorConfig_256G = new QPushButton(page_3);
+        pushButton_StoreUserSensorConfig_256G->setObjectName(QString::fromUtf8("pushButton_StoreUserSensorConfig_256G"));
+        pushButton_StoreUserSensorConfig_256G->setGeometry(QRect(500, 190, 101, 51));
+        groupBox_8 = new QGroupBox(page_3);
+        groupBox_8->setObjectName(QString::fromUtf8("groupBox_8"));
+        groupBox_8->setGeometry(QRect(490, 110, 251, 71));
+        gridLayoutWidget_14 = new QWidget(groupBox_8);
+        gridLayoutWidget_14->setObjectName(QString::fromUtf8("gridLayoutWidget_14"));
+        gridLayoutWidget_14->setGeometry(QRect(10, 17, 231, 51));
+        gridLayout_15 = new QGridLayout(gridLayoutWidget_14);
+        gridLayout_15->setObjectName(QString::fromUtf8("gridLayout_15"));
+        gridLayout_15->setContentsMargins(0, 0, 0, 0);
+        radioButton_FlatFieldCorrectionAutomatic_256G = new QRadioButton(gridLayoutWidget_14);
+        radioButton_FlatFieldCorrectionAutomatic_256G->setObjectName(QString::fromUtf8("radioButton_FlatFieldCorrectionAutomatic_256G"));
+
+        gridLayout_15->addWidget(radioButton_FlatFieldCorrectionAutomatic_256G, 0, 0, 1, 1);
+
+        radioButton_FlatFieldCorrectionManual_256G = new QRadioButton(gridLayoutWidget_14);
+        radioButton_FlatFieldCorrectionManual_256G->setObjectName(QString::fromUtf8("radioButton_FlatFieldCorrectionManual_256G"));
+
+        gridLayout_15->addWidget(radioButton_FlatFieldCorrectionManual_256G, 1, 0, 1, 1);
+
+        pushButton_GetFlatFieldCorrection_256G = new QPushButton(gridLayoutWidget_14);
+        pushButton_GetFlatFieldCorrection_256G->setObjectName(QString::fromUtf8("pushButton_GetFlatFieldCorrection_256G"));
+        pushButton_GetFlatFieldCorrection_256G->setMinimumSize(QSize(50, 0));
+        pushButton_GetFlatFieldCorrection_256G->setMaximumSize(QSize(50, 50));
+
+        gridLayout_15->addWidget(pushButton_GetFlatFieldCorrection_256G, 0, 1, 1, 1);
+
+        pushButton_SetFlatFieldCorrection_256G = new QPushButton(gridLayoutWidget_14);
+        pushButton_SetFlatFieldCorrection_256G->setObjectName(QString::fromUtf8("pushButton_SetFlatFieldCorrection_256G"));
+        pushButton_SetFlatFieldCorrection_256G->setMinimumSize(QSize(50, 0));
+        pushButton_SetFlatFieldCorrection_256G->setMaximumSize(QSize(50, 50));
+
+        gridLayout_15->addWidget(pushButton_SetFlatFieldCorrection_256G, 0, 2, 1, 1);
+
+        pushButton_RunFlatFieldCorrection_256G = new QPushButton(gridLayoutWidget_14);
+        pushButton_RunFlatFieldCorrection_256G->setObjectName(QString::fromUtf8("pushButton_RunFlatFieldCorrection_256G"));
+        pushButton_RunFlatFieldCorrection_256G->setMinimumSize(QSize(50, 0));
+        pushButton_RunFlatFieldCorrection_256G->setMaximumSize(QSize(110, 50));
+
+        gridLayout_15->addWidget(pushButton_RunFlatFieldCorrection_256G, 1, 1, 1, 2);
+
+        groupBox_9 = new QGroupBox(page_3);
+        groupBox_9->setObjectName(QString::fromUtf8("groupBox_9"));
+        groupBox_9->setGeometry(QRect(10, 10, 471, 71));
+        gridLayoutWidget_15 = new QWidget(groupBox_9);
+        gridLayoutWidget_15->setObjectName(QString::fromUtf8("gridLayoutWidget_15"));
+        gridLayoutWidget_15->setGeometry(QRect(10, 30, 451, 31));
+        gridLayout_19 = new QGridLayout(gridLayoutWidget_15);
+        gridLayout_19->setObjectName(QString::fromUtf8("gridLayout_19"));
+        gridLayout_19->setVerticalSpacing(6);
+        gridLayout_19->setContentsMargins(0, 0, 0, 0);
+        label_59 = new QLabel(gridLayoutWidget_15);
+        label_59->setObjectName(QString::fromUtf8("label_59"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label_59->sizePolicy().hasHeightForWidth());
+        label_59->setSizePolicy(sizePolicy);
+        label_59->setMinimumSize(QSize(12, 0));
+        label_59->setAlignment(Qt::AlignCenter);
+
+        gridLayout_19->addWidget(label_59, 0, 3, 1, 1);
+
+        doubleSpinBox_FFCParam_MaxInterval_256G = new QDoubleSpinBox(gridLayoutWidget_15);
+        doubleSpinBox_FFCParam_MaxInterval_256G->setObjectName(QString::fromUtf8("doubleSpinBox_FFCParam_MaxInterval_256G"));
+        doubleSpinBox_FFCParam_MaxInterval_256G->setEnabled(false);
+        doubleSpinBox_FFCParam_MaxInterval_256G->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        doubleSpinBox_FFCParam_MaxInterval_256G->setDecimals(0);
+        doubleSpinBox_FFCParam_MaxInterval_256G->setMinimum(0.000000000000000);
+        doubleSpinBox_FFCParam_MaxInterval_256G->setMaximum(100.000000000000000);
+        doubleSpinBox_FFCParam_MaxInterval_256G->setValue(1.000000000000000);
+
+        gridLayout_19->addWidget(doubleSpinBox_FFCParam_MaxInterval_256G, 0, 2, 1, 1);
+
+        pushButton_GetFFCParams_256G = new QPushButton(gridLayoutWidget_15);
+        pushButton_GetFFCParams_256G->setObjectName(QString::fromUtf8("pushButton_GetFFCParams_256G"));
+        pushButton_GetFFCParams_256G->setMinimumSize(QSize(0, 0));
+        pushButton_GetFFCParams_256G->setMaximumSize(QSize(30, 50));
+
+        gridLayout_19->addWidget(pushButton_GetFFCParams_256G, 0, 1, 1, 1);
+
+        lineEdit_FFCParam_MaxIntervalRange_256G = new QLineEdit(gridLayoutWidget_15);
+        lineEdit_FFCParam_MaxIntervalRange_256G->setObjectName(QString::fromUtf8("lineEdit_FFCParam_MaxIntervalRange_256G"));
+        lineEdit_FFCParam_MaxIntervalRange_256G->setEnabled(false);
+        lineEdit_FFCParam_MaxIntervalRange_256G->setAutoFillBackground(false);
+        lineEdit_FFCParam_MaxIntervalRange_256G->setAlignment(Qt::AlignCenter);
+        lineEdit_FFCParam_MaxIntervalRange_256G->setDragEnabled(false);
+        lineEdit_FFCParam_MaxIntervalRange_256G->setReadOnly(true);
+        lineEdit_FFCParam_MaxIntervalRange_256G->setClearButtonEnabled(false);
+
+        gridLayout_19->addWidget(lineEdit_FFCParam_MaxIntervalRange_256G, 0, 4, 1, 1);
+
+        label_61 = new QLabel(gridLayoutWidget_15);
+        label_61->setObjectName(QString::fromUtf8("label_61"));
+        sizePolicy.setHeightForWidth(label_61->sizePolicy().hasHeightForWidth());
+        label_61->setSizePolicy(sizePolicy);
+        label_61->setMinimumSize(QSize(190, 0));
+        label_61->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout_19->addWidget(label_61, 0, 0, 1, 1);
+
+        pushButton_SetFFCParams_256G = new QPushButton(gridLayoutWidget_15);
+        pushButton_SetFFCParams_256G->setObjectName(QString::fromUtf8("pushButton_SetFFCParams_256G"));
+        pushButton_SetFFCParams_256G->setEnabled(false);
+        pushButton_SetFFCParams_256G->setMinimumSize(QSize(0, 0));
+        pushButton_SetFFCParams_256G->setMaximumSize(QSize(30, 50));
+
+        gridLayout_19->addWidget(pushButton_SetFFCParams_256G, 0, 5, 1, 1);
+
+        groupBox_10 = new QGroupBox(page_3);
+        groupBox_10->setObjectName(QString::fromUtf8("groupBox_10"));
+        groupBox_10->setGeometry(QRect(490, 10, 251, 91));
+        gridLayoutWidget_19 = new QWidget(groupBox_10);
+        gridLayoutWidget_19->setObjectName(QString::fromUtf8("gridLayoutWidget_19"));
+        gridLayoutWidget_19->setGeometry(QRect(10, 20, 231, 68));
+        gridLayout_20 = new QGridLayout(gridLayoutWidget_19);
+        gridLayout_20->setObjectName(QString::fromUtf8("gridLayout_20"));
+        gridLayout_20->setContentsMargins(0, 0, 0, 0);
+        radioButton_GainModeHigh_256G = new QRadioButton(gridLayoutWidget_19);
+        radioButton_GainModeHigh_256G->setObjectName(QString::fromUtf8("radioButton_GainModeHigh_256G"));
+
+        gridLayout_20->addWidget(radioButton_GainModeHigh_256G, 0, 0, 1, 1);
+
+        pushButton_GetGainModeState_256G = new QPushButton(gridLayoutWidget_19);
+        pushButton_GetGainModeState_256G->setObjectName(QString::fromUtf8("pushButton_GetGainModeState_256G"));
+        pushButton_GetGainModeState_256G->setMinimumSize(QSize(50, 0));
+        pushButton_GetGainModeState_256G->setMaximumSize(QSize(50, 50));
+
+        gridLayout_20->addWidget(pushButton_GetGainModeState_256G, 0, 1, 3, 1);
+
+        radioButton_GainModeLow_256G = new QRadioButton(gridLayoutWidget_19);
+        radioButton_GainModeLow_256G->setObjectName(QString::fromUtf8("radioButton_GainModeLow_256G"));
+
+        gridLayout_20->addWidget(radioButton_GainModeLow_256G, 1, 0, 1, 1);
+
+        radioButton_GainModeAuto_256G = new QRadioButton(gridLayoutWidget_19);
+        radioButton_GainModeAuto_256G->setObjectName(QString::fromUtf8("radioButton_GainModeAuto_256G"));
+
+        gridLayout_20->addWidget(radioButton_GainModeAuto_256G, 2, 0, 1, 1);
+
+        pushButton_SetGainModeState_256G = new QPushButton(gridLayoutWidget_19);
+        pushButton_SetGainModeState_256G->setObjectName(QString::fromUtf8("pushButton_SetGainModeState_256G"));
+        pushButton_SetGainModeState_256G->setMaximumSize(QSize(50, 50));
+
+        gridLayout_20->addWidget(pushButton_SetGainModeState_256G, 0, 2, 3, 1);
+
+        pushButton_RestoreDefaultSensorConfig_256G = new QPushButton(page_3);
+        pushButton_RestoreDefaultSensorConfig_256G->setObjectName(QString::fromUtf8("pushButton_RestoreDefaultSensorConfig_256G"));
+        pushButton_RestoreDefaultSensorConfig_256G->setGeometry(QRect(620, 190, 111, 51));
+        stackedWidget_SensorControl->addWidget(page_3);
         tabWidget_Control->addTab(tabSensorControl, QString());
         tabRegionOfInterests = new QWidget();
         tabRegionOfInterests->setObjectName(QString::fromUtf8("tabRegionOfInterests"));
@@ -1668,221 +1963,137 @@ public:
 
         gridLayout_14->addWidget(tabWidget_Control, 3, 0, 1, 3);
 
-        label_space = new QLabel(centralwidget);
-        label_space->setObjectName(QString::fromUtf8("label_space"));
-        label_space->setMinimumSize(QSize(0, 1));
-        label_space->setMaximumSize(QSize(16777215, 1));
+        tabWidget_ConnectCamera = new QTabWidget(centralwidget);
+        tabWidget_ConnectCamera->setObjectName(QString::fromUtf8("tabWidget_ConnectCamera"));
+        tabWidget_ConnectCamera->setMinimumSize(QSize(250, 0));
+        tabWidget_ConnectCamera->setMaximumSize(QSize(250, 16777215));
+        tab_LocalCamera = new QWidget();
+        tab_LocalCamera->setObjectName(QString::fromUtf8("tab_LocalCamera"));
+        gridLayoutWidget = new QWidget(tab_LocalCamera);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(0, 10, 241, 52));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(gridLayoutWidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_14->addWidget(label_space, 2, 0, 1, 3);
+        gridLayout->addWidget(label, 0, 0, 1, 1);
 
-        gridLayout_preview = new QGridLayout();
-        gridLayout_preview->setObjectName(QString::fromUtf8("gridLayout_preview"));
-        gridLayout_preview->setSizeConstraint(QLayout::SetMaximumSize);
-        pushButton_RemoveAllRoi = new QPushButton(centralwidget);
-        pushButton_RemoveAllRoi->setObjectName(QString::fromUtf8("pushButton_RemoveAllRoi"));
-        pushButton_RemoveAllRoi->setMaximumSize(QSize(16777215, 23));
+        label_2 = new QLabel(gridLayoutWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_preview->addWidget(pushButton_RemoveAllRoi, 2, 5, 1, 1);
+        gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
-        label_10 = new QLabel(centralwidget);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-        label_10->setMinimumSize(QSize(0, 23));
-        label_10->setMaximumSize(QSize(16777215, 23));
+        lineEdit_LocalCameraName = new QLineEdit(gridLayoutWidget);
+        lineEdit_LocalCameraName->setObjectName(QString::fromUtf8("lineEdit_LocalCameraName"));
 
-        gridLayout_preview->addWidget(label_10, 3, 0, 1, 1);
+        gridLayout->addWidget(lineEdit_LocalCameraName, 0, 1, 1, 1);
 
-        label_MaximumTemperature = new QLabel(centralwidget);
-        label_MaximumTemperature->setObjectName(QString::fromUtf8("label_MaximumTemperature"));
-        label_MaximumTemperature->setMinimumSize(QSize(0, 16));
-        label_MaximumTemperature->setMaximumSize(QSize(16777215, 16));
-        label_MaximumTemperature->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        lineEdit_LocalCameraPort = new QLineEdit(gridLayoutWidget);
+        lineEdit_LocalCameraPort->setObjectName(QString::fromUtf8("lineEdit_LocalCameraPort"));
 
-        gridLayout_preview->addWidget(label_MaximumTemperature, 1, 4, 1, 2);
+        gridLayout->addWidget(lineEdit_LocalCameraPort, 1, 1, 1, 1);
 
-        comboBox_TemperatureUnit = new QComboBox(centralwidget);
-        comboBox_TemperatureUnit->addItem(QString());
-        comboBox_TemperatureUnit->addItem(QString());
-        comboBox_TemperatureUnit->addItem(QString());
-        comboBox_TemperatureUnit->addItem(QString());
-        comboBox_TemperatureUnit->setObjectName(QString::fromUtf8("comboBox_TemperatureUnit"));
-        comboBox_TemperatureUnit->setMinimumSize(QSize(0, 23));
-        comboBox_TemperatureUnit->setMaximumSize(QSize(16777215, 23));
+        pushButton_LocalCameraConnect = new QPushButton(tab_LocalCamera);
+        pushButton_LocalCameraConnect->setObjectName(QString::fromUtf8("pushButton_LocalCameraConnect"));
+        pushButton_LocalCameraConnect->setGeometry(QRect(0, 70, 241, 23));
+        pushButton_LocalCameraScan = new QPushButton(tab_LocalCamera);
+        pushButton_LocalCameraScan->setObjectName(QString::fromUtf8("pushButton_LocalCameraScan"));
+        pushButton_LocalCameraScan->setGeometry(QRect(0, 220, 241, 23));
+        listWidget_LocalCameraList = new QListWidget(tab_LocalCamera);
+        listWidget_LocalCameraList->setObjectName(QString::fromUtf8("listWidget_LocalCameraList"));
+        listWidget_LocalCameraList->setGeometry(QRect(0, 250, 241, 161));
+        label_29 = new QLabel(tab_LocalCamera);
+        label_29->setObjectName(QString::fromUtf8("label_29"));
+        label_29->setGeometry(QRect(0, 124, 241, 16));
+        comboBox_LocalCameraVideoFormat = new QComboBox(tab_LocalCamera);
+        comboBox_LocalCameraVideoFormat->setObjectName(QString::fromUtf8("comboBox_LocalCameraVideoFormat"));
+        comboBox_LocalCameraVideoFormat->setGeometry(QRect(0, 140, 241, 23));
+        tabWidget_ConnectCamera->addTab(tab_LocalCamera, QString());
+        tab_RemoteCamera = new QWidget();
+        tab_RemoteCamera->setObjectName(QString::fromUtf8("tab_RemoteCamera"));
+        pushButton_RemoteCameraScan = new QPushButton(tab_RemoteCamera);
+        pushButton_RemoteCameraScan->setObjectName(QString::fromUtf8("pushButton_RemoteCameraScan"));
+        pushButton_RemoteCameraScan->setGeometry(QRect(0, 230, 241, 23));
+        pushButton_RemoteCameraConnect = new QPushButton(tab_RemoteCamera);
+        pushButton_RemoteCameraConnect->setObjectName(QString::fromUtf8("pushButton_RemoteCameraConnect"));
+        pushButton_RemoteCameraConnect->setGeometry(QRect(0, 150, 241, 23));
+        gridLayoutWidget_2 = new QWidget(tab_RemoteCamera);
+        gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
+        gridLayoutWidget_2->setGeometry(QRect(0, 10, 241, 136));
+        gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        gridLayout_2->setContentsMargins(0, 0, 0, 0);
+        lineEdit_RemoteCameraSerial = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_RemoteCameraSerial->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraSerial"));
 
-        gridLayout_preview->addWidget(comboBox_TemperatureUnit, 3, 5, 1, 1);
+        gridLayout_2->addWidget(lineEdit_RemoteCameraSerial, 1, 1, 1, 1);
 
-        radioButton_ShapeRectangle = new QRadioButton(centralwidget);
-        radioButton_ShapeRectangle->setObjectName(QString::fromUtf8("radioButton_ShapeRectangle"));
-        radioButton_ShapeRectangle->setMaximumSize(QSize(16777215, 23));
+        label_5 = new QLabel(gridLayoutWidget_2);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_preview->addWidget(radioButton_ShapeRectangle, 2, 3, 1, 1);
+        gridLayout_2->addWidget(label_5, 2, 0, 1, 1);
 
-        label_11 = new QLabel(centralwidget);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-        label_11->setMinimumSize(QSize(0, 23));
-        label_11->setMaximumSize(QSize(16777215, 23));
+        lineEdit_RemoteCameraIp = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_RemoteCameraIp->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraIp"));
 
-        gridLayout_preview->addWidget(label_11, 3, 4, 1, 1);
+        gridLayout_2->addWidget(lineEdit_RemoteCameraIp, 3, 1, 1, 1);
 
-        label_AverageTemperature = new QLabel(centralwidget);
-        label_AverageTemperature->setObjectName(QString::fromUtf8("label_AverageTemperature"));
-        label_AverageTemperature->setMinimumSize(QSize(0, 16));
-        label_AverageTemperature->setMaximumSize(QSize(16777215, 16));
-        label_AverageTemperature->setAlignment(Qt::AlignCenter);
+        lineEdit_RemoteCameraName = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_RemoteCameraName->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraName"));
 
-        gridLayout_preview->addWidget(label_AverageTemperature, 1, 3, 1, 1);
+        gridLayout_2->addWidget(lineEdit_RemoteCameraName, 0, 1, 1, 1);
 
-        comboBox_ColorMap = new QComboBox(centralwidget);
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->addItem(QString());
-        comboBox_ColorMap->setObjectName(QString::fromUtf8("comboBox_ColorMap"));
-        comboBox_ColorMap->setMinimumSize(QSize(0, 23));
-        comboBox_ColorMap->setMaximumSize(QSize(16777215, 23));
+        label_3 = new QLabel(gridLayoutWidget_2);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_preview->addWidget(comboBox_ColorMap, 3, 1, 1, 2);
+        gridLayout_2->addWidget(label_3, 0, 0, 1, 1);
 
-        label_MinimumTemperature = new QLabel(centralwidget);
-        label_MinimumTemperature->setObjectName(QString::fromUtf8("label_MinimumTemperature"));
-        label_MinimumTemperature->setMinimumSize(QSize(0, 16));
-        label_MinimumTemperature->setMaximumSize(QSize(16777215, 16));
+        lineEdit_RemoteCameraMac = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_RemoteCameraMac->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraMac"));
 
-        gridLayout_preview->addWidget(label_MinimumTemperature, 1, 0, 1, 3);
+        gridLayout_2->addWidget(lineEdit_RemoteCameraMac, 2, 1, 1, 1);
 
-        label_Preview = new QLabel(centralwidget);
-        label_Preview->setObjectName(QString::fromUtf8("label_Preview"));
-        label_Preview->setMinimumSize(QSize(10, 10));
-        label_Preview->setMaximumSize(QSize(99999, 99999));
-        label_Preview->setBaseSize(QSize(480, 360));
-        QPalette palette;
-        QBrush brush(QColor(0, 0, 0, 255));
-        brush.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
-        QBrush brush1(QColor(202, 202, 202, 255));
-        brush1.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Button, brush1);
-        QBrush brush2(QColor(255, 255, 255, 255));
-        brush2.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Light, brush2);
-        QBrush brush3(QColor(228, 228, 228, 255));
-        brush3.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Midlight, brush3);
-        QBrush brush4(QColor(101, 101, 101, 255));
-        brush4.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Dark, brush4);
-        QBrush brush5(QColor(135, 135, 135, 255));
-        brush5.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Mid, brush5);
-        palette.setBrush(QPalette::Active, QPalette::Text, brush);
-        palette.setBrush(QPalette::Active, QPalette::BrightText, brush2);
-        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Active, QPalette::Base, brush2);
-        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Active, QPalette::Shadow, brush);
-        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush3);
-        QBrush brush6(QColor(255, 255, 220, 255));
-        brush6.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush6);
-        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush);
-        QBrush brush7(QColor(0, 0, 0, 128));
-        brush7.setStyle(Qt::SolidPattern);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush7);
-#endif
-        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
-        palette.setBrush(QPalette::Inactive, QPalette::Light, brush2);
-        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush3);
-        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush4);
-        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush5);
-        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush2);
-        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Base, brush2);
-        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush3);
-        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush6);
-        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush7);
-#endif
-        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Light, brush2);
-        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush3);
-        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush5);
-        palette.setBrush(QPalette::Disabled, QPalette::Text, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush2);
-        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush6);
-        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush7);
-#endif
-        label_Preview->setPalette(palette);
-        label_Preview->setLayoutDirection(Qt::LeftToRight);
-        label_Preview->setAlignment(Qt::AlignCenter);
+        label_4 = new QLabel(gridLayoutWidget_2);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_preview->addWidget(label_Preview, 0, 0, 1, 6);
+        gridLayout_2->addWidget(label_4, 1, 0, 1, 1);
 
-        radioButton_ShapeEllipse = new QRadioButton(centralwidget);
-        radioButton_ShapeEllipse->setObjectName(QString::fromUtf8("radioButton_ShapeEllipse"));
-        radioButton_ShapeEllipse->setMaximumSize(QSize(16777215, 23));
+        label_6 = new QLabel(gridLayoutWidget_2);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_preview->addWidget(radioButton_ShapeEllipse, 2, 4, 1, 1);
+        gridLayout_2->addWidget(label_6, 3, 0, 1, 1);
 
-        checkBox_NoiseFiltering = new QCheckBox(centralwidget);
-        checkBox_NoiseFiltering->setObjectName(QString::fromUtf8("checkBox_NoiseFiltering"));
-        checkBox_NoiseFiltering->setMinimumSize(QSize(0, 23));
-        checkBox_NoiseFiltering->setMaximumSize(QSize(16777215, 23));
+        label_58 = new QLabel(gridLayoutWidget_2);
+        label_58->setObjectName(QString::fromUtf8("label_58"));
+        label_58->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout_preview->addWidget(checkBox_NoiseFiltering, 3, 3, 1, 1);
+        gridLayout_2->addWidget(label_58, 4, 0, 1, 1);
 
-        radioButton_ShapeLine = new QRadioButton(centralwidget);
-        radioButton_ShapeLine->setObjectName(QString::fromUtf8("radioButton_ShapeLine"));
-        radioButton_ShapeLine->setMaximumSize(QSize(16777215, 23));
+        lineEdit_RemoteCameraAdapterIp = new QLineEdit(gridLayoutWidget_2);
+        lineEdit_RemoteCameraAdapterIp->setObjectName(QString::fromUtf8("lineEdit_RemoteCameraAdapterIp"));
 
-        gridLayout_preview->addWidget(radioButton_ShapeLine, 2, 2, 1, 1);
+        gridLayout_2->addWidget(lineEdit_RemoteCameraAdapterIp, 4, 1, 1, 1);
 
-        radioButton_ShapeSpot = new QRadioButton(centralwidget);
-        radioButton_ShapeSpot->setObjectName(QString::fromUtf8("radioButton_ShapeSpot"));
-        radioButton_ShapeSpot->setMaximumSize(QSize(16777215, 23));
+        listWidget_RemoteCameraList = new QListWidget(tab_RemoteCamera);
+        listWidget_RemoteCameraList->setObjectName(QString::fromUtf8("listWidget_RemoteCameraList"));
+        listWidget_RemoteCameraList->setGeometry(QRect(0, 260, 241, 151));
+        label_57 = new QLabel(tab_RemoteCamera);
+        label_57->setObjectName(QString::fromUtf8("label_57"));
+        label_57->setGeometry(QRect(0, 180, 241, 16));
+        comboBox_RemoteCameraVideoFormat = new QComboBox(tab_RemoteCamera);
+        comboBox_RemoteCameraVideoFormat->setObjectName(QString::fromUtf8("comboBox_RemoteCameraVideoFormat"));
+        comboBox_RemoteCameraVideoFormat->setGeometry(QRect(0, 200, 241, 23));
+        tabWidget_ConnectCamera->addTab(tab_RemoteCamera, QString());
 
-        gridLayout_preview->addWidget(radioButton_ShapeSpot, 2, 1, 1, 1);
-
-        radioButton_ShapeCursor = new QRadioButton(centralwidget);
-        radioButton_ShapeCursor->setObjectName(QString::fromUtf8("radioButton_ShapeCursor"));
-        radioButton_ShapeCursor->setMaximumSize(QSize(16777215, 23));
-
-        gridLayout_preview->addWidget(radioButton_ShapeCursor, 2, 0, 1, 1);
-
-
-        gridLayout_14->addLayout(gridLayout_preview, 0, 1, 2, 2);
+        gridLayout_14->addWidget(tabWidget_ConnectCamera, 0, 0, 2, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -1891,10 +2102,10 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget_ConnectCamera->setCurrentIndex(0);
         tabWidget_Product->setCurrentIndex(0);
         tabWidget_Control->setCurrentIndex(0);
-        stackedWidget_SensorControl->setCurrentIndex(0);
+        stackedWidget_SensorControl->setCurrentIndex(2);
+        tabWidget_ConnectCamera->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1903,18 +2114,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "TmWinQt", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Name :", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Com Port :", nullptr));
-        pushButton_LocalCameraConnect->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
-        pushButton_LocalCameraScan->setText(QCoreApplication::translate("MainWindow", "Scan", nullptr));
-        tabWidget_ConnectCamera->setTabText(tabWidget_ConnectCamera->indexOf(tab_LocalCamera), QCoreApplication::translate("MainWindow", "Local Camera", nullptr));
-        pushButton_RemoteCameraScan->setText(QCoreApplication::translate("MainWindow", "Scan", nullptr));
-        pushButton_RemoteCameraConnect->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "Name :", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "IP Address :", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Serial :", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "MAC Address :", nullptr));
-        tabWidget_ConnectCamera->setTabText(tabWidget_ConnectCamera->indexOf(tab_RemoteCamera), QCoreApplication::translate("MainWindow", "Remote Camera", nullptr));
+        label_space->setText(QCoreApplication::translate("MainWindow", ".", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Product Information", nullptr));
         label_ProductModelName->setText(QString());
         label_13->setText(QCoreApplication::translate("MainWindow", "Product Serial Number : ", nullptr));
@@ -1967,6 +2167,48 @@ public:
         label_19->setText(QCoreApplication::translate("MainWindow", "MAC Address :", nullptr));
         pushButton_SystemReboot->setText(QCoreApplication::translate("MainWindow", "Reboot to Apply Changes", nullptr));
         tabWidget_Product->setTabText(tabWidget_Product->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Network", nullptr));
+        pushButton_RemoveAllRoi->setText(QCoreApplication::translate("MainWindow", "Remove All", nullptr));
+        label_10->setText(QCoreApplication::translate("MainWindow", "Color Map", nullptr));
+        label_MaximumTemperature->setText(QCoreApplication::translate("MainWindow", "MaxTemp", nullptr));
+        comboBox_TemperatureUnit->setItemText(0, QCoreApplication::translate("MainWindow", "Raw", nullptr));
+        comboBox_TemperatureUnit->setItemText(1, QCoreApplication::translate("MainWindow", "Celsius(\342\204\203)", nullptr));
+        comboBox_TemperatureUnit->setItemText(2, QCoreApplication::translate("MainWindow", "Fahrenheit(\342\204\211)", nullptr));
+        comboBox_TemperatureUnit->setItemText(3, QCoreApplication::translate("MainWindow", "Kelvin(K)", nullptr));
+
+        radioButton_ShapeRectangle->setText(QCoreApplication::translate("MainWindow", "Rectangle", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
+        label_AverageTemperature->setText(QCoreApplication::translate("MainWindow", "AvgTemp", nullptr));
+        comboBox_ColorMap->setItemText(0, QCoreApplication::translate("MainWindow", "GrayScale", nullptr));
+        comboBox_ColorMap->setItemText(1, QCoreApplication::translate("MainWindow", "Autumn", nullptr));
+        comboBox_ColorMap->setItemText(2, QCoreApplication::translate("MainWindow", "Bone", nullptr));
+        comboBox_ColorMap->setItemText(3, QCoreApplication::translate("MainWindow", "Jet", nullptr));
+        comboBox_ColorMap->setItemText(4, QCoreApplication::translate("MainWindow", "Winter", nullptr));
+        comboBox_ColorMap->setItemText(5, QCoreApplication::translate("MainWindow", "Rainbow", nullptr));
+        comboBox_ColorMap->setItemText(6, QCoreApplication::translate("MainWindow", "Ocean", nullptr));
+        comboBox_ColorMap->setItemText(7, QCoreApplication::translate("MainWindow", "Summer", nullptr));
+        comboBox_ColorMap->setItemText(8, QCoreApplication::translate("MainWindow", "Spring", nullptr));
+        comboBox_ColorMap->setItemText(9, QCoreApplication::translate("MainWindow", "Cool", nullptr));
+        comboBox_ColorMap->setItemText(10, QCoreApplication::translate("MainWindow", "Hsv", nullptr));
+        comboBox_ColorMap->setItemText(11, QCoreApplication::translate("MainWindow", "Pink", nullptr));
+        comboBox_ColorMap->setItemText(12, QCoreApplication::translate("MainWindow", "Hot", nullptr));
+        comboBox_ColorMap->setItemText(13, QCoreApplication::translate("MainWindow", "Parula", nullptr));
+        comboBox_ColorMap->setItemText(14, QCoreApplication::translate("MainWindow", "Magma", nullptr));
+        comboBox_ColorMap->setItemText(15, QCoreApplication::translate("MainWindow", "Inferno", nullptr));
+        comboBox_ColorMap->setItemText(16, QCoreApplication::translate("MainWindow", "Plasma", nullptr));
+        comboBox_ColorMap->setItemText(17, QCoreApplication::translate("MainWindow", "Viridis", nullptr));
+        comboBox_ColorMap->setItemText(18, QCoreApplication::translate("MainWindow", "Cividis", nullptr));
+        comboBox_ColorMap->setItemText(19, QCoreApplication::translate("MainWindow", "Twilight", nullptr));
+        comboBox_ColorMap->setItemText(20, QCoreApplication::translate("MainWindow", "TwilightShifted", nullptr));
+        comboBox_ColorMap->setItemText(21, QCoreApplication::translate("MainWindow", "Turbo", nullptr));
+        comboBox_ColorMap->setItemText(22, QCoreApplication::translate("MainWindow", "DeepGreen", nullptr));
+
+        label_MinimumTemperature->setText(QCoreApplication::translate("MainWindow", "MinTemp", nullptr));
+        label_Preview->setText(QCoreApplication::translate("MainWindow", "Preview", nullptr));
+        radioButton_ShapeEllipse->setText(QCoreApplication::translate("MainWindow", "Ellipse", nullptr));
+        checkBox_NoiseFiltering->setText(QCoreApplication::translate("MainWindow", "Noise Filtering", nullptr));
+        radioButton_ShapeLine->setText(QCoreApplication::translate("MainWindow", "Line", nullptr));
+        radioButton_ShapeSpot->setText(QCoreApplication::translate("MainWindow", "Spot", nullptr));
+        radioButton_ShapeCursor->setText(QCoreApplication::translate("MainWindow", "Cursor", nullptr));
         pushButton_RestoreDefaultSensorConfig->setText(QCoreApplication::translate("MainWindow", "Restore to Factory\n"
 " Default", nullptr));
         groupBox_5->setTitle(QCoreApplication::translate("MainWindow", "FFC Parameters", nullptr));
@@ -1977,23 +2219,23 @@ public:
         pushButton_GetFFCParams->setText(QCoreApplication::translate("MainWindow", "Get", nullptr));
         label_39->setText(QCoreApplication::translate("MainWindow", "Maximum Interval :", nullptr));
         lineEdit_FFCParam_AutoTriggerThreshold->setText(QCoreApplication::translate("MainWindow", "0 ~ 65535", nullptr));
-        groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "Fluex Parameters", nullptr));
-        pushButton_GetFluexParams->setText(QCoreApplication::translate("MainWindow", "Get", nullptr));
+        groupBox_FluxParameters->setTitle(QCoreApplication::translate("MainWindow", "Flux Parameters", nullptr));
+        pushButton_GetFluxParams->setText(QCoreApplication::translate("MainWindow", "Get", nullptr));
         label_30->setText(QCoreApplication::translate("MainWindow", "Emissivity :", nullptr));
         label_35->setText(QCoreApplication::translate("MainWindow", "Distance (Not support) :", nullptr));
         label_32->setText(QCoreApplication::translate("MainWindow", "Atmospheric Transmittance :", nullptr));
         label_34->setText(QCoreApplication::translate("MainWindow", "Ambient Reflection Temperature :", nullptr));
         label_31->setText(QString());
-        lineEdit_FluexParam_EmissivityRange->setText(QCoreApplication::translate("MainWindow", "0.01 ~ 1.00", nullptr));
+        lineEdit_FluxParam_EmissivityRange->setText(QCoreApplication::translate("MainWindow", "0.01 ~ 1.00", nullptr));
         label_36->setText(QCoreApplication::translate("MainWindow", "\342\204\203", nullptr));
         label_37->setText(QCoreApplication::translate("MainWindow", "\342\204\203", nullptr));
         label_33->setText(QCoreApplication::translate("MainWindow", "Atmospheric Temperature :", nullptr));
         label_38->setText(QCoreApplication::translate("MainWindow", "m", nullptr));
-        pushButton_SetFluexParams->setText(QCoreApplication::translate("MainWindow", "Set", nullptr));
-        lineEdit_FluexParam_AtmosphericTransmittanceRange->setText(QCoreApplication::translate("MainWindow", "0.01 ~ 1.00", nullptr));
-        lineEdit_FluexParamAtmosphericTempRange->setText(QCoreApplication::translate("MainWindow", "-43.15 ~ 625.85", nullptr));
-        lineEdit_FluexParam_AmbientReflectionTempRange->setText(QCoreApplication::translate("MainWindow", "-43.15 ~ 626.85", nullptr));
-        lineEdit_FluexParamDistanceRange->setText(QCoreApplication::translate("MainWindow", "0.00 ~ 200.00", nullptr));
+        pushButton_SetFluxParams->setText(QCoreApplication::translate("MainWindow", "Set", nullptr));
+        lineEdit_FluxParam_AtmosphericTransmittanceRange->setText(QCoreApplication::translate("MainWindow", "0.01 ~ 1.00", nullptr));
+        lineEdit_FluxParamAtmosphericTempRange->setText(QCoreApplication::translate("MainWindow", "-43.15 ~ 625.85", nullptr));
+        lineEdit_FluxParam_AmbientReflectionTempRange->setText(QCoreApplication::translate("MainWindow", "-43.15 ~ 626.85", nullptr));
+        lineEdit_FluxParamDistanceRange->setText(QCoreApplication::translate("MainWindow", "0.00 ~ 200.00", nullptr));
         groupBox_6->setTitle(QCoreApplication::translate("MainWindow", "Gain Mode State", nullptr));
         radioButton_GainModeHigh->setText(QCoreApplication::translate("MainWindow", "High", nullptr));
         pushButton_GetGainModeState->setText(QCoreApplication::translate("MainWindow", "Get", nullptr));
@@ -2043,6 +2285,28 @@ public:
         pushButton_SetFlatFieldCorrectionMode_160E->setText(QCoreApplication::translate("MainWindow", "Set", nullptr));
         pushButton_RunFlatFieldCorrection_160E->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
         pushButton_RestoreDefaultFluxParameters_160E->setText(QCoreApplication::translate("MainWindow", "Restore Flux Parameters to Default", nullptr));
+        pushButton_StoreUserSensorConfig_256G->setText(QCoreApplication::translate("MainWindow", "Store Config\n"
+" Permanently", nullptr));
+        groupBox_8->setTitle(QCoreApplication::translate("MainWindow", "Flat Field Correction", nullptr));
+        radioButton_FlatFieldCorrectionAutomatic_256G->setText(QCoreApplication::translate("MainWindow", "Automatic", nullptr));
+        radioButton_FlatFieldCorrectionManual_256G->setText(QCoreApplication::translate("MainWindow", "Manual", nullptr));
+        pushButton_GetFlatFieldCorrection_256G->setText(QCoreApplication::translate("MainWindow", "Get", nullptr));
+        pushButton_SetFlatFieldCorrection_256G->setText(QCoreApplication::translate("MainWindow", "Set", nullptr));
+        pushButton_RunFlatFieldCorrection_256G->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
+        groupBox_9->setTitle(QCoreApplication::translate("MainWindow", "FFC Parameters", nullptr));
+        label_59->setText(QCoreApplication::translate("MainWindow", "m", nullptr));
+        pushButton_GetFFCParams_256G->setText(QCoreApplication::translate("MainWindow", "Get", nullptr));
+        lineEdit_FFCParam_MaxIntervalRange_256G->setText(QCoreApplication::translate("MainWindow", "0 ~ 100", nullptr));
+        label_61->setText(QCoreApplication::translate("MainWindow", "Maximum Interval :", nullptr));
+        pushButton_SetFFCParams_256G->setText(QCoreApplication::translate("MainWindow", "Set", nullptr));
+        groupBox_10->setTitle(QCoreApplication::translate("MainWindow", "Gain Mode State", nullptr));
+        radioButton_GainModeHigh_256G->setText(QCoreApplication::translate("MainWindow", "High", nullptr));
+        pushButton_GetGainModeState_256G->setText(QCoreApplication::translate("MainWindow", "Get", nullptr));
+        radioButton_GainModeLow_256G->setText(QCoreApplication::translate("MainWindow", "Low", nullptr));
+        radioButton_GainModeAuto_256G->setText(QCoreApplication::translate("MainWindow", "Auto", nullptr));
+        pushButton_SetGainModeState_256G->setText(QCoreApplication::translate("MainWindow", "Set", nullptr));
+        pushButton_RestoreDefaultSensorConfig_256G->setText(QCoreApplication::translate("MainWindow", "Restore to Factory\n"
+" Default", nullptr));
         tabWidget_Control->setTabText(tabWidget_Control->indexOf(tabSensorControl), QCoreApplication::translate("MainWindow", "Sensor Control", nullptr));
         label_42->setText(QCoreApplication::translate("MainWindow", "ROI List", nullptr));
         pushButton_RemoveRoiItem->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
@@ -2066,49 +2330,21 @@ public:
         pushButton_AddRoiItem->setText(QCoreApplication::translate("MainWindow", "Add", nullptr));
         label_51->setText(QCoreApplication::translate("MainWindow", "Y :", nullptr));
         tabWidget_Control->setTabText(tabWidget_Control->indexOf(tabRegionOfInterests), QCoreApplication::translate("MainWindow", "Region of Interests", nullptr));
-        label_space->setText(QCoreApplication::translate("MainWindow", ".", nullptr));
-        pushButton_RemoveAllRoi->setText(QCoreApplication::translate("MainWindow", "Remove All", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "Color Map", nullptr));
-        label_MaximumTemperature->setText(QCoreApplication::translate("MainWindow", "MaxTemp", nullptr));
-        comboBox_TemperatureUnit->setItemText(0, QCoreApplication::translate("MainWindow", "Raw", nullptr));
-        comboBox_TemperatureUnit->setItemText(1, QCoreApplication::translate("MainWindow", "Celsius(\342\204\203)", nullptr));
-        comboBox_TemperatureUnit->setItemText(2, QCoreApplication::translate("MainWindow", "Fahrenheit(\342\204\211)", nullptr));
-        comboBox_TemperatureUnit->setItemText(3, QCoreApplication::translate("MainWindow", "Kelvin(K)", nullptr));
-
-        radioButton_ShapeRectangle->setText(QCoreApplication::translate("MainWindow", "Rectangle", nullptr));
-        label_11->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
-        label_AverageTemperature->setText(QCoreApplication::translate("MainWindow", "AvgTemp", nullptr));
-        comboBox_ColorMap->setItemText(0, QCoreApplication::translate("MainWindow", "GrayScale", nullptr));
-        comboBox_ColorMap->setItemText(1, QCoreApplication::translate("MainWindow", "Autumn", nullptr));
-        comboBox_ColorMap->setItemText(2, QCoreApplication::translate("MainWindow", "Bone", nullptr));
-        comboBox_ColorMap->setItemText(3, QCoreApplication::translate("MainWindow", "Jet", nullptr));
-        comboBox_ColorMap->setItemText(4, QCoreApplication::translate("MainWindow", "Winter", nullptr));
-        comboBox_ColorMap->setItemText(5, QCoreApplication::translate("MainWindow", "Rainbow", nullptr));
-        comboBox_ColorMap->setItemText(6, QCoreApplication::translate("MainWindow", "Ocean", nullptr));
-        comboBox_ColorMap->setItemText(7, QCoreApplication::translate("MainWindow", "Summer", nullptr));
-        comboBox_ColorMap->setItemText(8, QCoreApplication::translate("MainWindow", "Spring", nullptr));
-        comboBox_ColorMap->setItemText(9, QCoreApplication::translate("MainWindow", "Cool", nullptr));
-        comboBox_ColorMap->setItemText(10, QCoreApplication::translate("MainWindow", "Hsv", nullptr));
-        comboBox_ColorMap->setItemText(11, QCoreApplication::translate("MainWindow", "Pink", nullptr));
-        comboBox_ColorMap->setItemText(12, QCoreApplication::translate("MainWindow", "Hot", nullptr));
-        comboBox_ColorMap->setItemText(13, QCoreApplication::translate("MainWindow", "Parula", nullptr));
-        comboBox_ColorMap->setItemText(14, QCoreApplication::translate("MainWindow", "Magma", nullptr));
-        comboBox_ColorMap->setItemText(15, QCoreApplication::translate("MainWindow", "Inferno", nullptr));
-        comboBox_ColorMap->setItemText(16, QCoreApplication::translate("MainWindow", "Plasma", nullptr));
-        comboBox_ColorMap->setItemText(17, QCoreApplication::translate("MainWindow", "Viridis", nullptr));
-        comboBox_ColorMap->setItemText(18, QCoreApplication::translate("MainWindow", "Cividis", nullptr));
-        comboBox_ColorMap->setItemText(19, QCoreApplication::translate("MainWindow", "Twilight", nullptr));
-        comboBox_ColorMap->setItemText(20, QCoreApplication::translate("MainWindow", "TwilightShifted", nullptr));
-        comboBox_ColorMap->setItemText(21, QCoreApplication::translate("MainWindow", "Turbo", nullptr));
-        comboBox_ColorMap->setItemText(22, QCoreApplication::translate("MainWindow", "DeepGreen", nullptr));
-
-        label_MinimumTemperature->setText(QCoreApplication::translate("MainWindow", "MinTemp", nullptr));
-        label_Preview->setText(QCoreApplication::translate("MainWindow", "Preview", nullptr));
-        radioButton_ShapeEllipse->setText(QCoreApplication::translate("MainWindow", "Ellipse", nullptr));
-        checkBox_NoiseFiltering->setText(QCoreApplication::translate("MainWindow", "Noise Filtering", nullptr));
-        radioButton_ShapeLine->setText(QCoreApplication::translate("MainWindow", "Line", nullptr));
-        radioButton_ShapeSpot->setText(QCoreApplication::translate("MainWindow", "Spot", nullptr));
-        radioButton_ShapeCursor->setText(QCoreApplication::translate("MainWindow", "Cursor", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Name :", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Com Port :", nullptr));
+        pushButton_LocalCameraConnect->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
+        pushButton_LocalCameraScan->setText(QCoreApplication::translate("MainWindow", "Scan", nullptr));
+        label_29->setText(QCoreApplication::translate("MainWindow", "Video Format", nullptr));
+        tabWidget_ConnectCamera->setTabText(tabWidget_ConnectCamera->indexOf(tab_LocalCamera), QCoreApplication::translate("MainWindow", "Local Camera", nullptr));
+        pushButton_RemoteCameraScan->setText(QCoreApplication::translate("MainWindow", "Scan", nullptr));
+        pushButton_RemoteCameraConnect->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "MAC Address :", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "Name :", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Serial :", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "IP Address :", nullptr));
+        label_58->setText(QCoreApplication::translate("MainWindow", "Adapter IP :", nullptr));
+        label_57->setText(QCoreApplication::translate("MainWindow", "Video Format", nullptr));
+        tabWidget_ConnectCamera->setTabText(tabWidget_ConnectCamera->indexOf(tab_RemoteCamera), QCoreApplication::translate("MainWindow", "Remote Camera", nullptr));
     } // retranslateUi
 
 };

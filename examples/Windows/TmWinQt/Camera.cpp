@@ -140,7 +140,9 @@ void Camera::processMeasurements(TmFrame* pFrame) {
         return;
     }
 
-    double minVal, avgVal, maxVal;
+    double minVal = 0.0;
+    double avgVal = 0.0;
+    double maxVal = 0.0;
     Point minLoc, maxLoc;
     uint8_t* bitMap = pFrame->ToBitmap(ColorOrder::COLOR_RGB);
     if (bitMap == nullptr) {
@@ -165,8 +167,11 @@ void Camera::processMeasurements(TmFrame* pFrame) {
         QMetaObject::invokeMethod(ui->label_Preview, "setPixmap", Qt::QueuedConnection, Q_ARG(QPixmap, QPixmap::fromImage(image)));
 
         // Perform measurements in the worker thread
-        pFrame->DoMeasure(roiManager.Items);
-        pFrame->MinMaxLoc(minVal, avgVal, maxVal, minLoc, maxLoc);
+        if (pTmCamera->GetFormat() == "Y16")
+        {
+            pFrame->DoMeasure(roiManager.Items);
+            pFrame->MinMaxLoc(minVal, avgVal, maxVal, minLoc, maxLoc);
+        }
 
         std::wstring wideStr;
         ConvertAnsiToUnicodeString(wideStr, pTmCamera->GetTempUnitSymbol());
@@ -253,6 +258,7 @@ void Camera::ScanLocalCamera()
     ui->lineEdit_LocalCameraName->setText("");
     ui->lineEdit_LocalCameraPort->setText("");
     ui->listWidget_LocalCameraList->clear();
+    ui->comboBox_LocalCameraVideoFormat->clear();
     for (auto cam : CamList)
     {
         delete cam;
@@ -262,7 +268,15 @@ void Camera::ScanLocalCamera()
     {
         QString qstr = QString::fromStdString(cam.Name + " - " + cam.ComPort);
         ui->listWidget_LocalCameraList->addItem(qstr);
-        CamList.push_back(new TmLocalCamInfo(cam.Name, cam.ComPort, cam.Index));
+        if (cam.MediaSourcesList.size() > 0)
+        {
+
+            CamList.push_back(new TmLocalCamInfo(cam.Name, cam.ComPort, cam.Index, cam.MediaSourcesList));
+        }
+        else
+        {
+            CamList.push_back(new TmLocalCamInfo(cam.Name, cam.ComPort, cam.Index));
+        }
     }
     if (!CamList.empty())
     {
@@ -282,7 +296,9 @@ void Camera::ScanRemoteCamera()
     ui->lineEdit_RemoteCameraSerial->setText("");
     ui->lineEdit_RemoteCameraMac->setText("");
     ui->lineEdit_RemoteCameraIp->setText("");
+    ui->lineEdit_RemoteCameraAdapterIp->setText("");
     ui->listWidget_RemoteCameraList->clear();
+    ui->comboBox_RemoteCameraVideoFormat->clear();
     for (auto cam : CamList)
     {
         delete cam;
@@ -292,7 +308,14 @@ void Camera::ScanRemoteCamera()
     {
         QString qstr = QString::fromStdString(cam.Name + " - " + cam.AddrIP);
         ui->listWidget_RemoteCameraList->addItem(qstr);
-        CamList.push_back(new TmRemoteCamInfo(cam.Name, cam.SerialNumber, cam.AddrMAC, cam.AddrIP));
+        if (cam.MediaSourcesList.size() > 0)
+        {
+            CamList.push_back(new TmRemoteCamInfo(cam.Name, cam.SerialNumber, cam.AddrMAC, cam.AddrIP, cam.AdapterIP, cam.MediaSourcesList));
+        }
+        else
+        {
+            CamList.push_back(new TmRemoteCamInfo(cam.Name, cam.SerialNumber, cam.AddrMAC, cam.AddrIP, cam.AdapterIP));
+        }
     }
     if (!CamList.empty())
     {
@@ -302,6 +325,7 @@ void Camera::ScanRemoteCamera()
         ui->lineEdit_RemoteCameraSerial->setText(QString::fromStdString(camInfo->SerialNumber));
         ui->lineEdit_RemoteCameraMac->setText(QString::fromStdString(camInfo->AddrMAC));
         ui->lineEdit_RemoteCameraIp->setText(QString::fromStdString(camInfo->AddrIP));
+        ui->lineEdit_RemoteCameraAdapterIp->setText(QString::fromStdString(camInfo->AdapterIP));
     }
 }
 
@@ -794,6 +818,11 @@ void Camera::pushButton_LocalCameraConnect_Clicked()
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(1);
             }
+            else if (pTmCamera->GetDevName() == "TMC256GB")
+            {
+                ui->tabWidget_Control->setCurrentIndex(0);
+                ui->stackedWidget_SensorControl->setCurrentIndex(2);
+            }
 
             ui->tabWidget_Control->setVisible(true);
             ui->stackedWidget_SensorControl->setVisible(true);
@@ -862,11 +891,18 @@ void Camera::pushButton_RemoteCameraConnect_Clicked()
             {
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(0);
+                ui->groupBox_FluxParameters->setEnabled(true);
+                ui->groupBox_FluxParameters->setTitle("Flux Parameters");
             }
             else if (pTmCamera->GetDevName() == "TMC160E" || pTmCamera->GetDevName() == "TMC80E")
             {
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(1);
+            }
+            else if (pTmCamera->GetDevName() == "TMC256GE")
+            {
+                ui->tabWidget_Control->setCurrentIndex(0);
+                ui->stackedWidget_SensorControl->setCurrentIndex(2);
             }
 
             ui->tabWidget_Control->setVisible(true);
@@ -916,6 +952,20 @@ void Camera::listWidget_LocalCameraList_CurrentRowChanged(int row)
     TmLocalCamInfo* camInfo = (TmLocalCamInfo*)CamList[row];
     ui->lineEdit_LocalCameraName->setText(QString::fromStdString(camInfo->Name));
     ui->lineEdit_LocalCameraPort->setText(QString::fromStdString(camInfo->ComPort));
+    ui->comboBox_LocalCameraVideoFormat->clear();
+    int index = 0;
+    for (auto media : camInfo->MediaSourcesList)
+    {
+        QString qstrMedia = QString::fromStdString(
+            camInfo->MediaSourcesList[index].Format + ":" +
+            std::to_string(camInfo->MediaSourcesList[index].Width) + "x" +
+            std::to_string(camInfo->MediaSourcesList[index].Height) + "@" +
+            std::to_string(camInfo->MediaSourcesList[index].FrameRate) + "fps-" +
+            std::to_string(camInfo->MediaSourcesList[index].BitPerPixel) + "bpp"
+        );
+        ui->comboBox_LocalCameraVideoFormat->addItem(qstrMedia);
+        index++;
+    }
 }
 
 /*
@@ -929,6 +979,20 @@ void Camera::listWidget_RemoteCameraList_CurrentRowChanged(int row)
     ui->lineEdit_RemoteCameraSerial->setText(QString::fromStdString(camInfo->SerialNumber));
     ui->lineEdit_RemoteCameraMac->setText(QString::fromStdString(camInfo->AddrMAC));
     ui->lineEdit_RemoteCameraIp->setText(QString::fromStdString(camInfo->AddrIP));
+    ui->comboBox_RemoteCameraVideoFormat->clear();
+    int index = 0;
+    for (auto media : camInfo->MediaSourcesList)
+    {
+        QString qstrMedia = QString::fromStdString(
+            camInfo->MediaSourcesList[index].Format + ":" +
+            std::to_string(camInfo->MediaSourcesList[index].Width) + "x" +
+            std::to_string(camInfo->MediaSourcesList[index].Height) + "@" +
+            std::to_string(camInfo->MediaSourcesList[index].FrameRate) + "fps-" +
+            std::to_string(camInfo->MediaSourcesList[index].BitPerPixel) + "bpp"
+        );
+        ui->comboBox_RemoteCameraVideoFormat->addItem(qstrMedia);
+        index++;
+    }
 }
 
 /**
@@ -1092,4 +1156,27 @@ void Camera::pushButton_RemoveRoiItem_Clicked()
         UpdateRoiListItems();
     }
 }
+
+void Camera::comboBox_LocalCameraVideoFormat_Changed(int index)
+{
+    if (CamList.size() > 0)
+    {
+        int row = ui->listWidget_LocalCameraList->currentRow();
+        row = row < 0 ? 0 : row;
+        TmLocalCamInfo* camInfo = (TmLocalCamInfo*)CamList[row];
+        camInfo->MediaIndex = index;
+    }
+}
+
+void Camera::comboBox_RemoteCameraVideoFormat_Changed(int index)
+{
+    if (CamList.size() > 0)
+    {
+        int row = ui->listWidget_RemoteCameraList->currentRow();
+        row = row < 0 ? 0 : row;
+        TmRemoteCamInfo* camInfo = (TmRemoteCamInfo*)CamList[row];
+        camInfo->MediaIndex = index;
+    }
+}
+
 #pragma region

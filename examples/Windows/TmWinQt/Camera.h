@@ -72,4 +72,6 @@ public slots:
     void pushButton_RemoveAllRoi_Clicked();
     void pushButton_AddRoiItem_Clicked();
     void pushButton_RemoveRoiItem_Clicked();
+    void comboBox_LocalCameraVideoFormat_Changed(int);
+    void comboBox_RemoteCameraVideoFormat_Changed(int);
 };

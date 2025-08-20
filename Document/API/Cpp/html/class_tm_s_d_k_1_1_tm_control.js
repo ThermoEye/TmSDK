@@ -34,5 +34,6 @@ var class_tm_s_d_k_1_1_tm_control =
     [ "SetGainModeState", "class_tm_s_d_k_1_1_tm_control.html#a3eb89e1a22e4cc717b6a9adf51f39c8c", null ],
     [ "SetNetworkConfiguration", "class_tm_s_d_k_1_1_tm_control.html#a0aaade828129baf8ac461945893327df", null ],
     [ "StoreUserSensorConfig", "class_tm_s_d_k_1_1_tm_control.html#aee34cd2b7fccfb0b79c74aadf7c94519", null ],
-    [ "UpdateFirmware", "class_tm_s_d_k_1_1_tm_control.html#a97bcd541ed4bd8d0dc7b5fefe92dfcdd", null ]
+    [ "UpdateFirmware", "class_tm_s_d_k_1_1_tm_control.html#a97bcd541ed4bd8d0dc7b5fefe92dfcdd", null ],
+    [ "fps", "class_tm_s_d_k_1_1_tm_control.html#aaed9201e21570da91c76c413887746ea", null ]
 ];

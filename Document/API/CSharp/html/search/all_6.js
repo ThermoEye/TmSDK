@@ -2,7 +2,7 @@ var searchData=
 [
   ['getavgloc_0',['GetAvgLoc',['../class_tm_s_d_k_1_1_tm_roi_object.html#af8a1a943d52e29160274f0850b6f07a1',1,'TmSDK::TmRoiObject']]],
   ['getbootloaderversion_1',['GetBootloaderVersion',['../class_tm_s_d_k_1_1_tm_control.html#add731b62c2883bdc352101c25cedd5a5',1,'TmSDK::TmControl']]],
-  ['getcameralist_2',['getcameralist',['../class_tm_s_d_k_1_1_tm_local_camera.html#a41c4220d78044d3d7a603d744ae982cd',1,'TmSDK.TmLocalCamera.GetCameraList()'],['../class_tm_s_d_k_1_1_tm_remote_camera.html#ad67b0b2cb92fb9b9da5c5414071144a6',1,'TmSDK.TmRemoteCamera.GetCameraList()']]],
+  ['getcameralist_2',['GetCameraList',['../class_tm_s_d_k_1_1_tm_local_camera.html#a41c4220d78044d3d7a603d744ae982cd',1,'TmSDK.TmLocalCamera.GetCameraList()'],['../class_tm_s_d_k_1_1_tm_remote_camera.html#ad67b0b2cb92fb9b9da5c5414071144a6',1,'TmSDK.TmRemoteCamera.GetCameraList()']]],
   ['getellipse_3',['GetEllipse',['../class_tm_s_d_k_1_1_tm_roi_ellipse.html#a110e20b1facbafe61e4f75fc10ce0fd2',1,'TmSDK::TmRoiEllipse']]],
   ['getfirmwareversion_4',['GetFirmwareVersion',['../class_tm_s_d_k_1_1_tm_control.html#a2d7caf74e09e74088bcec5349695cd65',1,'TmSDK::TmControl']]],
   ['getflatfieldcorrectionmode_5',['GetFlatFieldCorrectionMode',['../class_tm_s_d_k_1_1_tm_control.html#a8aba6cdb860c54e0abf08c579e10f935',1,'TmSDK::TmControl']]],

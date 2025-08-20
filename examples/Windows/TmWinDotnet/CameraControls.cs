@@ -31,6 +31,7 @@ namespace TmWinDotNet
     {
         private BackgroundWorker firmwareWorker;
 
+        #region Product
         /// <summary>
         /// Handles the click events for various product control buttons, including fetching camera and sensor information,
         /// browsing for firmware update files, and initiating firmware updates.
@@ -230,8 +231,8 @@ namespace TmWinDotNet
                                         textBox_SoftwareUpdateFilePath.Text = string.Empty;
                                         button_StartSoftwareUpdate.Text = "Browse and Select Binary File";
                                         button_SoftwareUpdateFileBrowse.Enabled = true;
-                                        tabControl2.Enabled = false;
-                                        tabControl3.Enabled = false;
+                                        tabControl_CameraConfig.Enabled = false;
+                                        tabControl_SensorConfig.Enabled = false;
                                         comboBox_ColorMap.Enabled = false;
                                         comboBox_TemperatureUnit.Enabled = false;
                                         button_ConnectLocalCamera.Enabled = false;
@@ -328,8 +329,8 @@ namespace TmWinDotNet
                     textBox_SoftwareUpdateFilePath.Text = string.Empty;
                     button_StartSoftwareUpdate.Text = "Browse and Select Binary File";
                     button_SoftwareUpdateFileBrowse.Enabled = true;
-                    tabControl2.Enabled = false;
-                    tabControl3.Enabled = false;
+                    tabControl_CameraConfig.Enabled = false;
+                    tabControl_SensorConfig.Enabled = false;
                     comboBox_ColorMap.Enabled = false;
                     comboBox_TemperatureUnit.Enabled = false;
                     button_ConnectLocalCamera.Enabled = false;
@@ -346,7 +347,9 @@ namespace TmWinDotNet
                     break;
             }
         }
+        #endregion
 
+        #region Network
         private void button_NetworkControl_Click(object sender, EventArgs e) {
             if (sender is Button btn && tmCamera != null && tmCamera.IsOpen)
             {
@@ -449,8 +452,8 @@ namespace TmWinDotNet
                         switch (dr)
                         {
                             case DialogResult.OK:
-                                tabControl2.Enabled = false;
-                                tabControl3.Enabled = false;
+                                tabControl_CameraConfig.Enabled = false;
+                                tabControl_SensorConfig.Enabled = false;
                                 comboBox_ColorMap.Enabled = false;
                                 comboBox_TemperatureUnit.Enabled = false;
                                 button_ConnectLocalCamera.Enabled = false;
@@ -492,5 +495,6 @@ namespace TmWinDotNet
                 textBox_SubDNSServer.ReadOnly = true;
             }
         }
+        #endregion
     }
 }

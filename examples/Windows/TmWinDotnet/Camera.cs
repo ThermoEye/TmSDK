@@ -29,9 +29,9 @@ namespace TmWinDotNet
         // Thread for running the frame capture process.
         private Thread captureThread = null;
         // Represents the frame object captured from the camera.
-        private TmFrame tmframe; 
+        private TmFrame tmframe;
 
-
+        #region Camera Preview
         /// <summary>
         /// Thread method for continuously capturing frames from the thermal camera.
         /// </summary>
@@ -55,21 +55,24 @@ namespace TmWinDotNet
                                 var bmp = tmframe.ToBitmap();
                                 if (bmp != null)
                                 {
-                                    // Perform measurements on regions of interest (ROI).
-                                    tmframe.DoMeasure(roiManager.GetItems());
                                     // Draw shapes on the bitmap based on ROI.
                                     DrawShapeObjects(bmp);
 
                                     pictureBox_Preview.Image?.Dispose();
                                     pictureBox_Preview.Image = bmp;
 
+                                    if (tmCamera.Format == "Y16")
+                                    {
+                                        // Perform measurements on regions of interest (ROI).
+                                        tmframe.DoMeasure(roiManager.GetItems());
 
-                                    // Retrieve the minimum, average, and maximum values and their locations from the frame.
-                                    tmframe.MinMaxLoc(out minVal, out avgVal, out maxVal, out minLoc, out maxLoc);
+                                        // Retrieve the minimum, average, and maximum values and their locations from the frame.
+                                        tmframe.MinMaxLoc(out minVal, out avgVal, out maxVal, out minLoc, out maxLoc);
 
-                                    label_MinimumTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(minVal), tmCamera.TempUnitSymbol);
-                                    label_AverageTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(avgVal), tmCamera.TempUnitSymbol);
-                                    label_MaximumTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(maxVal), tmCamera.TempUnitSymbol);
+                                        label_MinimumTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(minVal), tmCamera.TempUnitSymbol);
+                                        label_AverageTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(avgVal), tmCamera.TempUnitSymbol);
+                                        label_MaximumTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(maxVal), tmCamera.TempUnitSymbol);
+                                    }
                                 }
                             }));
                         }
@@ -104,8 +107,8 @@ namespace TmWinDotNet
                 {
                     Invoke(new Action(() =>
                     {
-                        tabControl2.Enabled = false;
-                        tabControl3.Enabled = false;
+                        tabControl_CameraConfig.Enabled = false;
+                        tabControl_SensorConfig.Enabled = false;
                         comboBox_ColorMap.Enabled = false;
                         comboBox_TemperatureUnit.Enabled = false;
                         button_ConnectLocalCamera.Enabled = false;
@@ -127,6 +130,30 @@ namespace TmWinDotNet
             pictureBox_Preview.Image = null;
         }
 
+        private void comboBox_ColorMap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tmCamera != null)
+            {
+                tmCamera.SetColorMap(comboBox_ColorMap.SelectedIndex);
+            }
+        }
+        private void comboBox_TemperatureUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tmCamera != null)
+            {
+                tmCamera.SetTempUnit(comboBox_TemperatureUnit.SelectedIndex);
+            }
+        }
+        private void checkBox_NoiseFiltering_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tmCamera != null)
+            {
+                tmCamera.SetNoiseFiltering(checkBox_NoiseFiltering.Checked);
+            }
+        }
+        #endregion
+
+        #region Local Camera
         /// <summary>
         /// Scans and retrieves a list of local cameras connected to the system.
         /// Populates the listBox_LocalCameraScanList with the names and COM ports of detected local cameras.
@@ -152,101 +179,26 @@ namespace TmWinDotNet
                 LocalCamInfo[] items = listBox_LocalCameraScanList.Tag as LocalCamInfo[];
                 textBox_LocalCameraName.Text = items[listBox_LocalCameraScanList.SelectedIndex].Name;
                 textBox_LocalCameraComPort.Text = items[listBox_LocalCameraScanList.SelectedIndex].ComPort;
-            }
-        }
 
-        /// <summary>
-        /// Scans and retrieves a list of remote cameras available on the network.
-        /// Populates the listBox_RemoteCameraScanList with the names and IP addresses of detected remote cameras.
-        /// If at least one camera is found, selects the first camera in the list and displays its details in the text boxes.
-        /// </summary>
-        private void ScanRemoteCameraList()
-        {
-            listBox_RemoteCameraScanList.Tag = TmRemoteCamera.GetCameraList();
-            if (listBox_RemoteCameraScanList.Tag == null)
-            {
-                return;
-            }
-            listBox_RemoteCameraScanList.Items.Clear();
-            foreach (var item in listBox_RemoteCameraScanList.Tag as RemoteCamInfo[])
-            {
-                listBox_RemoteCameraScanList.Items.Add($"{item.Name}-{item.AddrIP}");
-            }
-
-            if (listBox_RemoteCameraScanList.Items.Count > 0)
-            {
-                listBox_RemoteCameraScanList.SelectedIndex = 0;
-
-                RemoteCamInfo[] items = listBox_RemoteCameraScanList.Tag as RemoteCamInfo[];
-                textBox_RemoteCameraIPAddress.Text = items[listBox_RemoteCameraScanList.SelectedIndex].AddrIP;
-                textBox_RemoteCameraMACAddress.Text = items[listBox_RemoteCameraScanList.SelectedIndex].AddrMAC;
-                textBox_RemoteCameraSerialNumber.Text = items[listBox_RemoteCameraScanList.SelectedIndex].SerialNumber;
-                textBox_RemoteCameraName.Text = items[listBox_RemoteCameraScanList.SelectedIndex].Name;
-            }
-        }
-
-        private void button_ConnectRemoteCamera_Click(object sender, EventArgs e) 
-        {
-            if (sender is Button btn)
-            {
-                if (btn.Text == "Connect")
+                comboBox_LocalCameraVideoFormat.Items.Clear();
+                if (items[listBox_LocalCameraScanList.SelectedIndex].MediaSourcesList != null 
+                    && items[listBox_LocalCameraScanList.SelectedIndex].MediaSourcesList.Count > 0)
                 {
-                    if (string.IsNullOrEmpty(textBox_RemoteCameraIPAddress.Text))
+                    foreach (var item in items[listBox_LocalCameraScanList.SelectedIndex].MediaSourcesList)
                     {
-                        MessageBox.Show("Invalid AddrIP Address.", "Connect", MessageBoxButtons.OK);
-                        return;
+                        comboBox_LocalCameraVideoFormat.Items.Add($"{item.Format} : {item.Width}x{item.Height}@{item.FrameRate}fps-{item.BitPerPixel}bpp");
                     }
-
-                    if (tmCamera == null)
-                    {
-                        tmCamera = new TmRemoteCamera();
-                        RemoteCamInfo[] items = listBox_RemoteCameraScanList.Tag as RemoteCamInfo[];
-                        int index = listBox_RemoteCameraScanList.SelectedIndex;
-
-                        if (tmCamera.Open(items[index]))
-                        {
-                            this.captureThread = new Thread(new ThreadStart(frameCaptureThread));
-                            this.captureThread.Start();
-
-                            btn.Text = "Disconnect";
-
-                            ChangeUIWhenConnectCamera();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Fail to connect Remote Camera.", "Connect", MessageBoxButtons.OK);
-
-                            DisconnectCamera();
-                            return;
-                        }
-                    }
-                }
-                else
-                {
-                    DisconnectCamera();
-                    btn.Text = "Connect";
+                    comboBox_LocalCameraVideoFormat.SelectedIndex = items[listBox_LocalCameraScanList.SelectedIndex].MediaIndex;
                 }
             }
         }
-        private void listBox_RemoteCameraList_Click(object sender, EventArgs e) 
+
+        private void button_ScanLocalCamera_Click(object sender, EventArgs e)
         {
-            if (sender is ListBox listbox && listbox.SelectedIndex >= 0)
-            {
-                var items = listbox.Tag as RemoteCamInfo[];
-                if (items != null)
-                {
-                    textBox_RemoteCameraName.Text = items[listbox.SelectedIndex].Name;
-                    textBox_RemoteCameraIPAddress.Text = items[listbox.SelectedIndex].AddrIP;
-                    textBox_RemoteCameraMACAddress.Text = items[listbox.SelectedIndex].AddrMAC;
-                    textBox_RemoteCameraSerialNumber.Text = items[listbox.SelectedIndex].SerialNumber;
-                }
-            }
+            this.ScanLocalCameraList();
         }
-        private void button_ScanRemoteCamera_Click(object sender, EventArgs e) 
-        {
-            this.ScanRemoteCameraList();
-        }
-        private void listBox_LocalCameraList_Click(object sender, EventArgs e) 
+
+        private void listBox_LocalCameraList_Click(object sender, EventArgs e)
         {
             if (sender is ListBox listbox && listbox.SelectedIndex >= 0)
             {
@@ -255,14 +207,96 @@ namespace TmWinDotNet
                 {
                     textBox_LocalCameraName.Text = items[listbox.SelectedIndex].Name;
                     textBox_LocalCameraComPort.Text = items[listbox.SelectedIndex].ComPort;
+
+                    comboBox_LocalCameraVideoFormat.Items.Clear();
+                    if (items[listbox.SelectedIndex].MediaSourcesList != null)
+                    {
+                        foreach (var item in items[listbox.SelectedIndex].MediaSourcesList)
+                        {
+                            comboBox_LocalCameraVideoFormat.Items.Add($"{item.Format} : {item.Width}x{item.Height}@{item.FrameRate}fps-{item.BitPerPixel}bpp");
+                        }
+                        comboBox_LocalCameraVideoFormat.SelectedIndex = items[listbox.SelectedIndex].MediaIndex;
+                    }
                 }
             }
         }
-        private void button_ScanLocalCamera_Click(object sender, EventArgs e) 
+
+        private void listBox_LocalCameraList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            this.ScanLocalCameraList();
+            if (sender is ListBox listbox && listbox.SelectedIndex >= 0)
+            {
+                var items = listbox.Tag as LocalCamInfo[];
+                if (items != null)
+                {
+                    textBox_LocalCameraName.Text = items[listbox.SelectedIndex].Name;
+                    textBox_LocalCameraComPort.Text = items[listbox.SelectedIndex].ComPort;
+
+                    if (button_ConnectLocalCamera.Text == "Connect")
+                    {
+                        if (listBox_LocalCameraScanList.SelectedIndex < 0)
+                        {
+                            MessageBox.Show("Invalid Camera Index.", "Connect", MessageBoxButtons.OK);
+                            return;
+                        }
+
+                        if (string.IsNullOrWhiteSpace(textBox_LocalCameraName.Text))
+                        {
+                            MessageBox.Show("Invalid Camera Name.", "Connect", MessageBoxButtons.OK);
+                            return;
+                        }
+
+                        if (string.IsNullOrWhiteSpace(textBox_LocalCameraComPort.Text))
+                        {
+                            MessageBox.Show("Invalid COM Port.", "Connect", MessageBoxButtons.OK);
+                            return;
+                        }
+
+                        if (listBox_LocalCameraScanList.Tag == null)
+                        {
+                            MessageBox.Show("Invalid Camera List.", "Connect", MessageBoxButtons.OK);
+                            return;
+                        }
+
+                        if (tmCamera == null)
+                        {
+                            tmCamera = new TmLocalCamera();
+                            if (tmCamera.Open((listBox_LocalCameraScanList.Tag as LocalCamInfo[])[listBox_LocalCameraScanList.SelectedIndex]))
+                            {
+                                this.captureThread = new Thread(new ThreadStart(frameCaptureThread));
+                                this.captureThread.Start();
+
+                                button_ConnectLocalCamera.Text = "Disconnect";
+                                ChangeUIWhenConnectCamera();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Fail to connect Local Camera.", "Connect", MessageBoxButtons.OK);
+
+                                button_ConnectLocalCamera.Text = "Connect";
+                                DisconnectCamera();
+                                return;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        DisconnectCamera();
+                        button_ConnectLocalCamera.Text = "Connect";
+                    }
+                }
+            }
         }
-        private void button_ConnectLocalCamera_Click(object sender, EventArgs e) 
+
+        private void comboBox_LocalCameraVideoFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_LocalCameraVideoFormat.SelectedIndex >= 0)
+            {
+                LocalCamInfo[] items = listBox_LocalCameraScanList.Tag as LocalCamInfo[];
+                items[listBox_LocalCameraScanList.SelectedIndex].MediaIndex = comboBox_LocalCameraVideoFormat.SelectedIndex;
+            }
+        }
+
+        private void button_ConnectLocalCamera_Click(object sender, EventArgs e)
         {
             if (sender is Button btn)
             {
@@ -323,39 +357,186 @@ namespace TmWinDotNet
                 }
             }
         }
-        
-        private void comboBox_ColorMap_SelectedIndexChanged(object sender, EventArgs e) 
+        #endregion
+
+        #region RemoteCamera
+        /// <summary>
+        /// Scans and retrieves a list of remote cameras available on the network.
+        /// Populates the listBox_RemoteCameraScanList with the names and IP addresses of detected remote cameras.
+        /// If at least one camera is found, selects the first camera in the list and displays its details in the text boxes.
+        /// </summary>
+        private void ScanRemoteCameraList()
         {
-            if (tmCamera != null)
+            listBox_RemoteCameraScanList.Tag = TmRemoteCamera.GetCameraList();
+            if (listBox_RemoteCameraScanList.Tag == null)
             {
-                tmCamera.SetColorMap(comboBox_ColorMap.SelectedIndex);
+                return;
             }
-        }
-        private void comboBox_TemperatureUnit_SelectedIndexChanged(object sender, EventArgs e) 
-        {
-            if (tmCamera != null)
+
+            listBox_RemoteCameraScanList.Items.Clear();
+            foreach (var item in listBox_RemoteCameraScanList.Tag as RemoteCamInfo[])
             {
-                tmCamera.SetTempUnit(comboBox_TemperatureUnit.SelectedIndex);
+                listBox_RemoteCameraScanList.Items.Add($"{item.Name}-{item.AddrIP}");
             }
-        }
-        private void checkBox_NoiseFiltering_CheckedChanged(object sender, EventArgs e)
-        {
-            if (tmCamera != null)
+
+            if (listBox_RemoteCameraScanList.Items.Count > 0)
             {
-                tmCamera.SetNoiseFiltering(checkBox_NoiseFiltering.Checked);
+                listBox_RemoteCameraScanList.SelectedIndex = 0;
+
+                RemoteCamInfo[] items = listBox_RemoteCameraScanList.Tag as RemoteCamInfo[];
+                textBox_RemoteCameraAdapterIP.Text = items[listBox_RemoteCameraScanList.SelectedIndex].AdapterIP;
+                textBox_RemoteCameraIPAddress.Text = items[listBox_RemoteCameraScanList.SelectedIndex].AddrIP;
+                textBox_RemoteCameraMACAddress.Text = items[listBox_RemoteCameraScanList.SelectedIndex].AddrMAC;
+                textBox_RemoteCameraSerialNumber.Text = items[listBox_RemoteCameraScanList.SelectedIndex].SerialNumber;
+                textBox_RemoteCameraName.Text = items[listBox_RemoteCameraScanList.SelectedIndex].Name;
+
+                comboBox_RemoteCameraVideoFormat.Items.Clear();
+                if (items[listBox_RemoteCameraScanList.SelectedIndex].MediaSourcesList != null)
+                {
+                    foreach (var item in items[listBox_RemoteCameraScanList.SelectedIndex].MediaSourcesList)
+                    {
+                        comboBox_RemoteCameraVideoFormat.Items.Add($"{item.Format} : {item.Width}x{item.Height}@{item.FrameRate}fps-{item.BitPerPixel}bpp");
+                    }
+                    comboBox_RemoteCameraVideoFormat.SelectedIndex = items[listBox_RemoteCameraScanList.SelectedIndex].MediaIndex;
+                }
             }
         }
 
-        private void panel_VideoPreview_SizeChanged(object sender, EventArgs e) 
+        private void button_ScanRemoteCamera_Click(object sender, EventArgs e)
         {
-            if (sender is Panel panel)
-            {
-                pictureBox_Preview.Width = pictureBox_Preview.Height * 4 / 3;
-                pictureBox_Preview.Location = new Point(panel.Width / 2 - pictureBox_Preview.Width / 2, pictureBox_Preview.Location.Y);
+            this.ScanRemoteCameraList();
+        }
 
-                StatusLabel_PreviewSize.Text = $"{pictureBox_Preview.Width}x{pictureBox_Preview.Height}";
+        private void listBox_RemoteCameraList_Click(object sender, EventArgs e)
+        {
+            if (sender is ListBox listbox && listbox.SelectedIndex >= 0)
+            {
+                var items = listbox.Tag as RemoteCamInfo[];
+                if (items != null)
+                {
+                    textBox_RemoteCameraAdapterIP.Text = items[listbox.SelectedIndex].AdapterIP;
+                    textBox_RemoteCameraName.Text = items[listbox.SelectedIndex].Name;
+                    textBox_RemoteCameraIPAddress.Text = items[listbox.SelectedIndex].AddrIP;
+                    textBox_RemoteCameraMACAddress.Text = items[listbox.SelectedIndex].AddrMAC;
+                    textBox_RemoteCameraSerialNumber.Text = items[listbox.SelectedIndex].SerialNumber;
+
+                    comboBox_RemoteCameraVideoFormat.Items.Clear();
+                    if (items[listbox.SelectedIndex].MediaSourcesList != null)
+                    {
+                        foreach (var item in items[listbox.SelectedIndex].MediaSourcesList)
+                        {
+                            comboBox_RemoteCameraVideoFormat.Items.Add($"{item.Format} : {item.Width}x{item.Height}@{item.FrameRate}fps-{item.BitPerPixel}bpp");
+                        }
+                        comboBox_RemoteCameraVideoFormat.SelectedIndex = items[listbox.SelectedIndex].MediaIndex;
+                    }
+                }
             }
         }
+
+        private void listBox_RemoteCameraList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (sender is ListBox listbox && listbox.SelectedIndex >= 0)
+            {
+                var items = listbox.Tag as RemoteCamInfo[];
+                if (items != null)
+                {
+                    textBox_RemoteCameraAdapterIP.Text = items[listbox.SelectedIndex].AdapterIP;
+                    textBox_RemoteCameraName.Text = items[listbox.SelectedIndex].Name;
+                    textBox_RemoteCameraIPAddress.Text = items[listbox.SelectedIndex].AddrIP;
+                    textBox_RemoteCameraMACAddress.Text = items[listbox.SelectedIndex].AddrMAC;
+                    textBox_RemoteCameraSerialNumber.Text = items[listbox.SelectedIndex].SerialNumber;
+
+                    if (button_ConnectRemoteCamera.Text == "Connect")
+                    {
+                        if (string.IsNullOrEmpty(textBox_RemoteCameraIPAddress.Text))
+                        {
+                            MessageBox.Show("Invalid AddrIP Address.", "Connect", MessageBoxButtons.OK);
+                            return;
+                        }
+
+                        if (tmCamera == null)
+                        {
+                            tmCamera = new TmRemoteCamera();
+                            if (tmCamera.Open((listBox_RemoteCameraScanList.Tag as RemoteCamInfo[])[listBox_RemoteCameraScanList.SelectedIndex]))
+                            {
+                                this.captureThread = new Thread(new ThreadStart(frameCaptureThread));
+                                this.captureThread.Start();
+
+                                button_ConnectRemoteCamera.Text = "Disconnect";
+
+                                ChangeUIWhenConnectCamera();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Fail to connect Remote Camera.", "Connect", MessageBoxButtons.OK);
+
+                                DisconnectCamera();
+                                return;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        DisconnectCamera();
+                        button_ConnectRemoteCamera.Text = "Connect";
+                    }
+                }
+            }
+        }
+
+        private void comboBox_RemoteCameraVideoFormat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_RemoteCameraVideoFormat.SelectedIndex >= 0)
+            {
+                RemoteCamInfo[] items = listBox_RemoteCameraScanList.Tag as RemoteCamInfo[];
+                items[listBox_RemoteCameraScanList.SelectedIndex].MediaIndex = comboBox_RemoteCameraVideoFormat.SelectedIndex;
+            }
+        }
+
+        private void button_ConnectRemoteCamera_Click(object sender, EventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                if (btn.Text == "Connect")
+                {
+                    if (string.IsNullOrEmpty(textBox_RemoteCameraIPAddress.Text))
+                    {
+                        MessageBox.Show("Invalid AddrIP Address.", "Connect", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    if (tmCamera == null)
+                    {
+                        tmCamera = new TmRemoteCamera();
+                        RemoteCamInfo[] items = listBox_RemoteCameraScanList.Tag as RemoteCamInfo[];
+                        int index = listBox_RemoteCameraScanList.SelectedIndex;
+
+                        if (tmCamera.Open(items[index]))
+                        {
+                            this.captureThread = new Thread(new ThreadStart(frameCaptureThread));
+                            this.captureThread.Start();
+
+                            btn.Text = "Disconnect";
+
+                            ChangeUIWhenConnectCamera();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail to connect Remote Camera.", "Connect", MessageBoxButtons.OK);
+
+                            DisconnectCamera();
+                            return;
+                        }
+                    }
+                }
+                else
+                {
+                    DisconnectCamera();
+                    btn.Text = "Connect";
+                }
+            }
+        }
+        #endregion
 
         private void ChangeUIWhenConnectCamera()
         {
@@ -366,25 +547,34 @@ namespace TmWinDotNet
                 case "TMC160B":
                 case "TMC80E":
                 case "TMC80B":
-                    panel_SensorControl_160E.Visible = true;
-                    panel_SensorControl_256E.Visible = false;
+                    panel_SensorControl_160.Visible = true;
+                    panel_SensorControl_256.Visible = false;
+                    panel_SensorControl_256G.Visible = false;
                     break;
 
                 case "ThermoCam256E":
                 case "TMC256E":
                 case "TMC256B":
-                    panel_SensorControl_160E.Visible = false;
-                    panel_SensorControl_256E.Visible = true;
+                    panel_SensorControl_160.Visible = false;
+                    panel_SensorControl_256.Visible = true;
+                    panel_SensorControl_256G.Visible = false;
+                    break;
+
+                case "TMC256GE":
+                case "TMC256GB":
+                    panel_SensorControl_160.Visible = false;
+                    panel_SensorControl_256.Visible = false;
+                    panel_SensorControl_256G.Visible = true;
                     break;
             }
 
             StatusLabel_Name.Text = tmCamera.Name;
+            StatusLabel_CamInfo.Text = $"{tmCamera.Width}x{tmCamera.Height}@{tmCamera.FPS}Hz";
 
             button_ScanLocalCamera.Enabled = false;
             button_ScanRemoteCamera.Enabled = false;
-
-            tabControl2.Enabled = true;
-            tabControl3.Enabled = true;
+            tabControl_CameraConfig.Enabled = true;
+            tabControl_SensorConfig.Enabled = true;
             comboBox_ColorMap.Enabled = true;
             comboBox_TemperatureUnit.Enabled = true;
         }
@@ -407,17 +597,33 @@ namespace TmWinDotNet
                 tmCamera = null;
             }
 
-            panel_SensorControl_160E.Visible = false;
-            panel_SensorControl_256E.Visible = false;
+            panel_SensorControl_160.Visible = false;
+            panel_SensorControl_256.Visible = false;
+            panel_SensorControl_256G.Visible = false;
+
+            StatusLabel_Name.Text = "";
+            StatusLabel_CamInfo.Text = "";
+            StatusLabel_fps.Text = "";
 
             button_ScanLocalCamera.Enabled = true;
             button_ScanRemoteCamera.Enabled = true;
             button_ConnectLocalCamera.Enabled = true;
             button_ConnectRemoteCamera.Enabled = true;
-            tabControl2.Enabled = false;
-            tabControl3.Enabled = false;
+            tabControl_CameraConfig.Enabled = false;
+            tabControl_SensorConfig.Enabled = false;
             comboBox_ColorMap.Enabled = false;
             comboBox_TemperatureUnit.Enabled = false;
+        }
+		
+        private void panel_VideoPreview_SizeChanged(object sender, EventArgs e)
+        {
+            if (sender is Panel panel)
+            {
+                pictureBox_Preview.Width = pictureBox_Preview.Height * 4 / 3;
+                pictureBox_Preview.Location = new Point(panel.Width / 2 - pictureBox_Preview.Width / 2, pictureBox_Preview.Location.Y);
+
+                StatusLabel_PreviewSize.Text = $"{pictureBox_Preview.Width}x{pictureBox_Preview.Height}";
+            }
         }
     }
 }

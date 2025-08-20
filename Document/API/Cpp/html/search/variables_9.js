@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['plocalcamlist_0',['pLocalCamList',['../class_tm_s_d_k_1_1_tm_local_camera.html#a68b84dfae1ff639871f8e3c657aba6e5',1,'TmSDK::TmLocalCamera']]],
-  ['premotecamlist_1',['pRemoteCamList',['../class_tm_s_d_k_1_1_tm_remote_camera.html#add02b2a8315c85f2b18e85343b4496b6',1,'TmSDK::TmRemoteCamera']]]
+  ['name_0',['Name',['../class_tm_s_d_k_1_1_tm_local_cam_info.html#a27582ae8a3d4c4dd8fa6ab023160c732',1,'TmSDK::TmLocalCamInfo::Name'],['../class_tm_s_d_k_1_1_tm_remote_cam_info.html#a49cf9a5002d4f92fd85f2839c46647b6',1,'TmSDK::TmRemoteCamInfo::Name']]]
 ];

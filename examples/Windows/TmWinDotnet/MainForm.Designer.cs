@@ -34,9 +34,13 @@
             this.StatusLabel_CamInfo = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel_fps = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusLabel_PreviewSize = new System.Windows.Forms.ToolStripStatusLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.panel_Camera = new System.Windows.Forms.Panel();
+            this.tabControl_Camera = new System.Windows.Forms.TabControl();
             this.tabPage_RemoteCamera = new System.Windows.Forms.TabPage();
+            this.label_RemoteCameraVideoFormat = new System.Windows.Forms.Label();
+            this.comboBox_RemoteCameraVideoFormat = new System.Windows.Forms.ComboBox();
+            this.textBox_RemoteCameraAdapterIP = new System.Windows.Forms.TextBox();
+            this.label_RemoteCameraAdapterIPTitle = new System.Windows.Forms.Label();
             this.textBox_RemoteCameraMACAddress = new System.Windows.Forms.TextBox();
             this.label_RemoteCameraMACAddressTitle = new System.Windows.Forms.Label();
             this.textBox_RemoteCameraSerialNumber = new System.Windows.Forms.TextBox();
@@ -49,6 +53,8 @@
             this.listBox_RemoteCameraScanList = new System.Windows.Forms.ListBox();
             this.button_ScanRemoteCamera = new System.Windows.Forms.Button();
             this.tabPage_LocalCamera = new System.Windows.Forms.TabPage();
+            this.label_LocalCameraVideoFormat = new System.Windows.Forms.Label();
+            this.comboBox_LocalCameraVideoFormat = new System.Windows.Forms.ComboBox();
             this.textBox_LocalCameraComPort = new System.Windows.Forms.TextBox();
             this.textBox_LocalCameraName = new System.Windows.Forms.TextBox();
             this.listBox_LocalCameraScanList = new System.Windows.Forms.ListBox();
@@ -56,10 +62,10 @@
             this.label_LocalCameraComPort = new System.Windows.Forms.Label();
             this.label_LocalCameraNameTitle = new System.Windows.Forms.Label();
             this.button_ConnectLocalCamera = new System.Windows.Forms.Button();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabControl_CameraConfig = new System.Windows.Forms.TabControl();
             this.tabPage_Product = new System.Windows.Forms.TabPage();
             this.groupBox_ProductInformation = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_ProductInfo = new System.Windows.Forms.TableLayoutPanel();
             this.label_HardwareVersion = new System.Windows.Forms.Label();
             this.label_ProductSerialNumber = new System.Windows.Forms.Label();
             this.label_ProductModelName = new System.Windows.Forms.Label();
@@ -72,7 +78,7 @@
             this.label_HardwareVersionTitle = new System.Windows.Forms.Label();
             this.button_GetProductInformation = new System.Windows.Forms.Button();
             this.groupBox_SensorInformation = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_SensorInfo = new System.Windows.Forms.TableLayoutPanel();
             this.label_SensorUptime = new System.Windows.Forms.Label();
             this.label_SensorUptimeTitle = new System.Windows.Forms.Label();
             this.label_SensorModelNameTitle = new System.Windows.Forms.Label();
@@ -96,12 +102,12 @@
             this.button_SoftwareUpdateFileBrowse = new System.Windows.Forms.Button();
             this.textBox_SoftwareUpdateFilePath = new System.Windows.Forms.TextBox();
             this.button_StartSoftwareUpdate = new System.Windows.Forms.Button();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_SoftwareUpdateBlank = new System.Windows.Forms.TableLayoutPanel();
             this.label_SoftwareUpdateStatus = new System.Windows.Forms.Label();
             this.progressBar_SoftwareUpdate = new System.Windows.Forms.ProgressBar();
             this.tabPage_Network = new System.Windows.Forms.TabPage();
             this.groupBox_NetworkConfiguration = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_NetworkConfig = new System.Windows.Forms.TableLayoutPanel();
             this.textBox_SubDNSServer = new System.Windows.Forms.TextBox();
             this.label_SubDNSServerTitle = new System.Windows.Forms.Label();
             this.label_MACAddressTitle = new System.Windows.Forms.Label();
@@ -120,101 +126,124 @@
             this.label_MainDNSServerTitle = new System.Windows.Forms.Label();
             this.button_SystemReboot = new System.Windows.Forms.Button();
             this.button_SetDefaultNetworkConfiguration = new System.Windows.Forms.Button();
-            this.tabControl3 = new System.Windows.Forms.TabControl();
+            this.tabControl_SensorConfig = new System.Windows.Forms.TabControl();
             this.tabPage_SensorControl = new System.Windows.Forms.TabPage();
-            this.panel_SensorControl_256E = new System.Windows.Forms.Panel();
-            this.groupBox_FFCParameters_256E = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.label_FFCParam256E_MaxIntervalTitle = new System.Windows.Forms.Label();
-            this.textBox_FFCParam256E_MaxIntervalRange = new System.Windows.Forms.TextBox();
-            this.button_GetFFCParameters_256E = new System.Windows.Forms.Button();
-            this.button_SetFFCParameters_256E = new System.Windows.Forms.Button();
-            this.numericUpDown_FFCParam256E_MaxInterval = new System.Windows.Forms.NumericUpDown();
-            this.label_FFCParam256E_AutoTriggerThresholdTitle = new System.Windows.Forms.Label();
-            this.numericUpDown_FFCParam256E_AutoTriggerThreshold = new System.Windows.Forms.NumericUpDown();
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange = new System.Windows.Forms.TextBox();
-            this.label_FFCParam256E_MaxIntervalUnit = new System.Windows.Forms.Label();
-            this.button_StoreUserSensorConfig_256E = new System.Windows.Forms.Button();
-            this.button_RestoreDefaultSensorConfig_256E = new System.Windows.Forms.Button();
-            this.groupBox_FluxParameters_256E = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label_FluxParam256E_DistanceTitle = new System.Windows.Forms.Label();
-            this.label_FluxParam256E_EmissivityTitle = new System.Windows.Forms.Label();
-            this.textBox_FluxParam256E_EmissivityRange = new System.Windows.Forms.TextBox();
-            this.button_GetFluxParameters_256E = new System.Windows.Forms.Button();
-            this.button_SetFluxParameters_256E = new System.Windows.Forms.Button();
-            this.numericUpDown_FluxParam256E_Emissivity = new System.Windows.Forms.NumericUpDown();
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle = new System.Windows.Forms.Label();
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance = new System.Windows.Forms.NumericUpDown();
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange = new System.Windows.Forms.TextBox();
-            this.label_FluxParam256E_AtmosphericTemperatureTitle = new System.Windows.Forms.Label();
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature = new System.Windows.Forms.NumericUpDown();
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange = new System.Windows.Forms.TextBox();
-            this.label_FluxParam256E_AtmosphericTemperatureUnit = new System.Windows.Forms.Label();
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle = new System.Windows.Forms.Label();
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature = new System.Windows.Forms.NumericUpDown();
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit = new System.Windows.Forms.Label();
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange = new System.Windows.Forms.TextBox();
-            this.numericUpDown_FluxParam256E_Distance = new System.Windows.Forms.NumericUpDown();
-            this.label_FluxParam256E_DistanceUnit = new System.Windows.Forms.Label();
-            this.textBox_FluxParam256E_DistanceRange = new System.Windows.Forms.TextBox();
-            this.groupBox_GainModeState_256E = new System.Windows.Forms.GroupBox();
-            this.button_SetGainModeState_256E = new System.Windows.Forms.Button();
-            this.button_GetGainModeState_256E = new System.Windows.Forms.Button();
-            this.radioButton_GainModeStateLow_256E = new System.Windows.Forms.RadioButton();
-            this.radioButton_GainModeStateHigh_256E = new System.Windows.Forms.RadioButton();
-            this.groupBox_FlatFieldCorrection_256E = new System.Windows.Forms.GroupBox();
-            this.button_SetFlatFieldCorrectionMode_256E = new System.Windows.Forms.Button();
-            this.button_GetFlatFieldCorrectionMode_256E = new System.Windows.Forms.Button();
-            this.radioButton_FlatFieldCorrectionManual_256E = new System.Windows.Forms.RadioButton();
-            this.button_RunFlatFieldCorrection_256E = new System.Windows.Forms.Button();
-            this.radioButton_FlatFieldCorrectionAutomatic_256E = new System.Windows.Forms.RadioButton();
-            this.panel_SensorControl_160E = new System.Windows.Forms.Panel();
-            this.groupBox_FluxParameters_160E = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit = new System.Windows.Forms.Label();
-            this.label_FluxParam160E_AtmosphericTemperatureUnit = new System.Windows.Forms.Label();
-            this.label_FluxParam160E_WindowTemperatureUnit = new System.Windows.Forms.Label();
-            this.label_FluxParam160E_BackgroundTemperatureUnit = new System.Windows.Forms.Label();
-            this.numericUpDown_FluxParam160E_WindowReflectedTemperature = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_FluxParam160E_WindowReflection = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_FluxParam160E_AtmosphericTemperature = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_FluxParam160E_AtmosphericTransmission = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_FluxParam160E_WindowTemperature = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_FluxParam160E_WindowTransmission = new System.Windows.Forms.NumericUpDown();
-            this.label_FluxParam160E_SceneEmissivityTitle = new System.Windows.Forms.Label();
-            this.textBox_FluxParam160E_SceneEmissivityRange = new System.Windows.Forms.TextBox();
-            this.button_GetFluxParameters_160E = new System.Windows.Forms.Button();
-            this.button_SetFluxParameters_160E = new System.Windows.Forms.Button();
-            this.label_FluxParam160E_WindowTransmissionTitle = new System.Windows.Forms.Label();
-            this.label_FluxParam160E_WindowTemperatureTitle = new System.Windows.Forms.Label();
-            this.label_FluxParam160E_AtmosphericTransmissionTitle = new System.Windows.Forms.Label();
-            this.label_FluxParam160E_AtmosphericTemperatureTitle = new System.Windows.Forms.Label();
-            this.textBox_FluxParam160E_BackgroundTemperatureRange = new System.Windows.Forms.TextBox();
-            this.textBox_FluxParam160E_WindowTransmissionRange = new System.Windows.Forms.TextBox();
-            this.textBox_FluxParam160E_WindowTemperatureRange = new System.Windows.Forms.TextBox();
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange = new System.Windows.Forms.TextBox();
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange = new System.Windows.Forms.TextBox();
-            this.label_FluxParam160E_WindowReflectionTitle = new System.Windows.Forms.Label();
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle = new System.Windows.Forms.Label();
-            this.textBox_FluxParam160E_WindowReflectionRange = new System.Windows.Forms.TextBox();
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange = new System.Windows.Forms.TextBox();
-            this.numericUpDown_FluxParam160E_SceneEmissivity = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown_FluxParam160E_BackgroundTemperature = new System.Windows.Forms.NumericUpDown();
-            this.label_FluxParam160E_BackgroundTemperatureTitle = new System.Windows.Forms.Label();
-            this.groupBox_GainModeState_160E = new System.Windows.Forms.GroupBox();
-            this.button_SetGainModeState_160E = new System.Windows.Forms.Button();
-            this.button_GetGainModeState_160E = new System.Windows.Forms.Button();
-            this.radioButton_GainModeStateAuto_160E = new System.Windows.Forms.RadioButton();
-            this.radioButton_GainModeStateLow_160E = new System.Windows.Forms.RadioButton();
-            this.radioButton_GainModeStateHigh_160E = new System.Windows.Forms.RadioButton();
-            this.groupBox_FlatFieldCorrection_160E = new System.Windows.Forms.GroupBox();
-            this.button_SetFlatFieldCorrectionMode_160E = new System.Windows.Forms.Button();
-            this.button_GetFlatFieldCorrectionMode_160E = new System.Windows.Forms.Button();
-            this.radioButton_FlatFieldCorrectionManual_160E = new System.Windows.Forms.RadioButton();
-            this.button_RunFlatFieldCorrection_160E = new System.Windows.Forms.Button();
-            this.radioButton_FlatFieldCorrectionAutomatic_160E = new System.Windows.Forms.RadioButton();
-            this.button_RestoreDefaultFluxParameters_160E = new System.Windows.Forms.Button();
+            this.panel_SensorControl_256G = new System.Windows.Forms.Panel();
+            this.groupBox_FFCParameters_256G = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel_FFCParam256G = new System.Windows.Forms.TableLayoutPanel();
+            this.label_FFCParam256G_MaxIntervalTitle = new System.Windows.Forms.Label();
+            this.textBox_FFCParam256G_MaxIntervalRange = new System.Windows.Forms.TextBox();
+            this.button_GetFFCParameters_256G = new System.Windows.Forms.Button();
+            this.button_SetFFCParameters_256G = new System.Windows.Forms.Button();
+            this.numericUpDown_FFCParam256G_MaxInterval = new System.Windows.Forms.NumericUpDown();
+            this.label_FFCParam256G_MaxIntervalUnit = new System.Windows.Forms.Label();
+            this.button_StoreUserSensorConfig_256G = new System.Windows.Forms.Button();
+            this.button_RestoreDefaultSensorConfig_256G = new System.Windows.Forms.Button();
+            this.groupBox_GainModeState_256G = new System.Windows.Forms.GroupBox();
+            this.radioButton_GainModeStateAuto_256G = new System.Windows.Forms.RadioButton();
+            this.button_SetGainModeState_256G = new System.Windows.Forms.Button();
+            this.button_GetGainModeState_256G = new System.Windows.Forms.Button();
+            this.radioButton_GainModeStateLow_256G = new System.Windows.Forms.RadioButton();
+            this.radioButton_GainModeStateHigh_256G = new System.Windows.Forms.RadioButton();
+            this.groupBox_FlatFieldCorrection_256G = new System.Windows.Forms.GroupBox();
+            this.button_SetFlatFieldCorrectionMode_256G = new System.Windows.Forms.Button();
+            this.button_GetFlatFieldCorrectionMode_256G = new System.Windows.Forms.Button();
+            this.radioButton_FlatFieldCorrectionManual_256G = new System.Windows.Forms.RadioButton();
+            this.button_RunFlatFieldCorrection_256G = new System.Windows.Forms.Button();
+            this.radioButton_FlatFieldCorrectionAutomatic_256G = new System.Windows.Forms.RadioButton();
+            this.panel_SensorControl_256 = new System.Windows.Forms.Panel();
+            this.groupBox_FFCParameters_256 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel_FFCParam256 = new System.Windows.Forms.TableLayoutPanel();
+            this.label_FFCParam256_MaxIntervalTitle = new System.Windows.Forms.Label();
+            this.textBox_FFCParam256_MaxIntervalRange = new System.Windows.Forms.TextBox();
+            this.button_GetFFCParameters_256 = new System.Windows.Forms.Button();
+            this.button_SetFFCParameters_256 = new System.Windows.Forms.Button();
+            this.numericUpDown_FFCParam256_MaxInterval = new System.Windows.Forms.NumericUpDown();
+            this.label_FFCParam256_AutoTriggerThresholdTitle = new System.Windows.Forms.Label();
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold = new System.Windows.Forms.NumericUpDown();
+            this.textBox_FFCParam256_AutoTriggerThresholdRange = new System.Windows.Forms.TextBox();
+            this.label_FFCParam256_MaxIntervalUnit = new System.Windows.Forms.Label();
+            this.button_StoreUserSensorConfig_256 = new System.Windows.Forms.Button();
+            this.button_RestoreDefaultSensorConfig_256 = new System.Windows.Forms.Button();
+            this.groupBox_FluxParameters_256 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel_FluxParam256 = new System.Windows.Forms.TableLayoutPanel();
+            this.label_FluxParam256_DistanceTitle = new System.Windows.Forms.Label();
+            this.label_FluxParam256_EmissivityTitle = new System.Windows.Forms.Label();
+            this.textBox_FluxParam256_EmissivityRange = new System.Windows.Forms.TextBox();
+            this.button_GetFluxParameters_256 = new System.Windows.Forms.Button();
+            this.button_SetFluxParameters_256 = new System.Windows.Forms.Button();
+            this.numericUpDown_FluxParam256_Emissivity = new System.Windows.Forms.NumericUpDown();
+            this.label_FluxParam256_AtmosphericTransmittanceTitle = new System.Windows.Forms.Label();
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance = new System.Windows.Forms.NumericUpDown();
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange = new System.Windows.Forms.TextBox();
+            this.label_FluxParam256_AtmosphericTemperatureTitle = new System.Windows.Forms.Label();
+            this.numericUpDown_FluxParam256_AtmosphericTemperature = new System.Windows.Forms.NumericUpDown();
+            this.textBox_FluxParam256_AtmosphericTemperatureRange = new System.Windows.Forms.TextBox();
+            this.label_FluxParam256_AtmosphericTemperatureUnit = new System.Windows.Forms.Label();
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle = new System.Windows.Forms.Label();
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature = new System.Windows.Forms.NumericUpDown();
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit = new System.Windows.Forms.Label();
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange = new System.Windows.Forms.TextBox();
+            this.numericUpDown_FluxParam256_Distance = new System.Windows.Forms.NumericUpDown();
+            this.label_FluxParam256_DistanceUnit = new System.Windows.Forms.Label();
+            this.textBox_FluxParam256_DistanceRange = new System.Windows.Forms.TextBox();
+            this.groupBox_GainModeState_256 = new System.Windows.Forms.GroupBox();
+            this.button_SetGainModeState_256 = new System.Windows.Forms.Button();
+            this.button_GetGainModeState_256 = new System.Windows.Forms.Button();
+            this.radioButton_GainModeStateLow_256 = new System.Windows.Forms.RadioButton();
+            this.radioButton_GainModeStateHigh_256 = new System.Windows.Forms.RadioButton();
+            this.groupBox_FlatFieldCorrection_256 = new System.Windows.Forms.GroupBox();
+            this.button_SetFlatFieldCorrectionMode_256 = new System.Windows.Forms.Button();
+            this.button_GetFlatFieldCorrectionMode_256 = new System.Windows.Forms.Button();
+            this.radioButton_FlatFieldCorrectionManual_256 = new System.Windows.Forms.RadioButton();
+            this.button_RunFlatFieldCorrection_256 = new System.Windows.Forms.Button();
+            this.radioButton_FlatFieldCorrectionAutomatic_256 = new System.Windows.Forms.RadioButton();
+            this.panel_SensorControl_160 = new System.Windows.Forms.Panel();
+            this.groupBox_FluxParameters_160 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel_FluxParam160 = new System.Windows.Forms.TableLayoutPanel();
+            this.label_FluxParam160_WindowReflectedTemperatureUnit = new System.Windows.Forms.Label();
+            this.label_FluxParam160_AtmosphericTemperatureUnit = new System.Windows.Forms.Label();
+            this.label_FluxParam160_WindowTemperatureUnit = new System.Windows.Forms.Label();
+            this.label_FluxParam160_BackgroundTemperatureUnit = new System.Windows.Forms.Label();
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_FluxParam160_WindowReflection = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_FluxParam160_AtmosphericTemperature = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_FluxParam160_AtmosphericTransmission = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_FluxParam160_WindowTemperature = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_FluxParam160_WindowTransmission = new System.Windows.Forms.NumericUpDown();
+            this.label_FluxParam160_SceneEmissivityTitle = new System.Windows.Forms.Label();
+            this.textBox_FluxParam160_SceneEmissivityRange = new System.Windows.Forms.TextBox();
+            this.button_GetFluxParameters_160 = new System.Windows.Forms.Button();
+            this.button_SetFluxParameters_160 = new System.Windows.Forms.Button();
+            this.label_FluxParam160_WindowTransmissionTitle = new System.Windows.Forms.Label();
+            this.label_FluxParam160_WindowTemperatureTitle = new System.Windows.Forms.Label();
+            this.label_FluxParam160_AtmosphericTransmissionTitle = new System.Windows.Forms.Label();
+            this.label_FluxParam160_AtmosphericTemperatureTitle = new System.Windows.Forms.Label();
+            this.textBox_FluxParam160_BackgroundTemperatureRange = new System.Windows.Forms.TextBox();
+            this.textBox_FluxParam160_WindowTransmissionRange = new System.Windows.Forms.TextBox();
+            this.textBox_FluxParam160_WindowTemperatureRange = new System.Windows.Forms.TextBox();
+            this.textBox_FluxParam160_AtmosphericTransmissionRange = new System.Windows.Forms.TextBox();
+            this.textBox_FluxParam160_AtmosphericTemperatureRange = new System.Windows.Forms.TextBox();
+            this.label_FluxParam160_WindowReflectionTitle = new System.Windows.Forms.Label();
+            this.label_FluxParam160_WindowReflectedTemperatureTitle = new System.Windows.Forms.Label();
+            this.textBox_FluxParam160_WindowReflectionRange = new System.Windows.Forms.TextBox();
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange = new System.Windows.Forms.TextBox();
+            this.numericUpDown_FluxParam160_SceneEmissivity = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_FluxParam160_BackgroundTemperature = new System.Windows.Forms.NumericUpDown();
+            this.label_FluxParam160_BackgroundTemperatureTitle = new System.Windows.Forms.Label();
+            this.groupBox_GainModeState_160 = new System.Windows.Forms.GroupBox();
+            this.button_SetGainModeState_160 = new System.Windows.Forms.Button();
+            this.button_GetGainModeState_160 = new System.Windows.Forms.Button();
+            this.radioButton_GainModeStateAuto_160 = new System.Windows.Forms.RadioButton();
+            this.radioButton_GainModeStateLow_160 = new System.Windows.Forms.RadioButton();
+            this.radioButton_GainModeStateHigh_160 = new System.Windows.Forms.RadioButton();
+            this.groupBox_FlatFieldCorrection_160 = new System.Windows.Forms.GroupBox();
+            this.button_SetFlatFieldCorrectionMode_160 = new System.Windows.Forms.Button();
+            this.button_GetFlatFieldCorrectionMode_160 = new System.Windows.Forms.Button();
+            this.radioButton_FlatFieldCorrectionManual_160 = new System.Windows.Forms.RadioButton();
+            this.button_RunFlatFieldCorrection_160 = new System.Windows.Forms.Button();
+            this.radioButton_FlatFieldCorrectionAutomatic_160 = new System.Windows.Forms.RadioButton();
+            this.button_RestoreDefaultFluxParameters_160 = new System.Windows.Forms.Button();
             this.tabPage_RoiManager = new System.Windows.Forms.TabPage();
             this.button_RemoveRoiItem = new System.Windows.Forms.Button();
             this.button_AddRoiItem = new System.Windows.Forms.Button();
@@ -222,47 +251,47 @@
             this.rbtn_RoiRect = new System.Windows.Forms.RadioButton();
             this.rbtn_RoiLine = new System.Windows.Forms.RadioButton();
             this.rbtn_RoiSpot = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_ellipseX = new System.Windows.Forms.TextBox();
-            this.textBox_ellipseW = new System.Windows.Forms.TextBox();
-            this.textBox_ellipseY = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox_ellipseH = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox_rectX = new System.Windows.Forms.TextBox();
-            this.textBox_rectW = new System.Windows.Forms.TextBox();
-            this.textBox_rectY = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox_rectH = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox_lineX1 = new System.Windows.Forms.TextBox();
-            this.textBox_lineX2 = new System.Windows.Forms.TextBox();
-            this.textBox_lineY1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox_lineY2 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox_spotX = new System.Windows.Forms.TextBox();
-            this.textBox_spotY = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox_ListROI = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel_RoiEllipse = new System.Windows.Forms.TableLayoutPanel();
+            this.label_RoiEllipseW = new System.Windows.Forms.Label();
+            this.label_RoiEllipseX = new System.Windows.Forms.Label();
+            this.label_RoiEllipseY = new System.Windows.Forms.Label();
+            this.textBox_RoiEllipseX = new System.Windows.Forms.TextBox();
+            this.textBox_RoiEllipseW = new System.Windows.Forms.TextBox();
+            this.textBox_RoiEllipseY = new System.Windows.Forms.TextBox();
+            this.label_RoiEllipseH = new System.Windows.Forms.Label();
+            this.textBox_RoiEllipseH = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel_RoiRect = new System.Windows.Forms.TableLayoutPanel();
+            this.label_RoiRectW = new System.Windows.Forms.Label();
+            this.label_RoiRectX = new System.Windows.Forms.Label();
+            this.label_RoiRectY = new System.Windows.Forms.Label();
+            this.textBox_RoiRectX = new System.Windows.Forms.TextBox();
+            this.textBox_RoiRectW = new System.Windows.Forms.TextBox();
+            this.textBox_RoiRectY = new System.Windows.Forms.TextBox();
+            this.label_RoiRectH = new System.Windows.Forms.Label();
+            this.textBox_RoiRectH = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel_RoiLine = new System.Windows.Forms.TableLayoutPanel();
+            this.label_RoiLineX2 = new System.Windows.Forms.Label();
+            this.label_RoiLineX1 = new System.Windows.Forms.Label();
+            this.label_RoiLineY1 = new System.Windows.Forms.Label();
+            this.textBox_RoiLineX1 = new System.Windows.Forms.TextBox();
+            this.textBox_RoiLineX2 = new System.Windows.Forms.TextBox();
+            this.textBox_RoiLineY1 = new System.Windows.Forms.TextBox();
+            this.label_RoiLineY2 = new System.Windows.Forms.Label();
+            this.textBox_RoiLineY2 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel_RoiSpot = new System.Windows.Forms.TableLayoutPanel();
+            this.label_RoiSpotX = new System.Windows.Forms.Label();
+            this.label_RoiSpotY = new System.Windows.Forms.Label();
+            this.textBox_RoiSpotX = new System.Windows.Forms.TextBox();
+            this.textBox_RoiSpotY = new System.Windows.Forms.TextBox();
+            this.label_RoiList = new System.Windows.Forms.Label();
+            this.comboBox_RoiList = new System.Windows.Forms.ComboBox();
+            this.panel_Preview = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_Preview = new System.Windows.Forms.TableLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel_Temperature = new System.Windows.Forms.Panel();
             this.label_MinimumTemperature = new System.Windows.Forms.Label();
             this.label_AverageTemperature = new System.Windows.Forms.Label();
             this.label_MaximumTemperature = new System.Windows.Forms.Label();
-            this.panel_Preview = new System.Windows.Forms.Panel();
+            this.panel_PreviewConfig = new System.Windows.Forms.Panel();
             this.checkBox_NoiseFiltering = new System.Windows.Forms.CheckBox();
             this.label_ColorMap = new System.Windows.Forms.Label();
             this.comboBox_ColorMap = new System.Windows.Forms.ComboBox();
@@ -270,8 +299,8 @@
             this.comboBox_TemperatureUnit = new System.Windows.Forms.ComboBox();
             this.panel_VideoPreview = new System.Windows.Forms.Panel();
             this.pictureBox_Preview = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel_RoiShape = new System.Windows.Forms.TableLayoutPanel();
+            this.panel_RoiShape = new System.Windows.Forms.Panel();
             this.radioButton_ShapeEllipse = new System.Windows.Forms.RadioButton();
             this.radioButton_ShapeRectangle = new System.Windows.Forms.RadioButton();
             this.radioButton_ShapeLine = new System.Windows.Forms.RadioButton();
@@ -280,64 +309,70 @@
             this.button_RemoveAllRoi = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.statusBar.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.panel_Camera.SuspendLayout();
+            this.tabControl_Camera.SuspendLayout();
             this.tabPage_RemoteCamera.SuspendLayout();
             this.tabPage_LocalCamera.SuspendLayout();
-            this.tabControl2.SuspendLayout();
+            this.tabControl_CameraConfig.SuspendLayout();
             this.tabPage_Product.SuspendLayout();
             this.groupBox_ProductInformation.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel_ProductInfo.SuspendLayout();
             this.groupBox_SensorInformation.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel_SensorInfo.SuspendLayout();
             this.groupBox_SoftwareUpdate.SuspendLayout();
             this.tableLayoutPanel_BinaryInforation.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel_SoftwareUpdateBlank.SuspendLayout();
             this.tabPage_Network.SuspendLayout();
             this.groupBox_NetworkConfiguration.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tabControl3.SuspendLayout();
+            this.tableLayoutPanel_NetworkConfig.SuspendLayout();
+            this.tabControl_SensorConfig.SuspendLayout();
             this.tabPage_SensorControl.SuspendLayout();
-            this.panel_SensorControl_256E.SuspendLayout();
-            this.groupBox_FFCParameters_256E.SuspendLayout();
-            this.tableLayoutPanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256E_MaxInterval)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256E_AutoTriggerThreshold)).BeginInit();
-            this.groupBox_FluxParameters_256E.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_Emissivity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_AtmosphericTransmittance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_AtmosphericTemperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_AmbientReflectionTemperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_Distance)).BeginInit();
-            this.groupBox_GainModeState_256E.SuspendLayout();
-            this.groupBox_FlatFieldCorrection_256E.SuspendLayout();
-            this.panel_SensorControl_160E.SuspendLayout();
-            this.groupBox_FluxParameters_160E.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_WindowReflectedTemperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_WindowReflection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_AtmosphericTemperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_AtmosphericTransmission)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_WindowTemperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_WindowTransmission)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_SceneEmissivity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_BackgroundTemperature)).BeginInit();
-            this.groupBox_GainModeState_160E.SuspendLayout();
-            this.groupBox_FlatFieldCorrection_160E.SuspendLayout();
+            this.panel_SensorControl_256G.SuspendLayout();
+            this.groupBox_FFCParameters_256G.SuspendLayout();
+            this.tableLayoutPanel_FFCParam256G.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256G_MaxInterval)).BeginInit();
+            this.groupBox_GainModeState_256G.SuspendLayout();
+            this.groupBox_FlatFieldCorrection_256G.SuspendLayout();
+            this.panel_SensorControl_256.SuspendLayout();
+            this.groupBox_FFCParameters_256.SuspendLayout();
+            this.tableLayoutPanel_FFCParam256.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256_MaxInterval)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256_AutoTriggerThreshold)).BeginInit();
+            this.groupBox_FluxParameters_256.SuspendLayout();
+            this.tableLayoutPanel_FluxParam256.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_Emissivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_AtmosphericTransmittance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_AtmosphericTemperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_AmbientReflectionTemperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_Distance)).BeginInit();
+            this.groupBox_GainModeState_256.SuspendLayout();
+            this.groupBox_FlatFieldCorrection_256.SuspendLayout();
+            this.panel_SensorControl_160.SuspendLayout();
+            this.groupBox_FluxParameters_160.SuspendLayout();
+            this.tableLayoutPanel_FluxParam160.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_WindowReflectedTemperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_WindowReflection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_AtmosphericTemperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_AtmosphericTransmission)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_WindowTemperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_WindowTransmission)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_SceneEmissivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_BackgroundTemperature)).BeginInit();
+            this.groupBox_GainModeState_160.SuspendLayout();
+            this.groupBox_FlatFieldCorrection_160.SuspendLayout();
             this.tabPage_RoiManager.SuspendLayout();
-            this.tableLayoutPanel14.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tableLayoutPanel_Preview.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.tableLayoutPanel_RoiEllipse.SuspendLayout();
+            this.tableLayoutPanel_RoiRect.SuspendLayout();
+            this.tableLayoutPanel_RoiLine.SuspendLayout();
+            this.tableLayoutPanel_RoiSpot.SuspendLayout();
             this.panel_Preview.SuspendLayout();
+            this.tableLayoutPanel_Preview.SuspendLayout();
+            this.panel_Temperature.SuspendLayout();
+            this.panel_PreviewConfig.SuspendLayout();
             this.panel_VideoPreview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Preview)).BeginInit();
-            this.tableLayoutPanel7.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.tableLayoutPanel_RoiShape.SuspendLayout();
+            this.panel_RoiShape.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -347,10 +382,10 @@
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 370F));
             this.tableLayoutPanelMain.Controls.Add(this.statusBar, 0, 2);
-            this.tableLayoutPanelMain.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.tabControl2, 2, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.tabControl3, 0, 1);
-            this.tableLayoutPanelMain.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.panel_Camera, 0, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.tabControl_CameraConfig, 2, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.tabControl_SensorConfig, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.panel_Preview, 1, 0);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -369,6 +404,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelMain.SetColumnSpan(this.statusBar, 3);
             this.statusBar.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusBar.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusLabel_Name,
             this.StatusLabel_CamInfo,
@@ -400,29 +436,33 @@
             this.StatusLabel_PreviewSize.Name = "StatusLabel_PreviewSize";
             this.StatusLabel_PreviewSize.Size = new System.Drawing.Size(0, 17);
             // 
-            // panel1
+            // panel_Camera
             // 
-            this.panel1.Controls.Add(this.tabControl1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 463);
-            this.panel1.TabIndex = 1;
+            this.panel_Camera.Controls.Add(this.tabControl_Camera);
+            this.panel_Camera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Camera.Location = new System.Drawing.Point(3, 4);
+            this.panel_Camera.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_Camera.Name = "panel_Camera";
+            this.panel_Camera.Size = new System.Drawing.Size(234, 463);
+            this.panel_Camera.TabIndex = 1;
             // 
-            // tabControl1
+            // tabControl_Camera
             // 
-            this.tabControl1.Controls.Add(this.tabPage_RemoteCamera);
-            this.tabControl1.Controls.Add(this.tabPage_LocalCamera);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(234, 463);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl_Camera.Controls.Add(this.tabPage_RemoteCamera);
+            this.tabControl_Camera.Controls.Add(this.tabPage_LocalCamera);
+            this.tabControl_Camera.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl_Camera.Location = new System.Drawing.Point(0, 0);
+            this.tabControl_Camera.Name = "tabControl_Camera";
+            this.tabControl_Camera.SelectedIndex = 0;
+            this.tabControl_Camera.Size = new System.Drawing.Size(234, 463);
+            this.tabControl_Camera.TabIndex = 0;
             // 
             // tabPage_RemoteCamera
             // 
+            this.tabPage_RemoteCamera.Controls.Add(this.label_RemoteCameraVideoFormat);
+            this.tabPage_RemoteCamera.Controls.Add(this.comboBox_RemoteCameraVideoFormat);
+            this.tabPage_RemoteCamera.Controls.Add(this.textBox_RemoteCameraAdapterIP);
+            this.tabPage_RemoteCamera.Controls.Add(this.label_RemoteCameraAdapterIPTitle);
             this.tabPage_RemoteCamera.Controls.Add(this.textBox_RemoteCameraMACAddress);
             this.tabPage_RemoteCamera.Controls.Add(this.label_RemoteCameraMACAddressTitle);
             this.tabPage_RemoteCamera.Controls.Add(this.textBox_RemoteCameraSerialNumber);
@@ -441,6 +481,42 @@
             this.tabPage_RemoteCamera.TabIndex = 1;
             this.tabPage_RemoteCamera.Text = "Remote Camera";
             this.tabPage_RemoteCamera.UseVisualStyleBackColor = true;
+            // 
+            // label_RemoteCameraVideoFormat
+            // 
+            this.label_RemoteCameraVideoFormat.AutoSize = true;
+            this.label_RemoteCameraVideoFormat.Location = new System.Drawing.Point(9, 187);
+            this.label_RemoteCameraVideoFormat.Name = "label_RemoteCameraVideoFormat";
+            this.label_RemoteCameraVideoFormat.Size = new System.Drawing.Size(78, 15);
+            this.label_RemoteCameraVideoFormat.TabIndex = 16;
+            this.label_RemoteCameraVideoFormat.Text = "Video Format";
+            // 
+            // comboBox_RemoteCameraVideoFormat
+            // 
+            this.comboBox_RemoteCameraVideoFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_RemoteCameraVideoFormat.FormattingEnabled = true;
+            this.comboBox_RemoteCameraVideoFormat.Location = new System.Drawing.Point(12, 205);
+            this.comboBox_RemoteCameraVideoFormat.Name = "comboBox_RemoteCameraVideoFormat";
+            this.comboBox_RemoteCameraVideoFormat.Size = new System.Drawing.Size(203, 23);
+            this.comboBox_RemoteCameraVideoFormat.TabIndex = 15;
+            this.comboBox_RemoteCameraVideoFormat.SelectedIndexChanged += new System.EventHandler(this.comboBox_RemoteCameraVideoFormat_SelectedIndexChanged);
+            // 
+            // textBox_RemoteCameraAdapterIP
+            // 
+            this.textBox_RemoteCameraAdapterIP.Location = new System.Drawing.Point(95, 153);
+            this.textBox_RemoteCameraAdapterIP.Name = "textBox_RemoteCameraAdapterIP";
+            this.textBox_RemoteCameraAdapterIP.ReadOnly = true;
+            this.textBox_RemoteCameraAdapterIP.Size = new System.Drawing.Size(120, 23);
+            this.textBox_RemoteCameraAdapterIP.TabIndex = 12;
+            // 
+            // label_RemoteCameraAdapterIPTitle
+            // 
+            this.label_RemoteCameraAdapterIPTitle.AutoSize = true;
+            this.label_RemoteCameraAdapterIPTitle.Location = new System.Drawing.Point(23, 156);
+            this.label_RemoteCameraAdapterIPTitle.Name = "label_RemoteCameraAdapterIPTitle";
+            this.label_RemoteCameraAdapterIPTitle.Size = new System.Drawing.Size(68, 15);
+            this.label_RemoteCameraAdapterIPTitle.TabIndex = 11;
+            this.label_RemoteCameraAdapterIPTitle.Text = "Adapter IP :";
             // 
             // textBox_RemoteCameraMACAddress
             // 
@@ -504,16 +580,16 @@
             // 
             // textBox_RemoteCameraIPAddress
             // 
-            this.textBox_RemoteCameraIPAddress.BackColor = System.Drawing.SystemColors.Control;
             this.textBox_RemoteCameraIPAddress.Location = new System.Drawing.Point(95, 119);
             this.textBox_RemoteCameraIPAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_RemoteCameraIPAddress.Name = "textBox_RemoteCameraIPAddress";
+            this.textBox_RemoteCameraIPAddress.ReadOnly = true;
             this.textBox_RemoteCameraIPAddress.Size = new System.Drawing.Size(120, 23);
             this.textBox_RemoteCameraIPAddress.TabIndex = 2;
             // 
             // button_ConnectRemoteCamera
             // 
-            this.button_ConnectRemoteCamera.Location = new System.Drawing.Point(12, 153);
+            this.button_ConnectRemoteCamera.Location = new System.Drawing.Point(12, 237);
             this.button_ConnectRemoteCamera.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_ConnectRemoteCamera.Name = "button_ConnectRemoteCamera";
             this.button_ConnectRemoteCamera.Size = new System.Drawing.Size(203, 27);
@@ -527,16 +603,17 @@
             this.listBox_RemoteCameraScanList.FormattingEnabled = true;
             this.listBox_RemoteCameraScanList.HorizontalScrollbar = true;
             this.listBox_RemoteCameraScanList.ItemHeight = 15;
-            this.listBox_RemoteCameraScanList.Location = new System.Drawing.Point(12, 240);
+            this.listBox_RemoteCameraScanList.Location = new System.Drawing.Point(12, 304);
             this.listBox_RemoteCameraScanList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox_RemoteCameraScanList.Name = "listBox_RemoteCameraScanList";
-            this.listBox_RemoteCameraScanList.Size = new System.Drawing.Size(203, 184);
+            this.listBox_RemoteCameraScanList.Size = new System.Drawing.Size(203, 124);
             this.listBox_RemoteCameraScanList.TabIndex = 1;
             this.listBox_RemoteCameraScanList.Click += new System.EventHandler(this.listBox_RemoteCameraList_Click);
+            this.listBox_RemoteCameraScanList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_RemoteCameraList_MouseDoubleClick);
             // 
             // button_ScanRemoteCamera
             // 
-            this.button_ScanRemoteCamera.Location = new System.Drawing.Point(12, 208);
+            this.button_ScanRemoteCamera.Location = new System.Drawing.Point(11, 271);
             this.button_ScanRemoteCamera.Name = "button_ScanRemoteCamera";
             this.button_ScanRemoteCamera.Size = new System.Drawing.Size(204, 26);
             this.button_ScanRemoteCamera.TabIndex = 0;
@@ -546,6 +623,8 @@
             // 
             // tabPage_LocalCamera
             // 
+            this.tabPage_LocalCamera.Controls.Add(this.label_LocalCameraVideoFormat);
+            this.tabPage_LocalCamera.Controls.Add(this.comboBox_LocalCameraVideoFormat);
             this.tabPage_LocalCamera.Controls.Add(this.textBox_LocalCameraComPort);
             this.tabPage_LocalCamera.Controls.Add(this.textBox_LocalCameraName);
             this.tabPage_LocalCamera.Controls.Add(this.listBox_LocalCameraScanList);
@@ -560,6 +639,25 @@
             this.tabPage_LocalCamera.TabIndex = 0;
             this.tabPage_LocalCamera.Text = "Local Camera";
             this.tabPage_LocalCamera.UseVisualStyleBackColor = true;
+            // 
+            // label_LocalCameraVideoFormat
+            // 
+            this.label_LocalCameraVideoFormat.AutoSize = true;
+            this.label_LocalCameraVideoFormat.Location = new System.Drawing.Point(9, 87);
+            this.label_LocalCameraVideoFormat.Name = "label_LocalCameraVideoFormat";
+            this.label_LocalCameraVideoFormat.Size = new System.Drawing.Size(78, 15);
+            this.label_LocalCameraVideoFormat.TabIndex = 14;
+            this.label_LocalCameraVideoFormat.Text = "Video Format";
+            // 
+            // comboBox_LocalCameraVideoFormat
+            // 
+            this.comboBox_LocalCameraVideoFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_LocalCameraVideoFormat.FormattingEnabled = true;
+            this.comboBox_LocalCameraVideoFormat.Location = new System.Drawing.Point(12, 105);
+            this.comboBox_LocalCameraVideoFormat.Name = "comboBox_LocalCameraVideoFormat";
+            this.comboBox_LocalCameraVideoFormat.Size = new System.Drawing.Size(203, 23);
+            this.comboBox_LocalCameraVideoFormat.TabIndex = 13;
+            this.comboBox_LocalCameraVideoFormat.SelectedIndexChanged += new System.EventHandler(this.comboBox_LocalCameraVideoFormat_SelectedIndexChanged);
             // 
             // textBox_LocalCameraComPort
             // 
@@ -582,16 +680,17 @@
             this.listBox_LocalCameraScanList.FormattingEnabled = true;
             this.listBox_LocalCameraScanList.HorizontalScrollbar = true;
             this.listBox_LocalCameraScanList.ItemHeight = 15;
-            this.listBox_LocalCameraScanList.Location = new System.Drawing.Point(12, 240);
+            this.listBox_LocalCameraScanList.Location = new System.Drawing.Point(12, 259);
             this.listBox_LocalCameraScanList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox_LocalCameraScanList.Name = "listBox_LocalCameraScanList";
-            this.listBox_LocalCameraScanList.Size = new System.Drawing.Size(203, 184);
+            this.listBox_LocalCameraScanList.Size = new System.Drawing.Size(203, 169);
             this.listBox_LocalCameraScanList.TabIndex = 11;
             this.listBox_LocalCameraScanList.Click += new System.EventHandler(this.listBox_LocalCameraList_Click);
+            this.listBox_LocalCameraScanList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_LocalCameraList_MouseDoubleClick);
             // 
             // button_ScanLocalCamera
             // 
-            this.button_ScanLocalCamera.Location = new System.Drawing.Point(12, 208);
+            this.button_ScanLocalCamera.Location = new System.Drawing.Point(12, 227);
             this.button_ScanLocalCamera.Name = "button_ScanLocalCamera";
             this.button_ScanLocalCamera.Size = new System.Drawing.Size(204, 26);
             this.button_ScanLocalCamera.TabIndex = 5;
@@ -619,7 +718,7 @@
             // 
             // button_ConnectLocalCamera
             // 
-            this.button_ConnectLocalCamera.Location = new System.Drawing.Point(12, 96);
+            this.button_ConnectLocalCamera.Location = new System.Drawing.Point(12, 138);
             this.button_ConnectLocalCamera.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_ConnectLocalCamera.Name = "button_ConnectLocalCamera";
             this.button_ConnectLocalCamera.Size = new System.Drawing.Size(203, 27);
@@ -628,18 +727,18 @@
             this.button_ConnectLocalCamera.UseVisualStyleBackColor = true;
             this.button_ConnectLocalCamera.Click += new System.EventHandler(this.button_ConnectLocalCamera_Click);
             // 
-            // tabControl2
+            // tabControl_CameraConfig
             // 
-            this.tabControl2.Controls.Add(this.tabPage_Product);
-            this.tabControl2.Controls.Add(this.tabPage_Network);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Enabled = false;
-            this.tabControl2.Location = new System.Drawing.Point(736, 3);
-            this.tabControl2.Name = "tabControl2";
-            this.tableLayoutPanelMain.SetRowSpan(this.tabControl2, 2);
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(364, 739);
-            this.tabControl2.TabIndex = 4;
+            this.tabControl_CameraConfig.Controls.Add(this.tabPage_Product);
+            this.tabControl_CameraConfig.Controls.Add(this.tabPage_Network);
+            this.tabControl_CameraConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl_CameraConfig.Enabled = false;
+            this.tabControl_CameraConfig.Location = new System.Drawing.Point(736, 3);
+            this.tabControl_CameraConfig.Name = "tabControl_CameraConfig";
+            this.tableLayoutPanelMain.SetRowSpan(this.tabControl_CameraConfig, 2);
+            this.tabControl_CameraConfig.SelectedIndex = 0;
+            this.tabControl_CameraConfig.Size = new System.Drawing.Size(364, 739);
+            this.tabControl_CameraConfig.TabIndex = 4;
             // 
             // tabPage_Product
             // 
@@ -656,7 +755,7 @@
             // 
             // groupBox_ProductInformation
             // 
-            this.groupBox_ProductInformation.Controls.Add(this.tableLayoutPanel2);
+            this.groupBox_ProductInformation.Controls.Add(this.tableLayoutPanel_ProductInfo);
             this.groupBox_ProductInformation.Controls.Add(this.button_GetProductInformation);
             this.groupBox_ProductInformation.Location = new System.Drawing.Point(4, 11);
             this.groupBox_ProductInformation.Name = "groupBox_ProductInformation";
@@ -665,31 +764,31 @@
             this.groupBox_ProductInformation.TabStop = false;
             this.groupBox_ProductInformation.Text = "Product Information";
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanel_ProductInfo
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel2.Controls.Add(this.label_HardwareVersion, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label_ProductSerialNumber, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label_ProductModelName, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label_ProductSerialNumberTitle, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label_ProductModelNameTitle, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label_FirmwareVersionTitle, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.label_BootloaderVersionTitle, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label_FirmwareVersion, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.label_BootloaderVersion, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label_HardwareVersionTitle, 0, 2);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(13, 22);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(261, 120);
-            this.tableLayoutPanel2.TabIndex = 3;
+            this.tableLayoutPanel_ProductInfo.ColumnCount = 2;
+            this.tableLayoutPanel_ProductInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_ProductInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_HardwareVersion, 1, 2);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductSerialNumber, 1, 1);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductModelName, 1, 0);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductSerialNumberTitle, 0, 1);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductModelNameTitle, 0, 0);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_FirmwareVersionTitle, 0, 4);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_BootloaderVersionTitle, 0, 3);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_FirmwareVersion, 1, 4);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_BootloaderVersion, 1, 3);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_HardwareVersionTitle, 0, 2);
+            this.tableLayoutPanel_ProductInfo.Location = new System.Drawing.Point(13, 22);
+            this.tableLayoutPanel_ProductInfo.Name = "tableLayoutPanel_ProductInfo";
+            this.tableLayoutPanel_ProductInfo.RowCount = 5;
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_ProductInfo.Size = new System.Drawing.Size(261, 120);
+            this.tableLayoutPanel_ProductInfo.TabIndex = 3;
             // 
             // label_HardwareVersion
             // 
@@ -798,7 +897,7 @@
             // 
             // groupBox_SensorInformation
             // 
-            this.groupBox_SensorInformation.Controls.Add(this.tableLayoutPanel8);
+            this.groupBox_SensorInformation.Controls.Add(this.tableLayoutPanel_SensorInfo);
             this.groupBox_SensorInformation.Controls.Add(this.button_GetSensorInformation);
             this.groupBox_SensorInformation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_SensorInformation.Location = new System.Drawing.Point(4, 180);
@@ -808,25 +907,25 @@
             this.groupBox_SensorInformation.TabStop = false;
             this.groupBox_SensorInformation.Text = "Sensor Information";
             // 
-            // tableLayoutPanel8
+            // tableLayoutPanel_SensorInfo
             // 
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel8.Controls.Add(this.label_SensorUptime, 1, 2);
-            this.tableLayoutPanel8.Controls.Add(this.label_SensorUptimeTitle, 0, 2);
-            this.tableLayoutPanel8.Controls.Add(this.label_SensorModelNameTitle, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label_SensorSerialNumberTitle, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label_SensorSerialNumber, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label_SensorModelName, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(13, 22);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 3;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(261, 72);
-            this.tableLayoutPanel8.TabIndex = 6;
+            this.tableLayoutPanel_SensorInfo.ColumnCount = 2;
+            this.tableLayoutPanel_SensorInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_SensorInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.tableLayoutPanel_SensorInfo.Controls.Add(this.label_SensorUptime, 1, 2);
+            this.tableLayoutPanel_SensorInfo.Controls.Add(this.label_SensorUptimeTitle, 0, 2);
+            this.tableLayoutPanel_SensorInfo.Controls.Add(this.label_SensorModelNameTitle, 0, 0);
+            this.tableLayoutPanel_SensorInfo.Controls.Add(this.label_SensorSerialNumberTitle, 0, 1);
+            this.tableLayoutPanel_SensorInfo.Controls.Add(this.label_SensorSerialNumber, 1, 1);
+            this.tableLayoutPanel_SensorInfo.Controls.Add(this.label_SensorModelName, 1, 0);
+            this.tableLayoutPanel_SensorInfo.Location = new System.Drawing.Point(13, 22);
+            this.tableLayoutPanel_SensorInfo.Name = "tableLayoutPanel_SensorInfo";
+            this.tableLayoutPanel_SensorInfo.RowCount = 3;
+            this.tableLayoutPanel_SensorInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_SensorInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_SensorInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_SensorInfo.Size = new System.Drawing.Size(261, 72);
+            this.tableLayoutPanel_SensorInfo.TabIndex = 6;
             // 
             // label_SensorUptime
             // 
@@ -905,7 +1004,7 @@
             this.groupBox_SoftwareUpdate.Controls.Add(this.button_SoftwareUpdateFileBrowse);
             this.groupBox_SoftwareUpdate.Controls.Add(this.textBox_SoftwareUpdateFilePath);
             this.groupBox_SoftwareUpdate.Controls.Add(this.button_StartSoftwareUpdate);
-            this.groupBox_SoftwareUpdate.Controls.Add(this.tableLayoutPanel5);
+            this.groupBox_SoftwareUpdate.Controls.Add(this.tableLayoutPanel_SoftwareUpdateBlank);
             this.groupBox_SoftwareUpdate.Controls.Add(this.progressBar_SoftwareUpdate);
             this.groupBox_SoftwareUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_SoftwareUpdate.Location = new System.Drawing.Point(4, 301);
@@ -1081,17 +1180,17 @@
             this.button_StartSoftwareUpdate.UseVisualStyleBackColor = true;
             this.button_StartSoftwareUpdate.Click += new System.EventHandler(this.button_ProductControl_Click);
             // 
-            // tableLayoutPanel5
+            // tableLayoutPanel_SoftwareUpdateBlank
             // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.12613F));
-            this.tableLayoutPanel5.Controls.Add(this.label_SoftwareUpdateStatus, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(10, 152);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(326, 17);
-            this.tableLayoutPanel5.TabIndex = 5;
+            this.tableLayoutPanel_SoftwareUpdateBlank.ColumnCount = 1;
+            this.tableLayoutPanel_SoftwareUpdateBlank.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.12613F));
+            this.tableLayoutPanel_SoftwareUpdateBlank.Controls.Add(this.label_SoftwareUpdateStatus, 0, 0);
+            this.tableLayoutPanel_SoftwareUpdateBlank.Location = new System.Drawing.Point(10, 152);
+            this.tableLayoutPanel_SoftwareUpdateBlank.Name = "tableLayoutPanel_SoftwareUpdateBlank";
+            this.tableLayoutPanel_SoftwareUpdateBlank.RowCount = 1;
+            this.tableLayoutPanel_SoftwareUpdateBlank.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_SoftwareUpdateBlank.Size = new System.Drawing.Size(326, 17);
+            this.tableLayoutPanel_SoftwareUpdateBlank.TabIndex = 5;
             // 
             // label_SoftwareUpdateStatus
             // 
@@ -1122,7 +1221,7 @@
             // 
             // groupBox_NetworkConfiguration
             // 
-            this.groupBox_NetworkConfiguration.Controls.Add(this.tableLayoutPanel4);
+            this.groupBox_NetworkConfiguration.Controls.Add(this.tableLayoutPanel_NetworkConfig);
             this.groupBox_NetworkConfiguration.Controls.Add(this.button_SystemReboot);
             this.groupBox_NetworkConfiguration.Controls.Add(this.button_SetDefaultNetworkConfiguration);
             this.groupBox_NetworkConfiguration.Location = new System.Drawing.Point(3, 11);
@@ -1132,41 +1231,41 @@
             this.groupBox_NetworkConfiguration.TabStop = false;
             this.groupBox_NetworkConfiguration.Text = "Network Configuration";
             // 
-            // tableLayoutPanel4
+            // tableLayoutPanel_NetworkConfig
             // 
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel4.Controls.Add(this.textBox_SubDNSServer, 2, 6);
-            this.tableLayoutPanel4.Controls.Add(this.label_SubDNSServerTitle, 0, 6);
-            this.tableLayoutPanel4.Controls.Add(this.label_MACAddressTitle, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBox_MACAddress, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button_GetNetworkConfiguration, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label_IPAssignmentTitle, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label_IPAddressTitle, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label_NetmaskTitle, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label_GatewayNameTitle, 0, 4);
-            this.tableLayoutPanel4.Controls.Add(this.textBox_IPAddress, 2, 2);
-            this.tableLayoutPanel4.Controls.Add(this.textBox_Netmask, 2, 3);
-            this.tableLayoutPanel4.Controls.Add(this.textBox_Gateway, 2, 4);
-            this.tableLayoutPanel4.Controls.Add(this.textBox_MainDNSServer, 2, 5);
-            this.tableLayoutPanel4.Controls.Add(this.button_SetNetworkConfiguration, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.comboBox_IPAssignment, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label_MainDNSServerTitle, 0, 5);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(5, 22);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 7;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(337, 176);
-            this.tableLayoutPanel4.TabIndex = 11;
+            this.tableLayoutPanel_NetworkConfig.ColumnCount = 4;
+            this.tableLayoutPanel_NetworkConfig.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
+            this.tableLayoutPanel_NetworkConfig.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel_NetworkConfig.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_NetworkConfig.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.textBox_SubDNSServer, 2, 6);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_SubDNSServerTitle, 0, 6);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_MACAddressTitle, 0, 0);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.textBox_MACAddress, 2, 0);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.button_GetNetworkConfiguration, 1, 0);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_IPAssignmentTitle, 0, 1);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_IPAddressTitle, 0, 2);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_NetmaskTitle, 0, 3);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_GatewayNameTitle, 0, 4);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.textBox_IPAddress, 2, 2);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.textBox_Netmask, 2, 3);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.textBox_Gateway, 2, 4);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.textBox_MainDNSServer, 2, 5);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.button_SetNetworkConfiguration, 3, 1);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.comboBox_IPAssignment, 2, 1);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_MainDNSServerTitle, 0, 5);
+            this.tableLayoutPanel_NetworkConfig.Location = new System.Drawing.Point(5, 22);
+            this.tableLayoutPanel_NetworkConfig.Name = "tableLayoutPanel_NetworkConfig";
+            this.tableLayoutPanel_NetworkConfig.RowCount = 7;
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel_NetworkConfig.Size = new System.Drawing.Size(337, 176);
+            this.tableLayoutPanel_NetworkConfig.TabIndex = 11;
             // 
             // textBox_SubDNSServer
             // 
@@ -1214,7 +1313,7 @@
             // 
             this.button_GetNetworkConfiguration.Location = new System.Drawing.Point(118, 3);
             this.button_GetNetworkConfiguration.Name = "button_GetNetworkConfiguration";
-            this.tableLayoutPanel4.SetRowSpan(this.button_GetNetworkConfiguration, 7);
+            this.tableLayoutPanel_NetworkConfig.SetRowSpan(this.button_GetNetworkConfiguration, 7);
             this.button_GetNetworkConfiguration.Size = new System.Drawing.Size(33, 170);
             this.button_GetNetworkConfiguration.TabIndex = 6;
             this.button_GetNetworkConfiguration.Text = "Get";
@@ -1310,7 +1409,7 @@
             this.button_SetNetworkConfiguration.Enabled = false;
             this.button_SetNetworkConfiguration.Location = new System.Drawing.Point(301, 28);
             this.button_SetNetworkConfiguration.Name = "button_SetNetworkConfiguration";
-            this.tableLayoutPanel4.SetRowSpan(this.button_SetNetworkConfiguration, 5);
+            this.tableLayoutPanel_NetworkConfig.SetRowSpan(this.button_SetNetworkConfiguration, 5);
             this.button_SetNetworkConfiguration.Size = new System.Drawing.Size(33, 97);
             this.button_SetNetworkConfiguration.TabIndex = 6;
             this.button_SetNetworkConfiguration.Text = "Set";
@@ -1363,23 +1462,24 @@
             this.button_SetDefaultNetworkConfiguration.UseVisualStyleBackColor = true;
             this.button_SetDefaultNetworkConfiguration.Click += new System.EventHandler(this.button_NetworkControl_Click);
             // 
-            // tabControl3
+            // tabControl_SensorConfig
             // 
-            this.tableLayoutPanelMain.SetColumnSpan(this.tabControl3, 2);
-            this.tabControl3.Controls.Add(this.tabPage_SensorControl);
-            this.tabControl3.Controls.Add(this.tabPage_RoiManager);
-            this.tabControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl3.Enabled = false;
-            this.tabControl3.Location = new System.Drawing.Point(3, 474);
-            this.tabControl3.Name = "tabControl3";
-            this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(727, 268);
-            this.tabControl3.TabIndex = 5;
+            this.tableLayoutPanelMain.SetColumnSpan(this.tabControl_SensorConfig, 2);
+            this.tabControl_SensorConfig.Controls.Add(this.tabPage_SensorControl);
+            this.tabControl_SensorConfig.Controls.Add(this.tabPage_RoiManager);
+            this.tabControl_SensorConfig.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl_SensorConfig.Enabled = false;
+            this.tabControl_SensorConfig.Location = new System.Drawing.Point(3, 474);
+            this.tabControl_SensorConfig.Name = "tabControl_SensorConfig";
+            this.tabControl_SensorConfig.SelectedIndex = 0;
+            this.tabControl_SensorConfig.Size = new System.Drawing.Size(727, 268);
+            this.tabControl_SensorConfig.TabIndex = 5;
             // 
             // tabPage_SensorControl
             // 
-            this.tabPage_SensorControl.Controls.Add(this.panel_SensorControl_256E);
-            this.tabPage_SensorControl.Controls.Add(this.panel_SensorControl_160E);
+            this.tabPage_SensorControl.Controls.Add(this.panel_SensorControl_256G);
+            this.tabPage_SensorControl.Controls.Add(this.panel_SensorControl_256);
+            this.tabPage_SensorControl.Controls.Add(this.panel_SensorControl_160);
             this.tabPage_SensorControl.Location = new System.Drawing.Point(4, 24);
             this.tabPage_SensorControl.Name = "tabPage_SensorControl";
             this.tabPage_SensorControl.Padding = new System.Windows.Forms.Padding(3);
@@ -1388,1198 +1488,1708 @@
             this.tabPage_SensorControl.Text = "Sensor Control";
             this.tabPage_SensorControl.UseVisualStyleBackColor = true;
             // 
-            // panel_SensorControl_256E
+            // panel_SensorControl_256G
             // 
-            this.panel_SensorControl_256E.Controls.Add(this.groupBox_FFCParameters_256E);
-            this.panel_SensorControl_256E.Controls.Add(this.button_StoreUserSensorConfig_256E);
-            this.panel_SensorControl_256E.Controls.Add(this.button_RestoreDefaultSensorConfig_256E);
-            this.panel_SensorControl_256E.Controls.Add(this.groupBox_FluxParameters_256E);
-            this.panel_SensorControl_256E.Controls.Add(this.groupBox_GainModeState_256E);
-            this.panel_SensorControl_256E.Controls.Add(this.groupBox_FlatFieldCorrection_256E);
-            this.panel_SensorControl_256E.Location = new System.Drawing.Point(0, 0);
-            this.panel_SensorControl_256E.Name = "panel_SensorControl_256E";
-            this.panel_SensorControl_256E.Size = new System.Drawing.Size(719, 240);
-            this.panel_SensorControl_256E.TabIndex = 14;
-            this.panel_SensorControl_256E.Visible = false;
+            this.panel_SensorControl_256G.Controls.Add(this.groupBox_FFCParameters_256G);
+            this.panel_SensorControl_256G.Controls.Add(this.button_StoreUserSensorConfig_256G);
+            this.panel_SensorControl_256G.Controls.Add(this.button_RestoreDefaultSensorConfig_256G);
+            this.panel_SensorControl_256G.Controls.Add(this.groupBox_GainModeState_256G);
+            this.panel_SensorControl_256G.Controls.Add(this.groupBox_FlatFieldCorrection_256G);
+            this.panel_SensorControl_256G.Location = new System.Drawing.Point(0, 0);
+            this.panel_SensorControl_256G.Name = "panel_SensorControl_256G";
+            this.panel_SensorControl_256G.Size = new System.Drawing.Size(719, 240);
+            this.panel_SensorControl_256G.TabIndex = 14;
+            this.panel_SensorControl_256G.Visible = false;
             // 
-            // groupBox_FFCParameters_256E
+            // groupBox_FFCParameters_256G
             // 
-            this.groupBox_FFCParameters_256E.Controls.Add(this.tableLayoutPanel10);
-            this.groupBox_FFCParameters_256E.Location = new System.Drawing.Point(6, 160);
-            this.groupBox_FFCParameters_256E.Name = "groupBox_FFCParameters_256E";
-            this.groupBox_FFCParameters_256E.Size = new System.Drawing.Size(467, 77);
-            this.groupBox_FFCParameters_256E.TabIndex = 17;
-            this.groupBox_FFCParameters_256E.TabStop = false;
-            this.groupBox_FFCParameters_256E.Text = "FFC Parameters";
+            this.groupBox_FFCParameters_256G.Controls.Add(this.tableLayoutPanel_FFCParam256G);
+            this.groupBox_FFCParameters_256G.Location = new System.Drawing.Point(6, 3);
+            this.groupBox_FFCParameters_256G.Name = "groupBox_FFCParameters_256G";
+            this.groupBox_FFCParameters_256G.Size = new System.Drawing.Size(467, 54);
+            this.groupBox_FFCParameters_256G.TabIndex = 17;
+            this.groupBox_FFCParameters_256G.TabStop = false;
+            this.groupBox_FFCParameters_256G.Text = "FFC Parameters";
             // 
-            // tableLayoutPanel10
+            // tableLayoutPanel_FFCParam256G
             // 
-            this.tableLayoutPanel10.ColumnCount = 6;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Controls.Add(this.label_FFCParam256E_MaxIntervalTitle, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.textBox_FFCParam256E_MaxIntervalRange, 4, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button_GetFFCParameters_256E, 1, 0);
-            this.tableLayoutPanel10.Controls.Add(this.button_SetFFCParameters_256E, 5, 0);
-            this.tableLayoutPanel10.Controls.Add(this.numericUpDown_FFCParam256E_MaxInterval, 2, 0);
-            this.tableLayoutPanel10.Controls.Add(this.label_FFCParam256E_AutoTriggerThresholdTitle, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.numericUpDown_FFCParam256E_AutoTriggerThreshold, 2, 1);
-            this.tableLayoutPanel10.Controls.Add(this.textBox_FFCParam256E_AutoTriggerThresholdRange, 4, 1);
-            this.tableLayoutPanel10.Controls.Add(this.label_FFCParam256E_MaxIntervalUnit, 3, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(6, 19);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 2;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(455, 52);
-            this.tableLayoutPanel10.TabIndex = 10;
+            this.tableLayoutPanel_FFCParam256G.ColumnCount = 6;
+            this.tableLayoutPanel_FFCParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
+            this.tableLayoutPanel_FFCParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel_FFCParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel_FFCParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FFCParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel_FFCParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_FFCParam256G.Controls.Add(this.label_FFCParam256G_MaxIntervalTitle, 0, 0);
+            this.tableLayoutPanel_FFCParam256G.Controls.Add(this.textBox_FFCParam256G_MaxIntervalRange, 4, 0);
+            this.tableLayoutPanel_FFCParam256G.Controls.Add(this.button_GetFFCParameters_256G, 1, 0);
+            this.tableLayoutPanel_FFCParam256G.Controls.Add(this.button_SetFFCParameters_256G, 5, 0);
+            this.tableLayoutPanel_FFCParam256G.Controls.Add(this.numericUpDown_FFCParam256G_MaxInterval, 2, 0);
+            this.tableLayoutPanel_FFCParam256G.Controls.Add(this.label_FFCParam256G_MaxIntervalUnit, 3, 0);
+            this.tableLayoutPanel_FFCParam256G.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel_FFCParam256G.Name = "tableLayoutPanel_FFCParam256G";
+            this.tableLayoutPanel_FFCParam256G.RowCount = 1;
+            this.tableLayoutPanel_FFCParam256G.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel_FFCParam256G.Size = new System.Drawing.Size(455, 30);
+            this.tableLayoutPanel_FFCParam256G.TabIndex = 10;
             // 
-            // label_FFCParam256E_MaxIntervalTitle
+            // label_FFCParam256G_MaxIntervalTitle
             // 
-            this.label_FFCParam256E_MaxIntervalTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FFCParam256G_MaxIntervalTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FFCParam256E_MaxIntervalTitle.AutoSize = true;
-            this.label_FFCParam256E_MaxIntervalTitle.Location = new System.Drawing.Point(78, 0);
-            this.label_FFCParam256E_MaxIntervalTitle.Name = "label_FFCParam256E_MaxIntervalTitle";
-            this.label_FFCParam256E_MaxIntervalTitle.Size = new System.Drawing.Size(110, 26);
-            this.label_FFCParam256E_MaxIntervalTitle.TabIndex = 1;
-            this.label_FFCParam256E_MaxIntervalTitle.Text = "Maximum Interval :";
-            this.label_FFCParam256E_MaxIntervalTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FFCParam256G_MaxIntervalTitle.AutoSize = true;
+            this.label_FFCParam256G_MaxIntervalTitle.Location = new System.Drawing.Point(78, 0);
+            this.label_FFCParam256G_MaxIntervalTitle.Name = "label_FFCParam256G_MaxIntervalTitle";
+            this.label_FFCParam256G_MaxIntervalTitle.Size = new System.Drawing.Size(110, 30);
+            this.label_FFCParam256G_MaxIntervalTitle.TabIndex = 1;
+            this.label_FFCParam256G_MaxIntervalTitle.Text = "Maximum Interval :";
+            this.label_FFCParam256G_MaxIntervalTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox_FFCParam256E_MaxIntervalRange
+            // textBox_FFCParam256G_MaxIntervalRange
             // 
-            this.textBox_FFCParam256E_MaxIntervalRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FFCParam256E_MaxIntervalRange.Enabled = false;
-            this.textBox_FFCParam256E_MaxIntervalRange.Location = new System.Drawing.Point(319, 3);
-            this.textBox_FFCParam256E_MaxIntervalRange.Name = "textBox_FFCParam256E_MaxIntervalRange";
-            this.textBox_FFCParam256E_MaxIntervalRange.ReadOnly = true;
-            this.textBox_FFCParam256E_MaxIntervalRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FFCParam256E_MaxIntervalRange.TabIndex = 9;
-            this.textBox_FFCParam256E_MaxIntervalRange.Text = "5 ~ 655";
-            this.textBox_FFCParam256E_MaxIntervalRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FFCParam256G_MaxIntervalRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FFCParam256G_MaxIntervalRange.Enabled = false;
+            this.textBox_FFCParam256G_MaxIntervalRange.Location = new System.Drawing.Point(319, 3);
+            this.textBox_FFCParam256G_MaxIntervalRange.Name = "textBox_FFCParam256G_MaxIntervalRange";
+            this.textBox_FFCParam256G_MaxIntervalRange.ReadOnly = true;
+            this.textBox_FFCParam256G_MaxIntervalRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FFCParam256G_MaxIntervalRange.TabIndex = 9;
+            this.textBox_FFCParam256G_MaxIntervalRange.Text = "0 ~ 100";
+            this.textBox_FFCParam256G_MaxIntervalRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button_GetFFCParameters_256E
+            // button_GetFFCParameters_256G
             // 
-            this.button_GetFFCParameters_256E.Location = new System.Drawing.Point(194, 3);
-            this.button_GetFFCParameters_256E.Name = "button_GetFFCParameters_256E";
-            this.tableLayoutPanel10.SetRowSpan(this.button_GetFFCParameters_256E, 2);
-            this.button_GetFFCParameters_256E.Size = new System.Drawing.Size(33, 46);
-            this.button_GetFFCParameters_256E.TabIndex = 6;
-            this.button_GetFFCParameters_256E.Text = "Get";
-            this.button_GetFFCParameters_256E.UseVisualStyleBackColor = true;
-            this.button_GetFFCParameters_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_GetFFCParameters_256G.Location = new System.Drawing.Point(194, 3);
+            this.button_GetFFCParameters_256G.Name = "button_GetFFCParameters_256G";
+            this.button_GetFFCParameters_256G.Size = new System.Drawing.Size(33, 24);
+            this.button_GetFFCParameters_256G.TabIndex = 6;
+            this.button_GetFFCParameters_256G.Text = "Get";
+            this.button_GetFFCParameters_256G.UseVisualStyleBackColor = true;
+            this.button_GetFFCParameters_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // button_SetFFCParameters_256E
+            // button_SetFFCParameters_256G
             // 
-            this.button_SetFFCParameters_256E.Enabled = false;
-            this.button_SetFFCParameters_256E.Location = new System.Drawing.Point(419, 3);
-            this.button_SetFFCParameters_256E.Name = "button_SetFFCParameters_256E";
-            this.tableLayoutPanel10.SetRowSpan(this.button_SetFFCParameters_256E, 2);
-            this.button_SetFFCParameters_256E.Size = new System.Drawing.Size(34, 46);
-            this.button_SetFFCParameters_256E.TabIndex = 6;
-            this.button_SetFFCParameters_256E.Text = "Set";
-            this.button_SetFFCParameters_256E.UseVisualStyleBackColor = true;
-            this.button_SetFFCParameters_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_SetFFCParameters_256G.Enabled = false;
+            this.button_SetFFCParameters_256G.Location = new System.Drawing.Point(419, 3);
+            this.button_SetFFCParameters_256G.Name = "button_SetFFCParameters_256G";
+            this.button_SetFFCParameters_256G.Size = new System.Drawing.Size(34, 24);
+            this.button_SetFFCParameters_256G.TabIndex = 6;
+            this.button_SetFFCParameters_256G.Text = "Set";
+            this.button_SetFFCParameters_256G.UseVisualStyleBackColor = true;
+            this.button_SetFFCParameters_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // numericUpDown_FFCParam256E_MaxInterval
+            // numericUpDown_FFCParam256G_MaxInterval
             // 
-            this.numericUpDown_FFCParam256E_MaxInterval.Enabled = false;
-            this.numericUpDown_FFCParam256E_MaxInterval.Location = new System.Drawing.Point(233, 3);
-            this.numericUpDown_FFCParam256E_MaxInterval.Maximum = new decimal(new int[] {
+            this.numericUpDown_FFCParam256G_MaxInterval.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FFCParam256G_MaxInterval.Enabled = false;
+            this.numericUpDown_FFCParam256G_MaxInterval.Location = new System.Drawing.Point(233, 3);
+            this.numericUpDown_FFCParam256G_MaxInterval.Name = "numericUpDown_FFCParam256G_MaxInterval";
+            this.numericUpDown_FFCParam256G_MaxInterval.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FFCParam256G_MaxInterval.TabIndex = 12;
+            this.numericUpDown_FFCParam256G_MaxInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FFCParam256G_MaxInterval.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FFCParam256G_MaxInterval.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FFCParam256G_MaxInterval.ValueChanged += new System.EventHandler(this.numericUpDown_FFCParam256G_MaxInterval_ValueChanged);
+            // 
+            // label_FFCParam256G_MaxIntervalUnit
+            // 
+            this.label_FFCParam256G_MaxIntervalUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FFCParam256G_MaxIntervalUnit.AutoSize = true;
+            this.label_FFCParam256G_MaxIntervalUnit.Location = new System.Drawing.Point(297, 7);
+            this.label_FFCParam256G_MaxIntervalUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FFCParam256G_MaxIntervalUnit.Name = "label_FFCParam256G_MaxIntervalUnit";
+            this.label_FFCParam256G_MaxIntervalUnit.Size = new System.Drawing.Size(18, 15);
+            this.label_FFCParam256G_MaxIntervalUnit.TabIndex = 28;
+            this.label_FFCParam256G_MaxIntervalUnit.Text = "m";
+            // 
+            // button_StoreUserSensorConfig_256G
+            // 
+            this.button_StoreUserSensorConfig_256G.Location = new System.Drawing.Point(489, 189);
+            this.button_StoreUserSensorConfig_256G.Name = "button_StoreUserSensorConfig_256G";
+            this.button_StoreUserSensorConfig_256G.Size = new System.Drawing.Size(104, 45);
+            this.button_StoreUserSensorConfig_256G.TabIndex = 16;
+            this.button_StoreUserSensorConfig_256G.Text = "Store Config Permanently";
+            this.button_StoreUserSensorConfig_256G.UseVisualStyleBackColor = true;
+            this.button_StoreUserSensorConfig_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // button_RestoreDefaultSensorConfig_256G
+            // 
+            this.button_RestoreDefaultSensorConfig_256G.Location = new System.Drawing.Point(599, 189);
+            this.button_RestoreDefaultSensorConfig_256G.Name = "button_RestoreDefaultSensorConfig_256G";
+            this.button_RestoreDefaultSensorConfig_256G.Size = new System.Drawing.Size(114, 45);
+            this.button_RestoreDefaultSensorConfig_256G.TabIndex = 12;
+            this.button_RestoreDefaultSensorConfig_256G.Text = "Restore to Factory Default";
+            this.button_RestoreDefaultSensorConfig_256G.UseVisualStyleBackColor = true;
+            this.button_RestoreDefaultSensorConfig_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // groupBox_GainModeState_256G
+            // 
+            this.groupBox_GainModeState_256G.Controls.Add(this.radioButton_GainModeStateAuto_256G);
+            this.groupBox_GainModeState_256G.Controls.Add(this.button_SetGainModeState_256G);
+            this.groupBox_GainModeState_256G.Controls.Add(this.button_GetGainModeState_256G);
+            this.groupBox_GainModeState_256G.Controls.Add(this.radioButton_GainModeStateLow_256G);
+            this.groupBox_GainModeState_256G.Controls.Add(this.radioButton_GainModeStateHigh_256G);
+            this.groupBox_GainModeState_256G.Location = new System.Drawing.Point(489, 3);
+            this.groupBox_GainModeState_256G.Name = "groupBox_GainModeState_256G";
+            this.groupBox_GainModeState_256G.Size = new System.Drawing.Size(224, 97);
+            this.groupBox_GainModeState_256G.TabIndex = 15;
+            this.groupBox_GainModeState_256G.TabStop = false;
+            this.groupBox_GainModeState_256G.Text = "Gain Mode State";
+            // 
+            // radioButton_GainModeStateAuto_256G
+            // 
+            this.radioButton_GainModeStateAuto_256G.AutoSize = true;
+            this.radioButton_GainModeStateAuto_256G.Location = new System.Drawing.Point(9, 71);
+            this.radioButton_GainModeStateAuto_256G.Name = "radioButton_GainModeStateAuto_256G";
+            this.radioButton_GainModeStateAuto_256G.Size = new System.Drawing.Size(51, 19);
+            this.radioButton_GainModeStateAuto_256G.TabIndex = 20;
+            this.radioButton_GainModeStateAuto_256G.TabStop = true;
+            this.radioButton_GainModeStateAuto_256G.Text = "Auto";
+            this.radioButton_GainModeStateAuto_256G.UseVisualStyleBackColor = true;
+            // 
+            // button_SetGainModeState_256G
+            // 
+            this.button_SetGainModeState_256G.Location = new System.Drawing.Point(162, 24);
+            this.button_SetGainModeState_256G.Name = "button_SetGainModeState_256G";
+            this.button_SetGainModeState_256G.Size = new System.Drawing.Size(49, 66);
+            this.button_SetGainModeState_256G.TabIndex = 19;
+            this.button_SetGainModeState_256G.Text = "Set";
+            this.button_SetGainModeState_256G.UseVisualStyleBackColor = true;
+            this.button_SetGainModeState_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // button_GetGainModeState_256G
+            // 
+            this.button_GetGainModeState_256G.Location = new System.Drawing.Point(110, 24);
+            this.button_GetGainModeState_256G.Name = "button_GetGainModeState_256G";
+            this.button_GetGainModeState_256G.Size = new System.Drawing.Size(49, 66);
+            this.button_GetGainModeState_256G.TabIndex = 18;
+            this.button_GetGainModeState_256G.Text = "Get";
+            this.button_GetGainModeState_256G.UseVisualStyleBackColor = true;
+            this.button_GetGainModeState_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // radioButton_GainModeStateLow_256G
+            // 
+            this.radioButton_GainModeStateLow_256G.AutoSize = true;
+            this.radioButton_GainModeStateLow_256G.Location = new System.Drawing.Point(9, 47);
+            this.radioButton_GainModeStateLow_256G.Name = "radioButton_GainModeStateLow_256G";
+            this.radioButton_GainModeStateLow_256G.Size = new System.Drawing.Size(47, 19);
+            this.radioButton_GainModeStateLow_256G.TabIndex = 1;
+            this.radioButton_GainModeStateLow_256G.TabStop = true;
+            this.radioButton_GainModeStateLow_256G.Text = "Low";
+            this.radioButton_GainModeStateLow_256G.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_GainModeStateHigh_256G
+            // 
+            this.radioButton_GainModeStateHigh_256G.AutoSize = true;
+            this.radioButton_GainModeStateHigh_256G.Location = new System.Drawing.Point(9, 22);
+            this.radioButton_GainModeStateHigh_256G.Name = "radioButton_GainModeStateHigh_256G";
+            this.radioButton_GainModeStateHigh_256G.Size = new System.Drawing.Size(51, 19);
+            this.radioButton_GainModeStateHigh_256G.TabIndex = 0;
+            this.radioButton_GainModeStateHigh_256G.TabStop = true;
+            this.radioButton_GainModeStateHigh_256G.Text = "High";
+            this.radioButton_GainModeStateHigh_256G.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_FlatFieldCorrection_256G
+            // 
+            this.groupBox_FlatFieldCorrection_256G.Controls.Add(this.button_SetFlatFieldCorrectionMode_256G);
+            this.groupBox_FlatFieldCorrection_256G.Controls.Add(this.button_GetFlatFieldCorrectionMode_256G);
+            this.groupBox_FlatFieldCorrection_256G.Controls.Add(this.radioButton_FlatFieldCorrectionManual_256G);
+            this.groupBox_FlatFieldCorrection_256G.Controls.Add(this.button_RunFlatFieldCorrection_256G);
+            this.groupBox_FlatFieldCorrection_256G.Controls.Add(this.radioButton_FlatFieldCorrectionAutomatic_256G);
+            this.groupBox_FlatFieldCorrection_256G.Location = new System.Drawing.Point(489, 104);
+            this.groupBox_FlatFieldCorrection_256G.Name = "groupBox_FlatFieldCorrection_256G";
+            this.groupBox_FlatFieldCorrection_256G.Size = new System.Drawing.Size(224, 74);
+            this.groupBox_FlatFieldCorrection_256G.TabIndex = 14;
+            this.groupBox_FlatFieldCorrection_256G.TabStop = false;
+            this.groupBox_FlatFieldCorrection_256G.Text = "Flat Field Correction";
+            // 
+            // button_SetFlatFieldCorrectionMode_256G
+            // 
+            this.button_SetFlatFieldCorrectionMode_256G.Location = new System.Drawing.Point(162, 19);
+            this.button_SetFlatFieldCorrectionMode_256G.Name = "button_SetFlatFieldCorrectionMode_256G";
+            this.button_SetFlatFieldCorrectionMode_256G.Size = new System.Drawing.Size(49, 23);
+            this.button_SetFlatFieldCorrectionMode_256G.TabIndex = 18;
+            this.button_SetFlatFieldCorrectionMode_256G.Text = "Set";
+            this.button_SetFlatFieldCorrectionMode_256G.UseVisualStyleBackColor = true;
+            this.button_SetFlatFieldCorrectionMode_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // button_GetFlatFieldCorrectionMode_256G
+            // 
+            this.button_GetFlatFieldCorrectionMode_256G.Location = new System.Drawing.Point(110, 19);
+            this.button_GetFlatFieldCorrectionMode_256G.Name = "button_GetFlatFieldCorrectionMode_256G";
+            this.button_GetFlatFieldCorrectionMode_256G.Size = new System.Drawing.Size(50, 23);
+            this.button_GetFlatFieldCorrectionMode_256G.TabIndex = 17;
+            this.button_GetFlatFieldCorrectionMode_256G.Text = "Get";
+            this.button_GetFlatFieldCorrectionMode_256G.UseVisualStyleBackColor = true;
+            this.button_GetFlatFieldCorrectionMode_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // radioButton_FlatFieldCorrectionManual_256G
+            // 
+            this.radioButton_FlatFieldCorrectionManual_256G.AutoSize = true;
+            this.radioButton_FlatFieldCorrectionManual_256G.Location = new System.Drawing.Point(8, 45);
+            this.radioButton_FlatFieldCorrectionManual_256G.Name = "radioButton_FlatFieldCorrectionManual_256G";
+            this.radioButton_FlatFieldCorrectionManual_256G.Size = new System.Drawing.Size(65, 19);
+            this.radioButton_FlatFieldCorrectionManual_256G.TabIndex = 16;
+            this.radioButton_FlatFieldCorrectionManual_256G.TabStop = true;
+            this.radioButton_FlatFieldCorrectionManual_256G.Text = "Manual";
+            this.radioButton_FlatFieldCorrectionManual_256G.UseVisualStyleBackColor = true;
+            // 
+            // button_RunFlatFieldCorrection_256G
+            // 
+            this.button_RunFlatFieldCorrection_256G.Location = new System.Drawing.Point(110, 44);
+            this.button_RunFlatFieldCorrection_256G.Name = "button_RunFlatFieldCorrection_256G";
+            this.button_RunFlatFieldCorrection_256G.Size = new System.Drawing.Size(101, 23);
+            this.button_RunFlatFieldCorrection_256G.TabIndex = 14;
+            this.button_RunFlatFieldCorrection_256G.Text = "Run";
+            this.button_RunFlatFieldCorrection_256G.UseVisualStyleBackColor = true;
+            this.button_RunFlatFieldCorrection_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // radioButton_FlatFieldCorrectionAutomatic_256G
+            // 
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.AutoSize = true;
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.Location = new System.Drawing.Point(8, 22);
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.Name = "radioButton_FlatFieldCorrectionAutomatic_256G";
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.Size = new System.Drawing.Size(81, 19);
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.TabIndex = 15;
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.TabStop = true;
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.Text = "Automatic";
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.UseVisualStyleBackColor = true;
+            // 
+            // panel_SensorControl_256
+            // 
+            this.panel_SensorControl_256.Controls.Add(this.groupBox_FFCParameters_256);
+            this.panel_SensorControl_256.Controls.Add(this.button_StoreUserSensorConfig_256);
+            this.panel_SensorControl_256.Controls.Add(this.button_RestoreDefaultSensorConfig_256);
+            this.panel_SensorControl_256.Controls.Add(this.groupBox_FluxParameters_256);
+            this.panel_SensorControl_256.Controls.Add(this.groupBox_GainModeState_256);
+            this.panel_SensorControl_256.Controls.Add(this.groupBox_FlatFieldCorrection_256);
+            this.panel_SensorControl_256.Location = new System.Drawing.Point(0, 0);
+            this.panel_SensorControl_256.Name = "panel_SensorControl_256";
+            this.panel_SensorControl_256.Size = new System.Drawing.Size(719, 240);
+            this.panel_SensorControl_256.TabIndex = 14;
+            this.panel_SensorControl_256.Visible = false;
+            // 
+            // groupBox_FFCParameters_256
+            // 
+            this.groupBox_FFCParameters_256.Controls.Add(this.tableLayoutPanel_FFCParam256);
+            this.groupBox_FFCParameters_256.Location = new System.Drawing.Point(6, 160);
+            this.groupBox_FFCParameters_256.Name = "groupBox_FFCParameters_256";
+            this.groupBox_FFCParameters_256.Size = new System.Drawing.Size(467, 77);
+            this.groupBox_FFCParameters_256.TabIndex = 17;
+            this.groupBox_FFCParameters_256.TabStop = false;
+            this.groupBox_FFCParameters_256.Text = "FFC Parameters";
+            // 
+            // tableLayoutPanel_FFCParam256
+            // 
+            this.tableLayoutPanel_FFCParam256.ColumnCount = 6;
+            this.tableLayoutPanel_FFCParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
+            this.tableLayoutPanel_FFCParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel_FFCParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel_FFCParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FFCParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel_FFCParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_FFCParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.label_FFCParam256_MaxIntervalTitle, 0, 0);
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.textBox_FFCParam256_MaxIntervalRange, 4, 0);
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.button_GetFFCParameters_256, 1, 0);
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.button_SetFFCParameters_256, 5, 0);
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.numericUpDown_FFCParam256_MaxInterval, 2, 0);
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.label_FFCParam256_AutoTriggerThresholdTitle, 0, 1);
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.numericUpDown_FFCParam256_AutoTriggerThreshold, 2, 1);
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.textBox_FFCParam256_AutoTriggerThresholdRange, 4, 1);
+            this.tableLayoutPanel_FFCParam256.Controls.Add(this.label_FFCParam256_MaxIntervalUnit, 3, 0);
+            this.tableLayoutPanel_FFCParam256.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel_FFCParam256.Name = "tableLayoutPanel_FFCParam256";
+            this.tableLayoutPanel_FFCParam256.RowCount = 2;
+            this.tableLayoutPanel_FFCParam256.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FFCParam256.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FFCParam256.Size = new System.Drawing.Size(455, 52);
+            this.tableLayoutPanel_FFCParam256.TabIndex = 10;
+            // 
+            // label_FFCParam256_MaxIntervalTitle
+            // 
+            this.label_FFCParam256_MaxIntervalTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_FFCParam256_MaxIntervalTitle.AutoSize = true;
+            this.label_FFCParam256_MaxIntervalTitle.Location = new System.Drawing.Point(78, 0);
+            this.label_FFCParam256_MaxIntervalTitle.Name = "label_FFCParam256_MaxIntervalTitle";
+            this.label_FFCParam256_MaxIntervalTitle.Size = new System.Drawing.Size(110, 26);
+            this.label_FFCParam256_MaxIntervalTitle.TabIndex = 1;
+            this.label_FFCParam256_MaxIntervalTitle.Text = "Maximum Interval :";
+            this.label_FFCParam256_MaxIntervalTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox_FFCParam256_MaxIntervalRange
+            // 
+            this.textBox_FFCParam256_MaxIntervalRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FFCParam256_MaxIntervalRange.Enabled = false;
+            this.textBox_FFCParam256_MaxIntervalRange.Location = new System.Drawing.Point(319, 3);
+            this.textBox_FFCParam256_MaxIntervalRange.Name = "textBox_FFCParam256_MaxIntervalRange";
+            this.textBox_FFCParam256_MaxIntervalRange.ReadOnly = true;
+            this.textBox_FFCParam256_MaxIntervalRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FFCParam256_MaxIntervalRange.TabIndex = 9;
+            this.textBox_FFCParam256_MaxIntervalRange.Text = "5 ~ 655";
+            this.textBox_FFCParam256_MaxIntervalRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button_GetFFCParameters_256
+            // 
+            this.button_GetFFCParameters_256.Location = new System.Drawing.Point(194, 3);
+            this.button_GetFFCParameters_256.Name = "button_GetFFCParameters_256";
+            this.tableLayoutPanel_FFCParam256.SetRowSpan(this.button_GetFFCParameters_256, 2);
+            this.button_GetFFCParameters_256.Size = new System.Drawing.Size(33, 46);
+            this.button_GetFFCParameters_256.TabIndex = 6;
+            this.button_GetFFCParameters_256.Text = "Get";
+            this.button_GetFFCParameters_256.UseVisualStyleBackColor = true;
+            this.button_GetFFCParameters_256.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // button_SetFFCParameters_256
+            // 
+            this.button_SetFFCParameters_256.Enabled = false;
+            this.button_SetFFCParameters_256.Location = new System.Drawing.Point(419, 3);
+            this.button_SetFFCParameters_256.Name = "button_SetFFCParameters_256";
+            this.tableLayoutPanel_FFCParam256.SetRowSpan(this.button_SetFFCParameters_256, 2);
+            this.button_SetFFCParameters_256.Size = new System.Drawing.Size(34, 46);
+            this.button_SetFFCParameters_256.TabIndex = 6;
+            this.button_SetFFCParameters_256.Text = "Set";
+            this.button_SetFFCParameters_256.UseVisualStyleBackColor = true;
+            this.button_SetFFCParameters_256.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // numericUpDown_FFCParam256_MaxInterval
+            // 
+            this.numericUpDown_FFCParam256_MaxInterval.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FFCParam256_MaxInterval.Enabled = false;
+            this.numericUpDown_FFCParam256_MaxInterval.Location = new System.Drawing.Point(233, 3);
+            this.numericUpDown_FFCParam256_MaxInterval.Maximum = new decimal(new int[] {
             655,
             0,
             0,
             0});
-            this.numericUpDown_FFCParam256E_MaxInterval.Minimum = new decimal(new int[] {
+            this.numericUpDown_FFCParam256_MaxInterval.Minimum = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.numericUpDown_FFCParam256E_MaxInterval.Name = "numericUpDown_FFCParam256E_MaxInterval";
-            this.numericUpDown_FFCParam256E_MaxInterval.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FFCParam256E_MaxInterval.TabIndex = 10;
-            this.numericUpDown_FFCParam256E_MaxInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown_FFCParam256E_MaxInterval.Value = new decimal(new int[] {
-            5,
+            this.numericUpDown_FFCParam256_MaxInterval.Name = "numericUpDown_FFCParam256_MaxInterval";
+            this.numericUpDown_FFCParam256_MaxInterval.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FFCParam256_MaxInterval.TabIndex = 12;
+            this.numericUpDown_FFCParam256_MaxInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FFCParam256_MaxInterval.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FFCParam256_MaxInterval.Value = new decimal(new int[] {
+            90,
             0,
             0,
             0});
+            this.numericUpDown_FFCParam256_MaxInterval.ValueChanged += new System.EventHandler(this.numericUpDown_FFCParam256_MaxInterval_ValueChanged);
             // 
-            // label_FFCParam256E_AutoTriggerThresholdTitle
+            // label_FFCParam256_AutoTriggerThresholdTitle
             // 
-            this.label_FFCParam256E_AutoTriggerThresholdTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FFCParam256_AutoTriggerThresholdTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FFCParam256E_AutoTriggerThresholdTitle.AutoSize = true;
-            this.label_FFCParam256E_AutoTriggerThresholdTitle.Location = new System.Drawing.Point(25, 26);
-            this.label_FFCParam256E_AutoTriggerThresholdTitle.Name = "label_FFCParam256E_AutoTriggerThresholdTitle";
-            this.label_FFCParam256E_AutoTriggerThresholdTitle.Size = new System.Drawing.Size(163, 26);
-            this.label_FFCParam256E_AutoTriggerThresholdTitle.TabIndex = 10;
-            this.label_FFCParam256E_AutoTriggerThresholdTitle.Text = "Automatic Trigger Threshold :";
-            this.label_FFCParam256E_AutoTriggerThresholdTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FFCParam256_AutoTriggerThresholdTitle.AutoSize = true;
+            this.label_FFCParam256_AutoTriggerThresholdTitle.Location = new System.Drawing.Point(25, 26);
+            this.label_FFCParam256_AutoTriggerThresholdTitle.Name = "label_FFCParam256_AutoTriggerThresholdTitle";
+            this.label_FFCParam256_AutoTriggerThresholdTitle.Size = new System.Drawing.Size(163, 26);
+            this.label_FFCParam256_AutoTriggerThresholdTitle.TabIndex = 10;
+            this.label_FFCParam256_AutoTriggerThresholdTitle.Text = "Automatic Trigger Threshold :";
+            this.label_FFCParam256_AutoTriggerThresholdTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // numericUpDown_FFCParam256E_AutoTriggerThreshold
+            // numericUpDown_FFCParam256_AutoTriggerThreshold
             // 
-            this.numericUpDown_FFCParam256E_AutoTriggerThreshold.Enabled = false;
-            this.numericUpDown_FFCParam256E_AutoTriggerThreshold.Location = new System.Drawing.Point(233, 29);
-            this.numericUpDown_FFCParam256E_AutoTriggerThreshold.Maximum = new decimal(new int[] {
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.Enabled = false;
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.Location = new System.Drawing.Point(233, 29);
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.numericUpDown_FFCParam256E_AutoTriggerThreshold.Name = "numericUpDown_FFCParam256E_AutoTriggerThreshold";
-            this.numericUpDown_FFCParam256E_AutoTriggerThreshold.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FFCParam256E_AutoTriggerThreshold.TabIndex = 11;
-            this.numericUpDown_FFCParam256E_AutoTriggerThreshold.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.Name = "numericUpDown_FFCParam256_AutoTriggerThreshold";
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.TabIndex = 14;
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numericUpDown_FFCParam256_AutoTriggerThreshold.ValueChanged += new System.EventHandler(this.numericUpDown_FFCParam256_AutoTriggerThreshold_ValueChanged);
             // 
-            // textBox_FFCParam256E_AutoTriggerThresholdRange
+            // textBox_FFCParam256_AutoTriggerThresholdRange
             // 
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.Enabled = false;
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.Location = new System.Drawing.Point(319, 29);
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.Name = "textBox_FFCParam256E_AutoTriggerThresholdRange";
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.ReadOnly = true;
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.TabIndex = 9;
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.Text = "0 ~ 65535";
-            this.textBox_FFCParam256E_AutoTriggerThresholdRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.Enabled = false;
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.Location = new System.Drawing.Point(319, 29);
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.Name = "textBox_FFCParam256_AutoTriggerThresholdRange";
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.ReadOnly = true;
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.TabIndex = 9;
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.Text = "0 ~ 65535";
+            this.textBox_FFCParam256_AutoTriggerThresholdRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label_FFCParam256E_MaxIntervalUnit
+            // label_FFCParam256_MaxIntervalUnit
             // 
-            this.label_FFCParam256E_MaxIntervalUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FFCParam256E_MaxIntervalUnit.AutoSize = true;
-            this.label_FFCParam256E_MaxIntervalUnit.Location = new System.Drawing.Point(300, 5);
-            this.label_FFCParam256E_MaxIntervalUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.label_FFCParam256E_MaxIntervalUnit.Name = "label_FFCParam256E_MaxIntervalUnit";
-            this.label_FFCParam256E_MaxIntervalUnit.Size = new System.Drawing.Size(12, 15);
-            this.label_FFCParam256E_MaxIntervalUnit.TabIndex = 28;
-            this.label_FFCParam256E_MaxIntervalUnit.Text = "s";
+            this.label_FFCParam256_MaxIntervalUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FFCParam256_MaxIntervalUnit.AutoSize = true;
+            this.label_FFCParam256_MaxIntervalUnit.Location = new System.Drawing.Point(300, 5);
+            this.label_FFCParam256_MaxIntervalUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FFCParam256_MaxIntervalUnit.Name = "label_FFCParam256_MaxIntervalUnit";
+            this.label_FFCParam256_MaxIntervalUnit.Size = new System.Drawing.Size(12, 15);
+            this.label_FFCParam256_MaxIntervalUnit.TabIndex = 28;
+            this.label_FFCParam256_MaxIntervalUnit.Text = "s";
             // 
-            // button_StoreUserSensorConfig_256E
+            // button_StoreUserSensorConfig_256
             // 
-            this.button_StoreUserSensorConfig_256E.Location = new System.Drawing.Point(489, 189);
-            this.button_StoreUserSensorConfig_256E.Name = "button_StoreUserSensorConfig_256E";
-            this.button_StoreUserSensorConfig_256E.Size = new System.Drawing.Size(104, 45);
-            this.button_StoreUserSensorConfig_256E.TabIndex = 16;
-            this.button_StoreUserSensorConfig_256E.Text = "Store Config Permanently";
-            this.button_StoreUserSensorConfig_256E.UseVisualStyleBackColor = true;
-            this.button_StoreUserSensorConfig_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_StoreUserSensorConfig_256.Location = new System.Drawing.Point(489, 189);
+            this.button_StoreUserSensorConfig_256.Name = "button_StoreUserSensorConfig_256";
+            this.button_StoreUserSensorConfig_256.Size = new System.Drawing.Size(104, 45);
+            this.button_StoreUserSensorConfig_256.TabIndex = 16;
+            this.button_StoreUserSensorConfig_256.Text = "Store Config Permanently";
+            this.button_StoreUserSensorConfig_256.UseVisualStyleBackColor = true;
+            this.button_StoreUserSensorConfig_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // button_RestoreDefaultSensorConfig_256E
+            // button_RestoreDefaultSensorConfig_256
             // 
-            this.button_RestoreDefaultSensorConfig_256E.Location = new System.Drawing.Point(599, 189);
-            this.button_RestoreDefaultSensorConfig_256E.Name = "button_RestoreDefaultSensorConfig_256E";
-            this.button_RestoreDefaultSensorConfig_256E.Size = new System.Drawing.Size(114, 45);
-            this.button_RestoreDefaultSensorConfig_256E.TabIndex = 12;
-            this.button_RestoreDefaultSensorConfig_256E.Text = "Restore to Factory Default";
-            this.button_RestoreDefaultSensorConfig_256E.UseVisualStyleBackColor = true;
-            this.button_RestoreDefaultSensorConfig_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_RestoreDefaultSensorConfig_256.Location = new System.Drawing.Point(599, 189);
+            this.button_RestoreDefaultSensorConfig_256.Name = "button_RestoreDefaultSensorConfig_256";
+            this.button_RestoreDefaultSensorConfig_256.Size = new System.Drawing.Size(114, 45);
+            this.button_RestoreDefaultSensorConfig_256.TabIndex = 12;
+            this.button_RestoreDefaultSensorConfig_256.Text = "Restore to Factory Default";
+            this.button_RestoreDefaultSensorConfig_256.UseVisualStyleBackColor = true;
+            this.button_RestoreDefaultSensorConfig_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // groupBox_FluxParameters_256E
+            // groupBox_FluxParameters_256
             // 
-            this.groupBox_FluxParameters_256E.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox_FluxParameters_256E.Location = new System.Drawing.Point(6, 3);
-            this.groupBox_FluxParameters_256E.Name = "groupBox_FluxParameters_256E";
-            this.groupBox_FluxParameters_256E.Size = new System.Drawing.Size(467, 155);
-            this.groupBox_FluxParameters_256E.TabIndex = 13;
-            this.groupBox_FluxParameters_256E.TabStop = false;
-            this.groupBox_FluxParameters_256E.Text = "Flux Parameters";
+            this.groupBox_FluxParameters_256.Controls.Add(this.tableLayoutPanel_FluxParam256);
+            this.groupBox_FluxParameters_256.Location = new System.Drawing.Point(6, 3);
+            this.groupBox_FluxParameters_256.Name = "groupBox_FluxParameters_256";
+            this.groupBox_FluxParameters_256.Size = new System.Drawing.Size(467, 155);
+            this.groupBox_FluxParameters_256.TabIndex = 13;
+            this.groupBox_FluxParameters_256.TabStop = false;
+            this.groupBox_FluxParameters_256.Text = "Flux Parameters";
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel_FluxParam256
             // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.label_FluxParam256E_DistanceTitle, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label_FluxParam256E_EmissivityTitle, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox_FluxParam256E_EmissivityRange, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button_GetFluxParameters_256E, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button_SetFluxParameters_256E, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown_FluxParam256E_Emissivity, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label_FluxParam256E_AtmosphericTransmittanceTitle, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown_FluxParam256E_AtmosphericTransmittance, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox_FluxParam256E_AtmosphericTransmittanceRange, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label_FluxParam256E_AtmosphericTemperatureTitle, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown_FluxParam256E_AtmosphericTemperature, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox_FluxParam256E_AtmosphericTemperatureRange, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label_FluxParam256E_AtmosphericTemperatureUnit, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label_FluxParam256E_AmbientReflectionTemperatureTitle, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown_FluxParam256E_AmbientReflectionTemperature, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label_FluxParam256E_AmbientReflectionTemperatureUnit, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox_FluxParam256E_AmbientReflectionTemperatureRange, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.numericUpDown_FluxParam256E_Distance, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label_FluxParam256E_DistanceUnit, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBox_FluxParam256E_DistanceRange, 4, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 19);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(455, 130);
-            this.tableLayoutPanel1.TabIndex = 10;
+            this.tableLayoutPanel_FluxParam256.ColumnCount = 6;
+            this.tableLayoutPanel_FluxParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
+            this.tableLayoutPanel_FluxParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel_FluxParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel_FluxParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FluxParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel_FluxParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_FluxParam256.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.label_FluxParam256_DistanceTitle, 0, 4);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.label_FluxParam256_EmissivityTitle, 0, 0);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.textBox_FluxParam256_EmissivityRange, 4, 0);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.button_GetFluxParameters_256, 1, 0);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.button_SetFluxParameters_256, 5, 0);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.numericUpDown_FluxParam256_Emissivity, 2, 0);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.label_FluxParam256_AtmosphericTransmittanceTitle, 0, 1);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.numericUpDown_FluxParam256_AtmosphericTransmittance, 2, 1);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.textBox_FluxParam256_AtmosphericTransmittanceRange, 4, 1);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.label_FluxParam256_AtmosphericTemperatureTitle, 0, 2);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.numericUpDown_FluxParam256_AtmosphericTemperature, 2, 2);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.textBox_FluxParam256_AtmosphericTemperatureRange, 4, 2);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.label_FluxParam256_AtmosphericTemperatureUnit, 3, 2);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.label_FluxParam256_AmbientReflectionTemperatureTitle, 0, 3);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.numericUpDown_FluxParam256_AmbientReflectionTemperature, 2, 3);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.label_FluxParam256_AmbientReflectionTemperatureUnit, 3, 3);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.textBox_FluxParam256_AmbientReflectionTemperatureRange, 4, 3);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.numericUpDown_FluxParam256_Distance, 2, 4);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.label_FluxParam256_DistanceUnit, 3, 4);
+            this.tableLayoutPanel_FluxParam256.Controls.Add(this.textBox_FluxParam256_DistanceRange, 4, 4);
+            this.tableLayoutPanel_FluxParam256.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel_FluxParam256.Name = "tableLayoutPanel_FluxParam256";
+            this.tableLayoutPanel_FluxParam256.RowCount = 5;
+            this.tableLayoutPanel_FluxParam256.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256.Size = new System.Drawing.Size(455, 130);
+            this.tableLayoutPanel_FluxParam256.TabIndex = 10;
             // 
-            // label_FluxParam256E_DistanceTitle
+            // label_FluxParam256_DistanceTitle
             // 
-            this.label_FluxParam256E_DistanceTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam256_DistanceTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam256E_DistanceTitle.AutoSize = true;
-            this.label_FluxParam256E_DistanceTitle.Location = new System.Drawing.Point(55, 104);
-            this.label_FluxParam256E_DistanceTitle.Name = "label_FluxParam256E_DistanceTitle";
-            this.label_FluxParam256E_DistanceTitle.Size = new System.Drawing.Size(133, 26);
-            this.label_FluxParam256E_DistanceTitle.TabIndex = 25;
-            this.label_FluxParam256E_DistanceTitle.Text = "Distance (Not support) :";
-            this.label_FluxParam256E_DistanceTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam256_DistanceTitle.AutoSize = true;
+            this.label_FluxParam256_DistanceTitle.Location = new System.Drawing.Point(55, 104);
+            this.label_FluxParam256_DistanceTitle.Name = "label_FluxParam256_DistanceTitle";
+            this.label_FluxParam256_DistanceTitle.Size = new System.Drawing.Size(133, 26);
+            this.label_FluxParam256_DistanceTitle.TabIndex = 25;
+            this.label_FluxParam256_DistanceTitle.Text = "Distance (Not support) :";
+            this.label_FluxParam256_DistanceTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label_FluxParam256E_EmissivityTitle
+            // label_FluxParam256_EmissivityTitle
             // 
-            this.label_FluxParam256E_EmissivityTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam256_EmissivityTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam256E_EmissivityTitle.AutoSize = true;
-            this.label_FluxParam256E_EmissivityTitle.Location = new System.Drawing.Point(123, 0);
-            this.label_FluxParam256E_EmissivityTitle.Name = "label_FluxParam256E_EmissivityTitle";
-            this.label_FluxParam256E_EmissivityTitle.Size = new System.Drawing.Size(65, 26);
-            this.label_FluxParam256E_EmissivityTitle.TabIndex = 1;
-            this.label_FluxParam256E_EmissivityTitle.Text = "Emissivity :";
-            this.label_FluxParam256E_EmissivityTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam256_EmissivityTitle.AutoSize = true;
+            this.label_FluxParam256_EmissivityTitle.Location = new System.Drawing.Point(123, 0);
+            this.label_FluxParam256_EmissivityTitle.Name = "label_FluxParam256_EmissivityTitle";
+            this.label_FluxParam256_EmissivityTitle.Size = new System.Drawing.Size(65, 26);
+            this.label_FluxParam256_EmissivityTitle.TabIndex = 1;
+            this.label_FluxParam256_EmissivityTitle.Text = "Emissivity :";
+            this.label_FluxParam256_EmissivityTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox_FluxParam256E_EmissivityRange
+            // textBox_FluxParam256_EmissivityRange
             // 
-            this.textBox_FluxParam256E_EmissivityRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam256E_EmissivityRange.Enabled = false;
-            this.textBox_FluxParam256E_EmissivityRange.Location = new System.Drawing.Point(319, 3);
-            this.textBox_FluxParam256E_EmissivityRange.Name = "textBox_FluxParam256E_EmissivityRange";
-            this.textBox_FluxParam256E_EmissivityRange.ReadOnly = true;
-            this.textBox_FluxParam256E_EmissivityRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam256E_EmissivityRange.TabIndex = 9;
-            this.textBox_FluxParam256E_EmissivityRange.Text = "0.01 ~ 1.00";
-            this.textBox_FluxParam256E_EmissivityRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam256_EmissivityRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256_EmissivityRange.Enabled = false;
+            this.textBox_FluxParam256_EmissivityRange.Location = new System.Drawing.Point(319, 3);
+            this.textBox_FluxParam256_EmissivityRange.Name = "textBox_FluxParam256_EmissivityRange";
+            this.textBox_FluxParam256_EmissivityRange.ReadOnly = true;
+            this.textBox_FluxParam256_EmissivityRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256_EmissivityRange.TabIndex = 9;
+            this.textBox_FluxParam256_EmissivityRange.Text = "0.01 ~ 1.00";
+            this.textBox_FluxParam256_EmissivityRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button_GetFluxParameters_256E
+            // button_GetFluxParameters_256
             // 
-            this.button_GetFluxParameters_256E.Location = new System.Drawing.Point(194, 3);
-            this.button_GetFluxParameters_256E.Name = "button_GetFluxParameters_256E";
-            this.tableLayoutPanel1.SetRowSpan(this.button_GetFluxParameters_256E, 5);
-            this.button_GetFluxParameters_256E.Size = new System.Drawing.Size(33, 124);
-            this.button_GetFluxParameters_256E.TabIndex = 6;
-            this.button_GetFluxParameters_256E.Text = "Get";
-            this.button_GetFluxParameters_256E.UseVisualStyleBackColor = true;
-            this.button_GetFluxParameters_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_GetFluxParameters_256.Location = new System.Drawing.Point(194, 3);
+            this.button_GetFluxParameters_256.Name = "button_GetFluxParameters_256";
+            this.tableLayoutPanel_FluxParam256.SetRowSpan(this.button_GetFluxParameters_256, 5);
+            this.button_GetFluxParameters_256.Size = new System.Drawing.Size(33, 124);
+            this.button_GetFluxParameters_256.TabIndex = 6;
+            this.button_GetFluxParameters_256.Text = "Get";
+            this.button_GetFluxParameters_256.UseVisualStyleBackColor = true;
+            this.button_GetFluxParameters_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // button_SetFluxParameters_256E
+            // button_SetFluxParameters_256
             // 
-            this.button_SetFluxParameters_256E.Enabled = false;
-            this.button_SetFluxParameters_256E.Location = new System.Drawing.Point(419, 3);
-            this.button_SetFluxParameters_256E.Name = "button_SetFluxParameters_256E";
-            this.tableLayoutPanel1.SetRowSpan(this.button_SetFluxParameters_256E, 5);
-            this.button_SetFluxParameters_256E.Size = new System.Drawing.Size(34, 124);
-            this.button_SetFluxParameters_256E.TabIndex = 6;
-            this.button_SetFluxParameters_256E.Text = "Set";
-            this.button_SetFluxParameters_256E.UseVisualStyleBackColor = true;
-            this.button_SetFluxParameters_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_SetFluxParameters_256.Enabled = false;
+            this.button_SetFluxParameters_256.Location = new System.Drawing.Point(419, 3);
+            this.button_SetFluxParameters_256.Name = "button_SetFluxParameters_256";
+            this.tableLayoutPanel_FluxParam256.SetRowSpan(this.button_SetFluxParameters_256, 5);
+            this.button_SetFluxParameters_256.Size = new System.Drawing.Size(34, 124);
+            this.button_SetFluxParameters_256.TabIndex = 6;
+            this.button_SetFluxParameters_256.Text = "Set";
+            this.button_SetFluxParameters_256.UseVisualStyleBackColor = true;
+            this.button_SetFluxParameters_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // numericUpDown_FluxParam256E_Emissivity
+            // numericUpDown_FluxParam256_Emissivity
             // 
-            this.numericUpDown_FluxParam256E_Emissivity.DecimalPlaces = 2;
-            this.numericUpDown_FluxParam256E_Emissivity.Enabled = false;
-            this.numericUpDown_FluxParam256E_Emissivity.Increment = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_Emissivity.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256_Emissivity.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam256_Emissivity.Enabled = false;
+            this.numericUpDown_FluxParam256_Emissivity.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numericUpDown_FluxParam256E_Emissivity.Location = new System.Drawing.Point(233, 3);
-            this.numericUpDown_FluxParam256E_Emissivity.Maximum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            131072});
-            this.numericUpDown_FluxParam256E_Emissivity.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown_FluxParam256E_Emissivity.Name = "numericUpDown_FluxParam256E_Emissivity";
-            this.numericUpDown_FluxParam256E_Emissivity.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam256E_Emissivity.TabIndex = 26;
-            this.numericUpDown_FluxParam256E_Emissivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown_FluxParam256E_Emissivity.Value = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_Emissivity.Location = new System.Drawing.Point(233, 3);
+            this.numericUpDown_FluxParam256_Emissivity.Maximum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            // 
-            // label_FluxParam256E_AtmosphericTransmittanceTitle
-            // 
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle.AutoSize = true;
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle.Location = new System.Drawing.Point(30, 26);
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle.Name = "label_FluxParam256E_AtmosphericTransmittanceTitle";
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle.Size = new System.Drawing.Size(158, 26);
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle.TabIndex = 10;
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle.Text = "Atmospheric Transmittance :";
-            this.label_FluxParam256E_AtmosphericTransmittanceTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // numericUpDown_FluxParam256E_AtmosphericTransmittance
-            // 
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.DecimalPlaces = 2;
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.Enabled = false;
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.Increment = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_Emissivity.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.Location = new System.Drawing.Point(233, 29);
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.Maximum = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_Emissivity.Name = "numericUpDown_FluxParam256_Emissivity";
+            this.numericUpDown_FluxParam256_Emissivity.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256_Emissivity.TabIndex = 12;
+            this.numericUpDown_FluxParam256_Emissivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256_Emissivity.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256_Emissivity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam256_Emissivity.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam256_Emissivity_ValueChanged);
+            // 
+            // label_FluxParam256_AtmosphericTransmittanceTitle
+            // 
+            this.label_FluxParam256_AtmosphericTransmittanceTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_FluxParam256_AtmosphericTransmittanceTitle.AutoSize = true;
+            this.label_FluxParam256_AtmosphericTransmittanceTitle.Location = new System.Drawing.Point(30, 26);
+            this.label_FluxParam256_AtmosphericTransmittanceTitle.Name = "label_FluxParam256_AtmosphericTransmittanceTitle";
+            this.label_FluxParam256_AtmosphericTransmittanceTitle.Size = new System.Drawing.Size(158, 26);
+            this.label_FluxParam256_AtmosphericTransmittanceTitle.TabIndex = 10;
+            this.label_FluxParam256_AtmosphericTransmittanceTitle.Text = "Atmospheric Transmittance :";
+            this.label_FluxParam256_AtmosphericTransmittanceTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numericUpDown_FluxParam256_AtmosphericTransmittance
+            // 
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Enabled = false;
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Location = new System.Drawing.Point(233, 29);
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Name = "numericUpDown_FluxParam256_AtmosphericTransmittance";
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.TabIndex = 14;
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.Value = new decimal(new int[] {
             100,
             0,
             0,
             131072});
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.Name = "numericUpDown_FluxParam256E_AtmosphericTransmittance";
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.TabIndex = 27;
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown_FluxParam256E_AtmosphericTransmittance.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
+            this.numericUpDown_FluxParam256_AtmosphericTransmittance.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam256_AtmosphericTransmittance_ValueChanged);
             // 
-            // textBox_FluxParam256E_AtmosphericTransmittanceRange
+            // textBox_FluxParam256_AtmosphericTransmittanceRange
             // 
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.Enabled = false;
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.Location = new System.Drawing.Point(319, 29);
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.Name = "textBox_FluxParam256E_AtmosphericTransmittanceRange";
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.ReadOnly = true;
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.TabIndex = 9;
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.Text = "0.01 ~ 1.00";
-            this.textBox_FluxParam256E_AtmosphericTransmittanceRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.Enabled = false;
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.Location = new System.Drawing.Point(319, 29);
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.Name = "textBox_FluxParam256_AtmosphericTransmittanceRange";
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.ReadOnly = true;
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.TabIndex = 9;
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.Text = "0.01 ~ 1.00";
+            this.textBox_FluxParam256_AtmosphericTransmittanceRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label_FluxParam256E_AtmosphericTemperatureTitle
+            // label_FluxParam256_AtmosphericTemperatureTitle
             // 
-            this.label_FluxParam256E_AtmosphericTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam256_AtmosphericTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam256E_AtmosphericTemperatureTitle.AutoSize = true;
-            this.label_FluxParam256E_AtmosphericTemperatureTitle.Location = new System.Drawing.Point(38, 52);
-            this.label_FluxParam256E_AtmosphericTemperatureTitle.Name = "label_FluxParam256E_AtmosphericTemperatureTitle";
-            this.label_FluxParam256E_AtmosphericTemperatureTitle.Size = new System.Drawing.Size(150, 26);
-            this.label_FluxParam256E_AtmosphericTemperatureTitle.TabIndex = 11;
-            this.label_FluxParam256E_AtmosphericTemperatureTitle.Text = "Atmospheric Temperature :";
-            this.label_FluxParam256E_AtmosphericTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam256_AtmosphericTemperatureTitle.AutoSize = true;
+            this.label_FluxParam256_AtmosphericTemperatureTitle.Location = new System.Drawing.Point(38, 52);
+            this.label_FluxParam256_AtmosphericTemperatureTitle.Name = "label_FluxParam256_AtmosphericTemperatureTitle";
+            this.label_FluxParam256_AtmosphericTemperatureTitle.Size = new System.Drawing.Size(150, 26);
+            this.label_FluxParam256_AtmosphericTemperatureTitle.TabIndex = 11;
+            this.label_FluxParam256_AtmosphericTemperatureTitle.Text = "Atmospheric Temperature :";
+            this.label_FluxParam256_AtmosphericTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // numericUpDown_FluxParam256E_AtmosphericTemperature
+            // numericUpDown_FluxParam256_AtmosphericTemperature
             // 
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.DecimalPlaces = 2;
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.Enabled = false;
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.Location = new System.Drawing.Point(233, 55);
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.Maximum = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.Enabled = false;
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.Location = new System.Drawing.Point(233, 55);
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.Maximum = new decimal(new int[] {
             62685,
             0,
             0,
             131072});
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.Minimum = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.Minimum = new decimal(new int[] {
             4315,
             0,
             0,
             -2147352576});
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.Name = "numericUpDown_FluxParam256E_AtmosphericTemperature";
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.TabIndex = 28;
-            this.numericUpDown_FluxParam256E_AtmosphericTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.Name = "numericUpDown_FluxParam256_AtmosphericTemperature";
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.TabIndex = 15;
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.Value = new decimal(new int[] {
+            2685,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam256_AtmosphericTemperature.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam256_AtmosphericTemperature_ValueChanged);
             // 
-            // textBox_FluxParam256E_AtmosphericTemperatureRange
+            // textBox_FluxParam256_AtmosphericTemperatureRange
             // 
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.Enabled = false;
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.Location = new System.Drawing.Point(319, 55);
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.Name = "textBox_FluxParam256E_AtmosphericTemperatureRange";
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.ReadOnly = true;
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.TabIndex = 9;
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.Text = "-43.15 ~ 626.85";
-            this.textBox_FluxParam256E_AtmosphericTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.Enabled = false;
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.Location = new System.Drawing.Point(319, 55);
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.Name = "textBox_FluxParam256_AtmosphericTemperatureRange";
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.ReadOnly = true;
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.TabIndex = 9;
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.Text = "-43.15 ~ 626.85";
+            this.textBox_FluxParam256_AtmosphericTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label_FluxParam256E_AtmosphericTemperatureUnit
+            // label_FluxParam256_AtmosphericTemperatureUnit
             // 
-            this.label_FluxParam256E_AtmosphericTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FluxParam256E_AtmosphericTemperatureUnit.AutoSize = true;
-            this.label_FluxParam256E_AtmosphericTemperatureUnit.Location = new System.Drawing.Point(296, 57);
-            this.label_FluxParam256E_AtmosphericTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.label_FluxParam256E_AtmosphericTemperatureUnit.Name = "label_FluxParam256E_AtmosphericTemperatureUnit";
-            this.label_FluxParam256E_AtmosphericTemperatureUnit.Size = new System.Drawing.Size(19, 15);
-            this.label_FluxParam256E_AtmosphericTemperatureUnit.TabIndex = 22;
-            this.label_FluxParam256E_AtmosphericTemperatureUnit.Text = "℃";
+            this.label_FluxParam256_AtmosphericTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam256_AtmosphericTemperatureUnit.AutoSize = true;
+            this.label_FluxParam256_AtmosphericTemperatureUnit.Location = new System.Drawing.Point(296, 57);
+            this.label_FluxParam256_AtmosphericTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam256_AtmosphericTemperatureUnit.Name = "label_FluxParam256_AtmosphericTemperatureUnit";
+            this.label_FluxParam256_AtmosphericTemperatureUnit.Size = new System.Drawing.Size(19, 15);
+            this.label_FluxParam256_AtmosphericTemperatureUnit.TabIndex = 22;
+            this.label_FluxParam256_AtmosphericTemperatureUnit.Text = "℃";
             // 
-            // label_FluxParam256E_AmbientReflectionTemperatureTitle
+            // label_FluxParam256_AmbientReflectionTemperatureTitle
             // 
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle.AutoSize = true;
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle.Location = new System.Drawing.Point(4, 78);
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle.Name = "label_FluxParam256E_AmbientReflectionTemperatureTitle";
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle.Size = new System.Drawing.Size(184, 26);
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle.TabIndex = 11;
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle.Text = "Ambient Reflection Temperature :";
-            this.label_FluxParam256E_AmbientReflectionTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle.AutoSize = true;
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle.Location = new System.Drawing.Point(4, 78);
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle.Name = "label_FluxParam256_AmbientReflectionTemperatureTitle";
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle.Size = new System.Drawing.Size(184, 26);
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle.TabIndex = 11;
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle.Text = "Ambient Reflection Temperature :";
+            this.label_FluxParam256_AmbientReflectionTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // numericUpDown_FluxParam256E_AmbientReflectionTemperature
+            // numericUpDown_FluxParam256_AmbientReflectionTemperature
             // 
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.DecimalPlaces = 2;
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.Enabled = false;
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.Location = new System.Drawing.Point(233, 81);
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.Maximum = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.Enabled = false;
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.Location = new System.Drawing.Point(233, 81);
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.Maximum = new decimal(new int[] {
             62685,
             0,
             0,
             131072});
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.Minimum = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.Minimum = new decimal(new int[] {
             4315,
             0,
             0,
             -2147352576});
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.Name = "numericUpDown_FluxParam256E_AmbientReflectionTemperature";
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.TabIndex = 29;
-            this.numericUpDown_FluxParam256E_AmbientReflectionTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.Name = "numericUpDown_FluxParam256_AmbientReflectionTemperature";
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.TabIndex = 16;
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.Value = new decimal(new int[] {
+            2685,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam256_AmbientReflectionTemperature.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam256_ReflectionTemperature_ValueChanged);
             // 
-            // label_FluxParam256E_AmbientReflectionTemperatureUnit
+            // label_FluxParam256_AmbientReflectionTemperatureUnit
             // 
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit.AutoSize = true;
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit.Location = new System.Drawing.Point(296, 83);
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit.Name = "label_FluxParam256E_AmbientReflectionTemperatureUnit";
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit.Size = new System.Drawing.Size(19, 15);
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit.TabIndex = 24;
-            this.label_FluxParam256E_AmbientReflectionTemperatureUnit.Text = "℃";
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit.AutoSize = true;
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit.Location = new System.Drawing.Point(296, 83);
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit.Name = "label_FluxParam256_AmbientReflectionTemperatureUnit";
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit.Size = new System.Drawing.Size(19, 15);
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit.TabIndex = 24;
+            this.label_FluxParam256_AmbientReflectionTemperatureUnit.Text = "℃";
             // 
-            // textBox_FluxParam256E_AmbientReflectionTemperatureRange
+            // textBox_FluxParam256_AmbientReflectionTemperatureRange
             // 
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.Enabled = false;
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.Location = new System.Drawing.Point(319, 81);
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.Name = "textBox_FluxParam256E_AmbientReflectionTemperatureRange";
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.ReadOnly = true;
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.TabIndex = 9;
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.Text = "-43.15 ~ 626.85";
-            this.textBox_FluxParam256E_AmbientReflectionTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.Enabled = false;
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.Location = new System.Drawing.Point(319, 81);
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.Name = "textBox_FluxParam256_AmbientReflectionTemperatureRange";
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.ReadOnly = true;
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.TabIndex = 9;
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.Text = "-43.15 ~ 626.85";
+            this.textBox_FluxParam256_AmbientReflectionTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericUpDown_FluxParam256E_Distance
+            // numericUpDown_FluxParam256_Distance
             // 
-            this.numericUpDown_FluxParam256E_Distance.DecimalPlaces = 2;
-            this.numericUpDown_FluxParam256E_Distance.Enabled = false;
-            this.numericUpDown_FluxParam256E_Distance.Increment = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_Distance.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256_Distance.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam256_Distance.Enabled = false;
+            this.numericUpDown_FluxParam256_Distance.Increment = new decimal(new int[] {
             1,
             0,
             0,
             131072});
-            this.numericUpDown_FluxParam256E_Distance.Location = new System.Drawing.Point(233, 107);
-            this.numericUpDown_FluxParam256E_Distance.Maximum = new decimal(new int[] {
+            this.numericUpDown_FluxParam256_Distance.Location = new System.Drawing.Point(233, 107);
+            this.numericUpDown_FluxParam256_Distance.Maximum = new decimal(new int[] {
             200,
             0,
             0,
             0});
-            this.numericUpDown_FluxParam256E_Distance.Name = "numericUpDown_FluxParam256E_Distance";
-            this.numericUpDown_FluxParam256E_Distance.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam256E_Distance.TabIndex = 30;
-            this.numericUpDown_FluxParam256E_Distance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256_Distance.Name = "numericUpDown_FluxParam256_Distance";
+            this.numericUpDown_FluxParam256_Distance.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256_Distance.TabIndex = 26;
+            this.numericUpDown_FluxParam256_Distance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256_Distance.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256_Distance.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam256_Distance.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam256_Distance_ValueChanged);
             // 
-            // label_FluxParam256E_DistanceUnit
+            // label_FluxParam256_DistanceUnit
             // 
-            this.label_FluxParam256E_DistanceUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FluxParam256E_DistanceUnit.AutoSize = true;
-            this.label_FluxParam256E_DistanceUnit.Location = new System.Drawing.Point(297, 109);
-            this.label_FluxParam256E_DistanceUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.label_FluxParam256E_DistanceUnit.Name = "label_FluxParam256E_DistanceUnit";
-            this.label_FluxParam256E_DistanceUnit.Size = new System.Drawing.Size(18, 15);
-            this.label_FluxParam256E_DistanceUnit.TabIndex = 27;
-            this.label_FluxParam256E_DistanceUnit.Text = "m";
+            this.label_FluxParam256_DistanceUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam256_DistanceUnit.AutoSize = true;
+            this.label_FluxParam256_DistanceUnit.Location = new System.Drawing.Point(297, 109);
+            this.label_FluxParam256_DistanceUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam256_DistanceUnit.Name = "label_FluxParam256_DistanceUnit";
+            this.label_FluxParam256_DistanceUnit.Size = new System.Drawing.Size(18, 15);
+            this.label_FluxParam256_DistanceUnit.TabIndex = 27;
+            this.label_FluxParam256_DistanceUnit.Text = "m";
             // 
-            // textBox_FluxParam256E_DistanceRange
+            // textBox_FluxParam256_DistanceRange
             // 
-            this.textBox_FluxParam256E_DistanceRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam256E_DistanceRange.Enabled = false;
-            this.textBox_FluxParam256E_DistanceRange.Location = new System.Drawing.Point(319, 107);
-            this.textBox_FluxParam256E_DistanceRange.Name = "textBox_FluxParam256E_DistanceRange";
-            this.textBox_FluxParam256E_DistanceRange.ReadOnly = true;
-            this.textBox_FluxParam256E_DistanceRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam256E_DistanceRange.TabIndex = 28;
-            this.textBox_FluxParam256E_DistanceRange.Text = "0.00 ~ 200.00";
-            this.textBox_FluxParam256E_DistanceRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam256_DistanceRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256_DistanceRange.Enabled = false;
+            this.textBox_FluxParam256_DistanceRange.Location = new System.Drawing.Point(319, 107);
+            this.textBox_FluxParam256_DistanceRange.Name = "textBox_FluxParam256_DistanceRange";
+            this.textBox_FluxParam256_DistanceRange.ReadOnly = true;
+            this.textBox_FluxParam256_DistanceRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256_DistanceRange.TabIndex = 28;
+            this.textBox_FluxParam256_DistanceRange.Text = "0.00 ~ 200.00";
+            this.textBox_FluxParam256_DistanceRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // groupBox_GainModeState_256E
+            // groupBox_GainModeState_256
             // 
-            this.groupBox_GainModeState_256E.Controls.Add(this.button_SetGainModeState_256E);
-            this.groupBox_GainModeState_256E.Controls.Add(this.button_GetGainModeState_256E);
-            this.groupBox_GainModeState_256E.Controls.Add(this.radioButton_GainModeStateLow_256E);
-            this.groupBox_GainModeState_256E.Controls.Add(this.radioButton_GainModeStateHigh_256E);
-            this.groupBox_GainModeState_256E.Location = new System.Drawing.Point(489, 3);
-            this.groupBox_GainModeState_256E.Name = "groupBox_GainModeState_256E";
-            this.groupBox_GainModeState_256E.Size = new System.Drawing.Size(224, 74);
-            this.groupBox_GainModeState_256E.TabIndex = 15;
-            this.groupBox_GainModeState_256E.TabStop = false;
-            this.groupBox_GainModeState_256E.Text = "Gain Mode State";
+            this.groupBox_GainModeState_256.Controls.Add(this.button_SetGainModeState_256);
+            this.groupBox_GainModeState_256.Controls.Add(this.button_GetGainModeState_256);
+            this.groupBox_GainModeState_256.Controls.Add(this.radioButton_GainModeStateLow_256);
+            this.groupBox_GainModeState_256.Controls.Add(this.radioButton_GainModeStateHigh_256);
+            this.groupBox_GainModeState_256.Location = new System.Drawing.Point(489, 3);
+            this.groupBox_GainModeState_256.Name = "groupBox_GainModeState_256";
+            this.groupBox_GainModeState_256.Size = new System.Drawing.Size(224, 74);
+            this.groupBox_GainModeState_256.TabIndex = 15;
+            this.groupBox_GainModeState_256.TabStop = false;
+            this.groupBox_GainModeState_256.Text = "Gain Mode State";
             // 
-            // button_SetGainModeState_256E
+            // button_SetGainModeState_256
             // 
-            this.button_SetGainModeState_256E.Location = new System.Drawing.Point(162, 24);
-            this.button_SetGainModeState_256E.Name = "button_SetGainModeState_256E";
-            this.button_SetGainModeState_256E.Size = new System.Drawing.Size(49, 42);
-            this.button_SetGainModeState_256E.TabIndex = 19;
-            this.button_SetGainModeState_256E.Text = "Set";
-            this.button_SetGainModeState_256E.UseVisualStyleBackColor = true;
-            this.button_SetGainModeState_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_SetGainModeState_256.Location = new System.Drawing.Point(162, 24);
+            this.button_SetGainModeState_256.Name = "button_SetGainModeState_256";
+            this.button_SetGainModeState_256.Size = new System.Drawing.Size(49, 42);
+            this.button_SetGainModeState_256.TabIndex = 19;
+            this.button_SetGainModeState_256.Text = "Set";
+            this.button_SetGainModeState_256.UseVisualStyleBackColor = true;
+            this.button_SetGainModeState_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // button_GetGainModeState_256E
+            // button_GetGainModeState_256
             // 
-            this.button_GetGainModeState_256E.Location = new System.Drawing.Point(110, 24);
-            this.button_GetGainModeState_256E.Name = "button_GetGainModeState_256E";
-            this.button_GetGainModeState_256E.Size = new System.Drawing.Size(49, 42);
-            this.button_GetGainModeState_256E.TabIndex = 18;
-            this.button_GetGainModeState_256E.Text = "Get";
-            this.button_GetGainModeState_256E.UseVisualStyleBackColor = true;
-            this.button_GetGainModeState_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_GetGainModeState_256.Location = new System.Drawing.Point(110, 24);
+            this.button_GetGainModeState_256.Name = "button_GetGainModeState_256";
+            this.button_GetGainModeState_256.Size = new System.Drawing.Size(49, 42);
+            this.button_GetGainModeState_256.TabIndex = 18;
+            this.button_GetGainModeState_256.Text = "Get";
+            this.button_GetGainModeState_256.UseVisualStyleBackColor = true;
+            this.button_GetGainModeState_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // radioButton_GainModeStateLow_256E
+            // radioButton_GainModeStateLow_256
             // 
-            this.radioButton_GainModeStateLow_256E.AutoSize = true;
-            this.radioButton_GainModeStateLow_256E.Location = new System.Drawing.Point(9, 47);
-            this.radioButton_GainModeStateLow_256E.Name = "radioButton_GainModeStateLow_256E";
-            this.radioButton_GainModeStateLow_256E.Size = new System.Drawing.Size(47, 19);
-            this.radioButton_GainModeStateLow_256E.TabIndex = 1;
-            this.radioButton_GainModeStateLow_256E.TabStop = true;
-            this.radioButton_GainModeStateLow_256E.Text = "Low";
-            this.radioButton_GainModeStateLow_256E.UseVisualStyleBackColor = true;
+            this.radioButton_GainModeStateLow_256.AutoSize = true;
+            this.radioButton_GainModeStateLow_256.Location = new System.Drawing.Point(9, 47);
+            this.radioButton_GainModeStateLow_256.Name = "radioButton_GainModeStateLow_256";
+            this.radioButton_GainModeStateLow_256.Size = new System.Drawing.Size(47, 19);
+            this.radioButton_GainModeStateLow_256.TabIndex = 1;
+            this.radioButton_GainModeStateLow_256.TabStop = true;
+            this.radioButton_GainModeStateLow_256.Text = "Low";
+            this.radioButton_GainModeStateLow_256.UseVisualStyleBackColor = true;
             // 
-            // radioButton_GainModeStateHigh_256E
+            // radioButton_GainModeStateHigh_256
             // 
-            this.radioButton_GainModeStateHigh_256E.AutoSize = true;
-            this.radioButton_GainModeStateHigh_256E.Location = new System.Drawing.Point(9, 22);
-            this.radioButton_GainModeStateHigh_256E.Name = "radioButton_GainModeStateHigh_256E";
-            this.radioButton_GainModeStateHigh_256E.Size = new System.Drawing.Size(51, 19);
-            this.radioButton_GainModeStateHigh_256E.TabIndex = 0;
-            this.radioButton_GainModeStateHigh_256E.TabStop = true;
-            this.radioButton_GainModeStateHigh_256E.Text = "High";
-            this.radioButton_GainModeStateHigh_256E.UseVisualStyleBackColor = true;
+            this.radioButton_GainModeStateHigh_256.AutoSize = true;
+            this.radioButton_GainModeStateHigh_256.Location = new System.Drawing.Point(9, 22);
+            this.radioButton_GainModeStateHigh_256.Name = "radioButton_GainModeStateHigh_256";
+            this.radioButton_GainModeStateHigh_256.Size = new System.Drawing.Size(51, 19);
+            this.radioButton_GainModeStateHigh_256.TabIndex = 0;
+            this.radioButton_GainModeStateHigh_256.TabStop = true;
+            this.radioButton_GainModeStateHigh_256.Text = "High";
+            this.radioButton_GainModeStateHigh_256.UseVisualStyleBackColor = true;
             // 
-            // groupBox_FlatFieldCorrection_256E
+            // groupBox_FlatFieldCorrection_256
             // 
-            this.groupBox_FlatFieldCorrection_256E.Controls.Add(this.button_SetFlatFieldCorrectionMode_256E);
-            this.groupBox_FlatFieldCorrection_256E.Controls.Add(this.button_GetFlatFieldCorrectionMode_256E);
-            this.groupBox_FlatFieldCorrection_256E.Controls.Add(this.radioButton_FlatFieldCorrectionManual_256E);
-            this.groupBox_FlatFieldCorrection_256E.Controls.Add(this.button_RunFlatFieldCorrection_256E);
-            this.groupBox_FlatFieldCorrection_256E.Controls.Add(this.radioButton_FlatFieldCorrectionAutomatic_256E);
-            this.groupBox_FlatFieldCorrection_256E.Location = new System.Drawing.Point(489, 83);
-            this.groupBox_FlatFieldCorrection_256E.Name = "groupBox_FlatFieldCorrection_256E";
-            this.groupBox_FlatFieldCorrection_256E.Size = new System.Drawing.Size(224, 74);
-            this.groupBox_FlatFieldCorrection_256E.TabIndex = 14;
-            this.groupBox_FlatFieldCorrection_256E.TabStop = false;
-            this.groupBox_FlatFieldCorrection_256E.Text = "Flat Field Correction";
+            this.groupBox_FlatFieldCorrection_256.Controls.Add(this.button_SetFlatFieldCorrectionMode_256);
+            this.groupBox_FlatFieldCorrection_256.Controls.Add(this.button_GetFlatFieldCorrectionMode_256);
+            this.groupBox_FlatFieldCorrection_256.Controls.Add(this.radioButton_FlatFieldCorrectionManual_256);
+            this.groupBox_FlatFieldCorrection_256.Controls.Add(this.button_RunFlatFieldCorrection_256);
+            this.groupBox_FlatFieldCorrection_256.Controls.Add(this.radioButton_FlatFieldCorrectionAutomatic_256);
+            this.groupBox_FlatFieldCorrection_256.Location = new System.Drawing.Point(489, 83);
+            this.groupBox_FlatFieldCorrection_256.Name = "groupBox_FlatFieldCorrection_256";
+            this.groupBox_FlatFieldCorrection_256.Size = new System.Drawing.Size(224, 74);
+            this.groupBox_FlatFieldCorrection_256.TabIndex = 14;
+            this.groupBox_FlatFieldCorrection_256.TabStop = false;
+            this.groupBox_FlatFieldCorrection_256.Text = "Flat Field Correction";
             // 
-            // button_SetFlatFieldCorrectionMode_256E
+            // button_SetFlatFieldCorrectionMode_256
             // 
-            this.button_SetFlatFieldCorrectionMode_256E.Location = new System.Drawing.Point(162, 19);
-            this.button_SetFlatFieldCorrectionMode_256E.Name = "button_SetFlatFieldCorrectionMode_256E";
-            this.button_SetFlatFieldCorrectionMode_256E.Size = new System.Drawing.Size(49, 23);
-            this.button_SetFlatFieldCorrectionMode_256E.TabIndex = 18;
-            this.button_SetFlatFieldCorrectionMode_256E.Text = "Set";
-            this.button_SetFlatFieldCorrectionMode_256E.UseVisualStyleBackColor = true;
-            this.button_SetFlatFieldCorrectionMode_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_SetFlatFieldCorrectionMode_256.Location = new System.Drawing.Point(162, 19);
+            this.button_SetFlatFieldCorrectionMode_256.Name = "button_SetFlatFieldCorrectionMode_256";
+            this.button_SetFlatFieldCorrectionMode_256.Size = new System.Drawing.Size(49, 23);
+            this.button_SetFlatFieldCorrectionMode_256.TabIndex = 18;
+            this.button_SetFlatFieldCorrectionMode_256.Text = "Set";
+            this.button_SetFlatFieldCorrectionMode_256.UseVisualStyleBackColor = true;
+            this.button_SetFlatFieldCorrectionMode_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // button_GetFlatFieldCorrectionMode_256E
+            // button_GetFlatFieldCorrectionMode_256
             // 
-            this.button_GetFlatFieldCorrectionMode_256E.Location = new System.Drawing.Point(110, 19);
-            this.button_GetFlatFieldCorrectionMode_256E.Name = "button_GetFlatFieldCorrectionMode_256E";
-            this.button_GetFlatFieldCorrectionMode_256E.Size = new System.Drawing.Size(50, 23);
-            this.button_GetFlatFieldCorrectionMode_256E.TabIndex = 17;
-            this.button_GetFlatFieldCorrectionMode_256E.Text = "Get";
-            this.button_GetFlatFieldCorrectionMode_256E.UseVisualStyleBackColor = true;
-            this.button_GetFlatFieldCorrectionMode_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_GetFlatFieldCorrectionMode_256.Location = new System.Drawing.Point(110, 19);
+            this.button_GetFlatFieldCorrectionMode_256.Name = "button_GetFlatFieldCorrectionMode_256";
+            this.button_GetFlatFieldCorrectionMode_256.Size = new System.Drawing.Size(50, 23);
+            this.button_GetFlatFieldCorrectionMode_256.TabIndex = 17;
+            this.button_GetFlatFieldCorrectionMode_256.Text = "Get";
+            this.button_GetFlatFieldCorrectionMode_256.UseVisualStyleBackColor = true;
+            this.button_GetFlatFieldCorrectionMode_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // radioButton_FlatFieldCorrectionManual_256E
+            // radioButton_FlatFieldCorrectionManual_256
             // 
-            this.radioButton_FlatFieldCorrectionManual_256E.AutoSize = true;
-            this.radioButton_FlatFieldCorrectionManual_256E.Location = new System.Drawing.Point(8, 45);
-            this.radioButton_FlatFieldCorrectionManual_256E.Name = "radioButton_FlatFieldCorrectionManual_256E";
-            this.radioButton_FlatFieldCorrectionManual_256E.Size = new System.Drawing.Size(65, 19);
-            this.radioButton_FlatFieldCorrectionManual_256E.TabIndex = 16;
-            this.radioButton_FlatFieldCorrectionManual_256E.TabStop = true;
-            this.radioButton_FlatFieldCorrectionManual_256E.Text = "Manual";
-            this.radioButton_FlatFieldCorrectionManual_256E.UseVisualStyleBackColor = true;
+            this.radioButton_FlatFieldCorrectionManual_256.AutoSize = true;
+            this.radioButton_FlatFieldCorrectionManual_256.Location = new System.Drawing.Point(8, 45);
+            this.radioButton_FlatFieldCorrectionManual_256.Name = "radioButton_FlatFieldCorrectionManual_256";
+            this.radioButton_FlatFieldCorrectionManual_256.Size = new System.Drawing.Size(65, 19);
+            this.radioButton_FlatFieldCorrectionManual_256.TabIndex = 16;
+            this.radioButton_FlatFieldCorrectionManual_256.TabStop = true;
+            this.radioButton_FlatFieldCorrectionManual_256.Text = "Manual";
+            this.radioButton_FlatFieldCorrectionManual_256.UseVisualStyleBackColor = true;
             // 
-            // button_RunFlatFieldCorrection_256E
+            // button_RunFlatFieldCorrection_256
             // 
-            this.button_RunFlatFieldCorrection_256E.Location = new System.Drawing.Point(110, 44);
-            this.button_RunFlatFieldCorrection_256E.Name = "button_RunFlatFieldCorrection_256E";
-            this.button_RunFlatFieldCorrection_256E.Size = new System.Drawing.Size(101, 23);
-            this.button_RunFlatFieldCorrection_256E.TabIndex = 14;
-            this.button_RunFlatFieldCorrection_256E.Text = "Run";
-            this.button_RunFlatFieldCorrection_256E.UseVisualStyleBackColor = true;
-            this.button_RunFlatFieldCorrection_256E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_RunFlatFieldCorrection_256.Location = new System.Drawing.Point(110, 44);
+            this.button_RunFlatFieldCorrection_256.Name = "button_RunFlatFieldCorrection_256";
+            this.button_RunFlatFieldCorrection_256.Size = new System.Drawing.Size(101, 23);
+            this.button_RunFlatFieldCorrection_256.TabIndex = 14;
+            this.button_RunFlatFieldCorrection_256.Text = "Run";
+            this.button_RunFlatFieldCorrection_256.UseVisualStyleBackColor = true;
+            this.button_RunFlatFieldCorrection_256.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // radioButton_FlatFieldCorrectionAutomatic_256E
+            // radioButton_FlatFieldCorrectionAutomatic_256
             // 
-            this.radioButton_FlatFieldCorrectionAutomatic_256E.AutoSize = true;
-            this.radioButton_FlatFieldCorrectionAutomatic_256E.Location = new System.Drawing.Point(8, 22);
-            this.radioButton_FlatFieldCorrectionAutomatic_256E.Name = "radioButton_FlatFieldCorrectionAutomatic_256E";
-            this.radioButton_FlatFieldCorrectionAutomatic_256E.Size = new System.Drawing.Size(81, 19);
-            this.radioButton_FlatFieldCorrectionAutomatic_256E.TabIndex = 15;
-            this.radioButton_FlatFieldCorrectionAutomatic_256E.TabStop = true;
-            this.radioButton_FlatFieldCorrectionAutomatic_256E.Text = "Automatic";
-            this.radioButton_FlatFieldCorrectionAutomatic_256E.UseVisualStyleBackColor = true;
+            this.radioButton_FlatFieldCorrectionAutomatic_256.AutoSize = true;
+            this.radioButton_FlatFieldCorrectionAutomatic_256.Location = new System.Drawing.Point(8, 22);
+            this.radioButton_FlatFieldCorrectionAutomatic_256.Name = "radioButton_FlatFieldCorrectionAutomatic_256";
+            this.radioButton_FlatFieldCorrectionAutomatic_256.Size = new System.Drawing.Size(81, 19);
+            this.radioButton_FlatFieldCorrectionAutomatic_256.TabIndex = 15;
+            this.radioButton_FlatFieldCorrectionAutomatic_256.TabStop = true;
+            this.radioButton_FlatFieldCorrectionAutomatic_256.Text = "Automatic";
+            this.radioButton_FlatFieldCorrectionAutomatic_256.UseVisualStyleBackColor = true;
             // 
-            // panel_SensorControl_160E
+            // panel_SensorControl_160
             // 
-            this.panel_SensorControl_160E.Controls.Add(this.groupBox_FluxParameters_160E);
-            this.panel_SensorControl_160E.Controls.Add(this.groupBox_GainModeState_160E);
-            this.panel_SensorControl_160E.Controls.Add(this.groupBox_FlatFieldCorrection_160E);
-            this.panel_SensorControl_160E.Controls.Add(this.button_RestoreDefaultFluxParameters_160E);
-            this.panel_SensorControl_160E.Location = new System.Drawing.Point(0, 0);
-            this.panel_SensorControl_160E.Name = "panel_SensorControl_160E";
-            this.panel_SensorControl_160E.Size = new System.Drawing.Size(719, 244);
-            this.panel_SensorControl_160E.TabIndex = 15;
-            this.panel_SensorControl_160E.Visible = false;
+            this.panel_SensorControl_160.Controls.Add(this.groupBox_FluxParameters_160);
+            this.panel_SensorControl_160.Controls.Add(this.groupBox_GainModeState_160);
+            this.panel_SensorControl_160.Controls.Add(this.groupBox_FlatFieldCorrection_160);
+            this.panel_SensorControl_160.Controls.Add(this.button_RestoreDefaultFluxParameters_160);
+            this.panel_SensorControl_160.Location = new System.Drawing.Point(0, 0);
+            this.panel_SensorControl_160.Name = "panel_SensorControl_160";
+            this.panel_SensorControl_160.Size = new System.Drawing.Size(719, 244);
+            this.panel_SensorControl_160.TabIndex = 15;
+            this.panel_SensorControl_160.Visible = false;
             // 
-            // groupBox_FluxParameters_160E
+            // groupBox_FluxParameters_160
             // 
-            this.groupBox_FluxParameters_160E.Controls.Add(this.tableLayoutPanel6);
-            this.groupBox_FluxParameters_160E.Location = new System.Drawing.Point(6, 3);
-            this.groupBox_FluxParameters_160E.Name = "groupBox_FluxParameters_160E";
-            this.groupBox_FluxParameters_160E.Size = new System.Drawing.Size(467, 233);
-            this.groupBox_FluxParameters_160E.TabIndex = 12;
-            this.groupBox_FluxParameters_160E.TabStop = false;
-            this.groupBox_FluxParameters_160E.Text = "Flux Parameters";
+            this.groupBox_FluxParameters_160.Controls.Add(this.tableLayoutPanel_FluxParam160);
+            this.groupBox_FluxParameters_160.Location = new System.Drawing.Point(6, 3);
+            this.groupBox_FluxParameters_160.Name = "groupBox_FluxParameters_160";
+            this.groupBox_FluxParameters_160.Size = new System.Drawing.Size(467, 233);
+            this.groupBox_FluxParameters_160.TabIndex = 12;
+            this.groupBox_FluxParameters_160.TabStop = false;
+            this.groupBox_FluxParameters_160.Text = "Flux Parameters";
             // 
-            // tableLayoutPanel6
+            // tableLayoutPanel_FluxParam160
             // 
-            this.tableLayoutPanel6.ColumnCount = 6;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_WindowReflectedTemperatureUnit, 3, 7);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_AtmosphericTemperatureUnit, 3, 5);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_WindowTemperatureUnit, 3, 3);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_BackgroundTemperatureUnit, 3, 1);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown_FluxParam160E_WindowReflectedTemperature, 2, 7);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown_FluxParam160E_WindowReflection, 2, 6);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown_FluxParam160E_AtmosphericTemperature, 2, 5);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown_FluxParam160E_AtmosphericTransmission, 2, 4);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown_FluxParam160E_WindowTemperature, 2, 3);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown_FluxParam160E_WindowTransmission, 2, 2);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_SceneEmissivityTitle, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.textBox_FluxParam160E_SceneEmissivityRange, 4, 0);
-            this.tableLayoutPanel6.Controls.Add(this.button_GetFluxParameters_160E, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.button_SetFluxParameters_160E, 5, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_WindowTransmissionTitle, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_WindowTemperatureTitle, 0, 3);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_AtmosphericTransmissionTitle, 0, 4);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_AtmosphericTemperatureTitle, 0, 5);
-            this.tableLayoutPanel6.Controls.Add(this.textBox_FluxParam160E_BackgroundTemperatureRange, 4, 1);
-            this.tableLayoutPanel6.Controls.Add(this.textBox_FluxParam160E_WindowTransmissionRange, 4, 2);
-            this.tableLayoutPanel6.Controls.Add(this.textBox_FluxParam160E_WindowTemperatureRange, 4, 3);
-            this.tableLayoutPanel6.Controls.Add(this.textBox_FluxParam160E_AtmosphericTransmissionRange, 4, 4);
-            this.tableLayoutPanel6.Controls.Add(this.textBox_FluxParam160E_AtmosphericTemperatureRange, 4, 5);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_WindowReflectionTitle, 0, 6);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_WindowReflectedTemperatureTitle, 0, 7);
-            this.tableLayoutPanel6.Controls.Add(this.textBox_FluxParam160E_WindowReflectionRange, 4, 6);
-            this.tableLayoutPanel6.Controls.Add(this.textBox_FluxParam160E_WindowReflectedTemperatureRange, 4, 7);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown_FluxParam160E_SceneEmissivity, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown_FluxParam160E_BackgroundTemperature, 2, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label_FluxParam160E_BackgroundTemperatureTitle, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(6, 19);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 8;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(455, 208);
-            this.tableLayoutPanel6.TabIndex = 10;
+            this.tableLayoutPanel_FluxParam160.ColumnCount = 6;
+            this.tableLayoutPanel_FluxParam160.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
+            this.tableLayoutPanel_FluxParam160.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel_FluxParam160.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel_FluxParam160.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FluxParam160.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel_FluxParam160.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_FluxParam160.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_WindowReflectedTemperatureUnit, 3, 7);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_AtmosphericTemperatureUnit, 3, 5);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_WindowTemperatureUnit, 3, 3);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_BackgroundTemperatureUnit, 3, 1);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.numericUpDown_FluxParam160_WindowReflectedTemperature, 2, 7);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.numericUpDown_FluxParam160_WindowReflection, 2, 6);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.numericUpDown_FluxParam160_AtmosphericTemperature, 2, 5);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.numericUpDown_FluxParam160_AtmosphericTransmission, 2, 4);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.numericUpDown_FluxParam160_WindowTemperature, 2, 3);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.numericUpDown_FluxParam160_WindowTransmission, 2, 2);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_SceneEmissivityTitle, 0, 0);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.textBox_FluxParam160_SceneEmissivityRange, 4, 0);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.button_GetFluxParameters_160, 1, 0);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.button_SetFluxParameters_160, 5, 0);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_WindowTransmissionTitle, 0, 2);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_WindowTemperatureTitle, 0, 3);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_AtmosphericTransmissionTitle, 0, 4);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_AtmosphericTemperatureTitle, 0, 5);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.textBox_FluxParam160_BackgroundTemperatureRange, 4, 1);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.textBox_FluxParam160_WindowTransmissionRange, 4, 2);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.textBox_FluxParam160_WindowTemperatureRange, 4, 3);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.textBox_FluxParam160_AtmosphericTransmissionRange, 4, 4);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.textBox_FluxParam160_AtmosphericTemperatureRange, 4, 5);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_WindowReflectionTitle, 0, 6);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_WindowReflectedTemperatureTitle, 0, 7);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.textBox_FluxParam160_WindowReflectionRange, 4, 6);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.textBox_FluxParam160_WindowReflectedTemperatureRange, 4, 7);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.numericUpDown_FluxParam160_SceneEmissivity, 2, 0);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.numericUpDown_FluxParam160_BackgroundTemperature, 2, 1);
+            this.tableLayoutPanel_FluxParam160.Controls.Add(this.label_FluxParam160_BackgroundTemperatureTitle, 0, 1);
+            this.tableLayoutPanel_FluxParam160.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel_FluxParam160.Name = "tableLayoutPanel_FluxParam160";
+            this.tableLayoutPanel_FluxParam160.RowCount = 8;
+            this.tableLayoutPanel_FluxParam160.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam160.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam160.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam160.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam160.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam160.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam160.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam160.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam160.Size = new System.Drawing.Size(455, 208);
+            this.tableLayoutPanel_FluxParam160.TabIndex = 10;
             // 
-            // label_FluxParam160E_WindowReflectedTemperatureUnit
+            // label_FluxParam160_WindowReflectedTemperatureUnit
             // 
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit.AutoSize = true;
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit.Location = new System.Drawing.Point(296, 187);
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit.Name = "label_FluxParam160E_WindowReflectedTemperatureUnit";
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit.Size = new System.Drawing.Size(19, 15);
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit.TabIndex = 24;
-            this.label_FluxParam160E_WindowReflectedTemperatureUnit.Text = "℃";
+            this.label_FluxParam160_WindowReflectedTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam160_WindowReflectedTemperatureUnit.AutoSize = true;
+            this.label_FluxParam160_WindowReflectedTemperatureUnit.Location = new System.Drawing.Point(296, 187);
+            this.label_FluxParam160_WindowReflectedTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam160_WindowReflectedTemperatureUnit.Name = "label_FluxParam160_WindowReflectedTemperatureUnit";
+            this.label_FluxParam160_WindowReflectedTemperatureUnit.Size = new System.Drawing.Size(19, 15);
+            this.label_FluxParam160_WindowReflectedTemperatureUnit.TabIndex = 24;
+            this.label_FluxParam160_WindowReflectedTemperatureUnit.Text = "℃";
             // 
-            // label_FluxParam160E_AtmosphericTemperatureUnit
+            // label_FluxParam160_AtmosphericTemperatureUnit
             // 
-            this.label_FluxParam160E_AtmosphericTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FluxParam160E_AtmosphericTemperatureUnit.AutoSize = true;
-            this.label_FluxParam160E_AtmosphericTemperatureUnit.Location = new System.Drawing.Point(296, 135);
-            this.label_FluxParam160E_AtmosphericTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.label_FluxParam160E_AtmosphericTemperatureUnit.Name = "label_FluxParam160E_AtmosphericTemperatureUnit";
-            this.label_FluxParam160E_AtmosphericTemperatureUnit.Size = new System.Drawing.Size(19, 15);
-            this.label_FluxParam160E_AtmosphericTemperatureUnit.TabIndex = 22;
-            this.label_FluxParam160E_AtmosphericTemperatureUnit.Text = "℃";
+            this.label_FluxParam160_AtmosphericTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam160_AtmosphericTemperatureUnit.AutoSize = true;
+            this.label_FluxParam160_AtmosphericTemperatureUnit.Location = new System.Drawing.Point(296, 135);
+            this.label_FluxParam160_AtmosphericTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam160_AtmosphericTemperatureUnit.Name = "label_FluxParam160_AtmosphericTemperatureUnit";
+            this.label_FluxParam160_AtmosphericTemperatureUnit.Size = new System.Drawing.Size(19, 15);
+            this.label_FluxParam160_AtmosphericTemperatureUnit.TabIndex = 22;
+            this.label_FluxParam160_AtmosphericTemperatureUnit.Text = "℃";
             // 
-            // label_FluxParam160E_WindowTemperatureUnit
+            // label_FluxParam160_WindowTemperatureUnit
             // 
-            this.label_FluxParam160E_WindowTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FluxParam160E_WindowTemperatureUnit.AutoSize = true;
-            this.label_FluxParam160E_WindowTemperatureUnit.Location = new System.Drawing.Point(296, 83);
-            this.label_FluxParam160E_WindowTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.label_FluxParam160E_WindowTemperatureUnit.Name = "label_FluxParam160E_WindowTemperatureUnit";
-            this.label_FluxParam160E_WindowTemperatureUnit.Size = new System.Drawing.Size(19, 15);
-            this.label_FluxParam160E_WindowTemperatureUnit.TabIndex = 20;
-            this.label_FluxParam160E_WindowTemperatureUnit.Text = "℃";
+            this.label_FluxParam160_WindowTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam160_WindowTemperatureUnit.AutoSize = true;
+            this.label_FluxParam160_WindowTemperatureUnit.Location = new System.Drawing.Point(296, 83);
+            this.label_FluxParam160_WindowTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam160_WindowTemperatureUnit.Name = "label_FluxParam160_WindowTemperatureUnit";
+            this.label_FluxParam160_WindowTemperatureUnit.Size = new System.Drawing.Size(19, 15);
+            this.label_FluxParam160_WindowTemperatureUnit.TabIndex = 20;
+            this.label_FluxParam160_WindowTemperatureUnit.Text = "℃";
             // 
-            // label_FluxParam160E_BackgroundTemperatureUnit
+            // label_FluxParam160_BackgroundTemperatureUnit
             // 
-            this.label_FluxParam160E_BackgroundTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label_FluxParam160E_BackgroundTemperatureUnit.AutoSize = true;
-            this.label_FluxParam160E_BackgroundTemperatureUnit.Location = new System.Drawing.Point(296, 31);
-            this.label_FluxParam160E_BackgroundTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
-            this.label_FluxParam160E_BackgroundTemperatureUnit.Name = "label_FluxParam160E_BackgroundTemperatureUnit";
-            this.label_FluxParam160E_BackgroundTemperatureUnit.Size = new System.Drawing.Size(19, 15);
-            this.label_FluxParam160E_BackgroundTemperatureUnit.TabIndex = 18;
-            this.label_FluxParam160E_BackgroundTemperatureUnit.Text = "℃";
+            this.label_FluxParam160_BackgroundTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam160_BackgroundTemperatureUnit.AutoSize = true;
+            this.label_FluxParam160_BackgroundTemperatureUnit.Location = new System.Drawing.Point(296, 31);
+            this.label_FluxParam160_BackgroundTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam160_BackgroundTemperatureUnit.Name = "label_FluxParam160_BackgroundTemperatureUnit";
+            this.label_FluxParam160_BackgroundTemperatureUnit.Size = new System.Drawing.Size(19, 15);
+            this.label_FluxParam160_BackgroundTemperatureUnit.TabIndex = 18;
+            this.label_FluxParam160_BackgroundTemperatureUnit.Text = "℃";
             // 
-            // numericUpDown_FluxParam160E_WindowReflectedTemperature
+            // numericUpDown_FluxParam160_WindowReflectedTemperature
             // 
-            this.numericUpDown_FluxParam160E_WindowReflectedTemperature.Location = new System.Drawing.Point(233, 185);
-            this.numericUpDown_FluxParam160E_WindowReflectedTemperature.Name = "numericUpDown_FluxParam160E_WindowReflectedTemperature";
-            this.numericUpDown_FluxParam160E_WindowReflectedTemperature.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam160E_WindowReflectedTemperature.TabIndex = 25;
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Enabled = false;
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Location = new System.Drawing.Point(233, 185);
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Maximum = new decimal(new int[] {
+            3822,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Minimum = new decimal(new int[] {
+            27315,
+            0,
+            0,
+            -2147352576});
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Name = "numericUpDown_FluxParam160_WindowReflectedTemperature";
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.TabIndex = 16;
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.Value = new decimal(new int[] {
+            220,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam160_WindowReflectedTemperature.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam160_WindowReflectedTemperature_ValueChanged);
             // 
-            // numericUpDown_FluxParam160E_WindowReflection
+            // numericUpDown_FluxParam160_WindowReflection
             // 
-            this.numericUpDown_FluxParam160E_WindowReflection.Location = new System.Drawing.Point(233, 159);
-            this.numericUpDown_FluxParam160E_WindowReflection.Name = "numericUpDown_FluxParam160E_WindowReflection";
-            this.numericUpDown_FluxParam160E_WindowReflection.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam160E_WindowReflection.TabIndex = 26;
+            this.numericUpDown_FluxParam160_WindowReflection.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam160_WindowReflection.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam160_WindowReflection.Enabled = false;
+            this.numericUpDown_FluxParam160_WindowReflection.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_WindowReflection.Location = new System.Drawing.Point(233, 159);
+            this.numericUpDown_FluxParam160_WindowReflection.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_WindowReflection.Name = "numericUpDown_FluxParam160_WindowReflection";
+            this.numericUpDown_FluxParam160_WindowReflection.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam160_WindowReflection.TabIndex = 15;
+            this.numericUpDown_FluxParam160_WindowReflection.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam160_WindowReflection.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam160_WindowReflection.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam160_WindowReflection_ValueChanged);
             // 
-            // numericUpDown_FluxParam160E_AtmosphericTemperature
+            // numericUpDown_FluxParam160_AtmosphericTemperature
             // 
-            this.numericUpDown_FluxParam160E_AtmosphericTemperature.Location = new System.Drawing.Point(233, 133);
-            this.numericUpDown_FluxParam160E_AtmosphericTemperature.Name = "numericUpDown_FluxParam160E_AtmosphericTemperature";
-            this.numericUpDown_FluxParam160E_AtmosphericTemperature.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam160E_AtmosphericTemperature.TabIndex = 27;
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Enabled = false;
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Location = new System.Drawing.Point(233, 133);
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Maximum = new decimal(new int[] {
+            3822,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Minimum = new decimal(new int[] {
+            27315,
+            0,
+            0,
+            -2147352576});
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Name = "numericUpDown_FluxParam160_AtmosphericTemperature";
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.TabIndex = 15;
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.Value = new decimal(new int[] {
+            220,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam160_AtmosphericTemperature.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam160_AtmosphericTemperature_ValueChanged);
             // 
-            // numericUpDown_FluxParam160E_AtmosphericTransmission
+            // numericUpDown_FluxParam160_AtmosphericTransmission
             // 
-            this.numericUpDown_FluxParam160E_AtmosphericTransmission.Location = new System.Drawing.Point(233, 107);
-            this.numericUpDown_FluxParam160E_AtmosphericTransmission.Name = "numericUpDown_FluxParam160E_AtmosphericTransmission";
-            this.numericUpDown_FluxParam160E_AtmosphericTransmission.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam160E_AtmosphericTransmission.TabIndex = 28;
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Enabled = false;
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Location = new System.Drawing.Point(233, 107);
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Name = "numericUpDown_FluxParam160_AtmosphericTransmission";
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.TabIndex = 14;
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_AtmosphericTransmission.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam160_AtmosphericTransmission_ValueChanged);
             // 
-            // numericUpDown_FluxParam160E_WindowTemperature
+            // numericUpDown_FluxParam160_WindowTemperature
             // 
-            this.numericUpDown_FluxParam160E_WindowTemperature.Location = new System.Drawing.Point(233, 81);
-            this.numericUpDown_FluxParam160E_WindowTemperature.Name = "numericUpDown_FluxParam160E_WindowTemperature";
-            this.numericUpDown_FluxParam160E_WindowTemperature.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam160E_WindowTemperature.TabIndex = 29;
+            this.numericUpDown_FluxParam160_WindowTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam160_WindowTemperature.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam160_WindowTemperature.Enabled = false;
+            this.numericUpDown_FluxParam160_WindowTemperature.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_WindowTemperature.Location = new System.Drawing.Point(233, 81);
+            this.numericUpDown_FluxParam160_WindowTemperature.Maximum = new decimal(new int[] {
+            3822,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam160_WindowTemperature.Minimum = new decimal(new int[] {
+            27315,
+            0,
+            0,
+            -2147352576});
+            this.numericUpDown_FluxParam160_WindowTemperature.Name = "numericUpDown_FluxParam160_WindowTemperature";
+            this.numericUpDown_FluxParam160_WindowTemperature.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam160_WindowTemperature.TabIndex = 14;
+            this.numericUpDown_FluxParam160_WindowTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam160_WindowTemperature.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam160_WindowTemperature.Value = new decimal(new int[] {
+            220,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam160_WindowTemperature.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam160_WindowTemperature_ValueChanged);
             // 
-            // numericUpDown_FluxParam160E_WindowTransmission
+            // numericUpDown_FluxParam160_WindowTransmission
             // 
-            this.numericUpDown_FluxParam160E_WindowTransmission.Location = new System.Drawing.Point(233, 55);
-            this.numericUpDown_FluxParam160E_WindowTransmission.Name = "numericUpDown_FluxParam160E_WindowTransmission";
-            this.numericUpDown_FluxParam160E_WindowTransmission.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam160E_WindowTransmission.TabIndex = 30;
+            this.numericUpDown_FluxParam160_WindowTransmission.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam160_WindowTransmission.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam160_WindowTransmission.Enabled = false;
+            this.numericUpDown_FluxParam160_WindowTransmission.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_WindowTransmission.Location = new System.Drawing.Point(233, 55);
+            this.numericUpDown_FluxParam160_WindowTransmission.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam160_WindowTransmission.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_WindowTransmission.Name = "numericUpDown_FluxParam160_WindowTransmission";
+            this.numericUpDown_FluxParam160_WindowTransmission.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam160_WindowTransmission.TabIndex = 13;
+            this.numericUpDown_FluxParam160_WindowTransmission.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam160_WindowTransmission.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam160_WindowTransmission.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam160_WindowTransmission.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam160_WindowTransmission_ValueChanged);
             // 
-            // label_FluxParam160E_SceneEmissivityTitle
+            // label_FluxParam160_SceneEmissivityTitle
             // 
-            this.label_FluxParam160E_SceneEmissivityTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam160_SceneEmissivityTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam160E_SceneEmissivityTitle.AutoSize = true;
-            this.label_FluxParam160E_SceneEmissivityTitle.Location = new System.Drawing.Point(89, 0);
-            this.label_FluxParam160E_SceneEmissivityTitle.Name = "label_FluxParam160E_SceneEmissivityTitle";
-            this.label_FluxParam160E_SceneEmissivityTitle.Size = new System.Drawing.Size(99, 26);
-            this.label_FluxParam160E_SceneEmissivityTitle.TabIndex = 1;
-            this.label_FluxParam160E_SceneEmissivityTitle.Text = "Scene Emissivity :";
-            this.label_FluxParam160E_SceneEmissivityTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam160_SceneEmissivityTitle.AutoSize = true;
+            this.label_FluxParam160_SceneEmissivityTitle.Location = new System.Drawing.Point(89, 0);
+            this.label_FluxParam160_SceneEmissivityTitle.Name = "label_FluxParam160_SceneEmissivityTitle";
+            this.label_FluxParam160_SceneEmissivityTitle.Size = new System.Drawing.Size(99, 26);
+            this.label_FluxParam160_SceneEmissivityTitle.TabIndex = 1;
+            this.label_FluxParam160_SceneEmissivityTitle.Text = "Scene Emissivity :";
+            this.label_FluxParam160_SceneEmissivityTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox_FluxParam160E_SceneEmissivityRange
+            // textBox_FluxParam160_SceneEmissivityRange
             // 
-            this.textBox_FluxParam160E_SceneEmissivityRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam160E_SceneEmissivityRange.Enabled = false;
-            this.textBox_FluxParam160E_SceneEmissivityRange.Location = new System.Drawing.Point(319, 3);
-            this.textBox_FluxParam160E_SceneEmissivityRange.Name = "textBox_FluxParam160E_SceneEmissivityRange";
-            this.textBox_FluxParam160E_SceneEmissivityRange.ReadOnly = true;
-            this.textBox_FluxParam160E_SceneEmissivityRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam160E_SceneEmissivityRange.TabIndex = 9;
-            this.textBox_FluxParam160E_SceneEmissivityRange.Text = "0.01 ~ 1.00";
-            this.textBox_FluxParam160E_SceneEmissivityRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam160_SceneEmissivityRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam160_SceneEmissivityRange.Enabled = false;
+            this.textBox_FluxParam160_SceneEmissivityRange.Location = new System.Drawing.Point(319, 3);
+            this.textBox_FluxParam160_SceneEmissivityRange.Name = "textBox_FluxParam160_SceneEmissivityRange";
+            this.textBox_FluxParam160_SceneEmissivityRange.ReadOnly = true;
+            this.textBox_FluxParam160_SceneEmissivityRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam160_SceneEmissivityRange.TabIndex = 9;
+            this.textBox_FluxParam160_SceneEmissivityRange.Text = "0.01 ~ 1.00";
+            this.textBox_FluxParam160_SceneEmissivityRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button_GetFluxParameters_160E
+            // button_GetFluxParameters_160
             // 
-            this.button_GetFluxParameters_160E.Location = new System.Drawing.Point(194, 3);
-            this.button_GetFluxParameters_160E.Name = "button_GetFluxParameters_160E";
-            this.tableLayoutPanel6.SetRowSpan(this.button_GetFluxParameters_160E, 8);
-            this.button_GetFluxParameters_160E.Size = new System.Drawing.Size(33, 202);
-            this.button_GetFluxParameters_160E.TabIndex = 6;
-            this.button_GetFluxParameters_160E.Text = "Get";
-            this.button_GetFluxParameters_160E.UseVisualStyleBackColor = true;
-            this.button_GetFluxParameters_160E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_GetFluxParameters_160.Location = new System.Drawing.Point(194, 3);
+            this.button_GetFluxParameters_160.Name = "button_GetFluxParameters_160";
+            this.tableLayoutPanel_FluxParam160.SetRowSpan(this.button_GetFluxParameters_160, 8);
+            this.button_GetFluxParameters_160.Size = new System.Drawing.Size(33, 202);
+            this.button_GetFluxParameters_160.TabIndex = 6;
+            this.button_GetFluxParameters_160.Text = "Get";
+            this.button_GetFluxParameters_160.UseVisualStyleBackColor = true;
+            this.button_GetFluxParameters_160.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // button_SetFluxParameters_160E
+            // button_SetFluxParameters_160
             // 
-            this.button_SetFluxParameters_160E.Enabled = false;
-            this.button_SetFluxParameters_160E.Location = new System.Drawing.Point(419, 3);
-            this.button_SetFluxParameters_160E.Name = "button_SetFluxParameters_160E";
-            this.tableLayoutPanel6.SetRowSpan(this.button_SetFluxParameters_160E, 8);
-            this.button_SetFluxParameters_160E.Size = new System.Drawing.Size(34, 202);
-            this.button_SetFluxParameters_160E.TabIndex = 6;
-            this.button_SetFluxParameters_160E.Text = "Set";
-            this.button_SetFluxParameters_160E.UseVisualStyleBackColor = true;
-            this.button_SetFluxParameters_160E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_SetFluxParameters_160.Enabled = false;
+            this.button_SetFluxParameters_160.Location = new System.Drawing.Point(419, 3);
+            this.button_SetFluxParameters_160.Name = "button_SetFluxParameters_160";
+            this.tableLayoutPanel_FluxParam160.SetRowSpan(this.button_SetFluxParameters_160, 8);
+            this.button_SetFluxParameters_160.Size = new System.Drawing.Size(34, 202);
+            this.button_SetFluxParameters_160.TabIndex = 6;
+            this.button_SetFluxParameters_160.Text = "Set";
+            this.button_SetFluxParameters_160.UseVisualStyleBackColor = true;
+            this.button_SetFluxParameters_160.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // label_FluxParam160E_WindowTransmissionTitle
+            // label_FluxParam160_WindowTransmissionTitle
             // 
-            this.label_FluxParam160E_WindowTransmissionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam160_WindowTransmissionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam160E_WindowTransmissionTitle.AutoSize = true;
-            this.label_FluxParam160E_WindowTransmissionTitle.Location = new System.Drawing.Point(60, 52);
-            this.label_FluxParam160E_WindowTransmissionTitle.Name = "label_FluxParam160E_WindowTransmissionTitle";
-            this.label_FluxParam160E_WindowTransmissionTitle.Size = new System.Drawing.Size(128, 26);
-            this.label_FluxParam160E_WindowTransmissionTitle.TabIndex = 8;
-            this.label_FluxParam160E_WindowTransmissionTitle.Text = "Window Transmission :";
-            this.label_FluxParam160E_WindowTransmissionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam160_WindowTransmissionTitle.AutoSize = true;
+            this.label_FluxParam160_WindowTransmissionTitle.Location = new System.Drawing.Point(60, 52);
+            this.label_FluxParam160_WindowTransmissionTitle.Name = "label_FluxParam160_WindowTransmissionTitle";
+            this.label_FluxParam160_WindowTransmissionTitle.Size = new System.Drawing.Size(128, 26);
+            this.label_FluxParam160_WindowTransmissionTitle.TabIndex = 8;
+            this.label_FluxParam160_WindowTransmissionTitle.Text = "Window Transmission :";
+            this.label_FluxParam160_WindowTransmissionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label_FluxParam160E_WindowTemperatureTitle
+            // label_FluxParam160_WindowTemperatureTitle
             // 
-            this.label_FluxParam160E_WindowTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam160_WindowTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam160E_WindowTemperatureTitle.AutoSize = true;
-            this.label_FluxParam160E_WindowTemperatureTitle.Location = new System.Drawing.Point(62, 78);
-            this.label_FluxParam160E_WindowTemperatureTitle.Name = "label_FluxParam160E_WindowTemperatureTitle";
-            this.label_FluxParam160E_WindowTemperatureTitle.Size = new System.Drawing.Size(126, 26);
-            this.label_FluxParam160E_WindowTemperatureTitle.TabIndex = 9;
-            this.label_FluxParam160E_WindowTemperatureTitle.Text = "Window Temperature :";
-            this.label_FluxParam160E_WindowTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam160_WindowTemperatureTitle.AutoSize = true;
+            this.label_FluxParam160_WindowTemperatureTitle.Location = new System.Drawing.Point(62, 78);
+            this.label_FluxParam160_WindowTemperatureTitle.Name = "label_FluxParam160_WindowTemperatureTitle";
+            this.label_FluxParam160_WindowTemperatureTitle.Size = new System.Drawing.Size(126, 26);
+            this.label_FluxParam160_WindowTemperatureTitle.TabIndex = 9;
+            this.label_FluxParam160_WindowTemperatureTitle.Text = "Window Temperature :";
+            this.label_FluxParam160_WindowTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label_FluxParam160E_AtmosphericTransmissionTitle
+            // label_FluxParam160_AtmosphericTransmissionTitle
             // 
-            this.label_FluxParam160E_AtmosphericTransmissionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam160_AtmosphericTransmissionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam160E_AtmosphericTransmissionTitle.AutoSize = true;
-            this.label_FluxParam160E_AtmosphericTransmissionTitle.Location = new System.Drawing.Point(36, 104);
-            this.label_FluxParam160E_AtmosphericTransmissionTitle.Name = "label_FluxParam160E_AtmosphericTransmissionTitle";
-            this.label_FluxParam160E_AtmosphericTransmissionTitle.Size = new System.Drawing.Size(152, 26);
-            this.label_FluxParam160E_AtmosphericTransmissionTitle.TabIndex = 10;
-            this.label_FluxParam160E_AtmosphericTransmissionTitle.Text = "Atmospheric Transmission :";
-            this.label_FluxParam160E_AtmosphericTransmissionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam160_AtmosphericTransmissionTitle.AutoSize = true;
+            this.label_FluxParam160_AtmosphericTransmissionTitle.Location = new System.Drawing.Point(36, 104);
+            this.label_FluxParam160_AtmosphericTransmissionTitle.Name = "label_FluxParam160_AtmosphericTransmissionTitle";
+            this.label_FluxParam160_AtmosphericTransmissionTitle.Size = new System.Drawing.Size(152, 26);
+            this.label_FluxParam160_AtmosphericTransmissionTitle.TabIndex = 10;
+            this.label_FluxParam160_AtmosphericTransmissionTitle.Text = "Atmospheric Transmission :";
+            this.label_FluxParam160_AtmosphericTransmissionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label_FluxParam160E_AtmosphericTemperatureTitle
+            // label_FluxParam160_AtmosphericTemperatureTitle
             // 
-            this.label_FluxParam160E_AtmosphericTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam160_AtmosphericTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam160E_AtmosphericTemperatureTitle.AutoSize = true;
-            this.label_FluxParam160E_AtmosphericTemperatureTitle.Location = new System.Drawing.Point(38, 130);
-            this.label_FluxParam160E_AtmosphericTemperatureTitle.Name = "label_FluxParam160E_AtmosphericTemperatureTitle";
-            this.label_FluxParam160E_AtmosphericTemperatureTitle.Size = new System.Drawing.Size(150, 26);
-            this.label_FluxParam160E_AtmosphericTemperatureTitle.TabIndex = 11;
-            this.label_FluxParam160E_AtmosphericTemperatureTitle.Text = "Atmospheric Temperature :";
-            this.label_FluxParam160E_AtmosphericTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam160_AtmosphericTemperatureTitle.AutoSize = true;
+            this.label_FluxParam160_AtmosphericTemperatureTitle.Location = new System.Drawing.Point(38, 130);
+            this.label_FluxParam160_AtmosphericTemperatureTitle.Name = "label_FluxParam160_AtmosphericTemperatureTitle";
+            this.label_FluxParam160_AtmosphericTemperatureTitle.Size = new System.Drawing.Size(150, 26);
+            this.label_FluxParam160_AtmosphericTemperatureTitle.TabIndex = 11;
+            this.label_FluxParam160_AtmosphericTemperatureTitle.Text = "Atmospheric Temperature :";
+            this.label_FluxParam160_AtmosphericTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox_FluxParam160E_BackgroundTemperatureRange
+            // textBox_FluxParam160_BackgroundTemperatureRange
             // 
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.Enabled = false;
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.Location = new System.Drawing.Point(319, 29);
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.Name = "textBox_FluxParam160E_BackgroundTemperatureRange";
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.ReadOnly = true;
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.TabIndex = 9;
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.Text = "-273.15 ~ 382.2";
-            this.textBox_FluxParam160E_BackgroundTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam160_BackgroundTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam160_BackgroundTemperatureRange.Enabled = false;
+            this.textBox_FluxParam160_BackgroundTemperatureRange.Location = new System.Drawing.Point(319, 29);
+            this.textBox_FluxParam160_BackgroundTemperatureRange.Name = "textBox_FluxParam160_BackgroundTemperatureRange";
+            this.textBox_FluxParam160_BackgroundTemperatureRange.ReadOnly = true;
+            this.textBox_FluxParam160_BackgroundTemperatureRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam160_BackgroundTemperatureRange.TabIndex = 9;
+            this.textBox_FluxParam160_BackgroundTemperatureRange.Text = "-273.15 ~ 382.2";
+            this.textBox_FluxParam160_BackgroundTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_FluxParam160E_WindowTransmissionRange
+            // textBox_FluxParam160_WindowTransmissionRange
             // 
-            this.textBox_FluxParam160E_WindowTransmissionRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam160E_WindowTransmissionRange.Enabled = false;
-            this.textBox_FluxParam160E_WindowTransmissionRange.Location = new System.Drawing.Point(319, 55);
-            this.textBox_FluxParam160E_WindowTransmissionRange.Name = "textBox_FluxParam160E_WindowTransmissionRange";
-            this.textBox_FluxParam160E_WindowTransmissionRange.ReadOnly = true;
-            this.textBox_FluxParam160E_WindowTransmissionRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam160E_WindowTransmissionRange.TabIndex = 9;
-            this.textBox_FluxParam160E_WindowTransmissionRange.Text = "0.01 ~ 1.00";
-            this.textBox_FluxParam160E_WindowTransmissionRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam160_WindowTransmissionRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam160_WindowTransmissionRange.Enabled = false;
+            this.textBox_FluxParam160_WindowTransmissionRange.Location = new System.Drawing.Point(319, 55);
+            this.textBox_FluxParam160_WindowTransmissionRange.Name = "textBox_FluxParam160_WindowTransmissionRange";
+            this.textBox_FluxParam160_WindowTransmissionRange.ReadOnly = true;
+            this.textBox_FluxParam160_WindowTransmissionRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam160_WindowTransmissionRange.TabIndex = 9;
+            this.textBox_FluxParam160_WindowTransmissionRange.Text = "0.01 ~ 1.00";
+            this.textBox_FluxParam160_WindowTransmissionRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_FluxParam160E_WindowTemperatureRange
+            // textBox_FluxParam160_WindowTemperatureRange
             // 
-            this.textBox_FluxParam160E_WindowTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam160E_WindowTemperatureRange.Enabled = false;
-            this.textBox_FluxParam160E_WindowTemperatureRange.Location = new System.Drawing.Point(319, 81);
-            this.textBox_FluxParam160E_WindowTemperatureRange.Name = "textBox_FluxParam160E_WindowTemperatureRange";
-            this.textBox_FluxParam160E_WindowTemperatureRange.ReadOnly = true;
-            this.textBox_FluxParam160E_WindowTemperatureRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam160E_WindowTemperatureRange.TabIndex = 9;
-            this.textBox_FluxParam160E_WindowTemperatureRange.Text = "-273.15 ~ 382.2";
-            this.textBox_FluxParam160E_WindowTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam160_WindowTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam160_WindowTemperatureRange.Enabled = false;
+            this.textBox_FluxParam160_WindowTemperatureRange.Location = new System.Drawing.Point(319, 81);
+            this.textBox_FluxParam160_WindowTemperatureRange.Name = "textBox_FluxParam160_WindowTemperatureRange";
+            this.textBox_FluxParam160_WindowTemperatureRange.ReadOnly = true;
+            this.textBox_FluxParam160_WindowTemperatureRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam160_WindowTemperatureRange.TabIndex = 9;
+            this.textBox_FluxParam160_WindowTemperatureRange.Text = "-273.15 ~ 382.2";
+            this.textBox_FluxParam160_WindowTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_FluxParam160E_AtmosphericTransmissionRange
+            // textBox_FluxParam160_AtmosphericTransmissionRange
             // 
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.Enabled = false;
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.Location = new System.Drawing.Point(319, 107);
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.Name = "textBox_FluxParam160E_AtmosphericTransmissionRange";
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.ReadOnly = true;
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.TabIndex = 9;
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.Text = "0.01 ~ 1.00";
-            this.textBox_FluxParam160E_AtmosphericTransmissionRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.Enabled = false;
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.Location = new System.Drawing.Point(319, 107);
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.Name = "textBox_FluxParam160_AtmosphericTransmissionRange";
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.ReadOnly = true;
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.TabIndex = 9;
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.Text = "0.01 ~ 1.00";
+            this.textBox_FluxParam160_AtmosphericTransmissionRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_FluxParam160E_AtmosphericTemperatureRange
+            // textBox_FluxParam160_AtmosphericTemperatureRange
             // 
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.Enabled = false;
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.Location = new System.Drawing.Point(319, 133);
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.Name = "textBox_FluxParam160E_AtmosphericTemperatureRange";
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.ReadOnly = true;
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.TabIndex = 9;
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.Text = "-273.15 ~ 382.2";
-            this.textBox_FluxParam160E_AtmosphericTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.Enabled = false;
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.Location = new System.Drawing.Point(319, 133);
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.Name = "textBox_FluxParam160_AtmosphericTemperatureRange";
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.ReadOnly = true;
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.TabIndex = 9;
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.Text = "-273.15 ~ 382.2";
+            this.textBox_FluxParam160_AtmosphericTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label_FluxParam160E_WindowReflectionTitle
+            // label_FluxParam160_WindowReflectionTitle
             // 
-            this.label_FluxParam160E_WindowReflectionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam160_WindowReflectionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam160E_WindowReflectionTitle.AutoSize = true;
-            this.label_FluxParam160E_WindowReflectionTitle.Location = new System.Drawing.Point(75, 156);
-            this.label_FluxParam160E_WindowReflectionTitle.Name = "label_FluxParam160E_WindowReflectionTitle";
-            this.label_FluxParam160E_WindowReflectionTitle.Size = new System.Drawing.Size(113, 26);
-            this.label_FluxParam160E_WindowReflectionTitle.TabIndex = 11;
-            this.label_FluxParam160E_WindowReflectionTitle.Text = "Window Reflection :";
-            this.label_FluxParam160E_WindowReflectionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam160_WindowReflectionTitle.AutoSize = true;
+            this.label_FluxParam160_WindowReflectionTitle.Location = new System.Drawing.Point(75, 156);
+            this.label_FluxParam160_WindowReflectionTitle.Name = "label_FluxParam160_WindowReflectionTitle";
+            this.label_FluxParam160_WindowReflectionTitle.Size = new System.Drawing.Size(113, 26);
+            this.label_FluxParam160_WindowReflectionTitle.TabIndex = 11;
+            this.label_FluxParam160_WindowReflectionTitle.Text = "Window Reflection :";
+            this.label_FluxParam160_WindowReflectionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label_FluxParam160E_WindowReflectedTemperatureTitle
+            // label_FluxParam160_WindowReflectedTemperatureTitle
             // 
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam160_WindowReflectedTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle.AutoSize = true;
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle.Location = new System.Drawing.Point(10, 182);
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle.Name = "label_FluxParam160E_WindowReflectedTemperatureTitle";
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle.Size = new System.Drawing.Size(178, 26);
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle.TabIndex = 11;
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle.Text = "Window Reflected Temperature :";
-            this.label_FluxParam160E_WindowReflectedTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam160_WindowReflectedTemperatureTitle.AutoSize = true;
+            this.label_FluxParam160_WindowReflectedTemperatureTitle.Location = new System.Drawing.Point(10, 182);
+            this.label_FluxParam160_WindowReflectedTemperatureTitle.Name = "label_FluxParam160_WindowReflectedTemperatureTitle";
+            this.label_FluxParam160_WindowReflectedTemperatureTitle.Size = new System.Drawing.Size(178, 26);
+            this.label_FluxParam160_WindowReflectedTemperatureTitle.TabIndex = 11;
+            this.label_FluxParam160_WindowReflectedTemperatureTitle.Text = "Window Reflected Temperature :";
+            this.label_FluxParam160_WindowReflectedTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox_FluxParam160E_WindowReflectionRange
+            // textBox_FluxParam160_WindowReflectionRange
             // 
-            this.textBox_FluxParam160E_WindowReflectionRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam160E_WindowReflectionRange.Enabled = false;
-            this.textBox_FluxParam160E_WindowReflectionRange.Location = new System.Drawing.Point(319, 159);
-            this.textBox_FluxParam160E_WindowReflectionRange.Name = "textBox_FluxParam160E_WindowReflectionRange";
-            this.textBox_FluxParam160E_WindowReflectionRange.ReadOnly = true;
-            this.textBox_FluxParam160E_WindowReflectionRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam160E_WindowReflectionRange.TabIndex = 9;
-            this.textBox_FluxParam160E_WindowReflectionRange.Text = "0.00 ~ 0.00";
-            this.textBox_FluxParam160E_WindowReflectionRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam160_WindowReflectionRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam160_WindowReflectionRange.Enabled = false;
+            this.textBox_FluxParam160_WindowReflectionRange.Location = new System.Drawing.Point(319, 159);
+            this.textBox_FluxParam160_WindowReflectionRange.Name = "textBox_FluxParam160_WindowReflectionRange";
+            this.textBox_FluxParam160_WindowReflectionRange.ReadOnly = true;
+            this.textBox_FluxParam160_WindowReflectionRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam160_WindowReflectionRange.TabIndex = 9;
+            this.textBox_FluxParam160_WindowReflectionRange.Text = "0.00 ~ 0.00";
+            this.textBox_FluxParam160_WindowReflectionRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox_FluxParam160E_WindowReflectedTemperatureRange
+            // textBox_FluxParam160_WindowReflectedTemperatureRange
             // 
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.Enabled = false;
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.Location = new System.Drawing.Point(319, 185);
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.Name = "textBox_FluxParam160E_WindowReflectedTemperatureRange";
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.ReadOnly = true;
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.Size = new System.Drawing.Size(94, 23);
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.TabIndex = 9;
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.Text = "-273.15 ~ 382.2";
-            this.textBox_FluxParam160E_WindowReflectedTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.Enabled = false;
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.Location = new System.Drawing.Point(319, 185);
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.Name = "textBox_FluxParam160_WindowReflectedTemperatureRange";
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.ReadOnly = true;
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.TabIndex = 9;
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.Text = "-273.15 ~ 382.2";
+            this.textBox_FluxParam160_WindowReflectedTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // numericUpDown_FluxParam160E_SceneEmissivity
+            // numericUpDown_FluxParam160_SceneEmissivity
             // 
-            this.numericUpDown_FluxParam160E_SceneEmissivity.Location = new System.Drawing.Point(233, 3);
-            this.numericUpDown_FluxParam160E_SceneEmissivity.Name = "numericUpDown_FluxParam160E_SceneEmissivity";
-            this.numericUpDown_FluxParam160E_SceneEmissivity.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam160E_SceneEmissivity.TabIndex = 31;
+            this.numericUpDown_FluxParam160_SceneEmissivity.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam160_SceneEmissivity.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam160_SceneEmissivity.Enabled = false;
+            this.numericUpDown_FluxParam160_SceneEmissivity.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_SceneEmissivity.Location = new System.Drawing.Point(233, 3);
+            this.numericUpDown_FluxParam160_SceneEmissivity.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam160_SceneEmissivity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_SceneEmissivity.Name = "numericUpDown_FluxParam160_SceneEmissivity";
+            this.numericUpDown_FluxParam160_SceneEmissivity.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam160_SceneEmissivity.TabIndex = 12;
+            this.numericUpDown_FluxParam160_SceneEmissivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam160_SceneEmissivity.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam160_SceneEmissivity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam160_SceneEmissivity.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam160_SceneEmissivity_ValueChanged);
             // 
-            // numericUpDown_FluxParam160E_BackgroundTemperature
+            // numericUpDown_FluxParam160_BackgroundTemperature
             // 
-            this.numericUpDown_FluxParam160E_BackgroundTemperature.Location = new System.Drawing.Point(233, 29);
-            this.numericUpDown_FluxParam160E_BackgroundTemperature.Name = "numericUpDown_FluxParam160E_BackgroundTemperature";
-            this.numericUpDown_FluxParam160E_BackgroundTemperature.Size = new System.Drawing.Size(60, 23);
-            this.numericUpDown_FluxParam160E_BackgroundTemperature.TabIndex = 32;
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam160_BackgroundTemperature.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Enabled = false;
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Location = new System.Drawing.Point(233, 29);
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Maximum = new decimal(new int[] {
+            3822,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Minimum = new decimal(new int[] {
+            27315,
+            0,
+            0,
+            -2147352576});
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Name = "numericUpDown_FluxParam160_BackgroundTemperature";
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam160_BackgroundTemperature.TabIndex = 13;
+            this.numericUpDown_FluxParam160_BackgroundTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam160_BackgroundTemperature.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam160_BackgroundTemperature.Value = new decimal(new int[] {
+            220,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam160_BackgroundTemperature.ValueChanged += new System.EventHandler(this.numericUpDown_FluxParam160_BackgroundTemperature_ValueChanged);
             // 
-            // label_FluxParam160E_BackgroundTemperatureTitle
+            // label_FluxParam160_BackgroundTemperatureTitle
             // 
-            this.label_FluxParam160E_BackgroundTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_FluxParam160_BackgroundTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_FluxParam160E_BackgroundTemperatureTitle.AutoSize = true;
-            this.label_FluxParam160E_BackgroundTemperatureTitle.Location = new System.Drawing.Point(42, 26);
-            this.label_FluxParam160E_BackgroundTemperatureTitle.Name = "label_FluxParam160E_BackgroundTemperatureTitle";
-            this.label_FluxParam160E_BackgroundTemperatureTitle.Size = new System.Drawing.Size(146, 26);
-            this.label_FluxParam160E_BackgroundTemperatureTitle.TabIndex = 7;
-            this.label_FluxParam160E_BackgroundTemperatureTitle.Text = "Background Temperature :";
-            this.label_FluxParam160E_BackgroundTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_FluxParam160_BackgroundTemperatureTitle.AutoSize = true;
+            this.label_FluxParam160_BackgroundTemperatureTitle.Location = new System.Drawing.Point(42, 26);
+            this.label_FluxParam160_BackgroundTemperatureTitle.Name = "label_FluxParam160_BackgroundTemperatureTitle";
+            this.label_FluxParam160_BackgroundTemperatureTitle.Size = new System.Drawing.Size(146, 26);
+            this.label_FluxParam160_BackgroundTemperatureTitle.TabIndex = 7;
+            this.label_FluxParam160_BackgroundTemperatureTitle.Text = "Background Temperature :";
+            this.label_FluxParam160_BackgroundTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // groupBox_GainModeState_160E
+            // groupBox_GainModeState_160
             // 
-            this.groupBox_GainModeState_160E.Controls.Add(this.button_SetGainModeState_160E);
-            this.groupBox_GainModeState_160E.Controls.Add(this.button_GetGainModeState_160E);
-            this.groupBox_GainModeState_160E.Controls.Add(this.radioButton_GainModeStateAuto_160E);
-            this.groupBox_GainModeState_160E.Controls.Add(this.radioButton_GainModeStateLow_160E);
-            this.groupBox_GainModeState_160E.Controls.Add(this.radioButton_GainModeStateHigh_160E);
-            this.groupBox_GainModeState_160E.Location = new System.Drawing.Point(489, 3);
-            this.groupBox_GainModeState_160E.Name = "groupBox_GainModeState_160E";
-            this.groupBox_GainModeState_160E.Size = new System.Drawing.Size(224, 100);
-            this.groupBox_GainModeState_160E.TabIndex = 18;
-            this.groupBox_GainModeState_160E.TabStop = false;
-            this.groupBox_GainModeState_160E.Text = "Gain Mode State";
+            this.groupBox_GainModeState_160.Controls.Add(this.button_SetGainModeState_160);
+            this.groupBox_GainModeState_160.Controls.Add(this.button_GetGainModeState_160);
+            this.groupBox_GainModeState_160.Controls.Add(this.radioButton_GainModeStateAuto_160);
+            this.groupBox_GainModeState_160.Controls.Add(this.radioButton_GainModeStateLow_160);
+            this.groupBox_GainModeState_160.Controls.Add(this.radioButton_GainModeStateHigh_160);
+            this.groupBox_GainModeState_160.Location = new System.Drawing.Point(489, 3);
+            this.groupBox_GainModeState_160.Name = "groupBox_GainModeState_160";
+            this.groupBox_GainModeState_160.Size = new System.Drawing.Size(224, 100);
+            this.groupBox_GainModeState_160.TabIndex = 18;
+            this.groupBox_GainModeState_160.TabStop = false;
+            this.groupBox_GainModeState_160.Text = "Gain Mode State";
             // 
-            // button_SetGainModeState_160E
+            // button_SetGainModeState_160
             // 
-            this.button_SetGainModeState_160E.Location = new System.Drawing.Point(162, 24);
-            this.button_SetGainModeState_160E.Name = "button_SetGainModeState_160E";
-            this.button_SetGainModeState_160E.Size = new System.Drawing.Size(49, 67);
-            this.button_SetGainModeState_160E.TabIndex = 19;
-            this.button_SetGainModeState_160E.Text = "Set";
-            this.button_SetGainModeState_160E.UseVisualStyleBackColor = true;
-            this.button_SetGainModeState_160E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_SetGainModeState_160.Location = new System.Drawing.Point(162, 24);
+            this.button_SetGainModeState_160.Name = "button_SetGainModeState_160";
+            this.button_SetGainModeState_160.Size = new System.Drawing.Size(49, 67);
+            this.button_SetGainModeState_160.TabIndex = 19;
+            this.button_SetGainModeState_160.Text = "Set";
+            this.button_SetGainModeState_160.UseVisualStyleBackColor = true;
+            this.button_SetGainModeState_160.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // button_GetGainModeState_160E
+            // button_GetGainModeState_160
             // 
-            this.button_GetGainModeState_160E.Location = new System.Drawing.Point(110, 24);
-            this.button_GetGainModeState_160E.Name = "button_GetGainModeState_160E";
-            this.button_GetGainModeState_160E.Size = new System.Drawing.Size(49, 67);
-            this.button_GetGainModeState_160E.TabIndex = 18;
-            this.button_GetGainModeState_160E.Text = "Get";
-            this.button_GetGainModeState_160E.UseVisualStyleBackColor = true;
-            this.button_GetGainModeState_160E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_GetGainModeState_160.Location = new System.Drawing.Point(110, 24);
+            this.button_GetGainModeState_160.Name = "button_GetGainModeState_160";
+            this.button_GetGainModeState_160.Size = new System.Drawing.Size(49, 67);
+            this.button_GetGainModeState_160.TabIndex = 18;
+            this.button_GetGainModeState_160.Text = "Get";
+            this.button_GetGainModeState_160.UseVisualStyleBackColor = true;
+            this.button_GetGainModeState_160.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // radioButton_GainModeStateAuto_160E
+            // radioButton_GainModeStateAuto_160
             // 
-            this.radioButton_GainModeStateAuto_160E.AutoSize = true;
-            this.radioButton_GainModeStateAuto_160E.Location = new System.Drawing.Point(9, 72);
-            this.radioButton_GainModeStateAuto_160E.Name = "radioButton_GainModeStateAuto_160E";
-            this.radioButton_GainModeStateAuto_160E.Size = new System.Drawing.Size(81, 19);
-            this.radioButton_GainModeStateAuto_160E.TabIndex = 2;
-            this.radioButton_GainModeStateAuto_160E.TabStop = true;
-            this.radioButton_GainModeStateAuto_160E.Text = "Automatic";
-            this.radioButton_GainModeStateAuto_160E.UseVisualStyleBackColor = true;
+            this.radioButton_GainModeStateAuto_160.AutoSize = true;
+            this.radioButton_GainModeStateAuto_160.Location = new System.Drawing.Point(9, 72);
+            this.radioButton_GainModeStateAuto_160.Name = "radioButton_GainModeStateAuto_160";
+            this.radioButton_GainModeStateAuto_160.Size = new System.Drawing.Size(81, 19);
+            this.radioButton_GainModeStateAuto_160.TabIndex = 2;
+            this.radioButton_GainModeStateAuto_160.TabStop = true;
+            this.radioButton_GainModeStateAuto_160.Text = "Automatic";
+            this.radioButton_GainModeStateAuto_160.UseVisualStyleBackColor = true;
             // 
-            // radioButton_GainModeStateLow_160E
+            // radioButton_GainModeStateLow_160
             // 
-            this.radioButton_GainModeStateLow_160E.AutoSize = true;
-            this.radioButton_GainModeStateLow_160E.Location = new System.Drawing.Point(9, 47);
-            this.radioButton_GainModeStateLow_160E.Name = "radioButton_GainModeStateLow_160E";
-            this.radioButton_GainModeStateLow_160E.Size = new System.Drawing.Size(47, 19);
-            this.radioButton_GainModeStateLow_160E.TabIndex = 1;
-            this.radioButton_GainModeStateLow_160E.TabStop = true;
-            this.radioButton_GainModeStateLow_160E.Text = "Low";
-            this.radioButton_GainModeStateLow_160E.UseVisualStyleBackColor = true;
+            this.radioButton_GainModeStateLow_160.AutoSize = true;
+            this.radioButton_GainModeStateLow_160.Location = new System.Drawing.Point(9, 47);
+            this.radioButton_GainModeStateLow_160.Name = "radioButton_GainModeStateLow_160";
+            this.radioButton_GainModeStateLow_160.Size = new System.Drawing.Size(47, 19);
+            this.radioButton_GainModeStateLow_160.TabIndex = 1;
+            this.radioButton_GainModeStateLow_160.TabStop = true;
+            this.radioButton_GainModeStateLow_160.Text = "Low";
+            this.radioButton_GainModeStateLow_160.UseVisualStyleBackColor = true;
             // 
-            // radioButton_GainModeStateHigh_160E
+            // radioButton_GainModeStateHigh_160
             // 
-            this.radioButton_GainModeStateHigh_160E.AutoSize = true;
-            this.radioButton_GainModeStateHigh_160E.Location = new System.Drawing.Point(9, 22);
-            this.radioButton_GainModeStateHigh_160E.Name = "radioButton_GainModeStateHigh_160E";
-            this.radioButton_GainModeStateHigh_160E.Size = new System.Drawing.Size(51, 19);
-            this.radioButton_GainModeStateHigh_160E.TabIndex = 0;
-            this.radioButton_GainModeStateHigh_160E.TabStop = true;
-            this.radioButton_GainModeStateHigh_160E.Text = "High";
-            this.radioButton_GainModeStateHigh_160E.UseVisualStyleBackColor = true;
+            this.radioButton_GainModeStateHigh_160.AutoSize = true;
+            this.radioButton_GainModeStateHigh_160.Location = new System.Drawing.Point(9, 22);
+            this.radioButton_GainModeStateHigh_160.Name = "radioButton_GainModeStateHigh_160";
+            this.radioButton_GainModeStateHigh_160.Size = new System.Drawing.Size(51, 19);
+            this.radioButton_GainModeStateHigh_160.TabIndex = 0;
+            this.radioButton_GainModeStateHigh_160.TabStop = true;
+            this.radioButton_GainModeStateHigh_160.Text = "High";
+            this.radioButton_GainModeStateHigh_160.UseVisualStyleBackColor = true;
             // 
-            // groupBox_FlatFieldCorrection_160E
+            // groupBox_FlatFieldCorrection_160
             // 
-            this.groupBox_FlatFieldCorrection_160E.Controls.Add(this.button_SetFlatFieldCorrectionMode_160E);
-            this.groupBox_FlatFieldCorrection_160E.Controls.Add(this.button_GetFlatFieldCorrectionMode_160E);
-            this.groupBox_FlatFieldCorrection_160E.Controls.Add(this.radioButton_FlatFieldCorrectionManual_160E);
-            this.groupBox_FlatFieldCorrection_160E.Controls.Add(this.button_RunFlatFieldCorrection_160E);
-            this.groupBox_FlatFieldCorrection_160E.Controls.Add(this.radioButton_FlatFieldCorrectionAutomatic_160E);
-            this.groupBox_FlatFieldCorrection_160E.Location = new System.Drawing.Point(489, 109);
-            this.groupBox_FlatFieldCorrection_160E.Name = "groupBox_FlatFieldCorrection_160E";
-            this.groupBox_FlatFieldCorrection_160E.Size = new System.Drawing.Size(224, 74);
-            this.groupBox_FlatFieldCorrection_160E.TabIndex = 17;
-            this.groupBox_FlatFieldCorrection_160E.TabStop = false;
-            this.groupBox_FlatFieldCorrection_160E.Text = "Flat Field Correction";
+            this.groupBox_FlatFieldCorrection_160.Controls.Add(this.button_SetFlatFieldCorrectionMode_160);
+            this.groupBox_FlatFieldCorrection_160.Controls.Add(this.button_GetFlatFieldCorrectionMode_160);
+            this.groupBox_FlatFieldCorrection_160.Controls.Add(this.radioButton_FlatFieldCorrectionManual_160);
+            this.groupBox_FlatFieldCorrection_160.Controls.Add(this.button_RunFlatFieldCorrection_160);
+            this.groupBox_FlatFieldCorrection_160.Controls.Add(this.radioButton_FlatFieldCorrectionAutomatic_160);
+            this.groupBox_FlatFieldCorrection_160.Location = new System.Drawing.Point(489, 109);
+            this.groupBox_FlatFieldCorrection_160.Name = "groupBox_FlatFieldCorrection_160";
+            this.groupBox_FlatFieldCorrection_160.Size = new System.Drawing.Size(224, 74);
+            this.groupBox_FlatFieldCorrection_160.TabIndex = 17;
+            this.groupBox_FlatFieldCorrection_160.TabStop = false;
+            this.groupBox_FlatFieldCorrection_160.Text = "Flat Field Correction";
             // 
-            // button_SetFlatFieldCorrectionMode_160E
+            // button_SetFlatFieldCorrectionMode_160
             // 
-            this.button_SetFlatFieldCorrectionMode_160E.Location = new System.Drawing.Point(162, 19);
-            this.button_SetFlatFieldCorrectionMode_160E.Name = "button_SetFlatFieldCorrectionMode_160E";
-            this.button_SetFlatFieldCorrectionMode_160E.Size = new System.Drawing.Size(49, 23);
-            this.button_SetFlatFieldCorrectionMode_160E.TabIndex = 18;
-            this.button_SetFlatFieldCorrectionMode_160E.Text = "Set";
-            this.button_SetFlatFieldCorrectionMode_160E.UseVisualStyleBackColor = true;
-            this.button_SetFlatFieldCorrectionMode_160E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_SetFlatFieldCorrectionMode_160.Location = new System.Drawing.Point(162, 19);
+            this.button_SetFlatFieldCorrectionMode_160.Name = "button_SetFlatFieldCorrectionMode_160";
+            this.button_SetFlatFieldCorrectionMode_160.Size = new System.Drawing.Size(49, 23);
+            this.button_SetFlatFieldCorrectionMode_160.TabIndex = 18;
+            this.button_SetFlatFieldCorrectionMode_160.Text = "Set";
+            this.button_SetFlatFieldCorrectionMode_160.UseVisualStyleBackColor = true;
+            this.button_SetFlatFieldCorrectionMode_160.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // button_GetFlatFieldCorrectionMode_160E
+            // button_GetFlatFieldCorrectionMode_160
             // 
-            this.button_GetFlatFieldCorrectionMode_160E.Location = new System.Drawing.Point(110, 19);
-            this.button_GetFlatFieldCorrectionMode_160E.Name = "button_GetFlatFieldCorrectionMode_160E";
-            this.button_GetFlatFieldCorrectionMode_160E.Size = new System.Drawing.Size(50, 23);
-            this.button_GetFlatFieldCorrectionMode_160E.TabIndex = 17;
-            this.button_GetFlatFieldCorrectionMode_160E.Text = "Get";
-            this.button_GetFlatFieldCorrectionMode_160E.UseVisualStyleBackColor = true;
-            this.button_GetFlatFieldCorrectionMode_160E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_GetFlatFieldCorrectionMode_160.Location = new System.Drawing.Point(110, 19);
+            this.button_GetFlatFieldCorrectionMode_160.Name = "button_GetFlatFieldCorrectionMode_160";
+            this.button_GetFlatFieldCorrectionMode_160.Size = new System.Drawing.Size(50, 23);
+            this.button_GetFlatFieldCorrectionMode_160.TabIndex = 17;
+            this.button_GetFlatFieldCorrectionMode_160.Text = "Get";
+            this.button_GetFlatFieldCorrectionMode_160.UseVisualStyleBackColor = true;
+            this.button_GetFlatFieldCorrectionMode_160.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // radioButton_FlatFieldCorrectionManual_160E
+            // radioButton_FlatFieldCorrectionManual_160
             // 
-            this.radioButton_FlatFieldCorrectionManual_160E.AutoSize = true;
-            this.radioButton_FlatFieldCorrectionManual_160E.Location = new System.Drawing.Point(8, 45);
-            this.radioButton_FlatFieldCorrectionManual_160E.Name = "radioButton_FlatFieldCorrectionManual_160E";
-            this.radioButton_FlatFieldCorrectionManual_160E.Size = new System.Drawing.Size(65, 19);
-            this.radioButton_FlatFieldCorrectionManual_160E.TabIndex = 16;
-            this.radioButton_FlatFieldCorrectionManual_160E.TabStop = true;
-            this.radioButton_FlatFieldCorrectionManual_160E.Text = "Manual";
-            this.radioButton_FlatFieldCorrectionManual_160E.UseVisualStyleBackColor = true;
+            this.radioButton_FlatFieldCorrectionManual_160.AutoSize = true;
+            this.radioButton_FlatFieldCorrectionManual_160.Location = new System.Drawing.Point(8, 45);
+            this.radioButton_FlatFieldCorrectionManual_160.Name = "radioButton_FlatFieldCorrectionManual_160";
+            this.radioButton_FlatFieldCorrectionManual_160.Size = new System.Drawing.Size(65, 19);
+            this.radioButton_FlatFieldCorrectionManual_160.TabIndex = 16;
+            this.radioButton_FlatFieldCorrectionManual_160.TabStop = true;
+            this.radioButton_FlatFieldCorrectionManual_160.Text = "Manual";
+            this.radioButton_FlatFieldCorrectionManual_160.UseVisualStyleBackColor = true;
             // 
-            // button_RunFlatFieldCorrection_160E
+            // button_RunFlatFieldCorrection_160
             // 
-            this.button_RunFlatFieldCorrection_160E.Location = new System.Drawing.Point(110, 44);
-            this.button_RunFlatFieldCorrection_160E.Name = "button_RunFlatFieldCorrection_160E";
-            this.button_RunFlatFieldCorrection_160E.Size = new System.Drawing.Size(101, 23);
-            this.button_RunFlatFieldCorrection_160E.TabIndex = 14;
-            this.button_RunFlatFieldCorrection_160E.Text = "Run";
-            this.button_RunFlatFieldCorrection_160E.UseVisualStyleBackColor = true;
-            this.button_RunFlatFieldCorrection_160E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_RunFlatFieldCorrection_160.Location = new System.Drawing.Point(110, 44);
+            this.button_RunFlatFieldCorrection_160.Name = "button_RunFlatFieldCorrection_160";
+            this.button_RunFlatFieldCorrection_160.Size = new System.Drawing.Size(101, 23);
+            this.button_RunFlatFieldCorrection_160.TabIndex = 14;
+            this.button_RunFlatFieldCorrection_160.Text = "Run";
+            this.button_RunFlatFieldCorrection_160.UseVisualStyleBackColor = true;
+            this.button_RunFlatFieldCorrection_160.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
-            // radioButton_FlatFieldCorrectionAutomatic_160E
+            // radioButton_FlatFieldCorrectionAutomatic_160
             // 
-            this.radioButton_FlatFieldCorrectionAutomatic_160E.AutoSize = true;
-            this.radioButton_FlatFieldCorrectionAutomatic_160E.Location = new System.Drawing.Point(8, 22);
-            this.radioButton_FlatFieldCorrectionAutomatic_160E.Name = "radioButton_FlatFieldCorrectionAutomatic_160E";
-            this.radioButton_FlatFieldCorrectionAutomatic_160E.Size = new System.Drawing.Size(81, 19);
-            this.radioButton_FlatFieldCorrectionAutomatic_160E.TabIndex = 15;
-            this.radioButton_FlatFieldCorrectionAutomatic_160E.TabStop = true;
-            this.radioButton_FlatFieldCorrectionAutomatic_160E.Text = "Automatic";
-            this.radioButton_FlatFieldCorrectionAutomatic_160E.UseVisualStyleBackColor = true;
+            this.radioButton_FlatFieldCorrectionAutomatic_160.AutoSize = true;
+            this.radioButton_FlatFieldCorrectionAutomatic_160.Location = new System.Drawing.Point(8, 22);
+            this.radioButton_FlatFieldCorrectionAutomatic_160.Name = "radioButton_FlatFieldCorrectionAutomatic_160";
+            this.radioButton_FlatFieldCorrectionAutomatic_160.Size = new System.Drawing.Size(81, 19);
+            this.radioButton_FlatFieldCorrectionAutomatic_160.TabIndex = 15;
+            this.radioButton_FlatFieldCorrectionAutomatic_160.TabStop = true;
+            this.radioButton_FlatFieldCorrectionAutomatic_160.Text = "Automatic";
+            this.radioButton_FlatFieldCorrectionAutomatic_160.UseVisualStyleBackColor = true;
             // 
-            // button_RestoreDefaultFluxParameters_160E
+            // button_RestoreDefaultFluxParameters_160
             // 
-            this.button_RestoreDefaultFluxParameters_160E.Location = new System.Drawing.Point(489, 197);
-            this.button_RestoreDefaultFluxParameters_160E.Name = "button_RestoreDefaultFluxParameters_160E";
-            this.button_RestoreDefaultFluxParameters_160E.Size = new System.Drawing.Size(224, 30);
-            this.button_RestoreDefaultFluxParameters_160E.TabIndex = 12;
-            this.button_RestoreDefaultFluxParameters_160E.Text = "Restore Flux Parameters to Default";
-            this.button_RestoreDefaultFluxParameters_160E.UseVisualStyleBackColor = true;
-            this.button_RestoreDefaultFluxParameters_160E.Click += new System.EventHandler(this.button_SensorControl_Click);
+            this.button_RestoreDefaultFluxParameters_160.Location = new System.Drawing.Point(489, 197);
+            this.button_RestoreDefaultFluxParameters_160.Name = "button_RestoreDefaultFluxParameters_160";
+            this.button_RestoreDefaultFluxParameters_160.Size = new System.Drawing.Size(224, 30);
+            this.button_RestoreDefaultFluxParameters_160.TabIndex = 12;
+            this.button_RestoreDefaultFluxParameters_160.Text = "Restore Flux Parameters to Default";
+            this.button_RestoreDefaultFluxParameters_160.UseVisualStyleBackColor = true;
+            this.button_RestoreDefaultFluxParameters_160.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
             // tabPage_RoiManager
             // 
@@ -2589,12 +3199,12 @@
             this.tabPage_RoiManager.Controls.Add(this.rbtn_RoiRect);
             this.tabPage_RoiManager.Controls.Add(this.rbtn_RoiLine);
             this.tabPage_RoiManager.Controls.Add(this.rbtn_RoiSpot);
-            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel14);
-            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel13);
-            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel12);
-            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel11);
-            this.tabPage_RoiManager.Controls.Add(this.label1);
-            this.tabPage_RoiManager.Controls.Add(this.comboBox_ListROI);
+            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel_RoiEllipse);
+            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel_RoiRect);
+            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel_RoiLine);
+            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel_RoiSpot);
+            this.tabPage_RoiManager.Controls.Add(this.label_RoiList);
+            this.tabPage_RoiManager.Controls.Add(this.comboBox_RoiList);
             this.tabPage_RoiManager.Location = new System.Drawing.Point(4, 24);
             this.tabPage_RoiManager.Name = "tabPage_RoiManager";
             this.tabPage_RoiManager.Size = new System.Drawing.Size(719, 240);
@@ -2666,404 +3276,404 @@
             this.rbtn_RoiSpot.Text = "Spot";
             this.rbtn_RoiSpot.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 8;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel14.Controls.Add(this.label13, 4, 0);
-            this.tableLayoutPanel14.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel14.Controls.Add(this.label15, 2, 0);
-            this.tableLayoutPanel14.Controls.Add(this.textBox_ellipseX, 1, 0);
-            this.tableLayoutPanel14.Controls.Add(this.textBox_ellipseW, 5, 0);
-            this.tableLayoutPanel14.Controls.Add(this.textBox_ellipseY, 3, 0);
-            this.tableLayoutPanel14.Controls.Add(this.label16, 6, 0);
-            this.tableLayoutPanel14.Controls.Add(this.textBox_ellipseH, 7, 0);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(129, 154);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 1;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(256, 23);
-            this.tableLayoutPanel14.TabIndex = 2;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(131, 3);
-            this.label13.Margin = new System.Windows.Forms.Padding(3);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(24, 15);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "W :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 3);
-            this.label14.Margin = new System.Windows.Forms.Padding(3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(20, 15);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "X :";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(67, 3);
-            this.label15.Margin = new System.Windows.Forms.Padding(3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(20, 15);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Y :";
-            // 
-            // textBox_ellipseX
-            // 
-            this.textBox_ellipseX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_ellipseX.Location = new System.Drawing.Point(32, 0);
-            this.textBox_ellipseX.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_ellipseX.Name = "textBox_ellipseX";
-            this.textBox_ellipseX.Size = new System.Drawing.Size(32, 23);
-            this.textBox_ellipseX.TabIndex = 1;
-            // 
-            // textBox_ellipseW
-            // 
-            this.textBox_ellipseW.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_ellipseW.Location = new System.Drawing.Point(160, 0);
-            this.textBox_ellipseW.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_ellipseW.Name = "textBox_ellipseW";
-            this.textBox_ellipseW.Size = new System.Drawing.Size(32, 23);
-            this.textBox_ellipseW.TabIndex = 1;
-            // 
-            // textBox_ellipseY
-            // 
-            this.textBox_ellipseY.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_ellipseY.Location = new System.Drawing.Point(96, 0);
-            this.textBox_ellipseY.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_ellipseY.Name = "textBox_ellipseY";
-            this.textBox_ellipseY.Size = new System.Drawing.Size(32, 23);
-            this.textBox_ellipseY.TabIndex = 1;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(195, 3);
-            this.label16.Margin = new System.Windows.Forms.Padding(3);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(22, 15);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "H :";
-            // 
-            // textBox_ellipseH
-            // 
-            this.textBox_ellipseH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_ellipseH.Location = new System.Drawing.Point(224, 0);
-            this.textBox_ellipseH.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_ellipseH.Name = "textBox_ellipseH";
-            this.textBox_ellipseH.Size = new System.Drawing.Size(32, 23);
-            this.textBox_ellipseH.TabIndex = 1;
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.ColumnCount = 8;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel13.Controls.Add(this.label7, 4, 0);
-            this.tableLayoutPanel13.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.label9, 2, 0);
-            this.tableLayoutPanel13.Controls.Add(this.textBox_rectX, 1, 0);
-            this.tableLayoutPanel13.Controls.Add(this.textBox_rectW, 5, 0);
-            this.tableLayoutPanel13.Controls.Add(this.textBox_rectY, 3, 0);
-            this.tableLayoutPanel13.Controls.Add(this.label10, 6, 0);
-            this.tableLayoutPanel13.Controls.Add(this.textBox_rectH, 7, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(129, 129);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 1;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(256, 23);
-            this.tableLayoutPanel13.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(131, 3);
-            this.label7.Margin = new System.Windows.Forms.Padding(3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 15);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "W :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 3);
-            this.label8.Margin = new System.Windows.Forms.Padding(3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(20, 15);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "X :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(67, 3);
-            this.label9.Margin = new System.Windows.Forms.Padding(3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 15);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Y :";
-            // 
-            // textBox_rectX
-            // 
-            this.textBox_rectX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_rectX.Location = new System.Drawing.Point(32, 0);
-            this.textBox_rectX.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_rectX.Name = "textBox_rectX";
-            this.textBox_rectX.Size = new System.Drawing.Size(32, 23);
-            this.textBox_rectX.TabIndex = 1;
-            // 
-            // textBox_rectW
-            // 
-            this.textBox_rectW.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_rectW.Location = new System.Drawing.Point(160, 0);
-            this.textBox_rectW.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_rectW.Name = "textBox_rectW";
-            this.textBox_rectW.Size = new System.Drawing.Size(32, 23);
-            this.textBox_rectW.TabIndex = 1;
-            // 
-            // textBox_rectY
-            // 
-            this.textBox_rectY.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_rectY.Location = new System.Drawing.Point(96, 0);
-            this.textBox_rectY.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_rectY.Name = "textBox_rectY";
-            this.textBox_rectY.Size = new System.Drawing.Size(32, 23);
-            this.textBox_rectY.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(195, 3);
-            this.label10.Margin = new System.Windows.Forms.Padding(3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(22, 15);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "H :";
-            // 
-            // textBox_rectH
-            // 
-            this.textBox_rectH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_rectH.Location = new System.Drawing.Point(224, 0);
-            this.textBox_rectH.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_rectH.Name = "textBox_rectH";
-            this.textBox_rectH.Size = new System.Drawing.Size(32, 23);
-            this.textBox_rectH.TabIndex = 1;
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 8;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel12.Controls.Add(this.label11, 4, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel12.Controls.Add(this.textBox_lineX1, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.textBox_lineX2, 5, 0);
-            this.tableLayoutPanel12.Controls.Add(this.textBox_lineY1, 3, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label12, 6, 0);
-            this.tableLayoutPanel12.Controls.Add(this.textBox_lineY2, 7, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(129, 104);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(256, 23);
-            this.tableLayoutPanel12.TabIndex = 2;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(131, 3);
-            this.label11.Margin = new System.Windows.Forms.Padding(3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(26, 15);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "X2 :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 3);
-            this.label5.Margin = new System.Windows.Forms.Padding(3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "X1 :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 3);
-            this.label6.Margin = new System.Windows.Forms.Padding(3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 15);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Y1 :";
-            // 
-            // textBox_lineX1
-            // 
-            this.textBox_lineX1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_lineX1.Location = new System.Drawing.Point(32, 0);
-            this.textBox_lineX1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_lineX1.Name = "textBox_lineX1";
-            this.textBox_lineX1.Size = new System.Drawing.Size(32, 23);
-            this.textBox_lineX1.TabIndex = 1;
-            // 
-            // textBox_lineX2
-            // 
-            this.textBox_lineX2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_lineX2.Location = new System.Drawing.Point(160, 0);
-            this.textBox_lineX2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_lineX2.Name = "textBox_lineX2";
-            this.textBox_lineX2.Size = new System.Drawing.Size(32, 23);
-            this.textBox_lineX2.TabIndex = 1;
-            // 
-            // textBox_lineY1
-            // 
-            this.textBox_lineY1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_lineY1.Location = new System.Drawing.Point(96, 0);
-            this.textBox_lineY1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_lineY1.Name = "textBox_lineY1";
-            this.textBox_lineY1.Size = new System.Drawing.Size(32, 23);
-            this.textBox_lineY1.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(195, 3);
-            this.label12.Margin = new System.Windows.Forms.Padding(3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(26, 15);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Y2 :";
-            // 
-            // textBox_lineY2
-            // 
-            this.textBox_lineY2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_lineY2.Location = new System.Drawing.Point(224, 0);
-            this.textBox_lineY2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_lineY2.Name = "textBox_lineY2";
-            this.textBox_lineY2.Size = new System.Drawing.Size(32, 23);
-            this.textBox_lineY2.TabIndex = 1;
-            // 
-            // tableLayoutPanel11
-            // 
-            this.tableLayoutPanel11.ColumnCount = 4;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel11.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel11.Controls.Add(this.textBox_spotX, 1, 0);
-            this.tableLayoutPanel11.Controls.Add(this.textBox_spotY, 3, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(129, 79);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 1;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(128, 23);
-            this.tableLayoutPanel11.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 3);
-            this.label2.Margin = new System.Windows.Forms.Padding(3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "X :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(67, 3);
-            this.label3.Margin = new System.Windows.Forms.Padding(3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Y :";
-            // 
-            // textBox_spotX
-            // 
-            this.textBox_spotX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_spotX.Location = new System.Drawing.Point(32, 0);
-            this.textBox_spotX.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_spotX.Name = "textBox_spotX";
-            this.textBox_spotX.Size = new System.Drawing.Size(32, 23);
-            this.textBox_spotX.TabIndex = 1;
-            // 
-            // textBox_spotY
-            // 
-            this.textBox_spotY.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox_spotY.Location = new System.Drawing.Point(96, 0);
-            this.textBox_spotY.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_spotY.Name = "textBox_spotY";
-            this.textBox_spotY.Size = new System.Drawing.Size(32, 23);
-            this.textBox_spotY.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ROI List";
-            // 
-            // comboBox_ListROI
-            // 
-            this.comboBox_ListROI.FormattingEnabled = true;
-            this.comboBox_ListROI.Location = new System.Drawing.Point(24, 32);
-            this.comboBox_ListROI.Name = "comboBox_ListROI";
-            this.comboBox_ListROI.Size = new System.Drawing.Size(99, 23);
-            this.comboBox_ListROI.TabIndex = 0;
-            this.comboBox_ListROI.SelectedIndexChanged += new System.EventHandler(this.comboBox_ListROI_SelectedIndexChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.tableLayoutPanel_Preview);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(240, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(493, 471);
-            this.panel2.TabIndex = 6;
+            // tableLayoutPanel_RoiEllipse
+            // 
+            this.tableLayoutPanel_RoiEllipse.ColumnCount = 8;
+            this.tableLayoutPanel_RoiEllipse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiEllipse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiEllipse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiEllipse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiEllipse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiEllipse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiEllipse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiEllipse.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiEllipse.Controls.Add(this.label_RoiEllipseW, 4, 0);
+            this.tableLayoutPanel_RoiEllipse.Controls.Add(this.label_RoiEllipseX, 0, 0);
+            this.tableLayoutPanel_RoiEllipse.Controls.Add(this.label_RoiEllipseY, 2, 0);
+            this.tableLayoutPanel_RoiEllipse.Controls.Add(this.textBox_RoiEllipseX, 1, 0);
+            this.tableLayoutPanel_RoiEllipse.Controls.Add(this.textBox_RoiEllipseW, 5, 0);
+            this.tableLayoutPanel_RoiEllipse.Controls.Add(this.textBox_RoiEllipseY, 3, 0);
+            this.tableLayoutPanel_RoiEllipse.Controls.Add(this.label_RoiEllipseH, 6, 0);
+            this.tableLayoutPanel_RoiEllipse.Controls.Add(this.textBox_RoiEllipseH, 7, 0);
+            this.tableLayoutPanel_RoiEllipse.Location = new System.Drawing.Point(129, 154);
+            this.tableLayoutPanel_RoiEllipse.Name = "tableLayoutPanel_RoiEllipse";
+            this.tableLayoutPanel_RoiEllipse.RowCount = 1;
+            this.tableLayoutPanel_RoiEllipse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_RoiEllipse.Size = new System.Drawing.Size(256, 23);
+            this.tableLayoutPanel_RoiEllipse.TabIndex = 2;
+            // 
+            // label_RoiEllipseW
+            // 
+            this.label_RoiEllipseW.AutoSize = true;
+            this.label_RoiEllipseW.Location = new System.Drawing.Point(131, 3);
+            this.label_RoiEllipseW.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiEllipseW.Name = "label_RoiEllipseW";
+            this.label_RoiEllipseW.Size = new System.Drawing.Size(24, 15);
+            this.label_RoiEllipseW.TabIndex = 0;
+            this.label_RoiEllipseW.Text = "W :";
+            // 
+            // label_RoiEllipseX
+            // 
+            this.label_RoiEllipseX.AutoSize = true;
+            this.label_RoiEllipseX.Location = new System.Drawing.Point(3, 3);
+            this.label_RoiEllipseX.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiEllipseX.Name = "label_RoiEllipseX";
+            this.label_RoiEllipseX.Size = new System.Drawing.Size(20, 15);
+            this.label_RoiEllipseX.TabIndex = 0;
+            this.label_RoiEllipseX.Text = "X :";
+            // 
+            // label_RoiEllipseY
+            // 
+            this.label_RoiEllipseY.AutoSize = true;
+            this.label_RoiEllipseY.Location = new System.Drawing.Point(67, 3);
+            this.label_RoiEllipseY.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiEllipseY.Name = "label_RoiEllipseY";
+            this.label_RoiEllipseY.Size = new System.Drawing.Size(20, 15);
+            this.label_RoiEllipseY.TabIndex = 0;
+            this.label_RoiEllipseY.Text = "Y :";
+            // 
+            // textBox_RoiEllipseX
+            // 
+            this.textBox_RoiEllipseX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiEllipseX.Location = new System.Drawing.Point(32, 0);
+            this.textBox_RoiEllipseX.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiEllipseX.Name = "textBox_RoiEllipseX";
+            this.textBox_RoiEllipseX.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiEllipseX.TabIndex = 1;
+            // 
+            // textBox_RoiEllipseW
+            // 
+            this.textBox_RoiEllipseW.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiEllipseW.Location = new System.Drawing.Point(160, 0);
+            this.textBox_RoiEllipseW.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiEllipseW.Name = "textBox_RoiEllipseW";
+            this.textBox_RoiEllipseW.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiEllipseW.TabIndex = 1;
+            // 
+            // textBox_RoiEllipseY
+            // 
+            this.textBox_RoiEllipseY.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiEllipseY.Location = new System.Drawing.Point(96, 0);
+            this.textBox_RoiEllipseY.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiEllipseY.Name = "textBox_RoiEllipseY";
+            this.textBox_RoiEllipseY.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiEllipseY.TabIndex = 1;
+            // 
+            // label_RoiEllipseH
+            // 
+            this.label_RoiEllipseH.AutoSize = true;
+            this.label_RoiEllipseH.Location = new System.Drawing.Point(195, 3);
+            this.label_RoiEllipseH.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiEllipseH.Name = "label_RoiEllipseH";
+            this.label_RoiEllipseH.Size = new System.Drawing.Size(22, 15);
+            this.label_RoiEllipseH.TabIndex = 0;
+            this.label_RoiEllipseH.Text = "H :";
+            // 
+            // textBox_RoiEllipseH
+            // 
+            this.textBox_RoiEllipseH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiEllipseH.Location = new System.Drawing.Point(224, 0);
+            this.textBox_RoiEllipseH.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiEllipseH.Name = "textBox_RoiEllipseH";
+            this.textBox_RoiEllipseH.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiEllipseH.TabIndex = 1;
+            // 
+            // tableLayoutPanel_RoiRect
+            // 
+            this.tableLayoutPanel_RoiRect.ColumnCount = 8;
+            this.tableLayoutPanel_RoiRect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiRect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiRect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiRect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiRect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiRect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiRect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiRect.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiRect.Controls.Add(this.label_RoiRectW, 4, 0);
+            this.tableLayoutPanel_RoiRect.Controls.Add(this.label_RoiRectX, 0, 0);
+            this.tableLayoutPanel_RoiRect.Controls.Add(this.label_RoiRectY, 2, 0);
+            this.tableLayoutPanel_RoiRect.Controls.Add(this.textBox_RoiRectX, 1, 0);
+            this.tableLayoutPanel_RoiRect.Controls.Add(this.textBox_RoiRectW, 5, 0);
+            this.tableLayoutPanel_RoiRect.Controls.Add(this.textBox_RoiRectY, 3, 0);
+            this.tableLayoutPanel_RoiRect.Controls.Add(this.label_RoiRectH, 6, 0);
+            this.tableLayoutPanel_RoiRect.Controls.Add(this.textBox_RoiRectH, 7, 0);
+            this.tableLayoutPanel_RoiRect.Location = new System.Drawing.Point(129, 129);
+            this.tableLayoutPanel_RoiRect.Name = "tableLayoutPanel_RoiRect";
+            this.tableLayoutPanel_RoiRect.RowCount = 1;
+            this.tableLayoutPanel_RoiRect.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_RoiRect.Size = new System.Drawing.Size(256, 23);
+            this.tableLayoutPanel_RoiRect.TabIndex = 2;
+            // 
+            // label_RoiRectW
+            // 
+            this.label_RoiRectW.AutoSize = true;
+            this.label_RoiRectW.Location = new System.Drawing.Point(131, 3);
+            this.label_RoiRectW.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiRectW.Name = "label_RoiRectW";
+            this.label_RoiRectW.Size = new System.Drawing.Size(24, 15);
+            this.label_RoiRectW.TabIndex = 0;
+            this.label_RoiRectW.Text = "W :";
+            // 
+            // label_RoiRectX
+            // 
+            this.label_RoiRectX.AutoSize = true;
+            this.label_RoiRectX.Location = new System.Drawing.Point(3, 3);
+            this.label_RoiRectX.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiRectX.Name = "label_RoiRectX";
+            this.label_RoiRectX.Size = new System.Drawing.Size(20, 15);
+            this.label_RoiRectX.TabIndex = 0;
+            this.label_RoiRectX.Text = "X :";
+            // 
+            // label_RoiRectY
+            // 
+            this.label_RoiRectY.AutoSize = true;
+            this.label_RoiRectY.Location = new System.Drawing.Point(67, 3);
+            this.label_RoiRectY.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiRectY.Name = "label_RoiRectY";
+            this.label_RoiRectY.Size = new System.Drawing.Size(20, 15);
+            this.label_RoiRectY.TabIndex = 0;
+            this.label_RoiRectY.Text = "Y :";
+            // 
+            // textBox_RoiRectX
+            // 
+            this.textBox_RoiRectX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiRectX.Location = new System.Drawing.Point(32, 0);
+            this.textBox_RoiRectX.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiRectX.Name = "textBox_RoiRectX";
+            this.textBox_RoiRectX.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiRectX.TabIndex = 1;
+            // 
+            // textBox_RoiRectW
+            // 
+            this.textBox_RoiRectW.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiRectW.Location = new System.Drawing.Point(160, 0);
+            this.textBox_RoiRectW.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiRectW.Name = "textBox_RoiRectW";
+            this.textBox_RoiRectW.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiRectW.TabIndex = 1;
+            // 
+            // textBox_RoiRectY
+            // 
+            this.textBox_RoiRectY.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiRectY.Location = new System.Drawing.Point(96, 0);
+            this.textBox_RoiRectY.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiRectY.Name = "textBox_RoiRectY";
+            this.textBox_RoiRectY.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiRectY.TabIndex = 1;
+            // 
+            // label_RoiRectH
+            // 
+            this.label_RoiRectH.AutoSize = true;
+            this.label_RoiRectH.Location = new System.Drawing.Point(195, 3);
+            this.label_RoiRectH.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiRectH.Name = "label_RoiRectH";
+            this.label_RoiRectH.Size = new System.Drawing.Size(22, 15);
+            this.label_RoiRectH.TabIndex = 0;
+            this.label_RoiRectH.Text = "H :";
+            // 
+            // textBox_RoiRectH
+            // 
+            this.textBox_RoiRectH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiRectH.Location = new System.Drawing.Point(224, 0);
+            this.textBox_RoiRectH.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiRectH.Name = "textBox_RoiRectH";
+            this.textBox_RoiRectH.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiRectH.TabIndex = 1;
+            // 
+            // tableLayoutPanel_RoiLine
+            // 
+            this.tableLayoutPanel_RoiLine.ColumnCount = 8;
+            this.tableLayoutPanel_RoiLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiLine.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiLine.Controls.Add(this.label_RoiLineX2, 4, 0);
+            this.tableLayoutPanel_RoiLine.Controls.Add(this.label_RoiLineX1, 0, 0);
+            this.tableLayoutPanel_RoiLine.Controls.Add(this.label_RoiLineY1, 2, 0);
+            this.tableLayoutPanel_RoiLine.Controls.Add(this.textBox_RoiLineX1, 1, 0);
+            this.tableLayoutPanel_RoiLine.Controls.Add(this.textBox_RoiLineX2, 5, 0);
+            this.tableLayoutPanel_RoiLine.Controls.Add(this.textBox_RoiLineY1, 3, 0);
+            this.tableLayoutPanel_RoiLine.Controls.Add(this.label_RoiLineY2, 6, 0);
+            this.tableLayoutPanel_RoiLine.Controls.Add(this.textBox_RoiLineY2, 7, 0);
+            this.tableLayoutPanel_RoiLine.Location = new System.Drawing.Point(129, 104);
+            this.tableLayoutPanel_RoiLine.Name = "tableLayoutPanel_RoiLine";
+            this.tableLayoutPanel_RoiLine.RowCount = 1;
+            this.tableLayoutPanel_RoiLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_RoiLine.Size = new System.Drawing.Size(256, 23);
+            this.tableLayoutPanel_RoiLine.TabIndex = 2;
+            // 
+            // label_RoiLineX2
+            // 
+            this.label_RoiLineX2.AutoSize = true;
+            this.label_RoiLineX2.Location = new System.Drawing.Point(131, 3);
+            this.label_RoiLineX2.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiLineX2.Name = "label_RoiLineX2";
+            this.label_RoiLineX2.Size = new System.Drawing.Size(26, 15);
+            this.label_RoiLineX2.TabIndex = 0;
+            this.label_RoiLineX2.Text = "X2 :";
+            // 
+            // label_RoiLineX1
+            // 
+            this.label_RoiLineX1.AutoSize = true;
+            this.label_RoiLineX1.Location = new System.Drawing.Point(3, 3);
+            this.label_RoiLineX1.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiLineX1.Name = "label_RoiLineX1";
+            this.label_RoiLineX1.Size = new System.Drawing.Size(26, 15);
+            this.label_RoiLineX1.TabIndex = 0;
+            this.label_RoiLineX1.Text = "X1 :";
+            // 
+            // label_RoiLineY1
+            // 
+            this.label_RoiLineY1.AutoSize = true;
+            this.label_RoiLineY1.Location = new System.Drawing.Point(67, 3);
+            this.label_RoiLineY1.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiLineY1.Name = "label_RoiLineY1";
+            this.label_RoiLineY1.Size = new System.Drawing.Size(26, 15);
+            this.label_RoiLineY1.TabIndex = 0;
+            this.label_RoiLineY1.Text = "Y1 :";
+            // 
+            // textBox_RoiLineX1
+            // 
+            this.textBox_RoiLineX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiLineX1.Location = new System.Drawing.Point(32, 0);
+            this.textBox_RoiLineX1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiLineX1.Name = "textBox_RoiLineX1";
+            this.textBox_RoiLineX1.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiLineX1.TabIndex = 1;
+            // 
+            // textBox_RoiLineX2
+            // 
+            this.textBox_RoiLineX2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiLineX2.Location = new System.Drawing.Point(160, 0);
+            this.textBox_RoiLineX2.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiLineX2.Name = "textBox_RoiLineX2";
+            this.textBox_RoiLineX2.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiLineX2.TabIndex = 1;
+            // 
+            // textBox_RoiLineY1
+            // 
+            this.textBox_RoiLineY1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiLineY1.Location = new System.Drawing.Point(96, 0);
+            this.textBox_RoiLineY1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiLineY1.Name = "textBox_RoiLineY1";
+            this.textBox_RoiLineY1.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiLineY1.TabIndex = 1;
+            // 
+            // label_RoiLineY2
+            // 
+            this.label_RoiLineY2.AutoSize = true;
+            this.label_RoiLineY2.Location = new System.Drawing.Point(195, 3);
+            this.label_RoiLineY2.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiLineY2.Name = "label_RoiLineY2";
+            this.label_RoiLineY2.Size = new System.Drawing.Size(26, 15);
+            this.label_RoiLineY2.TabIndex = 0;
+            this.label_RoiLineY2.Text = "Y2 :";
+            // 
+            // textBox_RoiLineY2
+            // 
+            this.textBox_RoiLineY2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiLineY2.Location = new System.Drawing.Point(224, 0);
+            this.textBox_RoiLineY2.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiLineY2.Name = "textBox_RoiLineY2";
+            this.textBox_RoiLineY2.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiLineY2.TabIndex = 1;
+            // 
+            // tableLayoutPanel_RoiSpot
+            // 
+            this.tableLayoutPanel_RoiSpot.ColumnCount = 4;
+            this.tableLayoutPanel_RoiSpot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiSpot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiSpot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiSpot.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel_RoiSpot.Controls.Add(this.label_RoiSpotX, 0, 0);
+            this.tableLayoutPanel_RoiSpot.Controls.Add(this.label_RoiSpotY, 2, 0);
+            this.tableLayoutPanel_RoiSpot.Controls.Add(this.textBox_RoiSpotX, 1, 0);
+            this.tableLayoutPanel_RoiSpot.Controls.Add(this.textBox_RoiSpotY, 3, 0);
+            this.tableLayoutPanel_RoiSpot.Location = new System.Drawing.Point(129, 79);
+            this.tableLayoutPanel_RoiSpot.Name = "tableLayoutPanel_RoiSpot";
+            this.tableLayoutPanel_RoiSpot.RowCount = 1;
+            this.tableLayoutPanel_RoiSpot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_RoiSpot.Size = new System.Drawing.Size(128, 23);
+            this.tableLayoutPanel_RoiSpot.TabIndex = 2;
+            // 
+            // label_RoiSpotX
+            // 
+            this.label_RoiSpotX.AutoSize = true;
+            this.label_RoiSpotX.Location = new System.Drawing.Point(3, 3);
+            this.label_RoiSpotX.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiSpotX.Name = "label_RoiSpotX";
+            this.label_RoiSpotX.Size = new System.Drawing.Size(20, 15);
+            this.label_RoiSpotX.TabIndex = 0;
+            this.label_RoiSpotX.Text = "X :";
+            // 
+            // label_RoiSpotY
+            // 
+            this.label_RoiSpotY.AutoSize = true;
+            this.label_RoiSpotY.Location = new System.Drawing.Point(67, 3);
+            this.label_RoiSpotY.Margin = new System.Windows.Forms.Padding(3);
+            this.label_RoiSpotY.Name = "label_RoiSpotY";
+            this.label_RoiSpotY.Size = new System.Drawing.Size(20, 15);
+            this.label_RoiSpotY.TabIndex = 0;
+            this.label_RoiSpotY.Text = "Y :";
+            // 
+            // textBox_RoiSpotX
+            // 
+            this.textBox_RoiSpotX.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiSpotX.Location = new System.Drawing.Point(32, 0);
+            this.textBox_RoiSpotX.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiSpotX.Name = "textBox_RoiSpotX";
+            this.textBox_RoiSpotX.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiSpotX.TabIndex = 1;
+            // 
+            // textBox_RoiSpotY
+            // 
+            this.textBox_RoiSpotY.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox_RoiSpotY.Location = new System.Drawing.Point(96, 0);
+            this.textBox_RoiSpotY.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_RoiSpotY.Name = "textBox_RoiSpotY";
+            this.textBox_RoiSpotY.Size = new System.Drawing.Size(32, 23);
+            this.textBox_RoiSpotY.TabIndex = 1;
+            // 
+            // label_RoiList
+            // 
+            this.label_RoiList.AutoSize = true;
+            this.label_RoiList.Location = new System.Drawing.Point(21, 13);
+            this.label_RoiList.Name = "label_RoiList";
+            this.label_RoiList.Size = new System.Drawing.Size(47, 15);
+            this.label_RoiList.TabIndex = 1;
+            this.label_RoiList.Text = "ROI List";
+            // 
+            // comboBox_RoiList
+            // 
+            this.comboBox_RoiList.FormattingEnabled = true;
+            this.comboBox_RoiList.Location = new System.Drawing.Point(24, 32);
+            this.comboBox_RoiList.Name = "comboBox_RoiList";
+            this.comboBox_RoiList.Size = new System.Drawing.Size(99, 23);
+            this.comboBox_RoiList.TabIndex = 0;
+            this.comboBox_RoiList.SelectedIndexChanged += new System.EventHandler(this.comboBox_ListROI_SelectedIndexChanged);
+            // 
+            // panel_Preview
+            // 
+            this.panel_Preview.Controls.Add(this.tableLayoutPanel_Preview);
+            this.panel_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Preview.Location = new System.Drawing.Point(240, 0);
+            this.panel_Preview.Margin = new System.Windows.Forms.Padding(0);
+            this.panel_Preview.Name = "panel_Preview";
+            this.panel_Preview.Size = new System.Drawing.Size(493, 471);
+            this.panel_Preview.TabIndex = 6;
             // 
             // tableLayoutPanel_Preview
             // 
             this.tableLayoutPanel_Preview.ColumnCount = 1;
             this.tableLayoutPanel_Preview.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_Preview.Controls.Add(this.panel5, 0, 1);
-            this.tableLayoutPanel_Preview.Controls.Add(this.panel_Preview, 0, 3);
+            this.tableLayoutPanel_Preview.Controls.Add(this.panel_Temperature, 0, 1);
+            this.tableLayoutPanel_Preview.Controls.Add(this.panel_PreviewConfig, 0, 3);
             this.tableLayoutPanel_Preview.Controls.Add(this.panel_VideoPreview, 0, 0);
-            this.tableLayoutPanel_Preview.Controls.Add(this.tableLayoutPanel7, 0, 2);
+            this.tableLayoutPanel_Preview.Controls.Add(this.tableLayoutPanel_RoiShape, 0, 2);
             this.tableLayoutPanel_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_Preview.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_Preview.Name = "tableLayoutPanel_Preview";
@@ -3075,18 +3685,18 @@
             this.tableLayoutPanel_Preview.Size = new System.Drawing.Size(493, 471);
             this.tableLayoutPanel_Preview.TabIndex = 11;
             // 
-            // panel5
+            // panel_Temperature
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.label_MinimumTemperature);
-            this.panel5.Controls.Add(this.label_AverageTemperature);
-            this.panel5.Controls.Add(this.label_MaximumTemperature);
-            this.panel5.Location = new System.Drawing.Point(1, 373);
-            this.panel5.Margin = new System.Windows.Forms.Padding(1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(491, 20);
-            this.panel5.TabIndex = 3;
+            this.panel_Temperature.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_Temperature.BackColor = System.Drawing.Color.White;
+            this.panel_Temperature.Controls.Add(this.label_MinimumTemperature);
+            this.panel_Temperature.Controls.Add(this.label_AverageTemperature);
+            this.panel_Temperature.Controls.Add(this.label_MaximumTemperature);
+            this.panel_Temperature.Location = new System.Drawing.Point(1, 373);
+            this.panel_Temperature.Margin = new System.Windows.Forms.Padding(1);
+            this.panel_Temperature.Name = "panel_Temperature";
+            this.panel_Temperature.Size = new System.Drawing.Size(491, 20);
+            this.panel_Temperature.TabIndex = 3;
             // 
             // label_MinimumTemperature
             // 
@@ -3126,20 +3736,20 @@
             this.label_MaximumTemperature.Text = "MaxTemp";
             this.label_MaximumTemperature.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel_Preview
+            // panel_PreviewConfig
             // 
-            this.panel_Preview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_Preview.BackColor = System.Drawing.Color.White;
-            this.panel_Preview.Controls.Add(this.checkBox_NoiseFiltering);
-            this.panel_Preview.Controls.Add(this.label_ColorMap);
-            this.panel_Preview.Controls.Add(this.comboBox_ColorMap);
-            this.panel_Preview.Controls.Add(this.label_TemperatureUnit);
-            this.panel_Preview.Controls.Add(this.comboBox_TemperatureUnit);
-            this.panel_Preview.Location = new System.Drawing.Point(1, 434);
-            this.panel_Preview.Margin = new System.Windows.Forms.Padding(1);
-            this.panel_Preview.Name = "panel_Preview";
-            this.panel_Preview.Size = new System.Drawing.Size(491, 34);
-            this.panel_Preview.TabIndex = 2;
+            this.panel_PreviewConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_PreviewConfig.BackColor = System.Drawing.Color.White;
+            this.panel_PreviewConfig.Controls.Add(this.checkBox_NoiseFiltering);
+            this.panel_PreviewConfig.Controls.Add(this.label_ColorMap);
+            this.panel_PreviewConfig.Controls.Add(this.comboBox_ColorMap);
+            this.panel_PreviewConfig.Controls.Add(this.label_TemperatureUnit);
+            this.panel_PreviewConfig.Controls.Add(this.comboBox_TemperatureUnit);
+            this.panel_PreviewConfig.Location = new System.Drawing.Point(1, 434);
+            this.panel_PreviewConfig.Margin = new System.Windows.Forms.Padding(1);
+            this.panel_PreviewConfig.Name = "panel_PreviewConfig";
+            this.panel_PreviewConfig.Size = new System.Drawing.Size(491, 34);
+            this.panel_PreviewConfig.TabIndex = 2;
             // 
             // checkBox_NoiseFiltering
             // 
@@ -3249,36 +3859,36 @@
             this.pictureBox_Preview.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Preview_MouseMove);
             this.pictureBox_Preview.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_Preview_MouseUp);
             // 
-            // tableLayoutPanel7
+            // tableLayoutPanel_RoiShape
             // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.tableLayoutPanel7.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.button_RemoveAllRoi, 1, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(1, 396);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(1);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(491, 34);
-            this.tableLayoutPanel7.TabIndex = 5;
+            this.tableLayoutPanel_RoiShape.ColumnCount = 2;
+            this.tableLayoutPanel_RoiShape.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_RoiShape.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel_RoiShape.Controls.Add(this.panel_RoiShape, 0, 0);
+            this.tableLayoutPanel_RoiShape.Controls.Add(this.button_RemoveAllRoi, 1, 0);
+            this.tableLayoutPanel_RoiShape.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_RoiShape.Location = new System.Drawing.Point(1, 396);
+            this.tableLayoutPanel_RoiShape.Margin = new System.Windows.Forms.Padding(1);
+            this.tableLayoutPanel_RoiShape.Name = "tableLayoutPanel_RoiShape";
+            this.tableLayoutPanel_RoiShape.RowCount = 1;
+            this.tableLayoutPanel_RoiShape.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_RoiShape.Size = new System.Drawing.Size(491, 34);
+            this.tableLayoutPanel_RoiShape.TabIndex = 5;
             // 
-            // panel3
+            // panel_RoiShape
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.radioButton_ShapeEllipse);
-            this.panel3.Controls.Add(this.radioButton_ShapeRectangle);
-            this.panel3.Controls.Add(this.radioButton_ShapeLine);
-            this.panel3.Controls.Add(this.radioButton_ShapeSpot);
-            this.panel3.Controls.Add(this.radioButton_ShapeCursor);
-            this.panel3.Location = new System.Drawing.Point(1, 1);
-            this.panel3.Margin = new System.Windows.Forms.Padding(1);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(409, 32);
-            this.panel3.TabIndex = 1;
+            this.panel_RoiShape.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_RoiShape.BackColor = System.Drawing.Color.White;
+            this.panel_RoiShape.Controls.Add(this.radioButton_ShapeEllipse);
+            this.panel_RoiShape.Controls.Add(this.radioButton_ShapeRectangle);
+            this.panel_RoiShape.Controls.Add(this.radioButton_ShapeLine);
+            this.panel_RoiShape.Controls.Add(this.radioButton_ShapeSpot);
+            this.panel_RoiShape.Controls.Add(this.radioButton_ShapeCursor);
+            this.panel_RoiShape.Location = new System.Drawing.Point(1, 1);
+            this.panel_RoiShape.Margin = new System.Windows.Forms.Padding(1);
+            this.panel_RoiShape.Name = "panel_RoiShape";
+            this.panel_RoiShape.Size = new System.Drawing.Size(409, 32);
+            this.panel_RoiShape.TabIndex = 1;
             // 
             // radioButton_ShapeEllipse
             // 
@@ -3363,87 +3973,96 @@
             this.tableLayoutPanelMain.PerformLayout();
             this.statusBar.ResumeLayout(false);
             this.statusBar.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
+            this.panel_Camera.ResumeLayout(false);
+            this.tabControl_Camera.ResumeLayout(false);
             this.tabPage_RemoteCamera.ResumeLayout(false);
             this.tabPage_RemoteCamera.PerformLayout();
             this.tabPage_LocalCamera.ResumeLayout(false);
             this.tabPage_LocalCamera.PerformLayout();
-            this.tabControl2.ResumeLayout(false);
+            this.tabControl_CameraConfig.ResumeLayout(false);
             this.tabPage_Product.ResumeLayout(false);
             this.groupBox_ProductInformation.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel_ProductInfo.ResumeLayout(false);
+            this.tableLayoutPanel_ProductInfo.PerformLayout();
             this.groupBox_SensorInformation.ResumeLayout(false);
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel_SensorInfo.ResumeLayout(false);
+            this.tableLayoutPanel_SensorInfo.PerformLayout();
             this.groupBox_SoftwareUpdate.ResumeLayout(false);
             this.groupBox_SoftwareUpdate.PerformLayout();
             this.tableLayoutPanel_BinaryInforation.ResumeLayout(false);
             this.tableLayoutPanel_BinaryInforation.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel_SoftwareUpdateBlank.ResumeLayout(false);
+            this.tableLayoutPanel_SoftwareUpdateBlank.PerformLayout();
             this.tabPage_Network.ResumeLayout(false);
             this.groupBox_NetworkConfiguration.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            this.tabControl3.ResumeLayout(false);
+            this.tableLayoutPanel_NetworkConfig.ResumeLayout(false);
+            this.tableLayoutPanel_NetworkConfig.PerformLayout();
+            this.tabControl_SensorConfig.ResumeLayout(false);
             this.tabPage_SensorControl.ResumeLayout(false);
-            this.panel_SensorControl_256E.ResumeLayout(false);
-            this.groupBox_FFCParameters_256E.ResumeLayout(false);
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.tableLayoutPanel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256E_MaxInterval)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256E_AutoTriggerThreshold)).EndInit();
-            this.groupBox_FluxParameters_256E.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_Emissivity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_AtmosphericTransmittance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_AtmosphericTemperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_AmbientReflectionTemperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256E_Distance)).EndInit();
-            this.groupBox_GainModeState_256E.ResumeLayout(false);
-            this.groupBox_GainModeState_256E.PerformLayout();
-            this.groupBox_FlatFieldCorrection_256E.ResumeLayout(false);
-            this.groupBox_FlatFieldCorrection_256E.PerformLayout();
-            this.panel_SensorControl_160E.ResumeLayout(false);
-            this.groupBox_FluxParameters_160E.ResumeLayout(false);
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_WindowReflectedTemperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_WindowReflection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_AtmosphericTemperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_AtmosphericTransmission)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_WindowTemperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_WindowTransmission)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_SceneEmissivity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160E_BackgroundTemperature)).EndInit();
-            this.groupBox_GainModeState_160E.ResumeLayout(false);
-            this.groupBox_GainModeState_160E.PerformLayout();
-            this.groupBox_FlatFieldCorrection_160E.ResumeLayout(false);
-            this.groupBox_FlatFieldCorrection_160E.PerformLayout();
+            this.panel_SensorControl_256G.ResumeLayout(false);
+            this.groupBox_FFCParameters_256G.ResumeLayout(false);
+            this.tableLayoutPanel_FFCParam256G.ResumeLayout(false);
+            this.tableLayoutPanel_FFCParam256G.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256G_MaxInterval)).EndInit();
+            this.groupBox_GainModeState_256G.ResumeLayout(false);
+            this.groupBox_GainModeState_256G.PerformLayout();
+            this.groupBox_FlatFieldCorrection_256G.ResumeLayout(false);
+            this.groupBox_FlatFieldCorrection_256G.PerformLayout();
+            this.panel_SensorControl_256.ResumeLayout(false);
+            this.groupBox_FFCParameters_256.ResumeLayout(false);
+            this.tableLayoutPanel_FFCParam256.ResumeLayout(false);
+            this.tableLayoutPanel_FFCParam256.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256_MaxInterval)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256_AutoTriggerThreshold)).EndInit();
+            this.groupBox_FluxParameters_256.ResumeLayout(false);
+            this.tableLayoutPanel_FluxParam256.ResumeLayout(false);
+            this.tableLayoutPanel_FluxParam256.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_Emissivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_AtmosphericTransmittance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_AtmosphericTemperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_AmbientReflectionTemperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256_Distance)).EndInit();
+            this.groupBox_GainModeState_256.ResumeLayout(false);
+            this.groupBox_GainModeState_256.PerformLayout();
+            this.groupBox_FlatFieldCorrection_256.ResumeLayout(false);
+            this.groupBox_FlatFieldCorrection_256.PerformLayout();
+            this.panel_SensorControl_160.ResumeLayout(false);
+            this.groupBox_FluxParameters_160.ResumeLayout(false);
+            this.tableLayoutPanel_FluxParam160.ResumeLayout(false);
+            this.tableLayoutPanel_FluxParam160.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_WindowReflectedTemperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_WindowReflection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_AtmosphericTemperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_AtmosphericTransmission)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_WindowTemperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_WindowTransmission)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_SceneEmissivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam160_BackgroundTemperature)).EndInit();
+            this.groupBox_GainModeState_160.ResumeLayout(false);
+            this.groupBox_GainModeState_160.PerformLayout();
+            this.groupBox_FlatFieldCorrection_160.ResumeLayout(false);
+            this.groupBox_FlatFieldCorrection_160.PerformLayout();
             this.tabPage_RoiManager.ResumeLayout(false);
             this.tabPage_RoiManager.PerformLayout();
-            this.tableLayoutPanel14.ResumeLayout(false);
-            this.tableLayoutPanel14.PerformLayout();
-            this.tableLayoutPanel13.ResumeLayout(false);
-            this.tableLayoutPanel13.PerformLayout();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.tableLayoutPanel12.PerformLayout();
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.tableLayoutPanel_Preview.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.tableLayoutPanel_RoiEllipse.ResumeLayout(false);
+            this.tableLayoutPanel_RoiEllipse.PerformLayout();
+            this.tableLayoutPanel_RoiRect.ResumeLayout(false);
+            this.tableLayoutPanel_RoiRect.PerformLayout();
+            this.tableLayoutPanel_RoiLine.ResumeLayout(false);
+            this.tableLayoutPanel_RoiLine.PerformLayout();
+            this.tableLayoutPanel_RoiSpot.ResumeLayout(false);
+            this.tableLayoutPanel_RoiSpot.PerformLayout();
             this.panel_Preview.ResumeLayout(false);
-            this.panel_Preview.PerformLayout();
+            this.tableLayoutPanel_Preview.ResumeLayout(false);
+            this.panel_Temperature.ResumeLayout(false);
+            this.panel_Temperature.PerformLayout();
+            this.panel_PreviewConfig.ResumeLayout(false);
+            this.panel_PreviewConfig.PerformLayout();
             this.panel_VideoPreview.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Preview)).EndInit();
-            this.tableLayoutPanel7.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.tableLayoutPanel_RoiShape.ResumeLayout(false);
+            this.panel_RoiShape.ResumeLayout(false);
+            this.panel_RoiShape.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3451,7 +4070,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.PictureBox pictureBox_Preview;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_Camera;
         private System.Windows.Forms.Button button_ConnectLocalCamera;
         private System.Windows.Forms.TextBox textBox_RemoteCameraIPAddress;
         private System.Windows.Forms.Button button_ConnectRemoteCamera;
@@ -3459,39 +4078,39 @@
         private System.Windows.Forms.Button button_ScanRemoteCamera;
         private System.Windows.Forms.Label label_RemoteCameraIPAddressTitle;
         private System.Windows.Forms.Button button_GetProductInformation;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_ProductInfo;
         private System.Windows.Forms.Label label_SensorSerialNumberTitle;
         private System.Windows.Forms.Label label_SensorSerialNumber;
         private System.Windows.Forms.Label label_SensorUptimeTitle;
         private System.Windows.Forms.Label label_SensorUptime;
         private System.Windows.Forms.GroupBox groupBox_SoftwareUpdate;
         private System.Windows.Forms.ProgressBar progressBar_SoftwareUpdate;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_SoftwareUpdateBlank;
         private System.Windows.Forms.Label label_SoftwareUpdateStatus;
         private System.Windows.Forms.Button button_StartSoftwareUpdate;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl_Camera;
         private System.Windows.Forms.TabPage tabPage_LocalCamera;
         private System.Windows.Forms.TabPage tabPage_RemoteCamera;
-        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabControl tabControl_CameraConfig;
         private System.Windows.Forms.TabPage tabPage_Product;
         private System.Windows.Forms.TabPage tabPage_Network;
-        private System.Windows.Forms.TabControl tabControl3;
+        private System.Windows.Forms.TabControl tabControl_SensorConfig;
         private System.Windows.Forms.TabPage tabPage_SensorControl;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_Preview;
         private System.Windows.Forms.Label label_MinimumTemperature;
         private System.Windows.Forms.Label label_AverageTemperature;
         private System.Windows.Forms.Label label_MaximumTemperature;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TextBox textBox_FluxParam160E_SceneEmissivityRange;
-        private System.Windows.Forms.TextBox textBox_FluxParam160E_BackgroundTemperatureRange;
-        private System.Windows.Forms.TextBox textBox_FluxParam160E_WindowTransmissionRange;
-        private System.Windows.Forms.TextBox textBox_FluxParam160E_WindowTemperatureRange;
-        private System.Windows.Forms.TextBox textBox_FluxParam160E_AtmosphericTransmissionRange;
-        private System.Windows.Forms.TextBox textBox_FluxParam160E_AtmosphericTemperatureRange;
-        private System.Windows.Forms.Label label_FluxParam160E_WindowReflectionTitle;
-        private System.Windows.Forms.Label label_FluxParam160E_WindowReflectedTemperatureTitle;
-        private System.Windows.Forms.TextBox textBox_FluxParam160E_WindowReflectionRange;
-        private System.Windows.Forms.TextBox textBox_FluxParam160E_WindowReflectedTemperatureRange;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_FluxParam160;
+        private System.Windows.Forms.TextBox textBox_FluxParam160_SceneEmissivityRange;
+        private System.Windows.Forms.TextBox textBox_FluxParam160_BackgroundTemperatureRange;
+        private System.Windows.Forms.TextBox textBox_FluxParam160_WindowTransmissionRange;
+        private System.Windows.Forms.TextBox textBox_FluxParam160_WindowTemperatureRange;
+        private System.Windows.Forms.TextBox textBox_FluxParam160_AtmosphericTransmissionRange;
+        private System.Windows.Forms.TextBox textBox_FluxParam160_AtmosphericTemperatureRange;
+        private System.Windows.Forms.Label label_FluxParam160_WindowReflectionTitle;
+        private System.Windows.Forms.Label label_FluxParam160_WindowReflectedTemperatureTitle;
+        private System.Windows.Forms.TextBox textBox_FluxParam160_WindowReflectionRange;
+        private System.Windows.Forms.TextBox textBox_FluxParam160_WindowReflectedTemperatureRange;
         private System.Windows.Forms.Label label_LocalCameraComPort;
         private System.Windows.Forms.Label label_LocalCameraNameTitle;
         private System.Windows.Forms.Label label_BootloaderVersionTitle;
@@ -3500,7 +4119,7 @@
         private System.Windows.Forms.Label label_BootloaderVersion;
         private System.Windows.Forms.Label label_SensorModelName;
         private System.Windows.Forms.Label label_SensorModelNameTitle;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_NetworkConfig;
         private System.Windows.Forms.Label label_MACAddressTitle;
         private System.Windows.Forms.TextBox textBox_MACAddress;
         private System.Windows.Forms.Button button_GetNetworkConfiguration;
@@ -3521,17 +4140,17 @@
         private System.Windows.Forms.TextBox textBox_SoftwareUpdateFilePath;
         private System.Windows.Forms.Button button_SoftwareUpdateFileBrowse;
         private System.Windows.Forms.Button button_SystemReboot;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160E_SceneEmissivity;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160E_BackgroundTemperature;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160E_WindowTransmission;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160E_WindowReflection;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160E_AtmosphericTemperature;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160E_AtmosphericTransmission;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160E_WindowTemperature;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160E_WindowReflectedTemperature;
-        private System.Windows.Forms.Button button_RestoreDefaultFluxParameters_160E;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160_SceneEmissivity;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160_BackgroundTemperature;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160_WindowTransmission;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160_WindowReflection;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160_AtmosphericTemperature;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160_AtmosphericTransmission;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160_WindowTemperature;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam160_WindowReflectedTemperature;
+        private System.Windows.Forms.Button button_RestoreDefaultFluxParameters_160;
         private System.Windows.Forms.Button button_GetSensorInformation;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_SensorInfo;
         private System.Windows.Forms.Label label_ProductModelNameTitle;
         private System.Windows.Forms.Label label_HardwareVersionTitle;
         private System.Windows.Forms.Label label_ProductSerialNumberTitle;
@@ -3540,7 +4159,7 @@
         private System.Windows.Forms.Label label_ProductModelName;
         private System.Windows.Forms.GroupBox groupBox_SensorInformation;
         private System.Windows.Forms.GroupBox groupBox_ProductInformation;
-        private System.Windows.Forms.GroupBox groupBox_FluxParameters_160E;
+        private System.Windows.Forms.GroupBox groupBox_FluxParameters_160;
         private System.Windows.Forms.GroupBox groupBox_NetworkConfiguration;
         private System.Windows.Forms.Button button_ScanLocalCamera;
         private System.Windows.Forms.TextBox textBox_RemoteCameraName;
@@ -3552,11 +4171,11 @@
         private System.Windows.Forms.ListBox listBox_LocalCameraScanList;
         private System.Windows.Forms.TextBox textBox_LocalCameraComPort;
         private System.Windows.Forms.TextBox textBox_LocalCameraName;
-        private System.Windows.Forms.Label label_FluxParam160E_BackgroundTemperatureUnit;
-        private System.Windows.Forms.Label label_FluxParam160E_WindowReflectedTemperatureUnit;
-        private System.Windows.Forms.Label label_FluxParam160E_AtmosphericTemperatureUnit;
-        private System.Windows.Forms.Label label_FluxParam160E_WindowTemperatureUnit;
-        private System.Windows.Forms.Panel panel_Preview;
+        private System.Windows.Forms.Label label_FluxParam160_BackgroundTemperatureUnit;
+        private System.Windows.Forms.Label label_FluxParam160_WindowReflectedTemperatureUnit;
+        private System.Windows.Forms.Label label_FluxParam160_AtmosphericTemperatureUnit;
+        private System.Windows.Forms.Label label_FluxParam160_WindowTemperatureUnit;
+        private System.Windows.Forms.Panel panel_PreviewConfig;
         private System.Windows.Forms.ComboBox comboBox_TemperatureUnit;
         private System.Windows.Forms.Label label_TemperatureUnit;
         private System.Windows.Forms.Label label_ColorMap;
@@ -3566,8 +4185,8 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel_CamInfo;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel_fps;
         private System.Windows.Forms.TabPage tabPage_RoiManager;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel_RoiShape;
+        private System.Windows.Forms.Panel panel_Temperature;
         private System.Windows.Forms.RadioButton radioButton_ShapeEllipse;
         private System.Windows.Forms.RadioButton radioButton_ShapeRectangle;
         private System.Windows.Forms.RadioButton radioButton_ShapeLine;
@@ -3576,47 +4195,59 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_Preview;
         private System.Windows.Forms.Panel panel_VideoPreview;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel_PreviewSize;
-        private System.Windows.Forms.GroupBox groupBox_FluxParameters_256E;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button_RestoreDefaultSensorConfig_256E;
-        private System.Windows.Forms.Label label_FluxParam256E_EmissivityTitle;
-        private System.Windows.Forms.TextBox textBox_FluxParam256E_EmissivityRange;
-        private System.Windows.Forms.Button button_GetFluxParameters_256E;
-        private System.Windows.Forms.Button button_SetFluxParameters_256E;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256E_Emissivity;
-        private System.Windows.Forms.Label label_FluxParam256E_AtmosphericTransmittanceTitle;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256E_AtmosphericTransmittance;
-        private System.Windows.Forms.TextBox textBox_FluxParam256E_AtmosphericTransmittanceRange;
-        private System.Windows.Forms.Label label_FluxParam256E_AtmosphericTemperatureTitle;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256E_AtmosphericTemperature;
-        private System.Windows.Forms.TextBox textBox_FluxParam256E_AtmosphericTemperatureRange;
-        private System.Windows.Forms.Label label_FluxParam256E_AtmosphericTemperatureUnit;
-        private System.Windows.Forms.Label label_FluxParam256E_AmbientReflectionTemperatureTitle;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256E_AmbientReflectionTemperature;
-        private System.Windows.Forms.Label label_FluxParam256E_AmbientReflectionTemperatureUnit;
-        private System.Windows.Forms.TextBox textBox_FluxParam256E_AmbientReflectionTemperatureRange;
-        private System.Windows.Forms.Label label_FluxParam160E_SceneEmissivityTitle;
-        private System.Windows.Forms.Button button_GetFluxParameters_160E;
-        private System.Windows.Forms.Button button_SetFluxParameters_160E;
-        private System.Windows.Forms.Label label_FluxParam160E_WindowTransmissionTitle;
-        private System.Windows.Forms.Label label_FluxParam160E_WindowTemperatureTitle;
-        private System.Windows.Forms.Label label_FluxParam160E_AtmosphericTransmissionTitle;
-        private System.Windows.Forms.Label label_FluxParam160E_AtmosphericTemperatureTitle;
-        private System.Windows.Forms.Label label_FluxParam160E_BackgroundTemperatureTitle;
-        private System.Windows.Forms.GroupBox groupBox_GainModeState_256E;
-        private System.Windows.Forms.Button button_SetGainModeState_256E;
-        private System.Windows.Forms.Button button_GetGainModeState_256E;
-        private System.Windows.Forms.RadioButton radioButton_GainModeStateLow_256E;
-        private System.Windows.Forms.RadioButton radioButton_GainModeStateHigh_256E;
-        private System.Windows.Forms.GroupBox groupBox_FlatFieldCorrection_256E;
-        private System.Windows.Forms.Button button_SetFlatFieldCorrectionMode_256E;
-        private System.Windows.Forms.Button button_GetFlatFieldCorrectionMode_256E;
-        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionManual_256E;
-        private System.Windows.Forms.Button button_RunFlatFieldCorrection_256E;
-        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionAutomatic_256E;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox_ListROI;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Button button_RestoreDefaultSensorConfig_256G;
+        private System.Windows.Forms.GroupBox groupBox_FluxParameters_256;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_FluxParam256;
+        private System.Windows.Forms.Button button_RestoreDefaultSensorConfig_256;
+        private System.Windows.Forms.Label label_FluxParam256_EmissivityTitle;
+        private System.Windows.Forms.TextBox textBox_FluxParam256_EmissivityRange;
+        private System.Windows.Forms.Button button_GetFluxParameters_256;
+        private System.Windows.Forms.Button button_SetFluxParameters_256;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256_Emissivity;
+        private System.Windows.Forms.Label label_FluxParam256_AtmosphericTransmittanceTitle;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256_AtmosphericTransmittance;
+        private System.Windows.Forms.TextBox textBox_FluxParam256_AtmosphericTransmittanceRange;
+        private System.Windows.Forms.Label label_FluxParam256_AtmosphericTemperatureTitle;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256_AtmosphericTemperature;
+        private System.Windows.Forms.TextBox textBox_FluxParam256_AtmosphericTemperatureRange;
+        private System.Windows.Forms.Label label_FluxParam256_AtmosphericTemperatureUnit;
+        private System.Windows.Forms.Label label_FluxParam256_AmbientReflectionTemperatureTitle;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256_AmbientReflectionTemperature;
+        private System.Windows.Forms.Label label_FluxParam256_AmbientReflectionTemperatureUnit;
+        private System.Windows.Forms.TextBox textBox_FluxParam256_AmbientReflectionTemperatureRange;
+        private System.Windows.Forms.Label label_FluxParam160_SceneEmissivityTitle;
+        private System.Windows.Forms.Button button_GetFluxParameters_160;
+        private System.Windows.Forms.Button button_SetFluxParameters_160;
+        private System.Windows.Forms.Label label_FluxParam160_WindowTransmissionTitle;
+        private System.Windows.Forms.Label label_FluxParam160_WindowTemperatureTitle;
+        private System.Windows.Forms.Label label_FluxParam160_AtmosphericTransmissionTitle;
+        private System.Windows.Forms.Label label_FluxParam160_AtmosphericTemperatureTitle;
+        private System.Windows.Forms.Label label_FluxParam160_BackgroundTemperatureTitle;
+        private System.Windows.Forms.GroupBox groupBox_GainModeState_256G;
+        private System.Windows.Forms.Button button_SetGainModeState_256G;
+        private System.Windows.Forms.Button button_GetGainModeState_256G;
+        private System.Windows.Forms.RadioButton radioButton_GainModeStateLow_256G;
+        private System.Windows.Forms.RadioButton radioButton_GainModeStateHigh_256G;
+        private System.Windows.Forms.GroupBox groupBox_FlatFieldCorrection_256G;
+        private System.Windows.Forms.Button button_SetFlatFieldCorrectionMode_256G;
+        private System.Windows.Forms.Button button_GetFlatFieldCorrectionMode_256G;
+        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionManual_256G;
+        private System.Windows.Forms.Button button_RunFlatFieldCorrection_256G;
+        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionAutomatic_256G;
+        private System.Windows.Forms.GroupBox groupBox_GainModeState_256;
+        private System.Windows.Forms.Button button_SetGainModeState_256;
+        private System.Windows.Forms.Button button_GetGainModeState_256;
+        private System.Windows.Forms.RadioButton radioButton_GainModeStateLow_256;
+        private System.Windows.Forms.RadioButton radioButton_GainModeStateHigh_256;
+        private System.Windows.Forms.GroupBox groupBox_FlatFieldCorrection_256;
+        private System.Windows.Forms.Button button_SetFlatFieldCorrectionMode_256;
+        private System.Windows.Forms.Button button_GetFlatFieldCorrectionMode_256;
+        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionManual_256;
+        private System.Windows.Forms.Button button_RunFlatFieldCorrection_256;
+        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionAutomatic_256;
+        private System.Windows.Forms.Label label_RoiList;
+        private System.Windows.Forms.ComboBox comboBox_RoiList;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_RoiShape;
         private System.Windows.Forms.Button button_RemoveAllRoi;
         private System.Windows.Forms.Button button_RemoveRoiItem;
         private System.Windows.Forms.Button button_AddRoiItem;
@@ -3624,68 +4255,78 @@
         private System.Windows.Forms.RadioButton rbtn_RoiRect;
         private System.Windows.Forms.RadioButton rbtn_RoiLine;
         private System.Windows.Forms.RadioButton rbtn_RoiSpot;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox_ellipseX;
-        private System.Windows.Forms.TextBox textBox_ellipseW;
-        private System.Windows.Forms.TextBox textBox_ellipseY;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox_ellipseH;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel13;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox_rectX;
-        private System.Windows.Forms.TextBox textBox_rectW;
-        private System.Windows.Forms.TextBox textBox_rectY;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox_rectH;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_lineX1;
-        private System.Windows.Forms.TextBox textBox_lineX2;
-        private System.Windows.Forms.TextBox textBox_lineY1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox_lineY2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_spotX;
-        private System.Windows.Forms.TextBox textBox_spotY;
-        private System.Windows.Forms.Panel panel_SensorControl_256E;
-        private System.Windows.Forms.GroupBox groupBox_GainModeState_160E;
-        private System.Windows.Forms.Button button_SetGainModeState_160E;
-        private System.Windows.Forms.Button button_GetGainModeState_160E;
-        private System.Windows.Forms.RadioButton radioButton_GainModeStateAuto_160E;
-        private System.Windows.Forms.RadioButton radioButton_GainModeStateLow_160E;
-        private System.Windows.Forms.RadioButton radioButton_GainModeStateHigh_160E;
-        private System.Windows.Forms.GroupBox groupBox_FlatFieldCorrection_160E;
-        private System.Windows.Forms.Button button_SetFlatFieldCorrectionMode_160E;
-        private System.Windows.Forms.Button button_GetFlatFieldCorrectionMode_160E;
-        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionManual_160E;
-        private System.Windows.Forms.Button button_RunFlatFieldCorrection_160E;
-        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionAutomatic_160E;
-        private System.Windows.Forms.Panel panel_SensorControl_160E;
-        private System.Windows.Forms.Button button_StoreUserSensorConfig_256E;
-        private System.Windows.Forms.Label label_FluxParam256E_DistanceTitle;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256E_Distance;
-        private System.Windows.Forms.Label label_FluxParam256E_DistanceUnit;
-        private System.Windows.Forms.TextBox textBox_FluxParam256E_DistanceRange;
-        private System.Windows.Forms.GroupBox groupBox_FFCParameters_256E;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.Label label_FFCParam256E_MaxIntervalTitle;
-        private System.Windows.Forms.TextBox textBox_FFCParam256E_MaxIntervalRange;
-        private System.Windows.Forms.Button button_GetFFCParameters_256E;
-        private System.Windows.Forms.Button button_SetFFCParameters_256E;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FFCParam256E_MaxInterval;
-        private System.Windows.Forms.Label label_FFCParam256E_AutoTriggerThresholdTitle;
-        private System.Windows.Forms.NumericUpDown numericUpDown_FFCParam256E_AutoTriggerThreshold;
-        private System.Windows.Forms.TextBox textBox_FFCParam256E_AutoTriggerThresholdRange;
-        private System.Windows.Forms.Label label_FFCParam256E_MaxIntervalUnit;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_RoiEllipse;
+        private System.Windows.Forms.Label label_RoiEllipseW;
+        private System.Windows.Forms.Label label_RoiEllipseX;
+        private System.Windows.Forms.Label label_RoiEllipseY;
+        private System.Windows.Forms.TextBox textBox_RoiEllipseX;
+        private System.Windows.Forms.TextBox textBox_RoiEllipseW;
+        private System.Windows.Forms.TextBox textBox_RoiEllipseY;
+        private System.Windows.Forms.Label label_RoiEllipseH;
+        private System.Windows.Forms.TextBox textBox_RoiEllipseH;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_RoiRect;
+        private System.Windows.Forms.Label label_RoiRectW;
+        private System.Windows.Forms.Label label_RoiRectX;
+        private System.Windows.Forms.Label label_RoiRectY;
+        private System.Windows.Forms.TextBox textBox_RoiRectX;
+        private System.Windows.Forms.TextBox textBox_RoiRectW;
+        private System.Windows.Forms.TextBox textBox_RoiRectY;
+        private System.Windows.Forms.Label label_RoiRectH;
+        private System.Windows.Forms.TextBox textBox_RoiRectH;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_RoiLine;
+        private System.Windows.Forms.Label label_RoiLineX2;
+        private System.Windows.Forms.Label label_RoiLineX1;
+        private System.Windows.Forms.Label label_RoiLineY1;
+        private System.Windows.Forms.TextBox textBox_RoiLineX1;
+        private System.Windows.Forms.TextBox textBox_RoiLineX2;
+        private System.Windows.Forms.TextBox textBox_RoiLineY1;
+        private System.Windows.Forms.Label label_RoiLineY2;
+        private System.Windows.Forms.TextBox textBox_RoiLineY2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_RoiSpot;
+        private System.Windows.Forms.Label label_RoiSpotX;
+        private System.Windows.Forms.Label label_RoiSpotY;
+        private System.Windows.Forms.TextBox textBox_RoiSpotX;
+        private System.Windows.Forms.TextBox textBox_RoiSpotY;
+        private System.Windows.Forms.Panel panel_SensorControl_256G;
+        private System.Windows.Forms.Panel panel_SensorControl_256;
+        private System.Windows.Forms.GroupBox groupBox_GainModeState_160;
+        private System.Windows.Forms.Button button_SetGainModeState_160;
+        private System.Windows.Forms.Button button_GetGainModeState_160;
+        private System.Windows.Forms.RadioButton radioButton_GainModeStateAuto_160;
+        private System.Windows.Forms.RadioButton radioButton_GainModeStateLow_160;
+        private System.Windows.Forms.RadioButton radioButton_GainModeStateHigh_160;
+        private System.Windows.Forms.GroupBox groupBox_FlatFieldCorrection_160;
+        private System.Windows.Forms.Button button_SetFlatFieldCorrectionMode_160;
+        private System.Windows.Forms.Button button_GetFlatFieldCorrectionMode_160;
+        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionManual_160;
+        private System.Windows.Forms.Button button_RunFlatFieldCorrection_160;
+        private System.Windows.Forms.RadioButton radioButton_FlatFieldCorrectionAutomatic_160;
+        private System.Windows.Forms.Panel panel_SensorControl_160;
+        private System.Windows.Forms.Button button_StoreUserSensorConfig_256G;
+        private System.Windows.Forms.GroupBox groupBox_FFCParameters_256G;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_FFCParam256G;
+        private System.Windows.Forms.Label label_FFCParam256G_MaxIntervalTitle;
+        private System.Windows.Forms.TextBox textBox_FFCParam256G_MaxIntervalRange;
+        private System.Windows.Forms.Button button_GetFFCParameters_256G;
+        private System.Windows.Forms.Button button_SetFFCParameters_256G;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FFCParam256G_MaxInterval;
+        private System.Windows.Forms.Label label_FFCParam256G_MaxIntervalUnit;
+        private System.Windows.Forms.Button button_StoreUserSensorConfig_256;
+        private System.Windows.Forms.Label label_FluxParam256_DistanceTitle;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256_Distance;
+        private System.Windows.Forms.Label label_FluxParam256_DistanceUnit;
+        private System.Windows.Forms.TextBox textBox_FluxParam256_DistanceRange;
+        private System.Windows.Forms.GroupBox groupBox_FFCParameters_256;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_FFCParam256;
+        private System.Windows.Forms.Label label_FFCParam256_MaxIntervalTitle;
+        private System.Windows.Forms.TextBox textBox_FFCParam256_MaxIntervalRange;
+        private System.Windows.Forms.Button button_GetFFCParameters_256;
+        private System.Windows.Forms.Button button_SetFFCParameters_256;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FFCParam256_MaxInterval;
+        private System.Windows.Forms.Label label_FFCParam256_AutoTriggerThresholdTitle;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FFCParam256_AutoTriggerThreshold;
+        private System.Windows.Forms.TextBox textBox_FFCParam256_AutoTriggerThresholdRange;
+        private System.Windows.Forms.Label label_FFCParam256_MaxIntervalUnit;
         private System.Windows.Forms.CheckBox checkBox_NoiseFiltering;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_BinaryInforation;
         private System.Windows.Forms.Label label_BinaryInformationTitle;
@@ -3699,6 +4340,13 @@
         private System.Windows.Forms.Label label_BinaryVersion;
         private System.Windows.Forms.Label label_BinaryBuildTime;
         private System.Windows.Forms.Label label_BinarySize;
+        private System.Windows.Forms.Label label_RemoteCameraAdapterIPTitle;
+        private System.Windows.Forms.TextBox textBox_RemoteCameraAdapterIP;
+        private System.Windows.Forms.Label label_LocalCameraVideoFormat;
+        private System.Windows.Forms.ComboBox comboBox_LocalCameraVideoFormat;
+        private System.Windows.Forms.Label label_RemoteCameraVideoFormat;
+        private System.Windows.Forms.ComboBox comboBox_RemoteCameraVideoFormat;
+        private System.Windows.Forms.RadioButton radioButton_GainModeStateAuto_256G;
     }
 }
 

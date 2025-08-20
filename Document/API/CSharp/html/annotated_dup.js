@@ -3,6 +3,7 @@ var annotated_dup =
     [ "TmSDK", "namespace_tm_s_d_k.html", [
       [ "CamInfo", "class_tm_s_d_k_1_1_cam_info.html", null ],
       [ "LocalCamInfo", "class_tm_s_d_k_1_1_local_cam_info.html", "class_tm_s_d_k_1_1_local_cam_info" ],
+      [ "MediaInfo", "class_tm_s_d_k_1_1_media_info.html", "class_tm_s_d_k_1_1_media_info" ],
       [ "RemoteCamInfo", "class_tm_s_d_k_1_1_remote_cam_info.html", "class_tm_s_d_k_1_1_remote_cam_info" ],
       [ "TmCamera", "class_tm_s_d_k_1_1_tm_camera.html", "class_tm_s_d_k_1_1_tm_camera" ],
       [ "TmControl", "class_tm_s_d_k_1_1_tm_control.html", "class_tm_s_d_k_1_1_tm_control" ],

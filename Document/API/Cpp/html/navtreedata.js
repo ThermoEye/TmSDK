@@ -47,8 +47,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_tm_s_d_k_1_1_tm_remote_cam_info.html#acad8cf658946f92a75e60ca753f86f98"
+"class_tm_s_d_k_1_1_tm_ctrl80.html#adab8fbf2e3498f6aadbf6061f75ce043"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronisation';
-var SYNCOFFMSG = 'click to enable panel synchronisation';
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';

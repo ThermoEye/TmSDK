@@ -63,8 +63,8 @@ class MainWindow(QMainWindow):
         self.pushButton_GetFlatFieldCorrection.clicked.connect(self.sensor_ctrl.pushButton_GetFlatFieldCorrection_Clicked)
         self.pushButton_SetFlatFieldCorrection.clicked.connect(self.sensor_ctrl.pushButton_SetFlatFieldCorrection_Clicked)
         self.pushButton_RunFlatFieldCorrection.clicked.connect(self.sensor_ctrl.pushButton_RunFlatFieldCorrection_Clicked)
-        self.pushButton_GetFluexParams.clicked.connect(self.sensor_ctrl.pushButton_GetFluexParams_Clicked)
-        self.pushButton_SetFluexParams.clicked.connect(self.sensor_ctrl.pushButton_SetFluexParams_Clicked)
+        self.pushButton_GetFluxParams.clicked.connect(self.sensor_ctrl.pushButton_GetFluxParams_Clicked)
+        self.pushButton_SetFluxParams.clicked.connect(self.sensor_ctrl.pushButton_SetFluxParams_Clicked)
         self.pushButton_GetFFCParams.clicked.connect(self.sensor_ctrl.pushButton_GetFFCParams_Clicked)
         self.pushButton_SetFFCParams.clicked.connect(self.sensor_ctrl.pushButton_SetFFCParams_Clicked)
         self.pushButton_StoreUserSensorConfig.clicked.connect(self.sensor_ctrl.pushButton_StoreUserSensorConfig_Clicked)
@@ -79,6 +79,17 @@ class MainWindow(QMainWindow):
         self.pushButton_RestoreDefaultFluxParameters_160E.clicked.connect(self.sensor_ctrl.pushButton_RestoreDefaultFluxParameters_160E_Clicked)
         self.pushButton_GetGainModeState.clicked.connect(self.sensor_ctrl.pushButton_GetGainModeState_Clicked)
         self.pushButton_SetGainModeState.clicked.connect(self.sensor_ctrl.pushButton_SetGainModeState_Clicked)
+        self.comboBox_LocalCameraVideoFormat.currentIndexChanged.connect(self.camera.comboBox_comboBox_LocalCameraVideoFormat_Changed)
+        self.comboBox_RemoteCameraVideoFormat.currentIndexChanged.connect(self.camera.comboBox_comboBox_RemoteCameraVideoFormat_Changed)
+        self.pushButton_GetFlatFieldCorrection_256G.clicked.connect(self.sensor_ctrl.pushButton_GetFlatFieldCorrection_256G_Clicked)
+        self.pushButton_SetFlatFieldCorrection_256G.clicked.connect(self.sensor_ctrl.pushButton_SetFlatFieldCorrection_256G_Clicked)
+        self.pushButton_RunFlatFieldCorrection_256G.clicked.connect(self.sensor_ctrl.pushButton_RunFlatFieldCorrection_256G_Clicked)
+        self.pushButton_GetFFCParams_256G.clicked.connect(self.sensor_ctrl.pushButton_GetFFCParams_256G_Clicked)
+        self.pushButton_SetFFCParams_256G.clicked.connect(self.sensor_ctrl.pushButton_SetFFCParams_256G_Clicked)
+        self.pushButton_StoreUserSensorConfig_256G.clicked.connect(self.sensor_ctrl.pushButton_StoreUserSensorConfig_256G_Clicked)
+        self.pushButton_RestoreDefaultSensorConfig_256G.clicked.connect(self.sensor_ctrl.pushButton_RestoreDefaultSensorConfig_256G_Clicked)
+        self.pushButton_GetGainModeState_256G.clicked.connect(self.sensor_ctrl.pushButton_GetGainModeState_256G_Clicked)
+        self.pushButton_SetGainModeState_256G.clicked.connect(self.sensor_ctrl.pushButton_SetGainModeState_256G_Clicked)
         
         self.LocalCamList=[]
         self.RemoteCamList=[]

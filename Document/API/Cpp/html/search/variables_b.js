@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['serialnumber_0',['SerialNumber',['../class_tm_s_d_k_1_1_tm_remote_cam_info.html#a9a79852b49aad1a29d4f58dadd074b0d',1,'TmSDK::TmRemoteCamInfo']]],
-  ['spot_1',['Spot',['../class_tm_s_d_k_1_1_roi_spot.html#a9440c7fbe61f35f5637a87f7b72a70eb',1,'TmSDK::RoiSpot']]],
-  ['start_2',['Start',['../class_tm_s_d_k_1_1_roi_line.html#a4ca10d22120938971cfe63df47c8463e',1,'TmSDK::RoiLine']]]
+  ['rawframe_0',['rawFrame',['../class_tm_s_d_k_1_1_tm_frame.html#ac3c6a22128f2ac1ed6289ce3ea035597',1,'TmSDK::TmFrame']]],
+  ['rect_1',['Rect',['../class_tm_s_d_k_1_1_roi_rect.html#a8e318b971731875589a3fe2741b35a5e',1,'TmSDK::RoiRect']]],
+  ['roicount_2',['roiCount',['../class_tm_s_d_k_1_1_tm_roi_manager.html#ab9bbaaffcbcf92fa9d44a9dddb02dc88',1,'TmSDK::TmRoiManager']]]
 ];

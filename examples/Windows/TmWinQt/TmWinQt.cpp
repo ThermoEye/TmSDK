@@ -55,8 +55,8 @@ TmWinQt::TmWinQt(QWidget *parent)
     connect(ui->pushButton_GetFlatFieldCorrection, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetFlatFieldCorrection_Clicked()));
     connect(ui->pushButton_SetFlatFieldCorrection, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetFlatFieldCorrection_Clicked()));
     connect(ui->pushButton_RunFlatFieldCorrection, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_RunFlatFieldCorrection_Clicked()));
-    connect(ui->pushButton_GetFluexParams, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetFluexParams_Clicked()));
-    connect(ui->pushButton_SetFluexParams, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetFluexParams_Clicked()));
+    connect(ui->pushButton_GetFluxParams, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetFluxParams_Clicked()));
+    connect(ui->pushButton_SetFluxParams, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetFluxParams_Clicked()));
     connect(ui->pushButton_GetFFCParams, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetFFCParams_Clicked()));
     connect(ui->pushButton_SetFFCParams, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetFFCParams_Clicked()));
     connect(ui->pushButton_StoreUserSensorConfig, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_StoreUserSensorConfig_Clicked()));
@@ -71,7 +71,18 @@ TmWinQt::TmWinQt(QWidget *parent)
     connect(ui->pushButton_RestoreDefaultFluxParameters_160E, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_RestoreDefaultFluxParameters_160E_Clicked()));
     connect(ui->pushButton_GetGainModeState, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetGainModeState_Clicked()));
     connect(ui->pushButton_SetGainModeState, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetGainModeState_Clicked()));
-    
+    connect(ui->comboBox_LocalCameraVideoFormat, SIGNAL(currentIndexChanged(int)), pCamera, SLOT(comboBox_LocalCameraVideoFormat_Changed(int)));
+    connect(ui->comboBox_RemoteCameraVideoFormat, SIGNAL(currentIndexChanged(int)), pCamera, SLOT(comboBox_RemoteCameraVideoFormat_Changed(int)));
+    connect(ui->pushButton_GetFlatFieldCorrection_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetFlatFieldCorrection_256G_Clicked()));
+    connect(ui->pushButton_SetFlatFieldCorrection_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetFlatFieldCorrection_256G_Clicked()));
+    connect(ui->pushButton_RunFlatFieldCorrection_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_RunFlatFieldCorrection_256G_Clicked()));
+    connect(ui->pushButton_GetFFCParams_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetFFCParams_256G_Clicked()));
+    connect(ui->pushButton_SetFFCParams_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetFFCParams_256G_Clicked()));
+    connect(ui->pushButton_StoreUserSensorConfig_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_StoreUserSensorConfig_256G_Clicked()));
+    connect(ui->pushButton_RestoreDefaultSensorConfig_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_RestoreDefaultSensorConfig_256G_Clicked()));
+    connect(ui->pushButton_GetGainModeState_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetGainModeState_256G_Clicked()));
+    connect(ui->pushButton_SetGainModeState_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetGainModeState_256G_Clicked()));
+
 
     //ui->comboBox_IPAssignment->addItem(QString::fromStdString("DHCP"));
     //ui->comboBox_IPAssignment->addItem(QString::fromStdString("Static"));

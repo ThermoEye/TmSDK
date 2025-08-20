@@ -4,6 +4,7 @@ var hierarchy =
       [ "TmSDK::TmException", "class_tm_s_d_k_1_1_tm_exception.html", null ]
     ] ],
     [ "TmSDK::LocItem", "struct_tm_s_d_k_1_1_loc_item.html", null ],
+    [ "TmSDK::MediaInfo", "class_tm_s_d_k_1_1_media_info.html", null ],
     [ "TmSDK::Point", "struct_tm_s_d_k_1_1_point.html", null ],
     [ "TmSDK::Rectangle", "struct_tm_s_d_k_1_1_rectangle.html", null ],
     [ "TmSDK::RoiObject", "class_tm_s_d_k_1_1_roi_object.html", [
@@ -23,6 +24,7 @@ var hierarchy =
     [ "TmSDK::TmControl", "class_tm_s_d_k_1_1_tm_control.html", [
       [ "TmSDK::TmCtrl160", "class_tm_s_d_k_1_1_tm_ctrl160.html", null ],
       [ "TmSDK::TmCtrl256", "class_tm_s_d_k_1_1_tm_ctrl256.html", null ],
+      [ "TmSDK::TmCtrl256G", "class_tm_s_d_k_1_1_tm_ctrl256_g.html", null ],
       [ "TmSDK::TmCtrl80", "class_tm_s_d_k_1_1_tm_ctrl80.html", null ]
     ] ],
     [ "TmSDK::TmFrame", "class_tm_s_d_k_1_1_tm_frame.html", null ],

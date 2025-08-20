@@ -38,5 +38,5 @@ FORMS += \
 TMSDK_INC_PATH = $$quote($$system("echo %TMSDK_INC%"))
 TMSDK_LIB_PATH = $$quote($$system("echo %TMSDK_LIB%"))
 INCLUDEPATH += ./include $$TMSDK_INC_PATH
-LIBS += -L$$TMSDK_LIB_PATH -llibTmCore.1.1.4
+LIBS += -L$$TMSDK_LIB_PATH -llibTmCore.1.2.0
 

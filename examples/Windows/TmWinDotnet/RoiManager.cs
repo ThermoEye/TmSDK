@@ -29,7 +29,7 @@ namespace TmWinDotNet
     {
         TmRoiManager roiManager = new TmRoiManager();
 
-        private void button_RemoveAllRoi_Click(object sender, EventArgs e) 
+        private void button_RemoveAllRoi_Click(object sender, EventArgs e)
         {
             roiManager.Clear();
             updateRoiListItems();
@@ -37,8 +37,8 @@ namespace TmWinDotNet
 
         private void updateRoiListItems()
         {
-            comboBox_ListROI.Items.Clear();
-            comboBox_ListROI.Text = string.Empty;
+            comboBox_RoiList.Items.Clear();
+            comboBox_RoiList.Text = string.Empty;
 
             var itmes = roiManager.GetItems();
             if (itmes == null) return;
@@ -46,16 +46,16 @@ namespace TmWinDotNet
             foreach (var item in itmes)
             {
                 TmRoiObject roiObject = new TmRoiObject(item);
-                comboBox_ListROI.Items.Add($"ROI{roiObject.GetRoiIndex()}");
+                comboBox_RoiList.Items.Add($"ROI{roiObject.GetRoiIndex()}");
             }
 
             if (roiManager.GetItemCount() > 0)
             {
-                comboBox_ListROI.SelectedIndex = 0;
+                comboBox_RoiList.SelectedIndex = 0;
             }
             else
             {
-                comboBox_ListROI.SelectedIndex = -1;
+                comboBox_RoiList.SelectedIndex = -1;
             }
         }
 
@@ -135,17 +135,17 @@ namespace TmWinDotNet
                                     strDraw = $"ROI{shape.GetRoiIndex()}";
                                     g.DrawString(strDraw, font, Brushes.Cyan, line.start.x, (line.start.y - 14));
                                     // draw max temp
-                                    g.FillPolygon(Brushes.OrangeRed, new Point[] { 
-                                        new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y), 
-                                        new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)), 
+                                    g.FillPolygon(Brushes.OrangeRed, new Point[] {
+                                        new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y),
+                                        new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)),
                                         new Point((shape.GetMaxLoc().location.x + 4), (shape.GetMaxLoc().location.y - 4)) });
                                     strDraw = GetTempStringUnit(shape.GetMaxLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.OrangeRed, (shape.GetMaxLoc().location.x - sizeDraw.Width / 2), (shape.GetMaxLoc().location.y - 16));
                                     // draw min temp
-                                    g.FillPolygon(Brushes.DodgerBlue, new Point[] { 
-                                        new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y), 
-                                        new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)), 
+                                    g.FillPolygon(Brushes.DodgerBlue, new Point[] {
+                                        new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y),
+                                        new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)),
                                         new Point((shape.GetMinLoc().location.x + 4), (shape.GetMinLoc().location.y + 4)) });
                                     strDraw = GetTempStringUnit(shape.GetMinLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
@@ -153,8 +153,8 @@ namespace TmWinDotNet
                                     // draw average temp
                                     strDraw = GetTempStringUnit(shape.GetAvgLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
-                                    g.DrawString(strDraw, font, Brushes.White, 
-                                        (line.start.x + (line.end.x - line.start.x) / 2 - sizeDraw.Width / 2), 
+                                    g.DrawString(strDraw, font, Brushes.White,
+                                        (line.start.x + (line.end.x - line.start.x) / 2 - sizeDraw.Width / 2),
                                         (line.start.y + (line.end.y - line.start.y) / 2 + 2));
                                 }
                                 break;
@@ -169,17 +169,17 @@ namespace TmWinDotNet
                                     strDraw = $"ROI{shape.GetRoiIndex()}";
                                     g.DrawString(strDraw, font, Brushes.Cyan, rect.x, (rect.y - 14));
                                     // draw max temp
-                                    g.FillPolygon(Brushes.OrangeRed, new Point[] { 
-                                        new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y), 
-                                        new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)), 
+                                    g.FillPolygon(Brushes.OrangeRed, new Point[] {
+                                        new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y),
+                                        new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)),
                                         new Point((shape.GetMaxLoc().location.x + 4), (shape.GetMaxLoc().location.y - 4)) });
                                     strDraw = GetTempStringUnit(shape.GetMaxLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.OrangeRed, (shape.GetMaxLoc().location.x - sizeDraw.Width / 2), (shape.GetMaxLoc().location.y - 16));
                                     // draw min temp
-                                    g.FillPolygon(Brushes.DodgerBlue, new Point[] { 
-                                        new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y), 
-                                        new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)), 
+                                    g.FillPolygon(Brushes.DodgerBlue, new Point[] {
+                                        new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y),
+                                        new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)),
                                         new Point((shape.GetMinLoc().location.x + 4), (shape.GetMinLoc().location.y + 4)) });
                                     strDraw = GetTempStringUnit(shape.GetMinLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
@@ -187,8 +187,8 @@ namespace TmWinDotNet
                                     // draw average temp
                                     strDraw = GetTempStringUnit(shape.GetAvgLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
-                                    g.DrawString(strDraw, font, Brushes.White, 
-                                        (rect.x + rect.width / 2 - sizeDraw.Width / 2), 
+                                    g.DrawString(strDraw, font, Brushes.White,
+                                        (rect.x + rect.width / 2 - sizeDraw.Width / 2),
                                         (rect.y + rect.height + 2));
                                 }
                                 break;
@@ -204,17 +204,17 @@ namespace TmWinDotNet
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.Cyan, (ellipse.x + ellipse.width / 2 - sizeDraw.Width / 2), (ellipse.y - 14));
                                     // draw max temp
-                                    g.FillPolygon(Brushes.OrangeRed, new Point[] { 
-                                        new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y), 
-                                        new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)), 
+                                    g.FillPolygon(Brushes.OrangeRed, new Point[] {
+                                        new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y),
+                                        new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)),
                                         new Point((shape.GetMaxLoc().location.x + 4), (shape.GetMaxLoc().location.y - 4)) });
                                     strDraw = GetTempStringUnit(shape.GetMaxLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.OrangeRed, (shape.GetMaxLoc().location.x - sizeDraw.Width / 2), (shape.GetMaxLoc().location.y - 16));
                                     // draw min temp
-                                    g.FillPolygon(Brushes.DodgerBlue, new Point[] { 
-                                        new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y), 
-                                        new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)), 
+                                    g.FillPolygon(Brushes.DodgerBlue, new Point[] {
+                                        new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y),
+                                        new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)),
                                         new Point((shape.GetMinLoc().location.x + 4), (shape.GetMinLoc().location.y + 4)) });
                                     strDraw = GetTempStringUnit(shape.GetMinLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
@@ -222,8 +222,8 @@ namespace TmWinDotNet
                                     // draw average temp
                                     strDraw = GetTempStringUnit(shape.GetAvgLoc().value);
                                     sizeDraw = g.MeasureString(strDraw, font);
-                                    g.DrawString(strDraw, font, Brushes.White, 
-                                        (ellipse.x + ellipse.width / 2 - sizeDraw.Width / 2), 
+                                    g.DrawString(strDraw, font, Brushes.White,
+                                        (ellipse.x + ellipse.width / 2 - sizeDraw.Width / 2),
                                         (ellipse.y + ellipse.height + 2));
                                 }
                                 break;
@@ -233,7 +233,80 @@ namespace TmWinDotNet
             }
         }
 
-        private void pictureBox_Preview_Paint(object sender, PaintEventArgs e) 
+        private void radioButton_Shape_Selected(object sender, EventArgs e)
+        {
+            if (sender is RadioButton btn && btn.Checked == true)
+            {
+                switch (btn.Name)
+                {
+                    case "radioButton_ShapeCursor":
+                        roiManager.SetSelectedRoiType(TmRoiType.Hand);
+                        break;
+
+                    case "radioButton_ShapeSpot":
+                        roiManager.SetSelectedRoiType(TmRoiType.Spot);
+                        break;
+
+                    case "radioButton_ShapeLine":
+                        roiManager.SetSelectedRoiType(TmRoiType.Line);
+                        break;
+
+                    case "radioButton_ShapeRectangle":
+                        roiManager.SetSelectedRoiType(TmRoiType.Rect);
+                        break;
+
+                    case "radioButton_ShapeEllipse":
+                        roiManager.SetSelectedRoiType(TmRoiType.Ellipse);
+                        break;
+                }
+            }
+        }
+
+        private void pictureBox_Preview_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (sender is PictureBox box)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    TmPoint pt;
+                    pt.x = e.X;
+                    pt.y = e.Y;
+                    roiManager.MouseDown(pt);
+                }
+            }
+        }
+        private void pictureBox_Preview_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (sender is PictureBox box)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    TmPoint pt;
+                    pt.x = e.X;
+                    pt.y = e.Y;
+                    if (roiManager.MouseMove(pt)) box.Refresh();
+                }
+            }
+        }
+        private void pictureBox_Preview_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (sender is PictureBox box)
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    TmPoint pt;
+                    pt.x = e.X;
+                    pt.y = e.Y;
+                    if (roiManager.MouseUp(pt))
+                    {
+                        radioButton_ShapeCursor.Checked = true;
+                        updateRoiListItems();
+                    }
+                }
+            }
+        }
+
+        private void pictureBox_Preview_Paint(object sender, PaintEventArgs e)
         {
             var item = roiManager.SelectedItem();
             if (e != null && item != null)
@@ -284,78 +357,6 @@ namespace TmWinDotNet
                 }
             }
         }
-        private void pictureBox_Preview_MouseDown(object sender, MouseEventArgs e) 
-        {
-            if (sender is PictureBox box)
-            {
-                if (e.Button == MouseButtons.Left)
-                {
-                    TmPoint pt;
-                    pt.x = e.X;
-                    pt.y = e.Y;
-                    roiManager.MouseDown(pt);
-                }
-            }
-        }
-        private void pictureBox_Preview_MouseMove(object sender, MouseEventArgs e) 
-        {
-            if (sender is PictureBox box)
-            {
-                if (e.Button == MouseButtons.Left)
-                {
-                    TmPoint pt;
-                    pt.x = e.X;
-                    pt.y = e.Y;
-                    if (roiManager.MouseMove(pt)) box.Refresh();
-                }
-            }
-        }
-        private void pictureBox_Preview_MouseUp(object sender, MouseEventArgs e) 
-        {
-            if (sender is PictureBox box)
-            {
-                if (e.Button == MouseButtons.Left)
-                {
-                    TmPoint pt;
-                    pt.x = e.X;
-                    pt.y = e.Y;
-                    if (roiManager.MouseUp(pt))
-                    {
-                        radioButton_ShapeCursor.Checked = true;
-                        updateRoiListItems();
-                    }
-                }
-            }
-        }
-
-        private void radioButton_Shape_Selected(object sender, EventArgs e) 
-        {
-            if (sender is RadioButton btn && btn.Checked == true)
-            {
-                switch (btn.Name)
-                {
-                    case "radioButton_ShapeCursor":
-                        roiManager.SetSelectedRoiType(TmRoiType.Hand);
-                        break;
-
-                    case "radioButton_ShapeSpot":
-                        roiManager.SetSelectedRoiType(TmRoiType.Spot);
-                        break;
-
-                    case "radioButton_ShapeLine":
-                        roiManager.SetSelectedRoiType(TmRoiType.Line);
-                        break;
-
-                    case "radioButton_ShapeRectangle":
-                        roiManager.SetSelectedRoiType(TmRoiType.Rect);
-                        break;
-
-                    case "radioButton_ShapeEllipse":
-                        roiManager.SetSelectedRoiType(TmRoiType.Ellipse);
-                        break;
-                }
-            }
-        }
 
         private void comboBox_ListROI_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -363,22 +364,22 @@ namespace TmWinDotNet
             {
                 var item = roiManager.GetItem(box.SelectedIndex);
 
-                textBox_spotX.Text = String.Empty;
-                textBox_spotY.Text = String.Empty;
-                textBox_lineX1.Text = String.Empty;
-                textBox_lineY1.Text = String.Empty;
-                textBox_lineX2.Text = String.Empty;
-                textBox_lineY2.Text = String.Empty;
+                textBox_RoiSpotX.Text = String.Empty;
+                textBox_RoiSpotY.Text = String.Empty;
+                textBox_RoiLineX1.Text = String.Empty;
+                textBox_RoiLineY1.Text = String.Empty;
+                textBox_RoiLineX2.Text = String.Empty;
+                textBox_RoiLineY2.Text = String.Empty;
 
-                textBox_rectX.Text = String.Empty;
-                textBox_rectY.Text = String.Empty;
-                textBox_rectW.Text = String.Empty;
-                textBox_rectH.Text = String.Empty;
+                textBox_RoiRectX.Text = String.Empty;
+                textBox_RoiRectY.Text = String.Empty;
+                textBox_RoiRectW.Text = String.Empty;
+                textBox_RoiRectH.Text = String.Empty;
 
-                textBox_ellipseX.Text = String.Empty;
-                textBox_ellipseY.Text = String.Empty;
-                textBox_ellipseW.Text = String.Empty;
-                textBox_ellipseH.Text = String.Empty;
+                textBox_RoiEllipseX.Text = String.Empty;
+                textBox_RoiEllipseY.Text = String.Empty;
+                textBox_RoiEllipseW.Text = String.Empty;
+                textBox_RoiEllipseH.Text = String.Empty;
 
                 var roi = new TmRoiObject(item);
                 var type = roi.GetRoiType();
@@ -388,8 +389,8 @@ namespace TmWinDotNet
                         {
                             var roiSpot = new TmRoiSpot(item);
                             var spot = roiSpot.GetSpot();
-                            textBox_spotX.Text = spot.x.ToString();
-                            textBox_spotY.Text = spot.y.ToString();
+                            textBox_RoiSpotX.Text = spot.x.ToString();
+                            textBox_RoiSpotY.Text = spot.y.ToString();
 
                             rbtn_RoiSpot.Checked = true;
                         }
@@ -398,10 +399,10 @@ namespace TmWinDotNet
                         {
                             var roiLine = new TmRoiLine(item);
                             var line = roiLine.GetLine();
-                            textBox_lineX1.Text = line.start.x.ToString();
-                            textBox_lineY1.Text = line.start.y.ToString();
-                            textBox_lineX2.Text = line.end.x.ToString();
-                            textBox_lineY2.Text = line.end.y.ToString();
+                            textBox_RoiLineX1.Text = line.start.x.ToString();
+                            textBox_RoiLineY1.Text = line.start.y.ToString();
+                            textBox_RoiLineX2.Text = line.end.x.ToString();
+                            textBox_RoiLineY2.Text = line.end.y.ToString();
                             rbtn_RoiLine.Checked = true;
                         }
                         break;
@@ -409,10 +410,10 @@ namespace TmWinDotNet
                         {
                             var roiRect = new TmRoiRect(item);
                             var rect = roiRect.GetRect();
-                            textBox_rectX.Text = rect.x.ToString();
-                            textBox_rectY.Text = rect.y.ToString();
-                            textBox_rectW.Text = rect.width.ToString();
-                            textBox_rectH.Text = rect.height.ToString();
+                            textBox_RoiRectX.Text = rect.x.ToString();
+                            textBox_RoiRectY.Text = rect.y.ToString();
+                            textBox_RoiRectW.Text = rect.width.ToString();
+                            textBox_RoiRectH.Text = rect.height.ToString();
                             rbtn_RoiRect.Checked = true;
                         }
                         break;
@@ -420,10 +421,10 @@ namespace TmWinDotNet
                         {
                             var roiEllipse = new TmRoiEllipse(item);
                             var ellipse = roiEllipse.GetEllipse();
-                            textBox_ellipseX.Text = ellipse.x.ToString();
-                            textBox_ellipseY.Text = ellipse.y.ToString();
-                            textBox_ellipseW.Text = ellipse.width.ToString();
-                            textBox_ellipseH.Text = ellipse.height.ToString();
+                            textBox_RoiEllipseX.Text = ellipse.x.ToString();
+                            textBox_RoiEllipseY.Text = ellipse.y.ToString();
+                            textBox_RoiEllipseW.Text = ellipse.width.ToString();
+                            textBox_RoiEllipseH.Text = ellipse.height.ToString();
                             rbtn_RoiEllipse.Checked = true;
                         }
                         break;
@@ -435,47 +436,47 @@ namespace TmWinDotNet
         {
             if (rbtn_RoiSpot.Checked == true)
             {
-                if (!int.TryParse(textBox_spotX.Text, out int spotX)) return;
-                if (!int.TryParse(textBox_spotY.Text, out int spotY)) return;
+                if (!int.TryParse(textBox_RoiSpotX.Text, out int spotX)) return;
+                if (!int.TryParse(textBox_RoiSpotY.Text, out int spotY)) return;
                 roiManager.AddItem(TmRoiType.Spot, spotX, spotY);
                 updateRoiListItems();
             }
             else if (rbtn_RoiLine.Checked == true)
             {
-                if (!int.TryParse(textBox_lineX1.Text, out int x1)) return;
-                if (!int.TryParse(textBox_lineY1.Text, out int y1)) return;
-                if (!int.TryParse(textBox_lineX2.Text, out int x2)) return;
-                if (!int.TryParse(textBox_lineY2.Text, out int y2)) return;
+                if (!int.TryParse(textBox_RoiLineX1.Text, out int x1)) return;
+                if (!int.TryParse(textBox_RoiLineY1.Text, out int y1)) return;
+                if (!int.TryParse(textBox_RoiLineX2.Text, out int x2)) return;
+                if (!int.TryParse(textBox_RoiLineY2.Text, out int y2)) return;
                 roiManager.AddItem(TmRoiType.Line, x1, y1, x2, y2);
                 updateRoiListItems();
             }
             else if (rbtn_RoiRect.Checked == true)
             {
-                if (!int.TryParse(textBox_rectX.Text, out int x)) return;
-                if (!int.TryParse(textBox_rectY.Text, out int y)) return;
-                if (!int.TryParse(textBox_rectW.Text, out int w)) return;
-                if (!int.TryParse(textBox_rectH.Text, out int h)) return;
+                if (!int.TryParse(textBox_RoiRectX.Text, out int x)) return;
+                if (!int.TryParse(textBox_RoiRectY.Text, out int y)) return;
+                if (!int.TryParse(textBox_RoiRectW.Text, out int w)) return;
+                if (!int.TryParse(textBox_RoiRectH.Text, out int h)) return;
                 roiManager.AddItem(TmRoiType.Rect, x, y, w, h);
                 updateRoiListItems();
             }
             else if (rbtn_RoiEllipse.Checked == true)
             {
-                if (!int.TryParse(textBox_ellipseX.Text, out int x)) return;
-                if (!int.TryParse(textBox_ellipseY.Text, out int y)) return;
-                if (!int.TryParse(textBox_ellipseW.Text, out int w)) return;
-                if (!int.TryParse(textBox_ellipseH.Text, out int h)) return;
+                if (!int.TryParse(textBox_RoiEllipseX.Text, out int x)) return;
+                if (!int.TryParse(textBox_RoiEllipseY.Text, out int y)) return;
+                if (!int.TryParse(textBox_RoiEllipseW.Text, out int w)) return;
+                if (!int.TryParse(textBox_RoiEllipseH.Text, out int h)) return;
                 roiManager.AddItem(TmRoiType.Ellipse, x, y, w, h);
                 updateRoiListItems();
             }
         }
 
-        private void button_RemoveRoiItem_Click(object sender, EventArgs e) 
+        private void button_RemoveRoiItem_Click(object sender, EventArgs e)
         {
-            if (comboBox_ListROI.SelectedIndex >= 0)
+            if (comboBox_RoiList.SelectedIndex >= 0)
             {
                 if (roiManager.GetItemCount() == 0) return;
 
-                roiManager.RemoveAt(comboBox_ListROI.SelectedIndex);
+                roiManager.RemoveAt(comboBox_RoiList.SelectedIndex);
                 updateRoiListItems();
             }
         }

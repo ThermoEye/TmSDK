@@ -2,11 +2,12 @@ var annotated_dup =
 [
     [ "TmCore", "namespace_tm_core.html", [
       [ "TmCamera", "namespace_tm_core_1_1_tm_camera.html", [
+        [ "LocalCameraList", "class_tm_core_1_1_tm_camera_1_1_local_camera_list.html", "class_tm_core_1_1_tm_camera_1_1_local_camera_list" ],
+        [ "MediaInfo", "class_tm_core_1_1_tm_camera_1_1_media_info.html", "class_tm_core_1_1_tm_camera_1_1_media_info" ],
+        [ "RemoteCameraList", "class_tm_core_1_1_tm_camera_1_1_remote_camera_list.html", "class_tm_core_1_1_tm_camera_1_1_remote_camera_list" ],
         [ "TmCamera", "class_tm_core_1_1_tm_camera_1_1_tm_camera.html", "class_tm_core_1_1_tm_camera_1_1_tm_camera" ],
         [ "TmLocalCamInfo", "class_tm_core_1_1_tm_camera_1_1_tm_local_cam_info.html", "class_tm_core_1_1_tm_camera_1_1_tm_local_cam_info" ],
-        [ "TmLocalCamInfoStructure", "class_tm_core_1_1_tm_camera_1_1_tm_local_cam_info_structure.html", null ],
-        [ "TmRemoteCamInfo", "class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info.html", "class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info" ],
-        [ "TmRemoteCamInfoStructure", "class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info_structure.html", null ]
+        [ "TmRemoteCamInfo", "class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info.html", "class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info" ]
       ] ],
       [ "TmControl", "namespace_tm_core_1_1_tm_control.html", [
         [ "TmControl", "class_tm_core_1_1_tm_control_1_1_tm_control.html", "class_tm_core_1_1_tm_control_1_1_tm_control" ]

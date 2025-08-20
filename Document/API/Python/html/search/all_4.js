@@ -9,7 +9,8 @@ var searchData=
   ['color_5frgb_6',['COLOR_RGB',['../class_tm_core_1_1_tm_types_1_1_color_order.html#a7799b85a9287435366a88b97a472de71',1,'TmCore::TmTypes::ColorOrder']]],
   ['colormaptypes_7',['ColormapTypes',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html',1,'TmCore::TmTypes']]],
   ['colororder_8',['ColorOrder',['../class_tm_core_1_1_tm_types_1_1_color_order.html',1,'TmCore::TmTypes']]],
-  ['cool_9',['Cool',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a879ae9bb0c19e7fe7f06df8c79e4c7ab',1,'TmCore::TmTypes::ColormapTypes']]],
-  ['coordinates_2010_2010_10',['Get pixel value at coordinates (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md0',1,'']]],
-  ['creator_11',['Creator',['../index.html#CREATEINFO',1,'']]]
+  ['com_5fport_9',['com_port',['../class_tm_core_1_1_tm_camera_1_1_local_camera_list.html#abb80032a84f00b1e7359bee9951340dd',1,'TmCore::TmCamera::LocalCameraList']]],
+  ['cool_10',['Cool',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a879ae9bb0c19e7fe7f06df8c79e4c7ab',1,'TmCore::TmTypes::ColormapTypes']]],
+  ['coordinates_2010_2010_11',['Get pixel value at coordinates (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md0',1,'']]],
+  ['creator_12',['Creator',['../index.html#CREATEINFO',1,'']]]
 ];

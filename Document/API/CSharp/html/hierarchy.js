@@ -15,6 +15,7 @@ var hierarchy =
       [ "TmSDK.TmFrame", "class_tm_s_d_k_1_1_tm_frame.html", null ],
       [ "TmSDK.TmRoiManager", "class_tm_s_d_k_1_1_tm_roi_manager.html", null ]
     ] ],
+    [ "TmSDK.MediaInfo", "class_tm_s_d_k_1_1_media_info.html", null ],
     [ "TmSDK.SelfPtr", null, [
       [ "TmSDK.TmCamera", "class_tm_s_d_k_1_1_tm_camera.html", null ],
       [ "TmSDK.TmFrame", "class_tm_s_d_k_1_1_tm_frame.html", null ],

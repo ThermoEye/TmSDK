@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['rawframe_0',['rawFrame',['../class_tm_s_d_k_1_1_tm_frame.html#ac3c6a22128f2ac1ed6289ce3ea035597',1,'TmSDK::TmFrame']]],
-  ['rect_1',['Rect',['../class_tm_s_d_k_1_1_roi_rect.html#a8e318b971731875589a3fe2741b35a5e',1,'TmSDK::RoiRect']]],
-  ['roicount_2',['roiCount',['../class_tm_s_d_k_1_1_tm_roi_manager.html#ab9bbaaffcbcf92fa9d44a9dddb02dc88',1,'TmSDK::TmRoiManager']]]
+  ['plocalcamlist_0',['pLocalCamList',['../class_tm_s_d_k_1_1_tm_local_camera.html#a68b84dfae1ff639871f8e3c657aba6e5',1,'TmSDK::TmLocalCamera']]],
+  ['premotecamlist_1',['pRemoteCamList',['../class_tm_s_d_k_1_1_tm_remote_camera.html#add02b2a8315c85f2b18e85343b4496b6',1,'TmSDK::TmRemoteCamera']]]
 ];
