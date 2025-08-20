@@ -230,9 +230,9 @@ class Camera:
                 if row < 0 or row >= len(self.local_camera_list):
                     print('No camera selected')
                     return
-                ret = self.tmCamera.open_local_camera((self.local_camera_list[row])[0]
-                                                      , (self.local_camera_list[row])[1]
-                                                      , (self.local_camera_list[row])[2]
+                ret = self.tmCamera.open_local_camera(self.local_camera_list[row].name
+                                                      , self.local_camera_list[row].com_port
+                                                      , self.local_camera_list[row].index
                                                       , self.local_camera_list[row].media_info_list[self.local_camera_list[row].media_info_index].format)
                 
                 if ret:
@@ -240,13 +240,13 @@ class Camera:
 
                     self.worker.start()
                     val = self.tmCamera.get_temp_unit()
-                    if self.local_camera_list[row][0] == "TMC256B":
+                    if self.local_camera_list[row].name == "TMC256B":
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(0)
-                    elif (self.local_camera_list[row][0] == "TMC160B" or self.local_camera_list[row][0] == "TMC80B"):
+                    elif (self.local_camera_list[row].name == "TMC160B" or self.local_camera_list[row].name == "TMC80B"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(1)
-                    elif self.local_camera_list[row][0] == "TMC256GB":
+                    elif self.local_camera_list[row].name == "TMC256GB":
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(2)
 
