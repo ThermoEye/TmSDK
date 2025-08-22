@@ -1,6 +1,6 @@
 # TmSDK
 
-This project is a SDK for controlling TMC80/160/256 cameras.
+This project is a SDK for controlling TMC80/160/256/256G cameras.
 After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** file.
 
 ## Directory
@@ -54,6 +54,12 @@ Linux Python
 
 Android
 - android-24 or later
+
+ARM64 Linux
+- Ubuntu 20.04 or higher
+- Python 3.9 or higher
+- PyQt5
+- qtcreator
 
 ## Downloads
 
