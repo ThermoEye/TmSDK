@@ -1,6 +1,9 @@
 /******************************************************************
+ * Company: Thermoeye, Inc
  * Project: TmSDK
- * File: FirmwareWorker.cpp
+ * File: TmWinQt.cpp
+ * Creation Date: 2024-08-19
+ * Version: 1.0.0
  *
  * Description: This file contains the following implementations:
  * - Connecting event slots
@@ -14,6 +17,7 @@
  ****************************************************************/
 
 #include "TmWinQt.h"
+#include <QGridLayout>
 
 TmWinQt::TmWinQt(QWidget *parent)
     : QMainWindow(parent)
@@ -31,6 +35,7 @@ TmWinQt::TmWinQt(QWidget *parent)
     connect(ui->pushButton_LocalCameraConnect, SIGNAL(clicked()), pCamera, SLOT(pushButton_LocalCameraConnect_Clicked()));
     connect(ui->pushButton_RemoteCameraConnect, SIGNAL(clicked()), pCamera, SLOT(pushButton_RemoteCameraConnect_Clicked()));
     connect(ui->tabWidget_ConnectCamera, SIGNAL(currentChanged(int)), pCamera, SLOT(tabWidget_ConnectCamera_CurrentChanged(int)));
+    connect(ui->tabWidget_Control, SIGNAL(currentChanged(int)), pCamera, SLOT(tabWidget_Control_CurrentChanged(int)));
     connect(ui->listWidget_LocalCameraList, SIGNAL(currentRowChanged(int)), pCamera, SLOT(listWidget_LocalCameraList_CurrentRowChanged(int)));
     connect(ui->listWidget_RemoteCameraList, SIGNAL(currentRowChanged(int)), pCamera, SLOT(listWidget_RemoteCameraList_CurrentRowChanged(int)));
     connect(ui->comboBox_ColorMap, SIGNAL(currentIndexChanged(int)), pCamera, SLOT(comboBox_ColorMap_Changed(int)));
@@ -87,12 +92,11 @@ TmWinQt::TmWinQt(QWidget *parent)
     //ui->comboBox_IPAssignment->addItem(QString::fromStdString("DHCP"));
     //ui->comboBox_IPAssignment->addItem(QString::fromStdString("Static"));
 
-    ui->tabWidget_Control->setVisible(false);
+    // Hide widgets inside tabSensorControl
     ui->stackedWidget_SensorControl->setVisible(false);
-    ui->groupBox->setEnabled(false);
-    ui->groupBox_SenserInformation->setEnabled(false);
+    ui->groupBox_ProductInformation->setEnabled(false);
+    ui->groupBox_SensorInformation->setEnabled(false);
     ui->groupBox_SoftwareUpdate->setEnabled(false);
-    ui->groupBox_NetworkConfiguration->setEnabled(false);
     ui->comboBox_ColorMap->setEnabled(false);
     ui->comboBox_TemperatureUnit->setEnabled(false);
 

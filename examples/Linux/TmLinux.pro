@@ -45,8 +45,8 @@ else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../build/x64/debu
 
 INCLUDEPATH += ./include
 
-LIBS += -lTmCore.1.2.0
-LIBS += -lTmRtspClient.1.1.3
+LIBS += -lTmCore.2.0.0
+LIBS += -lTmRtspClient.1.1.4
 LIBS += -lopencv_world
 LIBS += -L./lib -L/usr/lib/TmSDK
 

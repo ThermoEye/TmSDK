@@ -339,6 +339,14 @@ namespace TmWinDotNet
 
                             btn.Text = "Disconnect";
                             ChangeUIWhenConnectCamera();
+                            this.comboBox_IPAssignment.Enabled = false;
+                            this.textBox_IPAddress.Enabled = false;
+                            this.textBox_Netmask.Enabled = false;
+                            this.textBox_Gateway.Enabled = false;
+                            this.textBox_MainDNSServer.Enabled = false;
+                            this.textBox_SubDNSServer.Enabled = false;
+                            this.button_SetDefaultNetworkConfiguration.Enabled = false;
+                            this.button_SystemReboot.Enabled = false;
                         }
                         else
                         {
@@ -389,6 +397,7 @@ namespace TmWinDotNet
                 textBox_RemoteCameraMACAddress.Text = items[listBox_RemoteCameraScanList.SelectedIndex].AddrMAC;
                 textBox_RemoteCameraSerialNumber.Text = items[listBox_RemoteCameraScanList.SelectedIndex].SerialNumber;
                 textBox_RemoteCameraName.Text = items[listBox_RemoteCameraScanList.SelectedIndex].Name;
+                textBox_RemoteCameraPartNumber.Text = items[listBox_RemoteCameraScanList.SelectedIndex].PartNumber;
 
                 comboBox_RemoteCameraVideoFormat.Items.Clear();
                 if (items[listBox_RemoteCameraScanList.SelectedIndex].MediaSourcesList != null)
@@ -419,6 +428,7 @@ namespace TmWinDotNet
                     textBox_RemoteCameraIPAddress.Text = items[listbox.SelectedIndex].AddrIP;
                     textBox_RemoteCameraMACAddress.Text = items[listbox.SelectedIndex].AddrMAC;
                     textBox_RemoteCameraSerialNumber.Text = items[listbox.SelectedIndex].SerialNumber;
+                    textBox_RemoteCameraPartNumber.Text = items[listbox.SelectedIndex].PartNumber;
 
                     comboBox_RemoteCameraVideoFormat.Items.Clear();
                     if (items[listbox.SelectedIndex].MediaSourcesList != null)
@@ -445,6 +455,7 @@ namespace TmWinDotNet
                     textBox_RemoteCameraIPAddress.Text = items[listbox.SelectedIndex].AddrIP;
                     textBox_RemoteCameraMACAddress.Text = items[listbox.SelectedIndex].AddrMAC;
                     textBox_RemoteCameraSerialNumber.Text = items[listbox.SelectedIndex].SerialNumber;
+                    textBox_RemoteCameraPartNumber.Text = items[listbox.SelectedIndex].PartNumber;
 
                     if (button_ConnectRemoteCamera.Text == "Connect")
                     {
@@ -519,6 +530,15 @@ namespace TmWinDotNet
                             btn.Text = "Disconnect";
 
                             ChangeUIWhenConnectCamera();
+
+                            this.comboBox_IPAssignment.Enabled = true;
+                            this.textBox_IPAddress.Enabled = true;
+                            this.textBox_Netmask.Enabled = true;
+                            this.textBox_Gateway.Enabled = true;
+                            this.textBox_MainDNSServer.Enabled = true;
+                            this.textBox_SubDNSServer.Enabled = true;
+                            this.button_SetDefaultNetworkConfiguration.Enabled = true;
+                            this.button_SystemReboot.Enabled = true;
                         }
                         else
                         {
@@ -545,8 +565,10 @@ namespace TmWinDotNet
                 case "ThermoCam160E":
                 case "TMC160E":
                 case "TMC160B":
+                case "TMC160F":
                 case "TMC80E":
                 case "TMC80B":
+                case "TMC80F":
                     panel_SensorControl_160.Visible = true;
                     panel_SensorControl_256.Visible = false;
                     panel_SensorControl_256G.Visible = false;
@@ -555,6 +577,10 @@ namespace TmWinDotNet
                 case "ThermoCam256E":
                 case "TMC256E":
                 case "TMC256B":
+                case "TMC256I":
+                case "TMC160IE":
+                case "TMC160IB":
+                case "TMC160I":
                     panel_SensorControl_160.Visible = false;
                     panel_SensorControl_256.Visible = true;
                     panel_SensorControl_256G.Visible = false;
@@ -562,6 +588,10 @@ namespace TmWinDotNet
 
                 case "TMC256GE":
                 case "TMC256GB":
+                case "TMC256G":
+                case "TMC384GE":
+                case "TMC384GB":
+                case "TMC384G":
                     panel_SensorControl_160.Visible = false;
                     panel_SensorControl_256.Visible = false;
                     panel_SensorControl_256G.Visible = true;
@@ -604,6 +634,19 @@ namespace TmWinDotNet
             StatusLabel_Name.Text = "";
             StatusLabel_CamInfo.Text = "";
             StatusLabel_fps.Text = "";
+
+            // Clear Product Information
+            label_ProductModelName.Text = "";
+            label_ProductPartNumber.Text = "";
+            label_ProductSerialNumber.Text = "";
+            label_HardwareVersion.Text = "";
+            label_BootloaderVersion.Text = "";
+            label_FirmwareVersion.Text = "";
+
+            // Clear Sensor Information
+            label_SensorModelName.Text = "";
+            label_SensorSerialNumber.Text = "";
+            label_SensorUptime.Text = "";
 
             button_ScanLocalCamera.Enabled = true;
             button_ScanRemoteCamera.Enabled = true;

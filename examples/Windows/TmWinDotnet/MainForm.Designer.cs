@@ -37,6 +37,8 @@
             this.panel_Camera = new System.Windows.Forms.Panel();
             this.tabControl_Camera = new System.Windows.Forms.TabControl();
             this.tabPage_RemoteCamera = new System.Windows.Forms.TabPage();
+            this.textBox_RemoteCameraPartNumber = new System.Windows.Forms.TextBox();
+            this.label_RemoteCameraPartNumberTitle = new System.Windows.Forms.Label();
             this.label_RemoteCameraVideoFormat = new System.Windows.Forms.Label();
             this.comboBox_RemoteCameraVideoFormat = new System.Windows.Forms.ComboBox();
             this.textBox_RemoteCameraAdapterIP = new System.Windows.Forms.TextBox();
@@ -69,13 +71,15 @@
             this.label_HardwareVersion = new System.Windows.Forms.Label();
             this.label_ProductSerialNumber = new System.Windows.Forms.Label();
             this.label_ProductModelName = new System.Windows.Forms.Label();
-            this.label_ProductSerialNumberTitle = new System.Windows.Forms.Label();
+            this.label_ProductPartNumber = new System.Windows.Forms.Label();
             this.label_ProductModelNameTitle = new System.Windows.Forms.Label();
-            this.label_FirmwareVersionTitle = new System.Windows.Forms.Label();
-            this.label_BootloaderVersionTitle = new System.Windows.Forms.Label();
             this.label_FirmwareVersion = new System.Windows.Forms.Label();
             this.label_BootloaderVersion = new System.Windows.Forms.Label();
+            this.label_FirmwareVersionTitle = new System.Windows.Forms.Label();
+            this.label_BootloaderVersionTitle = new System.Windows.Forms.Label();
             this.label_HardwareVersionTitle = new System.Windows.Forms.Label();
+            this.label_ProductSerialNumberTitle = new System.Windows.Forms.Label();
+            this.label_ProductPartNumberTitle = new System.Windows.Forms.Label();
             this.button_GetProductInformation = new System.Windows.Forms.Button();
             this.groupBox_SensorInformation = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel_SensorInfo = new System.Windows.Forms.TableLayoutPanel();
@@ -124,11 +128,35 @@
             this.button_SetNetworkConfiguration = new System.Windows.Forms.Button();
             this.comboBox_IPAssignment = new System.Windows.Forms.ComboBox();
             this.label_MainDNSServerTitle = new System.Windows.Forms.Label();
+            this.label_SplashScreenTitle = new System.Windows.Forms.Label();
+            this.comboBox_SplashScreen = new System.Windows.Forms.ComboBox();
             this.button_SystemReboot = new System.Windows.Forms.Button();
             this.button_SetDefaultNetworkConfiguration = new System.Windows.Forms.Button();
             this.tabControl_SensorConfig = new System.Windows.Forms.TabControl();
             this.tabPage_SensorControl = new System.Windows.Forms.TabPage();
             this.panel_SensorControl_256G = new System.Windows.Forms.Panel();
+            this.groupBox_FluxParameters_256G = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel_FluxParam256G = new System.Windows.Forms.TableLayoutPanel();
+            this.label_FluxParam256G_DistanceTitle = new System.Windows.Forms.Label();
+            this.label_FluxParam256G_EmissivityTitle = new System.Windows.Forms.Label();
+            this.textBox_FluxParam256G_EmissivityRange = new System.Windows.Forms.TextBox();
+            this.button_GetFluxParameters_256G = new System.Windows.Forms.Button();
+            this.button_SetFluxParameters_256G = new System.Windows.Forms.Button();
+            this.numericUpDown_FluxParam256G_Emissivity = new System.Windows.Forms.NumericUpDown();
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle = new System.Windows.Forms.Label();
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance = new System.Windows.Forms.NumericUpDown();
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange = new System.Windows.Forms.TextBox();
+            this.label_FluxParam256G_AtmosphericTemperatureTitle = new System.Windows.Forms.Label();
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature = new System.Windows.Forms.NumericUpDown();
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange = new System.Windows.Forms.TextBox();
+            this.label_FluxParam256G_AtmosphericTemperatureUnit = new System.Windows.Forms.Label();
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle = new System.Windows.Forms.Label();
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature = new System.Windows.Forms.NumericUpDown();
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit = new System.Windows.Forms.Label();
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange = new System.Windows.Forms.TextBox();
+            this.numericUpDown_FluxParam256G_Distance = new System.Windows.Forms.NumericUpDown();
+            this.label_FluxParam256G_DistanceUnit = new System.Windows.Forms.Label();
+            this.textBox_FluxParam256G_DistanceRange = new System.Windows.Forms.TextBox();
             this.groupBox_FFCParameters_256G = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel_FFCParam256G = new System.Windows.Forms.TableLayoutPanel();
             this.label_FFCParam256G_MaxIntervalTitle = new System.Windows.Forms.Label();
@@ -328,6 +356,13 @@
             this.tabControl_SensorConfig.SuspendLayout();
             this.tabPage_SensorControl.SuspendLayout();
             this.panel_SensorControl_256G.SuspendLayout();
+            this.groupBox_FluxParameters_256G.SuspendLayout();
+            this.tableLayoutPanel_FluxParam256G.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_Emissivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_AtmosphericTransmittance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_AtmosphericTemperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_AmbientReflectionTemperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_Distance)).BeginInit();
             this.groupBox_FFCParameters_256G.SuspendLayout();
             this.tableLayoutPanel_FFCParam256G.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FFCParam256G_MaxInterval)).BeginInit();
@@ -459,6 +494,8 @@
             // 
             // tabPage_RemoteCamera
             // 
+            this.tabPage_RemoteCamera.Controls.Add(this.textBox_RemoteCameraPartNumber);
+            this.tabPage_RemoteCamera.Controls.Add(this.label_RemoteCameraPartNumberTitle);
             this.tabPage_RemoteCamera.Controls.Add(this.label_RemoteCameraVideoFormat);
             this.tabPage_RemoteCamera.Controls.Add(this.comboBox_RemoteCameraVideoFormat);
             this.tabPage_RemoteCamera.Controls.Add(this.textBox_RemoteCameraAdapterIP);
@@ -482,10 +519,27 @@
             this.tabPage_RemoteCamera.Text = "Remote Camera";
             this.tabPage_RemoteCamera.UseVisualStyleBackColor = true;
             // 
+            // textBox_RemoteCameraPartNumber
+            // 
+            this.textBox_RemoteCameraPartNumber.Location = new System.Drawing.Point(95, 50);
+            this.textBox_RemoteCameraPartNumber.Name = "textBox_RemoteCameraPartNumber";
+            this.textBox_RemoteCameraPartNumber.ReadOnly = true;
+            this.textBox_RemoteCameraPartNumber.Size = new System.Drawing.Size(120, 23);
+            this.textBox_RemoteCameraPartNumber.TabIndex = 18;
+            // 
+            // label_RemoteCameraPartNumberTitle
+            // 
+            this.label_RemoteCameraPartNumberTitle.AutoSize = true;
+            this.label_RemoteCameraPartNumberTitle.Location = new System.Drawing.Point(46, 53);
+            this.label_RemoteCameraPartNumberTitle.Name = "label_RemoteCameraPartNumberTitle";
+            this.label_RemoteCameraPartNumberTitle.Size = new System.Drawing.Size(44, 15);
+            this.label_RemoteCameraPartNumberTitle.TabIndex = 17;
+            this.label_RemoteCameraPartNumberTitle.Text = "Part # :";
+            // 
             // label_RemoteCameraVideoFormat
             // 
             this.label_RemoteCameraVideoFormat.AutoSize = true;
-            this.label_RemoteCameraVideoFormat.Location = new System.Drawing.Point(9, 187);
+            this.label_RemoteCameraVideoFormat.Location = new System.Drawing.Point(9, 203);
             this.label_RemoteCameraVideoFormat.Name = "label_RemoteCameraVideoFormat";
             this.label_RemoteCameraVideoFormat.Size = new System.Drawing.Size(78, 15);
             this.label_RemoteCameraVideoFormat.TabIndex = 16;
@@ -495,7 +549,7 @@
             // 
             this.comboBox_RemoteCameraVideoFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_RemoteCameraVideoFormat.FormattingEnabled = true;
-            this.comboBox_RemoteCameraVideoFormat.Location = new System.Drawing.Point(12, 205);
+            this.comboBox_RemoteCameraVideoFormat.Location = new System.Drawing.Point(12, 221);
             this.comboBox_RemoteCameraVideoFormat.Name = "comboBox_RemoteCameraVideoFormat";
             this.comboBox_RemoteCameraVideoFormat.Size = new System.Drawing.Size(203, 23);
             this.comboBox_RemoteCameraVideoFormat.TabIndex = 15;
@@ -503,7 +557,7 @@
             // 
             // textBox_RemoteCameraAdapterIP
             // 
-            this.textBox_RemoteCameraAdapterIP.Location = new System.Drawing.Point(95, 153);
+            this.textBox_RemoteCameraAdapterIP.Location = new System.Drawing.Point(95, 177);
             this.textBox_RemoteCameraAdapterIP.Name = "textBox_RemoteCameraAdapterIP";
             this.textBox_RemoteCameraAdapterIP.ReadOnly = true;
             this.textBox_RemoteCameraAdapterIP.Size = new System.Drawing.Size(120, 23);
@@ -512,7 +566,7 @@
             // label_RemoteCameraAdapterIPTitle
             // 
             this.label_RemoteCameraAdapterIPTitle.AutoSize = true;
-            this.label_RemoteCameraAdapterIPTitle.Location = new System.Drawing.Point(23, 156);
+            this.label_RemoteCameraAdapterIPTitle.Location = new System.Drawing.Point(23, 180);
             this.label_RemoteCameraAdapterIPTitle.Name = "label_RemoteCameraAdapterIPTitle";
             this.label_RemoteCameraAdapterIPTitle.Size = new System.Drawing.Size(68, 15);
             this.label_RemoteCameraAdapterIPTitle.TabIndex = 11;
@@ -520,7 +574,7 @@
             // 
             // textBox_RemoteCameraMACAddress
             // 
-            this.textBox_RemoteCameraMACAddress.Location = new System.Drawing.Point(95, 86);
+            this.textBox_RemoteCameraMACAddress.Location = new System.Drawing.Point(95, 110);
             this.textBox_RemoteCameraMACAddress.Name = "textBox_RemoteCameraMACAddress";
             this.textBox_RemoteCameraMACAddress.ReadOnly = true;
             this.textBox_RemoteCameraMACAddress.Size = new System.Drawing.Size(120, 23);
@@ -529,7 +583,7 @@
             // label_RemoteCameraMACAddressTitle
             // 
             this.label_RemoteCameraMACAddressTitle.AutoSize = true;
-            this.label_RemoteCameraMACAddressTitle.Location = new System.Drawing.Point(51, 90);
+            this.label_RemoteCameraMACAddressTitle.Location = new System.Drawing.Point(51, 114);
             this.label_RemoteCameraMACAddressTitle.Name = "label_RemoteCameraMACAddressTitle";
             this.label_RemoteCameraMACAddressTitle.Size = new System.Drawing.Size(40, 15);
             this.label_RemoteCameraMACAddressTitle.TabIndex = 8;
@@ -537,7 +591,7 @@
             // 
             // textBox_RemoteCameraSerialNumber
             // 
-            this.textBox_RemoteCameraSerialNumber.Location = new System.Drawing.Point(95, 53);
+            this.textBox_RemoteCameraSerialNumber.Location = new System.Drawing.Point(95, 77);
             this.textBox_RemoteCameraSerialNumber.Name = "textBox_RemoteCameraSerialNumber";
             this.textBox_RemoteCameraSerialNumber.ReadOnly = true;
             this.textBox_RemoteCameraSerialNumber.Size = new System.Drawing.Size(120, 23);
@@ -546,7 +600,7 @@
             // label_RemoteCameraSerialNumberTitle
             // 
             this.label_RemoteCameraSerialNumberTitle.AutoSize = true;
-            this.label_RemoteCameraSerialNumberTitle.Location = new System.Drawing.Point(40, 57);
+            this.label_RemoteCameraSerialNumberTitle.Location = new System.Drawing.Point(40, 81);
             this.label_RemoteCameraSerialNumberTitle.Name = "label_RemoteCameraSerialNumberTitle";
             this.label_RemoteCameraSerialNumberTitle.Size = new System.Drawing.Size(51, 15);
             this.label_RemoteCameraSerialNumberTitle.TabIndex = 6;
@@ -572,7 +626,7 @@
             // label_RemoteCameraIPAddressTitle
             // 
             this.label_RemoteCameraIPAddressTitle.AutoSize = true;
-            this.label_RemoteCameraIPAddressTitle.Location = new System.Drawing.Point(23, 123);
+            this.label_RemoteCameraIPAddressTitle.Location = new System.Drawing.Point(23, 147);
             this.label_RemoteCameraIPAddressTitle.Name = "label_RemoteCameraIPAddressTitle";
             this.label_RemoteCameraIPAddressTitle.Size = new System.Drawing.Size(68, 15);
             this.label_RemoteCameraIPAddressTitle.TabIndex = 3;
@@ -580,7 +634,7 @@
             // 
             // textBox_RemoteCameraIPAddress
             // 
-            this.textBox_RemoteCameraIPAddress.Location = new System.Drawing.Point(95, 119);
+            this.textBox_RemoteCameraIPAddress.Location = new System.Drawing.Point(95, 143);
             this.textBox_RemoteCameraIPAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_RemoteCameraIPAddress.Name = "textBox_RemoteCameraIPAddress";
             this.textBox_RemoteCameraIPAddress.ReadOnly = true;
@@ -589,7 +643,7 @@
             // 
             // button_ConnectRemoteCamera
             // 
-            this.button_ConnectRemoteCamera.Location = new System.Drawing.Point(12, 237);
+            this.button_ConnectRemoteCamera.Location = new System.Drawing.Point(12, 253);
             this.button_ConnectRemoteCamera.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_ConnectRemoteCamera.Name = "button_ConnectRemoteCamera";
             this.button_ConnectRemoteCamera.Size = new System.Drawing.Size(203, 27);
@@ -603,17 +657,17 @@
             this.listBox_RemoteCameraScanList.FormattingEnabled = true;
             this.listBox_RemoteCameraScanList.HorizontalScrollbar = true;
             this.listBox_RemoteCameraScanList.ItemHeight = 15;
-            this.listBox_RemoteCameraScanList.Location = new System.Drawing.Point(12, 304);
+            this.listBox_RemoteCameraScanList.Location = new System.Drawing.Point(12, 319);
             this.listBox_RemoteCameraScanList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox_RemoteCameraScanList.Name = "listBox_RemoteCameraScanList";
-            this.listBox_RemoteCameraScanList.Size = new System.Drawing.Size(203, 124);
+            this.listBox_RemoteCameraScanList.Size = new System.Drawing.Size(203, 109);
             this.listBox_RemoteCameraScanList.TabIndex = 1;
             this.listBox_RemoteCameraScanList.Click += new System.EventHandler(this.listBox_RemoteCameraList_Click);
             this.listBox_RemoteCameraScanList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_RemoteCameraList_MouseDoubleClick);
             // 
             // button_ScanRemoteCamera
             // 
-            this.button_ScanRemoteCamera.Location = new System.Drawing.Point(11, 271);
+            this.button_ScanRemoteCamera.Location = new System.Drawing.Point(11, 287);
             this.button_ScanRemoteCamera.Name = "button_ScanRemoteCamera";
             this.button_ScanRemoteCamera.Size = new System.Drawing.Size(204, 26);
             this.button_ScanRemoteCamera.TabIndex = 0;
@@ -759,7 +813,7 @@
             this.groupBox_ProductInformation.Controls.Add(this.button_GetProductInformation);
             this.groupBox_ProductInformation.Location = new System.Drawing.Point(4, 11);
             this.groupBox_ProductInformation.Name = "groupBox_ProductInformation";
-            this.groupBox_ProductInformation.Size = new System.Drawing.Size(345, 153);
+            this.groupBox_ProductInformation.Size = new System.Drawing.Size(345, 186);
             this.groupBox_ProductInformation.TabIndex = 10;
             this.groupBox_ProductInformation.TabStop = false;
             this.groupBox_ProductInformation.Text = "Product Information";
@@ -769,32 +823,38 @@
             this.tableLayoutPanel_ProductInfo.ColumnCount = 2;
             this.tableLayoutPanel_ProductInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_ProductInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_HardwareVersion, 1, 2);
-            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductSerialNumber, 1, 1);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_HardwareVersion, 1, 3);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductSerialNumber, 1, 2);
             this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductModelName, 1, 0);
-            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductSerialNumberTitle, 0, 1);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductPartNumber, 1, 1);
             this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductModelNameTitle, 0, 0);
-            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_FirmwareVersionTitle, 0, 4);
-            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_BootloaderVersionTitle, 0, 3);
-            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_FirmwareVersion, 1, 4);
-            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_BootloaderVersion, 1, 3);
-            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_HardwareVersionTitle, 0, 2);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_FirmwareVersion, 1, 5);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_BootloaderVersion, 1, 4);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_FirmwareVersionTitle, 0, 5);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_BootloaderVersionTitle, 0, 4);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_HardwareVersionTitle, 0, 3);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductSerialNumberTitle, 0, 2);
+            this.tableLayoutPanel_ProductInfo.Controls.Add(this.label_ProductPartNumberTitle, 0, 1);
             this.tableLayoutPanel_ProductInfo.Location = new System.Drawing.Point(13, 22);
             this.tableLayoutPanel_ProductInfo.Name = "tableLayoutPanel_ProductInfo";
-            this.tableLayoutPanel_ProductInfo.RowCount = 5;
+            this.tableLayoutPanel_ProductInfo.RowCount = 6;
             this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel_ProductInfo.Size = new System.Drawing.Size(261, 120);
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_ProductInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_ProductInfo.Size = new System.Drawing.Size(261, 144);
             this.tableLayoutPanel_ProductInfo.TabIndex = 3;
             // 
             // label_HardwareVersion
             // 
             this.label_HardwareVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label_HardwareVersion.AutoSize = true;
-            this.label_HardwareVersion.Location = new System.Drawing.Point(143, 52);
+            this.label_HardwareVersion.Location = new System.Drawing.Point(143, 76);
             this.label_HardwareVersion.Name = "label_HardwareVersion";
             this.label_HardwareVersion.Size = new System.Drawing.Size(0, 15);
             this.label_HardwareVersion.TabIndex = 14;
@@ -803,7 +863,7 @@
             // 
             this.label_ProductSerialNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label_ProductSerialNumber.AutoSize = true;
-            this.label_ProductSerialNumber.Location = new System.Drawing.Point(143, 28);
+            this.label_ProductSerialNumber.Location = new System.Drawing.Point(143, 52);
             this.label_ProductSerialNumber.Name = "label_ProductSerialNumber";
             this.label_ProductSerialNumber.Size = new System.Drawing.Size(0, 15);
             this.label_ProductSerialNumber.TabIndex = 13;
@@ -817,31 +877,48 @@
             this.label_ProductModelName.Size = new System.Drawing.Size(0, 15);
             this.label_ProductModelName.TabIndex = 12;
             // 
-            // label_ProductSerialNumberTitle
+            // label_ProductPartNumber
             // 
-            this.label_ProductSerialNumberTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label_ProductSerialNumberTitle.AutoSize = true;
-            this.label_ProductSerialNumberTitle.Location = new System.Drawing.Point(4, 28);
-            this.label_ProductSerialNumberTitle.Name = "label_ProductSerialNumberTitle";
-            this.label_ProductSerialNumberTitle.Size = new System.Drawing.Size(133, 15);
-            this.label_ProductSerialNumberTitle.TabIndex = 11;
-            this.label_ProductSerialNumberTitle.Text = "Product Serial Number :";
+            this.label_ProductPartNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label_ProductPartNumber.AutoSize = true;
+            this.label_ProductPartNumber.Location = new System.Drawing.Point(143, 28);
+            this.label_ProductPartNumber.Name = "label_ProductPartNumber";
+            this.label_ProductPartNumber.Size = new System.Drawing.Size(0, 15);
+            this.label_ProductPartNumber.TabIndex = 16;
             // 
             // label_ProductModelNameTitle
             // 
             this.label_ProductModelNameTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label_ProductModelNameTitle.AutoSize = true;
-            this.label_ProductModelNameTitle.Location = new System.Drawing.Point(10, 4);
+            this.label_ProductModelNameTitle.Location = new System.Drawing.Point(90, 4);
             this.label_ProductModelNameTitle.Name = "label_ProductModelNameTitle";
-            this.label_ProductModelNameTitle.Size = new System.Drawing.Size(127, 15);
+            this.label_ProductModelNameTitle.Size = new System.Drawing.Size(47, 15);
             this.label_ProductModelNameTitle.TabIndex = 9;
-            this.label_ProductModelNameTitle.Text = "Product Model Name :";
+            this.label_ProductModelNameTitle.Text = "Model :";
+            // 
+            // label_FirmwareVersion
+            // 
+            this.label_FirmwareVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label_FirmwareVersion.AutoSize = true;
+            this.label_FirmwareVersion.Location = new System.Drawing.Point(143, 124);
+            this.label_FirmwareVersion.Name = "label_FirmwareVersion";
+            this.label_FirmwareVersion.Size = new System.Drawing.Size(0, 15);
+            this.label_FirmwareVersion.TabIndex = 6;
+            // 
+            // label_BootloaderVersion
+            // 
+            this.label_BootloaderVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label_BootloaderVersion.AutoSize = true;
+            this.label_BootloaderVersion.Location = new System.Drawing.Point(143, 100);
+            this.label_BootloaderVersion.Name = "label_BootloaderVersion";
+            this.label_BootloaderVersion.Size = new System.Drawing.Size(0, 15);
+            this.label_BootloaderVersion.TabIndex = 5;
             // 
             // label_FirmwareVersionTitle
             // 
             this.label_FirmwareVersionTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label_FirmwareVersionTitle.AutoSize = true;
-            this.label_FirmwareVersionTitle.Location = new System.Drawing.Point(34, 100);
+            this.label_FirmwareVersionTitle.Location = new System.Drawing.Point(34, 124);
             this.label_FirmwareVersionTitle.Name = "label_FirmwareVersionTitle";
             this.label_FirmwareVersionTitle.Size = new System.Drawing.Size(103, 15);
             this.label_FirmwareVersionTitle.TabIndex = 3;
@@ -851,39 +928,41 @@
             // 
             this.label_BootloaderVersionTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label_BootloaderVersionTitle.AutoSize = true;
-            this.label_BootloaderVersionTitle.Location = new System.Drawing.Point(25, 76);
+            this.label_BootloaderVersionTitle.Location = new System.Drawing.Point(25, 100);
             this.label_BootloaderVersionTitle.Name = "label_BootloaderVersionTitle";
             this.label_BootloaderVersionTitle.Size = new System.Drawing.Size(112, 15);
             this.label_BootloaderVersionTitle.TabIndex = 2;
             this.label_BootloaderVersionTitle.Text = "Bootloader Version :";
             // 
-            // label_FirmwareVersion
-            // 
-            this.label_FirmwareVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label_FirmwareVersion.AutoSize = true;
-            this.label_FirmwareVersion.Location = new System.Drawing.Point(143, 100);
-            this.label_FirmwareVersion.Name = "label_FirmwareVersion";
-            this.label_FirmwareVersion.Size = new System.Drawing.Size(0, 15);
-            this.label_FirmwareVersion.TabIndex = 6;
-            // 
-            // label_BootloaderVersion
-            // 
-            this.label_BootloaderVersion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label_BootloaderVersion.AutoSize = true;
-            this.label_BootloaderVersion.Location = new System.Drawing.Point(143, 76);
-            this.label_BootloaderVersion.Name = "label_BootloaderVersion";
-            this.label_BootloaderVersion.Size = new System.Drawing.Size(0, 15);
-            this.label_BootloaderVersion.TabIndex = 5;
-            // 
             // label_HardwareVersionTitle
             // 
             this.label_HardwareVersionTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label_HardwareVersionTitle.AutoSize = true;
-            this.label_HardwareVersionTitle.Location = new System.Drawing.Point(32, 52);
+            this.label_HardwareVersionTitle.Location = new System.Drawing.Point(32, 76);
             this.label_HardwareVersionTitle.Name = "label_HardwareVersionTitle";
             this.label_HardwareVersionTitle.Size = new System.Drawing.Size(105, 15);
             this.label_HardwareVersionTitle.TabIndex = 10;
             this.label_HardwareVersionTitle.Text = "Hardware Version :";
+            // 
+            // label_ProductSerialNumberTitle
+            // 
+            this.label_ProductSerialNumberTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label_ProductSerialNumberTitle.AutoSize = true;
+            this.label_ProductSerialNumberTitle.Location = new System.Drawing.Point(49, 52);
+            this.label_ProductSerialNumberTitle.Name = "label_ProductSerialNumberTitle";
+            this.label_ProductSerialNumberTitle.Size = new System.Drawing.Size(88, 15);
+            this.label_ProductSerialNumberTitle.TabIndex = 11;
+            this.label_ProductSerialNumberTitle.Text = "Serial Number :";
+            // 
+            // label_ProductPartNumberTitle
+            // 
+            this.label_ProductPartNumberTitle.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label_ProductPartNumberTitle.AutoSize = true;
+            this.label_ProductPartNumberTitle.Location = new System.Drawing.Point(56, 28);
+            this.label_ProductPartNumberTitle.Name = "label_ProductPartNumberTitle";
+            this.label_ProductPartNumberTitle.Size = new System.Drawing.Size(81, 15);
+            this.label_ProductPartNumberTitle.TabIndex = 15;
+            this.label_ProductPartNumberTitle.Text = "Part Number :";
             // 
             // button_GetProductInformation
             // 
@@ -900,7 +979,7 @@
             this.groupBox_SensorInformation.Controls.Add(this.tableLayoutPanel_SensorInfo);
             this.groupBox_SensorInformation.Controls.Add(this.button_GetSensorInformation);
             this.groupBox_SensorInformation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_SensorInformation.Location = new System.Drawing.Point(4, 180);
+            this.groupBox_SensorInformation.Location = new System.Drawing.Point(4, 203);
             this.groupBox_SensorInformation.Name = "groupBox_SensorInformation";
             this.groupBox_SensorInformation.Size = new System.Drawing.Size(345, 103);
             this.groupBox_SensorInformation.TabIndex = 9;
@@ -1007,7 +1086,7 @@
             this.groupBox_SoftwareUpdate.Controls.Add(this.tableLayoutPanel_SoftwareUpdateBlank);
             this.groupBox_SoftwareUpdate.Controls.Add(this.progressBar_SoftwareUpdate);
             this.groupBox_SoftwareUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_SoftwareUpdate.Location = new System.Drawing.Point(4, 301);
+            this.groupBox_SoftwareUpdate.Location = new System.Drawing.Point(4, 321);
             this.groupBox_SoftwareUpdate.Name = "groupBox_SoftwareUpdate";
             this.groupBox_SoftwareUpdate.Size = new System.Drawing.Size(345, 264);
             this.groupBox_SoftwareUpdate.TabIndex = 3;
@@ -1226,7 +1305,7 @@
             this.groupBox_NetworkConfiguration.Controls.Add(this.button_SetDefaultNetworkConfiguration);
             this.groupBox_NetworkConfiguration.Location = new System.Drawing.Point(3, 11);
             this.groupBox_NetworkConfiguration.Name = "groupBox_NetworkConfiguration";
-            this.groupBox_NetworkConfiguration.Size = new System.Drawing.Size(348, 268);
+            this.groupBox_NetworkConfiguration.Size = new System.Drawing.Size(348, 297);
             this.groupBox_NetworkConfiguration.TabIndex = 16;
             this.groupBox_NetworkConfiguration.TabStop = false;
             this.groupBox_NetworkConfiguration.Text = "Network Configuration";
@@ -1254,9 +1333,11 @@
             this.tableLayoutPanel_NetworkConfig.Controls.Add(this.button_SetNetworkConfiguration, 3, 1);
             this.tableLayoutPanel_NetworkConfig.Controls.Add(this.comboBox_IPAssignment, 2, 1);
             this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_MainDNSServerTitle, 0, 5);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.label_SplashScreenTitle, 0, 7);
+            this.tableLayoutPanel_NetworkConfig.Controls.Add(this.comboBox_SplashScreen, 2, 7);
             this.tableLayoutPanel_NetworkConfig.Location = new System.Drawing.Point(5, 22);
             this.tableLayoutPanel_NetworkConfig.Name = "tableLayoutPanel_NetworkConfig";
-            this.tableLayoutPanel_NetworkConfig.RowCount = 7;
+            this.tableLayoutPanel_NetworkConfig.RowCount = 8;
             this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
@@ -1264,7 +1345,13 @@
             this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel_NetworkConfig.Size = new System.Drawing.Size(337, 176);
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_NetworkConfig.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_NetworkConfig.Size = new System.Drawing.Size(337, 203);
             this.tableLayoutPanel_NetworkConfig.TabIndex = 11;
             // 
             // textBox_SubDNSServer
@@ -1283,7 +1370,7 @@
             this.label_SubDNSServerTitle.AutoSize = true;
             this.label_SubDNSServerTitle.Location = new System.Drawing.Point(18, 150);
             this.label_SubDNSServerTitle.Name = "label_SubDNSServerTitle";
-            this.label_SubDNSServerTitle.Size = new System.Drawing.Size(94, 26);
+            this.label_SubDNSServerTitle.Size = new System.Drawing.Size(94, 25);
             this.label_SubDNSServerTitle.TabIndex = 15;
             this.label_SubDNSServerTitle.Text = "Sub DNS Server :";
             this.label_SubDNSServerTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1313,8 +1400,8 @@
             // 
             this.button_GetNetworkConfiguration.Location = new System.Drawing.Point(118, 3);
             this.button_GetNetworkConfiguration.Name = "button_GetNetworkConfiguration";
-            this.tableLayoutPanel_NetworkConfig.SetRowSpan(this.button_GetNetworkConfiguration, 7);
-            this.button_GetNetworkConfiguration.Size = new System.Drawing.Size(33, 170);
+            this.tableLayoutPanel_NetworkConfig.SetRowSpan(this.button_GetNetworkConfiguration, 8);
+            this.button_GetNetworkConfiguration.Size = new System.Drawing.Size(33, 197);
             this.button_GetNetworkConfiguration.TabIndex = 6;
             this.button_GetNetworkConfiguration.Text = "Get";
             this.button_GetNetworkConfiguration.UseVisualStyleBackColor = true;
@@ -1409,8 +1496,8 @@
             this.button_SetNetworkConfiguration.Enabled = false;
             this.button_SetNetworkConfiguration.Location = new System.Drawing.Point(301, 28);
             this.button_SetNetworkConfiguration.Name = "button_SetNetworkConfiguration";
-            this.tableLayoutPanel_NetworkConfig.SetRowSpan(this.button_SetNetworkConfiguration, 5);
-            this.button_SetNetworkConfiguration.Size = new System.Drawing.Size(33, 97);
+            this.tableLayoutPanel_NetworkConfig.SetRowSpan(this.button_SetNetworkConfiguration, 7);
+            this.button_SetNetworkConfiguration.Size = new System.Drawing.Size(33, 168);
             this.button_SetNetworkConfiguration.TabIndex = 6;
             this.button_SetNetworkConfiguration.Text = "Set";
             this.button_SetNetworkConfiguration.UseVisualStyleBackColor = true;
@@ -1442,9 +1529,34 @@
             this.label_MainDNSServerTitle.Text = "Main DNS Server :";
             this.label_MainDNSServerTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label_SplashScreenTitle
+            // 
+            this.label_SplashScreenTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_SplashScreenTitle.AutoSize = true;
+            this.label_SplashScreenTitle.Location = new System.Drawing.Point(27, 175);
+            this.label_SplashScreenTitle.Name = "label_SplashScreenTitle";
+            this.label_SplashScreenTitle.Size = new System.Drawing.Size(85, 28);
+            this.label_SplashScreenTitle.TabIndex = 17;
+            this.label_SplashScreenTitle.Text = "Splash Screen :";
+            this.label_SplashScreenTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // comboBox_SplashScreen
+            // 
+            this.comboBox_SplashScreen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_SplashScreen.Enabled = false;
+            this.comboBox_SplashScreen.FormattingEnabled = true;
+            this.comboBox_SplashScreen.Items.AddRange(new object[] {
+            "On",
+            "Off"});
+            this.comboBox_SplashScreen.Location = new System.Drawing.Point(157, 178);
+            this.comboBox_SplashScreen.Name = "comboBox_SplashScreen";
+            this.comboBox_SplashScreen.Size = new System.Drawing.Size(138, 23);
+            this.comboBox_SplashScreen.TabIndex = 18;
+            // 
             // button_SystemReboot
             // 
-            this.button_SystemReboot.Location = new System.Drawing.Point(123, 234);
+            this.button_SystemReboot.Location = new System.Drawing.Point(123, 261);
             this.button_SystemReboot.Name = "button_SystemReboot";
             this.button_SystemReboot.Size = new System.Drawing.Size(216, 27);
             this.button_SystemReboot.TabIndex = 15;
@@ -1454,7 +1566,7 @@
             // 
             // button_SetDefaultNetworkConfiguration
             // 
-            this.button_SetDefaultNetworkConfiguration.Location = new System.Drawing.Point(123, 204);
+            this.button_SetDefaultNetworkConfiguration.Location = new System.Drawing.Point(123, 231);
             this.button_SetDefaultNetworkConfiguration.Name = "button_SetDefaultNetworkConfiguration";
             this.button_SetDefaultNetworkConfiguration.Size = new System.Drawing.Size(216, 27);
             this.button_SetDefaultNetworkConfiguration.TabIndex = 13;
@@ -1490,6 +1602,7 @@
             // 
             // panel_SensorControl_256G
             // 
+            this.panel_SensorControl_256G.Controls.Add(this.groupBox_FluxParameters_256G);
             this.panel_SensorControl_256G.Controls.Add(this.groupBox_FFCParameters_256G);
             this.panel_SensorControl_256G.Controls.Add(this.button_StoreUserSensorConfig_256G);
             this.panel_SensorControl_256G.Controls.Add(this.button_RestoreDefaultSensorConfig_256G);
@@ -1501,10 +1614,381 @@
             this.panel_SensorControl_256G.TabIndex = 14;
             this.panel_SensorControl_256G.Visible = false;
             // 
+            // groupBox_FluxParameters_256G
+            // 
+            this.groupBox_FluxParameters_256G.Controls.Add(this.tableLayoutPanel_FluxParam256G);
+            this.groupBox_FluxParameters_256G.Enabled = false;
+            this.groupBox_FluxParameters_256G.Location = new System.Drawing.Point(11, 4);
+            this.groupBox_FluxParameters_256G.Name = "groupBox_FluxParameters_256G";
+            this.groupBox_FluxParameters_256G.Size = new System.Drawing.Size(467, 155);
+            this.groupBox_FluxParameters_256G.TabIndex = 18;
+            this.groupBox_FluxParameters_256G.TabStop = false;
+            this.groupBox_FluxParameters_256G.Text = "Flux Parameters (Not Support)";
+            // 
+            // tableLayoutPanel_FluxParam256G
+            // 
+            this.tableLayoutPanel_FluxParam256G.ColumnCount = 6;
+            this.tableLayoutPanel_FluxParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 191F));
+            this.tableLayoutPanel_FluxParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel_FluxParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel_FluxParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FluxParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel_FluxParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_FluxParam256G.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.label_FluxParam256G_DistanceTitle, 0, 4);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.label_FluxParam256G_EmissivityTitle, 0, 0);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.textBox_FluxParam256G_EmissivityRange, 4, 0);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.button_GetFluxParameters_256G, 1, 0);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.button_SetFluxParameters_256G, 5, 0);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.numericUpDown_FluxParam256G_Emissivity, 2, 0);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.label_FluxParam256G_AtmosphericTransmittanceTitle, 0, 1);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.numericUpDown_FluxParam256G_AtmosphericTransmittance, 2, 1);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.textBox_FluxParam256G_AtmosphericTransmittanceRange, 4, 1);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.label_FluxParam256G_AtmosphericTemperatureTitle, 0, 2);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.numericUpDown_FluxParam256G_AtmosphericTemperature, 2, 2);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.textBox_FluxParam256G_AtmosphericTemperatureRange, 4, 2);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.label_FluxParam256G_AtmosphericTemperatureUnit, 3, 2);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.label_FluxParam256G_AmbientReflectionTemperatureTitle, 0, 3);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.numericUpDown_FluxParam256G_AmbientReflectionTemperature, 2, 3);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.label_FluxParam256G_AmbientReflectionTemperatureUnit, 3, 3);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.textBox_FluxParam256G_AmbientReflectionTemperatureRange, 4, 3);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.numericUpDown_FluxParam256G_Distance, 2, 4);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.label_FluxParam256G_DistanceUnit, 3, 4);
+            this.tableLayoutPanel_FluxParam256G.Controls.Add(this.textBox_FluxParam256G_DistanceRange, 4, 4);
+            this.tableLayoutPanel_FluxParam256G.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel_FluxParam256G.Name = "tableLayoutPanel_FluxParam256G";
+            this.tableLayoutPanel_FluxParam256G.RowCount = 5;
+            this.tableLayoutPanel_FluxParam256G.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256G.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256G.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256G.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256G.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel_FluxParam256G.Size = new System.Drawing.Size(455, 130);
+            this.tableLayoutPanel_FluxParam256G.TabIndex = 10;
+            // 
+            // label_FluxParam256G_DistanceTitle
+            // 
+            this.label_FluxParam256G_DistanceTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_FluxParam256G_DistanceTitle.AutoSize = true;
+            this.label_FluxParam256G_DistanceTitle.Location = new System.Drawing.Point(130, 104);
+            this.label_FluxParam256G_DistanceTitle.Name = "label_FluxParam256G_DistanceTitle";
+            this.label_FluxParam256G_DistanceTitle.Size = new System.Drawing.Size(58, 26);
+            this.label_FluxParam256G_DistanceTitle.TabIndex = 25;
+            this.label_FluxParam256G_DistanceTitle.Text = "Distance :";
+            this.label_FluxParam256G_DistanceTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_FluxParam256G_EmissivityTitle
+            // 
+            this.label_FluxParam256G_EmissivityTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_FluxParam256G_EmissivityTitle.AutoSize = true;
+            this.label_FluxParam256G_EmissivityTitle.Location = new System.Drawing.Point(123, 0);
+            this.label_FluxParam256G_EmissivityTitle.Name = "label_FluxParam256G_EmissivityTitle";
+            this.label_FluxParam256G_EmissivityTitle.Size = new System.Drawing.Size(65, 26);
+            this.label_FluxParam256G_EmissivityTitle.TabIndex = 1;
+            this.label_FluxParam256G_EmissivityTitle.Text = "Emissivity :";
+            this.label_FluxParam256G_EmissivityTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // textBox_FluxParam256G_EmissivityRange
+            // 
+            this.textBox_FluxParam256G_EmissivityRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256G_EmissivityRange.Enabled = false;
+            this.textBox_FluxParam256G_EmissivityRange.Location = new System.Drawing.Point(319, 3);
+            this.textBox_FluxParam256G_EmissivityRange.Name = "textBox_FluxParam256G_EmissivityRange";
+            this.textBox_FluxParam256G_EmissivityRange.ReadOnly = true;
+            this.textBox_FluxParam256G_EmissivityRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256G_EmissivityRange.TabIndex = 9;
+            this.textBox_FluxParam256G_EmissivityRange.Text = "0.00 ~ 1.00";
+            this.textBox_FluxParam256G_EmissivityRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button_GetFluxParameters_256G
+            // 
+            this.button_GetFluxParameters_256G.Location = new System.Drawing.Point(194, 3);
+            this.button_GetFluxParameters_256G.Name = "button_GetFluxParameters_256G";
+            this.tableLayoutPanel_FluxParam256G.SetRowSpan(this.button_GetFluxParameters_256G, 5);
+            this.button_GetFluxParameters_256G.Size = new System.Drawing.Size(33, 124);
+            this.button_GetFluxParameters_256G.TabIndex = 6;
+            this.button_GetFluxParameters_256G.Text = "Get";
+            this.button_GetFluxParameters_256G.UseVisualStyleBackColor = true;
+            // 
+            // button_SetFluxParameters_256G
+            // 
+            this.button_SetFluxParameters_256G.Enabled = false;
+            this.button_SetFluxParameters_256G.Location = new System.Drawing.Point(419, 3);
+            this.button_SetFluxParameters_256G.Name = "button_SetFluxParameters_256G";
+            this.tableLayoutPanel_FluxParam256G.SetRowSpan(this.button_SetFluxParameters_256G, 5);
+            this.button_SetFluxParameters_256G.Size = new System.Drawing.Size(34, 124);
+            this.button_SetFluxParameters_256G.TabIndex = 6;
+            this.button_SetFluxParameters_256G.Text = "Set";
+            this.button_SetFluxParameters_256G.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown_FluxParam256G_Emissivity
+            // 
+            this.numericUpDown_FluxParam256G_Emissivity.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256G_Emissivity.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam256G_Emissivity.Enabled = false;
+            this.numericUpDown_FluxParam256G_Emissivity.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam256G_Emissivity.Location = new System.Drawing.Point(233, 3);
+            this.numericUpDown_FluxParam256G_Emissivity.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam256G_Emissivity.Name = "numericUpDown_FluxParam256G_Emissivity";
+            this.numericUpDown_FluxParam256G_Emissivity.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256G_Emissivity.TabIndex = 12;
+            this.numericUpDown_FluxParam256G_Emissivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256G_Emissivity.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256G_Emissivity.Value = new decimal(new int[] {
+            98,
+            0,
+            0,
+            131072});
+            // 
+            // label_FluxParam256G_AtmosphericTransmittanceTitle
+            // 
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle.AutoSize = true;
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle.Location = new System.Drawing.Point(25, 26);
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle.Name = "label_FluxParam256G_AtmosphericTransmittanceTitle";
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle.Size = new System.Drawing.Size(163, 26);
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle.TabIndex = 10;
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle.Text = "Transmittance (Not Support) :";
+            this.label_FluxParam256G_AtmosphericTransmittanceTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numericUpDown_FluxParam256G_AtmosphericTransmittance
+            // 
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.DecimalPlaces = 2;
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.Enabled = false;
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.Location = new System.Drawing.Point(233, 29);
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.Name = "numericUpDown_FluxParam256G_AtmosphericTransmittance";
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.TabIndex = 14;
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256G_AtmosphericTransmittance.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            131072});
+            // 
+            // textBox_FluxParam256G_AtmosphericTransmittanceRange
+            // 
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.Enabled = false;
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.Location = new System.Drawing.Point(319, 29);
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.Name = "textBox_FluxParam256G_AtmosphericTransmittanceRange";
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.ReadOnly = true;
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.TabIndex = 9;
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.Text = "0.00 ~ 1.00";
+            this.textBox_FluxParam256G_AtmosphericTransmittanceRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label_FluxParam256G_AtmosphericTemperatureTitle
+            // 
+            this.label_FluxParam256G_AtmosphericTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_FluxParam256G_AtmosphericTemperatureTitle.AutoSize = true;
+            this.label_FluxParam256G_AtmosphericTemperatureTitle.Location = new System.Drawing.Point(38, 52);
+            this.label_FluxParam256G_AtmosphericTemperatureTitle.Name = "label_FluxParam256G_AtmosphericTemperatureTitle";
+            this.label_FluxParam256G_AtmosphericTemperatureTitle.Size = new System.Drawing.Size(150, 26);
+            this.label_FluxParam256G_AtmosphericTemperatureTitle.TabIndex = 11;
+            this.label_FluxParam256G_AtmosphericTemperatureTitle.Text = "Atmospheric Temperature :";
+            this.label_FluxParam256G_AtmosphericTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numericUpDown_FluxParam256G_AtmosphericTemperature
+            // 
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.DecimalPlaces = 1;
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Enabled = false;
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Location = new System.Drawing.Point(233, 55);
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Name = "numericUpDown_FluxParam256G_AtmosphericTemperature";
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.TabIndex = 15;
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256G_AtmosphericTemperature.Value = new decimal(new int[] {
+            230,
+            0,
+            0,
+            65536});
+            // 
+            // textBox_FluxParam256G_AtmosphericTemperatureRange
+            // 
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.Enabled = false;
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.Location = new System.Drawing.Point(319, 55);
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.Name = "textBox_FluxParam256G_AtmosphericTemperatureRange";
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.ReadOnly = true;
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.TabIndex = 9;
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.Text = "-100 ~ 1000";
+            this.textBox_FluxParam256G_AtmosphericTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label_FluxParam256G_AtmosphericTemperatureUnit
+            // 
+            this.label_FluxParam256G_AtmosphericTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam256G_AtmosphericTemperatureUnit.AutoSize = true;
+            this.label_FluxParam256G_AtmosphericTemperatureUnit.Location = new System.Drawing.Point(296, 57);
+            this.label_FluxParam256G_AtmosphericTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam256G_AtmosphericTemperatureUnit.Name = "label_FluxParam256G_AtmosphericTemperatureUnit";
+            this.label_FluxParam256G_AtmosphericTemperatureUnit.Size = new System.Drawing.Size(19, 15);
+            this.label_FluxParam256G_AtmosphericTemperatureUnit.TabIndex = 22;
+            this.label_FluxParam256G_AtmosphericTemperatureUnit.Text = "℃";
+            // 
+            // label_FluxParam256G_AmbientReflectionTemperatureTitle
+            // 
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle.AutoSize = true;
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle.Location = new System.Drawing.Point(4, 78);
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle.Name = "label_FluxParam256G_AmbientReflectionTemperatureTitle";
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle.Size = new System.Drawing.Size(184, 26);
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle.TabIndex = 11;
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle.Text = "Ambient Reflection Temperature :";
+            this.label_FluxParam256G_AmbientReflectionTemperatureTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numericUpDown_FluxParam256G_AmbientReflectionTemperature
+            // 
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.DecimalPlaces = 1;
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Enabled = false;
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Location = new System.Drawing.Point(233, 81);
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Name = "numericUpDown_FluxParam256G_AmbientReflectionTemperature";
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.TabIndex = 16;
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256G_AmbientReflectionTemperature.Value = new decimal(new int[] {
+            230,
+            0,
+            0,
+            65536});
+            // 
+            // label_FluxParam256G_AmbientReflectionTemperatureUnit
+            // 
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit.AutoSize = true;
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit.Location = new System.Drawing.Point(296, 83);
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit.Name = "label_FluxParam256G_AmbientReflectionTemperatureUnit";
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit.Size = new System.Drawing.Size(19, 15);
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit.TabIndex = 24;
+            this.label_FluxParam256G_AmbientReflectionTemperatureUnit.Text = "℃";
+            // 
+            // textBox_FluxParam256G_AmbientReflectionTemperatureRange
+            // 
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.Enabled = false;
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.Location = new System.Drawing.Point(319, 81);
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.Name = "textBox_FluxParam256G_AmbientReflectionTemperatureRange";
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.ReadOnly = true;
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.TabIndex = 9;
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.Text = "-100 ~ 1000";
+            this.textBox_FluxParam256G_AmbientReflectionTemperatureRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // numericUpDown_FluxParam256G_Distance
+            // 
+            this.numericUpDown_FluxParam256G_Distance.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.numericUpDown_FluxParam256G_Distance.DecimalPlaces = 1;
+            this.numericUpDown_FluxParam256G_Distance.Enabled = false;
+            this.numericUpDown_FluxParam256G_Distance.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDown_FluxParam256G_Distance.Location = new System.Drawing.Point(233, 107);
+            this.numericUpDown_FluxParam256G_Distance.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numericUpDown_FluxParam256G_Distance.Name = "numericUpDown_FluxParam256G_Distance";
+            this.numericUpDown_FluxParam256G_Distance.Size = new System.Drawing.Size(60, 23);
+            this.numericUpDown_FluxParam256G_Distance.TabIndex = 26;
+            this.numericUpDown_FluxParam256G_Distance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericUpDown_FluxParam256G_Distance.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numericUpDown_FluxParam256G_Distance.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            65536});
+            // 
+            // label_FluxParam256G_DistanceUnit
+            // 
+            this.label_FluxParam256G_DistanceUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label_FluxParam256G_DistanceUnit.AutoSize = true;
+            this.label_FluxParam256G_DistanceUnit.Location = new System.Drawing.Point(297, 109);
+            this.label_FluxParam256G_DistanceUnit.Margin = new System.Windows.Forms.Padding(0);
+            this.label_FluxParam256G_DistanceUnit.Name = "label_FluxParam256G_DistanceUnit";
+            this.label_FluxParam256G_DistanceUnit.Size = new System.Drawing.Size(18, 15);
+            this.label_FluxParam256G_DistanceUnit.TabIndex = 27;
+            this.label_FluxParam256G_DistanceUnit.Text = "m";
+            // 
+            // textBox_FluxParam256G_DistanceRange
+            // 
+            this.textBox_FluxParam256G_DistanceRange.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.textBox_FluxParam256G_DistanceRange.Enabled = false;
+            this.textBox_FluxParam256G_DistanceRange.Location = new System.Drawing.Point(319, 107);
+            this.textBox_FluxParam256G_DistanceRange.Name = "textBox_FluxParam256G_DistanceRange";
+            this.textBox_FluxParam256G_DistanceRange.ReadOnly = true;
+            this.textBox_FluxParam256G_DistanceRange.Size = new System.Drawing.Size(94, 23);
+            this.textBox_FluxParam256G_DistanceRange.TabIndex = 28;
+            this.textBox_FluxParam256G_DistanceRange.Text = "0 ~ 30";
+            this.textBox_FluxParam256G_DistanceRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // groupBox_FFCParameters_256G
             // 
             this.groupBox_FFCParameters_256G.Controls.Add(this.tableLayoutPanel_FFCParam256G);
-            this.groupBox_FFCParameters_256G.Location = new System.Drawing.Point(6, 3);
+            this.groupBox_FFCParameters_256G.Location = new System.Drawing.Point(11, 161);
             this.groupBox_FFCParameters_256G.Name = "groupBox_FFCParameters_256G";
             this.groupBox_FFCParameters_256G.Size = new System.Drawing.Size(467, 54);
             this.groupBox_FFCParameters_256G.TabIndex = 17;
@@ -4000,6 +4484,14 @@
             this.tabControl_SensorConfig.ResumeLayout(false);
             this.tabPage_SensorControl.ResumeLayout(false);
             this.panel_SensorControl_256G.ResumeLayout(false);
+            this.groupBox_FluxParameters_256G.ResumeLayout(false);
+            this.tableLayoutPanel_FluxParam256G.ResumeLayout(false);
+            this.tableLayoutPanel_FluxParam256G.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_Emissivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_AtmosphericTransmittance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_AtmosphericTemperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_AmbientReflectionTemperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_Distance)).EndInit();
             this.groupBox_FFCParameters_256G.ResumeLayout(false);
             this.tableLayoutPanel_FFCParam256G.ResumeLayout(false);
             this.tableLayoutPanel_FFCParam256G.PerformLayout();
@@ -4157,6 +4649,7 @@
         private System.Windows.Forms.Label label_HardwareVersion;
         private System.Windows.Forms.Label label_ProductSerialNumber;
         private System.Windows.Forms.Label label_ProductModelName;
+        private System.Windows.Forms.Label label_ProductPartNumber;
         private System.Windows.Forms.GroupBox groupBox_SensorInformation;
         private System.Windows.Forms.GroupBox groupBox_ProductInformation;
         private System.Windows.Forms.GroupBox groupBox_FluxParameters_160;
@@ -4347,6 +4840,33 @@
         private System.Windows.Forms.Label label_RemoteCameraVideoFormat;
         private System.Windows.Forms.ComboBox comboBox_RemoteCameraVideoFormat;
         private System.Windows.Forms.RadioButton radioButton_GainModeStateAuto_256G;
+        private System.Windows.Forms.Label label_ProductPartNumberTitle;
+        private System.Windows.Forms.Label label_SplashScreenTitle;
+        private System.Windows.Forms.TextBox textBox_RemoteCameraPartNumber;
+        private System.Windows.Forms.Label label_RemoteCameraPartNumberTitle;
+        private System.Windows.Forms.GroupBox groupBox_FluxParameters_256G;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_FluxParam256G;
+        private System.Windows.Forms.Label label_FluxParam256G_DistanceTitle;
+        private System.Windows.Forms.Label label_FluxParam256G_EmissivityTitle;
+        private System.Windows.Forms.TextBox textBox_FluxParam256G_EmissivityRange;
+        private System.Windows.Forms.Button button_GetFluxParameters_256G;
+        private System.Windows.Forms.Button button_SetFluxParameters_256G;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256G_Emissivity;
+        private System.Windows.Forms.Label label_FluxParam256G_AtmosphericTransmittanceTitle;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256G_AtmosphericTransmittance;
+        private System.Windows.Forms.TextBox textBox_FluxParam256G_AtmosphericTransmittanceRange;
+        private System.Windows.Forms.Label label_FluxParam256G_AtmosphericTemperatureTitle;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256G_AtmosphericTemperature;
+        private System.Windows.Forms.TextBox textBox_FluxParam256G_AtmosphericTemperatureRange;
+        private System.Windows.Forms.Label label_FluxParam256G_AtmosphericTemperatureUnit;
+        private System.Windows.Forms.Label label_FluxParam256G_AmbientReflectionTemperatureTitle;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256G_AmbientReflectionTemperature;
+        private System.Windows.Forms.Label label_FluxParam256G_AmbientReflectionTemperatureUnit;
+        private System.Windows.Forms.TextBox textBox_FluxParam256G_AmbientReflectionTemperatureRange;
+        private System.Windows.Forms.NumericUpDown numericUpDown_FluxParam256G_Distance;
+        private System.Windows.Forms.Label label_FluxParam256G_DistanceUnit;
+        private System.Windows.Forms.TextBox textBox_FluxParam256G_DistanceRange;
+        private System.Windows.Forms.ComboBox comboBox_SplashScreen;
     }
 }
 

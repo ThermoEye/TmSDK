@@ -389,7 +389,6 @@ class SensorControl:
 
     def pushButton_GetFlatFieldCorrection_256G_Clicked(self):
         ret, ffcMode = self.camera.tmCamera.tmControl.get_flat_field_correction_mode()
-        print(f"FFC Mode: {ffcMode}")
         if ret:
             if ffcMode==0: #Manual
                 self.main_window.radioButton_FlatFieldCorrectionManual_256G.setChecked(True)

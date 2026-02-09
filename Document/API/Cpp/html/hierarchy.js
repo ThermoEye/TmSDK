@@ -23,8 +23,10 @@ var hierarchy =
     ] ],
     [ "TmSDK::TmControl", "class_tm_s_d_k_1_1_tm_control.html", [
       [ "TmSDK::TmCtrl160", "class_tm_s_d_k_1_1_tm_ctrl160.html", null ],
+      [ "TmSDK::TmCtrl160I", "class_tm_s_d_k_1_1_tm_ctrl160_i.html", null ],
       [ "TmSDK::TmCtrl256", "class_tm_s_d_k_1_1_tm_ctrl256.html", null ],
       [ "TmSDK::TmCtrl256G", "class_tm_s_d_k_1_1_tm_ctrl256_g.html", null ],
+      [ "TmSDK::TmCtrl384G", "class_tm_s_d_k_1_1_tm_ctrl384_g.html", null ],
       [ "TmSDK::TmCtrl80", "class_tm_s_d_k_1_1_tm_ctrl80.html", null ]
     ] ],
     [ "TmSDK::TmFrame", "class_tm_s_d_k_1_1_tm_frame.html", null ],

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1129</width>
+    <width>1154</width>
     <height>781</height>
    </rect>
   </property>
@@ -45,9 +45,9 @@
           <height>52</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout">
+        <layout class="QGridLayout" name="gridLayout_LocalCamera">
          <item row="0" column="0">
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="label_LocalCameraNameTitle">
            <property name="text">
             <string>Name :</string>
            </property>
@@ -57,7 +57,7 @@
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QLabel" name="label_2">
+          <widget class="QLabel" name="label_LocalCameraComPort">
            <property name="text">
             <string>Com Port :</string>
            </property>
@@ -110,7 +110,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_29">
+       <widget class="QLabel" name="label_LocalCameraVideoFormat">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -142,7 +142,7 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>223</y>
+          <y>253</y>
           <width>241</width>
           <height>23</height>
          </rect>
@@ -155,7 +155,7 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>182</y>
+          <y>180</y>
           <width>241</width>
           <height>23</height>
          </rect>
@@ -170,20 +170,33 @@
           <x>0</x>
           <y>10</y>
           <width>241</width>
-          <height>126</height>
+          <height>152</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="2" column="1">
+        <layout class="QGridLayout" name="gridLayout_RemoteCamera">
+         <item row="3" column="1">
           <widget class="QLineEdit" name="lineEdit_RemoteCameraMac"/>
          </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="lineEdit_RemoteCameraIp"/>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_6">
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_RemoteCameraIPAddressTitle">
            <property name="text">
             <string>IP Address :</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="lineEdit_RemoteCameraAdapterIp"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="lineEdit_RemoteCameraIp"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_RemoteCameraAdapterIPTitle">
+           <property name="text">
+            <string>Adapter IP :</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -194,7 +207,7 @@
           <widget class="QLineEdit" name="lineEdit_RemoteCameraName"/>
          </item>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="label_RemoteCameraNameTitle">
            <property name="text">
             <string>Name :</string>
            </property>
@@ -203,11 +216,11 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
+         <item row="2" column="1">
           <widget class="QLineEdit" name="lineEdit_RemoteCameraSerial"/>
          </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_5">
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_RemoteCameraMACAddressTitle">
            <property name="text">
             <string>MAC Address :</string>
            </property>
@@ -216,28 +229,28 @@
            </property>
           </widget>
          </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit_RemoteCameraPartNumber"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_RemoteCameraSerialNumberTitle">
+           <property name="text">
+            <string>Serial # :</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="0">
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="label_RemoteCameraPartNumberTitle">
            <property name="text">
-            <string>Serial :</string>
+            <string>Part # :</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_57">
-           <property name="text">
-            <string>Adapter IP :</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="lineEdit_RemoteCameraAdapterIp"/>
          </item>
         </layout>
        </widget>
@@ -245,9 +258,9 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>250</y>
+          <y>280</y>
           <width>241</width>
-          <height>161</height>
+          <height>131</height>
          </rect>
         </property>
        </widget>
@@ -255,17 +268,17 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>153</y>
+          <y>223</y>
           <width>241</width>
           <height>22</height>
          </rect>
         </property>
        </widget>
-       <widget class="QLabel" name="label_58">
+       <widget class="QLabel" name="label_RemoteCameraVideoFormat">
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>140</y>
+          <y>210</y>
           <width>241</width>
           <height>12</height>
          </rect>
@@ -281,7 +294,7 @@
      <widget class="QTabWidget" name="tabWidget_Product">
       <property name="minimumSize">
        <size>
-        <width>340</width>
+        <width>380</width>
         <height>550</height>
        </size>
       </property>
@@ -294,17 +307,17 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="tab_Product">
        <attribute name="title">
         <string>Product</string>
        </attribute>
-       <widget class="QGroupBox" name="groupBox">
+       <widget class="QGroupBox" name="groupBox_ProductInformation">
         <property name="geometry">
          <rect>
-          <x>0</x>
+          <x>6</x>
           <y>10</y>
-          <width>331</width>
-          <height>141</height>
+          <width>361</width>
+          <height>171</height>
          </rect>
         </property>
         <property name="title">
@@ -314,12 +327,12 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>20</y>
-           <width>311</width>
-           <height>112</height>
+           <y>30</y>
+           <width>341</width>
+           <height>116</height>
           </rect>
          </property>
-         <layout class="QGridLayout" name="gridLayout_4">
+         <layout class="QGridLayout" name="gridLayout_ProductInformation">
           <item row="0" column="1">
            <widget class="QLabel" name="label_ProductModelName">
             <property name="text">
@@ -327,85 +340,24 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_13">
-            <property name="text">
-             <string>Product Serial Number : </string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="label_HardwareVersion">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
+          <item row="5" column="1">
            <widget class="QLabel" name="label_FirmwareVersion">
             <property name="text">
              <string/>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="label_ProductSerialNumber">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_14">
-            <property name="text">
-             <string>Hardware Version : </string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_16">
-            <property name="text">
-             <string>Firmware Version : </string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QLabel" name="label_BootloaderVersion">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_12">
+           <widget class="QLabel" name="label_ProductModelNameTitle">
             <property name="text">
-             <string>Product Model Name : </string>
+             <string>Model : </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_15">
-            <property name="text">
-             <string>Bootloader Version : </string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2" rowspan="5">
+          <item row="0" column="2" rowspan="6">
            <widget class="QPushButton" name="pushButton_GetProductInformation">
             <property name="minimumSize">
              <size>
@@ -424,16 +376,94 @@
             </property>
            </widget>
           </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="label_BootloaderVersion">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="label_HardwareVersion">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="label_ProductSerialNumber">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_FirmwareVersionTitle">
+            <property name="text">
+             <string>Firmware Version : </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_BootloaderVersionTitle">
+            <property name="text">
+             <string>Bootloader Version : </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_HardwareVersionTitle">
+            <property name="text">
+             <string>Hardware Version : </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="label_ProductPartNumber">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_ProductSerialNumberTitle">
+            <property name="text">
+             <string>Serial Number : </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_ProductPartNumberTitle">
+            <property name="text">
+             <string>Part Number : </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </widget>
-       <widget class="QGroupBox" name="groupBox_SenserInformation">
+       <widget class="QGroupBox" name="groupBox_SensorInformation">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>160</y>
-          <width>331</width>
-          <height>91</height>
+          <x>6</x>
+          <y>190</y>
+          <width>361</width>
+          <height>111</height>
          </rect>
         </property>
         <property name="title">
@@ -443,12 +473,12 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>20</y>
-           <width>311</width>
+           <y>26</y>
+           <width>341</width>
            <height>62</height>
           </rect>
          </property>
-         <layout class="QGridLayout" name="gridLayout_5">
+         <layout class="QGridLayout" name="gridLayout_SensorInfomation">
           <item row="0" column="2" rowspan="3">
            <widget class="QPushButton" name="pushButton_GetSensorInformation">
             <property name="minimumSize">
@@ -469,7 +499,7 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_17">
+           <widget class="QLabel" name="label_SensorSeriialNumberTitle">
             <property name="text">
              <string>Sensor Serial Number : </string>
             </property>
@@ -479,7 +509,7 @@
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_20">
+           <widget class="QLabel" name="label_SensorModelNameTitle">
             <property name="text">
              <string>Sensor Model Name : </string>
             </property>
@@ -503,7 +533,7 @@
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="label_18">
+           <widget class="QLabel" name="label_SensorUptimeTitle">
             <property name="text">
              <string>Sensor Uptime : </string>
             </property>
@@ -525,10 +555,10 @@
        <widget class="QGroupBox" name="groupBox_SoftwareUpdate">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>260</y>
-          <width>331</width>
-          <height>281</height>
+          <x>6</x>
+          <y>310</y>
+          <width>361</width>
+          <height>291</height>
          </rect>
         </property>
         <property name="title">
@@ -538,12 +568,12 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>20</y>
-           <width>311</width>
+           <y>23</y>
+           <width>341</width>
            <height>251</height>
           </rect>
          </property>
-         <layout class="QGridLayout" name="gridLayout_7">
+         <layout class="QGridLayout" name="gridLayout_SoftwareUpdate">
           <item row="1" column="1">
            <widget class="QLabel" name="label_VendorName">
             <property name="text">
@@ -566,7 +596,7 @@
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="label_26">
+           <widget class="QLabel" name="label_VersionTitle">
             <property name="minimumSize">
              <size>
               <width>140</width>
@@ -592,7 +622,7 @@
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_24">
+           <widget class="QLabel" name="label_BinaryInformationTitle">
             <property name="minimumSize">
              <size>
               <width>140</width>
@@ -608,7 +638,7 @@
            </widget>
           </item>
           <item row="4" column="0">
-           <widget class="QLabel" name="label_27">
+           <widget class="QLabel" name="label_BuildTimeTitle">
             <property name="minimumSize">
              <size>
               <width>140</width>
@@ -624,7 +654,7 @@
            </widget>
           </item>
           <item row="5" column="0">
-           <widget class="QLabel" name="label_28">
+           <widget class="QLabel" name="label_SizeTitle">
             <property name="minimumSize">
              <size>
               <width>140</width>
@@ -657,7 +687,7 @@
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="label_25">
+           <widget class="QLabel" name="label_ProductNameTitle">
             <property name="minimumSize">
              <size>
               <width>140</width>
@@ -680,7 +710,7 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_23">
+           <widget class="QLabel" name="label_VendorNameTitle">
             <property name="minimumSize">
              <size>
               <width>140</width>
@@ -696,7 +726,7 @@
            </widget>
           </item>
           <item row="8" column="0" colspan="2">
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <layout class="QHBoxLayout" name="horizontalLayout_SoftwareUpdateBrowse">
             <item>
              <widget class="QPushButton" name="pushButton_SoftwareUpdateFileBrowse">
               <property name="text">
@@ -726,17 +756,17 @@
         </widget>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_4">
+      <widget class="QWidget" name="tab_NetworkConfiguration">
        <attribute name="title">
         <string>Network</string>
        </attribute>
        <widget class="QGroupBox" name="groupBox_NetworkConfiguration">
         <property name="geometry">
          <rect>
-          <x>10</x>
+          <x>7</x>
           <y>10</y>
-          <width>311</width>
-          <height>331</height>
+          <width>361</width>
+          <height>351</height>
          </rect>
         </property>
         <property name="title">
@@ -745,25 +775,22 @@
         <widget class="QWidget" name="gridLayoutWidget_6">
          <property name="geometry">
           <rect>
-           <x>10</x>
-           <y>20</y>
-           <width>291</width>
-           <height>301</height>
+           <x>12</x>
+           <y>24</y>
+           <width>341</width>
+           <height>304</height>
           </rect>
          </property>
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_116">
+         <layout class="QGridLayout" name="gridLayout_NetworkConfiguration">
+          <item row="9" column="1" colspan="3">
+           <widget class="QPushButton" name="pushButton_SystemReboot">
             <property name="text">
-             <string>Netmask :</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             <string>Reboot to Apply Changes</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="2">
-           <widget class="QLineEdit" name="lineEdit_Netmask">
+          <item row="2" column="2">
+           <widget class="QLineEdit" name="lineEdit_IPAddress">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -776,141 +803,6 @@
             </property>
             <property name="readOnly">
              <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3" rowspan="4">
-           <widget class="QPushButton" name="pushButton_SetNetworkConfiguration">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>110</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>50</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Set</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="label_117">
-            <property name="text">
-             <string>Gateway :</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="label_119">
-            <property name="text">
-             <string>Sub DNS Server :</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_21">
-            <property name="text">
-             <string>IP Assignment :</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="2">
-           <widget class="QLineEdit" name="lineEdit_MainDNSServer">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" rowspan="7">
-           <widget class="QPushButton" name="pushButton_GetNetworkConfiguration">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>30</width>
-              <height>220</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>50</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Get</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2">
-           <widget class="QLineEdit" name="lineEdit_MACAddress">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="2">
-           <widget class="QLineEdit" name="lineEdit_Gateway">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_22">
-            <property name="text">
-             <string>IP Address :</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="7" column="1" colspan="3">
-           <widget class="QPushButton" name="pushButton_SetDefaultNetworkConfiguration">
-            <property name="text">
-             <string>Set to Factory Default</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <widget class="QLabel" name="label_118">
-            <property name="text">
-             <string>Main DNS Server :</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="2">
-           <widget class="QLineEdit" name="lineEdit_IPAddress">
-            <property name="enabled">
-             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -931,8 +823,18 @@
             </item>
            </widget>
           </item>
+          <item row="5" column="2">
+           <widget class="QLineEdit" name="lineEdit_MainDNSServer">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_19">
+           <widget class="QLabel" name="label_MACAddressTitle">
             <property name="text">
              <string>MAC Address :</string>
             </property>
@@ -941,10 +843,162 @@
             </property>
            </widget>
           </item>
-          <item row="8" column="1" colspan="3">
-           <widget class="QPushButton" name="pushButton_SystemReboot">
+          <item row="3" column="2">
+           <widget class="QLineEdit" name="lineEdit_Netmask">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="lineEdit_MACAddress">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLineEdit" name="lineEdit_Gateway">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_MainDNSServerTitle">
             <property name="text">
-             <string>Reboot to Apply Changes</string>
+             <string>Main DNS Server :</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_NetmaskTitle">
+            <property name="text">
+             <string>Netmask :</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="1" colspan="3">
+           <widget class="QPushButton" name="pushButton_SetDefaultNetworkConfiguration">
+            <property name="text">
+             <string>Set to Factory Default</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_SubDNSServerTitle">
+            <property name="text">
+             <string>Sub DNS Server :</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_GatewayNameTitle">
+            <property name="text">
+             <string>Gateway :</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_IPAddressTitle">
+            <property name="text">
+             <string>IP Address :</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_IPAssignmentTitle">
+            <property name="text">
+             <string>IP Assignment :</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0">
+           <widget class="QLabel" name="label_SplashScreenTitle">
+            <property name="text">
+             <string>Splash Screen :</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" rowspan="8">
+           <widget class="QPushButton" name="pushButton_GetNetworkConfiguration">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>240</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Get</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="2">
+           <widget class="QComboBox" name="comboBox_SplashScreen">
+            <item>
+             <property name="text">
+              <string>On</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Off</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="3" rowspan="7">
+           <widget class="QPushButton" name="pushButton_SetNetworkConfiguration">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>210</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Set</string>
             </property>
            </widget>
           </item>
@@ -988,9 +1042,9 @@
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
-        <widget class="QWidget" name="page">
+        <widget class="QWidget" name="page_256">
          <widget class="QPushButton" name="pushButton_RestoreDefaultSensorConfig">
           <property name="geometry">
            <rect>
@@ -1005,7 +1059,7 @@
  Default</string>
           </property>
          </widget>
-         <widget class="QGroupBox" name="groupBox_5">
+         <widget class="QGroupBox" name="groupBox_FFCParameters">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -1026,9 +1080,9 @@
              <height>58</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_9">
+           <layout class="QGridLayout" name="gridLayout_FFCParameters">
             <item row="0" column="3">
-             <widget class="QLabel" name="label_41">
+             <widget class="QLabel" name="label_FFCParam256_MaxIntervalUnit">
               <property name="minimumSize">
                <size>
                 <width>12</width>
@@ -1044,7 +1098,7 @@
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="label_40">
+             <widget class="QLabel" name="label_FFCParam256_AutomaticTriggerThreshold">
               <property name="text">
                <string>Automatic Trigger Threshold :</string>
               </property>
@@ -1136,7 +1190,7 @@
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QLabel" name="label_39">
+             <widget class="QLabel" name="label_FFCParam256_MaxIntervalTitle">
               <property name="minimumSize">
                <size>
                 <width>190</width>
@@ -1204,7 +1258,7 @@
              <height>141</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_8">
+           <layout class="QGridLayout" name="gridLayout_FluxParameters">
             <item row="0" column="1" rowspan="5">
              <widget class="QPushButton" name="pushButton_GetFluxParams">
               <property name="minimumSize">
@@ -1225,7 +1279,7 @@
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QLabel" name="label_30">
+             <widget class="QLabel" name="label_FluxParam_EmissivityTitle">
               <property name="text">
                <string>Emissivity :</string>
               </property>
@@ -1235,7 +1289,7 @@
              </widget>
             </item>
             <item row="4" column="0">
-             <widget class="QLabel" name="label_35">
+             <widget class="QLabel" name="label_DistanceTitle">
               <property name="text">
                <string>Distance (Not support) :</string>
               </property>
@@ -1245,7 +1299,7 @@
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="label_32">
+             <widget class="QLabel" name="label_FluxParamAtmosphericTransmittanceTitle">
               <property name="text">
                <string>Atmospheric Transmittance :</string>
               </property>
@@ -1274,19 +1328,12 @@
              </widget>
             </item>
             <item row="3" column="0">
-             <widget class="QLabel" name="label_34">
+             <widget class="QLabel" name="label_AmbientReflectionTemperatureTitle">
               <property name="text">
                <string>Ambient Reflection Temperature :</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="3">
-             <widget class="QLabel" name="label_31">
-              <property name="text">
-               <string/>
               </property>
              </widget>
             </item>
@@ -1345,7 +1392,7 @@
              </widget>
             </item>
             <item row="2" column="3">
-             <widget class="QLabel" name="label_36">
+             <widget class="QLabel" name="label_AtmosphericTemperatureUnit">
               <property name="text">
                <string>℃</string>
               </property>
@@ -1355,7 +1402,7 @@
              </widget>
             </item>
             <item row="3" column="3">
-             <widget class="QLabel" name="label_37">
+             <widget class="QLabel" name="label_AmbientReflectionTemperatureUnit">
               <property name="text">
                <string>℃</string>
               </property>
@@ -1365,7 +1412,7 @@
              </widget>
             </item>
             <item row="2" column="0">
-             <widget class="QLabel" name="label_33">
+             <widget class="QLabel" name="label_AtmosphericTemperatureTitle">
               <property name="text">
                <string>Atmospheric Temperature :</string>
               </property>
@@ -1410,7 +1457,7 @@
              </widget>
             </item>
             <item row="4" column="3">
-             <widget class="QLabel" name="label_38">
+             <widget class="QLabel" name="label_DistanceUnit">
               <property name="text">
                <string>m</string>
               </property>
@@ -1508,7 +1555,7 @@
            </layout>
           </widget>
          </widget>
-         <widget class="QGroupBox" name="groupBox_6">
+         <widget class="QGroupBox" name="groupBox_GainModeState_256">
           <property name="geometry">
            <rect>
             <x>490</x>
@@ -1529,7 +1576,7 @@
              <height>51</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_10">
+           <layout class="QGridLayout" name="gridLayout_GainModeState_256">
             <item row="0" column="0">
              <widget class="QRadioButton" name="radioButton_GainModeHigh">
               <property name="text">
@@ -1579,7 +1626,7 @@
            </layout>
           </widget>
          </widget>
-         <widget class="QGroupBox" name="groupBox_7">
+         <widget class="QGroupBox" name="groupBox_FlatFieldCorrection_256">
           <property name="geometry">
            <rect>
             <x>490</x>
@@ -1600,7 +1647,7 @@
              <height>54</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_11">
+           <layout class="QGridLayout" name="gridLayout_FlatFieldCorrection_256">
             <item row="0" column="0">
              <widget class="QRadioButton" name="radioButton_FlatFieldCorrectionAutomatic">
               <property name="text">
@@ -1690,8 +1737,8 @@
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" name="page_2">
-         <widget class="QGroupBox" name="groupBox_11">
+        <widget class="QWidget" name="page_160E">
+         <widget class="QGroupBox" name="groupBox_FluxParameters_160">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -1712,9 +1759,9 @@
              <height>231</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_16">
+           <layout class="QGridLayout" name="gridLayout_FluxParameters_160">
             <item row="4" column="0">
-             <widget class="QLabel" name="label_122">
+             <widget class="QLabel" name="label_FluxParam160E_AtmosphericTransmissionTitle">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -1768,7 +1815,7 @@
              </widget>
             </item>
             <item row="3" column="0">
-             <widget class="QLabel" name="label_121">
+             <widget class="QLabel" name="label_FluxParam160E_WindowTemperatureTitle">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -1784,7 +1831,7 @@
              </widget>
             </item>
             <item row="5" column="0">
-             <widget class="QLabel" name="label_123">
+             <widget class="QLabel" name="label_FluxParam160E_AtmosphericTemperatureTitle">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -1841,7 +1888,7 @@
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QLabel" name="label_7">
+             <widget class="QLabel" name="label_FluxParam160E_SceneEmissivityTitle">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -1857,28 +1904,28 @@
              </widget>
             </item>
             <item row="5" column="3">
-             <widget class="QLabel" name="label_127">
+             <widget class="QLabel" name="label_FluxParam160E_AtmosphericTemperatureUnit">
               <property name="text">
                <string>℃</string>
               </property>
              </widget>
             </item>
             <item row="7" column="3">
-             <widget class="QLabel" name="label_128">
+             <widget class="QLabel" name="label_FluxParam160E_WindowReflectedTemperatureUnit">
               <property name="text">
                <string>℃</string>
               </property>
              </widget>
             </item>
             <item row="3" column="3">
-             <widget class="QLabel" name="label_125">
+             <widget class="QLabel" name="label_FluxParam160E_WindowTemperatureUnit">
               <property name="text">
                <string>℃</string>
               </property>
              </widget>
             </item>
             <item row="6" column="0">
-             <widget class="QLabel" name="label_124">
+             <widget class="QLabel" name="label_FluxParam160E_WindowReflectionTitle">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -1945,7 +1992,7 @@
              </widget>
             </item>
             <item row="2" column="0">
-             <widget class="QLabel" name="label_120">
+             <widget class="QLabel" name="label_FluxParam160E_WindowTransmissionTitle">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -1961,7 +2008,7 @@
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="label_9">
+             <widget class="QLabel" name="label_FluxParam160E_BackgroundTemperatureTitle">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -1977,7 +2024,7 @@
              </widget>
             </item>
             <item row="1" column="3">
-             <widget class="QLabel" name="label_126">
+             <widget class="QLabel" name="label_FluxParam160E_BackgroundTemperatureUnit">
               <property name="text">
                <string>℃</string>
               </property>
@@ -2057,7 +2104,7 @@
              </widget>
             </item>
             <item row="7" column="0">
-             <widget class="QLabel" name="label_8">
+             <widget class="QLabel" name="label_FluxParam160E_WindowReflectedTemperatureTitle">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -2190,7 +2237,7 @@
            </layout>
           </widget>
          </widget>
-         <widget class="QGroupBox" name="groupBox_12">
+         <widget class="QGroupBox" name="groupBox_GainModeState_160E">
           <property name="geometry">
            <rect>
             <x>460</x>
@@ -2211,7 +2258,7 @@
              <height>81</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_17">
+           <layout class="QGridLayout" name="gridLayout_GainModeState_160E">
             <item row="2" column="0">
              <widget class="QRadioButton" name="radioButton_GainModeStateAuto_160E">
               <property name="text">
@@ -2262,7 +2309,7 @@
            </layout>
           </widget>
          </widget>
-         <widget class="QGroupBox" name="groupBox_13">
+         <widget class="QGroupBox" name="groupBox_FlatFieldCorrection_160E">
           <property name="geometry">
            <rect>
             <x>460</x>
@@ -2283,7 +2330,7 @@
              <height>61</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_18">
+           <layout class="QGridLayout" name="gridLayout_FlatFieldCorrection_160E">
             <item row="0" column="0">
              <widget class="QRadioButton" name="radioButton_FlatFieldCorrectionAutomatic_160E">
               <property name="text">
@@ -2336,8 +2383,8 @@
           </property>
          </widget>
         </widget>
-        <widget class="QWidget" name="page_3">
-         <widget class="QGroupBox" name="groupBox_8">
+        <widget class="QWidget" name="page_256G">
+         <widget class="QGroupBox" name="groupBox_GainModeState_256G">
           <property name="geometry">
            <rect>
             <x>490</x>
@@ -2358,7 +2405,7 @@
              <height>62</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_20">
+           <layout class="QGridLayout" name="gridLayout_GainModeState_256G">
             <item row="1" column="0">
              <widget class="QRadioButton" name="radioButton_GainModeLow_256G">
               <property name="text">
@@ -2415,7 +2462,7 @@
            </layout>
           </widget>
          </widget>
-         <widget class="QGroupBox" name="groupBox_9">
+         <widget class="QGroupBox" name="groupBox_FlatFieldCorrection_256G">
           <property name="geometry">
            <rect>
             <x>490</x>
@@ -2436,7 +2483,7 @@
              <height>54</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_21">
+           <layout class="QGridLayout" name="gridLayout_FlatFieldCorrection_256G">
             <item row="0" column="0">
              <widget class="QRadioButton" name="radioButton_FlatFieldCorrectionAutomatic_256G">
               <property name="text">
@@ -2539,13 +2586,13 @@
  Default</string>
           </property>
          </widget>
-         <widget class="QGroupBox" name="groupBox_10">
+         <widget class="QGroupBox" name="groupBox_FFCParameters_256G">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>10</y>
+            <y>180</y>
             <width>471</width>
-            <height>81</height>
+            <height>61</height>
            </rect>
           </property>
           <property name="title">
@@ -2555,12 +2602,12 @@
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>21</y>
+             <y>20</y>
              <width>451</width>
-             <height>52</height>
+             <height>31</height>
             </rect>
            </property>
-           <layout class="QGridLayout" name="gridLayout_22">
+           <layout class="QGridLayout" name="gridLayout_FFCParameters_256G">
             <item row="0" column="5">
              <widget class="QPushButton" name="pushButton_SetFFCParams_256G">
               <property name="enabled">
@@ -2569,13 +2616,13 @@
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>50</height>
+                <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>30</width>
-                <height>1000</height>
+                <height>50</height>
                </size>
               </property>
               <property name="text">
@@ -2607,13 +2654,13 @@
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>50</height>
+                <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>30</width>
-                <height>1000</height>
+                <height>50</height>
                </size>
               </property>
               <property name="text">
@@ -2650,7 +2697,7 @@
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QLabel" name="label_61">
+             <widget class="QLabel" name="label_FFCParam_MaxIntervalTitle_256G">
               <property name="minimumSize">
                <size>
                 <width>190</width>
@@ -2666,7 +2713,7 @@
              </widget>
             </item>
             <item row="0" column="3">
-             <widget class="QLabel" name="label_59">
+             <widget class="QLabel" name="label_FFCParam_MaxIntervalUnit_256G">
               <property name="minimumSize">
                <size>
                 <width>12</width>
@@ -2678,6 +2725,342 @@
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QGroupBox" name="groupBox_FluxParameters_256G">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>471</width>
+            <height>161</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>Flux Parameters (Not Support)</string>
+          </property>
+          <widget class="QWidget" name="gridLayoutWidget_22">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>451</width>
+             <height>136</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_FluxParameters_256G">
+            <item row="0" column="1" rowspan="5">
+             <widget class="QPushButton" name="pushButton_GetFluxParameters_256G">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>120</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Get</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_FluxParam256G_EmissivityTitle">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Emissivity :</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_FluxParam256G_DistanceTitle">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Distance (Not support) :</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_FluxParam256G_AtmosphericTransmittanceTitle">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Atmospheric Transmittance :</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QDoubleSpinBox" name="doubleSpinBox_FluxParam256G_Emissivity">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+              <property name="minimum">
+               <double>0.010000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_FluxParam256G_AmbientReflectionTemperatureTitle">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Ambient Reflection Temperature :</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QDoubleSpinBox" name="doubleSpinBox_FluxParam256G_AtmosphericTransmittance">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+              <property name="minimum">
+               <double>0.010000000000000</double>
+              </property>
+              <property name="maximum">
+               <double>1.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QLineEdit" name="lineEdit_FluxParam256G_EmissivityRange">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>0.01 ~ 1.00</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QDoubleSpinBox" name="doubleSpinBox_FluxParam256G_AtmosphericTemperature">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+              <property name="minimum">
+               <double>-43.149999999999999</double>
+              </property>
+              <property name="maximum">
+               <double>625.850000000000023</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QLabel" name="label_FluxParam256G_AtmosphericTemperatureUnit">
+              <property name="text">
+               <string>℃</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <widget class="QLabel" name="label_FluxParam256G_AmbientReflectionTemperatureUnit">
+              <property name="text">
+               <string>℃</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_FluxParam256G_AtmosphericTemperatureTitle">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Atmospheric Temperature :</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QDoubleSpinBox" name="doubleSpinBox_FluxParam256G_AmbientReflectionTemp">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+              <property name="minimum">
+               <double>-43.149999999999999</double>
+              </property>
+              <property name="maximum">
+               <double>626.850000000000023</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QDoubleSpinBox" name="doubleSpinBox_FluxParam256G_Distance">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+              <property name="maximum">
+               <double>200.000000000000000</double>
+              </property>
+              <property name="singleStep">
+               <double>0.010000000000000</double>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="3">
+             <widget class="QLabel" name="label_FluxParam256G_DistanceUnit">
+              <property name="text">
+               <string>m</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="5" rowspan="5">
+             <widget class="QPushButton" name="pushButton_SetFluxParameters_256G">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>120</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Set</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLineEdit" name="lineEdit_FluxParam256G_AtmosphericTransmittanceRange">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>0.01 ~ 1.00</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="4">
+             <widget class="QLineEdit" name="lineEdit_FluxParam256G_AtmosphericTempRange">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>-43.15 ~ 625.85</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="4">
+             <widget class="QLineEdit" name="lineEdit_FluxParam256G_AmbientReflectionTempRange">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>-43.15 ~ 626.85</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="4">
+             <widget class="QLineEdit" name="lineEdit_FluxParam256G_DistanceRange">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>0.00 ~ 200.00</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -2700,12 +3083,12 @@
           <height>51</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_12">
+        <layout class="QGridLayout" name="gridLayout_ROIList">
          <item row="1" column="0">
           <widget class="QComboBox" name="comboBox_ListRoi"/>
          </item>
          <item row="0" column="0">
-          <widget class="QLabel" name="label_42">
+          <widget class="QLabel" name="label_ROIListTitle">
            <property name="text">
             <string>ROI List</string>
            </property>
@@ -2735,7 +3118,7 @@
           <height>111</height>
          </rect>
         </property>
-        <layout class="QGridLayout" name="gridLayout_13">
+        <layout class="QGridLayout" name="gridLayout_ROITitle">
          <item row="1" column="8">
           <widget class="QLineEdit" name="lineEdit_LineY2">
            <property name="maximumSize">
@@ -2747,7 +3130,7 @@
           </widget>
          </item>
          <item row="3" column="3">
-          <widget class="QLabel" name="label_52">
+          <widget class="QLabel" name="label_RoiEllipseY">
            <property name="text">
             <string>Y :</string>
            </property>
@@ -2757,7 +3140,7 @@
           </widget>
          </item>
          <item row="1" column="7">
-          <widget class="QLabel" name="label_48">
+          <widget class="QLabel" name="label_RoiLineY2">
            <property name="text">
             <string>Y2 :</string>
            </property>
@@ -2777,7 +3160,7 @@
           </widget>
          </item>
          <item row="3" column="5">
-          <widget class="QLabel" name="label_54">
+          <widget class="QLabel" name="label_RoiEllipseW">
            <property name="text">
             <string>W :</string>
            </property>
@@ -2794,7 +3177,7 @@
           </widget>
          </item>
          <item row="0" column="3">
-          <widget class="QLabel" name="label_44">
+          <widget class="QLabel" name="label_RoiSpotY">
            <property name="text">
             <string>Y :</string>
            </property>
@@ -2804,7 +3187,7 @@
           </widget>
          </item>
          <item row="2" column="5">
-          <widget class="QLabel" name="label_53">
+          <widget class="QLabel" name="label_RoiRectangleW">
            <property name="text">
             <string>W :</string>
            </property>
@@ -2814,7 +3197,7 @@
           </widget>
          </item>
          <item row="1" column="3">
-          <widget class="QLabel" name="label_46">
+          <widget class="QLabel" name="label_RoiLineY1">
            <property name="text">
             <string>Y1 :</string>
            </property>
@@ -2847,7 +3230,7 @@
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLabel" name="label_43">
+          <widget class="QLabel" name="label_RoiSpotX">
            <property name="text">
             <string>X :</string>
            </property>
@@ -2857,7 +3240,7 @@
           </widget>
          </item>
          <item row="2" column="7">
-          <widget class="QLabel" name="label_55">
+          <widget class="QLabel" name="label_RoiRectangleH">
            <property name="text">
             <string>H :</string>
            </property>
@@ -2867,7 +3250,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QLabel" name="label_49">
+          <widget class="QLabel" name="label_RoiRectangleX">
            <property name="text">
             <string>X :</string>
            </property>
@@ -2884,7 +3267,7 @@
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QLabel" name="label_50">
+          <widget class="QLabel" name="label_RoiEllipseX">
            <property name="text">
             <string>X :</string>
            </property>
@@ -2901,7 +3284,7 @@
           </widget>
          </item>
          <item row="3" column="7">
-          <widget class="QLabel" name="label_56">
+          <widget class="QLabel" name="label_RoiEllipseH">
            <property name="text">
             <string>H :</string>
            </property>
@@ -2911,7 +3294,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QLabel" name="label_45">
+          <widget class="QLabel" name="label_RoiLineX1">
            <property name="text">
             <string>X1 :</string>
            </property>
@@ -2921,7 +3304,7 @@
           </widget>
          </item>
          <item row="1" column="5">
-          <widget class="QLabel" name="label_47">
+          <widget class="QLabel" name="label_RoiLineX2">
            <property name="text">
             <string>X2 :</string>
            </property>
@@ -2944,7 +3327,7 @@
           </widget>
          </item>
          <item row="2" column="3">
-          <widget class="QLabel" name="label_51">
+          <widget class="QLabel" name="label_RoiRectangleY">
            <property name="text">
             <string>Y :</string>
            </property>
@@ -3125,7 +3508,7 @@
        </widget>
       </item>
       <item row="3" column="0">
-       <widget class="QLabel" name="label_10">
+       <widget class="QLabel" name="label_ColorMap">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -3170,7 +3553,7 @@
        </widget>
       </item>
       <item row="3" column="4">
-       <widget class="QLabel" name="label_11">
+       <widget class="QLabel" name="label_TemperatureUnit">
         <property name="minimumSize">
          <size>
           <width>0</width>

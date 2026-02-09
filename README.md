@@ -1,25 +1,23 @@
 # TmSDK
 
-This project is a SDK for controlling TMC80/160/256/256G cameras.
+This project is a SDK for controlling TMC80/160/256/384 cameras.
 After downloading the code, please refer to the **'Document/TmSDK Manual.pdf'** file.
 
 ## Directory
 ```
-├─Document                  ; API Documentation and User Manual
+├─Document                   ; API Documentation and User Manual
 │  └─API
-│   ├─Android               ; Android API
-│   ├─Cpp                   ; C++ API
-│   ├─CSharp                ; C# API
-│   └─Python                ; Python API
-└─examples                  ; TmSDK sample code
-    ├─Android               ; Java application for android 
-    │  └─libs               ; JNI and android libraries
-    ├─Linux                 ; Qt5-based C++ application for Linux
-    ├─Python                ; Python application
-    └─Windows
-       ├─TmWinDotnet        ; C# application for Windows
-       ├─TmWinQt            ; Qt5-based C++ application for Window
-       └─TmWinQtSimple      ; C++ application without installing Qt5
+│    ├─Android               ; Android API
+│    ├─Cpp                   ; C++ API
+│    ├─CSharp                ; C# API
+│    └─Python                ; Python API
+└─examples                   ; TmSDK sample code
+     ├─Android               ; Java application for android 
+     ├─Linux                 ; Qt5-based C++ application for Linux
+     ├─Python                ; Python application
+     └─Windows
+        ├─TmWinDotnet        ; C# application for Windows
+        └─TmWinQt            ; Qt5-based C++ application for Window
 ```
 ## Requirement
 
@@ -35,7 +33,6 @@ Windows C#
 
 Windows Python
 - Windows 10 or 11
-- Visual Studio 2022 (optional)
 - Python 3.9 or higher
 - PyQt5
 - qtcreator
@@ -54,12 +51,6 @@ Linux Python
 
 Android
 - android-24 or later
-
-ARM64 Linux
-- Ubuntu 20.04 or higher
-- Python 3.9 or higher
-- PyQt5
-- qtcreator
 
 ## Downloads
 

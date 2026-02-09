@@ -32,8 +32,8 @@ public:
     TmCamera* pTmCamera = nullptr;
     bool runCapThread = false;
     std::thread capThread;
-    int previewWidth;
-    int previewHeight;
+    int previewWidth = 0;
+    int previewHeight = 0;
 
 public:
     explicit Camera(Ui::MainWindow* mUi, QObject* parent = nullptr);
@@ -74,4 +74,5 @@ public slots:
     void pushButton_RemoveRoiItem_Clicked();
     void comboBox_LocalCameraVideoFormat_Changed(int);
     void comboBox_RemoteCameraVideoFormat_Changed(int);
+    void tabWidget_Control_CurrentChanged(int tabIndex);
 };

@@ -13,6 +13,7 @@ var class_tm_core_1_1_tm_control_1_1_tm_control =
     [ "get_network_configuration", "class_tm_core_1_1_tm_control_1_1_tm_control.html#acbf58e1f5f2ba2d183a5b3ea2cd368d8", null ],
     [ "get_product_model_name", "class_tm_core_1_1_tm_control_1_1_tm_control.html#afa321be2324189a6acc1a4af9a8562fe", null ],
     [ "get_product_model_name", "class_tm_core_1_1_tm_control_1_1_tm_control.html#afa321be2324189a6acc1a4af9a8562fe", null ],
+    [ "get_product_part_number", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a5b1eebf51d586a97284304ca413f1e13", null ],
     [ "get_product_serial", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a1468b650e18d87ac9290eac764b8cb39", null ],
     [ "get_sensor_model_name", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a78013b2953e1bce26e7e45c01cd3b45a", null ],
     [ "get_sensor_serial_number", "class_tm_core_1_1_tm_control_1_1_tm_control.html#af4c6fa75ae7d05f65fcd525385454cb0", null ],
@@ -30,7 +31,7 @@ var class_tm_core_1_1_tm_control_1_1_tm_control =
     [ "set_flux_default_parameters", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a4d3ceaf19a6d53bc8547ef2e84061346", null ],
     [ "set_flux_parameters", "class_tm_core_1_1_tm_control_1_1_tm_control.html#aaf01bc0c53f28eee4fcdc6da96d1d9df", null ],
     [ "set_gain_mode_state", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a17c2d523d0097985e03f4af84a5b07d0", null ],
-    [ "set_network_configuration", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a618a925165d6ae9ae11da9ad3b7e0bc5", null ],
+    [ "set_network_configuration", "class_tm_core_1_1_tm_control_1_1_tm_control.html#ad8deaa3d2f0facdbf56512fb62af5f13", null ],
     [ "store_user_sensor_config", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a9687a84dfd8981d57875896b208555cf", null ],
     [ "update_firmware", "class_tm_core_1_1_tm_control_1_1_tm_control.html#aacf50a49a0dc6f3ec2ed879c63194578", null ],
     [ "obj", "class_tm_core_1_1_tm_control_1_1_tm_control.html#af40bcee3eb67c4ffbb39ffd0069aac1e", null ]

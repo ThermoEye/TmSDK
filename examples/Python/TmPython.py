@@ -39,6 +39,7 @@ class MainWindow(QMainWindow):
         self.pushButton_LocalCameraConnect.clicked.connect(self.camera.pushButton_LocalCameraConnect_Clicked)
         self.pushButton_RemoteCameraConnect.clicked.connect(self.camera.pushButton_RemoteCameraConnect_Clicked)
         self.tabWidget_ConnectCamera.currentChanged.connect(self.camera.tabWidget_ConnectCamera_CurrentChanged)
+        self.tabWidget_Control.currentChanged.connect(self.camera.tabWidget_Control_CurrentChanged)
         self.listWidget_LocalCameraList.currentRowChanged.connect(self.camera.listWidget_LocalCameraList_CurrentRowChanged)
         self.listWidget_RemoteCameraList.currentRowChanged.connect(self.camera.listWidget_RemoteCameraList_CurrentRowChanged)
         self.comboBox_ColorMap.currentIndexChanged.connect(self.camera.comboBox_ColorMap_Changed)
@@ -94,12 +95,11 @@ class MainWindow(QMainWindow):
         self.LocalCamList=[]
         self.RemoteCamList=[]
         
-        self.tabWidget_Control.setVisible(False)
+        # Hide widgets inside tabSensorControl
         self.stackedWidget_SensorControl.setVisible(False)
-        self.groupBox.setEnabled(False)
-        self.groupBox_SenserInformation.setEnabled(False)
+        self.groupBox_ProductInformation.setEnabled(False)
+        self.groupBox_SensorInformation.setEnabled(False)
         self.groupBox_SoftwareUpdate.setEnabled(False)
-        self.groupBox_NetworkConfiguration.setEnabled(False)
         self.comboBox_ColorMap.setEnabled(False)
         self.comboBox_TemperatureUnit.setEnabled(False)
     

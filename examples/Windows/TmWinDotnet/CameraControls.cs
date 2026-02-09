@@ -53,6 +53,12 @@ namespace TmWinDotNet
                             MessageBox.Show("Fail to get Product Model Name.", "Camera Information", MessageBoxButtons.OK);
                         }
 
+                        string productPartNumber = tmCamera.tmControl.GetProductPartNumber();
+                        if (productPartNumber != null)
+                        {
+                            label_ProductPartNumber.Text = productPartNumber;
+                        }
+
                         string productSerialNumber = tmCamera.tmControl.GetProductSerialNumber();
                         if (productSerialNumber != null)
                         {
@@ -351,13 +357,14 @@ namespace TmWinDotNet
 
         #region Network
         private void button_NetworkControl_Click(object sender, EventArgs e) {
+            DialogResult dr;
             if (sender is Button btn && tmCamera != null && tmCamera.IsOpen)
             {
                 switch (btn.Name)
                 {
                     case "button_GetNetworkConfiguration":
                         if (tmCamera.tmControl.GetNetworkConfiguration(out string mac, out string ipAssign, out string ip, out string netmask,
-                                                                    out string gateway, out string dns, out string dns2))
+                                                                    out string gateway, out string dns, out string dns2, out bool splash))
                         {
                             textBox_MACAddress.Text = mac;
                             comboBox_IPAssignment.Text = ipAssign;
@@ -366,22 +373,26 @@ namespace TmWinDotNet
                             textBox_Gateway.Text = gateway;
                             textBox_MainDNSServer.Text = dns;
                             textBox_SubDNSServer.Text = dns2;
+                            comboBox_SplashScreen.Text = (splash == false) ? "Off" : "On";
 
-                            comboBox_IPAssignment.Enabled = true;
                             if (comboBox_IPAssignment.Text == "Static")
                             {
                                 textBox_IPAddress.ReadOnly = false;
                                 textBox_Netmask.ReadOnly = false;
                                 textBox_Gateway.ReadOnly = false;
+                                textBox_MainDNSServer.ReadOnly = false;
+                                textBox_SubDNSServer.ReadOnly = false;
                             }
                             else
                             {
                                 textBox_IPAddress.ReadOnly = true;
                                 textBox_Netmask.ReadOnly = true;
                                 textBox_Gateway.ReadOnly = true;
+                                textBox_MainDNSServer.ReadOnly = true;
+                                textBox_SubDNSServer.ReadOnly = true;
                             }
-                            textBox_MainDNSServer.ReadOnly = true;
-                            textBox_SubDNSServer.ReadOnly = true;
+
+                            comboBox_SplashScreen.Enabled = true;
                             button_SetNetworkConfiguration.Enabled = true;
                         }
                         else
@@ -398,9 +409,45 @@ namespace TmWinDotNet
                                 return;
                         }
 
-                        if (tmCamera.tmControl.SetNetworkConfiguration(comboBox_IPAssignment.Text, textBox_IPAddress.Text, textBox_Netmask.Text, textBox_Gateway.Text, textBox_MainDNSServer.Text, textBox_SubDNSServer.Text))
+                        if (tmCamera.tmControl.SetNetworkConfiguration(comboBox_IPAssignment.Text, textBox_IPAddress.Text, textBox_Netmask.Text, textBox_Gateway.Text, textBox_MainDNSServer.Text, textBox_SubDNSServer.Text, comboBox_SplashScreen.Text == "On"))
                         {
-                            MessageBox.Show("Succes to set Network Configuration.", "Network", MessageBoxButtons.OK);
+                            if (this.captureThread != null && this.captureThread.IsAlive)
+                            {
+                                // force to terminate frameThread
+                                this.captureThread.Interrupt();
+                                // Wait for frameThread to end.
+                                this.captureThread.Join();
+
+                                System.Threading.Thread.Sleep(1000);
+                            }
+
+                            tmCamera.Close();
+                            tmCamera = null;
+
+                            System.Threading.Thread.Sleep(1000);
+
+                            Application.EnableVisualStyles();
+                            dr = MessageBox.Show("Succes to set Network Configuration.\rReboot... Please reconnect camera device.", "Network", MessageBoxButtons.OK);
+                            switch (dr)
+                            {
+                                case DialogResult.OK:
+                                    tabControl_CameraConfig.Enabled = false;
+                                    tabControl_SensorConfig.Enabled = false;
+                                    comboBox_ColorMap.Enabled = false;
+                                    comboBox_TemperatureUnit.Enabled = false;
+                                    button_ConnectLocalCamera.Enabled = false;
+                                    button_ScanLocalCamera.Enabled = false;
+                                    button_ConnectRemoteCamera.Enabled = false;
+                                    button_ScanRemoteCamera.Enabled = false;
+                                    System.Threading.Thread.Sleep(2000);
+                                    button_ConnectLocalCamera.Text = "Connect";
+                                    button_ConnectLocalCamera.Enabled = true;
+                                    button_ScanLocalCamera.Enabled = true;
+                                    button_ConnectRemoteCamera.Text = "Connect";
+                                    button_ConnectRemoteCamera.Enabled = true;
+                                    button_ScanRemoteCamera.Enabled = true;
+                                    break;
+                            }
                         }
                         else
                         {
@@ -411,14 +458,45 @@ namespace TmWinDotNet
 
                     case "button_SetDefaultNetworkConfiguration":
                         if (tmCamera.tmControl.SetDefaultNetworkConfiguration(out string ipAssignDef, out string ipDef, out string netmaskDef,
-                                                                            out string gatewayDef, out string dnsDef, out string dns2Def))
+                                                                            out string gatewayDef, out string dnsDef, out string dns2Def, out bool splashDef))
                         {
-                            comboBox_IPAssignment.Text = ipAssignDef;
-                            textBox_IPAddress.Text = ipDef;
-                            textBox_Netmask.Text = netmaskDef;
-                            textBox_Gateway.Text = gatewayDef;
-                            textBox_MainDNSServer.Text = dnsDef;
-                            textBox_SubDNSServer.Text = dns2Def;
+                            if (this.captureThread != null && this.captureThread.IsAlive)
+                            {
+                                // force to terminate frameThread
+                                this.captureThread.Interrupt();
+                                // Wait for frameThread to end.
+                                this.captureThread.Join();
+
+                                System.Threading.Thread.Sleep(1000);
+                            }
+
+                            tmCamera.Close();
+                            tmCamera = null;
+
+                            System.Threading.Thread.Sleep(1000);
+
+                            Application.EnableVisualStyles();
+                            dr = MessageBox.Show("Succes to set Network Configuration.\rReboot... Please reconnect camera device.", "Network", MessageBoxButtons.OK);
+                            switch (dr)
+                            {
+                                case DialogResult.OK:
+                                    tabControl_CameraConfig.Enabled = false;
+                                    tabControl_SensorConfig.Enabled = false;
+                                    comboBox_ColorMap.Enabled = false;
+                                    comboBox_TemperatureUnit.Enabled = false;
+                                    button_ConnectLocalCamera.Enabled = false;
+                                    button_ScanLocalCamera.Enabled = false;
+                                    button_ConnectRemoteCamera.Enabled = false;
+                                    button_ScanRemoteCamera.Enabled = false;
+                                    System.Threading.Thread.Sleep(2000);
+                                    button_ConnectLocalCamera.Text = "Connect";
+                                    button_ConnectLocalCamera.Enabled = true;
+                                    button_ScanLocalCamera.Enabled = true;
+                                    button_ConnectRemoteCamera.Text = "Connect";
+                                    button_ConnectRemoteCamera.Enabled = true;
+                                    button_ScanRemoteCamera.Enabled = true;
+                                    break;
+                            }
                         }
                         else
                         {
@@ -448,7 +526,7 @@ namespace TmWinDotNet
                         System.Threading.Thread.Sleep(1000);
 
                         Application.EnableVisualStyles();
-                        DialogResult dr = MessageBox.Show("Reboot... Reconnect camera device.", "ThermoCamApp", MessageBoxButtons.OK);
+                        dr = MessageBox.Show("Reboot... Reconnect camera device.", "ThermoCamApp", MessageBoxButtons.OK);
                         switch (dr)
                         {
                             case DialogResult.OK:

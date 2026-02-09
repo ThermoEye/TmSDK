@@ -43,7 +43,6 @@ class Camera:
         self.remote_camera_list=[]
         self.preview_width = self.main_window.label_Preview.width()
         self.preview_height = self.main_window.label_Preview.height()
-        self.executor = ThreadPoolExecutor(max_workers=1)
         self.drawing = False
         self.worker = FrameWorker(self)
         self.main_window.radioButton_ShapeCursor.setChecked(True)
@@ -78,6 +77,7 @@ class Camera:
 
     def scan_remote_camera_list(self):
         self.main_window.lineEdit_RemoteCameraName.setText("")
+        self.main_window.lineEdit_RemoteCameraPartNumber.setText("")
         self.main_window.lineEdit_RemoteCameraSerial.setText("")
         self.main_window.lineEdit_RemoteCameraMac.setText("")
         self.main_window.lineEdit_RemoteCameraIp.setText("")
@@ -99,6 +99,7 @@ class Camera:
         if self.remote_camera_list:
             camInfo = self.remote_camera_list[0]    
             self.main_window.lineEdit_RemoteCameraName.setText(camInfo.name)
+            self.main_window.lineEdit_RemoteCameraPartNumber.setText(camInfo.part_number)
             self.main_window.lineEdit_RemoteCameraSerial.setText(camInfo.serial_number)
             self.main_window.lineEdit_RemoteCameraMac.setText(camInfo.mac)
             self.main_window.lineEdit_RemoteCameraIp.setText(camInfo.ip)
@@ -135,14 +136,11 @@ class Camera:
         
         self.main_window.comboBox_ColorMap.setCurrentIndex(0)
         self.main_window.comboBox_TemperatureUnit.setCurrentIndex(0)
-        self.main_window.tabWidget_Control.setVisible(False)
+        # Hide widgets inside tabSensorControl
         self.main_window.stackedWidget_SensorControl.setVisible(False)
-        self.main_window.tabWidget_Control.setVisible(False)
-        self.main_window.stackedWidget_SensorControl.setVisible(False)
-        self.main_window.groupBox.setEnabled(False)
-        self.main_window.groupBox_SenserInformation.setEnabled(False)
+        self.main_window.groupBox_ProductInformation.setEnabled(False)
+        self.main_window.groupBox_SensorInformation.setEnabled(False)
         self.main_window.groupBox_SoftwareUpdate.setEnabled(False)
-        self.main_window.groupBox_NetworkConfiguration.setEnabled(False)
         self.main_window.comboBox_ColorMap.setEnabled(False)
         self.main_window.comboBox_TemperatureUnit.setEnabled(False)
         
@@ -157,6 +155,7 @@ class Camera:
         self.main_window.comboBox_TemperatureUnit.setEnabled(False)
 
         self.main_window.label_ProductModelName.setText("")
+        self.main_window.label_ProductPartNumber.setText("")
         self.main_window.label_ProductSerialNumber.setText("")
         self.main_window.label_HardwareVersion.setText("")
         self.main_window.label_BootloaderVersion.setText("")
@@ -178,6 +177,17 @@ class Camera:
         self.main_window.lineEdit_Gateway.setText("")
         self.main_window.lineEdit_MainDNSServer.setText("")
         self.main_window.lineEdit_SubDNSServer.setText("")
+        # Clear last preview image so that label_Preview does not keep the last frame
+        label = self.main_window.label_Preview
+        if label is not None:
+            # 먼저 비어 있는 pixmap을 설정
+            label.setPixmap(QPixmap())
+            label.repaint()
+            # 이벤트 큐에 남아 있을 수 있는 setPixmap 호출들을 처리
+            QApplication.processEvents()
+            # 최종적으로 clear 한 번 더 호출
+            label.clear()
+            label.repaint()
     
     # Handles the mouse release event by updating ROI and UI elements.
     # Parameters:
@@ -230,34 +240,40 @@ class Camera:
                 if row < 0 or row >= len(self.local_camera_list):
                     print('No camera selected')
                     return
+                # ret = self.tmCamera.open_local_camera(self.local_camera_list[row].name
+                #                                       , self.local_camera_list[row].com_port
+                #                                       , self.local_camera_list[row].index
+                #                                       )        
                 ret = self.tmCamera.open_local_camera(self.local_camera_list[row].name
                                                       , self.local_camera_list[row].com_port
                                                       , self.local_camera_list[row].index
                                                       , self.local_camera_list[row].media_info_list[self.local_camera_list[row].media_info_index].format)
-                
+        
                 if ret:
                     self.main_window.pushButton_LocalCameraConnect.setText("Disconnect")
 
                     self.worker.start()
                     val = self.tmCamera.get_temp_unit()
-                    if self.local_camera_list[row].name == "TMC256B":
+                    if (self.local_camera_list[row].name == "TMC256E" or self.local_camera_list[row].name == "TMC256B" or self.local_camera_list[row].name == "TMC256I"
+                        or self.local_camera_list[row].name == "TMC160IE" or self.local_camera_list[row].name == "TMC160IB" or self.local_camera_list[row].name == "TMC160I"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(0)
-                    elif (self.local_camera_list[row].name == "TMC160B" or self.local_camera_list[row].name == "TMC80B"):
+                    elif (self.local_camera_list[row].name == "TMC160E" or self.local_camera_list[row].name == "TMC160B" or self.local_camera_list[row].name == "TMC160F"
+                          or self.local_camera_list[row].name == "TMC80E" or self.local_camera_list[row].name == "TMC80B" or self.local_camera_list[row].name == "TMC80F"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(1)
-                    elif self.local_camera_list[row].name == "TMC256GB":
+                    elif (self.local_camera_list[row].name == "TMC256GE" or self.local_camera_list[row].name == "TMC256GB" or self.local_camera_list[row].name == "TMC256G"
+                        or self.local_camera_list[row].name == "TMC384GE" or self.local_camera_list[row].name == "TMC384GB" or self.local_camera_list[row].name == "TMC384G"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(2)
 
                     self.tmCamera.set_temp_unit(TempUnit.CELSIUS)
                     val = self.tmCamera.get_temp_unit
 
-                    self.main_window.tabWidget_Control.setVisible(True)
+                    # Show widgets inside tabSensorControl
                     self.main_window.stackedWidget_SensorControl.setVisible(True)
-                    self.main_window.groupBox.setEnabled(True)
-                    self.main_window.groupBox_NetworkConfiguration.setEnabled(True)
-                    self.main_window.groupBox_SenserInformation.setEnabled(True)
+                    self.main_window.groupBox_ProductInformation.setEnabled(True)
+                    self.main_window.groupBox_SensorInformation.setEnabled(True)
                     self.main_window.groupBox_SoftwareUpdate.setEnabled(True)
                     self.main_window.comboBox_ColorMap.setEnabled(True)
                     self.main_window.comboBox_TemperatureUnit.setEnabled(True)
@@ -275,6 +291,9 @@ class Camera:
                     self.main_window.comboBox_ColorMap.setEnabled(True)
                     self.main_window.checkBox_NoiseFiltering.setEnabled(True)
                     self.main_window.comboBox_TemperatureUnit.setEnabled(True)
+
+                    self.main_window.pushButton_SetDefaultNetworkConfiguration.setEnabled(False)
+                    self.main_window.pushButton_SystemReboot.setEnabled(False)
         
             except Exception as e:
                 print(f'Error while opening camera: {str(e)}')
@@ -294,6 +313,11 @@ class Camera:
                 
                 row = self.main_window.listWidget_RemoteCameraList.currentRow()
                 
+                # ret = self.tmCamera.open_remote_camera(self.main_window.lineEdit_RemoteCameraName.text()
+                #                                         , self.main_window.lineEdit_RemoteCameraSerial.text()
+                #                                         , self.main_window.lineEdit_RemoteCameraMac.text()
+                #                                         , self.main_window.lineEdit_RemoteCameraIp.text()
+                #                                         )
                 ret = self.tmCamera.open_remote_camera(self.main_window.lineEdit_RemoteCameraName.text()
                                                         , self.main_window.lineEdit_RemoteCameraSerial.text()
                                                         , self.main_window.lineEdit_RemoteCameraMac.text()
@@ -302,29 +326,37 @@ class Camera:
                 if ret:
                     self.main_window.pushButton_RemoteCameraConnect.setText("Disconnect")
                     self.worker.start()
-                    if self.main_window.lineEdit_RemoteCameraName.text() == "TMC256E":
+                    if (self.remote_camera_list[row].name == "ThermoCam256E"
+                        or self.remote_camera_list[row].name == "TMC256E" or self.remote_camera_list[row].name == "TMC256B" or self.remote_camera_list[row].name == "TMC256I"
+                        or self.remote_camera_list[row].name == "TMC160IE" or self.remote_camera_list[row].name == "TMC160IB" or self.remote_camera_list[row].name == "TMC160I"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(0)
-                    elif (self.main_window.lineEdit_RemoteCameraName.text() == "TMC160E" or self.main_window.lineEdit_RemoteCameraName.text() == "TMC80E"):
+                    elif (self.remote_camera_list[row].name == "ThermoCam160E"
+                          or self.remote_camera_list[row].name == "TMC160E" or self.remote_camera_list[row].name == "TMC160B" or self.remote_camera_list[row].name == "TMC160F"
+                          or self.remote_camera_list[row].name == "TMC80E" or self.remote_camera_list[row].name == "TMC80B" or self.remote_camera_list[row].name == "TMC80F"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(1)
-                    elif self.main_window.lineEdit_RemoteCameraName.text() == "TMC256GE":
+                    elif (self.remote_camera_list[row].name == "TMC256GE" or self.remote_camera_list[row].name == "TMC256GB" or self.remote_camera_list[row].name == "TMC256G"
+                        or self.remote_camera_list[row].name == "TMC384GE" or self.remote_camera_list[row].name == "TMC384GB" or self.remote_camera_list[row].name == "TMC384G"):
                         self.main_window.tabWidget_Control.setCurrentIndex(0)
                         self.main_window.stackedWidget_SensorControl.setCurrentIndex(2)
 
-                    self.main_window.tabWidget_Control.setVisible(True)
+                    # Show widgets inside tabSensorControl
                     self.main_window.stackedWidget_SensorControl.setVisible(True)
-                    self.main_window.groupBox.setEnabled(True)
-                    self.main_window.groupBox_SenserInformation.setEnabled(True)
+                    self.main_window.groupBox_ProductInformation.setEnabled(True)
+                    self.main_window.groupBox_SensorInformation.setEnabled(True)
                     self.main_window.groupBox_SoftwareUpdate.setEnabled(True)
                     self.main_window.comboBox_ColorMap.setEnabled(True)
                     self.main_window.comboBox_TemperatureUnit.setEnabled(True)
-                    self.main_window.groupBox_NetworkConfiguration.setEnabled(True)
                     self.main_window.pushButton_GetNetworkConfiguration.setEnabled(True)
                     self.main_window.comboBox_IPAssignment.setEnabled(True)
                     self.main_window.lineEdit_Netmask.setEnabled(True)
                     self.main_window.lineEdit_IPAddress.setEnabled(True)
                     self.main_window.lineEdit_Gateway.setEnabled(True)
+                    self.main_window.lineEdit_MainDNSServer.setEnabled(True)
+                    self.main_window.lineEdit_SubDNSServer.setEnabled(True)
+                    self.main_window.pushButton_SetDefaultNetworkConfiguration.setEnabled(True)
+                    self.main_window.pushButton_SystemReboot.setEnabled(True)
                     self.main_window.comboBox_ColorMap.setCurrentIndex(ColormapTypes.Inferno + 1)
                     self.main_window.comboBox_TemperatureUnit.setCurrentIndex(TempUnit.CELSIUS)
 
@@ -343,6 +375,18 @@ class Camera:
         else:       
                 self.disconnect_camera()
                 self.main_window.pushButton_RemoteCameraConnect.setText("Connect")
+
+    def tabWidget_Control_CurrentChanged(self, tab_index):
+        """
+        Slot function for handling the "tabWidget_Control" tab change event.
+        Prevents tab switching when camera is not connected.
+        """
+        # If camera is not connected, prevent tab change by reverting to previous index
+        if self.tmCamera is None:
+            # Block signals to prevent recursive calls
+            self.main_window.tabWidget_Control.blockSignals(True)
+            self.main_window.tabWidget_Control.setCurrentIndex(0)  # Always keep on first tab (Sensor Control)
+            self.main_window.tabWidget_Control.blockSignals(False)
 
     def tabWidget_ConnectCamera_CurrentChanged(self, tab_index):
         if self.main_window.pushButton_LocalCameraConnect.text() == "Disconnect":
@@ -376,6 +420,7 @@ class Camera:
             return
         cam_info = self.remote_camera_list[row]
         self.main_window.lineEdit_RemoteCameraName.setText(cam_info.name)
+        self.main_window.lineEdit_RemoteCameraPartNumber.setText(cam_info.part_number)
         self.main_window.lineEdit_RemoteCameraSerial.setText(cam_info.serial_number)
         self.main_window.lineEdit_RemoteCameraMac.setText(cam_info.mac)
         self.main_window.lineEdit_RemoteCameraIp.setText(cam_info.ip)
@@ -762,51 +807,82 @@ class FrameWorker(QThread):
     # Parameter:
     #   pFrame: TmFrame object, from pTmCamera->QueryFrame()
     def process_measurements(self, pFrame):
-        min_val, avg_val, max_val = 0.0, 0.0, 0.0
-        min_loc, max_loc = None, None
-        
-        bit_map = pFrame.to_bitmap(ColorOrder.COLOR_RGB)
-        
-        image = QImage(bit_map, pFrame.width(), pFrame.height(), QImage.Format_RGB888)
-        
-        self.draw_shape_objects(image)
-        self.update_drawing_label(image)
-        
-        pix_map = QPixmap.fromImage(image)
-        self.parent.main_window.label_Preview.setPixmap(pix_map)
-        # self.parent.main_window.label_Preview.show()
-        
-        if self.parent.tmCamera is None:
-            return
-
-        if self.parent.tmCamera.get_camera_format() == "Y16":
-            for index in range(self.parent.roi_manager.get_roi_item_count()):
-                item = self.parent.roi_manager.get_roi_item(index)
-                pFrame.do_measure(item)
+        try:
+            min_val, avg_val, max_val = 0.0, 0.0, 0.0
+            min_loc, max_loc = None, None
             
-            min_val, avg_val, max_val, min_loc, max_loc = pFrame.min_max_loc()
-        
-        temp_unit_symbol = self.parent.tmCamera.get_temp_unit_symbol()
+            # 카메라가 유효한지 확인
+            if self.parent.tmCamera is None or self.parent.tmCamera.obj is None:
+                if pFrame is not None:
+                    del pFrame
+                
+                print('self.parent.tmCamera is None or self.parent.tmCamera.obj is None')
 
-        min_temp = f"{self.parent.tmCamera.get_temperature(min_val):.2f} {temp_unit_symbol}"
-        avg_temp = f"{self.parent.tmCamera.get_temperature(avg_val):.2f} {temp_unit_symbol}"
-        max_temp = f"{self.parent.tmCamera.get_temperature(max_val):.2f} {temp_unit_symbol}"
-        
-        self.parent.main_window.label_MinimumTemperature.setText(min_temp)
-        self.parent.main_window.label_AverageTemperature.setText(avg_temp)
-        self.parent.main_window.label_MaximumTemperature.setText(max_temp)
+                return
+            
+            if pFrame is None:
+                print('pFrame is None')
 
-        del pFrame
+                return
+            
+            bit_map = pFrame.to_bitmap(ColorOrder.COLOR_RGB)
+            
+            image = QImage(bit_map, pFrame.width(), pFrame.height(), QImage.Format_RGB888)
+            
+            self.draw_shape_objects(image)
+            self.update_drawing_label(image)
+            
+            pix_map = QPixmap.fromImage(image)
+            self.parent.main_window.label_Preview.setPixmap(pix_map)
+            # self.parent.main_window.label_Preview.show()
+            
+            if self.parent.tmCamera.get_camera_format() == "Y16":
+                for index in range(self.parent.roi_manager.get_roi_item_count()):
+                    item = self.parent.roi_manager.get_roi_item(index)
+                    pFrame.do_measure(item)
+                
+                min_val, avg_val, max_val, min_loc, max_loc = pFrame.min_max_loc()
+            
+            temp_unit_symbol = self.parent.tmCamera.get_temp_unit_symbol()
+
+            min_temp = f"{self.parent.tmCamera.get_temperature(min_val):.2f} {temp_unit_symbol}"
+            avg_temp = f"{self.parent.tmCamera.get_temperature(avg_val):.2f} {temp_unit_symbol}"
+            max_temp = f"{self.parent.tmCamera.get_temperature(max_val):.2f} {temp_unit_symbol}"
+            
+            self.parent.main_window.label_MinimumTemperature.setText(min_temp)
+            self.parent.main_window.label_AverageTemperature.setText(avg_temp)
+            self.parent.main_window.label_MaximumTemperature.setText(max_temp)
+
+            del pFrame
+        except Exception as e:
+            print(f'Error in process_measurements: {str(e)}')
+            if pFrame is not None:
+                try:
+                    del pFrame
+                except:
+                    pass
     
     def run(self):
         self.isRun = True
 
         while self.isRun:
-            
-            tmFrame = self.parent.tmCamera.query_frame( self.parent.preview_width, self.parent.preview_height)
-            
-            if tmFrame is not None:
-                self.parent.executor.submit(self.process_measurements, tmFrame)
+            try:
+                # 카메라가 유효한지 확인
+                if self.parent.tmCamera is None or self.parent.tmCamera.obj is None:
+                    QThread.msleep(100)
+                    continue
+
+                tmFrame = self.parent.tmCamera.query_frame(
+                    self.parent.preview_width,
+                    self.parent.preview_height
+                )
+
+                # DLL 호출은 모두 이 QThread 안에서만 수행한다.
+                if tmFrame is not None:
+                    self.process_measurements(tmFrame)
+            except Exception as e:
+                print(f'Error in FrameWorker.run: {str(e)}')
+                QThread.msleep(100)
             
             if self.isRun == False:
                 QThread.msleep(100)

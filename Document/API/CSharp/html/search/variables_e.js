@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../struct_tm_s_d_k_1_1_tm_point.html#a325e19c4e4c88f2258cbc72eb3b37236',1,'TmSDK.TmPoint.x'],['../struct_tm_s_d_k_1_1_tm_rect.html#a14397e979beccafcc05cfe30e6690cea',1,'TmSDK.TmRect.x']]]
+  ['width_0',['Width',['../class_tm_s_d_k_1_1_media_info.html#a65484560793ce8f0c68b6c0b616463e6',1,'TmSDK.MediaInfo.Width'],['../class_tm_s_d_k_1_1_tm_camera.html#a5a67dc84074684e20ba37fe6044489c4',1,'TmSDK.TmCamera.Width']]]
 ];

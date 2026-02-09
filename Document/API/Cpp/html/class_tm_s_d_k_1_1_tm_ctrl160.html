@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;1.2.0</span>
+   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -116,6 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa76a708d5b33002610f9f7ac2397166c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of <a class="el" href="class_tm_s_d_k_1_1_tm_ctrl160.html" title="Class providing control functionalities for the TmCtrl160 camera.">TmCtrl160</a>.  <br /></td></tr>
 <tr class="memitem:acfa651d6a383251878580d08b88416d6" id="r_acfa651d6a383251878580d08b88416d6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfa651d6a383251878580d08b88416d6">GetProductModelName</a> () override</td></tr>
 <tr class="memdesc:acfa651d6a383251878580d08b88416d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets product model name of camera device.  <br /></td></tr>
+<tr class="memitem:a105e03fc0f61f1bb7c705e3671e9dd23" id="r_a105e03fc0f61f1bb7c705e3671e9dd23"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a105e03fc0f61f1bb7c705e3671e9dd23">GetProductPartNumber</a> () override</td></tr>
+<tr class="memdesc:a105e03fc0f61f1bb7c705e3671e9dd23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the product part number of the connected camera.  <br /></td></tr>
 <tr class="memitem:ad7a0138368fbfe782b10d0dc36c4ed5b" id="r_ad7a0138368fbfe782b10d0dc36c4ed5b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7a0138368fbfe782b10d0dc36c4ed5b">GetProductSerialNumber</a> () override</td></tr>
 <tr class="memdesc:ad7a0138368fbfe782b10d0dc36c4ed5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets product serial number of camera device.  <br /></td></tr>
 <tr class="memitem:a5234868bbb50de18c27c1ecfe7a8a2e7" id="r_a5234868bbb50de18c27c1ecfe7a8a2e7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5234868bbb50de18c27c1ecfe7a8a2e7">GetHardwareVersion</a> () override</td></tr>
@@ -157,12 +159,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a99df4dfdf2bfe1ec9f3f7e07c50ed921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes Flat Field Correction of camera sensor.  <br /></td></tr>
 <tr class="memitem:aedf941707bb311b8924cfe8c1e464aa1" id="r_aedf941707bb311b8924cfe8c1e464aa1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedf941707bb311b8924cfe8c1e464aa1">StoreUserSensorConfig</a> () override</td></tr>
 <tr class="memitem:ab2642ac1c0def05f3fbcfff3c38c0c08" id="r_ab2642ac1c0def05f3fbcfff3c38c0c08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2642ac1c0def05f3fbcfff3c38c0c08">RestoreDefaultSensorConfig</a> () override</td></tr>
-<tr class="memitem:a45e61e25d5929880a0bc906e28561e82" id="r_a45e61e25d5929880a0bc906e28561e82"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45e61e25d5929880a0bc906e28561e82">GetNetworkConfiguration</a> (std::string &amp;mac, std::string &amp;ipAssign, std::string &amp;ip, std::string &amp;netmask, std::string &amp;gateway, std::string &amp;dns, std::string &amp;dns2) override</td></tr>
-<tr class="memdesc:a45e61e25d5929880a0bc906e28561e82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets network configuration of camera device.  <br /></td></tr>
-<tr class="memitem:a9082a0dd84a3559d660cef50751828cb" id="r_a9082a0dd84a3559d660cef50751828cb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9082a0dd84a3559d660cef50751828cb">SetNetworkConfiguration</a> (std::string ipAssign, std::string ip, std::string netmask, std::string gateway, std::string dns, std::string dns2) override</td></tr>
-<tr class="memdesc:a9082a0dd84a3559d660cef50751828cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets network configuration of camera device.  <br /></td></tr>
-<tr class="memitem:af3067fd7ee138eead512884b4c73828c" id="r_af3067fd7ee138eead512884b4c73828c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3067fd7ee138eead512884b4c73828c">SetDefaultNetworkConfiguration</a> (std::string &amp;ipAssign, std::string &amp;ip, std::string &amp;netmask, std::string &amp;gateway, std::string &amp;dns, std::string &amp;dns2) override</td></tr>
-<tr class="memdesc:af3067fd7ee138eead512884b4c73828c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets network configuration of camera device to factory default values.  <br /></td></tr>
+<tr class="memitem:a4b644dd1195eb7a0f0064371a2ec4c95" id="r_a4b644dd1195eb7a0f0064371a2ec4c95"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b644dd1195eb7a0f0064371a2ec4c95">GetNetworkConfiguration</a> (std::string &amp;mac, std::string &amp;ipAssign, std::string &amp;ip, std::string &amp;netmask, std::string &amp;gateway, std::string &amp;dns, std::string &amp;dns2, bool &amp;splash) override</td></tr>
+<tr class="memdesc:a4b644dd1195eb7a0f0064371a2ec4c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets network configuration of camera device.  <br /></td></tr>
+<tr class="memitem:afd4d25c5be559e632aa9d2c26301f2cf" id="r_afd4d25c5be559e632aa9d2c26301f2cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd4d25c5be559e632aa9d2c26301f2cf">SetNetworkConfiguration</a> (std::string ipAssign, std::string ip, std::string netmask, std::string gateway, std::string dns, std::string dns2, bool splash) override</td></tr>
+<tr class="memdesc:afd4d25c5be559e632aa9d2c26301f2cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets network configuration of camera device.  <br /></td></tr>
+<tr class="memitem:a6e51aa4f94e17ff5c2eef7a57c118bfd" id="r_a6e51aa4f94e17ff5c2eef7a57c118bfd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e51aa4f94e17ff5c2eef7a57c118bfd">SetDefaultNetworkConfiguration</a> (std::string &amp;ipAssign, std::string &amp;ip, std::string &amp;netmask, std::string &amp;gateway, std::string &amp;dns, std::string &amp;dns2, bool &amp;splash) override</td></tr>
+<tr class="memdesc:a6e51aa4f94e17ff5c2eef7a57c118bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets network configuration of camera device to factory default values.  <br /></td></tr>
 <tr class="memitem:ad95c327d8eb6aba56430c1c91913a164" id="r_ad95c327d8eb6aba56430c1c91913a164"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad95c327d8eb6aba56430c1c91913a164">RebootDevice</a> () override</td></tr>
 <tr class="memdesc:ad95c327d8eb6aba56430c1c91913a164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reboots camera device.  <br /></td></tr>
 <tr class="memitem:a3460834fc6ce45c542fe9a5846d41cbd" id="r_a3460834fc6ce45c542fe9a5846d41cbd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3460834fc6ce45c542fe9a5846d41cbd">CheckFirmware</a> (std::string fwFilePath, std::string &amp;vendorName, std::string &amp;productName, std::string &amp;versionName, std::string &amp;buildTime, int &amp;fileSize) override</td></tr>
@@ -647,8 +649,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a45e61e25d5929880a0bc906e28561e82" name="a45e61e25d5929880a0bc906e28561e82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45e61e25d5929880a0bc906e28561e82">&#9670;&#160;</a></span>GetNetworkConfiguration()</h2>
+<a id="a4b644dd1195eb7a0f0064371a2ec4c95" name="a4b644dd1195eb7a0f0064371a2ec4c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b644dd1195eb7a0f0064371a2ec4c95">&#9670;&#160;</a></span>GetNetworkConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -689,7 +691,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dns2</em></span>&#160;)</td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dns2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>splash</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -709,12 +716,13 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">gateway</td><td>obtained value for gateway address, IPv4 only</td></tr>
     <tr><td class="paramname">dns</td><td>obtained value for main DNS address, IPv4 only</td></tr>
     <tr><td class="paramname">dns2</td><td>obtained value for sub DNS address, IPv4 only</td></tr>
+    <tr><td class="paramname">splash</td><td>Obtained default on/off value for the splash image.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if this method gets values from device successfully; otherwise, false if an exception is raised. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ae411b3081b1b9e8956be13181cc31ddf">TmSDK::TmControl</a>.</p>
+<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ad7e662cbbbc3c5ef0cb4a235ce8434a6">TmSDK::TmControl</a>.</p>
 
 </div>
 </div>
@@ -745,6 +753,36 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Text string if this method gets value from device successfully; otherwise, empty string if an exception is raised. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a0b204c5a0d864dd86ca4cdd75b18535a">TmSDK::TmControl</a>.</p>
+
+</div>
+</div>
+<a id="a105e03fc0f61f1bb7c705e3671e9dd23" name="a105e03fc0f61f1bb7c705e3671e9dd23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105e03fc0f61f1bb7c705e3671e9dd23">&#9670;&#160;</a></span>GetProductPartNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TmSDK::TmCtrl160::GetProductPartNumber </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the product part number of the connected camera. </p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the camera's product part number. Returns an empty string if the request fails. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a4203bbaa02942f11070dd6d02e99e2ff">TmSDK::TmControl</a>.</p>
 
 </div>
 </div>
@@ -1183,8 +1221,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="af3067fd7ee138eead512884b4c73828c" name="af3067fd7ee138eead512884b4c73828c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3067fd7ee138eead512884b4c73828c">&#9670;&#160;</a></span>SetDefaultNetworkConfiguration()</h2>
+<a id="a6e51aa4f94e17ff5c2eef7a57c118bfd" name="a6e51aa4f94e17ff5c2eef7a57c118bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e51aa4f94e17ff5c2eef7a57c118bfd">&#9670;&#160;</a></span>SetDefaultNetworkConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1220,7 +1258,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dns2</em></span>&#160;)</td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>dns2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;</td>          <td class="paramname"><span class="paramname"><em>splash</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1239,12 +1282,13 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">gateway</td><td>obtained default value for gateway address, IPv4 only</td></tr>
     <tr><td class="paramname">dns</td><td>obtained default value for main DNS address, IPv4 only</td></tr>
     <tr><td class="paramname">dns2</td><td>obtained default value for sub DNS address, IPv4 only</td></tr>
+    <tr><td class="paramname">splash</td><td>Obtained default on/off value for the splash image.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if this method sets values to device successfully; otherwise, false if an exception is raised. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this method sets values to device and starts reboot successfully; otherwise, false if an exception is raised. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#af3496b7b08de9684785cefdb9a3c8acb">TmSDK::TmControl</a>.</p>
+<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#ada81bbec30fb40f37b5cde2214fac950">TmSDK::TmControl</a>.</p>
 
 </div>
 </div>
@@ -1484,8 +1528,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9082a0dd84a3559d660cef50751828cb" name="a9082a0dd84a3559d660cef50751828cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9082a0dd84a3559d660cef50751828cb">&#9670;&#160;</a></span>SetNetworkConfiguration()</h2>
+<a id="afd4d25c5be559e632aa9d2c26301f2cf" name="afd4d25c5be559e632aa9d2c26301f2cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4d25c5be559e632aa9d2c26301f2cf">&#9670;&#160;</a></span>SetNetworkConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1521,7 +1565,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>dns2</em></span>&#160;)</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>dns2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>splash</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1540,12 +1589,13 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">gateway</td><td>value to be set for gateway address, IPv4 only</td></tr>
     <tr><td class="paramname">dns</td><td>value to be set for main DNS address, IPv4 only</td></tr>
     <tr><td class="paramname">dns2</td><td>value to be set for sub DNS address, IPv4 only</td></tr>
+    <tr><td class="paramname">splash</td><td>value to be set for splash image on/off</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if this method sets values to device successfully; otherwise, false if an exception is raised. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this method sets values to device and starts reboot successfully; otherwise, false if an exception is raised. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a0aaade828129baf8ac461945893327df">TmSDK::TmControl</a>.</p>
+<p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_control.html#a1ae2272e042c8877e994538d7ba5f3ea">TmSDK::TmControl</a>.</p>
 
 </div>
 </div>

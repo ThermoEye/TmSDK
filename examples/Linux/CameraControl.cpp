@@ -26,13 +26,24 @@
  *   parent: Pointer to the parent QObject
  */
 CameraControl::CameraControl(Ui::MainWindow* mUi, Camera* camera, QObject* parent)
-    : QObject(parent), ui(mUi), pCamera(camera) {}
+    : QObject(parent), ui(mUi), pCamera(camera), firmwareWorker(nullptr) {}
 
 /*
 * distructor of CameraControl class
 */
 CameraControl::~CameraControl()
-{}
+{
+    if (firmwareWorker != nullptr)
+    {
+        disconnect(firmwareWorker, nullptr, this, nullptr);
+        if (firmwareWorker->isRunning())
+        {
+            firmwareWorker->wait();
+        }
+        delete firmwareWorker;
+        firmwareWorker = nullptr;
+    }
+}
 
 #pragma region slot
 /*
@@ -41,6 +52,7 @@ CameraControl::~CameraControl()
 void CameraControl::pushButton_GetProductInformation_Clicked()
 {
     std::string modelName;
+    std::string partNumber;
     std::string serialNumber;
     std::string hardwareVersion;
     std::string bootloaderVersion;
@@ -49,12 +61,14 @@ void CameraControl::pushButton_GetProductInformation_Clicked()
     if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
 
     modelName = pCamera->pTmCamera->pTmControl->GetProductModelName();
+    partNumber = pCamera->pTmCamera->pTmControl->GetProductPartNumber();
     serialNumber = pCamera->pTmCamera->pTmControl->GetProductSerialNumber();
     hardwareVersion = pCamera->pTmCamera->pTmControl->GetHardwareVersion();
     bootloaderVersion = pCamera->pTmCamera->pTmControl->GetBootloaderVersion();
     firmwareVersion = pCamera->pTmCamera->pTmControl->GetFirmwareVersion();
 
     ui->label_ProductModelName->setText(QString::fromStdString(modelName));
+    ui->label_ProductPartNumber->setText(QString::fromStdString(partNumber));
     ui->label_ProductSerialNumber->setText(QString::fromStdString(serialNumber));
     ui->label_HardwareVersion->setText(QString::fromStdString(hardwareVersion));
     ui->label_BootloaderVersion->setText(QString::fromStdString(bootloaderVersion));
@@ -140,12 +154,21 @@ void CameraControl::pushButton_StartSoftwareUpdate_Clicked()
                 ui->pushButton_StartSoftwareUpdate->setEnabled(false);
                 ui->pushButton_SoftwareUpdateFileBrowse->setEnabled(false);
 
-                FirmwareWorker* worker = nullptr;
+                // Disconnect previous connections to avoid duplicate signal emissions
+                if (firmwareWorker != nullptr)
+                {
+                    disconnect(firmwareWorker, nullptr, this, nullptr);
+                    if (firmwareWorker->isRunning())
+                    {
+                        firmwareWorker->wait();
+                    }
+                    delete firmwareWorker;
+                }
 
-                worker = new FirmwareWorker(pCamera->pTmCamera, this);
-                connect(worker, &FirmwareWorker::ProgressChanged, this, &CameraControl::UpdateProgressChanged);
-                connect(worker, &FirmwareWorker::WorkCompleted, this, &CameraControl::UpdateRunWorkerCompleted);
-                worker->start();
+                firmwareWorker = new FirmwareWorker(pCamera->pTmCamera, this);
+                connect(firmwareWorker, &FirmwareWorker::ProgressChanged, this, &CameraControl::UpdateProgressChanged);
+                connect(firmwareWorker, &FirmwareWorker::WorkCompleted, this, &CameraControl::UpdateRunWorkerCompleted);
+                firmwareWorker->start();
             }
             else
             {
@@ -168,9 +191,10 @@ void CameraControl::pushButton_GetNetworkConfiguration_Clicked()
     std::string gateway;
     std::string dns;
     std::string dns2;
+    bool splash;
 
     if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
-    pCamera->pTmCamera->pTmControl->GetNetworkConfiguration(mac, ipAssign, ip, netmask, gateway, dns, dns2);
+    pCamera->pTmCamera->pTmControl->GetNetworkConfiguration(mac, ipAssign, ip, netmask, gateway, dns, dns2, splash);
 
     ui->lineEdit_MACAddress->setText(QString::fromStdString(mac));
     if (ipAssign == "DHCP")
@@ -186,6 +210,7 @@ void CameraControl::pushButton_GetNetworkConfiguration_Clicked()
     ui->lineEdit_Gateway->setText(QString::fromStdString(gateway));
     ui->lineEdit_MainDNSServer->setText(QString::fromStdString(dns));
     ui->lineEdit_SubDNSServer->setText(QString::fromStdString(dns2));
+    ui->comboBox_SplashScreen->setCurrentIndex(splash ? 0 : 1);
     ui->pushButton_SetNetworkConfiguration->setEnabled(true);
 }
 
@@ -201,9 +226,30 @@ void CameraControl::pushButton_SetNetworkConfiguration_Clicked()
         ui->lineEdit_Netmask->text().toStdString(),
         ui->lineEdit_Gateway->text().toStdString(),
         ui->lineEdit_MainDNSServer->text().toStdString(),
-        ui->lineEdit_SubDNSServer->text().toStdString()))
+        ui->lineEdit_SubDNSServer->text().toStdString(),
+        ui->comboBox_SplashScreen->currentIndex() == 0 ? true : false
+        ))
     {
-        QMessageBox::about(ui->centralwidget, "Network", "Succes to set Network Configuration.");
+        if (pCamera->runCapThread == true)
+        {
+            pCamera->runCapThread = false;
+            pCamera->capThread.join();
+        }
+
+        QThread::msleep(1000);
+        pCamera->DisconnectCamera();
+
+        QThread::msleep(1000);
+
+        QMessageBox::about(ui->centralwidget, "Network", "Succes to set Network Configuration.\rReboot... Please reconnect camera device.");
+        ui->pushButton_LocalCameraConnect->setText("Connect");
+        ui->pushButton_RemoteCameraConnect->setText("Connect");
+        ui->pushButton_LocalCameraConnect->setText("Connect");
+        ui->pushButton_RemoteCameraConnect->setText("Connect");
+        ui->pushButton_LocalCameraConnect->setEnabled(true);
+        ui->pushButton_LocalCameraScan->setEnabled(true);
+        ui->pushButton_RemoteCameraConnect->setEnabled(true);
+        ui->pushButton_RemoteCameraScan->setEnabled(true);
     }
     else
     {
@@ -222,16 +268,32 @@ void CameraControl::pushButton_SetDefaultNetworkConfiguration_Clicked()
     std::string gatewayDef;
     std::string dnsDef;
     std::string dns2Def;
+    bool splash;
 
     if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
-    if (pCamera->pTmCamera->pTmControl->SetDefaultNetworkConfiguration(ipAssignDef, ipDef, netmaskDef, gatewayDef, dnsDef, dns2Def))
+    if (pCamera->pTmCamera->pTmControl->SetDefaultNetworkConfiguration(ipAssignDef, ipDef, netmaskDef, gatewayDef, dnsDef, dns2Def, splash))
     {
-        ui->comboBox_IPAssignment->setCurrentText(QString::fromStdString(ipAssignDef));
-        ui->lineEdit_IPAddress->setText(QString::fromStdString(ipDef));
-        ui->lineEdit_Netmask->setText(QString::fromStdString(netmaskDef));
-        ui->lineEdit_Gateway->setText(QString::fromStdString(gatewayDef));
-        ui->lineEdit_MainDNSServer->setText(QString::fromStdString(dnsDef));
-        ui->lineEdit_SubDNSServer->setText(QString::fromStdString(dns2Def));
+        if (pCamera->runCapThread == true)
+        {
+            pCamera->runCapThread = false;
+            pCamera->capThread.join();
+        }
+
+        QThread::msleep(1000);
+        pCamera->DisconnectCamera();
+
+        QThread::msleep(1000);
+
+        QMessageBox::about(ui->centralwidget, "Network", "Succes to set Network Configuration.\rReboot... Please reconnect camera device.");
+        ui->pushButton_LocalCameraConnect->setText("Connect");
+        ui->pushButton_RemoteCameraConnect->setText("Connect");
+        ui->pushButton_LocalCameraConnect->setText("Connect");
+        ui->pushButton_RemoteCameraConnect->setText("Connect");
+        ui->pushButton_LocalCameraConnect->setEnabled(true);
+        ui->pushButton_LocalCameraScan->setEnabled(true);
+        ui->pushButton_RemoteCameraConnect->setEnabled(true);
+        ui->pushButton_RemoteCameraScan->setEnabled(true);
+        ui->comboBox_SplashScreen->setCurrentIndex(splash ? 0 : 1);
     }
     else
     {
@@ -283,29 +345,50 @@ void CameraControl::UpdateProgressChanged(int progress)
 void CameraControl::UpdateRunWorkerCompleted(bool ret, QString msg)
 {
     if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
-    if (ret == false)
-    {
-        QMessageBox::about(ui->centralwidget, "Software Update", msg);
-    }
+    
+    // CloseFirmware() must be called before DisconnectCamera() to ensure
+    // the serial port is still open. CloseFirmware() internally calls SendPacket
+    // which requires the serial port to be open.
     bool result = pCamera->pTmCamera->pTmControl->CloseFirmware();
-    if (result == false)
+    
+    // Both ret (download completion) and result (CloseFirmware completion) must be true
+    // for the firmware update to be considered successful
+    bool updateSuccessful = ret && result;
+    
+    if (!updateSuccessful)
     {
-        ui->label_SoftwareUpdateStatus->setText("Update failed.");
+        if (!ret)
+        {
+            ui->label_SoftwareUpdateStatus->setText("Update failed.");
+        }
+        else
+        {
+            ui->label_SoftwareUpdateStatus->setText("Download complete, but close failed.");
+        }
     }
     else
     {
         ui->label_SoftwareUpdateStatus->setText("Download complete. Reboot...");
     }
 
+    // Only disconnect after CloseFirmware() has completed
+    // This ensures the serial port is still open during CloseFirmware() execution
     pCamera->DisconnectCamera();
 
-    if (result == true)
+    if (updateSuccessful)
     {
         QMessageBox::about(ui->centralwidget, "Software Update", "Reconnect camera device.");
     }
     else
     {
-        QMessageBox::about(ui->centralwidget, "Software Update", "Please check firmware binary file.");
+        if (!ret)
+        {
+            QMessageBox::about(ui->centralwidget, "Software Update", "Please check firmware binary file.");
+        }
+        else
+        {
+            QMessageBox::about(ui->centralwidget, "Software Update", "Download completed but close failed. Please check connection.");
+        }
     }
     ui->label_SoftwareUpdateStatus->setText("");
     ui->progressBar_SoftwareUpdate->setValue(0);

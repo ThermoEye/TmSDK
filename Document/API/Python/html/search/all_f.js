@@ -4,6 +4,6 @@ var searchData=
   ['ocean_1',['Ocean',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a6dda9eaab3f62444d23cd972f505cd85',1,'TmCore::TmTypes::ColormapTypes']]],
   ['of_20pixel_20values_20starting_20at_2010_2010_2',['Get a 10x10 region of pixel values starting at (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md1',1,'']]],
   ['open_5ffirmware_3',['open_firmware',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#ac37770b673f43f7edf19e4005e5a3301',1,'TmCore::TmControl::TmControl']]],
-  ['open_5flocal_5fcamera_4',['open_local_camera',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a93fae3d17c71b47b7ebd7aa537902284',1,'TmCore::TmCamera::TmCamera']]],
-  ['open_5fremote_5fcamera_5',['open_remote_camera',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a3c093482ceeed564dab38caed3d69e93',1,'TmCore::TmCamera::TmCamera']]]
+  ['open_5flocal_5fcamera_4',['open_local_camera',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a6b38e692427fbdd1f52224b5e3844701',1,'TmCore::TmCamera::TmCamera']]],
+  ['open_5fremote_5fcamera_5',['open_remote_camera',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a98ab51f1babd7e8140f4960fea9700a8',1,'TmCore::TmCamera::TmCamera']]]
 ];

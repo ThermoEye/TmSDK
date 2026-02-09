@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (python)<span id="projectnumber">&#160;1.2.0</span>
+   <div id="projectname">TmSDK (python)<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -135,6 +135,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4cf1855e1bfc55a6e3d692247501d1ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initiates the flat field correction process on the sensor.  <br /></td></tr>
 <tr class="memitem:afa321be2324189a6acc1a4af9a8562fe" id="r_afa321be2324189a6acc1a4af9a8562fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa321be2324189a6acc1a4af9a8562fe">get_product_model_name</a> (self)</td></tr>
 <tr class="memdesc:afa321be2324189a6acc1a4af9a8562fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the product model name of the sensor.  <br /></td></tr>
+<tr class="memitem:a5b1eebf51d586a97284304ca413f1e13" id="r_a5b1eebf51d586a97284304ca413f1e13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b1eebf51d586a97284304ca413f1e13">get_product_part_number</a> (self)</td></tr>
+<tr class="memdesc:a5b1eebf51d586a97284304ca413f1e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the product part number of the sensor.  <br /></td></tr>
 <tr class="memitem:a1468b650e18d87ac9290eac764b8cb39" id="r_a1468b650e18d87ac9290eac764b8cb39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1468b650e18d87ac9290eac764b8cb39">get_product_serial</a> (self)</td></tr>
 <tr class="memdesc:a1468b650e18d87ac9290eac764b8cb39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the product serial number of the sensor.  <br /></td></tr>
 <tr class="memitem:a30955900c2f2c99a42263e4d913d158d" id="r_a30955900c2f2c99a42263e4d913d158d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30955900c2f2c99a42263e4d913d158d">get_hardware_version</a> (self)</td></tr>
@@ -153,8 +155,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a35287c86678180c18795671ba864bfde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restores the default sensor configuration.  <br /></td></tr>
 <tr class="memitem:acbf58e1f5f2ba2d183a5b3ea2cd368d8" id="r_acbf58e1f5f2ba2d183a5b3ea2cd368d8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbf58e1f5f2ba2d183a5b3ea2cd368d8">get_network_configuration</a> (self)</td></tr>
 <tr class="memdesc:acbf58e1f5f2ba2d183a5b3ea2cd368d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the network configuration settings from the camera.  <br /></td></tr>
-<tr class="memitem:a618a925165d6ae9ae11da9ad3b7e0bc5" id="r_a618a925165d6ae9ae11da9ad3b7e0bc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a618a925165d6ae9ae11da9ad3b7e0bc5">set_network_configuration</a> (self, ip_assign, ip, netmask, gateway, dns, dns2)</td></tr>
-<tr class="memdesc:a618a925165d6ae9ae11da9ad3b7e0bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the network configuration for the device.  <br /></td></tr>
+<tr class="memitem:ad8deaa3d2f0facdbf56512fb62af5f13" id="r_ad8deaa3d2f0facdbf56512fb62af5f13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8deaa3d2f0facdbf56512fb62af5f13">set_network_configuration</a> (self, ip_assign, ip, netmask, gateway, dns, dns2, splash)</td></tr>
+<tr class="memdesc:ad8deaa3d2f0facdbf56512fb62af5f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the network configuration for the device.  <br /></td></tr>
 <tr class="memitem:ae843b42707ac2456f3ec53b7721416ff" id="r_ae843b42707ac2456f3ec53b7721416ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae843b42707ac2456f3ec53b7721416ff">set_default_network_configuration</a> (self)</td></tr>
 <tr class="memdesc:ae843b42707ac2456f3ec53b7721416ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the default network configuration from the device.  <br /></td></tr>
 <tr class="memitem:a57bc70ca4594334a962212b513c8bf40" id="r_a57bc70ca4594334a962212b513c8bf40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57bc70ca4594334a962212b513c8bf40">reboot_device</a> (self)</td></tr>
@@ -521,7 +523,8 @@ Public Attributes</h2></td></tr>
 <li><span class="tt">netmask</span>: The subnet mask of the network.</li>
 <li><span class="tt">gateway</span>: The gateway address.</li>
 <li><span class="tt">dns</span>: The primary DNS server address.</li>
-<li><span class="tt">dns2</span>: The secondary DNS server address. If the function fails to retrieve the network configuration, it prints an error message and returns <span class="tt">None</span>. </li>
+<li><span class="tt">dns2</span>: The secondary DNS server address.</li>
+<li><span class="tt">splash</span>: Whether the splash screen is enabled on the device. If the function fails to retrieve the network configuration, it prints an error message and returns <span class="tt">None</span>. </li>
 </ul>
 </li>
 </ul>
@@ -568,6 +571,28 @@ Public Attributes</h2></td></tr>
 
 <p>Retrieves the product model name of the sensor. </p>
 <dl class="section return"><dt>Returns</dt><dd><p class="startdd">A string containing the product model name if successful; otherwise, <span class="tt">None</span>.</p>
+<p class="enddd"></p>
+</dd></dl>
+
+</div>
+</div>
+<a id="a5b1eebf51d586a97284304ca413f1e13" name="a5b1eebf51d586a97284304ca413f1e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b1eebf51d586a97284304ca413f1e13">&#9670;&#160;</a></span>get_product_part_number()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TmCore.TmControl.TmControl.get_product_part_number </td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the product part number of the sensor. </p>
+<dl class="section return"><dt>Returns</dt><dd><p class="startdd">A string containing the product part number if successful; otherwise, <span class="tt">None</span>.</p>
 <p class="enddd"></p>
 </dd></dl>
 
@@ -846,7 +871,13 @@ Public Attributes</h2></td></tr>
 </ul>
 <p class="enddd">If the function call fails, an exception is raised, and <span class="tt">None</span> is returned. </p>
 </dd></dl>
+<pre class="fragment">Sets the default network configuration on the device and retrieves it,
+including the splash on/off flag.
 
+:returns: (bool, dict) tuple.
+          On success: (True, {...})
+          On failure: (False, {})
+</pre> 
 </div>
 </div>
 <a id="a6de86218aebff092eccbed8d508f7ee3" name="a6de86218aebff092eccbed8d508f7ee3"></a>
@@ -1135,8 +1166,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a618a925165d6ae9ae11da9ad3b7e0bc5" name="a618a925165d6ae9ae11da9ad3b7e0bc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a618a925165d6ae9ae11da9ad3b7e0bc5">&#9670;&#160;</a></span>set_network_configuration()</h2>
+<a id="ad8deaa3d2f0facdbf56512fb62af5f13" name="ad8deaa3d2f0facdbf56512fb62af5f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8deaa3d2f0facdbf56512fb62af5f13">&#9670;&#160;</a></span>set_network_configuration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1174,7 +1205,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dns2</em></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>dns2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>splash</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1188,13 +1224,23 @@ Public Attributes</h2></td></tr>
     <tr><td class="paramname">gateway</td><td>The gateway IP address. </td></tr>
     <tr><td class="paramname">dns</td><td>The primary DNS server address. </td></tr>
     <tr><td class="paramname">dns2</td><td>The secondary DNS server address (can be an empty string if not used). </td></tr>
+    <tr><td class="paramname">splash</td><td>Whether the splash screen is enabled on the device. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><p class="startdd"><span class="tt">True</span> if the network configuration is successfully set; otherwise, <span class="tt">False</span>.</p>
 <p class="enddd"></p>
 </dd></dl>
+<pre class="fragment">Sets the network configuration including splash on/off flag.
 
+:param ip_assign: "DHCP" or "Static"
+:param ip: IP address string
+:param netmask: Netmask string
+:param gateway: Gateway string
+:param dns: Primary DNS string
+:param dns2: Secondary DNS string
+:param splash: bool, True to enable splash screen, False to disable
+</pre> 
 </div>
 </div>
 <a id="a9687a84dfd8981d57875896b208555cf" name="a9687a84dfd8981d57875896b208555cf"></a>

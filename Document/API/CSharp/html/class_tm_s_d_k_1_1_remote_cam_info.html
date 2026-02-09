@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;1.2.0</span>
+   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;2.0.0</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -112,8 +112,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa7880597daa1e33e11949a4a3aa5101f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_tm_s_d_k_1_1_remote_cam_info.html" title="Inheritance class for remote camera information store.">RemoteCamInfo</a> class with the specified parameters.  <br /></td></tr>
 <tr class="memitem:a5c2d9b4403c82aed2e184f65f34bb6f8" id="r_a5c2d9b4403c82aed2e184f65f34bb6f8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c2d9b4403c82aed2e184f65f34bb6f8">RemoteCamInfo</a> (string name, string serialNumber, string addrMAC, string addrIP, string adapterIP)</td></tr>
 <tr class="memdesc:a5c2d9b4403c82aed2e184f65f34bb6f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_tm_s_d_k_1_1_remote_cam_info.html" title="Inheritance class for remote camera information store.">RemoteCamInfo</a> class with basic camera information.  <br /></td></tr>
-<tr class="memitem:a6ee4af0828118c05efe7736924267cd1" id="r_a6ee4af0828118c05efe7736924267cd1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ee4af0828118c05efe7736924267cd1">RemoteCamInfo</a> (string name, string serialNumber, string addrMAC, string addrIP, string adapterIP, List&lt; <a class="el" href="class_tm_s_d_k_1_1_media_info.html">MediaInfo</a> &gt; mediaInfoList)</td></tr>
-<tr class="memdesc:a6ee4af0828118c05efe7736924267cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_tm_s_d_k_1_1_remote_cam_info.html" title="Inheritance class for remote camera information store.">RemoteCamInfo</a> class with camera information and media sources.  <br /></td></tr>
+<tr class="memitem:abeaca4314a49b36f5e68dab5eb22feef" id="r_abeaca4314a49b36f5e68dab5eb22feef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abeaca4314a49b36f5e68dab5eb22feef">RemoteCamInfo</a> (string name, string serialNumber, string addrMAC, string addrIP, string adapterIP, List&lt; <a class="el" href="class_tm_s_d_k_1_1_media_info.html">MediaInfo</a> &gt; mediaInfoList, int mediaIndex=0)</td></tr>
+<tr class="memdesc:abeaca4314a49b36f5e68dab5eb22feef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_tm_s_d_k_1_1_remote_cam_info.html" title="Inheritance class for remote camera information store.">RemoteCamInfo</a> class with camera information and media sources.  <br /></td></tr>
+<tr class="memitem:af3be045033ac445c456b46f75b36c670" id="r_af3be045033ac445c456b46f75b36c670"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3be045033ac445c456b46f75b36c670">RemoteCamInfo</a> (string name, string serialNumber, string addrMAC, string addrIP, string adapterIP, List&lt; <a class="el" href="class_tm_s_d_k_1_1_media_info.html">MediaInfo</a> &gt; mediaInfoList, int mediaIndex, string partNumber)</td></tr>
+<tr class="memdesc:af3be045033ac445c456b46f75b36c670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_tm_s_d_k_1_1_remote_cam_info.html" title="Inheritance class for remote camera information store.">RemoteCamInfo</a> class with camera information and media sources.  <br /></td></tr>
 <tr class="memitem:a5390209786b429533b9fb73146f64d96" id="r_a5390209786b429533b9fb73146f64d96"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5390209786b429533b9fb73146f64d96">RemoteCamInfo</a> (IntPtr camInfoObj)</td></tr>
 <tr class="memdesc:a5390209786b429533b9fb73146f64d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_tm_s_d_k_1_1_remote_cam_info.html" title="Inheritance class for remote camera information store.">RemoteCamInfo</a> class with a pointer to the camera information object.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -122,6 +124,8 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a06e62ae5a47f415dbefe6007690c7f33" id="r_a06e62ae5a47f415dbefe6007690c7f33"><td class="memItemLeft" align="right" valign="top">IntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06e62ae5a47f415dbefe6007690c7f33">self</a> = IntPtr.Zero</td></tr>
 <tr class="memitem:af00cef65899167e92f173f704e00560f" id="r_af00cef65899167e92f173f704e00560f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af00cef65899167e92f173f704e00560f">Name</a></td></tr>
 <tr class="memdesc:af00cef65899167e92f173f704e00560f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Camera device name.  <br /></td></tr>
+<tr class="memitem:a96a39a39b5da65579dda321c8f08e005" id="r_a96a39a39b5da65579dda321c8f08e005"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96a39a39b5da65579dda321c8f08e005">PartNumber</a></td></tr>
+<tr class="memdesc:a96a39a39b5da65579dda321c8f08e005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Product part number.  <br /></td></tr>
 <tr class="memitem:a7afa791978ab4e115efd6172e20f2c43" id="r_a7afa791978ab4e115efd6172e20f2c43"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7afa791978ab4e115efd6172e20f2c43">SerialNumber</a></td></tr>
 <tr class="memdesc:a7afa791978ab4e115efd6172e20f2c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Product serial number.  <br /></td></tr>
 <tr class="memitem:ad9ae799247549a2df08e1b9e843d0b7c" id="r_ad9ae799247549a2df08e1b9e843d0b7c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9ae799247549a2df08e1b9e843d0b7c">AddrMAC</a></td></tr>
@@ -139,7 +143,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><p>Inheritance class for remote camera information store. </p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa7880597daa1e33e11949a4a3aa5101f" name="aa7880597daa1e33e11949a4a3aa5101f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7880597daa1e33e11949a4a3aa5101f">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7880597daa1e33e11949a4a3aa5101f">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,7 +185,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a5c2d9b4403c82aed2e184f65f34bb6f8" name="a5c2d9b4403c82aed2e184f65f34bb6f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c2d9b4403c82aed2e184f65f34bb6f8">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c2d9b4403c82aed2e184f65f34bb6f8">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,8 +232,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a6ee4af0828118c05efe7736924267cd1" name="a6ee4af0828118c05efe7736924267cd1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ee4af0828118c05efe7736924267cd1">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[3/4]</span></h2>
+<a id="abeaca4314a49b36f5e68dab5eb22feef" name="abeaca4314a49b36f5e68dab5eb22feef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeaca4314a49b36f5e68dab5eb22feef">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +266,12 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">List&lt; <a class="el" href="class_tm_s_d_k_1_1_media_info.html">MediaInfo</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>mediaInfoList</em></span>&#160;)</td>
+          <td class="paramtype">List&lt; <a class="el" href="class_tm_s_d_k_1_1_media_info.html">MediaInfo</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>mediaInfoList</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mediaIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -282,8 +291,73 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="af3be045033ac445c456b46f75b36c670" name="af3be045033ac445c456b46f75b36c670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3be045033ac445c456b46f75b36c670">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TmSDK.RemoteCamInfo.RemoteCamInfo </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>serialNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>addrMAC</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>addrIP</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>adapterIP</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">List&lt; <a class="el" href="class_tm_s_d_k_1_1_media_info.html">MediaInfo</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>mediaInfoList</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>mediaIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>partNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="class_tm_s_d_k_1_1_remote_cam_info.html" title="Inheritance class for remote camera information store.">RemoteCamInfo</a> class with camera information and media sources. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the remote camera.</td></tr>
+    <tr><td class="paramname">partNumber</td><td>The part number of the remote camera.</td></tr>
+    <tr><td class="paramname">serialNumber</td><td>The serial number of the remote camera.</td></tr>
+    <tr><td class="paramname">addrMAC</td><td>The MAC address of the remote camera.</td></tr>
+    <tr><td class="paramname">addrIP</td><td>The IP address of the remote camera.</td></tr>
+    <tr><td class="paramname">adapterIP</td><td>The adapter IP address for the remote camera.</td></tr>
+    <tr><td class="paramname">mediaInfoList</td><td>The list of media information sources available for this camera.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a5390209786b429533b9fb73146f64d96" name="a5390209786b429533b9fb73146f64d96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5390209786b429533b9fb73146f64d96">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5390209786b429533b9fb73146f64d96">&#9670;&#160;</a></span>RemoteCamInfo() <span class="overload">[5/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -401,6 +475,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Camera device name. </p>
+
+</div>
+</div>
+<a id="a96a39a39b5da65579dda321c8f08e005" name="a96a39a39b5da65579dda321c8f08e005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a39a39b5da65579dda321c8f08e005">&#9670;&#160;</a></span>PartNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TmSDK.RemoteCamInfo.PartNumber</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Product part number. </p>
 
 </div>
 </div>

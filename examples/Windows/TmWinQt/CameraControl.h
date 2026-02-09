@@ -11,6 +11,8 @@
 
 using namespace  TmSDK;
 
+class FirmwareWorker;
+
 class CameraControl : public QObject {
     Q_OBJECT
 
@@ -18,6 +20,7 @@ private:
     Ui::MainWindow* ui;
     Camera* pCamera = nullptr;
     QThread* updateFirmwareThread;
+    FirmwareWorker* firmwareWorker = nullptr;
 
 public:
     explicit CameraControl(Ui::MainWindow* mUi, Camera* camera, QObject* parent = nullptr);

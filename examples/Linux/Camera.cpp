@@ -255,6 +255,9 @@ void Camera::CaptureFrame()
 */
 void Camera::ScanLocalCamera()
 {
+    // Block signals to prevent slots from accessing CamList while it is being rebuilt
+    bool prevBlockState = ui->listWidget_LocalCameraList->blockSignals(true);
+
     ui->lineEdit_LocalCameraName->setText("");
     ui->lineEdit_LocalCameraPort->setText("");
     ui->listWidget_LocalCameraList->clear();
@@ -280,10 +283,33 @@ void Camera::ScanLocalCamera()
     if (!CamList.empty())
     {
         ui->listWidget_LocalCameraList->setCurrentRow(0);
-        TmLocalCamInfo* camInfo = (TmLocalCamInfo*)CamList[0];
-        ui->lineEdit_LocalCameraName->setText(QString::fromStdString(camInfo->Name));
-        ui->lineEdit_LocalCameraPort->setText(QString::fromStdString(camInfo->ComPort));
+        // Defensive check: ensure index 0 is valid
+        if (CamList.size() > 0 && CamList[0] != nullptr)
+        {
+            TmLocalCamInfo* camInfo = static_cast<TmLocalCamInfo*>(CamList[0]);
+            ui->lineEdit_LocalCameraName->setText(QString::fromStdString(camInfo->Name));
+            ui->lineEdit_LocalCameraPort->setText(QString::fromStdString(camInfo->ComPort));
+
+            // Populate local camera video format combo box
+            ui->comboBox_LocalCameraVideoFormat->clear();
+            int index = 0;
+            for (auto media : camInfo->MediaSourcesList)
+            {
+                QString qstrMedia = QString::fromStdString(
+                    camInfo->MediaSourcesList[index].Format + ":" +
+                    std::to_string(camInfo->MediaSourcesList[index].Width) + "x" +
+                    std::to_string(camInfo->MediaSourcesList[index].Height) + "@" +
+                    std::to_string(camInfo->MediaSourcesList[index].FrameRate) + "fps-" +
+                    std::to_string(camInfo->MediaSourcesList[index].BitPerPixel) + "bpp"
+                );
+                ui->comboBox_LocalCameraVideoFormat->addItem(qstrMedia);
+                index++;
+            }
+        }
     }
+
+    // Restore previous signal blocking state
+    ui->listWidget_LocalCameraList->blockSignals(prevBlockState);
 }
 
 /*
@@ -291,7 +317,11 @@ void Camera::ScanLocalCamera()
 */
 void Camera::ScanRemoteCamera()
 {
+    // Block signals to prevent slots from accessing CamList while it is being rebuilt
+    bool prevBlockState = ui->listWidget_RemoteCameraList->blockSignals(true);
+
     ui->lineEdit_RemoteCameraName->setText("");
+    ui->lineEdit_RemoteCameraPartNumber->setText("");
     ui->lineEdit_RemoteCameraSerial->setText("");
     ui->lineEdit_RemoteCameraMac->setText("");
     ui->lineEdit_RemoteCameraIp->setText("");
@@ -309,7 +339,7 @@ void Camera::ScanRemoteCamera()
         ui->listWidget_RemoteCameraList->addItem(qstr);
         if (cam.MediaSourcesList.size() > 0)
         {
-            CamList.push_back(new TmRemoteCamInfo(cam.Name, cam.SerialNumber, cam.AddrMAC, cam.AddrIP, cam.AdapterIP, cam.MediaSourcesList));
+            CamList.push_back(new TmRemoteCamInfo(cam.Name, cam.SerialNumber, cam.AddrMAC, cam.AddrIP, cam.AdapterIP, cam.MediaSourcesList, 0, cam.PartNumber));
         }
         else
         {
@@ -319,13 +349,37 @@ void Camera::ScanRemoteCamera()
     if (!CamList.empty())
     {
         ui->listWidget_RemoteCameraList->setCurrentRow(0);
-        TmRemoteCamInfo* camInfo = (TmRemoteCamInfo*)CamList[0];
-        ui->lineEdit_RemoteCameraName->setText(QString::fromStdString(camInfo->Name));
-        ui->lineEdit_RemoteCameraSerial->setText(QString::fromStdString(camInfo->SerialNumber));
-        ui->lineEdit_RemoteCameraMac->setText(QString::fromStdString(camInfo->AddrMAC));
-        ui->lineEdit_RemoteCameraIp->setText(QString::fromStdString(camInfo->AddrIP));
-        ui->lineEdit_RemoteCameraAdapterIp->setText(QString::fromStdString(camInfo->AdapterIP));
+        // Defensive check: ensure index 0 is valid
+        if (CamList.size() > 0 && CamList[0] != nullptr)
+        {
+            TmRemoteCamInfo* camInfo = static_cast<TmRemoteCamInfo*>(CamList[0]);
+            ui->lineEdit_RemoteCameraName->setText(QString::fromStdString(camInfo->Name));
+            ui->lineEdit_RemoteCameraPartNumber->setText(QString::fromStdString(camInfo->PartNumber));
+            ui->lineEdit_RemoteCameraSerial->setText(QString::fromStdString(camInfo->SerialNumber));
+            ui->lineEdit_RemoteCameraMac->setText(QString::fromStdString(camInfo->AddrMAC));
+            ui->lineEdit_RemoteCameraIp->setText(QString::fromStdString(camInfo->AddrIP));
+            ui->lineEdit_RemoteCameraAdapterIp->setText(QString::fromStdString(camInfo->AdapterIP));
+
+            // Populate remote camera video format combo box
+            ui->comboBox_RemoteCameraVideoFormat->clear();
+            int index = 0;
+            for (auto media : camInfo->MediaSourcesList)
+            {
+                QString qstrMedia = QString::fromStdString(
+                    camInfo->MediaSourcesList[index].Format + ":" +
+                    std::to_string(camInfo->MediaSourcesList[index].Width) + "x" +
+                    std::to_string(camInfo->MediaSourcesList[index].Height) + "@" +
+                    std::to_string(camInfo->MediaSourcesList[index].FrameRate) + "fps-" +
+                    std::to_string(camInfo->MediaSourcesList[index].BitPerPixel) + "bpp"
+                );
+                ui->comboBox_RemoteCameraVideoFormat->addItem(qstrMedia);
+                index++;
+            }
+        }
     }
+
+    // Restore previous signal blocking state
+    ui->listWidget_RemoteCameraList->blockSignals(prevBlockState);
 }
 
 /*
@@ -353,12 +407,11 @@ void Camera::DisconnectCamera()
         pTmCamera->Close();
         pTmCamera = nullptr;
     }
-    ui->tabWidget_Control->setVisible(false);
+    // Hide widgets inside tabSensorControl
     ui->stackedWidget_SensorControl->setVisible(false);
-    ui->groupBox->setEnabled(false);
-    ui->groupBox_SenserInformation->setEnabled(false);
+    ui->groupBox_ProductInformation->setEnabled(false);
+    ui->groupBox_SensorInformation->setEnabled(false);
     ui->groupBox_SoftwareUpdate->setEnabled(false);
-    ui->groupBox_NetworkConfiguration->setEnabled(false);
     ui->comboBox_ColorMap->setEnabled(false);
     ui->comboBox_TemperatureUnit->setEnabled(false);
 
@@ -373,6 +426,7 @@ void Camera::DisconnectCamera()
     ui->comboBox_TemperatureUnit->setEnabled(false);
 
     ui->label_ProductModelName->setText("");
+    ui->label_ProductPartNumber->setText("");
     ui->label_ProductSerialNumber->setText("");
     ui->label_HardwareVersion->setText("");
     ui->label_BootloaderVersion->setText("");
@@ -394,6 +448,21 @@ void Camera::DisconnectCamera()
     ui->lineEdit_Gateway->setText("");
     ui->lineEdit_MainDNSServer->setText("");
     ui->lineEdit_SubDNSServer->setText("");
+
+    // Clear last preview image so that label_Preview does not keep the last frame
+    if (ui->label_Preview != nullptr)
+    {
+        // 먼저 비어 있는 pixmap을 설정하고 즉시 그리기
+        ui->label_Preview->setPixmap(QPixmap());
+        ui->label_Preview->repaint();
+
+        // 이벤트 큐에 남아 있을 수 있는 setPixmap 호출들을 처리
+        QCoreApplication::processEvents(QEventLoop::AllEvents, 50);
+
+        // 최종적으로 clear 한 번 더 호출
+        ui->label_Preview->clear();
+        ui->label_Preview->repaint();
+    }
 }
 
 /*
@@ -801,32 +870,42 @@ void Camera::pushButton_LocalCameraConnect_Clicked()
         }
 
         int row = ui->listWidget_LocalCameraList->currentRow();
+        if (row < 0 || row >= static_cast<int>(CamList.size()))
+        {
+            QMessageBox::warning(nullptr, "Warning", "No local camera selected.");
+            return;
+        }
 
-        if (pTmCamera->Open((TmLocalCamInfo*)CamList[row]))
+        if (pTmCamera->Open(static_cast<TmLocalCamInfo*>(CamList[row])))
         {
             runCapThread = true;
             capThread = std::thread(std::bind(&Camera::CaptureFrame, this));
             ui->pushButton_LocalCameraConnect->setText("Disconnect");
-            if (pTmCamera->GetDevName() == "TMC256B")
-            {
-                ui->tabWidget_Control->setCurrentIndex(0);
-                ui->stackedWidget_SensorControl->setCurrentIndex(0);
-            }
-            else if (pTmCamera->GetDevName() == "TMC160B" || pTmCamera->GetDevName() == "TMC80B")
+            if (pTmCamera->GetDevName() == "ThermoCam160E" 
+                || pTmCamera->GetDevName() == "TMC160E" || pTmCamera->GetDevName() == "TMC160B" || pTmCamera->GetDevName() == "TMC160F"
+                || pTmCamera->GetDevName() == "TMC80E" || pTmCamera->GetDevName() == "TMC80B" || pTmCamera->GetDevName() == "TMC80F")
             {
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(1);
             }
-            else if (pTmCamera->GetDevName() == "TMC256GB")
+            else if (pTmCamera->GetDevName() == "ThermoCam256E" 
+                || pTmCamera->GetDevName() == "TMC256E" || pTmCamera->GetDevName() == "TMC256B" || pTmCamera->GetDevName() == "TMC256I"
+                || pTmCamera->GetDevName() == "TMC160IE" || pTmCamera->GetDevName() == "TMC160IB" || pTmCamera->GetDevName() == "TMC160I")
+            {
+                ui->tabWidget_Control->setCurrentIndex(0);
+                ui->stackedWidget_SensorControl->setCurrentIndex(0);
+            }
+            else if (pTmCamera->GetDevName() == "TMC256GE" || pTmCamera->GetDevName() == "TMC256GB" || pTmCamera->GetDevName() == "TMC256G"
+                || pTmCamera->GetDevName() == "TMC384GE" || pTmCamera->GetDevName() == "TMC384GB" || pTmCamera->GetDevName() == "TMC384G")
             {
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(2);
             }
 
-            ui->tabWidget_Control->setVisible(true);
+            // Show widgets inside tabSensorControl
             ui->stackedWidget_SensorControl->setVisible(true);
-            ui->groupBox->setEnabled(true);
-            ui->groupBox_SenserInformation->setEnabled(true);
+            ui->groupBox_ProductInformation->setEnabled(true);
+            ui->groupBox_SensorInformation->setEnabled(true);
             ui->groupBox_SoftwareUpdate->setEnabled(true);
             ui->comboBox_ColorMap->setEnabled(true);
             ui->comboBox_TemperatureUnit->setEnabled(true);
@@ -841,6 +920,15 @@ void Camera::pushButton_LocalCameraConnect_Clicked()
             ui->comboBox_ColorMap->setEnabled(true);
             ui->checkBox_NoiseFiltering->setEnabled(true);
             ui->comboBox_TemperatureUnit->setEnabled(true);
+
+            ui->comboBox_IPAssignment->setEnabled(false);
+            ui->lineEdit_IPAddress->setEnabled(false);
+            ui->lineEdit_Netmask->setEnabled(false);
+            ui->lineEdit_Gateway->setEnabled(false);
+            ui->lineEdit_MainDNSServer->setEnabled(false);
+            ui->lineEdit_SubDNSServer->setEnabled(false);
+            ui->pushButton_SetDefaultNetworkConfiguration->setEnabled(false);
+            ui->pushButton_SystemReboot->setEnabled(false);
         }
         else
         {
@@ -879,45 +967,59 @@ void Camera::pushButton_RemoteCameraConnect_Clicked()
         }
 
         int row = ui->listWidget_RemoteCameraList->currentRow();
-        if (pTmCamera->Open((TmRemoteCamInfo*)CamList[row]))
+        if (row < 0 || row >= static_cast<int>(CamList.size()))
+        {
+            QMessageBox::warning(nullptr, "Warning", "No remote camera selected.");
+            return;
+        }
+
+        if (pTmCamera->Open(static_cast<TmRemoteCamInfo*>(CamList[row])))
         {
             runCapThread = true;
             capThread = std::thread(std::bind(&Camera::CaptureFrame, this));
 
             ui->pushButton_RemoteCameraConnect->setText("Disconnect");
 
-            if (pTmCamera->GetDevName() == "TMC256E")
+            if (pTmCamera->GetDevName() == "ThermoCam160E"
+                || pTmCamera->GetDevName() == "TMC160E" || pTmCamera->GetDevName() == "TMC160B" || pTmCamera->GetDevName() == "TMC160F"
+                || pTmCamera->GetDevName() == "TMC80E" || pTmCamera->GetDevName() == "TMC80B" || pTmCamera->GetDevName() == "TMC80F")
+            {
+                ui->tabWidget_Control->setCurrentIndex(0);
+                ui->stackedWidget_SensorControl->setCurrentIndex(1);
+            }
+            else if (pTmCamera->GetDevName() == "ThermoCam256E"
+                || pTmCamera->GetDevName() == "TMC256E" || pTmCamera->GetDevName() == "TMC256B" || pTmCamera->GetDevName() == "TMC256I"
+                || pTmCamera->GetDevName() == "TMC160IE" || pTmCamera->GetDevName() == "TMC160IB" || pTmCamera->GetDevName() == "TMC160I")
             {
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(0);
                 ui->groupBox_FluxParameters->setEnabled(true);
                 ui->groupBox_FluxParameters->setTitle("Flux Parameters");
             }
-            else if (pTmCamera->GetDevName() == "TMC160E" || pTmCamera->GetDevName() == "TMC80E")
-            {
-                ui->tabWidget_Control->setCurrentIndex(0);
-                ui->stackedWidget_SensorControl->setCurrentIndex(1);
-            }
-            else if (pTmCamera->GetDevName() == "TMC256GE")
+            else if (pTmCamera->GetDevName() == "TMC256GE" || pTmCamera->GetDevName() == "TMC256GB" || pTmCamera->GetDevName() == "TMC256G"
+                || pTmCamera->GetDevName() == "TMC384GE" || pTmCamera->GetDevName() == "TMC384GB" || pTmCamera->GetDevName() == "TMC384G")
             {
                 ui->tabWidget_Control->setCurrentIndex(0);
                 ui->stackedWidget_SensorControl->setCurrentIndex(2);
             }
 
-            ui->tabWidget_Control->setVisible(true);
+            // Show widgets inside tabSensorControl
             ui->stackedWidget_SensorControl->setVisible(true);
-            ui->groupBox->setEnabled(true);
-            ui->groupBox_SenserInformation->setEnabled(true);
+            ui->groupBox_ProductInformation->setEnabled(true);
+            ui->groupBox_SensorInformation->setEnabled(true);
             ui->groupBox_SoftwareUpdate->setEnabled(true);
-            ui->groupBox_NetworkConfiguration->setEnabled(true);
             ui->comboBox_ColorMap->setEnabled(true);
             ui->comboBox_TemperatureUnit->setEnabled(true);
 
-            ui->pushButton_GetNetworkConfiguration->setEnabled(true);
             ui->comboBox_IPAssignment->setEnabled(true);
             ui->lineEdit_IPAddress->setEnabled(true);
             ui->lineEdit_Netmask->setEnabled(true);
             ui->lineEdit_Gateway->setEnabled(true);
+            ui->lineEdit_MainDNSServer->setEnabled(true);
+            ui->lineEdit_SubDNSServer->setEnabled(true);
+            ui->pushButton_SetDefaultNetworkConfiguration->setEnabled(true);
+            ui->pushButton_SystemReboot->setEnabled(true);
+
 
             ui->radioButton_ShapeCursor->setChecked(true);
             ui->radioButton_ShapeCursor->setEnabled(true);
@@ -947,8 +1049,8 @@ void Camera::pushButton_RemoteCameraConnect_Clicked()
 */
 void Camera::listWidget_LocalCameraList_CurrentRowChanged(int row)
 {
-    if (row < 0) return;
-    TmLocalCamInfo* camInfo = (TmLocalCamInfo*)CamList[row];
+    if (row < 0 || row >= static_cast<int>(CamList.size())) return;
+    TmLocalCamInfo* camInfo = static_cast<TmLocalCamInfo*>(CamList[row]);
     ui->lineEdit_LocalCameraName->setText(QString::fromStdString(camInfo->Name));
     ui->lineEdit_LocalCameraPort->setText(QString::fromStdString(camInfo->ComPort));
     ui->comboBox_LocalCameraVideoFormat->clear();
@@ -972,9 +1074,10 @@ void Camera::listWidget_LocalCameraList_CurrentRowChanged(int row)
 */
 void Camera::listWidget_RemoteCameraList_CurrentRowChanged(int row)
 {
-    if (row < 0) return;
-    TmRemoteCamInfo* camInfo = (TmRemoteCamInfo*)CamList[row];
+    if (row < 0 || row >= static_cast<int>(CamList.size())) return;
+    TmRemoteCamInfo* camInfo = static_cast<TmRemoteCamInfo*>(CamList[row]);
     ui->lineEdit_RemoteCameraName->setText(QString::fromStdString(camInfo->Name));
+    ui->lineEdit_RemoteCameraPartNumber->setText(QString::fromStdString(camInfo->PartNumber));
     ui->lineEdit_RemoteCameraSerial->setText(QString::fromStdString(camInfo->SerialNumber));
     ui->lineEdit_RemoteCameraMac->setText(QString::fromStdString(camInfo->AddrMAC));
     ui->lineEdit_RemoteCameraIp->setText(QString::fromStdString(camInfo->AddrIP));
@@ -1178,23 +1281,39 @@ void Camera::pushButton_RemoveRoiItem_Clicked()
 
 void Camera::comboBox_LocalCameraVideoFormat_Changed(int index)
 {
-    if (CamList.size() > 0)
-    {
-        int row = ui->listWidget_LocalCameraList->currentRow();
-        row = row < 0 ? 0 : row;
-        TmLocalCamInfo* camInfo = (TmLocalCamInfo*)CamList[row];
-        camInfo->MediaIndex = index;
-    }
+    if (CamList.empty()) return;
+
+    int row = ui->listWidget_LocalCameraList->currentRow();
+    if (row < 0 || row >= static_cast<int>(CamList.size())) return;
+
+    TmLocalCamInfo* camInfo = static_cast<TmLocalCamInfo*>(CamList[row]);
+    camInfo->MediaIndex = index;
 }
 
 void Camera::comboBox_RemoteCameraVideoFormat_Changed(int index)
 {
-    if (CamList.size() > 0)
+    if (CamList.empty()) return;
+
+    int row = ui->listWidget_RemoteCameraList->currentRow();
+    if (row < 0 || row >= static_cast<int>(CamList.size())) return;
+
+    TmRemoteCamInfo* camInfo = static_cast<TmRemoteCamInfo*>(CamList[row]);
+    camInfo->MediaIndex = index;
+}
+
+/*
+* Slot function for handling the "tabWidget_Control" tab change event.
+* Prevents tab switching when camera is not connected.
+*/
+void Camera::tabWidget_Control_CurrentChanged(int tabIndex)
+{
+    // If camera is not connected, prevent tab change by reverting to previous index
+    if (pTmCamera == nullptr)
     {
-        int row = ui->listWidget_RemoteCameraList->currentRow();
-        row = row < 0 ? 0 : row;
-        TmRemoteCamInfo* camInfo = (TmRemoteCamInfo*)CamList[row];
-        camInfo->MediaIndex = index;
+        // Block signals to prevent recursive calls
+        ui->tabWidget_Control->blockSignals(true);
+        ui->tabWidget_Control->setCurrentIndex(0); // Always keep on first tab (Sensor Control)
+        ui->tabWidget_Control->blockSignals(false);
     }
 }
 
