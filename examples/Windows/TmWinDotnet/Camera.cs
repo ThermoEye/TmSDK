@@ -28,9 +28,27 @@ namespace TmWinDotNet
         private TmCamera tmCamera;
         // Thread for running the frame capture process.
         private Thread captureThread = null;
+        // Set true from UI thread to make frameCaptureThread exit its loop (cooperative shutdown).
+        private volatile bool frameCaptureStopRequested;
         // Represents the frame object captured from the camera.
         private TmFrame tmframe;
+        private bool pauseCapThread = false;
+        // Callback-mode frame event context test object.
+        private FrameCallbackTestContext callbackTestContext = null;
+        private volatile bool reconnectingCamera;
+        private LocalCamInfo reconnectLocalCamInfo;
+        private RemoteCamInfo reconnectRemoteCamInfo;
 
+        private const int CONNECTION_TIMEOUT = 1000;    // 3000 milliseconds
+
+        // Test helper context class for callback registration.
+        private class FrameCallbackTestContext
+        {
+            public string Tag { get; set; }
+            public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+            public int FrameCount { get; set; } = 0;
+            public DateTime LastFrameAt { get; set; } = DateTime.MinValue;
+        }
         #region Camera Preview
         /// <summary>
         /// Thread method for continuously capturing frames from the thermal camera.
@@ -43,11 +61,25 @@ namespace TmWinDotNet
             try
             {
                 tmCamera.SetColorMap((int)ColormapTypes.Inferno);
-                while (tmCamera != null && tmCamera.IsOpen == true)
+                while (!frameCaptureStopRequested && tmCamera != null && tmCamera.IsOpen)
                 {
+                    if (!tmCamera.IsConnected())
+                    {
+                        //Console.WriteLine("Camera is not connected. Disconnecting camera.");
+                        // OnCameraConnectionChanged(false);
+                        // break;
+                    }
+                    if (pauseCapThread == true)
+                    {
+                        Thread.Sleep(1);
+                        continue;
+                    }
                     // Query a frame from the camera with the specified dimensions.
                     using (tmframe = tmCamera.QueryFrame(pictureBox_Preview.Width, pictureBox_Preview.Height))
                     {
+                        if (frameCaptureStopRequested)
+                            break;
+
                         if (tmframe != null)
                         {
                             Invoke(new Action(() =>
@@ -125,6 +157,50 @@ namespace TmWinDotNet
                     }));
                 }
             }
+            catch (TmException ex)
+            {
+                pictureBox_Preview.Image = null;
+
+                if (tmCamera != null)
+                {
+                    try
+                    {
+                        tmCamera.Close();
+                    }
+                    catch
+                    {
+                        // ignore secondary errors during teardown
+                    }
+                    tmCamera = null;
+                }
+
+                if (DialogResult.OK == MessageBox.Show(
+                    "Connection to camera lost or video stalled.\r\n" + ex.Message,
+                    "QueryFrame",
+                    MessageBoxButtons.OK))
+                {
+                    Invoke(new Action(() =>
+                    {
+                        tabControl_CameraConfig.Enabled = false;
+                        tabControl_SensorConfig.Enabled = false;
+                        comboBox_ColorMap.Enabled = false;
+                        comboBox_TemperatureUnit.Enabled = false;
+                        button_ConnectLocalCamera.Enabled = false;
+                        button_ScanLocalCamera.Enabled = false;
+                        button_ConnectRemoteCamera.Enabled = false;
+                        button_ScanRemoteCamera.Enabled = false;
+                        System.Threading.Thread.Sleep(2000);
+                        button_ConnectLocalCamera.Text = "Connect";
+                        button_ConnectLocalCamera.Enabled = true;
+                        button_ScanLocalCamera.Enabled = true;
+                        button_ConnectRemoteCamera.Text = "Connect";
+                        button_ConnectRemoteCamera.Enabled = true;
+                        button_ScanRemoteCamera.Enabled = true;
+                        radioButton_CallbackModeOn.Enabled = false;
+                        radioButton_CallbackModeOff.Enabled = false;
+                    }));
+                }
+            }
             catch (ThreadInterruptedException) { }
 
             pictureBox_Preview.Image = null;
@@ -134,7 +210,7 @@ namespace TmWinDotNet
         {
             if (tmCamera != null)
             {
-                tmCamera.SetColorMap(comboBox_ColorMap.SelectedIndex);
+                tmCamera.SetColorMap(comboBox_ColorMap.SelectedIndex - 1);
             }
         }
         private void comboBox_TemperatureUnit_SelectedIndexChanged(object sender, EventArgs e)
@@ -259,14 +335,27 @@ namespace TmWinDotNet
 
                         if (tmCamera == null)
                         {
+                            LocalCamInfo localCamInfo = (listBox_LocalCameraScanList.Tag as LocalCamInfo[])[listBox_LocalCameraScanList.SelectedIndex];
                             tmCamera = new TmLocalCamera();
-                            if (tmCamera.Open((listBox_LocalCameraScanList.Tag as LocalCamInfo[])[listBox_LocalCameraScanList.SelectedIndex]))
+                            if (tmCamera.Open(localCamInfo))
                             {
+                                RegisterConnectionHandler(localCamInfo, null);
                                 this.captureThread = new Thread(new ThreadStart(frameCaptureThread));
+                                this.frameCaptureStopRequested = false;
                                 this.captureThread.Start();
 
                                 button_ConnectLocalCamera.Text = "Disconnect";
                                 ChangeUIWhenConnectCamera();
+                                this.comboBox_IPAssignment.Enabled = false;
+                                this.textBox_IPAddress.Enabled = false;
+                                this.textBox_Netmask.Enabled = false;
+                                this.textBox_Gateway.Enabled = false;
+                                this.textBox_MainDNSServer.Enabled = false;
+                                this.textBox_SubDNSServer.Enabled = false;
+                                this.button_SetDefaultNetworkConfiguration.Enabled = false;
+                                this.button_SystemReboot.Enabled = false;
+                                this.radioButton_CallbackModeOn.Enabled = true;
+                                this.radioButton_CallbackModeOff.Enabled = true;
                             }
                             else
                             {
@@ -334,7 +423,9 @@ namespace TmWinDotNet
                         tmCamera = new TmLocalCamera();
                         if (tmCamera.Open(items[index]))
                         {
+                            RegisterConnectionHandler(items[index], null);
                             this.captureThread = new Thread(new ThreadStart(frameCaptureThread));
+                            this.frameCaptureStopRequested = false;
                             this.captureThread.Start();
 
                             btn.Text = "Disconnect";
@@ -347,6 +438,8 @@ namespace TmWinDotNet
                             this.textBox_SubDNSServer.Enabled = false;
                             this.button_SetDefaultNetworkConfiguration.Enabled = false;
                             this.button_SystemReboot.Enabled = false;
+                            this.radioButton_CallbackModeOn.Enabled = true;
+                            this.radioButton_CallbackModeOff.Enabled = true;
                         }
                         else
                         {
@@ -467,10 +560,14 @@ namespace TmWinDotNet
 
                         if (tmCamera == null)
                         {
+                            RemoteCamInfo remoteCamInfo = (listBox_RemoteCameraScanList.Tag as RemoteCamInfo[])[listBox_RemoteCameraScanList.SelectedIndex];
                             tmCamera = new TmRemoteCamera();
-                            if (tmCamera.Open((listBox_RemoteCameraScanList.Tag as RemoteCamInfo[])[listBox_RemoteCameraScanList.SelectedIndex]))
+                            remoteCamInfo.CamTimeout = CONNECTION_TIMEOUT;
+                            if (tmCamera.Open(remoteCamInfo))
                             {
+                                RegisterConnectionHandler(null, remoteCamInfo);
                                 this.captureThread = new Thread(new ThreadStart(frameCaptureThread));
+                                this.frameCaptureStopRequested = false;
                                 this.captureThread.Start();
 
                                 button_ConnectRemoteCamera.Text = "Disconnect";
@@ -522,9 +619,12 @@ namespace TmWinDotNet
                         RemoteCamInfo[] items = listBox_RemoteCameraScanList.Tag as RemoteCamInfo[];
                         int index = listBox_RemoteCameraScanList.SelectedIndex;
 
+                        items[index].CamTimeout = CONNECTION_TIMEOUT;
                         if (tmCamera.Open(items[index]))
                         {
+                            RegisterConnectionHandler(null, items[index]);
                             this.captureThread = new Thread(new ThreadStart(frameCaptureThread));
+                            this.frameCaptureStopRequested = false;
                             this.captureThread.Start();
 
                             btn.Text = "Disconnect";
@@ -609,22 +709,41 @@ namespace TmWinDotNet
             comboBox_TemperatureUnit.Enabled = true;
         }
 
-        private void DisconnectCamera()
+        private void DisconnectCamera(bool clearReconnectState = true)
         {
+            if (InvokeRequired)
+            {
+                BeginInvoke(new Action(() => DisconnectCamera(clearReconnectState)));
+                return;
+            }
+
             if (tmCamera != null)
             {
-                if(this.captureThread != null && this.captureThread.IsAlive)
+                tmCamera.EndAcquisition();
+                tmCamera.UnregisterEventHandler();
+                callbackTestContext = null;
+
+                if (this.captureThread != null && this.captureThread.IsAlive && Thread.CurrentThread != this.captureThread)
                 {
-                    // force to terminate frameThread
+                    frameCaptureStopRequested = true;
+                    // Unblock Invoke if the capture thread is inside it; loop also exits via frameCaptureStopRequested.
                     this.captureThread.Interrupt();
-                    // Wait for frameThread to end.
                     this.captureThread.Join();
 
                     System.Threading.Thread.Sleep(1000);
                 }
 
+                tmCamera.UnregisterConnectionEventHandler();
                 tmCamera.Close();
                 tmCamera = null;
+            }
+
+            frameCaptureStopRequested = false;
+            if (clearReconnectState)
+            {
+                reconnectingCamera = false;
+                reconnectLocalCamInfo = null;
+                reconnectRemoteCamInfo = null;
             }
 
             panel_SensorControl_160.Visible = false;
@@ -656,6 +775,10 @@ namespace TmWinDotNet
             tabControl_SensorConfig.Enabled = false;
             comboBox_ColorMap.Enabled = false;
             comboBox_TemperatureUnit.Enabled = false;
+            radioButton_CallbackModeOn.Enabled = false;
+            radioButton_CallbackModeOff.Enabled = false;
+            radioButton_CallbackModeOff.Checked = true;
+            pauseCapThread = false;
         }
 		
         private void panel_VideoPreview_SizeChanged(object sender, EventArgs e)
@@ -668,6 +791,230 @@ namespace TmWinDotNet
                 StatusLabel_PreviewSize.Text = $"{pictureBox_Preview.Width}x{pictureBox_Preview.Height}";
             }
         }
+
+        /// <summary>
+        /// Handles callback mode radio button state changes.
+        /// When callback mode is turned on, it pauses polling capture,
+        /// registers the callback with an optional test context, and starts acquisition.
+        /// When turned off, it stops acquisition, unregisters the callback,
+        /// clears the context, and resumes polling capture.
+        /// </summary>
+        /// <param name="sender">The radio button that raised the event.</param>
+        /// <param name="e">Standard event arguments.</param>
+        private void radioButton_CallbackMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tmCamera == null) return;
+
+            if (sender is RadioButton btn && btn.Checked == true)
+            {
+                switch (btn.Name)
+                {
+                    case "radioButton_CallbackModeOn":
+                        pauseCapThread = true;
+
+                        if (callbackTestContext == null)
+                        {
+                            callbackTestContext = new FrameCallbackTestContext
+                            {
+                                Tag = "callback-mode-test"
+                            };
+                        }
+                        tmCamera.RegisterEventHandler(OnFrameEventHandler, callbackTestContext);
+                        tmCamera.BeginAcquisition();
+                        break;
+
+                    case "radioButton_CallbackModeOff":
+                        tmCamera.EndAcquisition();
+                        tmCamera.UnregisterEventHandler();
+                        callbackTestContext = null;
+                        pauseCapThread = false;
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Callback-mode frame event handler.
+        /// Renders the preview image and updates ROI-based temperature labels.
+        /// </summary>
+        /// <param name="frame">Frame received from SDK callback.</param>
+        /// <param name="context">
+        /// Optional callback context object passed during registration.
+        /// This value can be <c>null</c>.
+        /// </param>
+        public void OnFrameEventHandler(TmFrame frame, object context)
+        {
+            if (frame == null || tmCamera == null || !tmCamera.IsOpen) return;
+
+            try
+            {
+                if (context is FrameCallbackTestContext ctxObj)
+                {
+                    ctxObj.FrameCount++;
+                    ctxObj.LastFrameAt = DateTime.UtcNow;
+                }
+
+                Invoke(new Action(() =>
+                {
+                    frame.Resize(pictureBox_Preview.Width, pictureBox_Preview.Height);
+                    var bmp = frame.ToBitmap();
+                    if (bmp == null) return;
+
+                    DrawShapeObjects(bmp);
+                    pictureBox_Preview.Image?.Dispose();
+                    pictureBox_Preview.Image = bmp;
+
+                    if (tmCamera.Format == "Y16")
+                    {
+                        frame.DoMeasure(roiManager.GetItems());
+                        frame.MinMaxLoc(out double minVal, out double avgVal, out double maxVal, out System.Drawing.Point minLoc, out System.Drawing.Point maxLoc);
+
+                        label_MinimumTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(minVal), tmCamera.TempUnitSymbol);
+                        label_AverageTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(avgVal), tmCamera.TempUnitSymbol);
+                        label_MaximumTemperature.Text = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(maxVal), tmCamera.TempUnitSymbol);
+                    }
+                }));
+            }
+            catch
+            {
+                // Ignore callback errors to keep acquisition running.
+            }
+        }
+
+        private void checkBox_VerticalFlip_CheckedChanged(object sender, EventArgs e)
+        {
+            tmCamera.SetFlipVertical(checkBox_VerticalFlip.Checked);
+        }
+
+        private void checkBox_HorizontalFlip_CheckedChanged(object sender, EventArgs e)
+        {
+            tmCamera.SetFlipHorizontal(checkBox_HorizontalFlip.Checked);
+        }
+
+        private void RegisterConnectionHandler(LocalCamInfo localCamInfo, RemoteCamInfo remoteCamInfo)
+        {
+            reconnectLocalCamInfo = localCamInfo;
+            reconnectRemoteCamInfo = remoteCamInfo;
+            tmCamera.RegisterConnectionEventHandler(OnCameraConnectionChanged);
+        }
+
+        private void OnCameraConnectionChanged(bool connected)
+        {
+            Console.WriteLine("Camera connection changed. Connected: {0}, Reconnecting: {1}", connected, reconnectingCamera);
+            if (connected || reconnectingCamera)
+            {
+                return;
+            }
+
+            reconnectingCamera = true;
+            LocalCamInfo localCamInfo = reconnectLocalCamInfo;
+            RemoteCamInfo remoteCamInfo = reconnectRemoteCamInfo;
+
+            BeginInvoke(new Action(() =>
+            {
+                var reconnectTimer = new System.Windows.Forms.Timer();
+                reconnectTimer.Interval = 1;
+                reconnectTimer.Tick += (sender, args) =>
+                {
+                    reconnectTimer.Stop();
+                    reconnectTimer.Dispose();
+
+                    DisconnectCamera(false);
+                    reconnectingCamera = true;
+                    reconnectLocalCamInfo = localCamInfo;
+                    reconnectRemoteCamInfo = remoteCamInfo;
+                    button_ConnectLocalCamera.Text = "Connect";
+                    button_ConnectRemoteCamera.Text = "Connect";
+                    ThreadPool.QueueUserWorkItem(_ => TryCameraConnection(localCamInfo, remoteCamInfo));
+                };
+                reconnectTimer.Start();
+            }));
+        }
+
+        private void TryCameraConnection(LocalCamInfo localCamInfo, RemoteCamInfo remoteCamInfo)
+        {
+            try
+            {
+                for (int attempt = 0; attempt < 20 && reconnectingCamera; attempt++)
+                {
+                    TmCamera newCamera = null;
+                    try
+                    {
+                        Console.WriteLine("Attempting to reconnect camera. Attempt {0}", attempt);
+                        if (localCamInfo != null)
+                        {
+                            newCamera = new TmLocalCamera();
+                            if (!newCamera.Open(localCamInfo))
+                            {
+                                newCamera = null;
+                            }
+                        }
+                        else if (remoteCamInfo != null)
+                        {
+                            newCamera = new TmRemoteCamera();
+                            if (!newCamera.Open(remoteCamInfo))
+                            {
+                                newCamera = null;
+                            }
+                        }
+
+                        if (newCamera != null)
+                        {
+                            tmCamera = newCamera;
+                            reconnectingCamera = false;
+                            RegisterConnectionHandler(localCamInfo, remoteCamInfo);
+                            frameCaptureStopRequested = false;
+                            captureThread = new Thread(new ThreadStart(frameCaptureThread));
+                            captureThread.Start();
+
+                            BeginInvoke(new Action(() =>
+                            {
+                                ChangeUIWhenConnectCamera();
+                                bool isLocal = localCamInfo != null;
+                                button_ConnectLocalCamera.Text = isLocal ? "Disconnect" : "Connect";
+                                button_ConnectRemoteCamera.Text = isLocal ? "Connect" : "Disconnect";
+                                comboBox_IPAssignment.Enabled = !isLocal;
+                                textBox_IPAddress.Enabled = !isLocal;
+                                textBox_Netmask.Enabled = !isLocal;
+                                textBox_Gateway.Enabled = !isLocal;
+                                textBox_MainDNSServer.Enabled = !isLocal;
+                                textBox_SubDNSServer.Enabled = !isLocal;
+                                button_SetDefaultNetworkConfiguration.Enabled = !isLocal;
+                                button_SystemReboot.Enabled = !isLocal;
+                            }));
+                            return;
+                        }
+                    }
+                    catch
+                    {
+                        try
+                        {
+                            newCamera?.Close();
+                        }
+                        catch
+                        {
+                            // Ignore failed reconnect cleanup.
+                        }
+                    }
+
+                    Thread.Sleep(1000);
+                }
+
+                BeginInvoke(new Action(() =>
+                {
+                    button_ConnectLocalCamera.Text = "Connect";
+                    button_ConnectRemoteCamera.Text = "Connect";
+                    reconnectLocalCamInfo = null;
+                    reconnectRemoteCamInfo = null;
+                    MessageBox.Show("Failed to reconnect camera.", "Reconnect", MessageBoxButtons.OK);
+                }));
+            }
+            finally
+            {
+                reconnectingCamera = false;
+            }
+        }
+
     }
 }
 

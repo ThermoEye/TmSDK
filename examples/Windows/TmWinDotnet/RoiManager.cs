@@ -59,7 +59,7 @@ namespace TmWinDotNet
             }
         }
 
-        private string GetTempStringUnit(double raw)
+        private string GetTempStringUnit(double raw, FluxItem? flux = null)
         {
             string strTemp = string.Empty;
             if (tmCamera != null && tmCamera.IsOpen)
@@ -71,15 +71,15 @@ namespace TmWinDotNet
                         break;
 
                     case TempUnit.Celsius:
-                        strTemp = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(raw), tmCamera.TempUnitSymbol);
+                        strTemp = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(raw, flux), tmCamera.TempUnitSymbol);
                         break;
 
                     case TempUnit.Fahrenheit:
-                        strTemp = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(raw), tmCamera.TempUnitSymbol);
+                        strTemp = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(raw, flux), tmCamera.TempUnitSymbol);
                         break;
 
                     case TempUnit.Kelvin:
-                        strTemp = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(raw), tmCamera.TempUnitSymbol);
+                        strTemp = string.Format("{0:0.00} {1}", tmCamera.GetTemperature(raw, flux), tmCamera.TempUnitSymbol);
                         break;
                 }
             }
@@ -119,7 +119,7 @@ namespace TmWinDotNet
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.Cyan, (spot.x - sizeDraw.Width / 2), (spot.y - 14));
                                     // draw temp
-                                    strDraw = GetTempStringUnit(shape.GetMaxLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetMaxLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.Green, (spot.x - sizeDraw.Width / 2), (spot.y + 6));
                                 }
@@ -139,7 +139,7 @@ namespace TmWinDotNet
                                         new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y),
                                         new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)),
                                         new Point((shape.GetMaxLoc().location.x + 4), (shape.GetMaxLoc().location.y - 4)) });
-                                    strDraw = GetTempStringUnit(shape.GetMaxLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetMaxLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.OrangeRed, (shape.GetMaxLoc().location.x - sizeDraw.Width / 2), (shape.GetMaxLoc().location.y - 16));
                                     // draw min temp
@@ -147,11 +147,11 @@ namespace TmWinDotNet
                                         new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y),
                                         new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)),
                                         new Point((shape.GetMinLoc().location.x + 4), (shape.GetMinLoc().location.y + 4)) });
-                                    strDraw = GetTempStringUnit(shape.GetMinLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetMinLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.DodgerBlue, (shape.GetMinLoc().location.x - sizeDraw.Width / 2), (shape.GetMinLoc().location.y + 4));
                                     // draw average temp
-                                    strDraw = GetTempStringUnit(shape.GetAvgLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetAvgLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.White,
                                         (line.start.x + (line.end.x - line.start.x) / 2 - sizeDraw.Width / 2),
@@ -173,7 +173,7 @@ namespace TmWinDotNet
                                         new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y),
                                         new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)),
                                         new Point((shape.GetMaxLoc().location.x + 4), (shape.GetMaxLoc().location.y - 4)) });
-                                    strDraw = GetTempStringUnit(shape.GetMaxLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetMaxLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.OrangeRed, (shape.GetMaxLoc().location.x - sizeDraw.Width / 2), (shape.GetMaxLoc().location.y - 16));
                                     // draw min temp
@@ -181,11 +181,11 @@ namespace TmWinDotNet
                                         new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y),
                                         new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)),
                                         new Point((shape.GetMinLoc().location.x + 4), (shape.GetMinLoc().location.y + 4)) });
-                                    strDraw = GetTempStringUnit(shape.GetMinLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetMinLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.DodgerBlue, (shape.GetMinLoc().location.x - sizeDraw.Width / 2), (shape.GetMinLoc().location.y + 4));
                                     // draw average temp
-                                    strDraw = GetTempStringUnit(shape.GetAvgLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetAvgLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.White,
                                         (rect.x + rect.width / 2 - sizeDraw.Width / 2),
@@ -208,7 +208,7 @@ namespace TmWinDotNet
                                         new Point(shape.GetMaxLoc().location.x, shape.GetMaxLoc().location.y),
                                         new Point((shape.GetMaxLoc().location.x - 4), (shape.GetMaxLoc().location.y - 4)),
                                         new Point((shape.GetMaxLoc().location.x + 4), (shape.GetMaxLoc().location.y - 4)) });
-                                    strDraw = GetTempStringUnit(shape.GetMaxLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetMaxLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.OrangeRed, (shape.GetMaxLoc().location.x - sizeDraw.Width / 2), (shape.GetMaxLoc().location.y - 16));
                                     // draw min temp
@@ -216,11 +216,11 @@ namespace TmWinDotNet
                                         new Point(shape.GetMinLoc().location.x, shape.GetMinLoc().location.y),
                                         new Point((shape.GetMinLoc().location.x - 4), (shape.GetMinLoc().location.y + 4)),
                                         new Point((shape.GetMinLoc().location.x + 4), (shape.GetMinLoc().location.y + 4)) });
-                                    strDraw = GetTempStringUnit(shape.GetMinLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetMinLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.DodgerBlue, (shape.GetMinLoc().location.x - sizeDraw.Width / 2), (shape.GetMinLoc().location.y + 4));
                                     // draw average temp
-                                    strDraw = GetTempStringUnit(shape.GetAvgLoc().value);
+                                    strDraw = GetTempStringUnit(shape.GetAvgLoc().value, shape.GetRoiFluxItem());
                                     sizeDraw = g.MeasureString(strDraw, font);
                                     g.DrawString(strDraw, font, Brushes.White,
                                         (ellipse.x + ellipse.width / 2 - sizeDraw.Width / 2),
@@ -382,6 +382,11 @@ namespace TmWinDotNet
                 textBox_RoiEllipseH.Text = String.Empty;
 
                 var roi = new TmRoiObject(item);
+                var flux = roi.GetRoiFluxItem();
+                double emissDisplay = Math.Max(0.0, Math.Min(1.0, flux.Emiss));
+                textBox_RoiEmiss.Text = emissDisplay.ToString();
+                textBox_RoiAmbRefTemp.Text = flux.AmbRefTemp.ToString("F1");
+
                 var type = roi.GetRoiType();
                 switch (type)
                 {
@@ -478,6 +483,78 @@ namespace TmWinDotNet
 
                 roiManager.RemoveAt(comboBox_RoiList.SelectedIndex);
                 updateRoiListItems();
+            }
+        }
+
+        private void textBox_RoiEmiss_Leave(object sender, EventArgs e)
+        {
+            if (!double.TryParse(textBox_RoiEmiss.Text, out double emiss)) return;
+
+            if (emiss < 0) emiss = 0.0;
+            else if (emiss > 1) emiss = 1.0;
+
+            if (Math.Abs(emiss - Math.Round(emiss)) < 0.0001)
+                textBox_RoiEmiss.Text = emiss.ToString("0");
+            else
+                textBox_RoiEmiss.Text = emiss.ToString("0.0");
+        }
+
+        private void textBox_RoiEmiss_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+                return;
+
+            if (!double.TryParse(textBox_RoiEmiss.Text, out double emiss)) return;
+
+            if (emiss < 0) emiss = 0.0;
+            else if (emiss > 1) emiss = 1.0;
+
+            if (Math.Abs(emiss - Math.Round(emiss)) < 0.0001)
+                textBox_RoiEmiss.Text = emiss.ToString("0");
+            else
+                textBox_RoiEmiss.Text = emiss.ToString("0.0");
+        }
+
+        private void textBox_RoiAmbRefTemp_Leave(object sender, EventArgs e)
+        {
+            if (!double.TryParse(textBox_RoiAmbRefTemp.Text, out double ambRefTemp))
+                return;
+
+            if (Math.Abs(ambRefTemp - Math.Round(ambRefTemp)) < 0.0001)
+                textBox_RoiAmbRefTemp.Text = ambRefTemp.ToString("0");
+            else
+                textBox_RoiAmbRefTemp.Text = ambRefTemp.ToString("0.0");
+        }
+
+        private void textBox_RoiAmbRefTemp_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+                return;
+
+            if (!double.TryParse(textBox_RoiAmbRefTemp.Text, out double ambRefTemp))
+                return;
+
+            if (Math.Abs(ambRefTemp - Math.Round(ambRefTemp)) < 0.0001)
+                textBox_RoiAmbRefTemp.Text = ambRefTemp.ToString("0");
+            else
+                textBox_RoiAmbRefTemp.Text = ambRefTemp.ToString("0.0");
+        }
+
+        private void button_SetRoiFluxItem_click(object sender, EventArgs e)
+        {
+            if (comboBox_RoiList.SelectedIndex >= 0)
+            {
+                if (!double.TryParse(textBox_RoiEmiss.Text, out double emiss)) return;
+                emiss = Math.Max(0.0, Math.Min(1.0, emiss));
+                textBox_RoiEmiss.Text = emiss.ToString();
+                if (!double.TryParse(textBox_RoiAmbRefTemp.Text, out double ambRefTemp)) return;
+                var item = roiManager.GetItem(comboBox_RoiList.SelectedIndex);
+                var roi = new TmRoiObject(item);
+                var flux = roi.GetRoiFluxItem();
+                flux.Emiss = emiss;
+                flux.AmbRefTemp = ambRefTemp;
+                roi.SetRoiFluxItem(flux);
+                textBox_RoiAmbRefTemp.Text = ambRefTemp.ToString("F1");
             }
         }
     }

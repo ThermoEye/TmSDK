@@ -12,10 +12,9 @@ var class_tm_s_d_k_1_1_tm_frame =
     [ "IsEmpty", "class_tm_s_d_k_1_1_tm_frame.html#ac01b3ac7f1464fcd2144955e90ebbfd2", null ],
     [ "MinMaxLoc", "class_tm_s_d_k_1_1_tm_frame.html#a57a141785d3f1899fd3c03ef98325ca8", null ],
     [ "Release", "class_tm_s_d_k_1_1_tm_frame.html#a32e98d153db878d06e6089dbb4dacf88", null ],
+    [ "Resize", "class_tm_s_d_k_1_1_tm_frame.html#a14fa0922dba6f5ebcbf3f1d6e93e2922", null ],
     [ "SetColorMap", "class_tm_s_d_k_1_1_tm_frame.html#a9b6b73610f6c0c6e2798e810fa5c3d6b", null ],
     [ "SetNoiseFilter", "class_tm_s_d_k_1_1_tm_frame.html#af29e68128e068a7aeda7156adad82279", null ],
     [ "ToBitmap", "class_tm_s_d_k_1_1_tm_frame.html#a76d7d188ac3c653e21e07781e108d8d3", null ],
-    [ "Width", "class_tm_s_d_k_1_1_tm_frame.html#a66ca0d938850104e31d69943deab8290", null ],
-    [ "bmpFrame", "class_tm_s_d_k_1_1_tm_frame.html#a064c2a06564d103b08be363a24305368", null ],
-    [ "rawFrame", "class_tm_s_d_k_1_1_tm_frame.html#ac3c6a22128f2ac1ed6289ce3ea035597", null ]
+    [ "Width", "class_tm_s_d_k_1_1_tm_frame.html#a66ca0d938850104e31d69943deab8290", null ]
 ];

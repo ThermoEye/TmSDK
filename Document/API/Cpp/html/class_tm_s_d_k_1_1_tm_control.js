@@ -5,6 +5,7 @@ var class_tm_s_d_k_1_1_tm_control =
     [ "CheckFirmware", "class_tm_s_d_k_1_1_tm_control.html#a3b936667a2aba7ffcdc38a86142bc796", null ],
     [ "CloseFirmware", "class_tm_s_d_k_1_1_tm_control.html#a4aa3fbf8ff09d3eb3092cb4f546e75cb", null ],
     [ "GetBootloaderVersion", "class_tm_s_d_k_1_1_tm_control.html#ac01c77dc1d8a7654f2e85202f751e0c4", null ],
+    [ "GetExternalSyncMode", "class_tm_s_d_k_1_1_tm_control.html#add4cb2ba98a9787a6b38dde7f37cebf3", null ],
     [ "GetFirmwareVersion", "class_tm_s_d_k_1_1_tm_control.html#abb505644e5f97af6bc995bde244ed270", null ],
     [ "GetFlatFieldCorrectionMode", "class_tm_s_d_k_1_1_tm_control.html#a5eda90301a26a6e9f4323f0662273685", null ],
     [ "GetFlatFieldCorrectionParameters", "class_tm_s_d_k_1_1_tm_control.html#a7ad1cf7428bda12665ef00b72dace65f", null ],
@@ -28,6 +29,7 @@ var class_tm_s_d_k_1_1_tm_control =
     [ "SetDefaultFluxParameters", "class_tm_s_d_k_1_1_tm_control.html#ab9f34ba05aeb9ac48580b0eddf20e3fa", null ],
     [ "SetDefaultFluxParameters", "class_tm_s_d_k_1_1_tm_control.html#a19cd3307842f0895b7bc84c1a6234331", null ],
     [ "SetDefaultNetworkConfiguration", "class_tm_s_d_k_1_1_tm_control.html#ada81bbec30fb40f37b5cde2214fac950", null ],
+    [ "SetExternalSyncMode", "class_tm_s_d_k_1_1_tm_control.html#ae9257a2b14c44ed642bae5b183d144c9", null ],
     [ "SetFlatFieldCorrectionMode", "class_tm_s_d_k_1_1_tm_control.html#a652473b3567b9204c4cfca76e851d509", null ],
     [ "SetFlatFieldCorrectionParameters", "class_tm_s_d_k_1_1_tm_control.html#a42a54f3b76c5f7545785775511d3631c", null ],
     [ "SetFluxParameters", "class_tm_s_d_k_1_1_tm_control.html#a9a9c0434d32f23267e28906d212c0a93", null ],
@@ -35,6 +37,5 @@ var class_tm_s_d_k_1_1_tm_control =
     [ "SetGainModeState", "class_tm_s_d_k_1_1_tm_control.html#a3eb89e1a22e4cc717b6a9adf51f39c8c", null ],
     [ "SetNetworkConfiguration", "class_tm_s_d_k_1_1_tm_control.html#a1ae2272e042c8877e994538d7ba5f3ea", null ],
     [ "StoreUserSensorConfig", "class_tm_s_d_k_1_1_tm_control.html#aee34cd2b7fccfb0b79c74aadf7c94519", null ],
-    [ "UpdateFirmware", "class_tm_s_d_k_1_1_tm_control.html#a97bcd541ed4bd8d0dc7b5fefe92dfcdd", null ],
-    [ "fps", "class_tm_s_d_k_1_1_tm_control.html#aaed9201e21570da91c76c413887746ea", null ]
+    [ "UpdateFirmware", "class_tm_s_d_k_1_1_tm_control.html#a97bcd541ed4bd8d0dc7b5fefe92dfcdd", null ]
 ];

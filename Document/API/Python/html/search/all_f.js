@@ -1,9 +1,23 @@
 var searchData=
 [
-  ['obj_0',['obj',['../class_tm_core_1_1_tm_camera_1_1_tm_local_cam_info.html#a2b417d52e6d7d5f842392cca2e4900b1',1,'TmCore.TmCamera.TmLocalCamInfo.obj'],['../class_tm_core_1_1_tm_camera_1_1_tm_remote_cam_info.html#a950d13be1beee3e445730b31176da5f9',1,'TmCore.TmCamera.TmRemoteCamInfo.obj'],['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#ad07cfbf6ba20ce5f9d0c2f556bf761f5',1,'TmCore.TmCamera.TmCamera.obj'],['../class_tm_core_1_1_tm_control_1_1_tm_control.html#af40bcee3eb67c4ffbb39ffd0069aac1e',1,'TmCore.TmControl.TmControl.obj'],['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#aac311006ddaec8969137a79b06d39e25',1,'TmCore.TmFrame.TmFrame.obj'],['../class_tm_core_1_1_tm_roi_1_1_roi_object.html#a77c075a7730915e5142a87b3f2bcc6fb',1,'TmCore.TmRoi.RoiObject.obj'],['../class_tm_core_1_1_tm_roi_1_1_roi_spot.html',1,'TmCore.TmRoi.RoiSpot.obj'],['../class_tm_core_1_1_tm_roi_1_1_roi_line.html',1,'TmCore.TmRoi.RoiLine.obj'],['../class_tm_core_1_1_tm_roi_1_1_roi_rect.html',1,'TmCore.TmRoi.RoiRect.obj'],['../class_tm_core_1_1_tm_roi_1_1_roi_ellipse.html',1,'TmCore.TmRoi.RoiEllipse.obj'],['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#afa261bfd08dce07fe8d9909c9f06a867',1,'TmCore.TmRoi.TmRoiManager.obj']]],
-  ['ocean_1',['Ocean',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#a6dda9eaab3f62444d23cd972f505cd85',1,'TmCore::TmTypes::ColormapTypes']]],
-  ['of_20pixel_20values_20starting_20at_2010_2010_2',['Get a 10x10 region of pixel values starting at (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md1',1,'']]],
-  ['open_5ffirmware_3',['open_firmware',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#ac37770b673f43f7edf19e4005e5a3301',1,'TmCore::TmControl::TmControl']]],
-  ['open_5flocal_5fcamera_4',['open_local_camera',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a6b38e692427fbdd1f52224b5e3844701',1,'TmCore::TmCamera::TmCamera']]],
-  ['open_5fremote_5fcamera_5',['open_remote_camera',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a98ab51f1babd7e8140f4960fea9700a8',1,'TmCore::TmCamera::TmCamera']]]
+  ['reboot_5fdevice_0',['reboot_device',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a57bc70ca4594334a962212b513c8bf40',1,'TmCore::TmControl::TmControl']]],
+  ['rectangle_1',['Rectangle',['../class_tm_core_1_1_tm_types_1_1_rectangle.html',1,'TmCore::TmTypes']]],
+  ['region_20of_20pixel_20values_20starting_20at_2010_2010_2',['Get a 10x10 region of pixel values starting at (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md1',1,'']]],
+  ['region_20values_3',['Print the region values',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md2',1,'']]],
+  ['register_5fconnection_5fevent_5fhandler_4',['register_connection_event_handler',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a29244edc1f4769e4856ed080413bfe25',1,'TmCore::TmCamera::TmCamera']]],
+  ['register_5fevent_5fhandler_5',['register_event_handler',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a880e51e08057ad69b1d7ec2fb853a242',1,'TmCore::TmCamera::TmCamera']]],
+  ['release_6',['release',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#a9db58d6a68c5c90ed6c542bc50c7fccd',1,'TmCore::TmFrame::TmFrame']]],
+  ['remotecameralist_7',['RemoteCameraList',['../class_tm_core_1_1_tm_camera_1_1_remote_camera_list.html',1,'TmCore::TmCamera']]],
+  ['remove_5fat_8',['remove_at',['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#af249b1945a0d8b80fec973aa9721b775',1,'TmCore::TmRoi::TmRoiManager']]],
+  ['resize_9',['resize',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#a3ce11fc2b017893e10520dc1aeebcfcb',1,'TmCore::TmFrame::TmFrame']]],
+  ['restore_5fdefault_5fsensor_5fconfig_10',['restore_default_sensor_config',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a35287c86678180c18795671ba864bfde',1,'TmCore.TmControl.TmControl.restore_default_sensor_config(self)'],['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a35287c86678180c18795671ba864bfde',1,'TmCore.TmControl.TmControl.restore_default_sensor_config(self)']]],
+  ['revision_20history_11',['Revision History',['../index.html#HISTORY',1,'']]],
+  ['roi_5fclear_12',['roi_clear',['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#aec30d7465dcae3ad748572ed56ac626d',1,'TmCore::TmRoi::TmRoiManager']]],
+  ['roiellipse_13',['RoiEllipse',['../class_tm_core_1_1_tm_roi_1_1_roi_ellipse.html',1,'TmCore::TmRoi']]],
+  ['roiline_14',['RoiLine',['../class_tm_core_1_1_tm_roi_1_1_roi_line.html',1,'TmCore::TmRoi']]],
+  ['roiobject_15',['RoiObject',['../class_tm_core_1_1_tm_roi_1_1_roi_object.html',1,'TmCore::TmRoi']]],
+  ['roirect_16',['RoiRect',['../class_tm_core_1_1_tm_roi_1_1_roi_rect.html',1,'TmCore::TmRoi']]],
+  ['roispot_17',['RoiSpot',['../class_tm_core_1_1_tm_roi_1_1_roi_spot.html',1,'TmCore::TmRoi']]],
+  ['roitype_18',['RoiType',['../class_tm_core_1_1_tm_types_1_1_roi_type.html',1,'TmCore::TmTypes']]],
+  ['run_5fflat_5ffield_5fcorrection_19',['run_flat_field_correction',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a4cf1855e1bfc55a6e3d692247501d1ef',1,'TmCore.TmControl.TmControl.run_flat_field_correction(self)'],['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a4cf1855e1bfc55a6e3d692247501d1ef',1,'TmCore.TmControl.TmControl.run_flat_field_correction(self)']]]
 ];

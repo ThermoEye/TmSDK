@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['what_0',['what',['../class_tm_s_d_k_1_1_tm_exception.html#a78dbb0530046a04ff205a52f7b4db1c1',1,'TmSDK::TmException']]],
-  ['width_1',['Width',['../class_tm_s_d_k_1_1_tm_frame.html#a66ca0d938850104e31d69943deab8290',1,'TmSDK::TmFrame']]]
+  ['unregisterconnectioneventhandler_0',['UnregisterConnectionEventHandler',['../class_tm_s_d_k_1_1_tm_camera.html#a196e17d9a30abf1de86df9ae10213488',1,'TmSDK::TmCamera']]],
+  ['unregistereventhandler_1',['UnregisterEventHandler',['../class_tm_s_d_k_1_1_tm_camera.html#aa378360a9d2fa6fbc071101f81c8feda',1,'TmSDK::TmCamera']]],
+  ['updatefirmware_2',['UpdateFirmware',['../class_tm_s_d_k_1_1_tm_control.html#a97bcd541ed4bd8d0dc7b5fefe92dfcdd',1,'TmSDK::TmControl::UpdateFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl160.html#ab827543753d046836e00d88f0ee02976',1,'TmSDK::TmCtrl160::UpdateFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl160_i.html#a44a20ecc32cdf9d822724fec6ae979ef',1,'TmSDK::TmCtrl160I::UpdateFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl256.html#a3ed02fa5214885aa0da623932875e4e3',1,'TmSDK::TmCtrl256::UpdateFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl256_g.html#a092b6ea7da0fde5fa3b709c6c7ede54c',1,'TmSDK::TmCtrl256G::UpdateFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl384_g.html#ad8ae56031653bd35a3615edd133765cf',1,'TmSDK::TmCtrl384G::UpdateFirmware()'],['../class_tm_s_d_k_1_1_tm_ctrl80.html#ae67113b91a23b2a15000d0c38cf75c4e',1,'TmSDK::TmCtrl80::UpdateFirmware()']]]
 ];

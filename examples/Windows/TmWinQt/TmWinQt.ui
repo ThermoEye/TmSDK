@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1114</width>
-    <height>781</height>
+    <height>808</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,25 +15,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_14">
-    <item row="2" column="0" colspan="3">
-     <widget class="QLabel" name="label_space">
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>1</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>1</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>.</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="3" rowspan="4">
      <widget class="QTabWidget" name="tabWidget_Product">
       <property name="minimumSize">
@@ -752,133 +733,30 @@
       </widget>
      </widget>
     </item>
+    <item row="2" column="0" colspan="3">
+     <widget class="QLabel" name="label_space">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>1</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>1</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>.</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="1" rowspan="2" colspan="2">
      <layout class="QGridLayout" name="gridLayout_preview">
       <property name="sizeConstraint">
        <enum>QLayout::SetMaximumSize</enum>
       </property>
-      <item row="2" column="5">
-       <widget class="QPushButton" name="pushButton_RemoveAllRoi">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>23</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Remove All</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_ColorMap">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>23</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>23</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Color Map</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="4" colspan="2">
-       <widget class="QLabel" name="label_MaximumTemperature">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>16</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>16</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>MaxTemp</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="5">
-       <widget class="QComboBox" name="comboBox_TemperatureUnit">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>23</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>23</height>
-         </size>
-        </property>
-        <item>
-         <property name="text">
-          <string>Raw</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Celsius(℃)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Fahrenheit(℉)</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Kelvin(K)</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="2" column="3">
-       <widget class="QRadioButton" name="radioButton_ShapeRectangle">
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>23</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Rectangle</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="4">
-       <widget class="QLabel" name="label_TemperatureUnit">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>23</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>23</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Temperature</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="3">
        <widget class="QLabel" name="label_AverageTemperature">
         <property name="minimumSize">
@@ -1030,6 +908,87 @@
           <string>DeepGreen</string>
          </property>
         </item>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QRadioButton" name="radioButton_ShapeCursor">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Cursor</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="5">
+       <widget class="QComboBox" name="comboBox_TemperatureUnit">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>23</height>
+         </size>
+        </property>
+        <item>
+         <property name="text">
+          <string>Raw</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Celsius(℃)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Fahrenheit(℉)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Kelvin(K)</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QRadioButton" name="radioButton_ShapeRectangle">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Rectangle</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="4">
+       <widget class="QLabel" name="label_TemperatureUnit">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Temperature</string>
+        </property>
        </widget>
       </item>
       <item row="1" column="0" colspan="3">
@@ -1524,6 +1483,32 @@
         </property>
        </widget>
       </item>
+      <item row="2" column="1">
+       <widget class="QRadioButton" name="radioButton_ShapeSpot">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Spot</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QRadioButton" name="radioButton_ShapeLine">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Line</string>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="4">
        <widget class="QRadioButton" name="radioButton_ShapeEllipse">
         <property name="maximumSize">
@@ -1556,8 +1541,8 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
-       <widget class="QRadioButton" name="radioButton_ShapeLine">
+      <item row="2" column="5">
+       <widget class="QPushButton" name="pushButton_RemoveAllRoi">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -1565,12 +1550,18 @@
          </size>
         </property>
         <property name="text">
-         <string>Line</string>
+         <string>Remove All</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QRadioButton" name="radioButton_ShapeSpot">
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_ColorMap">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>23</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -1578,20 +1569,43 @@
          </size>
         </property>
         <property name="text">
-         <string>Spot</string>
+         <string>Color Map</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QRadioButton" name="radioButton_ShapeCursor">
+      <item row="1" column="4" colspan="2">
+       <widget class="QLabel" name="label_MaximumTemperature">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>16</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
           <width>16777215</width>
-          <height>23</height>
+          <height>16</height>
          </size>
         </property>
         <property name="text">
-         <string>Cursor</string>
+         <string>MaxTemp</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="2">
+       <widget class="QCheckBox" name="checkBox_HorizontalFlip">
+        <property name="text">
+         <string>Horizontal Flip</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2" colspan="2">
+       <widget class="QCheckBox" name="checkBox_VerticalFlip">
+        <property name="text">
+         <string>Vertical Flip</string>
         </property>
        </widget>
       </item>
@@ -1611,7 +1625,7 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>287</height>
+        <height>280</height>
        </size>
       </property>
       <property name="currentIndex">
@@ -2977,9 +2991,9 @@
           <property name="geometry">
            <rect>
             <x>500</x>
-            <y>190</y>
+            <y>220</y>
             <width>101</width>
-            <height>51</height>
+            <height>41</height>
            </rect>
           </property>
           <property name="text">
@@ -2991,7 +3005,7 @@
           <property name="geometry">
            <rect>
             <x>490</x>
-            <y>110</y>
+            <y>150</y>
             <width>251</width>
             <height>71</height>
            </rect>
@@ -3247,9 +3261,9 @@
           <property name="geometry">
            <rect>
             <x>490</x>
-            <y>10</y>
+            <y>78</y>
             <width>251</width>
-            <height>91</height>
+            <height>61</height>
            </rect>
           </property>
           <property name="title">
@@ -3259,20 +3273,13 @@
            <property name="geometry">
             <rect>
              <x>10</x>
-             <y>20</y>
+             <y>10</y>
              <width>231</width>
-             <height>68</height>
+             <height>51</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_GainModeState_256G" rowstretch="0,0,0">
-            <item row="0" column="0">
-             <widget class="QRadioButton" name="radioButton_GainModeHigh_256G">
-              <property name="text">
-               <string>High</string>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1" rowspan="3">
+            <item row="1" column="3">
              <widget class="QPushButton" name="pushButton_GetGainModeState_256G">
               <property name="minimumSize">
                <size>
@@ -3283,7 +3290,7 @@
               <property name="maximumSize">
                <size>
                 <width>50</width>
-                <height>50</height>
+                <height>20</height>
                </size>
               </property>
               <property name="text">
@@ -3291,30 +3298,37 @@
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="QRadioButton" name="radioButton_GainModeLow_256G">
+            <item row="2" column="3">
+             <widget class="QPushButton" name="pushButton_SetGainModeState_256G">
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>20</height>
+               </size>
+              </property>
               <property name="text">
-               <string>Low</string>
+               <string>Set</string>
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
+            <item row="1" column="2" rowspan="2">
              <widget class="QRadioButton" name="radioButton_GainModeAuto_256G">
               <property name="text">
                <string>Auto</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="2" rowspan="3">
-             <widget class="QPushButton" name="pushButton_SetGainModeState_256G">
-              <property name="maximumSize">
-               <size>
-                <width>50</width>
-                <height>50</height>
-               </size>
-              </property>
+            <item row="1" column="1" rowspan="2">
+             <widget class="QRadioButton" name="radioButton_GainModeLow_256G">
               <property name="text">
-               <string>Set</string>
+               <string>Low</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" rowspan="2">
+             <widget class="QRadioButton" name="radioButton_GainModeHigh_256G">
+              <property name="text">
+               <string>High</string>
               </property>
              </widget>
             </item>
@@ -3325,9 +3339,9 @@
           <property name="geometry">
            <rect>
             <x>620</x>
-            <y>190</y>
+            <y>220</y>
             <width>111</width>
-            <height>51</height>
+            <height>41</height>
            </rect>
           </property>
           <property name="text">
@@ -3671,6 +3685,78 @@
            </layout>
           </widget>
          </widget>
+         <widget class="QGroupBox" name="groupBox_ExtSync_256G">
+          <property name="geometry">
+           <rect>
+            <x>490</x>
+            <y>10</y>
+            <width>251</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="title">
+           <string>External Sync Mode</string>
+          </property>
+          <widget class="QWidget" name="gridLayoutWidget_3">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>10</y>
+             <width>231</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="3">
+             <widget class="QPushButton" name="pushButton_GetExtSync_256G">
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Get</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QPushButton" name="pushButton_SetExtSync_256G">
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Set</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" rowspan="2">
+             <widget class="QRadioButton" name="radioButton_ExtSyncOff_256G">
+              <property name="text">
+               <string>Off</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" rowspan="2">
+             <widget class="QRadioButton" name="radioButton_ExtSyncSlave_256G">
+              <property name="text">
+               <string>Slave</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" rowspan="2">
+             <widget class="QRadioButton" name="radioButton_ExtSyncMaster_256G">
+              <property name="text">
+               <string>Master</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
         </widget>
        </widget>
       </widget>
@@ -3683,21 +3769,11 @@
          <rect>
           <x>10</x>
           <y>20</y>
-          <width>181</width>
+          <width>171</width>
           <height>51</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_ROIList">
-         <item row="1" column="0">
-          <widget class="QComboBox" name="comboBox_ListRoi"/>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_ROIListTitle">
-           <property name="text">
-            <string>ROI List</string>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="1">
           <widget class="QPushButton" name="pushButton_RemoveRoiItem">
            <property name="maximumSize">
@@ -3711,13 +3787,36 @@
            </property>
           </widget>
          </item>
+         <item row="1" column="0">
+          <widget class="QComboBox" name="comboBox_ListRoi">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_ROIListTitle">
+           <property name="text">
+            <string>ROI List</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
        <widget class="QWidget" name="gridLayoutWidget_13">
         <property name="geometry">
          <rect>
           <x>10</x>
-          <y>80</y>
+          <y>90</y>
           <width>441</width>
           <height>111</height>
          </rect>
@@ -3828,6 +3927,12 @@
          </item>
          <item row="2" column="0">
           <widget class="QRadioButton" name="radioButton_RoiRectangle">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="text">
             <string>Rectangle</string>
            </property>
@@ -4052,6 +4157,97 @@
          </item>
         </layout>
        </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>220</y>
+          <width>491</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_ROIFluxParam">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Flux Parameter</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_ROIEmiss">
+           <property name="text">
+            <string>Emissivity : </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_RoiEmiss">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_ROIAmbRefTemp">
+           <property name="text">
+            <string>Ambient Reflected Temp : </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_RoiAmbRefTemp">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_ROIAmbRefTempUnit">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>°C</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_SetRoiFluxItem">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>30</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Set</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </widget>
     </item>
@@ -4118,7 +4314,7 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>70</y>
+          <y>110</y>
           <width>241</width>
           <height>23</height>
          </rect>
@@ -4146,7 +4342,7 @@
           <x>0</x>
           <y>250</y>
           <width>241</width>
-          <height>161</height>
+          <height>191</height>
          </rect>
         </property>
        </widget>
@@ -4154,7 +4350,7 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>124</y>
+          <y>64</y>
           <width>241</width>
           <height>16</height>
          </rect>
@@ -4167,10 +4363,55 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>140</y>
+          <y>80</y>
           <width>241</width>
           <height>23</height>
          </rect>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_CallbackModeOff">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>185</x>
+          <y>150</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Off</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioButton_CallbackModeOn">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>137</x>
+          <y>150</y>
+          <width>51</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>On</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_LocalCameraCallbackMode">
+        <property name="geometry">
+         <rect>
+          <x>6</x>
+          <y>150</y>
+          <width>101</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Callback Mode: </string>
         </property>
        </widget>
       </widget>
@@ -4300,7 +4541,7 @@
           <x>0</x>
           <y>290</y>
           <width>241</width>
-          <height>121</height>
+          <height>151</height>
          </rect>
         </property>
        </widget>

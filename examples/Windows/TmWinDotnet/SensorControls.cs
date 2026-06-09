@@ -568,6 +568,47 @@ namespace TmWinDotNet
 
                         break;
 
+                    case "button_GetExtSync_256G":
+                        int extSyncMode_256G = tmCamera.tmControl.GetExternalSyncMode();
+                        if (extSyncMode_256G == 0)
+                        {
+                            radioButton_ExtSyncOff_256G.Checked = true;
+                        }
+                        else if (extSyncMode_256G == 1)
+                        {
+                            radioButton_ExtSyncSlave_256G.Checked = true;
+                        }
+                        else if (extSyncMode_256G == 2)
+                        {
+                            radioButton_ExtSyncMaster_256G.Checked = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail to get External Sync Mode", "External Sync", MessageBoxButtons.OK);
+                        }
+
+                        break;
+
+                    case "button_SetExtSync_256G":
+                        int extSyncModeSet_256G = -1;
+                        if (radioButton_ExtSyncOff_256G.Checked)
+                            extSyncModeSet_256G = 0;
+                        else if (radioButton_ExtSyncSlave_256G.Checked)
+                            extSyncModeSet_256G = 1;
+                        else if (radioButton_ExtSyncMaster_256G.Checked)
+                            extSyncModeSet_256G = 2;
+
+                        if (extSyncModeSet_256G >= 0 && tmCamera.tmControl.SetExternalSyncMode(extSyncModeSet_256G))
+                        {
+                            MessageBox.Show("Success to set External Sync Mode", "External Sync", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fail to set External Sync Mode", "External Sync", MessageBoxButtons.OK);
+                        }
+
+                        break;
+
                     case "button_GetFFCParameters_256G":
                         if (tmCamera.tmControl.GetFlatFieldCorrectionParameters(out double maxInterval_256G, out double autoTriggerThreshold_256G))
                         {

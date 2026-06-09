@@ -17,6 +17,20 @@
 #include "Camera.h"
 #include <QMouseEvent>
 
+const int CONNECTION_TIMEOUT = 5000;
+
+namespace
+{
+    // Test context example for callback + context registration path.
+    class CallbackTestContext
+    {
+    public:
+        Camera* owner = nullptr;
+        int frameCount = 0;
+        const char* tag = "callback-context-test";
+    };
+}
+
 /*
 * Constructor of Camera class
 * parameter:
@@ -96,8 +110,20 @@ uint32_t Camera::ConvertAnsiToUnicodeString(std::wstring& unicode, const std::st
 */
 std::string Camera::GetTempStringUnit(double raw)
 {
+    return GetTempStringUnit(raw, FluxItem());
+}
+
+/*
+*   raw: double representing the raw temperature value
+*   flux: FluxItem representing the flux parameters
+* return:
+*   std::string formatted with the temperature value and its unit
+*/
+std::string Camera::GetTempStringUnit(double raw, FluxItem flux)
+{
     std::string strTemp;
     std::stringstream ss;
+
     if (pTmCamera != nullptr && pTmCamera->IsOpen() == true)
     {
         switch (pTmCamera->GetTempUnit())
@@ -106,13 +132,13 @@ std::string Camera::GetTempStringUnit(double raw)
             ss << std::fixed << std::setprecision(0) << raw << " " << pTmCamera->GetTempUnitSymbol();
             break;
         case TempUnit::CELSIUS:
-            ss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(raw) << " " << pTmCamera->GetTempUnitSymbol();
+            ss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(raw, flux) << " " << pTmCamera->GetTempUnitSymbol();
             break;
         case TempUnit::FAHRENHEIT:
-            ss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(raw) << " " << pTmCamera->GetTempUnitSymbol();
+            ss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(raw, flux) << " " << pTmCamera->GetTempUnitSymbol();
             break;
         case TempUnit::KELVIN:
-            ss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(raw) << " " << pTmCamera->GetTempUnitSymbol();
+            ss << std::fixed << std::setprecision(2) << pTmCamera->GetTemperature(raw, flux) << " " << pTmCamera->GetTempUnitSymbol();
             break;
         }
     }
@@ -213,10 +239,10 @@ void Camera::CaptureFrame()
     {
         return;
     }
-    int colorMapIndex = (int)ColormapTypes::Inferno + 1;
+    int colorMapIndex = (int)ColormapTypes::Inferno;
     int tempUnitIndex = (int)TempUnit::CELSIUS;
     QMetaObject::invokeMethod(this, [this, colorMapIndex, tempUnitIndex]() {
-        ui->comboBox_ColorMap->setCurrentIndex(colorMapIndex);
+        ui->comboBox_ColorMap->setCurrentIndex(colorMapIndex + 1);
         ui->comboBox_TemperatureUnit->setCurrentIndex(tempUnitIndex);
         }, Qt::QueuedConnection);
     pTmCamera->SetColorMap((ColormapTypes)colorMapIndex);
@@ -226,6 +252,19 @@ void Camera::CaptureFrame()
     {
         try
         {
+            if (pauseCapThread == true)
+            {
+                QThread::msleep(50);
+                continue;
+            }
+
+            if (!pTmCamera->IsConnected())
+            {
+                qDebug() << "Camera is not connected. Disconnecting camera.";
+                // OnCameraConnectionChanged(false);
+                // break;
+            }
+
             TmFrame* pFrame = new TmFrame((ColormapTypes)colorMapIndex);
             int ret = pTmCamera->QueryFrame(pFrame, previewWidth, previewHeight);
             if (ret == true && pFrame != nullptr)
@@ -242,9 +281,14 @@ void Camera::CaptureFrame()
                 delete pFrame;
             }
         }
+        catch (TmException e)
+        {
+            std::cout << "CaptureFrame: Can not get video frame:" << e.what() << endl;
+            return;
+        }
         catch (exception& e)
         {
-            std::cout << "CaptureFrame: Can not get video frame" << endl;
+            std::cout << "CaptureFrame: Can not get video frame:" << e.what() << endl;
             return;
         }
     }
@@ -385,12 +429,23 @@ void Camera::ScanRemoteCamera()
 /*
 * Disconnect the connected camera.
 */
-void Camera::DisconnectCamera()
+void Camera::DisconnectCamera(bool clearReconnectState)
 {
+    if (QThread::currentThread() != QApplication::instance()->thread())
+    {
+        QMetaObject::invokeMethod(this, [this, clearReconnectState]() {
+            DisconnectCamera(clearReconnectState);
+            }, Qt::QueuedConnection);
+        return;
+    }
+
     if (runCapThread)
     {
         runCapThread = false;
-        capThread.join();
+        if (capThread.joinable() && std::this_thread::get_id() != capThread.get_id())
+        {
+            capThread.join();
+        }
     }
     if (pTmCamera != nullptr)
     {
@@ -404,9 +459,21 @@ void Camera::DisconnectCamera()
             QThread::sleep(1);
         }
         roiManager.Clear();
+        pauseCapThread = false;
+        pTmCamera->EndAcquisition();
+        pTmCamera->UnregisterEventHandler();
+        pTmCamera->UnregisterConnectionEventHandler();
         pTmCamera->Close();
         pTmCamera = nullptr;
     }
+
+    if (clearReconnectState)
+    {
+        reconnectingCamera = false;
+        reconnectLocalCamInfo = nullptr;
+        reconnectRemoteCamInfo = nullptr;
+    }
+
     // Hide widgets inside tabSensorControl
     ui->stackedWidget_SensorControl->setVisible(false);
     ui->groupBox_ProductInformation->setEnabled(false);
@@ -424,6 +491,10 @@ void Camera::DisconnectCamera()
     ui->comboBox_ColorMap->setEnabled(false);
     ui->checkBox_NoiseFiltering->setEnabled(false);
     ui->comboBox_TemperatureUnit->setEnabled(false);
+
+    ui->radioButton_CallbackModeOn->setEnabled(false);
+    ui->radioButton_CallbackModeOff->setEnabled(false);
+    ui->radioButton_CallbackModeOff->setChecked(true);
 
     ui->label_ProductModelName->setText("");
     ui->label_ProductPartNumber->setText("");
@@ -462,6 +533,201 @@ void Camera::DisconnectCamera()
         // 최종적으로 clear 한 번 더 호출
         ui->label_Preview->clear();
         ui->label_Preview->repaint();
+    }
+}
+
+void Camera::RegisterConnectionHandler(TmLocalCamInfo* localCamInfo, TmRemoteCamInfo* remoteCamInfo)
+{
+    reconnectLocalCamInfo = localCamInfo;
+    reconnectRemoteCamInfo = remoteCamInfo;
+    if (pTmCamera != nullptr)
+    {
+        pTmCamera->RegisterConnectionEventHandler([this](bool connected) {
+            OnCameraConnectionChanged(connected);
+            });
+    }
+}
+
+void Camera::OnCameraConnectionChanged(bool connected)
+{
+    if (connected || reconnectingCamera)
+    {
+        return;
+    }
+
+    reconnectingCamera = true;
+    TmLocalCamInfo* localCamInfo = reconnectLocalCamInfo;
+    TmRemoteCamInfo* remoteCamInfo = reconnectRemoteCamInfo;
+
+    QMetaObject::invokeMethod(this, [this, localCamInfo, remoteCamInfo]() {
+        QTimer::singleShot(1, this, [this, localCamInfo, remoteCamInfo]() {
+            DisconnectCamera(false);
+            reconnectingCamera = true;
+            reconnectLocalCamInfo = localCamInfo;
+            reconnectRemoteCamInfo = remoteCamInfo;
+            ui->pushButton_LocalCameraConnect->setText("Connect");
+            ui->pushButton_RemoteCameraConnect->setText("Connect");
+            std::thread([this, localCamInfo, remoteCamInfo]() {
+                ReconnectCamera(localCamInfo, remoteCamInfo);
+                }).detach();
+            });
+        }, Qt::QueuedConnection);
+}
+
+void Camera::ReconnectCamera(TmLocalCamInfo* localCamInfo, TmRemoteCamInfo* remoteCamInfo)
+{
+    for (int attempt = 0; attempt < 20 && reconnectingCamera; attempt++)
+    {
+        TmCamera* newCamera = nullptr;
+        try
+        {
+            qDebug() << "Attempting to reconnect camera. Attempt" << attempt;
+            if (localCamInfo != nullptr)
+            {
+                newCamera = new TmLocalCamera();
+                if (!newCamera->Open(localCamInfo))
+                {
+                    delete newCamera;
+                    newCamera = nullptr;
+                }
+            }
+            else if (remoteCamInfo != nullptr)
+            {
+                newCamera = new TmRemoteCamera();
+                if (!newCamera->Open(remoteCamInfo))
+                {
+                    delete newCamera;
+                    newCamera = nullptr;
+                }
+            }
+
+            if (newCamera != nullptr)
+            {
+                pTmCamera = newCamera;
+                reconnectingCamera = false;
+                RegisterConnectionHandler(localCamInfo, remoteCamInfo);
+                runCapThread = true;
+                capThread = std::thread(std::bind(&Camera::CaptureFrame, this));
+
+                QMetaObject::invokeMethod(this, [this, localCamInfo]() {
+                    ApplyConnectedCameraUi(localCamInfo != nullptr);
+                    }, Qt::QueuedConnection);
+                return;
+            }
+        }
+        catch (...)
+        {
+            if (newCamera != nullptr)
+            {
+                try
+                {
+                    newCamera->Close();
+                }
+                catch (...)
+                {
+                }
+                delete newCamera;
+            }
+        }
+
+        QThread::sleep(1);
+    }
+
+    if (!reconnectingCamera)
+    {
+        return;
+    }
+
+    QMetaObject::invokeMethod(this, [this]() {
+        ui->pushButton_LocalCameraConnect->setText("Connect");
+        ui->pushButton_RemoteCameraConnect->setText("Connect");
+        reconnectingCamera = false;
+        reconnectLocalCamInfo = nullptr;
+        reconnectRemoteCamInfo = nullptr;
+        QMessageBox::warning(ui->centralwidget, "Reconnect", "Failed to reconnect camera.");
+        }, Qt::QueuedConnection);
+}
+
+void Camera::ApplyConnectedCameraUi(bool isLocalCamera)
+{
+    if (pTmCamera == nullptr)
+    {
+        return;
+    }
+
+    if (isLocalCamera)
+    {
+        ui->pushButton_LocalCameraConnect->setText("Disconnect");
+        ui->pushButton_RemoteCameraConnect->setText("Connect");
+    }
+    else
+    {
+        ui->pushButton_LocalCameraConnect->setText("Connect");
+        ui->pushButton_RemoteCameraConnect->setText("Disconnect");
+    }
+
+    if (pTmCamera->GetDevName() == "ThermoCam160E"
+        || pTmCamera->GetDevName() == "TMC160E" || pTmCamera->GetDevName() == "TMC160B" || pTmCamera->GetDevName() == "TMC160F"
+        || pTmCamera->GetDevName() == "TMC80E" || pTmCamera->GetDevName() == "TMC80B" || pTmCamera->GetDevName() == "TMC80F")
+    {
+        ui->tabWidget_Control->setCurrentIndex(0);
+        ui->stackedWidget_SensorControl->setCurrentIndex(1);
+    }
+    else if (pTmCamera->GetDevName() == "ThermoCam256E"
+        || pTmCamera->GetDevName() == "TMC256E" || pTmCamera->GetDevName() == "TMC256B" || pTmCamera->GetDevName() == "TMC256I"
+        || pTmCamera->GetDevName() == "TMC160IE" || pTmCamera->GetDevName() == "TMC160IB" || pTmCamera->GetDevName() == "TMC160I")
+    {
+        ui->tabWidget_Control->setCurrentIndex(0);
+        ui->stackedWidget_SensorControl->setCurrentIndex(0);
+        if (!isLocalCamera)
+        {
+            ui->groupBox_FluxParameters->setEnabled(true);
+            ui->groupBox_FluxParameters->setTitle("Flux Parameters");
+        }
+    }
+    else if (pTmCamera->GetDevName() == "TMC256GE" || pTmCamera->GetDevName() == "TMC256GB" || pTmCamera->GetDevName() == "TMC256G"
+        || pTmCamera->GetDevName() == "TMC384GE" || pTmCamera->GetDevName() == "TMC384GB" || pTmCamera->GetDevName() == "TMC384G")
+    {
+        ui->tabWidget_Control->setCurrentIndex(0);
+        ui->stackedWidget_SensorControl->setCurrentIndex(2);
+    }
+
+    ui->stackedWidget_SensorControl->setVisible(true);
+    ui->groupBox_ProductInformation->setEnabled(true);
+    ui->groupBox_SensorInformation->setEnabled(true);
+    ui->groupBox_SoftwareUpdate->setEnabled(true);
+    ui->comboBox_ColorMap->setEnabled(true);
+    ui->comboBox_TemperatureUnit->setEnabled(true);
+
+    ui->comboBox_IPAssignment->setEnabled(!isLocalCamera);
+    ui->lineEdit_IPAddress->setEnabled(!isLocalCamera);
+    ui->lineEdit_Netmask->setEnabled(!isLocalCamera);
+    ui->lineEdit_Gateway->setEnabled(!isLocalCamera);
+    ui->lineEdit_MainDNSServer->setEnabled(!isLocalCamera);
+    ui->lineEdit_SubDNSServer->setEnabled(!isLocalCamera);
+    ui->pushButton_SetDefaultNetworkConfiguration->setEnabled(!isLocalCamera);
+    ui->pushButton_SystemReboot->setEnabled(!isLocalCamera);
+
+    ui->radioButton_ShapeCursor->setChecked(true);
+    ui->radioButton_ShapeCursor->setEnabled(true);
+    ui->radioButton_ShapeSpot->setEnabled(true);
+    ui->radioButton_ShapeLine->setEnabled(true);
+    ui->radioButton_ShapeRectangle->setEnabled(true);
+    ui->radioButton_ShapeEllipse->setEnabled(true);
+    ui->pushButton_RemoveAllRoi->setEnabled(true);
+    ui->comboBox_ColorMap->setEnabled(true);
+    ui->checkBox_NoiseFiltering->setEnabled(true);
+    ui->comboBox_TemperatureUnit->setEnabled(true);
+
+    if (isLocalCamera)
+    {
+        ui->radioButton_CallbackModeOn->setEnabled(true);
+        ui->radioButton_CallbackModeOff->setEnabled(true);
+    }
+    else
+    {
+        ui->radioButton_CallbackModeOn->setEnabled(false);
+        ui->radioButton_CallbackModeOff->setEnabled(false);
     }
 }
 
@@ -511,7 +777,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawText(shape->Spot.X - sizeDraw.width() / 2, shape->Spot.Y - 4, strDraw);
 
             // draw temp
-            std::string tempUnit = GetTempStringUnit(shape->MaxLoc.Value);
+            std::string tempUnit = GetTempStringUnit(shape->MaxLoc.Value, shape->FluxParam);
             std::wstring wStr;
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
@@ -540,7 +806,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawPolygon(QPolygon() << QPoint(shape->MaxLoc.Location.X, shape->MaxLoc.Location.Y)
                 << QPoint(shape->MaxLoc.Location.X - 4, shape->MaxLoc.Location.Y - 4)
                 << QPoint(shape->MaxLoc.Location.X + 4, shape->MaxLoc.Location.Y - 4));
-            std::string tempUnit = GetTempStringUnit(shape->MaxLoc.Value);
+            std::string tempUnit = GetTempStringUnit(shape->MaxLoc.Value, shape->FluxParam);
             std::wstring wStr;
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
@@ -554,7 +820,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawPolygon(QPolygon() << QPoint(shape->MinLoc.Location.X, shape->MinLoc.Location.Y)
                 << QPoint(shape->MinLoc.Location.X - 4, shape->MinLoc.Location.Y + 4)
                 << QPoint(shape->MinLoc.Location.X + 4, shape->MinLoc.Location.Y + 4));
-            tempUnit = GetTempStringUnit(shape->MinLoc.Value);
+            tempUnit = GetTempStringUnit(shape->MinLoc.Value, shape->FluxParam);
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
             sizeDraw = painter.fontMetrics().size(Qt::TextSingleLine, strDraw);
@@ -562,7 +828,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawText(shape->MinLoc.Location.X - sizeDraw.width() / 2, shape->MinLoc.Location.Y + 15, strDraw);
 
             // draw average temp
-            tempUnit = GetTempStringUnit(shape->AvgLoc.Value);
+            tempUnit = GetTempStringUnit(shape->AvgLoc.Value, shape->FluxParam);
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
             sizeDraw = painter.fontMetrics().size(Qt::TextSingleLine, strDraw);
@@ -592,7 +858,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawPolygon(QPolygon() << QPoint(shape->MaxLoc.Location.X, shape->MaxLoc.Location.Y)
                 << QPoint(shape->MaxLoc.Location.X - 4, shape->MaxLoc.Location.Y - 4)
                 << QPoint(shape->MaxLoc.Location.X + 4, shape->MaxLoc.Location.Y - 4));
-            tempUnit = GetTempStringUnit(shape->MaxLoc.Value);
+            tempUnit = GetTempStringUnit(shape->MaxLoc.Value, shape->FluxParam);
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
             QSizeF sizeDraw = painter.fontMetrics().size(Qt::TextSingleLine, strDraw);
@@ -605,7 +871,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawPolygon(QPolygon() << QPoint(shape->MinLoc.Location.X, shape->MinLoc.Location.Y)
                 << QPoint(shape->MinLoc.Location.X - 4, shape->MinLoc.Location.Y + 4)
                 << QPoint(shape->MinLoc.Location.X + 4, shape->MinLoc.Location.Y + 4));
-            tempUnit = GetTempStringUnit(shape->MinLoc.Value);
+            tempUnit = GetTempStringUnit(shape->MinLoc.Value, shape->FluxParam);
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
             sizeDraw = painter.fontMetrics().size(Qt::TextSingleLine, strDraw);
@@ -613,7 +879,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawText(shape->MinLoc.Location.X - sizeDraw.width() / 2, shape->MinLoc.Location.Y + 15, strDraw);
 
             // draw average temp
-            tempUnit = GetTempStringUnit(shape->AvgLoc.Value);
+            tempUnit = GetTempStringUnit(shape->AvgLoc.Value, shape->FluxParam);
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
             sizeDraw = painter.fontMetrics().size(Qt::TextSingleLine, strDraw);
@@ -644,7 +910,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawPolygon(QPolygon() << QPoint(shape->MaxLoc.Location.X, shape->MaxLoc.Location.Y)
                 << QPoint(shape->MaxLoc.Location.X - 4, shape->MaxLoc.Location.Y - 4)
                 << QPoint(shape->MaxLoc.Location.X + 4, shape->MaxLoc.Location.Y - 4));
-            tempUnit = GetTempStringUnit(shape->MaxLoc.Value);
+            tempUnit = GetTempStringUnit(shape->MaxLoc.Value, shape->FluxParam);
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
             sizeDraw = painter.fontMetrics().size(Qt::TextSingleLine, strDraw);
@@ -657,7 +923,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawPolygon(QPolygon() << QPoint(shape->MinLoc.Location.X, shape->MinLoc.Location.Y)
                 << QPoint(shape->MinLoc.Location.X - 4, shape->MinLoc.Location.Y + 4)
                 << QPoint(shape->MinLoc.Location.X + 4, shape->MinLoc.Location.Y + 4));
-            tempUnit = GetTempStringUnit(shape->MinLoc.Value);
+            tempUnit = GetTempStringUnit(shape->MinLoc.Value, shape->FluxParam);
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
             sizeDraw = painter.fontMetrics().size(Qt::TextSingleLine, strDraw);
@@ -665,7 +931,7 @@ void Camera::DrawShapeObjects(QImage& image) {
             painter.drawText(shape->MinLoc.Location.X - sizeDraw.width() / 2, shape->MinLoc.Location.Y + 15, strDraw);
 
             // draw average temp
-            tempUnit = GetTempStringUnit(shape->AvgLoc.Value);
+            tempUnit = GetTempStringUnit(shape->AvgLoc.Value, shape->FluxParam);
             ConvertAnsiToUnicodeString(wStr, tempUnit);
             strDraw = QString::fromStdWString(wStr);
             sizeDraw = painter.fontMetrics().size(Qt::TextSingleLine, strDraw);
@@ -877,8 +1143,10 @@ void Camera::pushButton_LocalCameraConnect_Clicked()
             return;
         }
 
+        CamList[row]->CamTimeout = CONNECTION_TIMEOUT;
         if (pTmCamera->Open(static_cast<TmLocalCamInfo*>(CamList[row])))
         {
+            RegisterConnectionHandler(static_cast<TmLocalCamInfo*>(CamList[row]), nullptr);
             runCapThread = true;
             capThread = std::thread(std::bind(&Camera::CaptureFrame, this));
             ui->pushButton_LocalCameraConnect->setText("Disconnect");
@@ -922,8 +1190,19 @@ void Camera::pushButton_LocalCameraConnect_Clicked()
             ui->checkBox_NoiseFiltering->setEnabled(true);
             ui->comboBox_TemperatureUnit->setEnabled(true);
 
+            ui->comboBox_IPAssignment->setEnabled(false);
+            ui->lineEdit_IPAddress->setEnabled(false);
+            ui->lineEdit_Netmask->setEnabled(false);
+            ui->lineEdit_Gateway->setEnabled(false);
+            ui->lineEdit_MainDNSServer->setEnabled(false);
+            ui->lineEdit_SubDNSServer->setEnabled(false);
             ui->pushButton_SetDefaultNetworkConfiguration->setEnabled(false);
             ui->pushButton_SystemReboot->setEnabled(false);
+
+            ui->radioButton_CallbackModeOn->setEnabled(true);
+            ui->radioButton_CallbackModeOff->setEnabled(true);
+            ui->radioButton_CallbackModeOn->setChecked(false);
+            ui->radioButton_CallbackModeOff->setChecked(true);
         }
         else
         {
@@ -969,8 +1248,10 @@ void Camera::pushButton_RemoteCameraConnect_Clicked()
             return;
         }
 
+        CamList[row]->CamTimeout = CONNECTION_TIMEOUT;
         if (pTmCamera->Open(static_cast<TmRemoteCamInfo*>(CamList[row])))
         {
+            RegisterConnectionHandler(nullptr, static_cast<TmRemoteCamInfo*>(CamList[row]));
             runCapThread = true;
             capThread = std::thread(std::bind(&Camera::CaptureFrame, this));
 
@@ -1101,7 +1382,7 @@ void Camera::listWidget_RemoteCameraList_CurrentRowChanged(int row)
 void Camera::comboBox_ColorMap_Changed(int index)
 {
     if (pTmCamera == nullptr) return;
-    pTmCamera->SetColorMap((ColormapTypes)index);
+    pTmCamera->SetColorMap((ColormapTypes)(index - 1));
 }
 
 /**
@@ -1292,4 +1573,323 @@ void Camera::tabWidget_Control_CurrentChanged(int tabIndex)
     }
 }
 
+void Camera::comboBox_ListRoi_CurrentIndexChanged(int index)
+{
+    ui->lineEdit_SpotX->clear();
+    ui->lineEdit_SpotY->clear();
+    ui->lineEdit_LineX1->clear();
+    ui->lineEdit_LineY1->clear();
+    ui->lineEdit_LineX2->clear();
+    ui->lineEdit_LineY2->clear();
+    ui->lineEdit_RectangleX->clear();
+    ui->lineEdit_RectangleY->clear();
+    ui->lineEdit_RectangleW->clear();
+    ui->lineEdit_RectangleH->clear();
+    ui->lineEdit_EllipseX->clear();
+    ui->lineEdit_EllipseY->clear();
+    ui->lineEdit_EllipseW->clear();
+    ui->lineEdit_EllipseH->clear();
+    ui->lineEdit_RoiEmiss->clear();
+    ui->lineEdit_RoiAmbRefTemp->clear();
+
+    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
+    if (index < 0) return;
+
+    RoiObject* item = roiManager.Items[index];
+    switch (item->Type)
+    {
+    case RoiType::Spot:
+    {
+        ui->radioButton_RoiSpot->setChecked(true);
+        RoiSpot* spot = static_cast<RoiSpot*>(item);
+        ui->lineEdit_SpotX->setText(QString::number(spot->Spot.X));
+        ui->lineEdit_SpotY->setText(QString::number(spot->Spot.Y));
+        break;
+    }
+    case RoiType::Line:
+    {
+        ui->radioButton_RoiLine->setChecked(true);
+        RoiLine* line = static_cast<RoiLine*>(item);
+        ui->lineEdit_LineX1->setText(QString::number(line->Start.X));
+        ui->lineEdit_LineY1->setText(QString::number(line->Start.Y));
+        ui->lineEdit_LineX2->setText(QString::number(line->End.X));
+        ui->lineEdit_LineY2->setText(QString::number(line->End.Y));
+        break;
+    }
+    case RoiType::Rect:
+    {
+        ui->radioButton_RoiRectangle->setChecked(true);
+        RoiRect* rect = static_cast<RoiRect*>(item);
+        ui->lineEdit_RectangleX->setText(QString::number(rect->Rect.X));
+        ui->lineEdit_RectangleY->setText(QString::number(rect->Rect.Y));
+        ui->lineEdit_RectangleW->setText(QString::number(rect->Rect.Width));
+        ui->lineEdit_RectangleH->setText(QString::number(rect->Rect.Height));
+        break;
+    }
+    case RoiType::Ellipse:
+    {
+        ui->radioButton_RoiEllipse->setChecked(true);
+        RoiEllipse* ellipse = static_cast<RoiEllipse*>(item);
+        ui->lineEdit_EllipseX->setText(QString::number(ellipse->Ellipse.X));
+        ui->lineEdit_EllipseY->setText(QString::number(ellipse->Ellipse.Y));
+        ui->lineEdit_EllipseW->setText(QString::number(ellipse->Ellipse.Width));
+        ui->lineEdit_EllipseH->setText(QString::number(ellipse->Ellipse.Height));
+        break;
+    }
+    default:
+        break;
+    }
+
+    ui->lineEdit_RoiEmiss->setText(QString::number(item->FluxParam.GetEmiss(), 'f', 1));
+    ui->lineEdit_RoiAmbRefTemp->setText(QString::number(item->FluxParam.GetAmbRefTemp()));
+}
+
+void Camera::pushButton_SetRoiFluxItem_Clicked()
+{
+    if (pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
+    if (ui->comboBox_ListRoi->currentIndex() < 0) return;
+    bool ok = false;
+    if (!ui->lineEdit_RoiEmiss->text().toDouble(&ok)) return;
+    if (!ui->lineEdit_RoiAmbRefTemp->text().toDouble(&ok)) return;
+    RoiObject* item = roiManager.Items[ui->comboBox_ListRoi->currentIndex()];
+    item->FluxParam.SetEmiss(ui->lineEdit_RoiEmiss->text().toDouble());
+    item->FluxParam.SetAmbRefTemp(ui->lineEdit_RoiAmbRefTemp->text().toDouble());
+}
+
+void Camera::lineEdit_RoiEmiss_EditingFinished()
+{
+    bool ok = false;
+    double emiss = ui->lineEdit_RoiEmiss->text().toDouble(&ok);
+    if (!ok) return;
+
+    if (emiss < 0.0)
+    {
+        emiss = 0.0;
+    }
+    else if (emiss > 1.0)
+    {
+        emiss = 1.0;
+    }
+
+    ui->lineEdit_RoiEmiss->setText(QString::number(emiss, 'f', 1));
+}
+
+void Camera::lineEdit_RoiAmbRefTemp_EditingFinished()
+{
+    bool ok = false;
+    double ambRefTemp = ui->lineEdit_RoiAmbRefTemp->text().toDouble(&ok);
+    if (!ok) return;
+
+    ui->lineEdit_RoiAmbRefTemp->setText(QString::number(ambRefTemp, 'f', 1));
+}
+
+void Camera::checkBox_HorizontalFlip_toggled()
+{
+    pTmCamera->SetFlipHorizontal(ui->checkBox_HorizontalFlip->isChecked());
+}
+
+void Camera::checkBox_VerticalFlip_toggled()
+{
+    pTmCamera->SetFlipVertical(ui->checkBox_VerticalFlip->isChecked());
+}
+
+/*
+ * Enables callback mode.
+ * Pauses capture thread and starts callback-based frame acquisition.
+ */
+void Camera::radioButton_CallbackModeOn_Clicked()
+{
+    if (disconnecting.load() || pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
+
+    pauseCapThread = true;
+
+    // Register callback with an optional user context.
+    // Each frame callback receives both the frame and a void* context pointer.
+    // If you do not need context data, you can pass nullptr.
+    // Here we pass a test context struct to validate context delivery and update per-frame state.
+    static CallbackTestContext callbackCtx;
+    callbackCtx.owner = this;
+    callbackCtx.frameCount = 0;
+
+    std::lock_guard<std::mutex> lock(cameraAccessMutex);
+    if (pTmCamera != nullptr)
+    {
+        // Register callback with an optional user context.
+        // Each frame callback receives both the frame and a void* context pointer.
+        // If you do not need context data, you can pass nullptr.
+        // Here we pass a test context struct to validate context delivery and update per-frame state.
+        pTmCamera->RegisterEventHandler(
+            [this](TmSDK::TmFramePtr frame, void* context) {
+                OnFrameEventHandler(std::move(frame), context);
+            },
+            // &callbackCtx
+            nullptr
+        );
+        pTmCamera->BeginAcquisition();
+    }
+}
+
+/*
+ * Disables callback mode.
+ * Stops callback-based frame acquisition and resumes capture thread.
+ */
+void Camera::radioButton_CallbackModeOff_Clicked()
+{
+    if (disconnecting.load() || pTmCamera == nullptr || pTmCamera->pTmControl == nullptr) return;
+
+    std::lock_guard<std::mutex> lock(cameraAccessMutex);
+    if (pTmCamera != nullptr)
+    {
+        pTmCamera->EndAcquisition();
+        pTmCamera->UnregisterEventHandler();
+    }
+    pauseCapThread = false;
+}
+
+/*
+ * Renders a single callback frame to preview and updates temperature labels.
+ */
+void Camera::DisplayPreviewFrame(TmSDK::TmFramePtr frame)
+{
+    if (frame == nullptr || disconnecting.load())
+    {
+        return;
+    }
+
+    TmCamera* cameraSnapshot = nullptr;
+    {
+        std::lock_guard<std::mutex> lock(cameraAccessMutex);
+        if (disconnecting.load() || pTmCamera == nullptr)
+        {
+            return;
+        }
+        cameraSnapshot = pTmCamera;
+    }
+
+    QSize labelSize = ui->label_Preview->size();
+    if (labelSize.width() <= 0 || labelSize.height() <= 0)
+    {
+        return;
+    }
+
+    if (!frame->Resize(labelSize.width(), labelSize.height()))
+    {
+        return;
+    }
+
+    int width = frame->Width();
+    int height = frame->Height();
+
+    double minVal = 0.0;
+    double avgVal = 0.0;
+    double maxVal = 0.0;
+    Point minLoc, maxLoc;
+    uint8_t* bitMap = frame->ToBitmap(ColorOrder::COLOR_RGB);
+    if (bitMap == nullptr)
+    {
+        return;
+    }
+
+    QImage image(bitMap, width, height, QImage::Format_RGB888);
+    if (image.isNull())
+    {
+        return;
+    }
+
+    std::string frameFormat;
+    {
+        std::lock_guard<std::mutex> lock(cameraAccessMutex);
+        if (disconnecting.load() || pTmCamera == nullptr || pTmCamera != cameraSnapshot)
+        {
+            return;
+        }
+        frameFormat = cameraSnapshot->GetFormat();
+    }
+
+    if (frameFormat == "Y16")
+    {
+        frame->DoMeasure(roiManager.Items);
+        frame->MinMaxLoc(minVal, avgVal, maxVal, minLoc, maxLoc);
+    }
+
+    DrawShapeObjects(image);
+    UpdateDrawingLabel(image);
+
+
+    QPixmap previewPixmap = QPixmap::fromImage(image);
+    QMetaObject::invokeMethod(ui->label_Preview, "setPixmap", Qt::QueuedConnection, Q_ARG(QPixmap, previewPixmap));
+
+
+
+    std::wstring wideStr;
+    std::string tempUnitSymbol;
+    {
+        std::lock_guard<std::mutex> lock(cameraAccessMutex);
+        if (disconnecting.load() || pTmCamera == nullptr || pTmCamera != cameraSnapshot)
+        {
+            return;
+        }
+        tempUnitSymbol = cameraSnapshot->GetTempUnitSymbol();
+    }
+
+    ConvertAnsiToUnicodeString(wideStr, tempUnitSymbol);
+    QString text = QString::fromStdWString(wideStr);
+
+    // Prepare temperature strings
+    double minTemp = 0.0;
+    double avgTemp = 0.0;
+    double maxTemp = 0.0;
+    {
+        std::lock_guard<std::mutex> lock(cameraAccessMutex);
+        if (disconnecting.load() || pTmCamera == nullptr || pTmCamera != cameraSnapshot)
+        {
+            return;
+        }
+        minTemp = cameraSnapshot->GetTemperature(minVal);
+        avgTemp = cameraSnapshot->GetTemperature(avgVal);
+        maxTemp = cameraSnapshot->GetTemperature(maxVal);
+    }
+
+    std::stringstream oss;
+    oss << std::fixed << std::setprecision(2) << minTemp << " ";
+    QString minTempText = QString::fromStdString(oss.str()) + text;
+
+    oss.str("");
+    oss << std::fixed << std::setprecision(2) << avgTemp << " ";
+    QString avgTempText = QString::fromStdString(oss.str()) + text;
+
+    oss.str("");
+    oss << std::fixed << std::setprecision(2) << maxTemp << " ";
+    QString maxTempText = QString::fromStdString(oss.str()) + text;
+
+    // Update the labels using invokeMethod
+    QMetaObject::invokeMethod(ui->label_MinimumTemperature, "setText", Qt::QueuedConnection, Q_ARG(QString, minTempText));
+    QMetaObject::invokeMethod(ui->label_AverageTemperature, "setText", Qt::QueuedConnection, Q_ARG(QString, avgTempText));
+    QMetaObject::invokeMethod(ui->label_MaximumTemperature, "setText", Qt::QueuedConnection, Q_ARG(QString, maxTempText));
+}
+
+/*
+ * Callback mode frame callback with test context.
+ * - Casts the user context pointer to CallbackTestContext.
+ * - If no context is registered, the context pointer can be nullptr.
+ * - Increments frameCount to verify callback/context flow.
+ * - Renders the received frame to preview.
+ */
+void Camera::OnFrameEventHandler(TmSDK::TmFramePtr frame, void* context)
+{
+    try
+    {
+        auto* testCtx = static_cast<CallbackTestContext*>(context);
+        if (testCtx != nullptr)
+        {
+            testCtx->frameCount++;
+        }
+        DisplayPreviewFrame(frame);
+    }
+    catch (exception& e)
+    {
+        std::cout << "OnFrameEventHandler: Can not get video frame" << endl;
+        return;
+    }
+}
 #pragma region

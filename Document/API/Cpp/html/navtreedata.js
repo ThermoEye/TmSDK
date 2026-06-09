@@ -28,7 +28,7 @@ var NAVTREE =
     [ "TmSDK", "index.html", "index" ],
     [ "Namespace Members", "namespacemembers.html", [
       [ "All", "namespacemembers.html", null ],
-      [ "Functions", "namespacemembers_func.html", null ],
+      [ "Typedefs", "namespacemembers_type.html", null ],
       [ "Enumerations", "namespacemembers_enum.html", null ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -47,9 +47,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_tm_s_d_k_1_1_tm_ctrl256_g.html#adfb3365b0e08c69114ab1820981b89b0"
+"class_tm_s_d_k_1_1_tm_ctrl256_g.html#a092b6ea7da0fde5fa3b709c6c7ede54c",
+"hierarchy.html"
 ];
 
-var SYNCONMSG = 'click to disable panel synchronization';
-var SYNCOFFMSG = 'click to enable panel synchronization';
-var LISTOFALLMEMBERS = 'List of all members';
+const SYNCONMSG = 'click to disable panel synchronization';
+const SYNCOFFMSG = 'click to enable panel synchronization';
+const LISTOFALLMEMBERS = 'List of all members';

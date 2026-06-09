@@ -6,6 +6,8 @@ var class_tm_s_d_k_1_1_tm_roi_object =
     [ "GetAvgLoc", "class_tm_s_d_k_1_1_tm_roi_object.html#af8a1a943d52e29160274f0850b6f07a1", null ],
     [ "GetMaxLoc", "class_tm_s_d_k_1_1_tm_roi_object.html#ae6c999e5beb200e94d54401390b44426", null ],
     [ "GetMinLoc", "class_tm_s_d_k_1_1_tm_roi_object.html#a96033d824670b190c0cf056eb5b92eed", null ],
+    [ "GetRoiFluxItem", "class_tm_s_d_k_1_1_tm_roi_object.html#add590d0d99ab3491da1375eeac8bb279", null ],
     [ "GetRoiIndex", "class_tm_s_d_k_1_1_tm_roi_object.html#a8a34fc2ead08938417fa1237f0fc8137", null ],
-    [ "GetRoiType", "class_tm_s_d_k_1_1_tm_roi_object.html#a4226af0752f9e55a517010a97dcd229c", null ]
+    [ "GetRoiType", "class_tm_s_d_k_1_1_tm_roi_object.html#a4226af0752f9e55a517010a97dcd229c", null ],
+    [ "SetRoiFluxItem", "class_tm_s_d_k_1_1_tm_roi_object.html#a33f70a61de92955e26ab400bc1dbde60", null ]
 ];

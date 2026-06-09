@@ -4,5 +4,6 @@ var searchData=
   ['value_20at_20coordinates_2010_2010_1',['Get pixel value at coordinates (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md0',1,'']]],
   ['values_2',['Print the region values',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md2',1,'']]],
   ['values_20starting_20at_2010_2010_3',['Get a 10x10 region of pixel values starting at (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md1',1,'']]],
-  ['viridis_4',['Viridis',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#ac2d9f415a1290ee9a6ed122ec1b84606',1,'TmCore::TmTypes::ColormapTypes']]]
+  ['ver_4',['ver',['../namespace_tm_core.html#ab263335edd06aedd84aac2e061c7c7fa',1,'TmCore']]],
+  ['viridis_5',['Viridis',['../class_tm_core_1_1_tm_types_1_1_colormap_types.html#ac2d9f415a1290ee9a6ed122ec1b84606',1,'TmCore::TmTypes::ColormapTypes']]]
 ];

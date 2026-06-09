@@ -46,4 +46,6 @@ public slots:
     void pushButton_RestoreDefaultSensorConfig_256G_Clicked();
     void pushButton_GetGainModeState_256G_Clicked();
     void pushButton_SetGainModeState_256G_Clicked();
+    void pushButton_GetExtSync_256G_Clicked();
+    void pushButton_SetExtSync_256G_Clicked();
 };

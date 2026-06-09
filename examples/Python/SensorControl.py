@@ -514,3 +514,42 @@ class SensorControl:
             QMessageBox.information(self.main_window,'Gain Mode', 'Fail to set Gain Mode State')
         self.main_window.pushButton_SetGainModeState_256G.setText('Set')
         self.main_window.pushButton_SetGainModeState_256G.setEnabled(True)
+
+    def pushButton_GetExtSync_256G_Clicked(self):
+        if self.camera.tmCamera is None or self.camera.tmCamera.tmControl is None:
+            return
+        try:
+            mode = self.camera.tmCamera.tmControl.get_external_sync_mode()
+        except Exception as ex:
+            QMessageBox.warning(self.main_window, "External Sync", str(ex))
+            return
+        if mode == 0:
+            self.main_window.radioButton_ExtSyncOff_256G.setChecked(True)
+        elif mode == 1:
+            self.main_window.radioButton_ExtSyncSlave_256G.setChecked(True)
+        elif mode == 2:
+            self.main_window.radioButton_ExtSyncMaster_256G.setChecked(True)
+        else:
+            QMessageBox.information(self.main_window, "External Sync", f"Unsupported or error mode: {mode}")
+
+    def pushButton_SetExtSync_256G_Clicked(self):
+        if self.camera.tmCamera is None or self.camera.tmCamera.tmControl is None:
+            return
+        mode = -1
+        if self.main_window.radioButton_ExtSyncOff_256G.isChecked():
+            mode = 0
+        elif self.main_window.radioButton_ExtSyncSlave_256G.isChecked():
+            mode = 1
+        elif self.main_window.radioButton_ExtSyncMaster_256G.isChecked():
+            mode = 2
+        if mode < 0:
+            return
+        try:
+            ok = self.camera.tmCamera.tmControl.set_external_sync_mode(mode)
+        except Exception as ex:
+            QMessageBox.warning(self.main_window, "External Sync", str(ex))
+            return
+        if ok:
+            QMessageBox.information(self.main_window, "External Sync", "External sync mode set.")
+        else:
+            QMessageBox.warning(self.main_window, "External Sync", "Failed to set external sync mode.")

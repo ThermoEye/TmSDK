@@ -55,6 +55,9 @@
             this.listBox_RemoteCameraScanList = new System.Windows.Forms.ListBox();
             this.button_ScanRemoteCamera = new System.Windows.Forms.Button();
             this.tabPage_LocalCamera = new System.Windows.Forms.TabPage();
+            this.radioButton_CallbackModeOff = new System.Windows.Forms.RadioButton();
+            this.radioButton_CallbackModeOn = new System.Windows.Forms.RadioButton();
+            this.label_CallbackMode = new System.Windows.Forms.Label();
             this.label_LocalCameraVideoFormat = new System.Windows.Forms.Label();
             this.comboBox_LocalCameraVideoFormat = new System.Windows.Forms.ComboBox();
             this.textBox_LocalCameraComPort = new System.Windows.Forms.TextBox();
@@ -135,6 +138,12 @@
             this.tabControl_SensorConfig = new System.Windows.Forms.TabControl();
             this.tabPage_SensorControl = new System.Windows.Forms.TabPage();
             this.panel_SensorControl_256G = new System.Windows.Forms.Panel();
+            this.groupBox_ExtSync_256G = new System.Windows.Forms.GroupBox();
+            this.radioButton_ExtSyncMaster_256G = new System.Windows.Forms.RadioButton();
+            this.radioButton_ExtSyncSlave_256G = new System.Windows.Forms.RadioButton();
+            this.button_SetExtSync_256G = new System.Windows.Forms.Button();
+            this.radioButton_ExtSyncOff_256G = new System.Windows.Forms.RadioButton();
+            this.button_GetExtSync_256G = new System.Windows.Forms.Button();
             this.groupBox_FluxParameters_256G = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel_FluxParam256G = new System.Windows.Forms.TableLayoutPanel();
             this.label_FluxParam256G_DistanceTitle = new System.Windows.Forms.Label();
@@ -273,7 +282,18 @@
             this.radioButton_FlatFieldCorrectionAutomatic_160 = new System.Windows.Forms.RadioButton();
             this.button_RestoreDefaultFluxParameters_160 = new System.Windows.Forms.Button();
             this.tabPage_RoiManager = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label_ROIFluxParam = new System.Windows.Forms.Label();
+            this.textBox_RoiAmbRefTemp = new System.Windows.Forms.TextBox();
+            this.label_ROIEmiss = new System.Windows.Forms.Label();
+            this.textBox_RoiEmiss = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label_ROIAmbientReflectedTemp = new System.Windows.Forms.Label();
+            this.button_SetRoiFluxItem = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button_RemoveRoiItem = new System.Windows.Forms.Button();
+            this.comboBox_RoiList = new System.Windows.Forms.ComboBox();
+            this.label_RoiList = new System.Windows.Forms.Label();
             this.button_AddRoiItem = new System.Windows.Forms.Button();
             this.rbtn_RoiEllipse = new System.Windows.Forms.RadioButton();
             this.rbtn_RoiRect = new System.Windows.Forms.RadioButton();
@@ -311,8 +331,6 @@
             this.label_RoiSpotY = new System.Windows.Forms.Label();
             this.textBox_RoiSpotX = new System.Windows.Forms.TextBox();
             this.textBox_RoiSpotY = new System.Windows.Forms.TextBox();
-            this.label_RoiList = new System.Windows.Forms.Label();
-            this.comboBox_RoiList = new System.Windows.Forms.ComboBox();
             this.panel_Preview = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_Preview = new System.Windows.Forms.TableLayoutPanel();
             this.panel_Temperature = new System.Windows.Forms.Panel();
@@ -335,6 +353,9 @@
             this.radioButton_ShapeSpot = new System.Windows.Forms.RadioButton();
             this.radioButton_ShapeCursor = new System.Windows.Forms.RadioButton();
             this.button_RemoveAllRoi = new System.Windows.Forms.Button();
+            this.panel_Flip = new System.Windows.Forms.Panel();
+            this.checkBox_VerticalFlip = new System.Windows.Forms.CheckBox();
+            this.checkBox_HorizontalFlip = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanelMain.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.panel_Camera.SuspendLayout();
@@ -356,6 +377,7 @@
             this.tabControl_SensorConfig.SuspendLayout();
             this.tabPage_SensorControl.SuspendLayout();
             this.panel_SensorControl_256G.SuspendLayout();
+            this.groupBox_ExtSync_256G.SuspendLayout();
             this.groupBox_FluxParameters_256G.SuspendLayout();
             this.tableLayoutPanel_FluxParam256G.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FluxParam256G_Emissivity)).BeginInit();
@@ -396,6 +418,8 @@
             this.groupBox_GainModeState_160.SuspendLayout();
             this.groupBox_FlatFieldCorrection_160.SuspendLayout();
             this.tabPage_RoiManager.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel_RoiEllipse.SuspendLayout();
             this.tableLayoutPanel_RoiRect.SuspendLayout();
             this.tableLayoutPanel_RoiLine.SuspendLayout();
@@ -408,6 +432,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Preview)).BeginInit();
             this.tableLayoutPanel_RoiShape.SuspendLayout();
             this.panel_RoiShape.SuspendLayout();
+            this.panel_Flip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -430,7 +455,7 @@
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 274F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(1103, 769);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(1103, 802);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // statusBar
@@ -445,7 +470,7 @@
             this.StatusLabel_CamInfo,
             this.StatusLabel_fps,
             this.StatusLabel_PreviewSize});
-            this.statusBar.Location = new System.Drawing.Point(0, 747);
+            this.statusBar.Location = new System.Drawing.Point(0, 780);
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(1103, 22);
             this.statusBar.TabIndex = 14;
@@ -478,7 +503,7 @@
             this.panel_Camera.Location = new System.Drawing.Point(3, 4);
             this.panel_Camera.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel_Camera.Name = "panel_Camera";
-            this.panel_Camera.Size = new System.Drawing.Size(234, 463);
+            this.panel_Camera.Size = new System.Drawing.Size(234, 496);
             this.panel_Camera.TabIndex = 1;
             // 
             // tabControl_Camera
@@ -489,7 +514,7 @@
             this.tabControl_Camera.Location = new System.Drawing.Point(0, 0);
             this.tabControl_Camera.Name = "tabControl_Camera";
             this.tabControl_Camera.SelectedIndex = 0;
-            this.tabControl_Camera.Size = new System.Drawing.Size(234, 463);
+            this.tabControl_Camera.Size = new System.Drawing.Size(234, 496);
             this.tabControl_Camera.TabIndex = 0;
             // 
             // tabPage_RemoteCamera
@@ -514,7 +539,7 @@
             this.tabPage_RemoteCamera.Location = new System.Drawing.Point(4, 24);
             this.tabPage_RemoteCamera.Name = "tabPage_RemoteCamera";
             this.tabPage_RemoteCamera.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_RemoteCamera.Size = new System.Drawing.Size(226, 435);
+            this.tabPage_RemoteCamera.Size = new System.Drawing.Size(226, 468);
             this.tabPage_RemoteCamera.TabIndex = 1;
             this.tabPage_RemoteCamera.Text = "Remote Camera";
             this.tabPage_RemoteCamera.UseVisualStyleBackColor = true;
@@ -660,7 +685,7 @@
             this.listBox_RemoteCameraScanList.Location = new System.Drawing.Point(12, 319);
             this.listBox_RemoteCameraScanList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBox_RemoteCameraScanList.Name = "listBox_RemoteCameraScanList";
-            this.listBox_RemoteCameraScanList.Size = new System.Drawing.Size(203, 109);
+            this.listBox_RemoteCameraScanList.Size = new System.Drawing.Size(203, 139);
             this.listBox_RemoteCameraScanList.TabIndex = 1;
             this.listBox_RemoteCameraScanList.Click += new System.EventHandler(this.listBox_RemoteCameraList_Click);
             this.listBox_RemoteCameraScanList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox_RemoteCameraList_MouseDoubleClick);
@@ -677,6 +702,9 @@
             // 
             // tabPage_LocalCamera
             // 
+            this.tabPage_LocalCamera.Controls.Add(this.radioButton_CallbackModeOff);
+            this.tabPage_LocalCamera.Controls.Add(this.radioButton_CallbackModeOn);
+            this.tabPage_LocalCamera.Controls.Add(this.label_CallbackMode);
             this.tabPage_LocalCamera.Controls.Add(this.label_LocalCameraVideoFormat);
             this.tabPage_LocalCamera.Controls.Add(this.comboBox_LocalCameraVideoFormat);
             this.tabPage_LocalCamera.Controls.Add(this.textBox_LocalCameraComPort);
@@ -689,10 +717,45 @@
             this.tabPage_LocalCamera.Location = new System.Drawing.Point(4, 24);
             this.tabPage_LocalCamera.Name = "tabPage_LocalCamera";
             this.tabPage_LocalCamera.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_LocalCamera.Size = new System.Drawing.Size(226, 435);
+            this.tabPage_LocalCamera.Size = new System.Drawing.Size(226, 468);
             this.tabPage_LocalCamera.TabIndex = 0;
             this.tabPage_LocalCamera.Text = "Local Camera";
             this.tabPage_LocalCamera.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_CallbackModeOff
+            // 
+            this.radioButton_CallbackModeOff.AutoSize = true;
+            this.radioButton_CallbackModeOff.Checked = true;
+            this.radioButton_CallbackModeOff.Enabled = false;
+            this.radioButton_CallbackModeOff.Location = new System.Drawing.Point(141, 167);
+            this.radioButton_CallbackModeOff.Name = "radioButton_CallbackModeOff";
+            this.radioButton_CallbackModeOff.Size = new System.Drawing.Size(42, 19);
+            this.radioButton_CallbackModeOff.TabIndex = 17;
+            this.radioButton_CallbackModeOff.TabStop = true;
+            this.radioButton_CallbackModeOff.Text = "Off";
+            this.radioButton_CallbackModeOff.UseVisualStyleBackColor = true;
+            this.radioButton_CallbackModeOff.CheckedChanged += new System.EventHandler(this.radioButton_CallbackMode_CheckedChanged);
+            // 
+            // radioButton_CallbackModeOn
+            // 
+            this.radioButton_CallbackModeOn.AutoSize = true;
+            this.radioButton_CallbackModeOn.Enabled = false;
+            this.radioButton_CallbackModeOn.Location = new System.Drawing.Point(94, 167);
+            this.radioButton_CallbackModeOn.Name = "radioButton_CallbackModeOn";
+            this.radioButton_CallbackModeOn.Size = new System.Drawing.Size(41, 19);
+            this.radioButton_CallbackModeOn.TabIndex = 16;
+            this.radioButton_CallbackModeOn.Text = "On";
+            this.radioButton_CallbackModeOn.UseVisualStyleBackColor = true;
+            this.radioButton_CallbackModeOn.CheckedChanged += new System.EventHandler(this.radioButton_CallbackMode_CheckedChanged);
+            // 
+            // label_CallbackMode
+            // 
+            this.label_CallbackMode.AutoSize = true;
+            this.label_CallbackMode.Location = new System.Drawing.Point(9, 169);
+            this.label_CallbackMode.Name = "label_CallbackMode";
+            this.label_CallbackMode.Size = new System.Drawing.Size(95, 15);
+            this.label_CallbackMode.TabIndex = 15;
+            this.label_CallbackMode.Text = "Callback Mode : ";
             // 
             // label_LocalCameraVideoFormat
             // 
@@ -791,7 +854,7 @@
             this.tabControl_CameraConfig.Name = "tabControl_CameraConfig";
             this.tableLayoutPanelMain.SetRowSpan(this.tabControl_CameraConfig, 2);
             this.tabControl_CameraConfig.SelectedIndex = 0;
-            this.tabControl_CameraConfig.Size = new System.Drawing.Size(364, 739);
+            this.tabControl_CameraConfig.Size = new System.Drawing.Size(364, 772);
             this.tabControl_CameraConfig.TabIndex = 4;
             // 
             // tabPage_Product
@@ -802,7 +865,7 @@
             this.tabPage_Product.Location = new System.Drawing.Point(4, 24);
             this.tabPage_Product.Name = "tabPage_Product";
             this.tabPage_Product.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Product.Size = new System.Drawing.Size(356, 711);
+            this.tabPage_Product.Size = new System.Drawing.Size(356, 744);
             this.tabPage_Product.TabIndex = 0;
             this.tabPage_Product.Text = "Product";
             this.tabPage_Product.UseVisualStyleBackColor = true;
@@ -1293,7 +1356,7 @@
             this.tabPage_Network.Location = new System.Drawing.Point(4, 24);
             this.tabPage_Network.Name = "tabPage_Network";
             this.tabPage_Network.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Network.Size = new System.Drawing.Size(356, 711);
+            this.tabPage_Network.Size = new System.Drawing.Size(356, 744);
             this.tabPage_Network.TabIndex = 2;
             this.tabPage_Network.Text = "Network";
             this.tabPage_Network.UseVisualStyleBackColor = true;
@@ -1581,7 +1644,7 @@
             this.tabControl_SensorConfig.Controls.Add(this.tabPage_RoiManager);
             this.tabControl_SensorConfig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl_SensorConfig.Enabled = false;
-            this.tabControl_SensorConfig.Location = new System.Drawing.Point(3, 474);
+            this.tabControl_SensorConfig.Location = new System.Drawing.Point(3, 507);
             this.tabControl_SensorConfig.Name = "tabControl_SensorConfig";
             this.tabControl_SensorConfig.SelectedIndex = 0;
             this.tabControl_SensorConfig.Size = new System.Drawing.Size(727, 268);
@@ -1602,6 +1665,7 @@
             // 
             // panel_SensorControl_256G
             // 
+            this.panel_SensorControl_256G.Controls.Add(this.groupBox_ExtSync_256G);
             this.panel_SensorControl_256G.Controls.Add(this.groupBox_FluxParameters_256G);
             this.panel_SensorControl_256G.Controls.Add(this.groupBox_FFCParameters_256G);
             this.panel_SensorControl_256G.Controls.Add(this.button_StoreUserSensorConfig_256G);
@@ -1613,6 +1677,73 @@
             this.panel_SensorControl_256G.Size = new System.Drawing.Size(719, 240);
             this.panel_SensorControl_256G.TabIndex = 14;
             this.panel_SensorControl_256G.Visible = false;
+            // 
+            // groupBox_ExtSync_256G
+            // 
+            this.groupBox_ExtSync_256G.Controls.Add(this.radioButton_ExtSyncMaster_256G);
+            this.groupBox_ExtSync_256G.Controls.Add(this.radioButton_ExtSyncSlave_256G);
+            this.groupBox_ExtSync_256G.Controls.Add(this.button_SetExtSync_256G);
+            this.groupBox_ExtSync_256G.Controls.Add(this.radioButton_ExtSyncOff_256G);
+            this.groupBox_ExtSync_256G.Controls.Add(this.button_GetExtSync_256G);
+            this.groupBox_ExtSync_256G.Location = new System.Drawing.Point(489, 4);
+            this.groupBox_ExtSync_256G.Name = "groupBox_ExtSync_256G";
+            this.groupBox_ExtSync_256G.Size = new System.Drawing.Size(224, 60);
+            this.groupBox_ExtSync_256G.TabIndex = 19;
+            this.groupBox_ExtSync_256G.TabStop = false;
+            this.groupBox_ExtSync_256G.Text = "External Sync Mode";
+            // 
+            // radioButton_ExtSyncMaster_256G
+            // 
+            this.radioButton_ExtSyncMaster_256G.AutoSize = true;
+            this.radioButton_ExtSyncMaster_256G.Location = new System.Drawing.Point(106, 26);
+            this.radioButton_ExtSyncMaster_256G.Name = "radioButton_ExtSyncMaster_256G";
+            this.radioButton_ExtSyncMaster_256G.Size = new System.Drawing.Size(61, 19);
+            this.radioButton_ExtSyncMaster_256G.TabIndex = 23;
+            this.radioButton_ExtSyncMaster_256G.TabStop = true;
+            this.radioButton_ExtSyncMaster_256G.Text = "Master";
+            this.radioButton_ExtSyncMaster_256G.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_ExtSyncSlave_256G
+            // 
+            this.radioButton_ExtSyncSlave_256G.AutoSize = true;
+            this.radioButton_ExtSyncSlave_256G.Location = new System.Drawing.Point(52, 26);
+            this.radioButton_ExtSyncSlave_256G.Name = "radioButton_ExtSyncSlave_256G";
+            this.radioButton_ExtSyncSlave_256G.Size = new System.Drawing.Size(52, 19);
+            this.radioButton_ExtSyncSlave_256G.TabIndex = 22;
+            this.radioButton_ExtSyncSlave_256G.TabStop = true;
+            this.radioButton_ExtSyncSlave_256G.Text = "Slave";
+            this.radioButton_ExtSyncSlave_256G.UseVisualStyleBackColor = true;
+            // 
+            // button_SetExtSync_256G
+            // 
+            this.button_SetExtSync_256G.Location = new System.Drawing.Point(168, 34);
+            this.button_SetExtSync_256G.Name = "button_SetExtSync_256G";
+            this.button_SetExtSync_256G.Size = new System.Drawing.Size(49, 21);
+            this.button_SetExtSync_256G.TabIndex = 22;
+            this.button_SetExtSync_256G.Text = "Set";
+            this.button_SetExtSync_256G.UseVisualStyleBackColor = true;
+            this.button_SetExtSync_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
+            // 
+            // radioButton_ExtSyncOff_256G
+            // 
+            this.radioButton_ExtSyncOff_256G.AutoSize = true;
+            this.radioButton_ExtSyncOff_256G.Location = new System.Drawing.Point(9, 26);
+            this.radioButton_ExtSyncOff_256G.Name = "radioButton_ExtSyncOff_256G";
+            this.radioButton_ExtSyncOff_256G.Size = new System.Drawing.Size(42, 19);
+            this.radioButton_ExtSyncOff_256G.TabIndex = 21;
+            this.radioButton_ExtSyncOff_256G.TabStop = true;
+            this.radioButton_ExtSyncOff_256G.Text = "Off";
+            this.radioButton_ExtSyncOff_256G.UseVisualStyleBackColor = true;
+            // 
+            // button_GetExtSync_256G
+            // 
+            this.button_GetExtSync_256G.Location = new System.Drawing.Point(168, 13);
+            this.button_GetExtSync_256G.Name = "button_GetExtSync_256G";
+            this.button_GetExtSync_256G.Size = new System.Drawing.Size(49, 21);
+            this.button_GetExtSync_256G.TabIndex = 21;
+            this.button_GetExtSync_256G.Text = "Get";
+            this.button_GetExtSync_256G.UseVisualStyleBackColor = true;
+            this.button_GetExtSync_256G.Click += new System.EventHandler(this.button_SensorControl_Click);
             // 
             // groupBox_FluxParameters_256G
             // 
@@ -2117,9 +2248,9 @@
             this.groupBox_GainModeState_256G.Controls.Add(this.button_GetGainModeState_256G);
             this.groupBox_GainModeState_256G.Controls.Add(this.radioButton_GainModeStateLow_256G);
             this.groupBox_GainModeState_256G.Controls.Add(this.radioButton_GainModeStateHigh_256G);
-            this.groupBox_GainModeState_256G.Location = new System.Drawing.Point(489, 3);
+            this.groupBox_GainModeState_256G.Location = new System.Drawing.Point(489, 68);
             this.groupBox_GainModeState_256G.Name = "groupBox_GainModeState_256G";
-            this.groupBox_GainModeState_256G.Size = new System.Drawing.Size(224, 97);
+            this.groupBox_GainModeState_256G.Size = new System.Drawing.Size(224, 58);
             this.groupBox_GainModeState_256G.TabIndex = 15;
             this.groupBox_GainModeState_256G.TabStop = false;
             this.groupBox_GainModeState_256G.Text = "Gain Mode State";
@@ -2127,7 +2258,7 @@
             // radioButton_GainModeStateAuto_256G
             // 
             this.radioButton_GainModeStateAuto_256G.AutoSize = true;
-            this.radioButton_GainModeStateAuto_256G.Location = new System.Drawing.Point(9, 71);
+            this.radioButton_GainModeStateAuto_256G.Location = new System.Drawing.Point(118, 25);
             this.radioButton_GainModeStateAuto_256G.Name = "radioButton_GainModeStateAuto_256G";
             this.radioButton_GainModeStateAuto_256G.Size = new System.Drawing.Size(51, 19);
             this.radioButton_GainModeStateAuto_256G.TabIndex = 20;
@@ -2137,9 +2268,9 @@
             // 
             // button_SetGainModeState_256G
             // 
-            this.button_SetGainModeState_256G.Location = new System.Drawing.Point(162, 24);
+            this.button_SetGainModeState_256G.Location = new System.Drawing.Point(168, 33);
             this.button_SetGainModeState_256G.Name = "button_SetGainModeState_256G";
-            this.button_SetGainModeState_256G.Size = new System.Drawing.Size(49, 66);
+            this.button_SetGainModeState_256G.Size = new System.Drawing.Size(49, 21);
             this.button_SetGainModeState_256G.TabIndex = 19;
             this.button_SetGainModeState_256G.Text = "Set";
             this.button_SetGainModeState_256G.UseVisualStyleBackColor = true;
@@ -2147,9 +2278,9 @@
             // 
             // button_GetGainModeState_256G
             // 
-            this.button_GetGainModeState_256G.Location = new System.Drawing.Point(110, 24);
+            this.button_GetGainModeState_256G.Location = new System.Drawing.Point(168, 10);
             this.button_GetGainModeState_256G.Name = "button_GetGainModeState_256G";
-            this.button_GetGainModeState_256G.Size = new System.Drawing.Size(49, 66);
+            this.button_GetGainModeState_256G.Size = new System.Drawing.Size(49, 21);
             this.button_GetGainModeState_256G.TabIndex = 18;
             this.button_GetGainModeState_256G.Text = "Get";
             this.button_GetGainModeState_256G.UseVisualStyleBackColor = true;
@@ -2158,7 +2289,7 @@
             // radioButton_GainModeStateLow_256G
             // 
             this.radioButton_GainModeStateLow_256G.AutoSize = true;
-            this.radioButton_GainModeStateLow_256G.Location = new System.Drawing.Point(9, 47);
+            this.radioButton_GainModeStateLow_256G.Location = new System.Drawing.Point(66, 25);
             this.radioButton_GainModeStateLow_256G.Name = "radioButton_GainModeStateLow_256G";
             this.radioButton_GainModeStateLow_256G.Size = new System.Drawing.Size(47, 19);
             this.radioButton_GainModeStateLow_256G.TabIndex = 1;
@@ -2169,7 +2300,7 @@
             // radioButton_GainModeStateHigh_256G
             // 
             this.radioButton_GainModeStateHigh_256G.AutoSize = true;
-            this.radioButton_GainModeStateHigh_256G.Location = new System.Drawing.Point(9, 22);
+            this.radioButton_GainModeStateHigh_256G.Location = new System.Drawing.Point(9, 25);
             this.radioButton_GainModeStateHigh_256G.Name = "radioButton_GainModeStateHigh_256G";
             this.radioButton_GainModeStateHigh_256G.Size = new System.Drawing.Size(51, 19);
             this.radioButton_GainModeStateHigh_256G.TabIndex = 0;
@@ -2184,18 +2315,18 @@
             this.groupBox_FlatFieldCorrection_256G.Controls.Add(this.radioButton_FlatFieldCorrectionManual_256G);
             this.groupBox_FlatFieldCorrection_256G.Controls.Add(this.button_RunFlatFieldCorrection_256G);
             this.groupBox_FlatFieldCorrection_256G.Controls.Add(this.radioButton_FlatFieldCorrectionAutomatic_256G);
-            this.groupBox_FlatFieldCorrection_256G.Location = new System.Drawing.Point(489, 104);
+            this.groupBox_FlatFieldCorrection_256G.Location = new System.Drawing.Point(489, 131);
             this.groupBox_FlatFieldCorrection_256G.Name = "groupBox_FlatFieldCorrection_256G";
-            this.groupBox_FlatFieldCorrection_256G.Size = new System.Drawing.Size(224, 74);
+            this.groupBox_FlatFieldCorrection_256G.Size = new System.Drawing.Size(224, 55);
             this.groupBox_FlatFieldCorrection_256G.TabIndex = 14;
             this.groupBox_FlatFieldCorrection_256G.TabStop = false;
             this.groupBox_FlatFieldCorrection_256G.Text = "Flat Field Correction";
             // 
             // button_SetFlatFieldCorrectionMode_256G
             // 
-            this.button_SetFlatFieldCorrectionMode_256G.Location = new System.Drawing.Point(162, 19);
+            this.button_SetFlatFieldCorrectionMode_256G.Location = new System.Drawing.Point(162, 12);
             this.button_SetFlatFieldCorrectionMode_256G.Name = "button_SetFlatFieldCorrectionMode_256G";
-            this.button_SetFlatFieldCorrectionMode_256G.Size = new System.Drawing.Size(49, 23);
+            this.button_SetFlatFieldCorrectionMode_256G.Size = new System.Drawing.Size(49, 20);
             this.button_SetFlatFieldCorrectionMode_256G.TabIndex = 18;
             this.button_SetFlatFieldCorrectionMode_256G.Text = "Set";
             this.button_SetFlatFieldCorrectionMode_256G.UseVisualStyleBackColor = true;
@@ -2203,9 +2334,9 @@
             // 
             // button_GetFlatFieldCorrectionMode_256G
             // 
-            this.button_GetFlatFieldCorrectionMode_256G.Location = new System.Drawing.Point(110, 19);
+            this.button_GetFlatFieldCorrectionMode_256G.Location = new System.Drawing.Point(110, 12);
             this.button_GetFlatFieldCorrectionMode_256G.Name = "button_GetFlatFieldCorrectionMode_256G";
-            this.button_GetFlatFieldCorrectionMode_256G.Size = new System.Drawing.Size(50, 23);
+            this.button_GetFlatFieldCorrectionMode_256G.Size = new System.Drawing.Size(50, 20);
             this.button_GetFlatFieldCorrectionMode_256G.TabIndex = 17;
             this.button_GetFlatFieldCorrectionMode_256G.Text = "Get";
             this.button_GetFlatFieldCorrectionMode_256G.UseVisualStyleBackColor = true;
@@ -2214,7 +2345,7 @@
             // radioButton_FlatFieldCorrectionManual_256G
             // 
             this.radioButton_FlatFieldCorrectionManual_256G.AutoSize = true;
-            this.radioButton_FlatFieldCorrectionManual_256G.Location = new System.Drawing.Point(8, 45);
+            this.radioButton_FlatFieldCorrectionManual_256G.Location = new System.Drawing.Point(8, 32);
             this.radioButton_FlatFieldCorrectionManual_256G.Name = "radioButton_FlatFieldCorrectionManual_256G";
             this.radioButton_FlatFieldCorrectionManual_256G.Size = new System.Drawing.Size(65, 19);
             this.radioButton_FlatFieldCorrectionManual_256G.TabIndex = 16;
@@ -2224,9 +2355,9 @@
             // 
             // button_RunFlatFieldCorrection_256G
             // 
-            this.button_RunFlatFieldCorrection_256G.Location = new System.Drawing.Point(110, 44);
+            this.button_RunFlatFieldCorrection_256G.Location = new System.Drawing.Point(110, 32);
             this.button_RunFlatFieldCorrection_256G.Name = "button_RunFlatFieldCorrection_256G";
-            this.button_RunFlatFieldCorrection_256G.Size = new System.Drawing.Size(101, 23);
+            this.button_RunFlatFieldCorrection_256G.Size = new System.Drawing.Size(101, 20);
             this.button_RunFlatFieldCorrection_256G.TabIndex = 14;
             this.button_RunFlatFieldCorrection_256G.Text = "Run";
             this.button_RunFlatFieldCorrection_256G.UseVisualStyleBackColor = true;
@@ -2235,7 +2366,7 @@
             // radioButton_FlatFieldCorrectionAutomatic_256G
             // 
             this.radioButton_FlatFieldCorrectionAutomatic_256G.AutoSize = true;
-            this.radioButton_FlatFieldCorrectionAutomatic_256G.Location = new System.Drawing.Point(8, 22);
+            this.radioButton_FlatFieldCorrectionAutomatic_256G.Location = new System.Drawing.Point(8, 15);
             this.radioButton_FlatFieldCorrectionAutomatic_256G.Name = "radioButton_FlatFieldCorrectionAutomatic_256G";
             this.radioButton_FlatFieldCorrectionAutomatic_256G.Size = new System.Drawing.Size(81, 19);
             this.radioButton_FlatFieldCorrectionAutomatic_256G.TabIndex = 15;
@@ -3677,7 +3808,8 @@
             // 
             // tabPage_RoiManager
             // 
-            this.tabPage_RoiManager.Controls.Add(this.button_RemoveRoiItem);
+            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel1);
             this.tabPage_RoiManager.Controls.Add(this.button_AddRoiItem);
             this.tabPage_RoiManager.Controls.Add(this.rbtn_RoiEllipse);
             this.tabPage_RoiManager.Controls.Add(this.rbtn_RoiRect);
@@ -3687,8 +3819,6 @@
             this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel_RoiRect);
             this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel_RoiLine);
             this.tabPage_RoiManager.Controls.Add(this.tableLayoutPanel_RoiSpot);
-            this.tabPage_RoiManager.Controls.Add(this.label_RoiList);
-            this.tabPage_RoiManager.Controls.Add(this.comboBox_RoiList);
             this.tabPage_RoiManager.Location = new System.Drawing.Point(4, 24);
             this.tabPage_RoiManager.Name = "tabPage_RoiManager";
             this.tabPage_RoiManager.Size = new System.Drawing.Size(719, 240);
@@ -3696,9 +3826,138 @@
             this.tabPage_RoiManager.Text = "Region of Interests";
             this.tabPage_RoiManager.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 7;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.06433F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.93567F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel2.Controls.Add(this.label_ROIFluxParam, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox_RoiAmbRefTemp, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label_ROIEmiss, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox_RoiEmiss, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label_ROIAmbientReflectedTemp, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button_SetRoiFluxItem, 6, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(24, 187);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(479, 29);
+            this.tableLayoutPanel2.TabIndex = 11;
+            // 
+            // label_ROIFluxParam
+            // 
+            this.label_ROIFluxParam.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_ROIFluxParam.AutoSize = true;
+            this.label_ROIFluxParam.Location = new System.Drawing.Point(3, 0);
+            this.label_ROIFluxParam.Name = "label_ROIFluxParam";
+            this.label_ROIFluxParam.Size = new System.Drawing.Size(86, 29);
+            this.label_ROIFluxParam.TabIndex = 5;
+            this.label_ROIFluxParam.Text = "Flux Parameter";
+            this.label_ROIFluxParam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_RoiAmbRefTemp
+            // 
+            this.textBox_RoiAmbRefTemp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_RoiAmbRefTemp.Location = new System.Drawing.Point(357, 3);
+            this.textBox_RoiAmbRefTemp.Name = "textBox_RoiAmbRefTemp";
+            this.textBox_RoiAmbRefTemp.Size = new System.Drawing.Size(29, 23);
+            this.textBox_RoiAmbRefTemp.TabIndex = 9;
+            this.textBox_RoiAmbRefTemp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_RoiAmbRefTemp.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_RoiAmbRefTemp_KeyDown);
+            this.textBox_RoiAmbRefTemp.Leave += new System.EventHandler(this.textBox_RoiAmbRefTemp_Leave);
+            // 
+            // label_ROIEmiss
+            // 
+            this.label_ROIEmiss.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_ROIEmiss.AutoSize = true;
+            this.label_ROIEmiss.Location = new System.Drawing.Point(104, 0);
+            this.label_ROIEmiss.Name = "label_ROIEmiss";
+            this.label_ROIEmiss.Size = new System.Drawing.Size(59, 29);
+            this.label_ROIEmiss.TabIndex = 6;
+            this.label_ROIEmiss.Text = "Emissivity :";
+            this.label_ROIEmiss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBox_RoiEmiss
+            // 
+            this.textBox_RoiEmiss.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_RoiEmiss.Location = new System.Drawing.Point(173, 3);
+            this.textBox_RoiEmiss.Name = "textBox_RoiEmiss";
+            this.textBox_RoiEmiss.Size = new System.Drawing.Size(27, 23);
+            this.textBox_RoiEmiss.TabIndex = 8;
+            this.textBox_RoiEmiss.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_RoiEmiss.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_RoiEmiss_KeyDown);
+            this.textBox_RoiEmiss.Leave += new System.EventHandler(this.textBox_RoiEmiss_Leave);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(392, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 29);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "°C";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_ROIAmbientReflectedTemp
+            // 
+            this.label_ROIAmbientReflectedTemp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_ROIAmbientReflectedTemp.AutoSize = true;
+            this.label_ROIAmbientReflectedTemp.Location = new System.Drawing.Point(203, 0);
+            this.label_ROIAmbientReflectedTemp.Margin = new System.Windows.Forms.Padding(0);
+            this.label_ROIAmbientReflectedTemp.Name = "label_ROIAmbientReflectedTemp";
+            this.label_ROIAmbientReflectedTemp.Size = new System.Drawing.Size(149, 29);
+            this.label_ROIAmbientReflectedTemp.TabIndex = 7;
+            this.label_ROIAmbientReflectedTemp.Text = "  Ambient Reflected Temp : ";
+            this.label_ROIAmbientReflectedTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button_SetRoiFluxItem
+            // 
+            this.button_SetRoiFluxItem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_SetRoiFluxItem.Location = new System.Drawing.Point(419, 3);
+            this.button_SetRoiFluxItem.Name = "button_SetRoiFluxItem";
+            this.button_SetRoiFluxItem.Size = new System.Drawing.Size(57, 23);
+            this.button_SetRoiFluxItem.TabIndex = 12;
+            this.button_SetRoiFluxItem.Text = "Set";
+            this.button_SetRoiFluxItem.UseVisualStyleBackColor = true;
+            this.button_SetRoiFluxItem.Click += new System.EventHandler(this.button_SetRoiFluxItem_click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.75214F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.24786F));
+            this.tableLayoutPanel1.Controls.Add(this.button_RemoveRoiItem, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.comboBox_RoiList, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label_RoiList, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 7);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.7347F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.2653F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(211, 52);
+            this.tableLayoutPanel1.TabIndex = 10;
+            // 
             // button_RemoveRoiItem
             // 
-            this.button_RemoveRoiItem.Location = new System.Drawing.Point(129, 32);
+            this.button_RemoveRoiItem.Location = new System.Drawing.Point(80, 22);
             this.button_RemoveRoiItem.Name = "button_RemoveRoiItem";
             this.button_RemoveRoiItem.Size = new System.Drawing.Size(60, 23);
             this.button_RemoveRoiItem.TabIndex = 4;
@@ -3706,9 +3965,31 @@
             this.button_RemoveRoiItem.UseVisualStyleBackColor = true;
             this.button_RemoveRoiItem.Click += new System.EventHandler(this.button_RemoveRoiItem_Click);
             // 
+            // comboBox_RoiList
+            // 
+            this.comboBox_RoiList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBox_RoiList.FormattingEnabled = true;
+            this.comboBox_RoiList.Location = new System.Drawing.Point(3, 22);
+            this.comboBox_RoiList.Name = "comboBox_RoiList";
+            this.comboBox_RoiList.Size = new System.Drawing.Size(71, 23);
+            this.comboBox_RoiList.TabIndex = 0;
+            this.comboBox_RoiList.SelectedIndexChanged += new System.EventHandler(this.comboBox_ListROI_SelectedIndexChanged);
+            // 
+            // label_RoiList
+            // 
+            this.label_RoiList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label_RoiList.AutoSize = true;
+            this.label_RoiList.Location = new System.Drawing.Point(3, 0);
+            this.label_RoiList.Name = "label_RoiList";
+            this.label_RoiList.Size = new System.Drawing.Size(47, 19);
+            this.label_RoiList.TabIndex = 1;
+            this.label_RoiList.Text = "ROI List";
+            // 
             // button_AddRoiItem
             // 
-            this.button_AddRoiItem.Location = new System.Drawing.Point(392, 79);
+            this.button_AddRoiItem.Location = new System.Drawing.Point(392, 75);
             this.button_AddRoiItem.Name = "button_AddRoiItem";
             this.button_AddRoiItem.Size = new System.Drawing.Size(60, 98);
             this.button_AddRoiItem.TabIndex = 4;
@@ -3719,7 +4000,7 @@
             // rbtn_RoiEllipse
             // 
             this.rbtn_RoiEllipse.AutoSize = true;
-            this.rbtn_RoiEllipse.Location = new System.Drawing.Point(24, 156);
+            this.rbtn_RoiEllipse.Location = new System.Drawing.Point(24, 152);
             this.rbtn_RoiEllipse.Name = "rbtn_RoiEllipse";
             this.rbtn_RoiEllipse.Size = new System.Drawing.Size(58, 19);
             this.rbtn_RoiEllipse.TabIndex = 3;
@@ -3730,33 +4011,30 @@
             // rbtn_RoiRect
             // 
             this.rbtn_RoiRect.AutoSize = true;
-            this.rbtn_RoiRect.Location = new System.Drawing.Point(24, 131);
+            this.rbtn_RoiRect.Location = new System.Drawing.Point(24, 127);
             this.rbtn_RoiRect.Name = "rbtn_RoiRect";
             this.rbtn_RoiRect.Size = new System.Drawing.Size(77, 19);
             this.rbtn_RoiRect.TabIndex = 3;
-            this.rbtn_RoiRect.TabStop = true;
             this.rbtn_RoiRect.Text = "Rectangle";
             this.rbtn_RoiRect.UseVisualStyleBackColor = true;
             // 
             // rbtn_RoiLine
             // 
             this.rbtn_RoiLine.AutoSize = true;
-            this.rbtn_RoiLine.Location = new System.Drawing.Point(24, 106);
+            this.rbtn_RoiLine.Location = new System.Drawing.Point(24, 102);
             this.rbtn_RoiLine.Name = "rbtn_RoiLine";
             this.rbtn_RoiLine.Size = new System.Drawing.Size(47, 19);
             this.rbtn_RoiLine.TabIndex = 3;
-            this.rbtn_RoiLine.TabStop = true;
             this.rbtn_RoiLine.Text = "Line";
             this.rbtn_RoiLine.UseVisualStyleBackColor = true;
             // 
             // rbtn_RoiSpot
             // 
             this.rbtn_RoiSpot.AutoSize = true;
-            this.rbtn_RoiSpot.Location = new System.Drawing.Point(24, 81);
+            this.rbtn_RoiSpot.Location = new System.Drawing.Point(24, 77);
             this.rbtn_RoiSpot.Name = "rbtn_RoiSpot";
             this.rbtn_RoiSpot.Size = new System.Drawing.Size(49, 19);
             this.rbtn_RoiSpot.TabIndex = 3;
-            this.rbtn_RoiSpot.TabStop = true;
             this.rbtn_RoiSpot.Text = "Spot";
             this.rbtn_RoiSpot.UseVisualStyleBackColor = true;
             // 
@@ -3779,7 +4057,7 @@
             this.tableLayoutPanel_RoiEllipse.Controls.Add(this.textBox_RoiEllipseY, 3, 0);
             this.tableLayoutPanel_RoiEllipse.Controls.Add(this.label_RoiEllipseH, 6, 0);
             this.tableLayoutPanel_RoiEllipse.Controls.Add(this.textBox_RoiEllipseH, 7, 0);
-            this.tableLayoutPanel_RoiEllipse.Location = new System.Drawing.Point(129, 154);
+            this.tableLayoutPanel_RoiEllipse.Location = new System.Drawing.Point(129, 150);
             this.tableLayoutPanel_RoiEllipse.Name = "tableLayoutPanel_RoiEllipse";
             this.tableLayoutPanel_RoiEllipse.RowCount = 1;
             this.tableLayoutPanel_RoiEllipse.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3881,7 +4159,7 @@
             this.tableLayoutPanel_RoiRect.Controls.Add(this.textBox_RoiRectY, 3, 0);
             this.tableLayoutPanel_RoiRect.Controls.Add(this.label_RoiRectH, 6, 0);
             this.tableLayoutPanel_RoiRect.Controls.Add(this.textBox_RoiRectH, 7, 0);
-            this.tableLayoutPanel_RoiRect.Location = new System.Drawing.Point(129, 129);
+            this.tableLayoutPanel_RoiRect.Location = new System.Drawing.Point(129, 125);
             this.tableLayoutPanel_RoiRect.Name = "tableLayoutPanel_RoiRect";
             this.tableLayoutPanel_RoiRect.RowCount = 1;
             this.tableLayoutPanel_RoiRect.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -3983,7 +4261,7 @@
             this.tableLayoutPanel_RoiLine.Controls.Add(this.textBox_RoiLineY1, 3, 0);
             this.tableLayoutPanel_RoiLine.Controls.Add(this.label_RoiLineY2, 6, 0);
             this.tableLayoutPanel_RoiLine.Controls.Add(this.textBox_RoiLineY2, 7, 0);
-            this.tableLayoutPanel_RoiLine.Location = new System.Drawing.Point(129, 104);
+            this.tableLayoutPanel_RoiLine.Location = new System.Drawing.Point(129, 100);
             this.tableLayoutPanel_RoiLine.Name = "tableLayoutPanel_RoiLine";
             this.tableLayoutPanel_RoiLine.RowCount = 1;
             this.tableLayoutPanel_RoiLine.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -4077,10 +4355,11 @@
             this.tableLayoutPanel_RoiSpot.Controls.Add(this.label_RoiSpotY, 2, 0);
             this.tableLayoutPanel_RoiSpot.Controls.Add(this.textBox_RoiSpotX, 1, 0);
             this.tableLayoutPanel_RoiSpot.Controls.Add(this.textBox_RoiSpotY, 3, 0);
-            this.tableLayoutPanel_RoiSpot.Location = new System.Drawing.Point(129, 79);
+            this.tableLayoutPanel_RoiSpot.Location = new System.Drawing.Point(129, 75);
             this.tableLayoutPanel_RoiSpot.Name = "tableLayoutPanel_RoiSpot";
             this.tableLayoutPanel_RoiSpot.RowCount = 1;
             this.tableLayoutPanel_RoiSpot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_RoiSpot.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel_RoiSpot.Size = new System.Drawing.Size(128, 23);
             this.tableLayoutPanel_RoiSpot.TabIndex = 2;
             // 
@@ -4122,24 +4401,6 @@
             this.textBox_RoiSpotY.Size = new System.Drawing.Size(32, 23);
             this.textBox_RoiSpotY.TabIndex = 1;
             // 
-            // label_RoiList
-            // 
-            this.label_RoiList.AutoSize = true;
-            this.label_RoiList.Location = new System.Drawing.Point(21, 13);
-            this.label_RoiList.Name = "label_RoiList";
-            this.label_RoiList.Size = new System.Drawing.Size(47, 15);
-            this.label_RoiList.TabIndex = 1;
-            this.label_RoiList.Text = "ROI List";
-            // 
-            // comboBox_RoiList
-            // 
-            this.comboBox_RoiList.FormattingEnabled = true;
-            this.comboBox_RoiList.Location = new System.Drawing.Point(24, 32);
-            this.comboBox_RoiList.Name = "comboBox_RoiList";
-            this.comboBox_RoiList.Size = new System.Drawing.Size(99, 23);
-            this.comboBox_RoiList.TabIndex = 0;
-            this.comboBox_RoiList.SelectedIndexChanged += new System.EventHandler(this.comboBox_ListROI_SelectedIndexChanged);
-            // 
             // panel_Preview
             // 
             this.panel_Preview.Controls.Add(this.tableLayoutPanel_Preview);
@@ -4147,7 +4408,7 @@
             this.panel_Preview.Location = new System.Drawing.Point(240, 0);
             this.panel_Preview.Margin = new System.Windows.Forms.Padding(0);
             this.panel_Preview.Name = "panel_Preview";
-            this.panel_Preview.Size = new System.Drawing.Size(493, 471);
+            this.panel_Preview.Size = new System.Drawing.Size(493, 504);
             this.panel_Preview.TabIndex = 6;
             // 
             // tableLayoutPanel_Preview
@@ -4158,15 +4419,17 @@
             this.tableLayoutPanel_Preview.Controls.Add(this.panel_PreviewConfig, 0, 3);
             this.tableLayoutPanel_Preview.Controls.Add(this.panel_VideoPreview, 0, 0);
             this.tableLayoutPanel_Preview.Controls.Add(this.tableLayoutPanel_RoiShape, 0, 2);
+            this.tableLayoutPanel_Preview.Controls.Add(this.panel_Flip, 0, 4);
             this.tableLayoutPanel_Preview.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_Preview.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_Preview.Name = "tableLayoutPanel_Preview";
-            this.tableLayoutPanel_Preview.RowCount = 4;
+            this.tableLayoutPanel_Preview.RowCount = 5;
             this.tableLayoutPanel_Preview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_Preview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
+            this.tableLayoutPanel_Preview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
+            this.tableLayoutPanel_Preview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel_Preview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel_Preview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel_Preview.Size = new System.Drawing.Size(493, 471);
+            this.tableLayoutPanel_Preview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel_Preview.Size = new System.Drawing.Size(493, 504);
             this.tableLayoutPanel_Preview.TabIndex = 11;
             // 
             // panel_Temperature
@@ -4176,10 +4439,10 @@
             this.panel_Temperature.Controls.Add(this.label_MinimumTemperature);
             this.panel_Temperature.Controls.Add(this.label_AverageTemperature);
             this.panel_Temperature.Controls.Add(this.label_MaximumTemperature);
-            this.panel_Temperature.Location = new System.Drawing.Point(1, 373);
+            this.panel_Temperature.Location = new System.Drawing.Point(1, 374);
             this.panel_Temperature.Margin = new System.Windows.Forms.Padding(1);
             this.panel_Temperature.Name = "panel_Temperature";
-            this.panel_Temperature.Size = new System.Drawing.Size(491, 20);
+            this.panel_Temperature.Size = new System.Drawing.Size(491, 19);
             this.panel_Temperature.TabIndex = 3;
             // 
             // label_MinimumTemperature
@@ -4229,7 +4492,7 @@
             this.panel_PreviewConfig.Controls.Add(this.comboBox_ColorMap);
             this.panel_PreviewConfig.Controls.Add(this.label_TemperatureUnit);
             this.panel_PreviewConfig.Controls.Add(this.comboBox_TemperatureUnit);
-            this.panel_PreviewConfig.Location = new System.Drawing.Point(1, 434);
+            this.panel_PreviewConfig.Location = new System.Drawing.Point(1, 432);
             this.panel_PreviewConfig.Margin = new System.Windows.Forms.Padding(1);
             this.panel_PreviewConfig.Name = "panel_PreviewConfig";
             this.panel_PreviewConfig.Size = new System.Drawing.Size(491, 34);
@@ -4324,7 +4587,7 @@
             this.panel_VideoPreview.Location = new System.Drawing.Point(0, 0);
             this.panel_VideoPreview.Margin = new System.Windows.Forms.Padding(0);
             this.panel_VideoPreview.Name = "panel_VideoPreview";
-            this.panel_VideoPreview.Size = new System.Drawing.Size(493, 371);
+            this.panel_VideoPreview.Size = new System.Drawing.Size(493, 373);
             this.panel_VideoPreview.TabIndex = 4;
             this.panel_VideoPreview.SizeChanged += new System.EventHandler(this.panel_VideoPreview_SizeChanged);
             // 
@@ -4335,7 +4598,7 @@
             this.pictureBox_Preview.Location = new System.Drawing.Point(7, 5);
             this.pictureBox_Preview.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox_Preview.Name = "pictureBox_Preview";
-            this.pictureBox_Preview.Size = new System.Drawing.Size(480, 360);
+            this.pictureBox_Preview.Size = new System.Drawing.Size(480, 363);
             this.pictureBox_Preview.TabIndex = 0;
             this.pictureBox_Preview.TabStop = false;
             this.pictureBox_Preview.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox_Preview_Paint);
@@ -4351,12 +4614,12 @@
             this.tableLayoutPanel_RoiShape.Controls.Add(this.panel_RoiShape, 0, 0);
             this.tableLayoutPanel_RoiShape.Controls.Add(this.button_RemoveAllRoi, 1, 0);
             this.tableLayoutPanel_RoiShape.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_RoiShape.Location = new System.Drawing.Point(1, 396);
+            this.tableLayoutPanel_RoiShape.Location = new System.Drawing.Point(1, 395);
             this.tableLayoutPanel_RoiShape.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel_RoiShape.Name = "tableLayoutPanel_RoiShape";
             this.tableLayoutPanel_RoiShape.RowCount = 1;
             this.tableLayoutPanel_RoiShape.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_RoiShape.Size = new System.Drawing.Size(491, 34);
+            this.tableLayoutPanel_RoiShape.Size = new System.Drawing.Size(491, 35);
             this.tableLayoutPanel_RoiShape.TabIndex = 5;
             // 
             // panel_RoiShape
@@ -4433,17 +4696,51 @@
             this.button_RemoveAllRoi.Location = new System.Drawing.Point(412, 1);
             this.button_RemoveAllRoi.Margin = new System.Windows.Forms.Padding(1);
             this.button_RemoveAllRoi.Name = "button_RemoveAllRoi";
-            this.button_RemoveAllRoi.Size = new System.Drawing.Size(78, 32);
+            this.button_RemoveAllRoi.Size = new System.Drawing.Size(78, 33);
             this.button_RemoveAllRoi.TabIndex = 2;
             this.button_RemoveAllRoi.Text = "Remove All";
             this.button_RemoveAllRoi.UseVisualStyleBackColor = true;
             this.button_RemoveAllRoi.Click += new System.EventHandler(this.button_RemoveAllRoi_Click);
             // 
+            // panel_Flip
+            // 
+            this.panel_Flip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_Flip.BackColor = System.Drawing.Color.White;
+            this.panel_Flip.Controls.Add(this.checkBox_VerticalFlip);
+            this.panel_Flip.Controls.Add(this.checkBox_HorizontalFlip);
+            this.panel_Flip.Location = new System.Drawing.Point(1, 470);
+            this.panel_Flip.Margin = new System.Windows.Forms.Padding(1);
+            this.panel_Flip.Name = "panel_Flip";
+            this.panel_Flip.Size = new System.Drawing.Size(491, 31);
+            this.panel_Flip.TabIndex = 6;
+            // 
+            // checkBox_VerticalFlip
+            // 
+            this.checkBox_VerticalFlip.AutoSize = true;
+            this.checkBox_VerticalFlip.Location = new System.Drawing.Point(136, 6);
+            this.checkBox_VerticalFlip.Name = "checkBox_VerticalFlip";
+            this.checkBox_VerticalFlip.Size = new System.Drawing.Size(86, 19);
+            this.checkBox_VerticalFlip.TabIndex = 1;
+            this.checkBox_VerticalFlip.Text = "Vertical Flip";
+            this.checkBox_VerticalFlip.UseVisualStyleBackColor = true;
+            this.checkBox_VerticalFlip.CheckedChanged += new System.EventHandler(this.checkBox_VerticalFlip_CheckedChanged);
+            // 
+            // checkBox_HorizontalFlip
+            // 
+            this.checkBox_HorizontalFlip.AutoSize = true;
+            this.checkBox_HorizontalFlip.Location = new System.Drawing.Point(14, 6);
+            this.checkBox_HorizontalFlip.Name = "checkBox_HorizontalFlip";
+            this.checkBox_HorizontalFlip.Size = new System.Drawing.Size(103, 19);
+            this.checkBox_HorizontalFlip.TabIndex = 0;
+            this.checkBox_HorizontalFlip.Text = "Horizontal Flip";
+            this.checkBox_HorizontalFlip.UseVisualStyleBackColor = true;
+            this.checkBox_HorizontalFlip.CheckedChanged += new System.EventHandler(this.checkBox_HorizontalFlip_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 769);
+            this.ClientSize = new System.Drawing.Size(1103, 802);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4484,6 +4781,8 @@
             this.tabControl_SensorConfig.ResumeLayout(false);
             this.tabPage_SensorControl.ResumeLayout(false);
             this.panel_SensorControl_256G.ResumeLayout(false);
+            this.groupBox_ExtSync_256G.ResumeLayout(false);
+            this.groupBox_ExtSync_256G.PerformLayout();
             this.groupBox_FluxParameters_256G.ResumeLayout(false);
             this.tableLayoutPanel_FluxParam256G.ResumeLayout(false);
             this.tableLayoutPanel_FluxParam256G.PerformLayout();
@@ -4536,6 +4835,10 @@
             this.groupBox_FlatFieldCorrection_160.PerformLayout();
             this.tabPage_RoiManager.ResumeLayout(false);
             this.tabPage_RoiManager.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel_RoiEllipse.ResumeLayout(false);
             this.tableLayoutPanel_RoiEllipse.PerformLayout();
             this.tableLayoutPanel_RoiRect.ResumeLayout(false);
@@ -4555,6 +4858,8 @@
             this.tableLayoutPanel_RoiShape.ResumeLayout(false);
             this.panel_RoiShape.ResumeLayout(false);
             this.panel_RoiShape.PerformLayout();
+            this.panel_Flip.ResumeLayout(false);
+            this.panel_Flip.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4867,6 +5172,27 @@
         private System.Windows.Forms.Label label_FluxParam256G_DistanceUnit;
         private System.Windows.Forms.TextBox textBox_FluxParam256G_DistanceRange;
         private System.Windows.Forms.ComboBox comboBox_SplashScreen;
+        private System.Windows.Forms.Label label_ROIFluxParam;
+        private System.Windows.Forms.Label label_ROIEmiss;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox textBox_RoiAmbRefTemp;
+        private System.Windows.Forms.TextBox textBox_RoiEmiss;
+        private System.Windows.Forms.Label label_ROIAmbientReflectedTemp;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_SetRoiFluxItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel_Flip;
+        private System.Windows.Forms.CheckBox checkBox_HorizontalFlip;
+        private System.Windows.Forms.CheckBox checkBox_VerticalFlip;
+        private System.Windows.Forms.RadioButton radioButton_CallbackModeOff;
+        private System.Windows.Forms.RadioButton radioButton_CallbackModeOn;
+        private System.Windows.Forms.Label label_CallbackMode;
+        private System.Windows.Forms.GroupBox groupBox_ExtSync_256G;
+        private System.Windows.Forms.Button button_SetExtSync_256G;
+        private System.Windows.Forms.Button button_GetExtSync_256G;
+        private System.Windows.Forms.RadioButton radioButton_ExtSyncMaster_256G;
+        private System.Windows.Forms.RadioButton radioButton_ExtSyncSlave_256G;
+        private System.Windows.Forms.RadioButton radioButton_ExtSyncOff_256G;
     }
 }
 

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tempbody_0',['TempBody',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#af5c797aa6142eb638f6044620efdc17d',1,'TmCore::TmControl::TmControl']]],
-  ['tempfpa_1',['TempFPA',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a23d52f3990d828b0480058ad16b9077b',1,'TmCore::TmControl::TmControl']]],
-  ['to_5fbitmap_2',['to_bitmap',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#ab0d076fec7d794494953c39d2d020753',1,'TmCore::TmFrame::TmFrame']]]
+  ['unregister_5fconnection_5fevent_5fhandler_0',['unregister_connection_event_handler',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a35f6f3854a283722741ae8a35447a2a2',1,'TmCore::TmCamera::TmCamera']]],
+  ['unregister_5fevent_5fhandler_1',['unregister_event_handler',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a422ffccf04741d0cf9c45732df1985ff',1,'TmCore::TmCamera::TmCamera']]],
+  ['update_5ffirmware_2',['update_firmware',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#aacf50a49a0dc6f3ec2ed879c63194578',1,'TmCore::TmControl::TmControl']]]
 ];

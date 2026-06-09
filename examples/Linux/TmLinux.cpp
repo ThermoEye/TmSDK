@@ -1,7 +1,7 @@
 /******************************************************************
  * Company: Thermoeye, Inc
  * Project: TmSDK
- * File: TmWinQt.cpp
+ * File: TmLinux.cpp
  * Creation Date: 2024-08-19
  * Version: 1.0.0
  *
@@ -85,7 +85,16 @@ TmLinux::TmLinux(QWidget *parent)
     connect(ui->pushButton_RestoreDefaultSensorConfig_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_RestoreDefaultSensorConfig_256G_Clicked()));
     connect(ui->pushButton_GetGainModeState_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetGainModeState_256G_Clicked()));
     connect(ui->pushButton_SetGainModeState_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetGainModeState_256G_Clicked()));
-
+    connect(ui->radioButton_CallbackModeOn, SIGNAL(clicked()), pCamera, SLOT(radioButton_CallbackModeOn_Clicked()));
+    connect(ui->radioButton_CallbackModeOff, SIGNAL(clicked()), pCamera, SLOT(radioButton_CallbackModeOff_Clicked()));
+    connect(ui->pushButton_GetExtSync_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_GetExtSync_256G_Clicked()));
+    connect(ui->pushButton_SetExtSync_256G, SIGNAL(clicked()), pSensorCtrl, SLOT(pushButton_SetExtSync_256G_Clicked()));
+    connect(ui->comboBox_ListRoi, SIGNAL(currentIndexChanged(int)), pCamera, SLOT(comboBox_ListRoi_CurrentIndexChanged(int)));
+    connect(ui->pushButton_SetRoiFluxItem, SIGNAL(clicked()), pCamera, SLOT(pushButton_SetRoiFluxItem_Clicked()));
+    connect(ui->lineEdit_RoiEmiss, SIGNAL(editingFinished()), pCamera, SLOT(lineEdit_RoiEmiss_EditingFinished()));
+    connect(ui->lineEdit_RoiAmbRefTemp, SIGNAL(editingFinished()), pCamera, SLOT(lineEdit_RoiAmbRefTemp_EditingFinished()));
+    connect(ui->checkBox_HorizontalFlip, SIGNAL(toggled(bool)), pCamera, SLOT(checkBox_HorizontalFlip_toggled()));
+    connect(ui->checkBox_VerticalFlip, SIGNAL(toggled(bool)), pCamera, SLOT(checkBox_VerticalFlip_toggled()));
 
     //ui->comboBox_IPAssignment->addItem(QString::fromStdString("DHCP"));
     //ui->comboBox_IPAssignment->addItem(QString::fromStdString("Static"));
@@ -172,8 +181,10 @@ bool TmLinux::eventFilter(QObject* obj, QEvent* event)
         }
         pCamera->previewWidth = labelWidth;
         pCamera->previewHeight = labelHeight;
-        int maginX = 250 + ((ui->centralwidget->width() - 250 - 340) / 2) - (labelWidth / 2);
-        int maginY = ((ui->centralwidget->height() - 380) / 2) - (labelHeight / 2);
+        // int maginX = 250 + ((ui->centralwidget->width() - 250 - 340) / 2) - (labelWidth / 2);
+        // int maginY = ((ui->centralwidget->height() - 380) / 2) - (labelHeight / 2);
+        int maginX = 230 + ((ui->centralwidget->width() - 250 - 340) / 2) - (labelWidth / 2);
+        int maginY = ((ui->centralwidget->height() - 490) / 2) - (labelHeight / 2);
         if (maginX < 250) maginX = 250;
         if (maginY < 0) maginY = 0;
         ui->label_Preview->setGeometry(maginX + (width - labelWidth) / 2, maginY + (height - labelHeight) / 2, labelWidth, labelHeight);

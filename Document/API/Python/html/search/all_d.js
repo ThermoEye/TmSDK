@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['libtmcore_0',['libTmCore',['../namespace_tm_core.html#abe0ebae63d4a98e3d94dd38d0f888bef',1,'TmCore']]],
-  ['line_1',['Line',['../class_tm_core_1_1_tm_types_1_1_line.html',1,'TmCore.TmTypes.Line'],['../class_tm_core_1_1_tm_types_1_1_roi_type.html#acaf3a579ad7f19cf39ae72983465e43c',1,'TmCore.TmTypes.RoiType.Line']]],
-  ['localcameralist_2',['LocalCameraList',['../class_tm_core_1_1_tm_camera_1_1_local_camera_list.html',1,'TmCore::TmCamera']]],
-  ['location_3',['location',['../class_tm_core_1_1_tm_types_1_1_loc_item.html#a3965f162bfdbb165853247be84222d0c',1,'TmCore::TmTypes::LocItem']]],
-  ['locitem_4',['LocItem',['../class_tm_core_1_1_tm_types_1_1_loc_item.html',1,'TmCore::TmTypes']]]
+  ['pixel_20value_20at_20coordinates_2010_2010_0',['Get pixel value at coordinates (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md0',1,'']]],
+  ['pixel_20values_20starting_20at_2010_2010_1',['Get a 10x10 region of pixel values starting at (10, 10)',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md1',1,'']]],
+  ['point_2',['Point',['../class_tm_core_1_1_tm_types_1_1_point.html',1,'TmCore::TmTypes']]],
+  ['print_20the_20region_20values_3',['Print the region values',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#autotoc_md2',1,'']]]
 ];

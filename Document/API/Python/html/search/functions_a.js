@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['selected_5fitem_0',['selected_item',['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#a5b537e32de8270edf9857dde71450e95',1,'TmCore::TmRoi::TmRoiManager']]],
-  ['set_5fcolor_5fmap_1',['set_color_map',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a56e23f91123891aecfb9e3591b045fa5',1,'TmCore::TmCamera::TmCamera']]],
-  ['set_5fdefault_5fnetwork_5fconfiguration_2',['set_default_network_configuration',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#ae843b42707ac2456f3ec53b7721416ff',1,'TmCore::TmControl::TmControl']]],
-  ['set_5fflat_5ffeild_5fcorrection_5fmode_3',['set_flat_feild_correction_mode',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a6de86218aebff092eccbed8d508f7ee3',1,'TmCore::TmControl::TmControl']]],
-  ['set_5fflat_5ffeild_5fcorrection_5fparameters_4',['set_flat_feild_correction_parameters',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#aead44ba7330012b8ad2366bc10d9aaee',1,'TmCore.TmControl.TmControl.set_flat_feild_correction_parameters(self, maxInterval, autoTriggerThreshold)'],['../class_tm_core_1_1_tm_control_1_1_tm_control.html#aead44ba7330012b8ad2366bc10d9aaee',1,'TmCore.TmControl.TmControl.set_flat_feild_correction_parameters(self, maxInterval, autoTriggerThreshold)']]],
-  ['set_5fflux_5fdefault_5fparameters_5',['set_flux_default_parameters',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a4d3ceaf19a6d53bc8547ef2e84061346',1,'TmCore::TmControl::TmControl']]],
-  ['set_5fflux_5fparameters_6',['set_flux_parameters',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#aaf01bc0c53f28eee4fcdc6da96d1d9df',1,'TmCore::TmControl::TmControl']]],
-  ['set_5fgain_5fmode_5fstate_7',['set_gain_mode_state',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a17c2d523d0097985e03f4af84a5b07d0',1,'TmCore::TmControl::TmControl']]],
-  ['set_5fnetwork_5fconfiguration_8',['set_network_configuration',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#ad8deaa3d2f0facdbf56512fb62af5f13',1,'TmCore::TmControl::TmControl']]],
-  ['set_5fnoise_5ffiltering_9',['set_noise_filtering',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#abd1f6537f53604dbdc18820b39861612',1,'TmCore::TmCamera::TmCamera']]],
-  ['set_5fselected_5froi_5ftype_10',['set_selected_roi_type',['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#a8c59f555cac3bd7b8084f3da5567f601',1,'TmCore::TmRoi::TmRoiManager']]],
-  ['set_5ftemp_5funit_11',['set_temp_unit',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a4565e8b3976afb097d33d8d287d9ab40',1,'TmCore::TmCamera::TmCamera']]],
-  ['store_5fuser_5fsensor_5fconfig_12',['store_user_sensor_config',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a9687a84dfd8981d57875896b208555cf',1,'TmCore::TmControl::TmControl']]]
+  ['reboot_5fdevice_0',['reboot_device',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a57bc70ca4594334a962212b513c8bf40',1,'TmCore::TmControl::TmControl']]],
+  ['register_5fconnection_5fevent_5fhandler_1',['register_connection_event_handler',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a29244edc1f4769e4856ed080413bfe25',1,'TmCore::TmCamera::TmCamera']]],
+  ['register_5fevent_5fhandler_2',['register_event_handler',['../class_tm_core_1_1_tm_camera_1_1_tm_camera.html#a880e51e08057ad69b1d7ec2fb853a242',1,'TmCore::TmCamera::TmCamera']]],
+  ['release_3',['release',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#a9db58d6a68c5c90ed6c542bc50c7fccd',1,'TmCore::TmFrame::TmFrame']]],
+  ['remove_5fat_4',['remove_at',['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#af249b1945a0d8b80fec973aa9721b775',1,'TmCore::TmRoi::TmRoiManager']]],
+  ['resize_5',['resize',['../class_tm_core_1_1_tm_frame_1_1_tm_frame.html#a3ce11fc2b017893e10520dc1aeebcfcb',1,'TmCore::TmFrame::TmFrame']]],
+  ['restore_5fdefault_5fsensor_5fconfig_6',['restore_default_sensor_config',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a35287c86678180c18795671ba864bfde',1,'TmCore.TmControl.TmControl.restore_default_sensor_config(self)'],['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a35287c86678180c18795671ba864bfde',1,'TmCore.TmControl.TmControl.restore_default_sensor_config(self)']]],
+  ['roi_5fclear_7',['roi_clear',['../class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#aec30d7465dcae3ad748572ed56ac626d',1,'TmCore::TmRoi::TmRoiManager']]],
+  ['run_5fflat_5ffield_5fcorrection_8',['run_flat_field_correction',['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a4cf1855e1bfc55a6e3d692247501d1ef',1,'TmCore.TmControl.TmControl.run_flat_field_correction(self)'],['../class_tm_core_1_1_tm_control_1_1_tm_control.html#a4cf1855e1bfc55a6e3d692247501d1ef',1,'TmCore.TmControl.TmControl.run_flat_field_correction(self)']]]
 ];

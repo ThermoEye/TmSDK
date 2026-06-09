@@ -1,7 +1,8 @@
 var annotated_dup =
 [
     [ "TmSDK", "namespace_tm_s_d_k.html", [
-      [ "LocItem", "struct_tm_s_d_k_1_1_loc_item.html", "struct_tm_s_d_k_1_1_loc_item" ],
+      [ "FluxItem", "class_tm_s_d_k_1_1_flux_item.html", "class_tm_s_d_k_1_1_flux_item" ],
+      [ "LocItem", "class_tm_s_d_k_1_1_loc_item.html", "class_tm_s_d_k_1_1_loc_item" ],
       [ "MediaInfo", "class_tm_s_d_k_1_1_media_info.html", "class_tm_s_d_k_1_1_media_info" ],
       [ "Point", "struct_tm_s_d_k_1_1_point.html", "struct_tm_s_d_k_1_1_point" ],
       [ "Rectangle", "struct_tm_s_d_k_1_1_rectangle.html", "struct_tm_s_d_k_1_1_rectangle" ],

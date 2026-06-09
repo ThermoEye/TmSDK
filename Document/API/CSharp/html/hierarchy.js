@@ -7,6 +7,7 @@ var hierarchy =
     [ "Exception", null, [
       [ "TmSDK.TmException", "class_tm_s_d_k_1_1_tm_exception.html", null ]
     ] ],
+    [ "TmSDK.FluxItem", "struct_tm_s_d_k_1_1_flux_item.html", null ],
     [ "IDisposable", null, [
       [ "TmSDK.TmCamera", "class_tm_s_d_k_1_1_tm_camera.html", [
         [ "TmSDK.TmLocalCamera", "class_tm_s_d_k_1_1_tm_local_camera.html", null ],

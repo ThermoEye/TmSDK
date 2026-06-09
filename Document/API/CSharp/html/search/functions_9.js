@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['rebootdevice_0',['RebootDevice',['../class_tm_s_d_k_1_1_tm_control.html#aeb70ed15d015dc99141441fa88196d0b',1,'TmSDK::TmControl']]],
-  ['remotecaminfo_1',['RemoteCamInfo',['../class_tm_s_d_k_1_1_remote_cam_info.html#aa7880597daa1e33e11949a4a3aa5101f',1,'TmSDK.RemoteCamInfo.RemoteCamInfo(string name, string serialNumber, string addrMAC, string addrIP)'],['../class_tm_s_d_k_1_1_remote_cam_info.html#a5c2d9b4403c82aed2e184f65f34bb6f8',1,'TmSDK.RemoteCamInfo.RemoteCamInfo(string name, string serialNumber, string addrMAC, string addrIP, string adapterIP)'],['../class_tm_s_d_k_1_1_remote_cam_info.html#abeaca4314a49b36f5e68dab5eb22feef',1,'TmSDK.RemoteCamInfo.RemoteCamInfo(string name, string serialNumber, string addrMAC, string addrIP, string adapterIP, List&lt; MediaInfo &gt; mediaInfoList, int mediaIndex=0)'],['../class_tm_s_d_k_1_1_remote_cam_info.html#af3be045033ac445c456b46f75b36c670',1,'TmSDK.RemoteCamInfo.RemoteCamInfo(string name, string serialNumber, string addrMAC, string addrIP, string adapterIP, List&lt; MediaInfo &gt; mediaInfoList, int mediaIndex, string partNumber)'],['../class_tm_s_d_k_1_1_remote_cam_info.html#a5390209786b429533b9fb73146f64d96',1,'TmSDK.RemoteCamInfo.RemoteCamInfo(IntPtr camInfoObj)']]],
-  ['removeat_2',['RemoveAt',['../class_tm_s_d_k_1_1_tm_roi_manager.html#ac41428ab3f1a2a81d9d83ea4cccd131e',1,'TmSDK::TmRoiManager']]],
-  ['restoredefaultsensorconfig_3',['RestoreDefaultSensorConfig',['../class_tm_s_d_k_1_1_tm_control.html#ad87d2e7eba5c343a294b2c3979a216a0',1,'TmSDK::TmControl']]],
-  ['runflatfieldcorrection_4',['RunFlatFieldCorrection',['../class_tm_s_d_k_1_1_tm_control.html#a65e0a235b0316d2cc75f5143c2c24fed',1,'TmSDK::TmControl']]]
+  ['mediainfo_0',['MediaInfo',['../class_tm_s_d_k_1_1_media_info.html#acd50c04e59f8facb8adfe69885aef1d8',1,'TmSDK::MediaInfo']]],
+  ['minmaxloc_1',['MinMaxLoc',['../class_tm_s_d_k_1_1_tm_frame.html#a69868cafe5f85ff198bf7bb9fc426c51',1,'TmSDK::TmFrame']]],
+  ['mousedown_2',['MouseDown',['../class_tm_s_d_k_1_1_tm_roi_manager.html#abe4233c31f4824af24a188bb97e5c1bb',1,'TmSDK::TmRoiManager']]],
+  ['mousemove_3',['MouseMove',['../class_tm_s_d_k_1_1_tm_roi_manager.html#a2c464255c8a9c033efb84f4adfadd958',1,'TmSDK::TmRoiManager']]],
+  ['mouseup_4',['MouseUp',['../class_tm_s_d_k_1_1_tm_roi_manager.html#aef60686bdb872375a238e24cdddfba1f',1,'TmSDK::TmRoiManager']]]
 ];

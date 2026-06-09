@@ -1,9 +1,9 @@
 var class_tm_core_1_1_tm_control_1_1_tm_control =
 [
-    [ "__init__", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a4a5dce04a910de7515dc564a701d06ce", null ],
     [ "check_firmware", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a12b56250fb5dcafdef2f191ed4fe5e04", null ],
     [ "close_firmware", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a2a74d3c428cf61a47407855c95788a55", null ],
     [ "get_bootloader_version", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a1592ed748f3f4f29324f11e8e1cfed37", null ],
+    [ "get_external_sync_mode", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a48c63d799b676fc4575a9eebad4f97a8", null ],
     [ "get_firmware_version", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a9cc33138d3d66b09740480c27786a5d1", null ],
     [ "get_flat_feild_correction_parameters", "class_tm_core_1_1_tm_control_1_1_tm_control.html#af95970dae7945a79d8b8c4d4cf4e1012", null ],
     [ "get_flat_field_correction_mode", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a882bf538528f1fea421a5dae2351b559", null ],
@@ -25,6 +25,7 @@ var class_tm_core_1_1_tm_control_1_1_tm_control =
     [ "run_flat_field_correction", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a4cf1855e1bfc55a6e3d692247501d1ef", null ],
     [ "run_flat_field_correction", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a4cf1855e1bfc55a6e3d692247501d1ef", null ],
     [ "set_default_network_configuration", "class_tm_core_1_1_tm_control_1_1_tm_control.html#ae843b42707ac2456f3ec53b7721416ff", null ],
+    [ "set_external_sync_mode", "class_tm_core_1_1_tm_control_1_1_tm_control.html#aa94aaeccf67493240dd928053b7c1158", null ],
     [ "set_flat_feild_correction_mode", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a6de86218aebff092eccbed8d508f7ee3", null ],
     [ "set_flat_feild_correction_parameters", "class_tm_core_1_1_tm_control_1_1_tm_control.html#aead44ba7330012b8ad2366bc10d9aaee", null ],
     [ "set_flat_feild_correction_parameters", "class_tm_core_1_1_tm_control_1_1_tm_control.html#aead44ba7330012b8ad2366bc10d9aaee", null ],
@@ -33,6 +34,5 @@ var class_tm_core_1_1_tm_control_1_1_tm_control =
     [ "set_gain_mode_state", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a17c2d523d0097985e03f4af84a5b07d0", null ],
     [ "set_network_configuration", "class_tm_core_1_1_tm_control_1_1_tm_control.html#ad8deaa3d2f0facdbf56512fb62af5f13", null ],
     [ "store_user_sensor_config", "class_tm_core_1_1_tm_control_1_1_tm_control.html#a9687a84dfd8981d57875896b208555cf", null ],
-    [ "update_firmware", "class_tm_core_1_1_tm_control_1_1_tm_control.html#aacf50a49a0dc6f3ec2ed879c63194578", null ],
-    [ "obj", "class_tm_core_1_1_tm_control_1_1_tm_control.html#af40bcee3eb67c4ffbb39ffd0069aac1e", null ]
+    [ "update_firmware", "class_tm_core_1_1_tm_control_1_1_tm_control.html#aacf50a49a0dc6f3ec2ed879c63194578", null ]
 ];

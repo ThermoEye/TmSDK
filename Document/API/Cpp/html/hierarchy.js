@@ -3,7 +3,8 @@ var hierarchy =
     [ "std::exception", null, [
       [ "TmSDK::TmException", "class_tm_s_d_k_1_1_tm_exception.html", null ]
     ] ],
-    [ "TmSDK::LocItem", "struct_tm_s_d_k_1_1_loc_item.html", null ],
+    [ "TmSDK::FluxItem", "class_tm_s_d_k_1_1_flux_item.html", null ],
+    [ "TmSDK::LocItem", "class_tm_s_d_k_1_1_loc_item.html", null ],
     [ "TmSDK::MediaInfo", "class_tm_s_d_k_1_1_media_info.html", null ],
     [ "TmSDK::Point", "struct_tm_s_d_k_1_1_point.html", null ],
     [ "TmSDK::Rectangle", "struct_tm_s_d_k_1_1_rectangle.html", null ],

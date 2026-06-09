@@ -731,4 +731,35 @@ void SensorControl::pushButton_SetGainModeState_256G_Clicked()
         pCamera->pTmCamera->pTmControl->SetGainModeState(2);
     }
 }
+
+void SensorControl::pushButton_GetExtSync_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+
+    int mode = pCamera->pTmCamera->pTmControl->GetExternalSyncMode();
+    if (mode == 0)
+    {
+        ui->radioButton_ExtSyncOff_256G->setChecked(true);
+    }
+    else if (mode == 1)
+    {
+        ui->radioButton_ExtSyncSlave_256G->setChecked(true);
+    }
+    else if (mode == 2)
+    {
+        ui->radioButton_ExtSyncMaster_256G->setChecked(true);
+    }
+}
+
+void SensorControl::pushButton_SetExtSync_256G_Clicked()
+{
+    if (pCamera->pTmCamera == nullptr || pCamera->pTmCamera->pTmControl == nullptr) return;
+
+    int mode = 0;
+    if (ui->radioButton_ExtSyncOff_256G->isChecked()) mode = 0;
+    else if (ui->radioButton_ExtSyncSlave_256G->isChecked()) mode = 1;
+    else if (ui->radioButton_ExtSyncMaster_256G->isChecked()) mode = 2;
+
+    pCamera->pTmCamera->pTmControl->SetExternalSyncMode(mode);
+}
 #pragma region

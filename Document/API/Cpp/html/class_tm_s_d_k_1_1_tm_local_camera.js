@@ -5,6 +5,7 @@ var class_tm_s_d_k_1_1_tm_local_camera =
     [ "Close", "class_tm_s_d_k_1_1_tm_local_camera.html#ae3ca44fc9d79f9de0a50fbbed6ee7817", null ],
     [ "GetMaxPacketSize", "class_tm_s_d_k_1_1_tm_local_camera.html#a60506f9a98d68e994e4dbbfa5ea190f8", null ],
     [ "Open", "class_tm_s_d_k_1_1_tm_local_camera.html#a86f38694d6a376f4a55d2f709897efb2", null ],
-    [ "QueryFrame", "class_tm_s_d_k_1_1_tm_local_camera.html#aae0f22712463fdf510289fd066699234", null ],
+    [ "QueryFrame", "class_tm_s_d_k_1_1_tm_local_camera.html#aa422c1965675d78bfb5c9581752a0ab9", null ],
+    [ "QueryFrameFromDevice", "class_tm_s_d_k_1_1_tm_local_camera.html#a1b6727ddbd2dd144575343ba4ba34bd2", null ],
     [ "SendPacket", "class_tm_s_d_k_1_1_tm_local_camera.html#ad09e2a00f6dfad9912425d450b2c8d78", null ]
 ];

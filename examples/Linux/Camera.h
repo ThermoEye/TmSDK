@@ -27,10 +27,16 @@ private:
     QPoint previewStart;
     QPoint previewEnd;
     bool drawing = false;
+    std::atomic<bool> disconnecting{ false };
+    std::mutex cameraAccessMutex;
 
 public:
     TmCamera* pTmCamera = nullptr;
     bool runCapThread = false;
+    bool pauseCapThread = false;
+    bool reconnectingCamera = false;
+    TmLocalCamInfo* reconnectLocalCamInfo = nullptr;
+    TmRemoteCamInfo* reconnectRemoteCamInfo = nullptr;
     std::thread capThread;
     int previewWidth = 0;
     int previewHeight = 0;
@@ -44,7 +50,12 @@ public:
     void processMeasurements(TmSDK::TmFrame* pFrame);
     void CaptureFrame();
     std::string GetTempStringUnit(double raw);
-    void DisconnectCamera();
+    std::string GetTempStringUnit(double raw, FluxItem flux);
+    void DisconnectCamera(bool clearReconnectState = true);
+    void RegisterConnectionHandler(TmLocalCamInfo* localCamInfo, TmRemoteCamInfo* remoteCamInfo);
+    void OnCameraConnectionChanged(bool connected);
+    void ReconnectCamera(TmLocalCamInfo* localCamInfo, TmRemoteCamInfo* remoteCamInfo);
+    void ApplyConnectedCameraUi(bool isLocalCamera);
     uint32_t ConvertAnsiToUnicodeString(std::wstring& unicode, const std::string& c_string);
     TmCamera* GetTmCamera();
     void UpdateRoiListItems();
@@ -52,6 +63,8 @@ public:
     void MouseUp(QPoint point);
     void MouseDown(QPoint point);
     void MouseMove(QPoint point);
+    void DisplayPreviewFrame(TmSDK::TmFramePtr frame);
+    void OnFrameEventHandler(TmSDK::TmFramePtr frame, void* context);
 
 public slots:
     void pushButton_LocalCameraScan_Clicked();
@@ -75,4 +88,12 @@ public slots:
     void comboBox_LocalCameraVideoFormat_Changed(int);
     void comboBox_RemoteCameraVideoFormat_Changed(int);
     void tabWidget_Control_CurrentChanged(int tabIndex);
+    void comboBox_ListRoi_CurrentIndexChanged(int index);
+    void pushButton_SetRoiFluxItem_Clicked();
+    void lineEdit_RoiEmiss_EditingFinished();
+    void lineEdit_RoiAmbRefTemp_EditingFinished();
+    void checkBox_HorizontalFlip_toggled();
+    void checkBox_VerticalFlip_toggled();
+    void radioButton_CallbackModeOn_Clicked();
+    void radioButton_CallbackModeOff_Clicked();
 };

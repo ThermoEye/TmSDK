@@ -80,8 +80,8 @@ class MainWindow(QMainWindow):
         self.pushButton_RestoreDefaultFluxParameters_160E.clicked.connect(self.sensor_ctrl.pushButton_RestoreDefaultFluxParameters_160E_Clicked)
         self.pushButton_GetGainModeState.clicked.connect(self.sensor_ctrl.pushButton_GetGainModeState_Clicked)
         self.pushButton_SetGainModeState.clicked.connect(self.sensor_ctrl.pushButton_SetGainModeState_Clicked)
-        self.comboBox_LocalCameraVideoFormat.currentIndexChanged.connect(self.camera.comboBox_comboBox_LocalCameraVideoFormat_Changed)
-        self.comboBox_RemoteCameraVideoFormat.currentIndexChanged.connect(self.camera.comboBox_comboBox_RemoteCameraVideoFormat_Changed)
+        self.comboBox_LocalCameraVideoFormat.currentIndexChanged.connect(self.camera.comboBox_LocalCameraVideoFormat_Changed)
+        self.comboBox_RemoteCameraVideoFormat.currentIndexChanged.connect(self.camera.comboBox_RemoteCameraVideoFormat_Changed)
         self.pushButton_GetFlatFieldCorrection_256G.clicked.connect(self.sensor_ctrl.pushButton_GetFlatFieldCorrection_256G_Clicked)
         self.pushButton_SetFlatFieldCorrection_256G.clicked.connect(self.sensor_ctrl.pushButton_SetFlatFieldCorrection_256G_Clicked)
         self.pushButton_RunFlatFieldCorrection_256G.clicked.connect(self.sensor_ctrl.pushButton_RunFlatFieldCorrection_256G_Clicked)
@@ -91,7 +91,16 @@ class MainWindow(QMainWindow):
         self.pushButton_RestoreDefaultSensorConfig_256G.clicked.connect(self.sensor_ctrl.pushButton_RestoreDefaultSensorConfig_256G_Clicked)
         self.pushButton_GetGainModeState_256G.clicked.connect(self.sensor_ctrl.pushButton_GetGainModeState_256G_Clicked)
         self.pushButton_SetGainModeState_256G.clicked.connect(self.sensor_ctrl.pushButton_SetGainModeState_256G_Clicked)
-        
+        self.comboBox_ListRoi.currentIndexChanged.connect(self.camera.comboBox_ListRoi_CurrentIndexChanged)
+        self.pushButton_SetRoiFluxItem.clicked.connect(self.camera.pushButton_SetRoiFluxItem_Clicked)
+        self.lineEdit_RoiEmiss.editingFinished.connect(self.camera.lineEdit_RoiEmiss_EditingFinished)
+        self.lineEdit_RoiAmbRefTemp.editingFinished.connect(self.camera.lineEdit_RoiAmbRefTemp_EditingFinished)
+        self.checkBox_HorizontalFlip.toggled.connect(self.camera.checkBox_HorizontalFlip_toggled)
+        self.checkBox_VerticalFlip.toggled.connect(self.camera.checkBox_VerticalFlip_toggled)
+        self.radioButton_CallbackModeOn.clicked.connect(self.camera.radioButton_CallbackModeOn_Clicked)
+        self.radioButton_CallbackModeOff.clicked.connect(self.camera.radioButton_CallbackModeOff_Clicked)
+        self.pushButton_GetExtSync_256G.clicked.connect(self.sensor_ctrl.pushButton_GetExtSync_256G_Clicked)
+        self.pushButton_SetExtSync_256G.clicked.connect(self.sensor_ctrl.pushButton_SetExtSync_256G_Clicked)
         self.LocalCamList=[]
         self.RemoteCamList=[]
         
@@ -151,7 +160,7 @@ class MainWindow(QMainWindow):
             self.camera.preview_height = labelHeight
             
             maginX = int(250 + ((self.centralwidget.width() - 250 - 340) / 2) - (labelWidth / 2))
-            maginY = int(((self.centralwidget.height() - 380) / 2) - (labelHeight / 2))
+            maginY = int(((self.centralwidget.height() - 390) / 2) - (labelHeight / 2))
 
             if maginX < 250:
                 maginX = 250

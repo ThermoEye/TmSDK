@@ -1,7 +1,5 @@
 var class_tm_core_1_1_tm_roi_1_1_tm_roi_manager =
 [
-    [ "__init__", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#af0ddd71e02e71556fdd3bdb48e4bc869", null ],
-    [ "__del__", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#a0368d01500e8f1aefe7a78319d5f6c9f", null ],
     [ "add_item_xy", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#a496959cab68f2600e16ed13c36c8c630", null ],
     [ "add_item_xywh", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#a1ff0034a1fa89b1d7f503c72f2dce01e", null ],
     [ "get_roi_ellipse_item", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#af8b43e141333ae8dd0667bf3d9cb92b2", null ],
@@ -18,6 +16,5 @@ var class_tm_core_1_1_tm_roi_1_1_tm_roi_manager =
     [ "remove_at", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#af249b1945a0d8b80fec973aa9721b775", null ],
     [ "roi_clear", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#aec30d7465dcae3ad748572ed56ac626d", null ],
     [ "selected_item", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#a5b537e32de8270edf9857dde71450e95", null ],
-    [ "set_selected_roi_type", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#a8c59f555cac3bd7b8084f3da5567f601", null ],
-    [ "obj", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#afa261bfd08dce07fe8d9909c9f06a867", null ]
+    [ "set_selected_roi_type", "class_tm_core_1_1_tm_roi_1_1_tm_roi_manager.html#a8c59f555cac3bd7b8084f3da5567f601", null ]
 ];

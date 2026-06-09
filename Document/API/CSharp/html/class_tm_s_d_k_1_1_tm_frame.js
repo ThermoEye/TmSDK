@@ -10,6 +10,7 @@ var class_tm_s_d_k_1_1_tm_frame =
     [ "GetTempAsFahrenheit", "class_tm_s_d_k_1_1_tm_frame.html#af5cb7243de1a9f95d2275f6163cc8656", null ],
     [ "GetTempAsKelvin", "class_tm_s_d_k_1_1_tm_frame.html#a28236a5dfc158bd6fd887e1e39805d12", null ],
     [ "MinMaxLoc", "class_tm_s_d_k_1_1_tm_frame.html#a69868cafe5f85ff198bf7bb9fc426c51", null ],
+    [ "Resize", "class_tm_s_d_k_1_1_tm_frame.html#a3ee4d1b693a177bd25274708b593562f", null ],
     [ "ToBitmap", "class_tm_s_d_k_1_1_tm_frame.html#a73406e151916c4ef09fae4dfe8e3c8b2", null ],
     [ "Height", "class_tm_s_d_k_1_1_tm_frame.html#a6b1f7c317937bcc2467d6edc76b1487f", null ],
     [ "IsEmpty", "class_tm_s_d_k_1_1_tm_frame.html#a392b5d9d81bc8d79b2d84e66fb4794aa", null ],
