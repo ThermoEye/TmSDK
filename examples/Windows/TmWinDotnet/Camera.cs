@@ -36,6 +36,8 @@ namespace TmWinDotNet
         // Callback-mode frame event context test object.
         private FrameCallbackTestContext callbackTestContext = null;
         private volatile bool reconnectingCamera;
+        // Suppress auto-disconnect/reconnect while firmware is being updated.
+        private volatile bool firmwareUpdateInProgress;
         private LocalCamInfo reconnectLocalCamInfo;
         private RemoteCamInfo reconnectRemoteCamInfo;
 
@@ -739,6 +741,7 @@ namespace TmWinDotNet
             }
 
             frameCaptureStopRequested = false;
+            firmwareUpdateInProgress = false;
             if (clearReconnectState)
             {
                 reconnectingCamera = false;
@@ -900,8 +903,10 @@ namespace TmWinDotNet
 
         private void OnCameraConnectionChanged(bool connected)
         {
-            Console.WriteLine("Camera connection changed. Connected: {0}, Reconnecting: {1}", connected, reconnectingCamera);
-            if (connected || reconnectingCamera)
+            Console.WriteLine("Camera connection changed. Connected: {0}, Reconnecting: {1}, FirmwareUpdate: {2}",
+                connected, reconnectingCamera, firmwareUpdateInProgress);
+            // Keep the control channel open during firmware update; do not auto-disconnect.
+            if (connected || reconnectingCamera || firmwareUpdateInProgress)
             {
                 return;
             }

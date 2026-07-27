@@ -206,6 +206,10 @@ namespace TmWinDotNet
                             btn.Enabled = false;
                             button_SoftwareUpdateFileBrowse.Enabled = false;
 
+                            // Prevent connection-lost auto-reconnect from closing the camera mid-update.
+                            firmwareUpdateInProgress = true;
+                            tmCamera.UnregisterConnectionEventHandler();
+
                             if (tmCamera.tmControl.OpenFirmware(textBox_SoftwareUpdateFilePath.Text) > 0)
                             {
                                 label_SoftwareUpdateStatus.Text = "Start firmware update.";
@@ -220,6 +224,7 @@ namespace TmWinDotNet
                             }
                             else
                             {
+                                firmwareUpdateInProgress = false;
                                 tmCamera.Close();
                                 tmCamera = null;
 
@@ -270,10 +275,16 @@ namespace TmWinDotNet
         void update_DoWork(object sender, DoWorkEventArgs e)
         {
             int percent = 0;
-            //if (tmCamera != null && tmCamera.IsOpen) return;
 
             while (percent < 100)
             {
+                if (tmCamera == null || tmCamera.tmControl == null)
+                {
+                    Console.WriteLine("Error during download firmware: camera was closed.");
+                    e.Cancel = true;
+                    return;
+                }
+
                 percent = tmCamera.tmControl.UpdateFirmware();
                 if (percent >= 0)
                 {
@@ -299,12 +310,27 @@ namespace TmWinDotNet
 
         void update_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            DialogResult dr;
-            bool result = tmCamera.tmControl.CloseFirmware();
+            bool downloadOk = !e.Cancelled && e.Error == null;
+            bool result = false;
 
-            if ((e.Cancelled) || (e.Error != null) || (result == false))
+            // CloseFirmware() must run before DisconnectCamera() while the serial port is still open.
+            if (tmCamera != null && tmCamera.tmControl != null)
             {
-                label_SoftwareUpdateStatus.Text = "Update failed.";
+                result = tmCamera.tmControl.CloseFirmware();
+            }
+
+            bool updateSuccessful = downloadOk && result;
+
+            if (!updateSuccessful)
+            {
+                if (!downloadOk)
+                {
+                    label_SoftwareUpdateStatus.Text = "Update failed.";
+                }
+                else
+                {
+                    label_SoftwareUpdateStatus.Text = "Download complete, but close failed.";
+                }
             }
             else
             {
@@ -313,20 +339,26 @@ namespace TmWinDotNet
 
             System.Threading.Thread.Sleep(1000);
 
-            tmCamera.Close();
-            tmCamera = null;
+            firmwareUpdateInProgress = false;
+            DisconnectCamera();
 
             System.Threading.Thread.Sleep(1000);
 
             Application.EnableVisualStyles();
-            if (result == true)
+            DialogResult dr;
+            if (updateSuccessful)
             {
                 dr = MessageBox.Show("Reconnect camera device.", "Software Update", MessageBoxButtons.OK);
             }
-            else
+            else if (!downloadOk)
             {
                 dr = MessageBox.Show("Please check firmware binary file.", "Software Update", MessageBoxButtons.OK);
             }
+            else
+            {
+                dr = MessageBox.Show("Download completed but close failed. Please check connection.", "Software Update", MessageBoxButtons.OK);
+            }
+
             switch (dr)
             {
                 case DialogResult.OK:
