@@ -14,11 +14,11 @@ import androidx.core.content.ContextCompat;
 import java.util.List;
 
 /**
- * Adapter for displaying a list of remote cameras.
+ * Adapter for displaying a list of cameras.
  */
-public class RemoteCameraAdapter extends BaseAdapter {
+public class CameraListAdapter extends BaseAdapter {
     private final Context context;
-    private final List<RemoteCameraListItem> itemList;
+    private final List<CameraListItem> itemList;
     private OnItemClickListener itemClickListener;
     private OnItemLongClickListener itemLongClickListener;
     private int selectedPosition = -1;
@@ -27,9 +27,9 @@ public class RemoteCameraAdapter extends BaseAdapter {
      * Constructor for initializing the adapter with context and a list of camera items.
      *
      * @param context The context in which the adapter is used.
-     * @param itemList The list of remote camera items.
+     * @param itemList The list of camera items.
      */
-    public RemoteCameraAdapter(Context context, List<RemoteCameraListItem> itemList) {
+    public CameraListAdapter(Context context, List<CameraListItem> itemList) {
         this.context = context;
         this.itemList = itemList;
     }
@@ -72,11 +72,11 @@ public class RemoteCameraAdapter extends BaseAdapter {
     }
 
     @Override
-    public RemoteCameraListItem getItem(int position) {
+    public CameraListItem getItem(int position) {
         return itemList.get(position);
     }
 
-    public List<RemoteCameraListItem> getItemList() { return itemList; }
+    public List<CameraListItem> getItemList() { return itemList; }
 
     @Override
     public long getItemId(int position) {
@@ -97,10 +97,9 @@ public class RemoteCameraAdapter extends BaseAdapter {
         ImageView imageViewStatus = view.findViewById(R.id.imageViewStatus);
 
         // Get the camera item at the given position.
-        RemoteCameraListItem item = itemList.get(position);
-        // Set the camera's nickname and IP address.
+        CameraListItem item = itemList.get(position);
         textTitle.setText(item.getNickName());
-        textSubtitle.setText(item.getIp());
+        textSubtitle.setText(item.getSubtitle());
 
         // Set the connection status icon based on whether the camera is connected.
         if (item.isConnected()) {
@@ -141,9 +140,9 @@ public class RemoteCameraAdapter extends BaseAdapter {
     /**
      * Returns the currently selected camera item.
      *
-     * @return The selected RemoteCameraListItem or null if no selection is made.
+     * @return The selected CameraListItem or null if no selection is made.
      */
-    public RemoteCameraListItem getSelectedItem() {
+    public CameraListItem getSelectedItem() {
         return selectedPosition != -1 ? itemList.get(selectedPosition) : null;
     }
 }

@@ -10,13 +10,13 @@ import androidx.lifecycle.ViewModel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 import kr.co.thermoeye.tmsdk.ColorMapTypes;
 
 public class CameraViewModel extends ViewModel {
-    // LiveData to hold a list of remote camera items
-    private final MutableLiveData<List<RemoteCameraListItem>> remoteCameraList = new MutableLiveData<>();
+    // LiveData to hold a list of camera items
+    private final MutableLiveData<List<CameraListItem>> cameraList = new MutableLiveData<>();
+    private final Object cameraListLock = new Object();
     // LiveData to hold the list of Bitmap frames for each camera
     private final MutableLiveData<List<Bitmap>> bitmapFrames = new MutableLiveData<>(new ArrayList<>(Collections.nCopies(9, null)));
     // LiveData to store the selected camera ID
@@ -42,12 +42,14 @@ public class CameraViewModel extends ViewModel {
         roiActionDone.setValue(done);
     }
 
-    public LiveData<List<RemoteCameraListItem>> getRemoteCameraList() {
-        return remoteCameraList;
+    public LiveData<List<CameraListItem>> getCameraList() {
+        return cameraList;
     }
 
-    public void setRemoteCameraList(List<RemoteCameraListItem> list) {
-        remoteCameraList.setValue(list);
+    public void setCameraList(List<CameraListItem> list) {
+        synchronized (cameraListLock) {
+            cameraList.setValue(list);
+        }
     }
 
     public LiveData<Integer> getSelectedCameraId() {
@@ -58,20 +60,24 @@ public class CameraViewModel extends ViewModel {
         selectedCameraId.setValue(id);
     }
 
-    public void addRemoteCamera(RemoteCameraListItem cameraInfo) {
-        List<RemoteCameraListItem> currentList = remoteCameraList.getValue();
-        if (currentList == null) {
-            currentList = new ArrayList<>();
+    public void addCamera(CameraListItem cameraInfo) {
+        synchronized (cameraListLock) {
+            List<CameraListItem> currentList = cameraList.getValue();
+            if (currentList == null) {
+                currentList = new ArrayList<>();
+            }
+            currentList.add(cameraInfo);
+            cameraList.setValue(currentList);
         }
-        currentList.add(cameraInfo);
-        remoteCameraList.setValue(currentList);
     }
 
-    public void removeRemoteCamera(int id) {
-        List<RemoteCameraListItem> currentList = remoteCameraList.getValue();
-        if (currentList != null) {
-            currentList.removeIf(camera -> camera.getId() == id);
-            remoteCameraList.setValue(currentList);
+    public void removeCamera(int id) {
+        synchronized (cameraListLock) {
+            List<CameraListItem> currentList = cameraList.getValue();
+            if (currentList != null) {
+                currentList.removeIf(camera -> camera.getId() == id);
+                cameraList.setValue(currentList);
+            }
         }
     }
 
@@ -132,22 +138,28 @@ public class CameraViewModel extends ViewModel {
         maxTempVal.postValue(temp);
     }
 
-    public RemoteCameraListItem getRemoteCameraItem(int id) {
-        for (RemoteCameraListItem item: Objects.requireNonNull(remoteCameraList.getValue())) {
-            if (item.getId() == id) {
-                return item;
+    public CameraListItem getCameraItem(int id) {
+        synchronized (cameraListLock) {
+            List<CameraListItem> list = cameraList.getValue();
+            if (list == null) {
+                return null;
             }
+            for (int i = 0; i < list.size(); i++) {
+                CameraListItem item = list.get(i);
+                if (item.getId() == id) {
+                    return item;
+                }
+            }
+            return null;
         }
-        return null;
     }
 
-    public RemoteCameraListItem getRemoteCameraItem() {
-        for (RemoteCameraListItem item: Objects.requireNonNull(remoteCameraList.getValue())) {
-            if (item.getId() == Objects.requireNonNull(selectedSingleCameraId.getValue())) {
-                return item;
-            }
+    public CameraListItem getCameraItem() {
+        Integer selectedId = selectedSingleCameraId.getValue();
+        if (selectedId == null) {
+            return null;
         }
-        return null;
+        return getCameraItem(selectedId);
     }
 }
 

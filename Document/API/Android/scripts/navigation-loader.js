@@ -2,7 +2,244 @@
  * Copyright 2014-2024 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
  */
 
-navigationPageText = fetch(pathToRoot + "navigation.html").then(response => response.text())
+navigationPageText = Promise.resolve(`<div class="toc--part" id="TmSDK-nav-submenu" pageId="TmSDK::////PointingToDeclaration//-273064447" data-nesting-level="0">
+  <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="index.html" class="toc--link"><span>Tm</span><wbr></wbr><span><span>SDK</span></span></a></div>
+  <div class="toc--part" id="TmSDK-nav-submenu-0" pageId="TmSDK::kr.co.thermoeye.tmsdk////PointingToDeclaration//-273064447" data-nesting-level="1">
+    <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/index.html" class="toc--link"><span>kr.</span><wbr></wbr><span>co.</span><wbr></wbr><span>thermoeye.</span><wbr></wbr><span>tmsdk</span></a></div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-0&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>Color</span><wbr></wbr><span>Map</span><wbr></wbr><span><span>Types</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Companion///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-companion/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon object"></span><span><span><span>Companion</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-1" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.GrayScale///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-gray-scale/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>Gray</span><wbr></wbr><span><span>Scale</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-2" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Autumn///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-autumn/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Autumn</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-3" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Bone///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-bone/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Bone</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-4" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Jet///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-jet/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Jet</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-5" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Winter///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-winter/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Winter</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-6" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Rainbow///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-rainbow/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Rainbow</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-7" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Ocean///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-ocean/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Ocean</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-8" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Summer///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-summer/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Summer</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-9" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Spring///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-spring/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Spring</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-10" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Cool///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-cool/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Cool</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-11" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Hsv///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-hsv/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Hsv</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-12" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Pink///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-pink/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Pink</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-13" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Hot///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-hot/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Hot</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-14" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Parula///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-parula/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Parula</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-15" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Magma///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-magma/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Magma</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-16" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Inferno///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-inferno/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Inferno</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-17" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Plasma///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-plasma/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Plasma</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-18" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Viridis///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-viridis/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Viridis</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-19" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Cividis///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-cividis/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Cividis</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-20" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Twilight///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-twilight/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Twilight</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-21" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.TwilightShifted///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-twilight-shifted/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>Twilight</span><wbr></wbr><span><span>Shifted</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-22" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.Turbo///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-turbo/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>Turbo</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-0-23" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorMapTypes.DeepGreen///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-map-types/-deep-green/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>Deep</span><wbr></wbr><span><span>Green</span></span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-1" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorOrder///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-1&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-order/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>Color</span><wbr></wbr><span><span>Order</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-1-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorOrder.COLOR_BGR///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-order/-c-o-l-o-r_-b-g-r/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>COLOR_</span><wbr></wbr><span>BGR</span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-1-1" pageId="TmSDK::kr.co.thermoeye.tmsdk/ColorOrder.COLOR_RGB///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-color-order/-c-o-l-o-r_-r-g-b/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>COLOR_</span><wbr></wbr><span>RGB</span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-2" pageId="TmSDK::kr.co.thermoeye.tmsdk/ConnectionEventListener///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-connection-event-listener/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon interface-kt"></span><span><span>Connection</span><wbr></wbr><span>Event</span><wbr></wbr><span><span>Listener</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-3" pageId="TmSDK::kr.co.thermoeye.tmsdk/ExternalSyncMode///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-3&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-external-sync-mode/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>External</span><wbr></wbr><span>Sync</span><wbr></wbr><span><span>Mode</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-3-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/ExternalSyncMode.Companion///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-external-sync-mode/-companion/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon object"></span><span><span><span>Companion</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-3-1" pageId="TmSDK::kr.co.thermoeye.tmsdk/ExternalSyncMode.OFF///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-external-sync-mode/-o-f-f/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>OFF</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-3-2" pageId="TmSDK::kr.co.thermoeye.tmsdk/ExternalSyncMode.SLAVE///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-external-sync-mode/-s-l-a-v-e/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>SLAVE</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-3-3" pageId="TmSDK::kr.co.thermoeye.tmsdk/ExternalSyncMode.MASTER///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-external-sync-mode/-m-a-s-t-e-r/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>MASTER</span></span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-4" pageId="TmSDK::kr.co.thermoeye.tmsdk/FrameEventListener///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-frame-event-listener/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon interface-kt"></span><span><span>Frame</span><wbr></wbr><span>Event</span><wbr></wbr><span><span>Listener</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-5" pageId="TmSDK::kr.co.thermoeye.tmsdk/GainMode///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-5&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-gain-mode/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>Gain</span><wbr></wbr><span><span>Mode</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-5-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/GainMode.Companion///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-gain-mode/-companion/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon object"></span><span><span><span>Companion</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-5-1" pageId="TmSDK::kr.co.thermoeye.tmsdk/GainMode.HIGH///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-gain-mode/-h-i-g-h/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>HIGH</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-5-2" pageId="TmSDK::kr.co.thermoeye.tmsdk/GainMode.LOW///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-gain-mode/-l-o-w/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>LOW</span></span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-6" pageId="TmSDK::kr.co.thermoeye.tmsdk/Line///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-line/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span><span>Line</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-7" pageId="TmSDK::kr.co.thermoeye.tmsdk/LocItem///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-loc-item/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Loc</span><wbr></wbr><span><span>Item</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-8" pageId="TmSDK::kr.co.thermoeye.tmsdk/MediaInfo///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-media-info/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Media</span><wbr></wbr><span><span>Info</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-9" pageId="TmSDK::kr.co.thermoeye.tmsdk/NetworkConfiguration///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-network-configuration/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Network</span><wbr></wbr><span><span>Configuration</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-10" pageId="TmSDK::kr.co.thermoeye.tmsdk/Point///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-point/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span><span>Point</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-11" pageId="TmSDK::kr.co.thermoeye.tmsdk/Rectangle///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-rectangle/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span><span>Rectangle</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-12" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiEllipse///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-ellipse/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Roi</span><wbr></wbr><span><span>Ellipse</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-13" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiLine///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-line/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Roi</span><wbr></wbr><span><span>Line</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-14" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiObject///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-object/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Roi</span><wbr></wbr><span><span>Object</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-15" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiRect///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-rect/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Roi</span><wbr></wbr><span><span>Rect</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-16" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiSpot///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-spot/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Roi</span><wbr></wbr><span><span>Spot</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-17" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiType///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-17&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-type/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>Roi</span><wbr></wbr><span><span>Type</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-17-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiType.Companion///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-type/-companion/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon object"></span><span><span><span>Companion</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-17-1" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiType.HAND///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-type/-h-a-n-d/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>HAND</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-17-2" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiType.SPOT///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-type/-s-p-o-t/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>SPOT</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-17-3" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiType.LINE///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-type/-l-i-n-e/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>LINE</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-17-4" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiType.RECT///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-type/-r-e-c-t/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>RECT</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-17-5" pageId="TmSDK::kr.co.thermoeye.tmsdk/RoiType.ELLIPSE///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-roi-type/-e-l-l-i-p-s-e/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>ELLIPSE</span></span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-18" pageId="TmSDK::kr.co.thermoeye.tmsdk/TempUnit///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-18&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-temp-unit/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span>Temp</span><wbr></wbr><span><span>Unit</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-18-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/TempUnit.Companion///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-temp-unit/-companion/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon object"></span><span><span><span>Companion</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-18-1" pageId="TmSDK::kr.co.thermoeye.tmsdk/TempUnit.RAW///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-temp-unit/-r-a-w/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>RAW</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-18-2" pageId="TmSDK::kr.co.thermoeye.tmsdk/TempUnit.CELSIUS///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-temp-unit/-c-e-l-s-i-u-s/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>CELSIUS</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-18-3" pageId="TmSDK::kr.co.thermoeye.tmsdk/TempUnit.FAHRENHEIT///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-temp-unit/-f-a-h-r-e-n-h-e-i-t/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>FAHRENHEIT</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-18-4" pageId="TmSDK::kr.co.thermoeye.tmsdk/TempUnit.KELVIN///PointingToDeclaration/{&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;:{&quot;key&quot;:&quot;org.jetbrains.dokka.links.EnumEntryDRIExtra&quot;}}/-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-temp-unit/-k-e-l-v-i-n/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon enum-class-kt"></span><span><span><span>KELVIN</span></span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-19" pageId="TmSDK::kr.co.thermoeye.tmsdk/TempValueLoc///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-temp-value-loc/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Temp</span><wbr></wbr><span>Value</span><wbr></wbr><span><span>Loc</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-20" pageId="TmSDK::kr.co.thermoeye.tmsdk/TmCamera///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-20&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-tm-camera/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Tm</span><wbr></wbr><span><span>Camera</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-20-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/TmCamera.Companion///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-tm-camera/-companion/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon object"></span><span><span><span>Companion</span></span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-21" pageId="TmSDK::kr.co.thermoeye.tmsdk/TmControl///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-tm-control/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Tm</span><wbr></wbr><span><span>Control</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-22" pageId="TmSDK::kr.co.thermoeye.tmsdk/TmFrame///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-22&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-tm-frame/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Tm</span><wbr></wbr><span><span>Frame</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-22-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/TmFrame.Companion///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-tm-frame/-companion/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon object"></span><span><span><span>Companion</span></span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-23" pageId="TmSDK::kr.co.thermoeye.tmsdk/TmLocalCamInfo///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-tm-local-cam-info/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Tm</span><wbr></wbr><span>Local</span><wbr></wbr><span>Cam</span><wbr></wbr><span><span>Info</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-24" pageId="TmSDK::kr.co.thermoeye.tmsdk/TmRemoteCamInfo///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-tm-remote-cam-info/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Tm</span><wbr></wbr><span>Remote</span><wbr></wbr><span>Cam</span><wbr></wbr><span><span>Info</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-25" pageId="TmSDK::kr.co.thermoeye.tmsdk/TmRoiManager///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-tm-roi-manager/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Tm</span><wbr></wbr><span>Roi</span><wbr></wbr><span><span>Manager</span></span></span></span></a></div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-26" pageId="TmSDK::kr.co.thermoeye.tmsdk/UsbHostBridge///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><button class="toc--button" onclick="document.getElementById(&quot;TmSDK-nav-submenu-0-26&quot;).classList.toggle(&quot;toc--part_hidden&quot;);"></button><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-usb-host-bridge/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Usb</span><wbr></wbr><span>Host</span><wbr></wbr><span><span>Bridge</span></span></span></span></a></div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-26-0" pageId="TmSDK::kr.co.thermoeye.tmsdk/UsbHostBridge.ClaimedHandles///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-usb-host-bridge/-claimed-handles/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon class-kt"></span><span><span>Claimed</span><wbr></wbr><span><span>Handles</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-26-1" pageId="TmSDK::kr.co.thermoeye.tmsdk/UsbHostBridge.Companion///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-usb-host-bridge/-companion/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon object"></span><span><span><span>Companion</span></span></span></span></a></div>
+      </div>
+      <div class="toc--part" id="TmSDK-nav-submenu-0-26-2" pageId="TmSDK::kr.co.thermoeye.tmsdk/UsbHostBridge.PermissionListener///PointingToDeclaration//-273064447" data-nesting-level="3">
+        <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-usb-host-bridge/-permission-listener/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon interface-kt"></span><span><span>Permission</span><wbr></wbr><span><span>Listener</span></span></span></span></a></div>
+      </div>
+    </div>
+    <div class="toc--part" id="TmSDK-nav-submenu-0-27" pageId="TmSDK::kr.co.thermoeye.tmsdk/UsbPermissionListener///PointingToDeclaration//-273064447" data-nesting-level="2">
+      <div class="toc--row"><a href="-tm-s-d-k/kr.co.thermoeye.tmsdk/-usb-permission-listener/index.html" class="toc--link"><span class="toc--link-grid"><span class="toc--icon interface-kt"></span><span><span>Usb</span><wbr></wbr><span>Permission</span><wbr></wbr><span><span>Listener</span></span></span></span></a></div>
+    </div>
+  </div>
+</div>
+`)
 
 displayNavigationFromPage = () => {
     navigationPageText.then(data => {

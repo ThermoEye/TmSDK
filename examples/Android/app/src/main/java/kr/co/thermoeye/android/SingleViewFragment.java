@@ -45,7 +45,7 @@ import kr.co.thermoeye.tmsdk.TmRoiManager;
 public class SingleViewFragment extends Fragment {
     private FragmentSingleViewBinding bindingSingleView;
     private CameraViewModel cameraViewModel;
-    private RemoteCameraListItem currentCamera;
+    private CameraListItem currentCamera;
     private TmCamera tmCamera;
     private TmRoiManager roiManager;
     private boolean drawing = false;
@@ -72,7 +72,7 @@ public class SingleViewFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         bindingSingleView = FragmentSingleViewBinding.inflate(inflater, container, false);
-        currentCamera = cameraViewModel.getRemoteCameraItem();
+        currentCamera = cameraViewModel.getCameraItem();
         roiManager = currentCamera.getTmRoiManager();
         tmCamera = currentCamera.getTmCamera();
 
@@ -82,7 +82,9 @@ public class SingleViewFragment extends Fragment {
             // Observe the camera frame and update the bitmap when a new frame is available.
             cameraViewModel.getBitmapFrame(cameraIndex).observe(getViewLifecycleOwner(), bitmap -> {
                 if (bitmap != null) {
-                    Bitmap mutableBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
+                    Bitmap mutableBitmap = bitmap.isMutable()
+                            ? bitmap
+                            : bitmap.copy(Bitmap.Config.ARGB_8888, true);
                     cameraWidth = mutableBitmap.getWidth();
                     cameraHeight = mutableBitmap.getHeight();
 

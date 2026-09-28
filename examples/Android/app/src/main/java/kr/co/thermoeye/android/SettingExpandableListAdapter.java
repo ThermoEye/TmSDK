@@ -45,7 +45,7 @@ public class SettingExpandableListAdapter extends BaseExpandableListAdapter {
     private final List<String> listDataHeader;
     private final HashMap<String, List<String>> listChildData;
     private CameraViewModel cameraViewModel;
-    private RemoteCameraListItem currentCamera;
+    private CameraListItem currentCamera;
     private TmCamera tmCamera;
     private TmControl tmCtrl;
     private final Fragment fragment;
@@ -158,7 +158,7 @@ public class SettingExpandableListAdapter extends BaseExpandableListAdapter {
         String groupName = listDataHeader.get(groupPosition);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         cameraViewModel = new ViewModelProvider((FragmentActivity)context).get(CameraViewModel.class);
-        currentCamera = cameraViewModel.getRemoteCameraItem();
+        currentCamera = cameraViewModel.getCameraItem();
         tmCamera = currentCamera.getTmCamera();
         tmCtrl = tmCamera.getTmControl();
 
@@ -315,14 +315,14 @@ public class SettingExpandableListAdapter extends BaseExpandableListAdapter {
     private void handleColorMap(View convertView, ViewGroup parent, LayoutInflater inflater) {
         Spinner spinnerColorMap = convertView.findViewById(R.id.spinner_colorMap);
         // Set the currently selected color map based on the camera's settings
-        spinnerColorMap.setSelection(currentCamera.getColorMapTypes().getColorMapType());
+        spinnerColorMap.setSelection(currentCamera.getColorMapTypes().getColorMapType() + 1);
 
         // Handle color map selection changes
         spinnerColorMap.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = parent.getItemAtPosition(position).toString();
-                ColorMapTypes type = ColorMapTypes.Companion.fromInt(position);
+                ColorMapTypes type = ColorMapTypes.Companion.fromInt(position - 1);
                 assert type != null;
                 // Update the camera's color map settings
                 tmCamera.setColorMap(type);
@@ -508,7 +508,15 @@ public class SettingExpandableListAdapter extends BaseExpandableListAdapter {
         EditText editTextDns2 = convertView.findViewById(R.id.editText_networkDns2Val);
         Button buttonSave = convertView.findViewById(R.id.button_networkSet);
 
-        NetworkConfiguration netConfig = tmCtrl.getNetworkConfig();
+        NetworkConfiguration netConfig;
+        try {
+            netConfig = tmCtrl.getNetworkConfig();
+        } catch (RuntimeException e) {
+            return;
+        }
+        if (netConfig == null) {
+            return;
+        }
 
         editTextMac.setText(netConfig.getMac());
         spinnerIpAssign.setSelection(netConfig.getIpAssign().equals("DHCP") ? 0 : 1);

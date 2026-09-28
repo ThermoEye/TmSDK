@@ -2,17 +2,18 @@ package kr.co.thermoeye.android;
 
 import androidx.annotation.NonNull;
 
+import java.util.Locale;
 import java.util.Objects;
 import kr.co.thermoeye.tmsdk.ColorMapTypes;
 import kr.co.thermoeye.tmsdk.TempUnit;
 import kr.co.thermoeye.tmsdk.TmCamera;
+import kr.co.thermoeye.tmsdk.TmLocalCamInfo;
+import kr.co.thermoeye.tmsdk.TmRemoteCamInfo;
 import kr.co.thermoeye.tmsdk.TmRoiManager;
 
-public class RemoteCameraListItem {
+public class CameraListItem {
     private String name;
     private String nickName = "";
-    private String ip;
-    private String mac;
     private String serial;
     private boolean isConnected;
     private Integer id = -1;
@@ -23,39 +24,25 @@ public class RemoteCameraListItem {
     private Boolean alarmEnable = false;
     private TmCamera tmCamera = null;
     private TmRoiManager tmRoiManager = null;
+    private TmRemoteCamInfo remoteCamInfo = null;
+    private TmLocalCamInfo localCamInfo = null;
     private int width = -1;
     private int height = -1;
 
-    // Constructor
-    public RemoteCameraListItem(String name, String ip, String mac, String serial) {
-        this.name = name;
-        this.nickName = name;
-        this.ip = ip;
-        this.mac = mac;
-        this.serial = serial;
+    public CameraListItem(TmRemoteCamInfo info) {
+        this.remoteCamInfo = info;
+        this.name = info.getName();
+        this.nickName = info.getName();
+        this.serial = info.getSerialNumber();
         this.isConnected = false;
     }
 
-    public RemoteCameraListItem(String name, String ip, String mac, String serial, int id, boolean state) {
-        this.name = name;
-        this.nickName = name;
-        this.ip = ip;
-        this.mac = mac;
-        this.serial = serial;
-        this.id = id;
-        this.isConnected = state;
-    }
-
-    public RemoteCameraListItem(String name, String ip, String mac, String serial, int id, boolean state, String nickName) {
-        this.name = name;
-        if (!nickName.isEmpty()) {
-            this.nickName = nickName;
-        }
-        this.ip = ip;
-        this.mac = mac;
-        this.serial = serial;
-        this.id = id;
-        this.isConnected = state;
+    public CameraListItem(TmLocalCamInfo info) {
+        this.localCamInfo = info;
+        this.name = info.getName();
+        this.nickName = info.getName();
+        this.serial = info.getSerialNumber();
+        this.isConnected = false;
     }
 
     public int getId() {
@@ -71,13 +58,30 @@ public class RemoteCameraListItem {
     public void setTmRoiManager(TmRoiManager tmRoiManager) { this.tmRoiManager = tmRoiManager; }
     public String getName() { return name; }
     public String getNickName() { return nickName; }
-    public String getIp() { return ip; }
-    public String getMac() { return mac; }
+    public String getIp() {
+        return remoteCamInfo != null ? remoteCamInfo.getAddrIP() : "";
+    }
+    public String getMac() {
+        return remoteCamInfo != null ? remoteCamInfo.getAddrMAC() : "";
+    }
+    public String getSubtitle() {
+        if (localCamInfo != null) {
+            return String.format(Locale.US, "USB %04X:%04X", localCamInfo.getVendorId(), localCamInfo.getProductId());
+        }
+        return getIp();
+    }
+    public String getKey() {
+        if (localCamInfo != null) {
+            return localCamInfo.getDeviceName();
+        }
+        return getMac();
+    }
     public String getSerial() { return serial; }
+    public boolean isLocal() { return localCamInfo != null; }
+    public TmLocalCamInfo getLocalCamInfo() { return localCamInfo; }
+    public TmRemoteCamInfo getRemoteCamInfo() { return remoteCamInfo; }
     public void setName(String name) { this.name = name; }
     public void setNickName(String nickName) { this.nickName = nickName; }
-    public void setIp(String ip) { this.ip = ip; }
-    public void setMac(String mac) { this.mac = mac; }
     public void setSerial(String serial) { this.serial = serial; }
     public boolean isConnected() { return isConnected; }
     public boolean setConnected(boolean connected) {
@@ -143,32 +147,29 @@ public class RemoteCameraListItem {
         alarmEnable = enable;
     }
 
-    // toString method for easy string representation
     @NonNull
     @Override
     public String toString() {
         return "ListItem{" +
                 "name='" + name + '\'' +
-                ", ip='" + ip + '\'' +
-                ", mac='" + mac + '\'' +
+                ", subtitle='" + getSubtitle() + '\'' +
+                ", key='" + getKey() + '\'' +
                 ", serial='" + serial + '\'' +
                 '}';
     }
 
-    // equals and hashCode methods for correct comparison and hashing in collections
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RemoteCameraListItem listItem = (RemoteCameraListItem) o;
-        return name.equals(listItem.name) &&
-                ip.equals(listItem.ip) &&
-                mac.equals(listItem.mac) &&
-                serial.equals(listItem.serial);
+        CameraListItem listItem = (CameraListItem) o;
+        return Objects.equals(name, listItem.name) &&
+                Objects.equals(getKey(), listItem.getKey()) &&
+                Objects.equals(serial, listItem.serial);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, ip, mac, serial);
+        return Objects.hash(name, getKey(), serial);
     }
 }

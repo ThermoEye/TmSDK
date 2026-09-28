@@ -68,8 +68,8 @@ public class MultiViewFragment extends Fragment {
                             // Handle single click: update selected camera
                             int prevCameraId = Objects.requireNonNull(cameraViewModel.getSelectedCameraId().getValue());
                             if (prevCameraId >= 0 &&
-                                    cameraViewModel.getRemoteCameraItem(finalI) != null &&
-                                    cameraViewModel.getRemoteCameraItem(finalI).isConnected()) {
+                                    cameraViewModel.getCameraItem(finalI) != null &&
+                                    cameraViewModel.getCameraItem(finalI).isConnected()) {
                                 setImageViewBorder(imageViews[prevCameraId], R.color.back_ground);
                                 cameraViewModel.setSelectedCameraId(finalI);
                             }
@@ -176,13 +176,13 @@ public class MultiViewFragment extends Fragment {
      */
     private void navigateToImageFragment(int imageIndex) {
         // Retrieve the list of remote camera items from the ViewModel.
-        List<RemoteCameraListItem> cameraItems = cameraViewModel.getRemoteCameraList().getValue();
+        List<CameraListItem> cameraItems = cameraViewModel.getCameraList().getValue();
         if (cameraItems == null) {
             return;
         }
         // Check if the given image index corresponds to a connected camera.
         boolean connectedCamera = false;
-        for (RemoteCameraListItem item: cameraItems) {
+        for (CameraListItem item: cameraItems) {
             if (item.getId() == imageIndex) {
                 connectedCamera = true;
             }

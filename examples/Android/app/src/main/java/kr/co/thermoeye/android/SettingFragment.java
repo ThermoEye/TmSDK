@@ -25,7 +25,7 @@ public class SettingFragment extends Fragment {
     private List<String> listDataHeader;
     private HashMap<String, List<String>> listChildData;
     private CameraViewModel cameraViewModel;
-    private RemoteCameraListItem currentCamera = null;
+    private CameraListItem currentCamera = null;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,13 +56,13 @@ public class SettingFragment extends Fragment {
         expandableListView.expandGroup(0);
 
         TextView textViewTitle = view.findViewById(R.id.expandableListView_title);
-        String cameraNickName = cameraViewModel.getRemoteCameraItem().getNickName();
-        String cameraIP = cameraViewModel.getRemoteCameraItem().getIp();
-        String title = String.format("%s %s", cameraNickName, cameraIP);
+        String cameraNickName = cameraViewModel.getCameraItem().getNickName();
+        String cameraSubtitle = cameraViewModel.getCameraItem().getSubtitle();
+        String title = String.format("%s %s", cameraNickName, cameraSubtitle);
         textViewTitle.setText(title);
 
         // Get the current camera object from the ViewModel
-        currentCamera = cameraViewModel.getRemoteCameraItem();
+        currentCamera = cameraViewModel.getCameraItem();
 
         // Update temperature settings in the adapter
         adapter.updateTemperatureSettings();
