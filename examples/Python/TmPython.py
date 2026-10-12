@@ -26,7 +26,8 @@ from SensorControl import SensorControl
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
-        uic.loadUi('mainwindow.ui', self)
+        ui_dir = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+        uic.loadUi(os.path.join(ui_dir, "mainwindow.ui"), self)
 
         # Initialize the logic classes
         self.camera = Camera(self)

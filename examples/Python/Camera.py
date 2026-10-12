@@ -28,6 +28,8 @@ from concurrent.futures import ThreadPoolExecutor
 if sys.platform.startswith("linux"):
 	sys.path.append("../../Modules/Shared/Managed/Python/TmCore")
 elif os.name == "nt":
+    if getattr(sys, "frozen", False) and not os.environ.get("TMSDK_BIN"):
+        os.environ["TMSDK_BIN"] = r"C:\Program Files\THERMOEYE\TmSDK\bin"
     sys.path.append(sys.path[0] + "\\..\\..\\" + "Modules\\Shared\\Managed\\Python")
     sys.path.append(sys.path[0] + "\\..\\..\\" + "Modules\\Shared\\Managed\\Python\\TmCore")
 
