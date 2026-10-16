@@ -31,7 +31,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;2.1.0</span>
+   <div id="projectname">TmSDK (C++)<span id="projectnumber">&#160;2.1.1</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -137,6 +137,8 @@ Inheritance diagram for TmSDK::TmLocalCamera:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a3685f9f9850b79e567fba4655ca8dc16" id="r_a3685f9f9850b79e567fba4655ca8dc16"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a3685f9f9850b79e567fba4655ca8dc16">CreateControlForCameraName</a> (const std::string &amp;cameraName)</td></tr>
+<tr class="memdesc:a3685f9f9850b79e567fba4655ca8dc16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the control object when the name matches a supported model exactly.  <br /></td></tr>
 <tr class="memitem:a59c0694ad82b95d58a1a96ea91639da5" id="r_a59c0694ad82b95d58a1a96ea91639da5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a59c0694ad82b95d58a1a96ea91639da5">TmLocalCamera</a> ()</td></tr>
 <tr class="memdesc:a59c0694ad82b95d58a1a96ea91639da5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor of <a class="el" href="class_tm_s_d_k_1_1_tm_local_camera.html" title="Class representing a local camera.">TmLocalCamera</a>.  <br /></td></tr>
 <tr class="memitem:a89ccba05b4a5514ee39f22b1f5673e59" id="r_a89ccba05b4a5514ee39f22b1f5673e59"><td class="memItemLeft">virtual&#160;</td><td class="memItemRight"><a class="el" href="#a89ccba05b4a5514ee39f22b1f5673e59">~TmLocalCamera</a> ()</td></tr>
@@ -306,6 +308,32 @@ Static Public Attributes</h2></td></tr>
 <p>Close the <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html" title="A class representing a thermal camera with various functionalities.">TmCamera</a> interface. </p>
 
 <p>Reimplemented from <a class="el" href="class_tm_s_d_k_1_1_tm_camera.html#a44271d961401c14c5f8ba8b629ba11e2">TmSDK::TmCamera</a>.</p>
+
+</div>
+</div>
+<a id="a3685f9f9850b79e567fba4655ca8dc16" name="a3685f9f9850b79e567fba4655ca8dc16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3685f9f9850b79e567fba4655ca8dc16">&#9670;&#160;</a></span>CreateControlForCameraName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TmSDK::TmLocalCamera::CreateControlForCameraName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>cameraName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates the control object when the name matches a supported model exactly. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraName</td><td>Model name such as TMC384G.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True when the control object is created.</dd></dl>
 
 </div>
 </div>

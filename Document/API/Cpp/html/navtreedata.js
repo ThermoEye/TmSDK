@@ -48,7 +48,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "class_tm_s_d_k_1_1_tm_ctrl256_g.html#a092b6ea7da0fde5fa3b709c6c7ede54c",
-"hierarchy.html"
+"functions_~.html"
 ];
 
 const SYNCONMSG = 'click to disable panel synchronization';

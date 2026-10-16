@@ -13,5 +13,6 @@ var searchData=
   ['colororder_10',['ColorOrder',['../namespace_tm_s_d_k.html#a824fd0ef87ded31bef8ee85acb1875d8',1,'TmSDK']]],
   ['comport_11',['ComPort',['../class_tm_s_d_k_1_1_tm_local_cam_info.html#a01ec42745765de776acc937a1a992330',1,'TmSDK::TmLocalCamInfo']]],
   ['cool_12',['Cool',['../namespace_tm_s_d_k.html#ab2a545b60de3934d1dcfc8bdf224c9bea22ba039c77c8aeefbe9df63f76050ace',1,'TmSDK']]],
-  ['creator_13',['Creator',['../index.html#CREATEINFO',1,'']]]
+  ['createcontrolforcameraname_13',['CreateControlForCameraName',['../class_tm_s_d_k_1_1_tm_local_camera.html#a3685f9f9850b79e567fba4655ca8dc16',1,'TmSDK::TmLocalCamera']]],
+  ['creator_14',['Creator',['../index.html#CREATEINFO',1,'']]]
 ];

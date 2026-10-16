@@ -31,7 +31,7 @@ mermaid.initialize({ startOnLoad: true, theme: theme });
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="TmLogo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;2.1.0</span>
+   <div id="projectname">TmSDK (C#)<span id="projectnumber">&#160;2.1.1</span>
    </div>
    <div id="projectbrief">This is a list of all TmSDK APIs.</div>
   </td>
@@ -194,7 +194,13 @@ Revision History</h1>
 <li>Fixed colormap index issue</li>
 <li>Added external sync support for TMC256G and TMC384G</li>
 <li>Add callback mode support</li>
-<li>Fix local camera enumeration for STA/MTA COM threading </li>
+<li>Fix local camera enumeration for STA/MTA COM threading</li>
+</ul>
+</li>
+<li>R2.1.1 : 2026/10/15<ul>
+<li>Fixed an issue where keepalive requests were sent after the RTSP connection was unexpectedly terminated.</li>
+<li>Wait for the TEARDOWN response before closing the socket</li>
+<li>Disable RTCP receiver reports</li>
 </ul>
 </li>
 </ul>
