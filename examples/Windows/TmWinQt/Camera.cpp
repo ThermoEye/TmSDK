@@ -272,7 +272,7 @@ void Camera::CaptureFrame()
                 future = QtConcurrent::run(this, &Camera::processMeasurements, pFrame);
                 futureWatcher.setFuture(future);
 
-                // 현재 활성 작업(thread)의 수를 확인
+                // Check the number of currently active threads
                 //int activeThreads = QThreadPool::globalInstance()->activeThreadCount();
                 //qDebug() << "Active threads:" << activeThreads;
             }
@@ -523,14 +523,14 @@ void Camera::DisconnectCamera(bool clearReconnectState)
     // Clear last preview image so that label_Preview does not keep the last frame
     if (ui->label_Preview != nullptr)
     {
-        // 먼저 비어 있는 pixmap을 설정하고 즉시 그리기
+        // Set an empty pixmap first and repaint immediately
         ui->label_Preview->setPixmap(QPixmap());
         ui->label_Preview->repaint();
 
-        // 이벤트 큐에 남아 있을 수 있는 setPixmap 호출들을 처리
+        // Process any pending setPixmap calls left in the event queue
         QCoreApplication::processEvents(QEventLoop::AllEvents, 50);
 
-        // 최종적으로 clear 한 번 더 호출
+        // Call clear once more at the end
         ui->label_Preview->clear();
         ui->label_Preview->repaint();
     }
@@ -739,9 +739,9 @@ void Camera::ApplyConnectedCameraUi(bool isLocalCamera)
 void Camera::DrawShapeObjects(QImage& image) {
     if (image.isNull()) return;
 
-    // 현재 스레드가 UI 스레드인지 확인
+    // Check whether the current thread is the UI thread
     if (QThread::currentThread() != QApplication::instance()->thread()) {
-        // UI 스레드에서 이 함수를 호출하도록 invokeMethod 사용
+        // Use invokeMethod so this function runs on the UI thread
         QMetaObject::invokeMethod(this, [this, &image]() {
             DrawShapeObjects(image);
             }, Qt::BlockingQueuedConnection);
@@ -972,9 +972,9 @@ void Camera::UpdateRoiListItems()
 */
 void Camera::UpdateDrawingLabel(QImage& image)
 {
-    // 현재 스레드가 UI 스레드인지 확인
+    // Check whether the current thread is the UI thread
     if (QThread::currentThread() != QApplication::instance()->thread()) {
-        // UI 스레드에서 이 함수를 호출하도록 invokeMethod 사용
+        // Use invokeMethod so this function runs on the UI thread
         QMetaObject::invokeMethod(this, [this, &image]() {
             UpdateDrawingLabel(image);
             }, Qt::BlockingQueuedConnection);

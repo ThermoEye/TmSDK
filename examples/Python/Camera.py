@@ -214,12 +214,12 @@ class Camera:
         # Clear last preview image so that label_Preview does not keep the last frame
         label = self.main_window.label_Preview
         if label is not None:
-            # 먼저 비어 있는 pixmap을 설정
+            # Set an empty pixmap first
             label.setPixmap(QPixmap())
             label.repaint()
-            # 이벤트 큐에 남아 있을 수 있는 setPixmap 호출들을 처리
+            # Process any pending setPixmap calls left in the event queue
             QApplication.processEvents()
-            # 최종적으로 clear 한 번 더 호출
+            # Call clear once more at the end
             label.clear()
             label.repaint()
 
@@ -1195,7 +1195,7 @@ class FrameWorker(QThread):
             min_val, avg_val, max_val = 0.0, 0.0, 0.0
             min_loc, max_loc = None, None
             
-            # 카메라가 유효한지 확인
+            # Check whether the camera is valid
             if self.parent.tmCamera is None or self.parent.tmCamera.obj is None:
                 if pFrame is not None:
                     del pFrame
@@ -1251,7 +1251,7 @@ class FrameWorker(QThread):
 
         while self.isRun:
             try:
-                # 카메라가 유효한지 확인
+                # Check whether the camera is valid
                 if self.parent.tmCamera is None or self.parent.tmCamera.obj is None:
                     QThread.msleep(100)
                     continue
@@ -1270,7 +1270,7 @@ class FrameWorker(QThread):
                     self.parent.preview_height
                 )
 
-                # DLL 호출은 모두 이 QThread 안에서만 수행한다.
+                # Perform all DLL calls only on this QThread.
                 if tmFrame is not None:
                     self.process_measurements(tmFrame)
             except Exception as e:

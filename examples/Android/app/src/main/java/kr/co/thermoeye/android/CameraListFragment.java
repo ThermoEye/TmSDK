@@ -585,10 +585,10 @@ public class CameraListFragment extends Fragment {
                 vibe = true;
                 try {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        // API 26 (Oreo) 이상에서는 VibrationEffect 사용
+                        // Use VibrationEffect on API 26 (Oreo) and later
                         vibrator.vibrate(VibrationEffect.createOneShot(milliseconds, VibrationEffect.DEFAULT_AMPLITUDE));
                     } else {
-                        // API 26 미만에서는 직접 진동 실행
+                        // Vibrate directly on APIs below 26
                         vibrator.vibrate(milliseconds);
                     }
                     Thread.sleep(1000);

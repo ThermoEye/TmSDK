@@ -102,7 +102,7 @@ public class SingleViewFragment extends Fragment {
 
         // Handle touch events to manage the drawing of ROIs.
         bindingSingleView.imageView.setOnTouchListener(new View.OnTouchListener() {
-//            private static final long DOUBLE_CLICK_TIME_DELTA = 300; // 300ms 이내면 더블클릭
+//            private static final long DOUBLE_CLICK_TIME_DELTA = 300; // Treat as a double click when the interval is within 300 ms
 //            private long lastClickTime = 0;
 
             @SuppressLint("ClickableViewAccessibility")
